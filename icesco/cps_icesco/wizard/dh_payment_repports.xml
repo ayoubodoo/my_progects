@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_payemnt_wizard_form" model="ir.ui.view">
+        <field name="name">payemnt.wizard.form</field>
+        <field name="model">payemnt.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Repports">
+                <group>
+
+
+                    <group>
+                        <field name="type" readonly="1"/>
+                        <field name="print" invisble="1"/>
+<!--                        <field name="senario" invisble="1"/>-->
+                          <field name="is_signature_controlleur_financiere" invisible="1"/>
+                <field name="is_signature_supperviseur_affairs_financiere" invisible="1"/>
+                <field name="is_signature_dg" invisible="1"/>
+                <field name="is_signature_dg_adjoint" invisible="1"/>
+                <field name="is_signature_caissier" invisible="1"/>
+                <field name="is_signature_benefciaire" invisible="1"/>
+                <field name="is_signature_res_financier" invisible="1"/>
+                <field name="senario" invisible="0" readonly="1"/>
+<!--                <field name="signature_supperviseur_affairs_financiere" widget="signature" invisible="0"/>-->
+<!--                <field name="signature_controlleur_financiere" widget="signature" invisible="0"/>-->
+<!--                <field name="signature_res_financier" widget="signature" invisible="0"/>-->
+
+
+
+                        <field name="signature_supperviseur_affairs_financiere" widget="signature"  attrs="{'invisible':  ['|',('senario', 'in',  ('s5','s7')),('is_signature_supperviseur_affairs_financiere', '=', True)]}"/>
+                        <field name="signature_controlleur_financiere" widget="signature"  attrs="{'invisible':  ['|',('senario', 'in',  ('s4','s6')),('is_signature_controlleur_financiere', '=', True)]}"/>
+                        <field name="signature_res_financier" widget="signature"
+                               attrs="{'invisible':  ['|','|',('type', '!=', 'depense_caisse'),('type', '!=', 'depense_banque'),('is_signature_res_financier', '=', True)]}" />
+
+                    </group>
+                    <group>
+                        <field name="signature_dg" widget="signature" attrs="{'invisible':  ['|',('senario', 'in', ('s2','s3','s6','s7')),('is_signature_dg', '=', True)]}"/>
+                        <field name="signature_dg_adjoint" widget="signature"  attrs="{'invisible':  ['|',('senario', 'in', ('s1','s4','s3','s5')),('is_signature_dg_adjoint', '=', True)]}"/>
+                        <field name="signature_caissier" widget="signature"
+                               attrs="{'invisible':  ['|','|',('type', '!=', 'depense_caisse'),('type', '!=', 'depense_banque'),('is_signature_caissier', '=', True)]}"/>
+
+                        <field name="signature_benefciaire" widget="signature"
+                               attrs="{'invisible':  ['|','|',('type', '!=', 'depense_caisse'),('type', '!=', 'depense_banque'),('is_signature_benefciaire', '=', True)]}"/>
+
+                    </group>
+
+
+                </group>
+                <footer>
+                    <button name="generate_repport" string="Print Repport" type="object" class="btn-primary"
+                            attrs="{'invisible':  [('print', '=', False)]}"/>
+                    <button name="get_signatures" string="Save" type="object" class="btn-primary"
+                           />
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_payemnt_wizard" model="ir.actions.act_window">
+        <field name="name">Payement repports</field>
+        <field name="res_model">payemnt.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_payemnt_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+
+
+</odoo>

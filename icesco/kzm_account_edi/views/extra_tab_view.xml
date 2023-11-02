@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record id="liasse_check_rub_view_form_erp" model="ir.ui.view">
+			<field name="name">Check rubrique</field>
+			<field name="model">liasse.check.rub.erp</field>
+			<field name="arch" type="xml">
+				<form string="Configuration">
+					<separator string="Nom de la rubrique" />
+					<group>
+						<field name="rub" />
+					</group>
+					<group col="4" colspan="4" string="Régle">
+						<field name="compte" />
+						<field name="code_ids" widget="many2many_tags" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_check_view_form_erp" model="ir.ui.view">
+			<field name="name">Check liste</field>
+			<field name="model">liasse.check.erp</field>
+			<field name="arch" type="xml">
+				<form string="Configuration">
+					<separator string="Nom de la régle" />
+					<group>
+						<field name="etat" />
+						<field name="code" />
+					</group>
+					<group col="4" colspan="4" string="Exercice N">
+						<field name="coden_ids" widget="many2many_tags" />
+						<field name="coden_min_ids" widget="many2many_tags" />
+					</group>
+					<group col="4" colspan="4" string="Exercice N-1">
+						<field name="codenp_ids" widget="many2many_tags" />
+						<field name="codenp_min_ids" widget="many2many_tags" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_creditbail_view_tree_erp" model="ir.ui.view">
+			<field name="name">Credit Bail</field>
+			<field name="model">credi.bail.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Credit bail" editable="bottom">
+					<field name="rubrique" />
+					<field name="date_first_ech" />
+					<field name="duree_contrat" />
+					<field name="val_estime" />
+					<field name="duree_theo" />
+					<field name="cumul_prec" />
+					<field name="montant_rev" />
+					<field name="rev_moins" />
+					<field name="rev_plus" />
+					<field name="prix_achat" />
+					<field name="observation" />
+				</tree>
+			</field>
+		</record>
+		
+		<record id="liasse_interet_view_tree_erp" model="ir.ui.view">
+			<field name="name">Interets</field>
+			<field name="model">interets.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Interet" editable="top">
+					<field name="name" />
+					<field name="adress" />
+					<field name="cin" />
+					<field name="mont_pretl" />
+					<field name="date_pret" />
+					<field name="duree_mois" />
+					<field name="taux_inter" />
+					<field name="charge_global" />
+					<field name="remb_princ" />
+					<field name="remb_inter" />
+					<field name="remb_actual_princ" />
+					<field name="remb_actual_inter" />
+					<field name="observation" />
+					
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_pm_value_view_tree_erp" model="ir.ui.view">
+			<field name="name">PM Value</field>
+			<field name="model">pm.value.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="+- Value" editable="bottom">
+					<field name="date_cession" />
+					<field name="compte_princ" />
+					<field name="montant_brut" />
+					<field name="amort_cumul" />
+					<field name="val_net_amort" />
+					<field name="prod_cess" />
+					<field name="plus_value" />
+					<field name="moins_value" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_titre_particip_view_tree_erp" model="ir.ui.view">
+			<field name="name">Titres de participation</field>
+			<field name="model">titre.particip.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Titre participation" editable="bottom">
+					<field name="raison_soc" />
+					<field name="sect_activity" />
+					<field name="capit_social" />
+					<field name="particip_cap" />
+					<field name="prix_global" />
+					<field name="val_compt" />
+					<field name="extr_date" />
+					<field name="extr_situation" />
+					<field name="extr_resultat" />
+					<field name="prod_inscrit" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_repart_cs_view_tree_erp" model="ir.ui.view">
+			<field name="name">Repartition C.S.</field>
+			<field name="model">repart.cs.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="ETAT DE REPARTITION DU CAPITAL SOCIAL" editable="bottom">
+					<field name="name" />
+					<field name="id_fisc" />
+					<field name="cin" />
+					<field name="adress" />
+					<field name="number_prec" />
+					<field name="number_actual" />
+					<field name="val_nom" />
+					<field name="val_sousc" />
+					<field name="val_appele" />
+					<field name="val_lib" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_beaux_view_tree_erp" model="ir.ui.view">
+			<field name="name">Location et beaux</field>
+			<field name="model">beaux.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="BEAUX" editable="bottom">
+					<field name="nature" />
+					<field name="lieu" />
+					<field name="name" />
+					<field name="date_loc" />
+					<field name="mont_annuel" />
+					<field name="mont_loyer" />
+					<field name="nature_bail" />
+					<field name="nature_periode" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_dotation_view_tree_erp" model="ir.ui.view">
+			<field name="name">dotation</field>
+			<field name="model">dotation.amort.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="dotation" editable="bottom">
+					<field name="code0" />
+					<field name="code1" />
+					<field name="code2" />
+					<field name="code3" />
+					<field name="code4" />
+					<field name="code5" />
+					<field name="code6" />
+					<field name="code7" />
+					<field name="code8" />
+					<field name="code9" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_creditbail_fiche_erp" model="ir.actions.act_window">
+			<field name="name">Credit Bail</field>
+			<field name="res_model">credi.bail.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_pmvalue_fiche_erp" model="ir.actions.act_window">
+			<field name="name">Plus ou moins values</field>
+			<field name="res_model">pm.value.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_titreparticipation_fiche_erp" model="ir.actions.act_window">
+			<field name="name">Titres de participation</field>
+			<field name="res_model">titre.particip.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_repartition_cs_fiche_erp" model="ir.actions.act_window">
+			<field name="name">Repartition du C.S.</field>
+			<field name="res_model">repart.cs.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_beaux_fiche_erp" model="ir.actions.act_window">
+			<field name="name">Beaux</field>
+			<field name="res_model">beaux.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_balance_line" model="ir.actions.act_window">
+			<field name="name">Balance générale</field>
+			<field name="res_model">liasse.balance.line</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_liasse_check_erp" model="ir.actions.act_window">
+			<field name="name">Régles de check list </field>
+			<field name="res_model">liasse.check.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_liasse_check_rub_erp" model="ir.actions.act_window">
+			<field name="name">Rubriques de controle</field>
+			<field name="res_model">liasse.check.rub.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_dotation_amort_erp" model="ir.actions.act_window">
+			<field name="name">Dotation aux amortissements</field>
+			<field name="res_model">dotation.amort.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record id="action_interet_associe_erp" model="ir.actions.act_window">
+			<field name="name">Interets associé</field>
+			<field name="res_model">interets.erp</field>
+
+			<field name="view_mode">tree,form</field>
+            <field name="domain">[('type', '=', '0')]</field>
+            <field name="context">{'default_type':'0'}</field>
+		</record>
+		
+		<record id="action_interet_tiers_erp" model="ir.actions.act_window">
+			<field name="name">Interets tiers</field>
+			<field name="res_model">interets.erp</field>
+
+			<field name="view_mode">tree,form</field>
+            <field name="domain">[('type', '=', '1')]</field>
+            <field name="context">{'default_type':'1'}</field>
+		</record>
+
+		<menuitem id="sub_extra_erp" name="Données extra-comptables"
+			parent="main_balance_general_erp" sequence="4" />
+
+		<menuitem id="sub_bal_gener" parent="main_balance_general_erp"
+			sequence="2" action="action_balance_line" />
+
+		<menuitem id="sub_creditbail_erp" parent="sub_extra_erp"
+			action="action_creditbail_fiche_erp" name="T7 biens en crédit bail" sequence="1" />
+		<menuitem id="sub_pmvalue_erp" parent="sub_extra_erp" action="action_pmvalue_fiche_erp"
+			name="T10 Plus ou moins values" sequence="2"/>
+		<menuitem id="sub_titre_repart_erp" parent="sub_extra_erp"
+			action="action_titreparticipation_fiche_erp" name="T11 Titre de participation" sequence="3"/>
+		<menuitem id="sub_repart_cs_erp" parent="sub_extra_erp"
+			action="action_repartition_cs_fiche_erp" name="T13 repartition du capital social" sequence="4"/>
+		<menuitem id="sub_dotation_erp" parent="sub_extra_erp" action="action_dotation_amort_erp"
+			name="T16 dotation aux amortissements" sequence="5"/>
+			
+		<menuitem id="sub_interets_erp" parent="sub_extra_erp" 
+			name="T18 Interets des emprunts" sequence="6"/>
+			
+		<menuitem id="sub_interets_associe_erp" parent="sub_interets_erp" 
+			name="Associés" action="action_interet_associe_erp"/>
+			
+		<menuitem id="sub_interets_tiers_erp" parent="sub_interets_erp" 
+			name="Tiers" action="action_interet_tiers_erp"/>
+
+		<menuitem id="sub_beaux_erp" parent="sub_extra_erp" action="action_beaux_fiche_erp"
+			name="T19 Locations et beaux" />
+
+		<menuitem id="sub_check_list_erp" parent="main_liasse_conf_erp"
+			sequence="3" action="action_liasse_check_erp" />
+
+		<menuitem id="sub_check_list_rub_erp" parent="main_liasse_conf_erp"
+			sequence="4" action="action_liasse_check_rub_erp" />
+
+	</data>
+</odoo>

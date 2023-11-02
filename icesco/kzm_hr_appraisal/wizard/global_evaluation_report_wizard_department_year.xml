@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <record id="my_department_evaluation_this_year_evaluation_wizard" model="ir.ui.view">
+            <field name="name">appraisal.report.department.wizard.form</field>
+            <field name="model">appraisal.report.department.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group><field name="start_date" required="1"/></group>
+                            <group><field name="end_date" required="1"/></group>
+                            <label for="model_evaluation_id"/>
+                            <field name="model_evaluation_id" required="1"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_print_model" string="Print Department Evaluation" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="my_department_evaluation_this_year_evaluation_wizard_action" model="ir.actions.act_window">
+            <field name="name">Imprimer Evaluation mon département</field>
+            <field name="res_model">appraisal.report.department.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="wizard_my_department_evaluation_this_year"
+                   name="Évaluation mon département"
+                   sequence="2"
+                   action="my_department_evaluation_this_year_evaluation_wizard_action"
+                   parent="reporting_appraisal"
+        />
+
+    </data>
+</odoo>

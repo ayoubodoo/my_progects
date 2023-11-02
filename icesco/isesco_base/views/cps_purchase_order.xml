@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record id="cps_purchase_order_form_inherit" model="ir.ui.view">
+            <field name="name">cps.purchase.order.form.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <field name="date_order" position="after">
+                    <field name="print_date"/>
+                </field>
+            </field>
+        </record>
+
+<!--        <record model="ir.ui.view" id="cps_purchase_order_tree_view">-->
+<!--            <field name="name">cps.purchase.order.tree.inherit</field>-->
+<!--            <field name="model">purchase.order</field>-->
+<!--            <field name="inherit_id" ref="purchase.purchase_order_tree"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <data>-->
+<!--                    <field name="date_order" position="after">-->
+<!--                        <field name="print_date"/>-->
+<!--                    </field>-->
+<!--                </data>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <record model="ir.ui.view" id="cps_purchase_order_view_tree">-->
+<!--            <field name="name">cps.purchase.order.tree.view.inherit</field>-->
+<!--            <field name="model">purchase.order</field>-->
+<!--            <field name="inherit_id" ref="purchase.purchase_order_view_tree"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <data>-->
+<!--                    <field name="date_approve" position="after">-->
+<!--                        <field name="print_date"/>-->
+<!--                    </field>-->
+<!--                </data>-->
+<!--            </field>-->
+<!--        </record>-->
+    </data>
+</odoo>

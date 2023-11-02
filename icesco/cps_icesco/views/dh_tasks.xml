@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="cps_view_task_form" model="ir.ui.view">
+        <field name="name">dh.tasks.cps.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/notebook" position="inside">
+                <page string="Details of Suggested Activity" name="datails_squggested" invisible="1">
+                    <group>
+                        <field name="purpose"/>
+                        <field name="activity_scope"/>
+                        <field name="proposed_date"/>
+                        <field name="proposal_note" widget="many2many_binary"/>
+                        <field name="is_budget_required"/>
+                    </group>
+                    <group colspan="2">
+                        <field name="amount_usd" attrs="{'invisible': [('is_budget_required', '=', False)]}"/>
+                    </group>
+                </page>
+                <page string="Remarks" name="remarks_activity">
+                    <group>
+                        <field name="remarks" nolabel="1"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <!--    <record model="ir.ui.view" id="cps_view_partner_tree">-->
+    <!--        <field name="name">rdh.tasks.cps.tree</field>-->
+    <!--        <field name="model">project.task</field>-->
+    <!--        <field name="inherit_id" ref="base.view_partner_tree"/>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <xpath expr="//field[@name='company_id']" position="after">-->
+    <!--                <field name="official_country_name" optional="hide"/>-->
+    <!--                <field name="official_leaders" optional="hide"/>-->
+    <!--                <field name="country_type" optional="hide"/>-->
+    <!--                <field name="country_capital" optional="hide"/>-->
+    <!--                <field name="population" optional="hide"/>-->
+    <!--                <field name="muslim_population" optional="hide"/>-->
+    <!--                <field name="gpd_per_capital" optional="hide"/>-->
+    <!--            </xpath>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+    <!--    <record model="ir.actions.act_window" id="cps_list_oic_act">-->
+    <!--        <field name="name">OIC Organisations</field>-->
+    <!--        <field name="res_model">res.partner</field>-->
+    <!--        <field name="view_mode">tree,form</field>-->
+    <!--        <field name="domain">[('is_ioc_organization','=',True)]</field>-->
+    <!--        <field name="context">{'default_is_ioc_organization':True}</field>-->
+    <!--    </record>-->
+
+    <!--    <menuitem name="OIC Organisations" id="menu_list_oic" parent="event.menu_event_configuration"-->
+    <!--              action="cps_list_oic_act" sequence="12"/>-->
+
+    <!--    <record model="ir.actions.act_window" id="cps_list_un_act">-->
+    <!--        <field name="name">UN Organisations</field>-->
+    <!--        <field name="res_model">res.partner</field>-->
+    <!--        <field name="view_mode">tree,form</field>-->
+    <!--        <field name="domain">[('is_un_organization','=',True)]</field>-->
+    <!--        <field name="context">{'default_is_un_organization':True}</field>-->
+    <!--    </record>-->
+
+    <!--    <menuitem name="UN Organisations" id="menu_list_un" parent="event.menu_event_configuration"-->
+    <!--              action="cps_list_un_act" sequence="13"/>-->
+
+    <!--    <record model="ir.actions.act_window" id="cps_list_au_act">-->
+    <!--        <field name="name">AU Organisations</field>-->
+    <!--        <field name="res_model">res.partner</field>-->
+    <!--        <field name="view_mode">tree,form</field>-->
+    <!--        <field name="domain">[('is_au_organization','=',True)]</field>-->
+    <!--        <field name="context">{'default_is_au_organization':True}</field>-->
+    <!--    </record>-->
+
+    <!--    <menuitem name="AU Organisations" id="menu_list_au" parent="event.menu_event_configuration"-->
+    <!--              action="cps_list_au_act" sequence="14"/>-->
+
+    <!--    <record model="ir.actions.act_window" id="cps_list_al_act">-->
+    <!--        <field name="name">AL Organisations</field>-->
+    <!--        <field name="res_model">res.partner</field>-->
+    <!--        <field name="view_mode">tree,form</field>-->
+    <!--        <field name="domain">[('is_al_organization','=',True)]</field>-->
+    <!--        <field name="context">{'default_is_al_organization':True}</field>-->
+    <!--    </record>-->
+
+    <!--    <menuitem name="AL Organisations" id="menu_list_al" parent="event.menu_event_configuration"-->
+    <!--              action="cps_list_al_act" sequence="15"/>-->
+    <!--    <menuitem name="Cities" id="cities_menu" parent="contacts.menu_localisation"-->
+    <!--              action="icesco_project.res_city_action" sequence="15"/>-->
+
+
+</odoo>

@@ -1,0 +1,429 @@
+<odoo>
+    <data>
+
+        <template id="website_helpdesk_form.ticket_submit" name="Helpdesk: Submit a Ticket">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $('#webinar_link').click(function () {
+                if ($(this).is(":checked")) {
+                    $('.attendees_webinar').show();
+                } else {
+                    $('.attendees_webinar').hide();
+                }
+            });
+<!--            $('#is_translation').click(function () {-->
+<!--                if ($(this).is(":checked")) {-->
+<!--                    $('.trans_services').show();-->
+<!--                } else {-->
+<!--                    $('.trans_services').hide();-->
+<!--                }-->
+<!--            });-->
+        });
+
+        </script>
+        <t t-set="body_classname" t-value="'o_wprofile_body'"/>
+        <t name="Helpdesk" priority="29" t-name="website.helpdesk">
+            <t t-call="website.layout">
+                <t t-set="additional_title">Ticket</t>
+                <h2 t-if="team" class="text-center text-muted">
+                    <span><t t-esc="team.name"/></span>
+                </h2>
+                <div id="wrap" class="oe_structure oe_empt">
+                    <div class="container">
+                        <div class="row">
+                            <section id="forms" class="col-12">
+                                <span class="hidden" data-for="helpdesk_ticket_form" />
+                                <div class="form-group col-12">
+                                    <p class="alert alert-danger" t-if="error"
+                                       role="alert">
+                                        <t t-esc="error"/>
+                                    </p>
+                                </div>
+                                <form t-attf-action="/website_form/submit/" method="post"
+                                      role="form" name="create_request"
+                                      class="o_wprofile_editor_form js_website_submit_form row"
+                                      enctype="multipart/form-data">
+                                    <div class="form-group col-12">
+                                        <div class="form-row">
+                                            <label class="mb-1 text-primary"
+                                                   for="event_id">
+                                                <span class="font-weight-bold">
+                                                    Event Name *
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <input type="text" name="event_id"
+                                                       id="event_id"
+                                                       class="form-control"
+                                                       placeholder="Event name *"
+                                                        required="True"
+                                                        />
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 text-primary"
+                                               for="partner_id">
+                                            <span class="font-weight-bold">
+                                                Event Coordinator *
+                                            </span>
+                                        </label>
+                                        <select class="form-control"
+                                                name="partner_id" id="partner_id" placeholder="Event Coordinator *">
+                                            <!--                                                <option value="0"></option>-->
+                                            <t t-foreach="coordinateurs or []"
+                                               t-as="partner_id">
+                                                <option t-att-value="partner_id.id">
+                                                    <t t-esc="partner_id.name"/>
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+<!--                                    <div class="form-group col-12">-->
+<!--                                        <div class="form-row">-->
+<!--                                            <label class="mb-1 text-primary"-->
+<!--                                                   for="partner_email">-->
+<!--                                                <span class="font-weight-bold">-->
+<!--                                                    Email *-->
+<!--                                                </span>-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                        <div>-->
+<!--                                            <input type="text" name="partner_email"-->
+<!--                                                       id="partner_email"-->
+<!--                                                       class="form-control"-->
+<!--                                                       placeholder="Email *"-->
+
+<!--                                                        />-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 text-primary"
+                                               for="deptartment_id">
+                                            <span class="font-weight-bold">
+                                                Department
+                                            </span>
+                                        </label>
+                                        <select class="form-control"
+                                                name="deptartment_id" id="deptartment_id" placeholder="Department">
+                                            <!--                                                <option value="0"></option>-->
+                                            <t t-foreach="departments or []"
+                                               t-as="deptartment_id">
+                                                <option t-att-value="deptartment_id.id">
+                                                    <t t-esc="deptartment_id.name"/>
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 text-primary"
+                                               for="date_start">
+                                            <span class="font-weight-bold">
+                                                Start *
+                                            </span>
+                                        </label>
+                                        <div>
+                                            <input type="datetime-local" name="date_start" id="date_start"
+                                                   placeholder="Start *"
+                                                   class="form-control"
+                                                   t-att-value="date_start"
+                                                    required="True"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 text-primary"
+                                               for="duration">
+                                            <span class="font-weight-bold">
+                                                Duration (in hours) *
+                                            </span>
+                                        </label>
+                                        <div>
+                                            <input type="number" name="duration"
+                                                       id="duration"
+                                                       class="form-control"
+                                                       placeholder="Duration (in hours) *"
+                                                        required="True"
+                                                        />
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 text-primary"
+                                               for="room_id">
+                                            <span class="font-weight-bold">
+                                                Event location
+                                            </span>
+                                        </label>
+                                        <select class="form-control"
+                                                name="room_id" id="room_id" placeholder="Department">
+                                            <!--                                                <option value="0"></option>-->
+                                            <t t-foreach="rooms or []"
+                                               t-as="room_id">
+                                                <option t-att-value="room_id.id">
+                                                    <t t-esc="room_id.name"/>
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+<!--                                    <div class="form-group col-12">-->
+<!--                                        <div class="form-row">-->
+<!--                                            <label class="mb-1 text-primary"-->
+<!--                                                   for="company">-->
+<!--                                                <span class="font-weight-bold">-->
+<!--                                                    Company *-->
+<!--                                                </span>-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                        <div>-->
+<!--                                            <input type="text" name="company"-->
+<!--                                                       id="company"-->
+<!--                                                       class="form-control"-->
+<!--                                                       placeholder="Company *"-->
+
+<!--                                                        />-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                    <div class="form-group col-12">
+                                        <div class="form-row">
+                                            <label class="mb-1 text-primary"
+                                                   for="meeting_link">
+                                                <span class="font-weight-bold">
+                                                    Meeting link / comment *
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <input type="text" name="meeting_link"
+                                                       id="meeting_link"
+                                                       class="form-control"
+                                                       placeholder="Meeting link / comment *"
+
+                                                        />
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <div class="form-row">
+                                            <label class="mb-1 text-primary"
+                                                   for="company">
+                                                <span class="font-weight-bold">
+                                                     IT requirements
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6">
+                                               <input type="checkbox" name="data_uploading"
+                                                       id="data_uploading"
+                                                       />
+                                                <label class="mb-1" for="data_uploading">
+                                                    <span class="font-weight-bold">
+                                                        Data uploading
+                                                    </span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group col-6">
+                                               <input type="checkbox" name="meeting_zoom_link"
+                                                       id="meeting_zoom_link"
+                                                       />
+                                                <label class="mb-1" for="meeting_zoom_link">
+                                                    <span class="font-weight-bold">
+                                                        Meeting zoom link
+                                                    </span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group col-6">
+                                               <input type="checkbox" name="registration_link"
+                                                       id="registration_link"
+                                                       />
+                                                <label class="mb-1" for="registration_link">
+                                                    <span class="font-weight-bold">
+                                                        Registration link
+                                                    </span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group col-6">
+                                               <input type="checkbox" name="video_recording"
+                                                       id="video_recording"
+                                                       />
+                                                <label class="mb-1" for="video_recording">
+                                                    <span class="font-weight-bold">
+                                                        Video recording
+                                                    </span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group col-6">
+                                               <input type="checkbox" name="video_conference_management"
+                                                       id="video_conference_management"
+                                                       />
+                                                <label class="mb-1" for="video_conference_management">
+                                                    <span class="font-weight-bold">
+                                                        Video-Conference management
+                                                    </span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group col-6">
+                                               <input type="checkbox" name="webinar_link"
+                                                       id="webinar_link"
+                                                       />
+                                                <label class="mb-1" for="webinar_link">
+                                                    <span class="font-weight-bold">
+                                                        Webinar link
+                                                    </span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group col-6">
+                                               <input type="checkbox" name="website_edition"
+                                                       id="website_edition"
+                                                       />
+                                                <label class="mb-1" for="website_edition">
+                                                    <span class="font-weight-bold">
+                                                        Website edition
+                                                    </span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group col-6">
+                                               <input type="checkbox" name="waiting_room"
+                                                       id="waiting_room"
+                                                       />
+                                                <label class="mb-1" for="waiting_room">
+                                                    <span class="font-weight-bold">
+                                                        Waiting Room
+                                                    </span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group col-6">
+                                               <input type="checkbox" name="is_translation_arabic"
+                                                       id="is_translation_arabic"
+                                                       />
+                                                <label class="mb-1" for="is_translation_arabic">
+                                                    <span class="font-weight-bold">
+                                                        Translation Arabic
+                                                    </span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group col-6">
+                                               <input type="checkbox" name="is_translation_english"
+                                                       id="is_translation_english"
+                                                       />
+                                                <label class="mb-1" for="is_translation_english">
+                                                    <span class="font-weight-bold">
+                                                        Translation English
+                                                    </span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group col-6">
+                                               <input type="checkbox" name="is_translation_french"
+                                                       id="is_translation_french"
+                                                       />
+                                                <label class="mb-1" for="is_translation_french">
+                                                    <span class="font-weight-bold">
+                                                        Translation French
+                                                    </span>
+                                                </label>
+                                    </div>
+                                    <div class="form-group col-6"/>
+                                    <div class="form-group col-6 attendees_webinar">
+                                        <label class="mb-1 text-primary"
+                                               for="webinar_attendees">
+                                            <span class="font-weight-bold">
+                                                Webinar attendees
+                                            </span>
+                                        </label>
+                                        <div>
+                                            <input type="number" name="webinar_attendees"
+                                                       id="webinar_attendees"
+                                                       class="form-control"
+                                                       placeholder="Webinar attendees"
+                                                        />
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6 trans_services">
+                                        <label class="mb-1 text-primary"
+                                               for="deptartment_id">
+                                            <span class="font-weight-bold">
+                                                Translation services
+                                            </span>
+                                        </label>
+                                        <select class="form-control"
+                                                name="list_it_service" id="list_it_service" placeholder="Translation services">
+                                            <!--                                                <option value="0"></option>-->
+                                            <t t-foreach="list_it_services or []"
+                                               t-as="list_it_service">
+                                                <option t-att-value="list_it_service.id">
+                                                    <t t-esc="list_it_service.name"/>
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+<!--                                    <div class="form-group row form-field o_website_form_required">-->
+<!--                                        <div class="col-lg-3 col-md-4 text-right">-->
+<!--                                            <label class="col-form-label" for="partner_name">Your Name</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-lg-7 col-md-8">-->
+<!--                                            <input type="text" class="form-control o_website_form_input" name="partner_name" required="1"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group row form-field o_website_form_required">-->
+<!--                                        <div class="col-lg-3 col-md-4 text-right">-->
+<!--                                            <label class="col-form-label" for="partner_email">Your Email</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-lg-7 col-md-8">-->
+<!--                                            <input type='email' class='form-control o_website_form_input' name="partner_email" required="1"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group row form-field o_website_form_required">-->
+<!--                                        <div class="col-lg-3 col-md-4 text-right">-->
+<!--                                            <label class="col-form-label" for="name">Subject</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-lg-7 col-md-8">-->
+<!--                                            <input type="text" class="form-control o_website_form_input" name="name" required="1"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group row form-field">-->
+<!--                                        <div class="col-lg-3 col-md-4 text-right">-->
+<!--                                            <label class="col-form-label" for="description">Description</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-lg-7 col-md-8">-->
+<!--                                            <textarea class="form-control o_website_form_input" name="description"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group row form-field">-->
+<!--                                        <div class="col-lg-3 col-md-4 text-right">-->
+<!--                                            <label class="col-form-label" for="attachments">Attachment(s)</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-lg-7 col-md-8">-->
+<!--                                            <input type="file" name="attachments" class="form-control o_website_form_input" multiple="true" accept="image/*,application/pdf,video/*"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group row form-field d-none">-->
+<!--                                        <div class="col-lg-3 col-md-4">-->
+<!--                                            <label class="col-form-label" for="team_id">Team</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-lg-7 col-md-8">-->
+<!--                                            <input type="hidden" class="form-control o_website_form_input" name="team_id"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                    <br/>
+                                    <div class="form-group col-12">
+                                        <p class="alert alert-danger" t-if="error"
+                                           role="alert">
+                                            <t t-esc="error"/>
+                                        </p>
+                                    </div>
+                                    <div class="col">
+                                        <button type="submit"
+                                                class="btn btn-primary o_wprofile_submit_btn">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </form>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    </data>
+</odoo>

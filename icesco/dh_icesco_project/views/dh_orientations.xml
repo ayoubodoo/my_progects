@@ -1,0 +1,187 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="dh_icesco_orientations_form_view">
+        <field name="name">dh.orientations.form</field>
+        <field name="model">dh.orientations</field>
+        <field name="arch" type="xml">
+            <form string="الأهداف">
+                <sheet>
+                    <group col="2">
+                        <group>
+                            <field name="name"/>
+
+                            <field name="short_name" invisible="1"/>
+                            <field name="code" invisible="1"/>
+                        </group>
+                        <group>
+                            <div class="oe_read_only">
+<!--                                <label for="percentage_of_done"/>-->
+                                <field name="percentage_of_done" widget="percentpie" class="oe_read_only"/>
+                            </div>
+                        </group>
+                    </group>
+                    <group col="1">
+                        <group>
+                            <field name="strategic_indicator_ids" />
+<!--                            widget="many2many_tags"-->
+                        </group>
+                    </group>
+                    <group col="1">
+                        <group>
+                            <field name="pilliar_ids" />
+<!--                            widget="many2many_tags_link"-->
+
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_orientations_form_pilliars_view">
+        <field name="name">dh.orientations.pilliars.form</field>
+        <field name="model">dh.orientations</field>
+        <field name="arch" type="xml">
+            <form string="الأهداف">
+                <sheet>
+                    <group col="2">
+                        <group>
+                            <field name="name" readonly="1"/>
+                        </group>
+                     </group>
+                      <notebook>
+                            <page string="المحاور">
+                                <field name="pilliar_ids" context="{'default_orientation_id': active_id}">
+                                    <tree editable="bottom">
+<!--                                        <field name="orientation_id"/>-->
+                                        <field name="code" width="1"/>
+                                        <field name="name" width="1" string="المحور"/>
+                                        <field name="percentage_of_done_percent" width="1" string="نتائج المحاور" widget="percentage"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_orientations_form_operational_plan_view">
+        <field name="name">dh.orientations.operational.plan.form</field>
+        <field name="model">dh.orientations</field>
+        <field name="arch" type="xml">
+            <form string="الأهداف">
+                <sheet>
+                    <group col="2">
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="pilliar_ids" readonly="1"/>
+<!--                            widget="many2many_tags" -->
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="المؤشرات">
+                            <field name="strategic_indicator_ids" context="{'default_orientation_id': active_id}">
+                                <tree editable="bottom">
+<!--                                    <field name="orientation_id"/>-->
+                                    <field name="strategie" width="1" string="المؤشر الإستراتيجي"/>
+                                    <field name="rate_ratio" width="1" widget="progressbar"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_orientations_tree">
+      <field name="name">dh.orientations.tree</field>
+      <field name="model">dh.orientations</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+            <field name="code" width="1"/>
+            <field name="name" width="1"/>
+            <field name="pilliar_ids" width="1" widget="many2many_tags_link"/>
+
+            <field name ="percentage_of_done_percent"  width="1" widget="percentage"/>
+        </tree>
+      </field>
+    </record>
+             <record model="ir.ui.view" id="dh_icesco_orientations__kanban_">
+          <field name="name">dh.orientations.kanban</field>
+          <field name="model">dh.orientations</field>
+          <field name="arch" type="xml">
+              <kanban create="0">  <!--default_group_by="priority"-->
+                  <field name="name"/>
+                  <field name="code"/>
+                  <field name="percentage_of_done"/>
+                  <templates>
+                      <t t-name="kanban-box">
+                          <div class="oe_kanban_global_click">
+<!--                                                                     <div style="background-color:#fadb61;height:15px">-->
+
+                              <div t-attf-class="oe_kanban_content oe_kanban_details d-flex flex-column">
+                                     <div style="background-color:#338a8c;height:40px">
+                                  <div class="oe_kanban_global_click"
+                                             style="float:left!important;margin-left: 5px;margin-bottom: 10px;margin-top: 5px;">
+                                    <button name="view_show_pillars" type="object"
+                                            class="btn btn-primary oe_kanban_action oe_kanban_action_button"
+                                            style="background-color:#008484;">
+                                        <span style="font-size: 12px; color:white;">المحاور</span>
+                                    </button>
+                                      <button name="view_form_orientation" type="object"
+                                                class="btn btn-primary oe_kanban_action oe_kanban_action_button"
+                                                style="background-color:#008484;">
+                                            <span style="font-size: 12px; color:white;">التفاصيل</span>
+                                        </button>
+                                </div>
+                                </div>
+                                  <div class="row">
+                                      <div class="col-10">
+                                  <t t-if="record.name.raw_value">
+                                      <h2>
+                                          <strong style="text-align: justify;">
+                                              <field name="name"/>
+                                          </strong>
+                                      </h2>
+                                  </t>
+                                      </div>          <div  style="width:15%;" >
+                                  <t t-if="record.code.raw_value">
+                                      <h2>
+                                          <strong>
+                                              <field name="code"/>
+                                          </strong>
+                                      </h2>
+                                  </t>
+                                      </div>
+                                      </div>
+                                  <t t-if="record.percentage_of_done.raw_value != 0">
+                                      <ul style="list-style: none;">
+                                          <li class="dh_pie">
+                                              <field style="font-size: 0px;" name="percentage_of_done" widget="percentpie" nolabel="1"/>
+                                          </li>
+
+                                      </ul>
+                                  </t>
+
+                              </div>
+
+                          </div>
+                      </t>
+                  </templates>
+              </kanban>
+          </field>
+      </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_goals">
+      <field name="name">الأهداف</field>
+      <field name="res_model">dh.orientations</field>
+      <field name="view_mode">kanban,tree</field>
+        <field name="view_id" ref="dh_icesco_orientations__kanban_"/>
+    </record>
+
+  </data>
+</odoo>

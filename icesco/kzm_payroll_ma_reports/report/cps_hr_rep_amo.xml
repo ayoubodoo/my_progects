@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="etat_amo"
+            model="hr.payroll_ma"
+            string="ETAT AMO"
+            name="kzm_payroll_ma_reports.etat_amo_view"
+            file="kzm_payroll_ma_reports.etat_amo"
+            report_type="qweb-pdf">
+        </report>
+
+        <record id="paperformat_lowmargin_lan_amo" model="report.paperformat">
+            <field name="name">European A4 margin</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">5</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="etat_amo" model="ir.actions.report">
+            <field name="paperformat_id" ref="paperformat_lowmargin_lan_amo"/>
+        </record>
+
+        <template id="etat_amo_view">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.html_container">
+                    <div class="page article">
+                        <xpath expr="." position="inside">
+                            <link rel="stylesheet"
+                                  href="/kzm_payroll_ma_reports/static/src/css/etat_paie.css"/>
+                        </xpath>
+                        <table style="width:100%">
+                            <tr>
+                                <td style="width:33%;font-size:20px;vertical-align:top;">
+                                    <b>
+                                        <t t-esc="o.company_id.name"/>
+                                    </b>
+                                </td>
+                                <td style="width:34%;text-align:center;font-size:20px;vertical-align:top;">
+                                    <b>ETAT AMO</b>
+                                </td>
+                                <td style="width:33%;text-align:right;font-size:18px;">
+                                    <b>Période:
+                                        <t t-esc="o.period_id.name"/>
+                                    </b>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <table width="100%" class="tgamo">
+                            <thead style="border-bottom: 3px solid #676767">
+                                <tr style="background-color :#ccc">
+                                    <th style="text-align: center;font-weight: bold;font-size:15.5px;"
+                                        width="10%">N° CNSS
+                                    </th>
+                                    <th style="text-align: center;font-weight: bold;font-size:15.5px;"
+                                        width="10%">Matricule
+                                    </th>
+                                    <th style="text-align: center;font-weight: bold;font-size:15.5px;"
+                                        width="40%">Nom &amp; prénom
+                                    </th>
+                                    <th style="text-align: center;font-weight: bold;font-size:15.5px;"
+                                        width="15%">Salaire brut
+                                    </th>
+                                    <th style="text-align: center;font-weight: bold;font-size:15.5px;"
+                                        width="15%">AMO part salarial
+                                    </th>
+                                    <th style="text-align: center;font-weight: bold;font-size:15.5px;"
+                                        width="15%">AMO part patronal
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="total_brut" t-value="0"/>
+                                <t t-set="total_salarial" t-value="0"/>
+                                <t t-set="total_patronal" t-value="0"/>
+                                <t t-foreach="o.bulletin_line_ids" t-as="b">
+                                    <t t-foreach="b.salary_line_ids" t-as="l">
+                                        <tr t-if="l.name=='AMO'">
+                                            <td style="text-align: center;">
+                                                <span t-field="b.employee_id.ssnid"/>
+                                            </td>
+                                            <td style="text-align: center;">
+                                                <span
+                                                    t-field="b.employee_id.matricule"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="b.employee_id.name"/>
+                                            </td>
+                                            <td style="text-align: right;">
+                                                <span t-field="l.base"/>
+                                            </td>
+                                            <td style="text-align: right;">
+                                                <span t-field="l.subtotal_employee"/>
+                                            </td>
+                                            <td style="text-align: right;">
+                                                <span t-field="l.subtotal_employer"/>
+                                            </td>
+                                            <t t-set="total_brut"
+                                               t-value="total_brut + l.base"/>
+                                            <t t-set="total_salarial"
+                                               t-value="total_salarial + l.subtotal_employee"/>
+                                            <t t-set="total_patronal"
+                                               t-value="total_patronal + l.subtotal_employer"/>
+
+                                        </tr>
+                                    </t>
+                                </t>
+                            </tbody>
+                            <tfooter>
+                                <tr>
+                                    <th style="text-align: center;font-weight: bold;font-size:15.5px;background-color :#ccc"
+                                        colspan="3">
+                                        Total Salaires
+                                    </th>
+                                    <th style="text-align:right;font-weight: bold;">
+                                        <span t-esc="total_brut"/>
+                                    </th>
+                                    <th style="text-align:right;font-weight: bold;">
+                                        <span t-esc="total_salarial"/>
+                                    </th>
+                                    <th style="text-align:right;font-weight: bold; ">
+                                        <span t-esc="total_patronal"/>
+                                    </th>
+                                </tr>
+                            </tfooter>
+                        </table>
+                        <b><br/>Effectif :
+                            <t t-esc="len(o.bulletin_line_ids)"/>
+                        </b>
+                    </div>
+                    <div class="footer">
+                        <div class="row">
+                            <table style="width:100%">
+                                <tr>
+                                    <td style="width:38%">
+                                        Période :
+                                        <t t-esc="o.period_id.name"/>
+                                    </td>
+                                    <td style="width:24%;text-align:center">
+                                        <small>
+                                            <span>Page</span>
+                                            <span class="page"/>
+                                            sur
+                                            <span class="topage"/>
+                                        </small>
+                                    </td>
+                                    <td style="width:38%;text-align:right;">
+                                        Edité le:
+                                        <t t-esc="time.strftime('%d/%m/%Y %H:%M:%S')"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

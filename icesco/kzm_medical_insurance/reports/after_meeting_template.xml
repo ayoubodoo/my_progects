@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="after_meeting_menu_id"
+            model="medical.refund.request.run"
+            string="After Meeting"
+            name="kzm_medical_insurance.after_meeting_template_id"
+            file="kzm_medical_insurance.after_meeting_template_id"
+            report_type="qweb-pdf"/>
+    <template id="after_meeting_template_id">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="refund">
+                <div class="page article "
+                     style="font-size: 13px; !important;padding: 8px 8px 8px 8px !important;">
+                    <div class="row">
+                        <table >
+                            <tr>
+                                <td style="font-size:30px; !important">
+                                    <strong>After Meeting :
+                                        <span t-field="refund.date"
+                                              t-options='{"format": "yyyy-MM"}'/>
+                                    </strong>
+                                </td>
+                            </tr>
+                            <tr>
+                            </tr>
+                        </table>
+                        <br/>
+                        <br/>
+                    </div>
+
+                    <div class="row">
+                        <table class="table-bordered"  width="100%" style="padding:4px;font-size:14pt;">
+                            <tr>
+                                <th align="center" class="align-middle text-center"
+                                      width="40%">
+                                    <strong>Adherant</strong>
+                                </th>
+                                <th align="center" class="align-middle text-center"
+                                     width="30%">
+                                    <strong>Current Areear</strong>
+                                </th>
+                                <th align="center" class="align-middle text-center"
+                                    width="30%">
+                                    <strong>Total Refund</strong>
+                                </th>
+                            </tr>
+                            <tr t-foreach='refund.after_meeting_data()' t-as='request'>
+                                <td
+                                    class="align-middle text-center text-uppercase">
+                                    <t t-esc="request[0].display_name"/>
+                                </td>
+                                <td
+                                    class="align-middle text-center">
+                                    <t t-esc="'{0:.2f}'.format(request[2])"/>
+                                </td>
+                                <td
+                                    class="align-middle text-center">
+                                    <t t-esc="'{0:.2f}'.format(request[1])"/>
+                                </td>
+                            </tr>
+                             <td
+                                    class="align-middle text-center">
+                                    Total :
+                                </td>
+                                <td
+                                    class="align-middle text-center">
+                                    <t t-esc="'{0:.2f}'.format(refund.sum_total_arrear)"/>
+                                </td>
+                                <td
+                                    class="align-middle text-center">
+                                    <t t-esc="'{0:.2f}'.format(refund.sum_real_total_to_refund)"/>
+                                </td>
+                            <style>
+                                tr:nth-child(even) {
+                                  background-color: #f2f2f2;
+                                }
+                            </style>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

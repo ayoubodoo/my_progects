@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dh_flag_reference_form">
+            <field name="name">dh.flag.reference.form</field>
+            <field name="model">dh.flag.reference</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="hex"/>
+                            <field name="rgb"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_flag_reference_tree">
+            <field name="name">dh.flag.reference.tree</field>
+            <field name="model">dh.flag.reference</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                     <field name="hex"/>
+                            <field name="rgb"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="dh_flag_reference_action" model="ir.actions.act_window">
+            <field name="name">National Days</field>
+            <field name="res_model">dh.flag.reference</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p>Add a national Day</p>
+        </field>
+        </record>
+    </data>
+</odoo>

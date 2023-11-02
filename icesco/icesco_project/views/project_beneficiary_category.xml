@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="kzm_project_beneficiary_category">
+            <field name="name">cps.project.beneficiary.category.form</field>
+            <field name="model">project.beneficiary.category</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="kzm_project_beneficiary_category_tree">
+            <field name="name">cps.project.beneficiary.category.tree</field>
+            <field name="model">project.beneficiary.category</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="kzm_project_beneficiary_category_action"
+                model="ir.actions.act_window">
+            <field name="name">Category</field>
+            <field name="res_model">project.beneficiary.category</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

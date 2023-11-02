@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="mail_activity_type_form_add_membert" model="ir.ui.view">
+        <field name="name">mail.activity.type.form</field>
+        <field name="model">mail.activity.type</field>
+        <field name="inherit_id" ref="mail.mail_activity_type_view_form"/>
+        <field name="arch" type="xml">
+            <field name="decoration_type" position="after">
+                <field name="add_notification_mail"/>
+            </field>
+        </field>
+    </record>
+</odoo>

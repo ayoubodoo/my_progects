@@ -1,0 +1,375 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* kzm_hr_loan
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-04 16:58+0000\n"
+"PO-Revision-Date: 2020-11-04 16:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: kzm_hr_loan
+#: model:ir.ui.menu,name:kzm_hr_loan.hr_loan_root_all
+msgid "All"
+msgstr "Tous"
+
+#. module: kzm_hr_loan
+#: model:ir.actions.act_window,name:kzm_hr_loan.all_requests_action
+msgid "All Requests"
+msgstr "Toutes Les Demandes"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__approbation_date
+msgid "Approbation Date"
+msgstr "Date d'approbation"
+
+#. module: kzm_hr_loan
+#: model_terms:ir.ui.view,arch_db:kzm_hr_loan.view_hr_loan_form
+msgid "Approve"
+msgstr "Approuver"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields.selection,name:kzm_hr_loan.selection__hr_loan__state__approved
+msgid "Approved"
+msgstr "Approuvé"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__balance
+msgid "Balance"
+msgstr "Balance"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_line__capital_amount
+msgid "Capital Amount"
+msgstr "Capital"
+
+#. module: kzm_hr_loan
+#: model_terms:ir.ui.view,arch_db:kzm_hr_loan.view_hr_loan_form
+msgid "Close"
+msgstr "Cloturer"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields.selection,name:kzm_hr_loan.selection__hr_loan__state__closed
+msgid "Closed"
+msgstr "Cloturé"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_type__code
+msgid "Code"
+msgstr "Code"
+
+#. module: kzm_hr_loan
+#: model_terms:ir.actions.act_window,help:kzm_hr_loan.hr_loan_action
+msgid "Create a new Loan"
+msgstr "Créer une nouvelle demande"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__create_uid
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_line__create_uid
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_type__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__create_date
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_line__create_date
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_type__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__date
+msgid "Date"
+msgstr "Date"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__date_start
+msgid "Date Start"
+msgstr "Date de début"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__display_name
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_line__display_name
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_type__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__done
+msgid "Done"
+msgstr "Terminé"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields.selection,name:kzm_hr_loan.selection__hr_loan__state__draft
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__duration
+msgid "Duration(Mounth)"
+msgstr "Durée(Mois)"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__employee_id
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_line__employee_id
+msgid "Employee"
+msgstr "Employé"
+
+#. module: kzm_hr_loan
+#: code:addons/kzm_hr_loan/models/hr_loan.py:0
+#, python-format
+msgid "Error! Loan date request must be less than loan date start."
+msgstr "Erreur! La date du prêt doit être inférieure à la date d’exécution."
+
+#. module: kzm_hr_loan
+#: model_terms:ir.ui.view,arch_db:kzm_hr_loan.view_hr_loan_form
+msgid "Generate Lines"
+msgstr "Générer Les Lignes"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__id
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_line__id
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_type__id
+msgid "ID"
+msgstr ""
+
+#. module: kzm_hr_loan
+#: model:ir.model.constraint,message:kzm_hr_loan.constraint_hr_loan_CHECK_POSITIV_DURATION
+msgid "Incorrect duration value!"
+msgstr "Mauvaise valeur pour le champs Durée !"
+
+#. module: kzm_hr_loan
+#: model:ir.model.constraint,message:kzm_hr_loan.constraint_hr_loan_CHECK_POSITIV_AMOUNT
+msgid "Incorrect loan amount value!"
+msgstr "Mauvaise valeur pour le champs Montant Prêt."
+
+#. module: kzm_hr_loan
+#: model_terms:ir.ui.view,arch_db:kzm_hr_loan.view_hr_loan_form
+msgid "Information"
+msgstr "Information"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_line__int_amount
+msgid "Interest Amount"
+msgstr "Montant Intérêt"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__is_user
+msgid "Is User"
+msgstr "Est un utilisateur"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_line__krd
+msgid "KRD"
+msgstr "KRD"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__loan_company
+msgid "Laon Company"
+msgstr "Prêt Société"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__line_ids
+msgid "Laon lines"
+msgstr "Amortissement"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan____last_update
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_line____last_update
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_type____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__write_uid
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_line__write_uid
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_type__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__write_date
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_line__write_date
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_type__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_line__total_amount
+msgid "Line Amount"
+msgstr "Mensualité"
+
+#. module: kzm_hr_loan
+#: model:ir.actions.act_window,name:kzm_hr_loan.hr_loan_action
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_line__loan_id
+#: model_terms:ir.ui.view,arch_db:kzm_hr_loan.view_hr_loan_form
+msgid "Loan"
+msgstr "prêt"
+
+#. module: kzm_hr_loan
+#: model:ir.model,name:kzm_hr_loan.model_hr_loan
+msgid "Loan & Advance"
+msgstr "Prêts et Avances"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__loan_amount
+msgid "Loan Amount"
+msgstr "Montant du prêt"
+
+#. module: kzm_hr_loan
+#: model:ir.model,name:kzm_hr_loan.model_hr_loan_line
+msgid "Loan Lines"
+msgstr "Amortissement"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__type_id
+msgid "Loan Type"
+msgstr "Types de prêt"
+
+#. module: kzm_hr_loan
+#: model:ir.model,name:kzm_hr_loan.model_hr_loan_type
+msgid "Loan Types"
+msgstr "Types de prêt"
+
+#. module: kzm_hr_loan
+#: model_terms:ir.ui.view,arch_db:kzm_hr_loan.view_hr_loan_tree
+msgid "Loans & Advances"
+msgstr "Prêts et Avances"
+
+#. module: kzm_hr_loan
+#: model:ir.ui.menu,name:kzm_hr_loan.hr_loan_root
+msgid "Loans And Advances"
+msgstr "Prêts et Avances"
+
+#. module: kzm_hr_loan
+#: model:ir.actions.act_window,name:kzm_hr_loan.my_requests_action
+#: model:ir.ui.menu,name:kzm_hr_loan.hr_loan_root_my_requests
+msgid "My Requests"
+msgstr "Mes Demandes"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__name
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_type__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__notes
+#: model_terms:ir.ui.view,arch_db:kzm_hr_loan.view_hr_loan_form
+msgid "Notes"
+msgstr "Notes"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_line__number
+msgid "Number"
+msgstr "Numéro"
+
+#. module: kzm_hr_loan
+#: model_terms:ir.ui.view,arch_db:kzm_hr_loan.view_hr_loan_form
+msgid "Other"
+msgstr "Autre"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_line__paid
+msgid "Paid"
+msgstr "Payé"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__principal_home
+msgid "Principal Home Loan"
+msgstr "Prêt Habitat principal"
+
+#. module: kzm_hr_loan
+#: model_terms:ir.ui.view,arch_db:kzm_hr_loan.view_hr_loan_form
+#: model_terms:ir.ui.view,arch_db:kzm_hr_loan.view_hr_loan_search
+msgid "Principal home loan"
+msgstr "Prêt Habitat principal"
+
+#. module: kzm_hr_loan
+#: model_terms:ir.ui.view,arch_db:kzm_hr_loan.view_hr_loan_form
+msgid "Reject"
+msgstr "Rejeter"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields.selection,name:kzm_hr_loan.selection__hr_loan__state__rejected
+msgid "Rejected"
+msgstr "Rejeté"
+
+#. module: kzm_hr_loan
+#: model_terms:ir.ui.view,arch_db:kzm_hr_loan.view_hr_loan_form
+msgid "Reset To Draft"
+msgstr "Mettre en Brouillon"
+
+#. module: kzm_hr_loan
+#: model_terms:ir.ui.view,arch_db:kzm_hr_loan.view_hr_loan_search
+msgid "Search Loan"
+msgstr ""
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__state
+msgid "State"
+msgstr "Status"
+
+#. module: kzm_hr_loan
+#: model_terms:ir.ui.view,arch_db:kzm_hr_loan.view_hr_loan_form
+msgid "Submit"
+msgstr "soumettre"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields.selection,name:kzm_hr_loan.selection__hr_loan__state__submited
+msgid "Submited"
+msgstr "Soumis"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__interest_tax
+msgid "Tax %"
+msgstr "Tax %"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_line__tax_amount
+msgid "Tax Amount"
+msgstr "Montant TVA"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__int_taxed
+msgid "Taxed Interest rate %"
+msgstr "Taux TTC %"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__term_amount
+msgid "Term Amount"
+msgstr "Annuité"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan_line__line_date
+msgid "Term Date"
+msgstr "Date Echéance"
+
+#. module: kzm_hr_loan
+#: model:ir.actions.act_window,name:kzm_hr_loan.to_approve_requests_action
+#: model:ir.ui.menu,name:kzm_hr_loan.hr_loan_root_to_approve
+msgid "To Approve"
+msgstr "A Approuver"
+
+#. module: kzm_hr_loan
+#: code:addons/kzm_hr_loan/models/hr_loan.py:0
+#, python-format
+msgid "Warning! Employee shoud have one principal home loan."
+msgstr "Attention! Un seul prêt Habitat principal par employée est autorisé"
+
+#. module: kzm_hr_loan
+#: model:ir.model,name:kzm_hr_loan.model_hr_payroll_ma_bulletin
+msgid "bulletin"
+msgstr "Bulletin"
+
+#. module: kzm_hr_loan
+#: model:ir.model.fields,field_description:kzm_hr_loan.field_hr_loan__int_untaxed
+msgid "untaxed Interest rate %"
+msgstr "Taux d'intérêt non imposé%"

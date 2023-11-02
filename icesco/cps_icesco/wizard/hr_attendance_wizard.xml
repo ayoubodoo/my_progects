@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="hr_attendance_form_wizard_post">
+        <field name="name">hr.attendance.wizard.form</field>
+        <field name="model">hr.attendance.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <sheet>
+                <group>
+                    <field name="check_in"/>
+                    <field name="check_out"/>
+                    <field name="horaire_id"/>
+                </group>
+            </sheet>
+
+            <footer>
+                    <button string="Modifier" name="write_in_attendance" type="object"/>
+                    <button special="cancel" string="Annuler"/>
+            </footer>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_attendance_form_wizard">
+        <field name="name">Présence wizard Action</field>
+        <field name="res_model">hr.attendance.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="hr_attendance_form_wizard_post"/>
+    </record>
+
+    <record id="action_cps_hr_attendance" model="ir.actions.server">
+        <field name="name">Modifier Présences</field>
+        <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+        <field name="binding_model_id" ref="hr_attendance.model_hr_attendance"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+            if records:
+                action_values = env.ref('cps_icesco.action_hr_attendance_form_wizard').read()[0]
+                action_values.update({'context': env.context})
+                action = action_values
+        </field>
+    </record>
+
+
+</odoo>

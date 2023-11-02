@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <report
+            id="dh_depense_caisse"
+            model="account.payment"
+            string="Pièce de Dèpense Caisse "
+            report_type="qweb-pdf"
+            name="cps_icesco.dh_depense_caisse_repport"
+            file="cps_icesco.dh_depense_caisse_repport"
+
+
+    />
+    <template id="dh_depense_caisse_repport">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <!--                <t t-call="web.external_layout">-->
+                <div class="page article">
+
+                    <div class="header" style="padding-bottom:7%">
+                        <div class="row " style="font-size:16px;">
+                            <div class="col-4 text-center">
+                                <div>
+                                    <img src="cps_icesco/static/src/img/logo.jpg"
+                                         style="width:130px;height:210px;float:center;padding-bottom:7%"/>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-4 center text-center" style="font-size:18px;">
+<strong>
+                                Pièce de Dèpense Caisse
+                                <br/>
+
+
+                                مستند أداء من الصندوق
+                                <br/>
+                                ARAB BANK DOLLARS
+
+</strong>
+                            </div>
+                            <div class="col-4 text-right">
+
+
+                                Exercice   السنة المالية
+
+                                <br/>
+
+ <span t-esc="datetime.datetime.now().strftime('%Y')"/>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <div style="padding-top:10%">
+
+
+                        <div class="row">
+                            <div class="row col-6">
+                                <div class="col-4">
+                                    Date d'opération :
+                                    <br/>
+                                    Le cours chg. USD
+                                    <br/>
+                                     №  Cpte. Comptable
+                                </div>
+                                <div class="col-4">
+                                    <span t-field="o.payment_date"/>
+                                    <br/>
+<!--                                                                        <span t-field="payment_date"/>-->
+<br/>
+<!--                                                                <span t-field="payment_date"/>-->
+
+                                </div>
+                                <div class="col-4 text-right">
+                                    تاريخ العملية :
+                                    <br/>
+                                    سعر الصرف
+                                    <br/>
+                                    رقم الحساب
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="row col-6">
+                                <div class="col-4">
+                                    N de pièce :
+                                    <br/>
+                                    La devise
+                                    <br/>
+                                    Journal
+                                </div>
+                                <div class="col-4">
+<!--                                                                        <span t-field="o.currency_id"/>-->
+                                    <br/>
+                                                                                                            <span t-field="o.currency_id"/><br/>
+                                                                                                            <span t-field="o.journal_id.display_name"/>
+
+
+
+                                </div>
+                                <div class="col-4">
+                                    رقم الوثيقة
+
+                                    <br/>
+                                    العملة
+                                    <br/>
+                                    القن
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-3">
+                                Le Bénéficiaire
+                                <br/>
+                                <br/>
+
+
+                                <br/>
+                                L'objet
+                            </div>
+                            <div class="col-6">
+                                <div class="text-center"
+                                     style="border:1px solid black;width:100%;height:60px!important;padding-bottom:3%">
+
+                                <span t-field="o.destination_journal_id.display_name"/>
+                                </div>
+                                <br/>
+                                <br/>
+
+                                <div class="text-center"
+                                     style="border:1px solid black;width:100%;height:60px!important;padding-top:3%">
+
+                                                                <span t-field="o.communication"/>
+
+                                </div>
+                                <!--                                <div class="text-center"-->
+                                <!--                                     style="border:1px solid black;width:30%;height:30px!important;float:right;padding-bottom:3%">-->
+                                <!--                                </div>-->
+
+                            </div>
+                            <div class="col-3 text-right">
+                                المستفيد
+                                <br/>
+                                <br/>
+                                <br/>
+
+                                الموضوع
+
+
+                            </div>
+
+                        </div>
+
+                        <div style="padding-top:4%">
+                            <table class="text-center" style="border: 1px solid;width:100%;background-color:#A8F9BC">
+
+                                <tr style="border: 1px solid">
+
+
+                                    <th style="border: 1px solid">Code Partenaire
+                                        <br/>
+                                        القن
+                                    </th>
+                                    <th style="border: 1px solid;">Partenaire
+                                        <br/>
+                                        المستفيد
+                                    </th>
+                                    <th style="border: 1px solid;">Dépenses/Recettes
+                                        <br/>
+                                        نوعية الصرف/إدخال
+
+
+                                    </th>
+                                    <th style="border: 1px solid;">Programme
+                                        <br/>
+
+                                        الإنجاز
+
+                                    </th>
+                                    <th style="border: 1px solid;">Montant<br/>المبلغ
+                                    </th>
+
+
+                                </tr>
+
+                                <tr>
+                                    <th style="border: 1px solid">
+                                        <t-field name="o.name"/>
+                                    </th>
+                                    <th style="border: 1px solid;">
+                                                                                <t-field name="o.name"/>
+
+                                    </th>
+                                    <th style="border: 1px solid;">
+                                        <t-field name="o.name"/>
+
+                                    </th>
+                                    <th style="border: 1px solid;">                                        <t-field name="o.name"/>
+
+
+                                    </th>
+                                    <th style="border: 1px solid;">
+                                                                                <t-field name="o.name"/>
+
+                                    </th>
+
+
+                                </tr>
+                            </table>
+
+                        </div>
+
+                        <div style="padding-top:4%">
+                              <table style="float:right;background-color:#A8F9BC">
+                                <tr>
+                                    <th style="border: 1px solid;width:70%">
+                                        Total      المجموع      MAD
+                                    </th>
+                                    <th style="border: 1px solid;width:30%">
+                                        1000000000
+                                    </th>
+                                </tr>
+
+
+                            </table>
+                            <br/>
+                            <br/>
+                           <strong> <span style="float:right;text-decoration: underline;">Total USD    المجموع بالدولار
+
+                                        <t-field name="o.name"/>
+
+                            </span></strong>
+                            <br/>
+
+                        </div>
+                        <br/>
+                        <div
+                                style="padding-top:4%;padding-bottom:4%;border:1px solid black;width:100%;height:70px!important;padding-bottom:3%">
+                              <span> Arretée la présente pièce à la somme de : </span>                                        <t-field name="o.name"/>
+                        </div>
+                        <div style="padding-top:4%">
+                            <span><strong>Signatures</strong></span>
+                            <span style="float:right"><strong>التوقيعات</strong></span>
+                        </div>
+                        <div style="padding-top:1%">
+                                                    <div class="row" style="padding-top:5%;padding-left:5%;">
+                            <t t-if="o.senario == 's1' ">
+                                <div class="col-4">
+
+                                    <span class="text-center">
+                                        Responsable de la DA
+                                        <br/>
+                                        Mme Jihane El Assimi
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_supperviseur_affairs_financiere"
+                                         t-att-src="image_data_uri(o.signature_supperviseur_affairs_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                                <div class="col-4">
+
+
+                                    <span class="text-center">
+                                        Le Contrôleur financier
+                                        <br/>
+                                        Mme Khadija Sadrati
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_controlleur_financiere"
+                                         t-att-src="image_data_uri(o.signature_controlleur_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                                <div class="col-4" style="float:right">
+
+                                    Le Directeur général
+                                    <br/>
+
+                                    Dr. Salim M. AlMalik
+                                    <br/>
+                                    <img t-if="o.signature_dg" t-att-src="image_data_uri(o.signature_dg)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                            </t>
+                            <t t-if="o.senario == 's2' ">
+                                <div class="col-4">
+
+                                    <span class="text-center">
+                                        Le Directeur général Adjoint
+                                        <br/>
+                                        Dr. Abdellah Benaurafa
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_dg_adjoint"
+                                         t-att-src="image_data_uri(o.signature_dg_adjoint)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                                <div class="col-4">
+
+
+                                    <span class="text-center">
+                                        Le Contrôleur financier
+                                        <br/>
+                                        Mme Khadija Sadrat
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_controlleur_financiere"
+                                         t-att-src="image_data_uri(o.signature_controlleur_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                                <div class="col-4" style="float:right">
+
+                                    Superviseur des affairs financières
+                                    <br/>
+
+                                    Dr. Salim M. AlMalik
+                                    <br/>
+                                    <img t-if="o.signature_dg" t-att-src="image_data_uri(o.signature_dg)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                            </t>
+                            <t t-if="o.senario == 's3' ">
+                                <div class="col-4">
+
+                                    <span class="text-center">
+                                        Responsable de la DA
+                                        <br/>
+                                        Mme Jihane El Assimi
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_supperviseur_affairs_financiere"
+                                         t-att-src="image_data_uri(o.signature_supperviseur_affairs_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+
+                                <div class="col-4">
+                                </div>
+                                <div class="col-4">
+
+
+                                    <span class="text-center">
+                                        Le Contrôleur financier
+                                        <br/>
+                                        Mme Khadija Sadrat
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_controlleur_financiere"
+                                         t-att-src="image_data_uri(o.signature_controlleur_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                            </t>
+                            <t t-if="o.senario == 's4' ">
+                                <div class="col-4">
+
+                                    <span class="text-center">
+                                        Responsable de la DA
+                                        <br/>
+                                        Mme Jihane El Assimi
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_supperviseur_affairs_financiere"
+                                         t-att-src="image_data_uri(o.signature_supperviseur_affairs_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+
+                                <div class="col-4">
+                                </div>
+                                <div class="col-4" style="float:right">
+
+                                    Le Directeur général
+                                    <br/>
+
+                                    Dr. Salim M. AlMalik
+                                    <br/>
+                                    <img t-if="o.signature_dg" t-att-src="image_data_uri(o.signature_dg)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                            </t>
+                            <t t-if="o.senario == 's5' ">
+                                <div class="col-4">
+
+
+                                    <span class="text-center">
+                                        Le Contrôleur financier
+                                        <br/>
+                                        Mme Khadija Sadrat
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_controlleur_financiere"
+                                         t-att-src="image_data_uri(o.signature_controlleur_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+
+                                <div class="col-4">
+                                </div>
+                                <div class="col-4">
+
+                                    <span class="text-center">
+                                        Le Directeur général Adjoint
+                                        <br/>
+                                        Dr. Abdellah Benaurafa
+
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_dg_adjoint"
+                                         t-att-src="image_data_uri(o.signature_dg_adjoint)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                            </t>
+                            <t t-if="o.senario == 's6' ">
+                                <div class="col-4" style="float:right">
+
+                                    Superviseur des affairs financières
+                                    <br/>
+
+                                    Dr. Salim M. AlMalik
+                                    <br/>
+                                    <img t-if="o.signature_supperviseur_affairs_financiere"
+                                         t-att-src="image_data_uri(o.signature_supperviseur_affairs_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+
+                                <div class="col-4">
+                                </div>
+                                <div class="col-4">
+
+                                    <span class="text-center">
+                                        Responsable de la DA
+                                        <br/>
+                                        Dr. Abdellah Benaurafa
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_dg_adjoint"
+                                         t-att-src="image_data_uri(o.signature_dg_adjoint)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                            </t>
+                            <t t-if="o.senario == 's7' ">
+                                <div class="col-4">
+
+
+                                    <span class="text-center">
+                                        Le Contrôleur financier
+                                        <br/>
+                                        Mme Khadija Sadrat
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_controlleur_financiere"
+                                         t-att-src="image_data_uri(o.signature_controlleur_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+
+                                <div class="col-4">
+                                </div>
+                                <div class="col-4" style="float:right">
+
+                                    Le Directeur général
+                                    <br/>
+
+                                    Dr. Salim M. AlMalik
+                                    <br/>
+                                    <img t-if="o.signature_dg" t-att-src="image_data_uri(o.signature_dg)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                            </t>
+
+                        </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

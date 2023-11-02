@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <menuitem
+        id="dh_notifications"
+        name="Notifications"
+        parent="hr.menu_human_resources_configuration"
+        sequence="2"/>
+
+    <record id="dh_mail_activity_action" model="ir.actions.act_window">
+        <field name="name">Activities</field>
+        <field name="res_model">mail.activity</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('model_add_notification_mail', '=', True), ('type_add_notification_mail', '=', True)]</field>
+    </record>
+
+    <menuitem
+        id="dh_all_notifications"
+        name="Notifications"
+        action="dh_mail_activity_action"
+        parent="dh_notifications"
+        sequence="1"/>
+
+    <record id="action_server_backup" model="ir.actions.server">
+        <field name="name">Sent Mail</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="mail.model_mail_activity"/>
+        <field name="binding_model_id" ref="mail.model_mail_activity"/>
+        <field name="state">code</field>
+        <field name="code">records.dh_send_mail()</field>
+    </record>
+
+    <record id="action_server_hr_employee_allocation" model="ir.actions.server">
+        <field name="name">Allocations disponibles</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="hr.model_hr_employee"/>
+        <field name="binding_model_id" ref="hr.model_hr_employee"/>
+        <field name="state">code</field>
+        <field name="code">records.dh_allocation_employee()</field>
+    </record>
+
+    <record id="mail_activity_view_form_popup_inherit" model="ir.ui.view">
+
+        <field name="name">mail.activity.form.inherit.calendar</field>
+        <field name="model">mail.activity</field>
+        <field name="inherit_id" ref="mail.mail_activity_view_form_popup"/>
+
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+
+                <field name="multiple_users" widget="many2many_tags" string="Additional Assignees"/>
+
+
+            </xpath>
+
+
+        </field>
+
+
+    </record>
+
+    <!--    -->
+    <!--    <div class="oe_chatter">-->
+    <!--<field name="message_follower_ids"/>-->
+    <!--<field name="activity_ids"/>-->
+    <!--<field name="message_ids" options="{'post_refresh': 'recipients'}"/>-->
+    <!--</div>-->
+    <record id="act_hr_employee_holiday_request_current_year" model="ir.actions.server">
+        <field name="name">Time off Analysis This year</field>
+        <field name="model_id" ref="hr_holidays.model_hr_leave_report"/>
+        <field name="binding_model_id" ref="hr.model_hr_employee"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_time_off_analysis_current_year()
+        </field>
+    </record>
+
+    <record id="hr_holidays.view_hr_holidays_filter_report" model="ir.ui.view">
+        <field name="name">hr.holidays.filter</field>
+        <field name="model">hr.leave.report</field>
+        <field name="arch" type="xml">
+            <search string="Search Time Off">
+                <field name="name"/>
+                <filter domain="[('state','in',('confirm','validate1'))]" string="To Approve" name="approve"/>
+                <filter string="Approved Requests" domain="[('state', '=', 'validate')]" name="validated"/>
+                <separator/>
+                <filter name="active_types" string="Active Types" domain="[('holiday_status_id.active', '=', True)]" help="Filters only on requests that belong to an time off type that is 'active' (active field is True)"/>
+                <separator/>
+                <filter string="My Department Time Off" name="department" domain="[('department_id.manager_id.user_id', '=', uid)]" help="My Department Time Off"/>
+                <filter name="my_team_leaves" string="My Team Time Off" domain="[('employee_id.parent_id.user_id', '=', uid)]" groups="hr_holidays.group_hr_holidays_manager" help="Time Off of Your Team Member"/>
+                <separator/>
+                <filter string="To Report in Payslip" name="gray" domain="[('payslip_status', '=', False)]" groups="hr_holidays.group_hr_holidays_manager"/>
+                <separator/>
+                <filter string="To Do" name="todo" domain="[('payslip_status', '=', False), ('holiday_status_id.active', '=', True)]"/>
+                <separator/>
+                <filter name="year" string="Années"
+                    domain="['|', '&amp;', '&amp;', ('date_from', '!=', False), ('date_from', '&gt;=', (context_today()-relativedelta(months=12)).strftime('%Y-01-01')), ('date_to', '&lt;=', context_today().strftime('%Y-12-31')), '&amp;', '&amp;', ('date_from', '=', False), ('validity_start', '&gt;=', (context_today()-relativedelta(months=12)).strftime('%Y-01-01')), ('validity_stop', '&lt;=', context_today().strftime('%Y-12-31'))]" help="Active Time Off"/>
+                <separator/>
+                <filter string="My Requests" name="my_leaves" domain="[('employee_id.user_id', '=', uid)]"/>
+                <separator/>
+                <field name="employee_id"/>
+                <field name="department_id" operator="child_of"/>
+                <field name="holiday_status_id"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_name" string="Description" context="{'group_by':'name'}"/>
+                    <filter name="group_employee" string="Employee" context="{'group_by':'employee_id'}"/>
+                    <filter name="group_category" string="Category" context="{'group_by':'category_id'}"/>
+                    <filter name="group_type" string="Type" context="{'group_by':'holiday_status_id'}"/>
+                    <separator/>
+                    <filter name="group_date_from" string="Start Date" context="{'group_by':'date_from'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="dh_cps_salary_form_form" model="ir.ui.view">
+        <field name="name">hr.payroll_ma.bulletin.form</field>
+        <field name="model">hr.payroll_ma.bulletin</field>
+        <field name="inherit_id" ref="kzm_payroll_ma.salary_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="after">
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <record id="dh_cps_salary_form2" model="ir.ui.view">
+        <field name="name">hr.payroll_man.form</field>
+        <field name="model">hr.payroll_ma</field>
+        <field name="inherit_id" ref="kzm_payroll_ma.hr_payroll_ma_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="after">
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="cps_view_employee_form" model="ir.ui.view">
+        <field name="name">hr.employee.cps.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='passport_id']" position="before">
+                <field name="date_passeport_exp"/>
+
+            </xpath>
+            <xpath expr="//field[@name='cin']" position="before">
+                <field name="carte_diplomatique"/>
+                <field name="date_exp_carte_diplomatique"/>
+            </xpath>
+            <xpath expr="//field[@name='cin']" position="after">
+                <field name="date_cin"/>
+            </xpath>
+            <xpath expr="//field[@name='department_id']" position="before">
+                <field name="sans_pointage"/>
+            </xpath>
+            <xpath expr="//field[@name='anciennete']" position="after">
+                <field name="non_resident"/>
+                <field name="type_contrat"/>
+            </xpath>
+            <xpath expr="//field[@name='parent_id']" position="after">
+                <field name="type_contrat"/>
+            </xpath>
+
+            <xpath expr="/form/sheet/notebook" position="inside">
+                <page string="User type" name="icesco" groups="base.group_system">
+                    <group>
+                        <field name="is_dg"/>
+                        <field name="is_dpt_participation"/>
+                        <field name="is_translation"/>
+                        <field name="is_design"/>
+                        <field name="is_legal"/>
+                        <field name="is_logistics"/>
+                        <field name="is_protocol"/>
+                        <field name="is_admin"/>
+                        <field name="is_it"/>
+                        <field name="is_media"/>
+                        <field name="is_coverage"/>
+                        <field name="cps_remaining_leaves" invisible="1"/>
+                        <field name="cps_leaves_count" invisible="1"/>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="/form/sheet/div[hasclass('oe_button_box')]/button[@name='%(hr_holidays.act_hr_employee_holiday_request)d']"
+                   position="replace">
+                <button name="%(hr_holidays.act_hr_employee_holiday_request)d"
+                        type="action"
+                        class="oe_stat_button"
+                        icon="fa-calendar"
+                        attrs="{'invisible': [('show_leaves','=', False)]}"
+                        context="{'search_default_employee_id': active_id}"
+                        groups="base.group_user"
+                        help="Remaining leaves">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="cps_remaining_leaves"/>
+                            Days
+                        </span>
+                        <span class="o_stat_text">
+                            Time Off
+                        </span>
+                    </div>
+                </button>
+<!--                <button name="%(act_hr_employee_holiday_request_current_year)d"-->
+<!--                        type="action"-->
+<!--                        class="oe_stat_button"-->
+<!--                        icon="fa-calendar"-->
+<!--                        attrs="{'invisible': [('show_leaves','=', False)]}"-->
+<!--                        context="{'search_default_employee_id': active_id}"-->
+<!--                        groups="base.group_user"-->
+<!--                        help="Remaining leaves This year">-->
+<!--                    <div class="o_field_widget o_stat_info">-->
+<!--                        <span class="o_stat_value">-->
+<!--                            <field name="cps_remaining_leaves"/>-->
+<!--                            Days-->
+<!--                        </span>-->
+<!--                        <span class="o_stat_text">-->
+<!--                            Time Off This year-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                </button>-->
+            </xpath>
+        </field>
+    </record>
+
+    <record id="cps_hr_employee_view_search" model="ir.ui.view">
+        <field name="name">cps.hr.employee.search.view.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='job_id']" position="after">
+                <field name="last_check_in" invisible="1"/>
+                <field name="last_check_out" invisible="1"/>
+                <field name="attendance_state" invisible="1"/>
+                <field name="dh_hr_presence_state" invisible="1"/>
+                <separator/>
+                <!--                  <filter name="presence" string="Présent" domain="[('attendance_state', '=', 'checked_in')]"/>-->
+                <filter name="presence" string="Présent" domain="[('dh_hr_presence_state', '=', 'present')]"/>
+                <separator/>
+                <!--                <filter name="absent" string="Absent" domain="[('attendance_state', '=', 'checked_out')]"/>-->
+                <filter name="absent" string="Absent" domain="[('dh_hr_presence_state', '=', 'absent')]"/>
+                <separator/>
+                <filter name="conge" string="Congé/Mission" domain="[('dh_hr_presence_state', '=', 'conge')]"/>
+                <separator/>
+                <filter name="sans_pointage" string="Sans Pointage" domain="[('sans_pointage','=',True)]"/>
+                <separator/>
+                <filter name="type_contrat" string="Stagiaire" domain="[('type_contrat','=','Stagiaire')]"/>
+                <separator/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_employee_view_kanban_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.view.kanban.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.hr_kanban_view_employees"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="inside">
+                <field name="dh_hr_presence_state"/>
+            </xpath>
+            <xpath expr="//kanban/templates/t/div/field[@name='image_128']" position="replace">
+                <field name="image_128" widget="image" class="o_kanban_image_fill_left" options="{'zoom': false, 'zoom_delay': 1000, 'background': true, 'preventClicks': false}"/>
+            </xpath>
+            <xpath expr="//kanban/templates/t/div/div" position="attributes">
+                <attribute name="style">margin-left: 10px;margin-right: 10px;</attribute>
+            </xpath>
+            <xpath expr="//strong[hasclass('o_kanban_record_title')]" position="replace">
+                <div class="float-right" t-if="record.dh_hr_presence_state.raw_value == 'present'">
+                    <span class="fa fa-circle text-success" role="img" aria-label="Present" title="Present"
+                          name="presence_present"/>
+                </div>
+                <div class="float-right" t-if="record.dh_hr_presence_state.raw_value == 'absent'">
+                    <span class="fa fa-circle text-danger" role="img" aria-label="Absent" title="Absent"
+                          name="presence_absent"/>
+                </div>
+                <div class="float-right" t-if="record.dh_hr_presence_state.raw_value == 'to_define'">
+                    <span class="fa fa-circle text-info" role="img" aria-label="To define" title="To define"
+                          name="presence_to_define"/>
+                </div>
+                <div class="float-right" t-if="record.dh_hr_presence_state.raw_value == 'conge'">
+                    <span class="fa fa-circle text-warning" role="img" aria-label="Congé" title="Congé"
+                          name="presence_conge"/>
+                </div>
+                <div class="float-right" t-if="record.dh_hr_presence_state.raw_value == 'sans_pointage'">
+                    <span class="fa fa-circle color-green trust-partner" role="img" aaria-label="sans pointage"
+                          title="sans pointage" name="sans_pointage"/>
+                </div>
+                <field name="name" placeholder="Employee's Name"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

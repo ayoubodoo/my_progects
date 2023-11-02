@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="paperformat_global_evaluation" model="report.paperformat">
+            <field name="name">Global Evaluation</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+                id="report_department_this_year_evaluation_menu_id"
+                string="Appraisal report my department Evaluation"
+                model="appraisal.report.department.wizard"
+                report_type="qweb-pdf"
+                paperformat="kzm_hr_appraisal.paperformat_global_evaluation"
+                name="kzm_hr_appraisal.department_evaluation_template_id"
+                file="kzm_hr_appraisal.appraisal_global_evaluation_template"
+                menu="False"/>
+
+        <report
+                id="gloabal_evaluation_menu_id"
+                string="Appraisal Global Evaluation"
+                model="appraisal.global.wizard"
+                report_type="qweb-pdf"
+                paperformat="kzm_hr_appraisal.paperformat_global_evaluation"
+                name="kzm_hr_appraisal.gloabal_evaluation_template_id"
+                file="kzm_hr_appraisal.appraisal_global_evaluation_template"
+                menu="False"/>
+
+        <template id="gloabal_evaluation_template_id">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                 <div class="header">
+                        <div class="row">
+                            <div class="col-4 text-center"
+                                 style="font-size: 13px;font-weight: bold;">
+                                <img src="/isesco_base/static/isesco.png"
+                                     style="max-width:150px;max-height:150px;"
+                                     class="center" alt="Logo"/>
+                            </div>
+                            <div class="col-8 text-center"  >
+                                <b style="font-size:40px;color:#35572f">Annual performance appraisal
+<!--                                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y')"/>-->
+                                    <span t-esc="doc.start_date.strftime('%Y')"/>
+                                    <br/>
+                                    <t t-if="doc.model_evaluation_id.concern">
+                                        (<span t-esc="doc.model_evaluation_id.concern"/>)
+                                    </t>
+                                </b>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+                <t t-foreach="docs" t-as="doc">
+                    <div style="width:100%">
+                        <table width="100%">
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th t-att-colspan="doc.return_len_axes()"
+                                    style="background-color:#35572f;text-align:center;border: 1px solid black;color:white">
+                                    <br/>
+                                    Performance Appraisal
+                                    <br/>
+                                </th>
+                                <t t-if="len(doc.model_evaluation_id.axe_evaluation_report_ids.filtered(lambda x:x.is_training_action == True)) > 0">
+                                    <th t-att-rowspan="2" style="background-color:#c5e0b4;border: 1px solid black">Training For
+                                        <span t-esc="doc.start_date.strftime('%Y')"/>
+<!--                                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y')"/>-->
+                                    </th>
+                                </t>
+                                <t t-if="len(doc.model_evaluation_id.axe_evaluation_report_ids.filtered(lambda x:x.is_training_action == False)) > 0">
+                                   <th t-att-rowspan="2" style="background-color:#c5e0b4;border: 1px solid black">Areas of improvement For
+                                       <span t-esc="doc.start_date.strftime('%Y')"/>
+<!--                                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y')"/>-->
+                                    </th>
+                                </t>
+                                <th t-att-rowspan="2" style="background-color:#35572f;border: 1px solid black;color:white">Total Performance Appraisal Scores</th>
+                            </tr>
+<!--                            <tr>-->
+<!--                                <th></th>-->
+<!--                                <th></th>-->
+<!--                                <th></th>-->
+<!--                                <th></th>-->
+<!--                                <th t-att-colspan="doc.return_len_axes()"-->
+<!--                                    style="background-color:#c5e0b4;text-align:center;border: 1px solid black;color:black">-->
+<!--                                    <br/>-->
+<!--                                    Criterias-->
+<!--                                    <br/>-->
+<!--                                </th>-->
+<!--                            </tr>-->
+                            <tr>
+                                <th style="background-color:#35572f;border: 1px solid black;color:white">ICESCO ID</th>
+                                <th style="background-color:#35572f;border: 1px solid black;color:white">Name</th>
+                                <th style="background-color:#35572f;border: 1px solid black;color:white">Position</th>
+                                <th style="background-color:#35572f;border: 1px solid black;color:white">Sector</th>
+                                <th t-foreach="doc.return_axes()" t-as="axe"
+                                    style="background-color:#9acc93">
+                                    <span t-field="axe.name"/>
+                                </th>
+                            </tr>
+                            <t t-foreach="doc.set_data_report()[0]" t-as="axe">
+                                <t t-set="var" t-value="0"/>
+
+                                <t t-foreach="axe[1]" t-as="evaluation">
+
+                                <tr>
+
+                                    <td> <span t-field="evaluation[0].name"/></td>
+                                    <td><span t-field="evaluation[0].employee_id.name"/></td>
+                                    <td><span t-field="evaluation[0].employee_id.sudo().job_id.name"/></td>
+
+                                    <t t-if="var==0">
+                                        <td style="background-color:#7e827f" t-att-rowspan="axe[2]" ><span t-field="evaluation[0].employee_id.department_id.name"/></td>
+                                     <t t-set="var" t-value="1"/>
+                                    </t>
+
+                                    <td t-foreach="doc.return_axes()" t-as="note"
+                                        >
+                                        <t t-esc="evaluation[1][note.id]"/>
+                                    </td>
+                                    <t t-if="len(doc.model_evaluation_id.axe_evaluation_report_ids.filtered(lambda x:x.is_training_action == True)) > 0">
+                                        <td><t t-esc="evaluation[2]"/></td>
+                                    </t>
+                                    <t t-if="len(doc.model_evaluation_id.axe_evaluation_report_ids.filtered(lambda x:x.is_training_action == False)) > 0">
+                                        <td><t t-esc="evaluation[3]"/></td>
+                                    </t>
+                                    <td><t t-esc="evaluation[4]"/></td>
+                                </tr>
+                                </t>
+                            </t>
+                            <tr>
+                                <td style="background-color:#35572f;border: 1px solid black;color:white" t-att-colspan="4">TOTAL SCORES</td>
+                                 <td  style="background-color:#e2efda;" t-foreach="doc.return_axes()" t-as="note">
+                                        <t t-esc="doc.set_data_report()[1][note.id]"/>
+                                 </td>
+                                <t t-if="len(doc.model_evaluation_id.axe_evaluation_report_ids.filtered(lambda x:x.is_training_action == True)) > 0">
+                                    <td style="background-color:#7e827f"></td>
+                                </t>
+                                <t t-if="len(doc.model_evaluation_id.axe_evaluation_report_ids.filtered(lambda x:x.is_training_action == False)) > 0">
+                                    <td style="background-color:#7e827f"></td>
+                                </t>
+                                <td style="background-color:#e2efda;"> <t t-esc="doc.set_data_report()[2]"/></td>
+
+                            </tr>
+                        </table>
+                        <style>
+                            tr{
+                                border: 1px solid black;
+                                text-align:center
+                            }
+                            td{
+                                border: 1px solid black;
+                                text-align:center
+                            }
+
+                        </style>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <template id="department_evaluation_template_id">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="header">
+                        <div class="row">
+                            <div class="col-4 text-center"
+                                 style="font-size: 13px;font-weight: bold;">
+                                <img src="/isesco_base/static/isesco.png"
+                                     style="max-width:150px;max-height:150px;"
+                                     class="center" alt="Logo"/>
+                            </div>
+                            <div class="col-8 text-center"  >
+                                <b style="font-size:40px;color:#35572f">Annual performance appraisal
+<!--                                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y')"/>-->
+                                    <span t-esc="doc.start_date.strftime('%Y')"/>
+                                    <br/>
+                                    <t t-if="doc.model_evaluation_id.concern">
+                                        (<span t-esc="doc.model_evaluation_id.concern"/>)
+                                    </t>
+                                </b>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+                <t t-foreach="docs" t-as="doc">
+                    <div style="width:100%">
+                        <table width="100%">
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th t-att-colspan="doc.return_len_axes()"
+                                    style="background-color:#35572f;text-align:center;border: 1px solid black;color:white">
+                                    <br/>
+                                    Performance Appraisal
+                                    <br/>
+                                </th>
+                                <t t-if="len(doc.model_evaluation_id.axe_evaluation_report_ids.filtered(lambda x:x.is_training_action == True)) > 0">
+                                    <th t-att-rowspan="2" style="background-color:#c5e0b4;border: 1px solid black">Training For
+                                        <span t-esc="doc.start_date.strftime('%Y')"/>
+<!--                                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y')"/>-->
+                                    </th>
+                                </t>
+                                <t t-if="len(doc.model_evaluation_id.axe_evaluation_report_ids.filtered(lambda x:x.is_training_action == False)) > 0">
+                                   <th t-att-rowspan="2" style="background-color:#c5e0b4;border: 1px solid black">Areas of improvement For
+                                       <span t-esc="doc.start_date.strftime('%Y')"/>
+<!--                                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y')"/>-->
+                                    </th>
+                                </t>
+                                <th t-att-rowspan="2" style="background-color:#35572f;border: 1px solid black;color:white">Total Performance Appraisal Scores</th>
+                            </tr>
+<!--                            <tr>-->
+<!--                                <th></th>-->
+<!--                                <th></th>-->
+<!--                                <th></th>-->
+<!--                                <th></th>-->
+<!--                                <th t-att-colspan="doc.return_len_axes()"-->
+<!--                                    style="background-color:#c5e0b4;text-align:center;border: 1px solid black;color:black">-->
+<!--                                    <br/>-->
+<!--                                    Criterias-->
+<!--                                    <br/>-->
+<!--                                </th>-->
+<!--                            </tr>-->
+                            <tr>
+                                <th style="background-color:#35572f;border: 1px solid black;color:white">ICESCO ID</th>
+                                <th style="background-color:#35572f;border: 1px solid black;color:white">Name</th>
+                                <th style="background-color:#35572f;border: 1px solid black;color:white">Position</th>
+                                <th style="background-color:#35572f;border: 1px solid black;color:white">Sector</th>
+                                <th t-foreach="doc.return_axes()" t-as="axe"
+                                    style="background-color:#9acc93">
+                                    <span t-field="axe.name"/>
+                                </th>
+                            </tr>
+                            <t t-foreach="doc.set_data_report()[0]" t-as="axe">
+                                <t t-set="var" t-value="0"/>
+
+                                <t t-foreach="axe[1]" t-as="evaluation">
+
+                                <tr>
+
+                                    <td> <span t-field="evaluation[0].name"/></td>
+                                    <td><span t-field="evaluation[0].employee_id.name"/></td>
+                                    <td><span t-field="evaluation[0].employee_id.sudo().job_id.name"/></td>
+
+                                    <t t-if="var==0">
+                                        <td style="background-color:#7e827f" t-att-rowspan="axe[2]" ><span t-field="evaluation[0].employee_id.department_id.name"/></td>
+                                     <t t-set="var" t-value="1"/>
+                                    </t>
+
+                                    <td t-foreach="doc.return_axes()" t-as="note"
+                                        >
+                                        <t t-esc="evaluation[1][note.id]"/>
+                                    </td>
+                                    <t t-if="len(doc.model_evaluation_id.axe_evaluation_report_ids.filtered(lambda x:x.is_training_action == True)) > 0">
+                                        <td><t t-esc="evaluation[2]"/></td>
+                                    </t>
+                                    <t t-if="len(doc.model_evaluation_id.axe_evaluation_report_ids.filtered(lambda x:x.is_training_action == False)) > 0">
+                                        <td><t t-esc="evaluation[3]"/></td>
+                                    </t>
+                                    <td><t t-esc="evaluation[4]"/></td>
+                                </tr>
+                                </t>
+                            </t>
+                            <tr>
+                                <td style="background-color:#35572f;border: 1px solid black;color:white" t-att-colspan="4">TOTAL SCORES</td>
+                                 <td  style="background-color:#e2efda;" t-foreach="doc.return_axes()" t-as="note">
+                                        <t t-esc="doc.set_data_report()[1][note.id]"/>
+                                 </td>
+                                <t t-if="len(doc.model_evaluation_id.axe_evaluation_report_ids.filtered(lambda x:x.is_training_action == True)) > 0">
+                                    <td style="background-color:#7e827f"></td>
+                                </t>
+                                <t t-if="len(doc.model_evaluation_id.axe_evaluation_report_ids.filtered(lambda x:x.is_training_action == False)) > 0">
+                                    <td style="background-color:#7e827f"></td>
+                                </t>
+                                <td style="background-color:#e2efda;"> <t t-esc="doc.set_data_report()[2]"/></td>
+
+                            </tr>
+                        </table>
+                        <style>
+                            tr{
+                                border: 1px solid black;
+                                text-align:center
+                            }
+                            td{
+                                border: 1px solid black;
+                                text-align:center
+                            }
+
+                        </style>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

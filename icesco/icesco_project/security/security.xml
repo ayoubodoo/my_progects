@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+
+         <record id="icesco_show_project_details" model="res.groups">
+            <field name="name">Show all project details</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,73 @@
+<odoo>
+
+    <record id="mail_budget_remaining" model="mail.template">
+        <field name="name">Remaining Budget of Task</field>
+        <field name="model_id" ref="hr_expense.model_hr_expense"/>
+        <field name="subject">
+            Remaining Budget of Task
+        </field>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Hello ,
+
+                    <br/>
+                    <br/>
+
+
+                    The remaining budget of task ${ctx['task']} related to the ${ctx['project']} project is negative.
+                    <p>
+                        <strong>remaining budget : ${ctx['remaining_budget']}</strong>
+                    </p>
+                    <br/>
+                    <br/>
+
+
+                    <br/>
+                    <b>Sincerely,</b>
+                    <br/>
+
+                    <br/>
+                    <img src="/kzm_medical_insurance/static/img/logo.jpeg"
+                         style="width:110px;height:110px;float:left"/>
+                </p>
+
+            </div>
+        </field>
+    </record>
+
+    <record id="mail_budget_remaining1" model="mail.template">
+        <field name="name">Remaining Budget of Task</field>
+        <field name="model_id" ref="purchase.model_purchase_order"/>
+        <field name="subject">
+            Remaining Budget of Task
+        </field>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Hello ,
+
+                    <br/>
+                    <br/>
+
+
+                    The remaining budget of task ${ctx['task']} related to the ${ctx['project']} project is negative.
+                    <p>
+                        <strong>remaining budget : ${ctx['remaining_budget']}</strong>
+                    </p>
+                    <br/>
+                    <br/>
+
+
+                    <br/>
+                    <b>Sincerely,</b>
+                    <br/>
+
+                    <br/>
+                    <img src="/kzm_medical_insurance/static/img/logo.jpeg"
+                         style="width:110px;height:110px;float:left"/>
+                </p>
+            </div>
+        </field>
+    </record>
+</odoo>

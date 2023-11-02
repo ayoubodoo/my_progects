@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cps_accout_move" model="ir.ui.view">
+        <field name="name">cps.account.move.tree</field>
+        <field name="model">account.move</field>
+        <field name="priority">20</field>
+        <field name="inherit_id" ref="account.view_move_tree"/>
+        <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='ref']" position="after">
+                <field name="account_asset_id_asset" optional="hide"/>
+                <field name="account_depreciation_id_asset" optional="hide"/>
+                <field name="account_depreciation_expense_id_asset" optional="hide"/>
+                <field name="account_analytic_id_asset" optional="hide"/>
+                <field name="original_value_asset" optional="hide"/>
+                <field name="acquisition_date_asset" optional="hide"/>
+                <field name="book_value_asset" optional="hide"/>
+                <field name="value_residual_asset" optional="hide"/>
+                <field name="salvage_value_asset" optional="hide"/>
+                <field name="gross_increase_value_asset" optional="hide"/>
+                <field name="journal_id_asset" optional="hide"/>
+                <field name="code_asset" optional="hide"/>
+                <field name="employee_id_asset" optional="hide"/>
+                <field name="num_serie_asset" optional="hide"/>
+            </xpath>
+        </data>
+        </field>
+    </record>
+
+    <record id="view_move_form" model="ir.ui.view">
+        <field name="name">account.move.tree.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="can_reset" invisible="1"/>
+                    <field name="taux" readonly="1" attrs="{'invisible': [('taux', 'in', [0,False])]}"/>
+                </xpath>
+                <xpath expr="//button[@name='button_draft']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('can_reset', '=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_draft']" position="after">
+                    <button name="%(action_account_move_wizard)d" string="Modifier Taux" type="action" class="btn btn-secondary"/>
+                </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']//tree//field[@name='analytic_account_id']"
+                   position="attributes">
+                <attribute name="required">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']//tree//field[@name='analytic_account_id']"
+                   position="attributes">
+                <attribute name="required">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']//tree//field[@name='analytic_tag_ids']"
+                   position="attributes">
+                <attribute name="required">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']//tree//field[@name='analytic_tag_ids']"
+                   position="attributes">
+                <attribute name="required">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']//tree//field[@name='credit']"
+                   position="after">
+                    <field name="taux"/>
+                    <field name="currency_usd_id" invisible="1"/>
+                    <field name="total" widget="monetary" options="{'currency_field': 'currency_usd_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="cps_view_account_move_tree" model="ir.ui.view">
+            <field name="name">cps.view.account.move.tree</field>
+            <field name="model">account.move</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="state == 'draft'" string="Lignes Actifs" decoration-muted="state == 'cancel'" create="0" delete="0" edit="0">
+                    <field name="name_asset" optional="show"/>
+                    <field name="code_asset" optional="show"/>
+                    <field name="account_asset_id_asset" optional="show"/>
+                    <field name="acquisition_date_asset" optional="show"/>
+                    <field name="original_value_asset" optional="show"/>
+                    <field name="first_depreciation_date_asset" optional="show"/>
+                    <field name="book_value_asset" optional="show"/>
+                    <field name="value_residual_asset" optional="show"/>
+                    <field name="currency_id" optional="show"/>
+                    <field name="company_id" groups="base.group_multi_company" optional="show"/>
+                    <field name="method_number_asset" optional="show" string="Nombre d'amortissements"/>
+                    <field name="state_asset" optional="show"/>
+
+                    <field name="salvage_value_asset" optional="hide"/>
+                    <field name="gross_increase_value_asset" optional="hide"/>
+                    <field name="account_depreciation_id_asset" optional="hide"/>
+                    <field name="account_depreciation_expense_id_asset" optional="hide"/>
+                    <field name="account_analytic_id_asset" optional="hide"/>
+                    <field name="journal_id_asset" optional="hide"/>
+                    <field name="employee_id_asset" optional="hide"/>
+                    <field name="num_serie_asset" optional="hide"/>
+
+                    <field name="ref" optional="show"/>
+                    <field name="date" optional="show" string="Depreciation Date"/>
+                    <field name="amount_total" sum="Total Amount" optional="show" string="Depreciation"/>
+                    <field name="asset_depreciated_value" optional="show"/>
+                    <field name="asset_remaining_value" optional="show"/>
+                    <field name="name" optional="show" string="Journal Entry"/>
+
+
+                    <field name="state" optional="hide"/>
+                    <field name="currency_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="cps_view_account_invoice_filter_asset" model="ir.ui.view">
+            <field name="name">account.move.select.asset</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="name_asset"/>
+                    <field name="code_asset"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="cps_move_asset_lines_action" model="ir.actions.act_window">
+            <field name="name">Lignes Actifs</field>
+            <field name="res_model">account.move</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="view_id" ref="cps_view_account_move_tree"/>
+            <field name="domain">[('asset_id', '!=', False), ('state', '=', 'posted')]</field>
+        </record>
+
+        <menuitem parent="account.menu_finance_entries_management" id="cps_move_asset_lines_menu" action="cps_move_asset_lines_action" sequence="102"/>
+<record id="dh_move_line_view_tree" model="ir.ui.view">
+            <field name="name">dh.account.move.line.view.form.inherit</field>
+            <field name="model">account.move.line</field>
+             <field name="arch" type="xml">
+                 <tree>
+                                         <field name="date"/>
+                                         <field name="partner_id"/>
+                                         <field name="total"/>
+
+
+                 </tree>
+             </field>
+
+        </record>
+         <record model="ir.actions.act_window" id="dh_move_line_view_action">
+            <field name="name">بيانات التمويل</field>
+            <field name="res_model">account.move.line</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="dh_move_line_view_tree"/>
+        </record>
+</odoo>

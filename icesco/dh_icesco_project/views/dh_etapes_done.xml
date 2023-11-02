@@ -1,0 +1,48 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="dh_etapes_done_form_view">
+        <field name="name">dh.etapes.done.form</field>
+        <field name="model">dh.etapes.done</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    
+                        <group>
+                            <field name="name"/>
+                           
+                        </group>
+                     
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_etapes_done_tree">
+      <field name="name">dh.etapes.done.tree</field>
+      <field name="model">dh.etapes.done</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+
+            <field name="name" />
+
+
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_etapes_done">
+      <field name="name">Stages</field>
+      <field name="res_model">dh.etapes.done</field>
+      <field name="view_mode">tree</field>
+    </record>
+
+        <menuitem id="icesco_etapes_done_menu" name="Task Stages"
+                  parent="project.menu_project_config"
+                  action="action_dh_etapes_done" sequence="38"/>
+
+
+
+
+
+  </data>
+</odoo>

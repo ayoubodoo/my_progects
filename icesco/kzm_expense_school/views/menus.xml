@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem id="main_school_expense_menu"
+              name="School expenses"
+              sequence="1" web_icon="kzm_expense_school,static/description/icon.png"
+              groups="kzm_expense_school.school_expense_user"
+    />
+
+    <menuitem id="school_expense_menu" name="School expenses"
+              parent="main_school_expense_menu"/>
+
+        <menuitem id="my_school_expenses_menu" name="My School expenses" parent="school_expense_menu"
+              action="my_school_expenses_action"/>
+
+    <menuitem id="all_school_expenses_menu"
+              name="All School expenses"
+              parent="school_expense_menu"
+              groups="kzm_expense_school.school_expense_responsible"
+              action="all_school_expenses_action" />
+
+
+    <menuitem id="managers_menu"
+              name="Managers"
+              parent="main_school_expense_menu"
+              groups="kzm_expense_school.school_expense_responsible"
+    />
+
+    <menuitem id="school_expense_to_approve_menu"
+              name="To approve"
+              parent="managers_menu"
+              action="school_expenses_to_approve_action" />
+<!--    <menuitem id="mission_to_validate_menu" name="To validate" parent="managers_menu" action="missions_to_validate_action" groups="kzm_school_expense.engima_mission_dg"/>-->
+
+</odoo>

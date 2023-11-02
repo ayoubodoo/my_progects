@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.account.sepa</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="kzm_payroll_ma.kzm_res_config_settings_view_form_employee"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-string='Employees']/div[4]/div[4]" position="after">
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_right_pane">
+                        <label for="leave_type_id"/>
+                        <div class="text-muted">
+                            Default Leave Type
+                        </div>
+                         <div class="content-group">
+                            <div class="mt16">
+                                <field name="leave_type_id"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_right_pane">
+                        <label for="rubrique_dependent_id"/>
+                        <div class="text-muted">
+                            Section for children and dependents
+                        </div>
+                         <div class="content-group">
+                            <div class="mt16">
+                                <field name="rubrique_dependent_id"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_right_pane">
+                        <label for="age_limit"/>
+                        <div class="text-muted">
+                            Allowed Age
+                        </div>
+                         <div class="content-group">
+                            <div class="mt16">
+                                <field name="age_limit"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>   <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_right_pane">
+                        <label for="age_limit_remboursement"/>
+                        <div class="text-muted">
+                           reimbursement age limit
+                        </div>
+                         <div class="content-group">
+                            <div class="mt16">
+                                <field name="age_limit_remboursement"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

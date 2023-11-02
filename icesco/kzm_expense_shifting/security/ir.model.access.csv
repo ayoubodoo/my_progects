@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_expense_shifting_zone,access_hr_expense_shifting_zone,model_hr_expense_shifting_zone,,1,1,1,1
+access_hr_expense_shifting,access_hr_expense_shifting,model_hr_expense_shifting,,1,1,1,1
+access_icesco_daily_compensation,access_icesco_daily_compensation,model_icesco_daily_compensation,,1,1,1,1

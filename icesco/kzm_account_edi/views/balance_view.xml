@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="check_rub_view_tree_erp" model="ir.ui.view">
+            <field name="name">Check Rubrique</field>
+            <field name="model">check.rubrique.erp</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Check rubrique">
+                    <field name="name"/>
+                    <field name="compte"/>
+                    <field name="valeurbal"/>
+                    <field name="valeurres"/>
+                    <field name="errone" invisible="1"/>
+                    <button string="Ok" icon="fa-check-circle"
+                            attrs="{'invisible': [('errone','=',True)]}"/>
+                    <button string="No" icon="fa-times-circle"
+                            attrs="{'invisible': [('errone','=',False)]}"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="check_list_view_tree_erp" model="ir.ui.view">
+            <field name="name">Check list</field>
+            <field name="model">check.list.erp</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Check list">
+                    <field name="etat"/>
+                    <field name="name"/>
+                    <field name="exercice"/>
+                    <field name="exercice_errone" invisible="1"/>
+
+                    <button string="Ok" icon="fa-check-circle"
+                            attrs="{'invisible': [('exercice_errone','=',True)]}"/>
+                    <button string="No" icon="fa-times-circle"
+                            attrs="{'invisible': [('exercice_errone','=',False)]}"/>
+                    <field name="exercicep"/>
+                    <field name="exercicep_errone" invisible="1"/>
+                    <button string="Ok" icon="fa-check-circle"
+                            attrs="{'invisible': [('exercicep_errone','=',True)]}"/>
+                    <button string="No" icon="fa-times-circle"
+                            attrs="{'invisible': [('exercicep_errone','=',False)]}"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="liasse_balance_line_view_form" model="ir.ui.view">
+            <field name="name">Balance générale</field>
+            <field name="model">liasse.balance.line</field>
+            <field name="arch" type="xml">
+                <form string="Balance">
+                    <label for="compte" class="oe_edit_only" string="Compte et Libellé"/>
+                    <h1>
+                        <field name="compte" class="oe_inline" placeholder="code"
+                               style="width: 6em"/>
+                        -
+                        <field name="lib" class="oe_inline" placeholder="Libellé"/>
+                    </h1>
+                    <separator string="Mouvement débit et crédit"/>
+                    <group col="6" colspan="6">
+                        <field name="init_balance"/>
+                        <field name="debit"/>
+                        <field name="credit"/>
+                        <field name="exercice"/>
+                    </group>
+                    <separator string="Solde de fin"/>
+                    <group col="4" colspan="4">
+                        <field name="sf_debit"/>
+                        <field name="sf_credit"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="liasse_balance_line_view_tree" model="ir.ui.view">
+            <field name="name">Balance générale</field>
+            <field name="model">liasse.balance.line</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Balance" editable="bottom">
+                    <field name="compte"/>
+                    <!-- <field name="compte_errone" string="Compte erroné" /> -->
+                    <!-- <field name="compte_errone_plan" string="Compte erroné par rapport
+                        au P.C." /> <field name="compte_errone_bilan" />-->
+                    <field name="lib"/>
+                    <field name="init_balance"/>
+                    <field name="debit"/>
+                    <field name="credit"/>
+                    <field name="sf_debit"/>
+                    <field name="sf_credit"/>
+                    <field name="solde" invisible="1"/>
+                    <field name="exercice"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_liasse_balance_line" model="ir.actions.act_window">
+            <field name="name">Balance Générale</field>
+            <field name="res_model">liasse.balance.line</field>
+
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="liasse_balance_view_form_erp" model="ir.ui.view">
+            <field name="name">Liasse fiscale</field>
+            <field name="model">liasse.balance.erp</field>
+            <field name="arch" type="xml">
+                <form string="Balance">
+
+                    <header>
+                        <button name="generate_fiscale" string="Liasse fiscale"
+                                type="object" class="oe_highlight"/>
+                        <button name="check_list" string="Générer le check list"
+                                type="object" class="oe_highlight"/>
+                        <button name="check_list_rub" string="Générer les rubriques de controle"
+                                type="object" class="oe_highlight"/>
+                        <button name="generate" string="Générer le fichier EDI"
+                                type="object" class="oe_highlight"/>
+
+                    </header>
+                    <div style="margin-top:30px">
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_t7"
+                                    class="oe_stat_button"
+                                    string="T7 biens en crédit bail"
+                                    icon="fa-book"
+                                    type="object"/>
+                            <button name="action_t10" class="oe_stat_button" string="T10 Plus ou moins values" icon="fa-book" type="object" />
+                            <button name="action_t11" class="oe_stat_button" string="T11 Titre de participation" icon="fa-book" type="object" />
+                            <button name="action_t13" class="oe_stat_button" string="T13 repartition du capital social" icon="fa-book" type="object" />
+                            <button name="action_t16" class="oe_stat_button" string="T16 dotation aux amortissements" icon="fa-book" type="object" />
+                            <button name="action_t18_associe" class="oe_stat_button" string="T18 Interets des emprunts Associe" icon="fa-book" type="object" />
+                            <button name="action_t18_tiers" class="oe_stat_button" string="T18 Interets des emprunts Tiers" icon="fa-book" type="object" />
+                            <button name="action_t19" class="oe_stat_button" string="T19 Locations et beaux" icon="fa-book" type="object" />
+                            <button name="see_balances" type="object" class="oe_stat_button" string="Balance" icon="fa-book">
+                        </button>
+                        </div>
+                        <div class="oe_right">
+                            <button name="generate_report" class="oe_stat_button" icon="fa-book"
+                                    type="object" string="Exporter en XLS" context="{'xls_export':1}" />
+                        </div>
+                        <group>
+                                <group>
+                                    <field name="name"/>
+                                    <field name="exercice_prec" string="Exercice précédent"/>
+                                    <field name="date_cloture"/>
+                                    <field name="fiche"/>
+                                    <field name="output_name" invisible="1"/>
+                                    <field name="output" filename="output_name"/>
+                                </group>
+                                <group>
+                                    <field name="date_start"/>
+                                    <field name="date_end"/>
+                                    <field name="company_id" groups="base.group_multi_company"/>
+                                    <field name="extra_tab"/>
+                                    <field name="bal_view"/>
+
+                                </group>
+                            </group>
+
+                        <separator string="Balance Générale"/>
+                        <p class="oe_grey">
+                            <strong>Information</strong>
+                            : pour utiliser la fonctionnalité d'import
+                            veuillez cliquer sur le smart bouton 'Balance' et importer votre
+                            fichier csv contenant successivement les colonnes
+                            suivantes:
+                            compte,
+                            libelle, solde debut, débit et crédit.
+                            P.S: Vous pouvez
+                            également importer votre
+                            balance depuis le menu
+                            balance générale.
+                        </p>
+
+                        <group col="5" colspan="5">
+<!--                            <field name="file_data" filename="file_name"/>-->
+<!--                            <button name="file_parsing" string="Importer" type="object"-->
+<!--                                    icon="fa-upload"/>-->
+                            <button name="generate_balance" string="Calculer la balance du système" type="object"
+                                    icon="fa-calculator"/>
+                        </group>
+                        <field name="balance_line" attrs="{'invisible': [('bal_view','=',False)]}">
+                            <tree editable="top" string="Balance">
+                                <field name="compte"/>
+                                <field name="lib"/>
+                                <field name="init_balance"/>
+                                <field name="debit"/>
+                                <field name="credit"/>
+                                <field name="sf_debit"/>
+                                <field name="sf_credit"/>
+                                <field name="solde" invisible="1"/>
+                            </tree>
+                        </field>
+
+
+                        <separator string="Liasse fiscale"
+                                   attrs="{'invisible': [('extra_tab','=',False)]}"/>
+                        <notebook attrs="{'invisible': [('extra_tab','=',False)]}">
+                            <page string="T1 Actif">
+                                <field name="actif">
+                                    <tree colors="blue:type == '1';red:type == '2'" editable="top">
+                                        <field name="lib"/>
+                                        <field name="code1"/>
+                                        <field name="code2"/>
+                                        <field name="code3"/>
+                                        <field name="code4"/>
+                                        <field name="type" invisible="True"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="T1 Passif">
+                                <field name="passif">
+                                    <tree colors="blue:type == '1';red:type == '2'" editable="top">
+                                        <field name="lib"/>
+                                        <field name="code1"/>
+                                        <field name="code2"/>
+                                        <field name="type" invisible="True"/>
+                                    </tree>
+                                </field>
+                            </page>
+
+                            <page string="T2 CPC">
+                                <field name="cpc">
+                                    <tree colors="blue:type == '1';red:type == '2'" editable="top">
+                                        <field name="lib"/>
+                                        <field name="code1"/>
+                                        <field name="code2"/>
+                                        <field name="code3"/>
+                                        <field name="code4"/>
+                                        <field name="type" invisible="True"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="T3 Passage">
+                                <group string="RESULTAT NET COMPTABLE" col="4" colspan="4">
+                                    <field name="p_benifice_p"/>
+                                    <field name="p_perte_m"/>
+                                </group>
+                                <group string="REINTEGRATIONS FISCALES COURANTES">
+                                    <field name="passages_rfc" nolabel="1" context="{'type':'0'}">
+                                        <tree string="Intertes" editable="bottom">
+                                            <field name="name"/>
+                                            <field name="montant1"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="REINTEGRATIONS FISCALES NON COURANTES">
+                                    <field name="passages_rfnc" nolabel="1" context="{'type':'1'}">
+                                        <tree string="Intertes" editable="bottom">
+                                            <field name="name"/>
+                                            <field name="montant1"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="DEDUCTIONS FISCALES COURANTES">
+                                    <field name="passages_dfc" nolabel="1" context="{'type':'2'}">
+                                        <tree string="Intertes" editable="bottom">
+                                            <field name="name"/>
+                                            <field name="montant2"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="DEDUCTIONS FISCALES NON COURANTES">
+                                    <field name="passages_dfnc" nolabel="1" context="{'type':'3'}">
+                                        <tree string="Intertes" editable="bottom">
+                                            <field name="name"/>
+                                            <field name="montant2"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <separator string="Total"/>
+                                <group col="4" colspan="4">
+                                    <field name="p_total_montantp"/>
+                                    <field name="p_total_montantm"/>
+                                </group>
+                                <group string="RESULTAT BRUT FISCAL" col="4" colspan="4">
+                                    <field name="p_benificebm"/>
+                                    <field name="p_deficitfm"/>
+                                </group>
+                                <group string="REPORTS DEFICITAIRES IMPUTES " col="4"
+                                       colspan="4">
+                                    <field name="p_exo4p"/>
+                                    <field name="p_exo3p"/>
+                                    <field name="p_exo2p"/>
+                                    <field name="p_exo1p"/>
+                                </group>
+                                <group string="RESULTAT NET FISCAL" col="4" colspan="4">
+                                    <field name="p_benificenfm"/>
+                                    <field name="p_deficitnfm"/>
+                                </group>
+                                <group string="CUMUL DES AMORTISSEMENTS FISCALEMENT DIFFERES"
+                                       col="4" colspan="4">
+                                    <field name="p_cumulafdm"/>
+                                </group>
+                                <group string="CUMUL DES DEFICITS FISCAUX RESTANT A REPORTER"
+                                       col="4" colspan="4">
+                                    <field name="p_exo4cumulp"/>
+                                    <field name="p_exo3cumulp"/>
+                                    <field name="p_exo2cumulp"/>
+                                    <field name="p_exo1cumulp"/>
+                                </group>
+                            </page>
+
+                            <page string="T4 Immo">
+                                <group col="9" colspan="9">
+                                    <label for="immonv_mb" string="NATURE" class="oe_tag_dark"/>
+                                    <label for="immonv_aug_acq" string="MONTANT BRUT DEBUT EXERCICE" class="oe_tag_dark"/>
+                                    <label for="immonv_aug_pd" string="AUGMENTATION - Acquisition" class="oe_tag_dark"/>
+                                    <label for="immonv_aug_vir"
+                                            string="AUGMENTATION - Production par l'entreprise pour elle-même"
+                                            class="oe_tag_dark"/>
+                                    <label for="immonv_dim_cess" string="AUGMENTATION - Virement" class="oe_tag_dark"/>
+                                    <label for="fp_mb" string="DIMINUTION - Cession" class="oe_tag_dark"/>
+                                    <label for="immonv_dim_ret" string="DIMINUTION - Retrait" class="oe_tag_dark"/>
+                                    <label for="immonv_dim_vir" string="DIMINUTION - Virement" class="oe_tag_dark"/>
+                                    <label for="immonv_mbf" string="MONTANT BRUT FIN EXERCICE" class="oe_tag_dark"/>
+
+                                    <field name="immonv_mb" class="oe_grey"/>
+                                    <field name="immonv_aug_acq" nolabel="1" class="oe_grey"/>
+                                    <field name="immonv_aug_pd" nolabel="1" class="oe_grey"/>
+                                    <field name="immonv_aug_vir" nolabel="1" class="oe_grey"/>
+                                    <field name="immonv_dim_cess" nolabel="1" class="oe_grey"/>
+                                    <field name="immonv_dim_ret" nolabel="1" class="oe_grey"/>
+                                    <field name="immonv_dim_vir" nolabel="1" class="oe_grey"/>
+                                    <field name="immonv_mbf" nolabel="1" class="oe_grey"/>
+
+                                    <field name="fp_mb"/>
+                                    <field name="fp_aug_acq" nolabel="1"/>
+                                    <field name="fp_aug_pd" nolabel="1"/>
+                                    <field name="fp_aug_vir" nolabel="1"/>
+                                    <field name="fp_dim_cess" nolabel="1"/>
+                                    <field name="fp_dim_ret" nolabel="1"/>
+                                    <field name="fp_dim_vir" nolabel="1"/>
+                                    <field name="fp_mbf" nolabel="1"/>
+
+                                    <field name="charge_mb"/>
+                                    <field name="charge_aug_acq" nolabel="1"/>
+                                    <field name="charge_aug_pd" nolabel="1"/>
+                                    <field name="charge_aug_vir" nolabel="1"/>
+                                    <field name="charge_dim_cess" nolabel="1"/>
+                                    <field name="charge_dim_ret" nolabel="1"/>
+                                    <field name="charge_dim_vir" nolabel="1"/>
+                                    <field name="charge_mbf" nolabel="1"/>
+
+                                    <field name="prime_mb"/>
+                                    <field name="prime_aug_acq" nolabel="1"/>
+                                    <field name="prime_aug_pd" nolabel="1"/>
+                                    <field name="prime_aug_vir" nolabel="1"/>
+                                    <field name="prime_dim_cess" nolabel="1"/>
+                                    <field name="prime_dim_ret" nolabel="1"/>
+                                    <field name="prime_dim_vir" nolabel="1"/>
+                                    <field name="prime_mbf" nolabel="1"/>
+
+                                    <field name="immoi_mb" class="oe_grey"/>
+                                    <field name="immoi_aug_acq" nolabel="1" class="oe_grey"/>
+                                    <field name="immoi_aug_pd" nolabel="1" class="oe_grey"/>
+                                    <field name="immoi_aug_vir" nolabel="1" class="oe_grey"/>
+                                    <field name="immoi_dim_cess" nolabel="1" class="oe_grey"/>
+                                    <field name="immoi_dim_ret" nolabel="1" class="oe_grey"/>
+                                    <field name="immoi_dim_vir" nolabel="1" class="oe_grey"/>
+                                    <field name="immoi_mbf" nolabel="1" class="oe_grey"/>
+
+                                    <field name="immord_mb"/>
+                                    <field name="immord_aug_acq" nolabel="1"/>
+                                    <field name="immord_aug_pd" nolabel="1"/>
+                                    <field name="immord_aug_vir" nolabel="1"/>
+                                    <field name="immord_dim_cess" nolabel="1"/>
+                                    <field name="immord_dim_ret" nolabel="1"/>
+                                    <field name="immord_dim_vir" nolabel="1"/>
+                                    <field name="immord_mbf" nolabel="1"/>
+
+                                    <field name="brevet_mb"/>
+                                    <field name="brevet_aug_acq" nolabel="1"/>
+                                    <field name="brevet_aug_pd" nolabel="1"/>
+                                    <field name="brevet_aug_vir" nolabel="1"/>
+                                    <field name="brevet_dim_cess" nolabel="1"/>
+                                    <field name="brevet_dim_ret" nolabel="1"/>
+                                    <field name="brevet_dim_vir" nolabel="1"/>
+                                    <field name="brevet_mbf" nolabel="1"/>
+
+                                    <field name="fond_mb"/>
+                                    <field name="fond_aug_acq" nolabel="1"/>
+                                    <field name="fond_aug_pd" nolabel="1"/>
+                                    <field name="fond_aug_vir" nolabel="1"/>
+                                    <field name="fond_dim_cess" nolabel="1"/>
+                                    <field name="fond_dim_ret" nolabel="1"/>
+                                    <field name="fond_dim_vir" nolabel="1"/>
+                                    <field name="fond_mbf" nolabel="1"/>
+
+                                    <field name="autre_incorp_mb"/>
+                                    <field name="autre_incorp_aug_acq" nolabel="1"/>
+                                    <field name="autre_incorp_aug_pd" nolabel="1"/>
+                                    <field name="autre_incorp_aug_vir" nolabel="1"/>
+                                    <field name="autre_incorp_dim_cess" nolabel="1"/>
+                                    <field name="autre_incorp_dim_ret" nolabel="1"/>
+                                    <field name="autre_incorp_dim_vir" nolabel="1"/>
+                                    <field name="autre_incorp_mbf" nolabel="1"/>
+
+                                    <field name="immonc_mb" class="oe_grey"/>
+                                    <field name="immonc_aug_acq" nolabel="1" class="oe_grey"/>
+                                    <field name="immonc_aug_pd" nolabel="1" class="oe_grey"/>
+                                    <field name="immonc_aug_vir" nolabel="1" class="oe_grey"/>
+                                    <field name="immonc_dim_cess" nolabel="1" class="oe_grey"/>
+                                    <field name="immonc_dim_ret" nolabel="1" class="oe_grey"/>
+                                    <field name="immonc_dim_vir" nolabel="1" class="oe_grey"/>
+                                    <field name="immonc_mbf" nolabel="1" class="oe_grey"/>
+
+
+                                    <field name="terrain_mb"/>
+                                    <field name="terrain_aug_acq" nolabel="1"/>
+                                    <field name="terrain_aug_pd" nolabel="1"/>
+                                    <field name="terrain_aug_vir" nolabel="1"/>
+                                    <field name="terrain_dim_cess" nolabel="1"/>
+                                    <field name="terrain_dim_ret" nolabel="1"/>
+                                    <field name="terrain_dim_vir" nolabel="1"/>
+                                    <field name="terrain_mbf" nolabel="1"/>
+
+                                    <field name="constructions_mb"/>
+                                    <field name="constructions_aug_acq" nolabel="1"/>
+                                    <field name="constructions_aug_pd" nolabel="1"/>
+                                    <field name="constructions_aug_vir" nolabel="1"/>
+                                    <field name="constructions_dim_cess" nolabel="1"/>
+                                    <field name="constructions_dim_ret" nolabel="1"/>
+                                    <field name="constructions_dim_vir" nolabel="1"/>
+                                    <field name="constructions_mbf" nolabel="1"/>
+
+                                    <field name="inst_mb"/>
+                                    <field name="inst_aug_acq" nolabel="1"/>
+                                    <field name="inst_aug_pd" nolabel="1"/>
+                                    <field name="inst_aug_vir" nolabel="1"/>
+                                    <field name="inst_dim_cess" nolabel="1"/>
+                                    <field name="inst_dim_ret" nolabel="1"/>
+                                    <field name="inst_dim_vir" nolabel="1"/>
+                                    <field name="inst_mbf" nolabel="1"/>
+
+                                    <field name="mat_mb"/>
+                                    <field name="mat_aug_acq" nolabel="1"/>
+                                    <field name="mat_aug_pd" nolabel="1"/>
+                                    <field name="mat_aug_vir" nolabel="1"/>
+                                    <field name="mat_dim_cess" nolabel="1"/>
+                                    <field name="mat_dim_ret" nolabel="1"/>
+                                    <field name="mat_dim_vir" nolabel="1"/>
+                                    <field name="mat_mbf" nolabel="1"/>
+
+                                    <field name="mob_mb"/>
+                                    <field name="mob_aug_acq" nolabel="1"/>
+                                    <field name="mob_aug_pd" nolabel="1"/>
+                                    <field name="mob_aug_vir" nolabel="1"/>
+                                    <field name="mob_dim_cess" nolabel="1"/>
+                                    <field name="mob_dim_ret" nolabel="1"/>
+                                    <field name="mob_dim_vir" nolabel="1"/>
+                                    <field name="mob_mbf" nolabel="1"/>
+
+                                    <field name="autre_corp_mb"/>
+                                    <field name="autre_corp_aug_acq" nolabel="1"/>
+                                    <field name="autre_corp_aug_pd" nolabel="1"/>
+                                    <field name="autre_corp_aug_vir" nolabel="1"/>
+                                    <field name="autre_corp_dim_cess" nolabel="1"/>
+                                    <field name="autre_corp_dim_ret" nolabel="1"/>
+                                    <field name="autre_corp_dim_vir" nolabel="1"/>
+                                    <field name="autre_corp_mbf" nolabel="1"/>
+
+                                    <field name="immocc_mb"/>
+                                    <field name="immocc_aug_acq" nolabel="1"/>
+                                    <field name="immocc_aug_pd" nolabel="1"/>
+                                    <field name="immocc_aug_vir" nolabel="1"/>
+                                    <field name="immocc_dim_cess" nolabel="1"/>
+                                    <field name="immocc_dim_ret" nolabel="1"/>
+                                    <field name="immocc_dim_vir" nolabel="1"/>
+                                    <field name="immocc_mbf" nolabel="1"/>
+
+                                    <field name="mati_mb"/>
+                                    <field name="mati_aug_acq" nolabel="1"/>
+                                    <field name="mati_aug_pd" nolabel="1"/>
+                                    <field name="mati_aug_vir" nolabel="1"/>
+                                    <field name="mati_dim_cess" nolabel="1"/>
+                                    <field name="mati_dim_ret" nolabel="1"/>
+                                    <field name="mati_dim_vir" nolabel="1"/>
+                                    <field name="mati_mbf" nolabel="1"/>
+                                </group>
+                            </page>
+
+                            <page string="T5 ESG">
+                                <separator string="TFR"/>
+                                <field name="tfr">
+                                    <tree colors="blue:type == '1';red:type == '2'" editable="top">
+                                        <field name="lettre"/>
+                                        <field name="num"/>
+                                        <field name="op"/>
+                                        <field name="lib"/>
+                                        <field name="code1"/>
+                                        <field name="code2"/>
+                                        <field name="type" invisible="1"/>
+                                    </tree>
+                                </field>
+                                <separator string="CAF"/>
+                                <field name="caf">
+                                    <tree colors="blue:type == '1';red:type == '2'" editable="top">
+                                        <field name="lettre"/>
+                                        <field name="num"/>
+                                        <field name="op"/>
+                                        <field name="lib"/>
+                                        <field name="code1"/>
+                                        <field name="code2"/>
+                                        <field name="type" invisible="True"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="T6 DET CPC">
+                                <field name="det_cpc">
+                                    <tree colors="blue:type == '1';red:type == '2'" editable="top">
+                                        <field name="poste"/>
+                                        <field name="lib"/>
+                                        <field name="code1"/>
+                                        <field name="code2"/>
+                                        <field name="type" invisible="True"/>
+                                    </tree>
+                                </field>
+                            </page>
+
+                            <page string="T7 CREDITBAIL">
+                                <field name="credit_bail" widget="many2many"/>
+                            </page>
+
+                            <page string="T8 AMT">
+                                <field name="amort">
+                                    <tree colors="blue:type == '1';red:type == '2'" editable="top">
+                                        <field name="lib"/>
+                                        <field name="code1"/>
+                                        <field name="code2"/>
+                                        <field name="code3"/>
+                                        <field name="code4"/>
+                                        <field name="type" invisible="True"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="T9 PROV">
+                                <field name="provision">
+                                    <tree colors="blue:type == '1';red:type == '2'" editable="top">
+                                        <field name="lib"/>
+                                        <field name="code1"/>
+                                        <field name="code2"/>
+                                        <field name="code3"/>
+                                        <field name="code4"/>
+                                        <field name="code5"/>
+                                        <field name="code6"/>
+                                        <field name="code7"/>
+                                        <field name="code8"/>
+                                        <field name="type" invisible="True"/>
+                                    </tree>
+                                </field>
+                            </page>
+
+                            <page string="T10 PM VALUE">
+                                <field name="pm_value" widget="many2many"/>
+                                <separator string="Total"/>
+                                <group col="8" colspan="8">
+                                    <field name="pm_compte_princ"/>
+                                    <field name="pm_montant_brut"/>
+                                    <field name="pm_amort_cumul"/>
+                                    <field name="pm_val_net_amort"/>
+                                    <field name="pm_prod_cess"/>
+                                    <field name="pm_plus_value"/>
+                                    <field name="pm_moins_value"/>
+                                </group>
+                            </page>
+
+                            <page string="T11 PARTICP">
+                                <field name="titre_particip" widget="many2many"/>
+                                <separator string="Total"/>
+                                <group col="8" colspan="8">
+                                    <field name="tp_sect_activity"/>
+                                    <field name="tp_capit_social"/>
+                                    <field name="tp_particip_cap"/>
+                                    <field name="tp_prix_global"/>
+                                    <field name="tp_val_compt"/>
+                                    <field name="tp_extr_date"/>
+                                    <field name="tp_extr_situation"/>
+                                    <field name="tp_extr_resultat"/>
+                                    <field name="tp_prod_inscrit"/>
+                                </group>
+                            </page>
+
+                            <page string="T12 TVA">
+                                <group col="5" colspan="5">
+                                    <label for="tva_facsd" string="NATURE" class="oe_tag_dark"/>
+                                    <label for="tva_faco" string="solde au début de l'exercice" class="oe_tag_dark"/>
+                                    <label for="tva_facd" string="Opérations comptables de l'exercice" class="oe_tag_dark"/>
+                                    <label for="tva_facsf" string="Déclarations T.V.A de l'exercice" class="oe_tag_dark"/>
+                                    <label for="tva_reco" string="Solde fin d'exercice" class="oe_tag_dark"/>
+                                    <label for="tva_recsf" string="A. T.V.A. Facturée"/>
+                                    <field name="tva_facsd" nolabel="1"/>
+                                    <field name="tva_faco" nolabel="1"/>
+                                    <field name="tva_facd" nolabel="1"/>
+                                    <field name="tva_facsf" nolabel="1"/>
+                                    <label for="tva_recsd" string="B. T.V.A. Récupérable"/>
+                                    <field name="tva_recsd" nolabel="1"/>
+                                    <field name="tva_reco" nolabel="1"/>
+                                    <field name="tva_recd" nolabel="1"/>
+                                    <field name="tva_recsf" nolabel="1"/>
+
+                                    <label for="tva_charsd" string="Sur charges"/>
+                                    <field name="tva_charsd" nolabel="1"/>
+                                    <field name="tva_charo" nolabel="1"/>
+                                    <field name="tva_chard" nolabel="1"/>
+                                    <field name="tva_charsf" nolabel="1"/>
+                                    <label for="tva_immosd" string="Sur immobilisations"/>
+                                    <field name="tva_immosd" nolabel="1"/>
+                                    <field name="tva_immoo" nolabel="1"/>
+                                    <field name="tva_immod" nolabel="1"/>
+                                    <field name="tva_immosf" nolabel="1"/>
+                                    <label for="tva_totalsd" string="C. T.V.A. due ou crédit de T.V.A = (A - B )"/>
+                                    <field name="tva_totalsd" nolabel="1"/>
+                                    <field name="tva_totalo" nolabel="1"/>
+                                    <field name="tva_totald" nolabel="1"/>
+                                    <field name="tva_totalsf" nolabel="1"/>
+                                </group>
+                            </page>
+
+                            <page string="T13 REPART CS">
+                                <group>
+                                    <field name="montant_rcs"/>
+                                </group>
+                                <field name="repart_cs" widget="many2many"/>
+                            </page>
+
+                            <page string="T14 AFFECT">
+                                <group string="ORIGINE DES RESULTATS A AFFECTER" col="4"
+                                       colspan="4">
+                                    <field name="aff_rep_n"/>
+                                    <field name="aff_res_n_in"/>
+                                    <field name="aff_res_n_ex"/>
+                                    <field name="aff_prev"/>
+                                    <field name="aff_autre_prev"/>
+                                    <field name="aff_totala"/>
+                                </group>
+                                <group string="AFFECTATION DES RESULTATS" col="4" colspan="4">
+                                    <field name="aff_rl"/>
+                                    <field name="aff_autre_r"/>
+                                    <field name="aff_tant"/>
+                                    <field name="aff_div"/>
+                                    <field name="aff_autre_aff"/>
+                                    <field name="aff_rep_n2"/>
+                                    <field name="aff_totalb"/>
+                                </group>
+                            </page>
+
+                            <page string="T15 ENCOURG">
+                                <group col="4" colspan="4">
+                                    <newline/>
+                                    <label for="vente_imp_ep" string="RUBRIQUES" class="oe_tag_dark"/>
+                                    <label for="vente_imp_epi" string="Ensemble des produits" class="oe_tag_dark"/>
+                                    <label for="vente_imp_ept" string="Ensemble des produits correspondant à la base imposable"
+                                           class="oe_tag_dark"/>
+                                    <label for="vente_ex100_ep"
+                                            string="Ensemble des produits correspondant au numérateur taxable"
+                                            class="oe_tag_dark"/>
+                                    <separator string="Ventes" colspan="4"/>
+                                    <field name="vente_imp_ep"/>
+                                    <field name="vente_imp_epi" nolabel="1"/>
+                                    <field name="vente_imp_ept" nolabel="1"/>
+                                    <field name="vente_ex100_ep"/>
+                                    <field name="vente_ex100_epi" nolabel="1"/>
+                                    <field name="vente_ex100_ept" nolabel="1"/>
+                                    <field name="vente_ex50_ep"/>
+                                    <field name="vente_ex50_epi" nolabel="1"/>
+                                    <field name="vente_ex50_ept" nolabel="1"/>
+
+                                    <separator string="Lotissement et promotion immobilière"
+                                               colspan="4"/>
+                                    <field name="vente_li_ep"/>
+                                    <field name="vente_li_epi" nolabel="1"/>
+                                    <field name="vente_li_ept" nolabel="1"/>
+                                    <field name="vente_lex100_ep"/>
+                                    <field name="vente_lex100_epi" nolabel="1"/>
+                                    <field name="vente_lex100_ept" nolabel="1"/>
+                                    <field name="vente_lex50_ep"/>
+                                    <field name="vente_lex50_epi" nolabel="1"/>
+                                    <field name="vente_lex50_ept" nolabel="1"/>
+
+                                    <separator string="Prestations de services" colspan="4"/>
+                                    <field name="pres_imp_ep"/>
+                                    <field name="pres_imp_epi" nolabel="1"/>
+                                    <field name="pres_imp_ept" nolabel="1"/>
+                                    <field name="pres_ex100_ep"/>
+                                    <field name="pres_ex100_epi" nolabel="1"/>
+                                    <field name="pres_ex100_ept" nolabel="1"/>
+                                    <field name="pres_ex50_ep"/>
+                                    <field name="pres_ex50_epi" nolabel="1"/>
+                                    <field name="pres_ex50_ept" nolabel="1"/>
+
+                                    <separator string="Produits et Subventions" colspan="4"/>
+                                    <field name="prod_acc_ep"/>
+                                    <field name="prod_acc_epi" nolabel="1"/>
+                                    <field name="prod_acc_ept" nolabel="1"/>
+                                    <field name="prod_sub_ep"/>
+                                    <field name="prod_sub_epi" nolabel="1"/>
+                                    <field name="prod_sub_ept" nolabel="1"/>
+                                    <separator string="Subventions d'équilibre" colspan="4"/>
+                                    <field name="sub_eq_ep"/>
+                                    <field name="sub_eq_epi" nolabel="1"/>
+                                    <field name="sub_eq_ept" nolabel="1"/>
+                                    <field name="sub_imp_ep"/>
+                                    <field name="sub_imp_epi" nolabel="1"/>
+                                    <field name="sub_imp_ept" nolabel="1"/>
+                                    <field name="sub_ex100_ep"/>
+                                    <field name="sub_ex100_epi" nolabel="1"/>
+                                    <field name="sub_ex100_ept" nolabel="1"/>
+                                    <field name="sub_ex50_ep"/>
+                                    <field name="sub_ex50_epi" nolabel="1"/>
+                                    <field name="sub_ex50_ept" nolabel="1"/>
+
+                                    <separator string="Totaux partiels" colspan="4"/>
+                                    <field name="taux_part_ep"/>
+                                    <field name="taux_part_epi" nolabel="1"/>
+                                    <field name="taux_part_ept" nolabel="1"/>
+                                    <separator string="Profits" colspan="4"/>
+                                    <field name="profit_g_ep"/>
+                                    <field name="profit_g_epi" nolabel="1"/>
+                                    <field name="profit_g_ept" nolabel="1"/>
+                                    <field name="profit_ex_ep"/>
+                                    <field name="profit_ex_epi" nolabel="1"/>
+                                    <field name="profit_ex_ept" nolabel="1"/>
+                                    <separator string="Total général" colspan="4"/>
+                                    <field name="total_g_ep"/>
+                                    <field name="total_g_epi" nolabel="1"/>
+                                    <field name="total_g_ept" nolabel="1"/>
+                                </group>
+                            </page>
+
+                            <page string="T16 Dotation">
+                                <group col="4" colspan="4" string="Montant global">
+                                    <field name="montant_dot"/>
+                                </group>
+                                <field name="dotation_amort" widget="many2many"/>
+                                <separator string="Total"/>
+                                <group col="8" colspan="8">
+                                    <label for="val_acq" string="Valeur à amortir (Prix d acquisition)"/>
+                                    <field name="val_acq" nolabel="1"/>
+                                    <label for="val_compt" string="Valeur à amortir - Valeur comptable apres reevaluation"/>
+                                    <field name="val_compt" nolabel="1"/>
+                                    <label for="amort_ant" string="Amortissements anterieurs"/>
+                                    <field name="amort_ant" nolabel="1"/>
+                                    <label for="amort_ded_et" string="Amortissements deduits du Benefice brut de l'exercice (Taux)"/>
+                                    <field name="amort_ded_et" nolabel="1"/>
+                                    <label for="amort_ded_e" string="Amortissements deduits du Benefice brut de l exercice Amortissements normaux ou acceleres de l'exercice"/>
+                                    <field name="amort_ded_e" nolabel="1"/>
+                                    <label for="amort_fe" string="Total des amortissements a la fin de l'exercice"/>
+                                    <field name="amort_fe" nolabel="1"/>
+                                </group>
+                            </page>
+
+                            <page string="T17 FUSION">
+                                <field name="fusion">
+                                    <tree colors="blue:type == '1';red:type == '2'" editable="top">
+                                        <field name="lib"/>
+                                        <field name="code0" invisible="1"/>
+                                        <field name="code1"/>
+                                        <field name="code2"/>
+                                        <field name="code3"/>
+                                        <field name="code4"/>
+                                        <field name="code5"/>
+                                        <field name="code6"/>
+                                        <field name="code7"/>
+                                        <field name="code8"/>
+                                        <field name="type" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+
+                            <page string="T18 Interet">
+                                <group string="Associés">
+                                    <field name="interets_associe" nolabel="1" context="{'type':'0'}"
+                                           widget="many2many"/>
+                                </group>
+                                <group string="Tiers">
+                                    <field name="interets_tier" nolabel="1" context="{'type':'1'}"
+                                           widget="many2many"/>
+                                </group>
+                                <separator string="Total"/>
+                                <group col="6" colspan="6">
+                                    <field name="in_mont_pretl"/>
+                                    <field name="in_charge_global"/>
+                                    <field name="in_remb_princ"/>
+                                    <field name="in_remb_inter"/>
+                                    <field name="in_remb_actual_princ"/>
+                                    <field name="in_remb_actual_inter"/>
+                                </group>
+                            </page>
+
+
+                            <page string="T19 BEAUX">
+                                <field name="beaux" widget="many2many"/>
+                                <separator string="Total"/>
+                                <group col="4" colspan="4">
+                                    <field name="bx_mont_pretl"/>
+                                    <field name="bx_charge_global"/>
+                                </group>
+                            </page>
+
+                            <page string="T20 STOCK">
+                                <field name="stock">
+                                    <tree colors="blue:type == '1';red:type == '2'" editable="top">
+                                        <field name="lib"/>
+                                        <field name="code1"/>
+                                        <field name="code2"/>
+                                        <field name="code3"/>
+                                        <field name="code4"/>
+                                        <field name="code5"/>
+                                        <field name="code6"/>
+                                        <field name="code7"/>
+                                        <field name="type" invisible="True"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </div>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="liasse_balance_view_tree_erp" model="ir.ui.view">
+            <field name="name">Liasse fiscale</field>
+            <field name="model">liasse.balance.erp</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Balance">
+                    <field name="name"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="liasse_balance_action">
+            <field name="name">Balance</field>
+            <field name="res_model">liasse.balance.line</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <record id="action_liasse_balance_erp" model="ir.actions.act_window">
+            <field name="name">Liasse fiscale</field>
+            <field name="res_model">liasse.balance.erp</field>
+
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <record id="action_check_fiche_erp" model="ir.actions.act_window">
+            <field name="name">Check list</field>
+            <field name="res_model">check.list.erp</field>
+
+            <field name="view_mode">tree,form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="action_check_rub_erp" model="ir.actions.act_window">
+            <field name="name">Check Rubrique</field>
+            <field name="res_model">check.rubrique.erp</field>
+
+            <field name="view_mode">tree,form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="liasse_normale_erp" name="Liasse Fiscale" parent="account_accountant.menu_accounting" sequence="5"/>
+
+        <menuitem id="main_balance_general_erp" name="Liasse fiscale"
+                  parent="liasse_normale_erp" sequence="1"/>
+
+        <menuitem id="main_autre_dec_erp" name="Autre déclaration"
+                  parent="liasse_normale_erp" sequence="2"/>
+
+        <menuitem id="sub_balance_general_erp" name="Liasse Fiscale"
+                  parent="main_balance_general_erp" sequence="3" action="action_liasse_balance_erp"/>
+
+
+        <record id="form_declaration_erp" model="ir.ui.view">
+            <field name="name">declarationrvt.declaration.form</field>
+            <field name="model">declarationrvt.declaration.erp</field>
+            <field name="arch" type="xml">
+
+                <form string="formdeclaration">
+                    <header>
+<!--                        <button name="generatexml" string="Generer fichier xml"-->
+<!--                                type="object" class="oe_highlight"/>-->
+                    </header>
+                    <separator string="Declaration RVT"/>
+
+                    <group colspan="4" col="4">
+                        <field name="id_declar"/>
+                    </group>
+                    <!-- <group colspan="4" col="4"> <field name="date_debut" /> <field
+                        name="date_fin" /> </group> -->
+
+                    <separator string="fichier xml de declaration RVT"/>
+                    <group colspan="4" col="4">
+                        <field name="output" filename="output_nom"/>
+                    </group>
+                    <separator string="Ajout des beneficiaires"/>
+
+                    <group>
+                        <field name="ben_ids"/>
+                    </group>
+
+                    <group>
+                        <field name="date_id"/>
+                    </group>
+                </form>
+
+            </field>
+        </record>
+        <record model="ir.ui.view" id="course_tree_view">
+            <field name="name">declarationrvt.declaration.tree</field>
+            <field name="model">declarationrvt.declaration.erp</field>
+            <field name="arch" type="xml">
+                <tree string="Declaration">
+                    <field name="id_declar"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="form_ben_erp" model="ir.ui.view">
+            <field name="name">declarationrvt.beneficiaire.form</field>
+            <field name="model">declarationrvt.beneficiaire.erp</field>
+            <field name="arch" type="xml">
+
+                <form string="formben" version="8.0">
+                    <separator/>
+                    <group colspan="4" col="4">
+
+                        <field name="idfiscal"/>
+                        <field name="raison_sociale"/>
+                        <field name="numtaxe"/>
+                        <field name="num_registre"/>
+                        <field name="num_cnss"/>
+                    </group>
+                    <separator/>
+                    <separator/>
+
+                    <group>
+                        <label for="adress"
+                               string="Adresse du domicile fiscal, du siège social ou du principal établissement"/>
+                        <field name="adress"/>
+                    </group>
+
+                    <group colspan="4" col="4">
+                        <field name="villeben"/>
+                        <field name="telephone"/>
+                        <field name="fax"/>
+                        <field name="email"/>
+
+                        <field name="forme_juridique"/>
+                        <field name="nationaliteben"/>
+                        <field name="professionben"/>
+                    </group>
+
+                    <group colspan="4" col="4">
+
+                        <field name="honoraires"/>
+                        <field name="commissions"/>
+                        <field name="rab"/>
+                    </group>
+
+
+                </form>
+
+            </field>
+        </record>
+
+
+        <record id="tree_2_erp" model="ir.ui.view">
+            <field name="name">declarationrvt.beneficiaire.tree</field>
+            <field name="model">declarationrvt.beneficiaire.erp</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="idfiscal"/>
+                    <field name="raison_sociale"/>
+                    <field name="numtaxe"/>
+                    <field name="num_cnss"/>
+                    <field name="honoraires"/>
+                    <field name="commissions"/>
+                    <field name="rab"/>
+                </tree>
+
+            </field>
+        </record>
+
+        <record id="actiondec_erp" model="ir.actions.act_window">
+            <field name="name">Ajout Declaration RVT</field>
+            <field name="res_model">declarationrvt.declaration.erp</field>
+
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="dec_RVT_erp" name="Declaration RVT" parent="main_autre_dec_erp"
+                  sequence="1" action="actiondec_erp"/>
+
+        <report
+                id="report_xlsx"
+                model="liasse.balance.erp"
+                string="Print to XLSX 222"
+                report_type="xlsx"
+                name="report_xlsx.report_xlsx"
+                file="liasse_balance_erp"
+                attachment_use="False"
+                menu="False"
+        />
+
+
+
+
+    </data>
+</odoo>

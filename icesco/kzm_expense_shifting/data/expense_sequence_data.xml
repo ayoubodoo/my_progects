@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="seq_shifting_expense" model="ir.sequence">
+            <field name="name">se_sequencer</field>
+            <field name="code">hr.expense.shifting</field>
+            <field name="prefix">SHE%(year)s-</field>
+            <field name="padding">4</field>
+        </record>
+
+        <record id="shifting_expense_to_approve_activity" model="mail.activity.type">
+            <field name="name">shifting expense to approve</field>
+            <field name="icon">fa-thumbs-up</field>
+            <field name="res_model_id" ref="kzm_expense_shifting.model_hr_expense_shifting"/>
+        </record>
+        <record id="shifting_expense_to_validate_activity" model="mail.activity.type">
+            <field name="name">Shifting expense to pay </field>
+            <field name="icon">fa-thumbs-up</field>
+            <field name="res_model_id" ref="kzm_expense_shifting.model_hr_expense_shifting"/>
+        </record>
+        <record id="shifting_expense_product_id" model="product.product">
+            <field name="name">Article des Frais de déplacements</field>
+            <field name="can_be_expensed">True</field>
+        </record>
+
+    </data>
+</odoo>

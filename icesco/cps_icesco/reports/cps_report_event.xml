@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="cps_report_event"
+            model="event.event"
+            string="Event concept note"
+            report_type="qweb-pdf"
+            name="cps_icesco.cps_dh_report_event"
+            file="cps_icesco.cps_dh_report_event"/>
+
+    <template id="cps_dh_report_event">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+
+                        <h2>
+                            <a style="color:#1D8348">Event:</a>
+                            <a t-field="o.name"/>
+
+                        </h2>
+
+                        <div class="row">
+
+                            <table width="100%" style="margin-left:50px;margin-top:50px;border: None solid black;">
+                                <tr>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>Project :</span>
+                                        </strong>
+                                        <span t-att-style="style" t-esc="o.project_id.display_name"/>
+                                    </td>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>Presented by:</span>
+                                        </strong>
+                                        <span t-att-style="style" t-esc="o.deptartment_id.name"/>
+                                    </td>
+
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>Event Name :</span>
+                                        </strong>
+                                        <span t-att-style="style" t-esc="o.event_related"/>
+                                    </td>
+
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>Start Date :</span>
+                                        </strong>
+                                        <span t-att-style="style" t-esc="o.date_begin+datetime.timedelta(hours=1)"/>
+                                    </td>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>End Date :</span>
+                                        </strong>
+                                        <span t-att-style="style" t-esc="o.date_end++datetime.timedelta(hours=1)"/>
+                                    </td>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>Task:</span>
+                                        </strong>
+                                        <span t-att-style="style" t-esc="o.task_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>Timezone:</span>
+                                        </strong>
+                                        <span t-att-style="style" t-esc="o.date_tz"/>
+                                    </td>
+                                    <td style="width:50px;height:60px;" t-if="o.location=='icesco'">
+                                        <strong>
+                                            <span>Room :</span>
+                                        </strong>
+                                        <span t-att-style="style" t-esc="o.room_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr t-if="o.location=='external'">
+                                    <td style="width:50px;height:60px;" t-if="o.location=='external'">
+                                        <strong>
+                                            <span>Location :</span>
+                                        </strong>
+                                        <span t-att-style="style" t-esc="o.location_name"/>
+                                    </td>
+                                    <td style="width:50px;height:60px;" t-if="o.location=='external'">
+                                        <strong>
+                                            <span>City :</span>
+                                        </strong>
+                                        <span t-att-style="style" t-esc="o.city"/>
+                                    </td>
+                                    <td style="width:50px;height:60px;" t-if="o.location=='external'">
+                                        <strong>
+                                            <span>Country :</span>
+                                        </strong>
+                                        <span t-att-style="style" t-esc="o.country.name"/>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>Minimum Attendees:</span>
+                                        </strong>
+                                        <span t-att-style="style" t-esc="o.seats_min"/>
+                                    </td>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>Maximum Attendees :</span>
+                                        </strong>
+                                        <span t-att-style="style" t-esc="o.seats_availability"/>
+                                    </td>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>Member state :</span>
+                                        </strong>
+                                        <span t-att-style="style" t-esc="o.member_state_id.name"/>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>The initiative is:</span>
+                                        </strong>
+                                        <t t-if="o.initiative" t-esc="dict(o.fields_get(allfields=['initiative'])['initiative']['selection'])[o.initiative]"/>
+                                        <!--                                        <span t-att-style="style" t-esc="o.initiative"/>-->
+                                    </td>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>The frequency of this initiative :</span>
+                                        </strong>
+                                        <t t-if="o.frequency" t-esc="dict(o.fields_get(allfields=['frequency'])['frequency']['selection'])[o.frequency]"/>
+
+                                    </td>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>Partners :</span>
+                                        </strong>
+                                        <span t-att-style="style" t-esc="o.partners"/>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>State member :</span>
+                                        </strong>
+                                        <t t-if="o.state_engagement" t-esc="dict(o.fields_get(allfields=['state_engagement'])['state_engagement']['selection'])[o.state_engagement]"/>
+                                    </td>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>DG participation:</span>
+                                        </strong>
+                                        <t t-if="o.dg_participation" t-esc="dict(o.fields_get(allfields=['dg_participation'])['dg_participation']['selection'])[o.dg_participation]"/>
+                                        <!--                                        <span t-att-style="style" t-esc="o.initiative"/>-->
+                                    </td>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>Participation level:</span>
+                                        </strong>
+                                        <t t-if="o.participation_level" t-esc="dict(o.fields_get(allfields=['participation_level'])['participation_level']['selection'])[o.participation_level]"/>
+
+                                    </td>
+
+
+                                </tr>
+
+
+                                <!--                             <tr>-->
+                                <!--                                    <td style="width:50px;height:25px;">-->
+                                <!--                                        <span>location:</span>-->
+                                <!--                                        <span t-att-style="style" t-esc="o.location"/>-->
+                                <!--                                    </td>-->
+                                <!--                                    <td style="width:50px;height:25px;">-->
+                                <!--                                        <span>Room :</span>-->
+                                <!--                                       <span t-att-style="style" t-esc="o.room_id.name"/>-->
+                                <!--                                    </td>-->
+                                <!--                                    <td style="width:50px;height:25px;">-->
+                                <!--                                        <span>date :</span>-->
+                                <!--                                       <span t-att-style="style" t-esc="o.date_begin"/>-->
+                                <!--                                    </td>-->
+                                <!--&lt;!&ndash;                                    <td style="width:50px;height:25px;">&ndash;&gt;-->
+                                <!--&lt;!&ndash;                                        <span>Organizer :</span>&ndash;&gt;-->
+
+                                <!--&lt;!&ndash;                                        <span t-att-style="style" t-esc="doc.organizer_id.name"/>&ndash;&gt;-->
+                                <!--&lt;!&ndash;                                    </td>&ndash;&gt;-->
+                                <!--                                </tr>-->
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

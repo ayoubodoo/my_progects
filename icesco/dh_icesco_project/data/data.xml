@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+        <record id="sequence_chair_goals_indicators" model="ir.sequence">
+            <field name="name">chair.indicators.goal.sequence</field>
+            <field name="code">dh_icesco_project.chair.indicators.goal.sequence</field>
+            <field name="padding">1</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="sequence_dh_chairs" model="ir.sequence">
+            <field name="name">sequence_dh_dh_chairs</field>
+            <field name="code">sequence_chairs.dh.chairs</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+                <record id="sequence_code_activity" model="ir.sequence">
+            <field name="name">sequence_dh_code_activity</field>
+            <field name="code">sequence_code_activity.project.task</field>
+            <field name="padding">5</field>
+                       <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+
+        </record>
+         <record id="group_hide_buttons" model="res.groups">
+        <field name="name">Hide Buttons </field>
+
+    </record>
+
+
+          <record id="sequence_dh_hr_expense" model="ir.sequence">
+            <field name="name">dh_hr_expense</field>
+            <field name="code">sequence_hr_expense.hr.expense</field>
+            <field name="padding">1</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="sequence_ref_fournisseur" model="ir.sequence">
+            <field name="name">sequence_ref_fournisseur</field>
+            <field name="code">sequence_ref_fournisseur.res.partner</field>
+            <field name="prefix">SP</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+<!--        <record id="action_remaining_budget" model="ir.actions.server">-->
+<!--        <field name="name">Remaining Budget </field>-->
+<!--        <field name="type">ir.actions.server</field>-->
+<!--        <field name="model_id" ref="hr_expense.model_hr_expense"/>-->
+<!--        <field name="binding_model_id" ref="hr_expense.model_hr_expense"/>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="code">records.applicant_auto_rejection()</field>-->
+<!--    </record>-->
+    </data>
+</odoo>

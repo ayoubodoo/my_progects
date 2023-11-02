@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="dh_perf_operation_tree">
+        <field name="name">dh.perf.operation.tree</field>
+        <field name="model">dh.perf.operation</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name" width="1"/>
+                <field name="project_task_id" width="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_perf_operation">
+        <field name="name">العمليات</field>
+        <field name="res_model">dh.perf.operation</field>
+        <field name="view_mode">tree</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_perf_operation_tree')})]"/>
+    </record>
+</odoo>

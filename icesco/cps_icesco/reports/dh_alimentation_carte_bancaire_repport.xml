@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <report
+            id="dh_alimentation_carte_bancaire"
+            model="account.payment"
+            string="Lettre alimentation carte bancaire  "
+            report_type="qweb-pdf"
+            name="cps_icesco.dh_alimentation_carte_bancaire1"
+            file="cps_icesco.dh_alimentation_carte_bancaire1"
+
+
+    />
+    <template id="dh_alimentation_carte_bancaire1">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <!--                <t t-call="web.external_layout">-->
+                <div class="page article" style="padding-left:6%;padding-right:6%;font-size :20px; text-align: justify;text-justify: inter-word;">
+
+                <div style="padding-top:1%">
+                    <div class="row">
+                        <div class="col-4" >
+                                            <strong>
+
+                        <span>N/Réf. : DAF/</span>                    </strong>
+                        </div>                        <div class="col-4" >
+
+                                            <strong>
+
+                        <div class="text-center">Rabat, le</div>
+                    </strong>
+                        </div>
+                                                <div class="col-4" />
+
+                        </div>
+                    <br/>
+                    BANQUE Populaire
+                    <br/>
+       HAY RYAD - RABAT                    <br/>
+                    <strong>RABAT</strong>
+                    <br/>
+                    <br/>
+                    Messieurs,
+                    <br/>
+                    <br/>
+                    Par le débit de notre compte en Dollars  n° 
+                    <span t-esc="o.journal_id.bank_account_id.acc_number"/> nous vous prions de bien vouloir effectuer un virement de la somme de 
+                      <span t-esc="o.amount"/> US$  (<span t-esc="o.check_amount_in_words"/> )
+                    ,en faveur  de
+                      <span t-esc="o.partner_id.display_name"/>  
+                   <br/>
+                   <br/>
+                    <div  class="text-center">
+                     A/C N°    
+                    <span t-esc="o.partner_id.bank_ids.bank_id.acn"/>
+                        <br/>
+                        (COMPTE en DOLLARS US)
+                        <br/>
+                        BANQUE    <span t-esc="o.partner_id.bank_ids.bank_id.display_name"/>
+                        <br/>
+                          DETAILS :  <span t-esc="o.details"/>
+
+                    </div>
+                   <br/>
+                   <br/>
+                    <span style="padding-left:10%">             Veuillez agréer, Messieurs, l’expression de nos sentiments distingués.</span>
+                    <br/>
+                    <br/>
+                    <div class="row" style="padding-top:5%;padding-left:5%;">
+                        <div class="col-4">
+
+                            <span class="text-center">
+                                Responsable de la DA
+                                <br/>
+                                Mme Jihane El Assimi
+                            </span>
+<br/>
+                             <img t-if="o.signature_dg_adjoint" t-att-src="image_data_uri(o.signature_dg_adjoint)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+
+                        </div>
+                        <div class="col-4">
+
+
+                            <span class="text-center">
+                                Le Contrôleur financier
+                                <br/>
+                                Mme Khadija Sadrat
+                            </span>
+
+                            <br/>
+                            <img t-if="o.signature_controlleur_financiere" t-att-src="image_data_uri(o.signature_controlleur_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                        </div>
+                        <div class="col-4" style="float:right">
+
+                        Le Directeur général
+                        <br/>
+
+                        Dr. Salim M. AlMalik
+                            <br/>
+                             <img t-if="o.signature_dg" t-att-src="image_data_uri(o.signature_dg)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+
+
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

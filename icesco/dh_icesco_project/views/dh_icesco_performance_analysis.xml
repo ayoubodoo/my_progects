@@ -1,0 +1,77 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="dh_icesco_performance_analysis_form_view">
+        <field name="name">dh.icesco.performance.analysis.form</field>
+        <field name="model">dh.icesco.performance.analysis</field>
+        <field name="arch" type="xml">
+            <form string="تحليل الأداء">
+                <sheet>
+                    <group col="3">
+                        <group>
+                            <field name="office_id"/>
+                        </group>
+                        <group>
+                            <field name="analysis_cycle"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                        </group>
+                        <group>
+                            <field name="analysis_ids" />
+<!--                            widget="many2many_tags_link"-->
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="الأدلة">
+                            <field name="document_ids" nolabel="1" widget='many2many_binary'/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_analysis_form_view">
+        <field name="name">dh.icesco.analysis.form</field>
+        <field name="model">dh.icesco.analysis</field>
+        <field name="arch" type="xml">
+            <form string="تحليل">
+                <sheet>
+                    <group col="2">
+                        <group>
+                            <field name="type"/>
+                        </group>
+                        <group>
+                            <field name="analysis"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_performance_analysis_plan_tree">
+      <field name="name">dh.icesco.performance.analysis.tree</field>
+      <field name="model">dh.icesco.performance.analysis</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="sequence" width="1"/>
+            <field name="office_id" width="1"/>
+            <field name="analysis_cycle" width="1"/>
+            <field name="date" width="1"/>
+            <field name="analysis_ids" width="1" widget="many2many_tags_link"/>
+            <field name="document_ids" width="1" widget="many2many_tags_link"/>
+            <field name="create_uid" width="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_performance_analysis">
+      <field name="name">تحليل الأداء</field>
+      <field name="res_model">dh.icesco.performance.analysis</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>

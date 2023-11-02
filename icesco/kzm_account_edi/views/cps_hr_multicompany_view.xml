@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Add company_id to hr_contract-->
+        <record id="kzm_hr_multicomany_contract_form_inherit" model="ir.ui.view">
+            <field name="name">hr.contract.view.form.inherit</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="company_id" groups="base.group_multi_company" required="1"/>
+                </xpath>
+            </data>
+            </field>
+        </record>
+        <record id="kzm_hr_multicomany_contract_view_tree_inherit" model="ir.ui.view">
+            <field name="name">hr.contract.view.tree.inherit</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_tree"/>
+            <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="company_id" groups="base.group_multi_company" />
+                </xpath>
+            </data>
+            </field>
+        </record>
+
+        <record id="kzm_hr_multicomany_payroll_ma_form_inherit" model="ir.ui.view">
+            <field name="name">hr.payroll_ma.view.form.inherit</field>
+            <field name="model">hr.payroll_ma</field>
+            <field name="inherit_id" ref="kzm_hr_payroll_ma.hr_payroll_ma_form"/>
+            <field name="arch" type="xml">
+            <data>
+
+                <xpath expr="//field[@name='number']" position="before">
+                    <field name="company_id" groups="base.group_multi_company" />
+                    <field name="type_employe" />
+                </xpath>
+
+                <xpath expr="//field[@name='currency_id']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//notebook//page[2]" position="attributes">
+                    <attribute name="attrs">{'invisible':[('type_employe','=','journaliers')]}</attribute>
+                </xpath>
+            </data>
+            </field>
+        </record>
+
+        <record id="kzm_hr_multicomany_payroll_ma_view_tree_inherit" model="ir.ui.view">
+            <field name="name">hr.payroll_ma.view.tree.inherit</field>
+            <field name="model">hr.payroll_ma</field>
+            <field name="inherit_id" ref="kzm_hr_payroll_ma.hr_payroll_ma_tree"/>
+            <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </xpath>
+            </data>
+            </field>
+        </record>
+
+        <record id="kzm_hr_multicomany_payroll_ma_search_inherit" model="ir.ui.view">
+            <field name="name">kzm_hr_multicomany_payroll_ma_search_inherit</field>
+            <field name="model">hr.payroll_ma</field>
+            <field name="inherit_id" ref="kzm_hr_payroll_ma.hr_payroll_ma_search"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </xpath>
+                <xpath expr="//filter[@name='period_id']" position="before">
+                    <filter name="company_id" groups="base.group_multi_company" string="Ferme"
+                            context="{'group_by':'company_id'}" />
+                </xpath>
+
+            </field>
+        </record>
+
+
+        <record id="kzm_hr_multicomany_payroll_ma_bulletin_view_tree_inherit" model="ir.ui.view">
+            <field name="name">hr.payroll_ma.bulletin.view.tree.inherit</field>
+            <field name="model">hr.payroll_ma.bulletin</field>
+            <field name="inherit_id" ref="kzm_hr_payroll_ma.salary_tree"/>
+            <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </xpath>
+            </data>
+            </field>
+        </record>
+
+        <record id="hr_payroll_ma_bulletin_search" model="ir.ui.view">
+		    <field name="name">hr.payroll_ma.bulletin search</field>
+		    <field name="model">hr.payroll_ma.bulletin</field>
+		    <field name="arch" type="xml">
+		        <search string="Bulletins de paie">
+		            <field name="employee_id"  />
+		            <field name="matricule"  />
+					<field name="period_id"  />
+                    <field name="name" />
+					<field name="working_days" />
+					<field name="normal_hours" />
+					<field name="salaire_brute" />
+					<field name="salaire_brute_imposable" />
+					<field name="cotisations_employee" />
+					<field name="cotisations_employer" />
+
+		            <group string="Grouper par">
+                       <filter name="filter_period_id"  string="Période"
+                               context="{'group_by': 'period_id'}"  />
+                       <filter name="filter_employee_id"  string="Employée"
+                               context="{'group_by': 'employee_id'}"/>
+                        <filter name="filter_company_id"  string="Ferme"
+                               context="{'group_by': 'company_id'}"/>
+                    </group>
+		        </search>
+		    </field>
+		</record>
+
+
+        <record id="kzm_hr_multicomany_payroll_ma_bulletin_form_inherit" model="ir.ui.view">
+            <field name="name">hr.payroll_ma.bulletin.view.form.inherit</field>
+            <field name="model">hr.payroll_ma.bulletin</field>
+            <field name="inherit_id" ref="kzm_hr_payroll_ma.salary_form"/>
+            <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='employee_id']" position="before">
+                    <field name="company_id" groups="base.group_multi_company" />
+                </xpath>
+                <xpath expr="//field[@name='period_id']" position="attributes">
+                    <attribute name="domain">[('company_id','=',company_id)]</attribute>
+                </xpath>
+
+            </data>
+            </field>
+        </record>
+
+    </data>
+</odoo>
+
+

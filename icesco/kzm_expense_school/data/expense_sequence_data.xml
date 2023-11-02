@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="seq_school_expense" model="ir.sequence">
+            <field name="name">se_sequencer</field>
+            <field name="code">hr.expense.school</field>
+            <field name="prefix">SE%(year)s-</field>
+            <field name="padding">4</field>
+        </record>
+
+        <record id="school_expense_to_approve_activity" model="mail.activity.type">
+            <field name="name">School expense to approve</field>
+            <field name="icon">fa-thumbs-up</field>
+            <field name="res_model_id" ref="kzm_expense_school.model_hr_expense_school"/>
+        </record>
+        <record id="school_expense_to_validate_activity" model="mail.activity.type">
+            <field name="name">School expense to pay </field>
+            <field name="icon">fa-thumbs-up</field>
+            <field name="res_model_id" ref="kzm_expense_school.model_hr_expense_school"/>
+        </record>
+        <record id="expense_product_id" model="product.product">
+            <field name="name">Article des Frais scolaires</field>
+            <field name="can_be_expensed">True</field>
+        </record>
+
+         <record id="mail_expenses_school_informations" model="mail.template">
+            <field name="name">school reimbursement ${object.name} </field>
+            <field name="model_id" ref="kzm_expense_school.model_hr_expense_school"/>
+            <field name="subject">
+               school reimbursement summary ${object.name}
+            </field> <!-- Statut ${object.description_state} -->
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Hello,
+                        <br/>
+                        <br/>
+                        Please find attached the reimbursement summary ${object.name}
+                        <br/>
+                        <br/>
+                        Best regards / Cordialement,
+                    </p>
+                </div>
+            </field>
+        </record>
+
+    </data>
+</odoo>

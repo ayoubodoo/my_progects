@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="cps_report_event_invitation"
+            model="event.event"
+            string="Invitation"
+            report_type="qweb-pdf"
+            name="cps_icesco.cps_dh_report_event_invitation"
+            file="cps_icesco.cps_dh_report_event_invitation"/>
+
+    <template id="cps_dh_report_event_invitation">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                  <t t-foreach="o.registration_ids" t-as="line">
+                <t t-call="web.external_layout">
+
+                    <div class="page">
+
+                        <div class="oe_structure"/>
+
+                        <h3>
+                            <a style="color:#1D8348">Dear <span t-field="line.name"/>,</a>
+                        </h3>
+                        <br/>
+                        <br/>
+
+                        <div style="font-family:Arial;">
+
+                            <div>
+                                <strong>
+                                    I am pleased to inform you that you are cordially invited to the<a
+                                        t-field="o.name"/>.This event will be organized at
+                                    <span t-if="o.location=='icesco'">
+                                        <span t-esc="o.room_id.name"/>
+                                    </span>
+                                    <span t-if="o.location=='external'">
+                                        <span t-esc="o.location_name"/>
+                                        <span t-esc="o.city"/>
+                                        <span t-esc="o.country.name"/>
+                                    </span>
+                                    and will be held on
+                                    <a t-field="o.date_begin"/>
+                                </strong>
+                            </div>
+                            <br/>
+                            <div>
+                                <strong>Please confirm your availability on or before
+                                    <a t-field="o.date_begin"/>
+                                    by contacting us at + 212 (0) 5 37 56 60 52 / 53 or by emailing us at
+                                    contact@icesco.org
+                                </strong>
+                            </div>
+                            <br/>
+                            <div>
+                                <strong>We look forward to your presence on the event
+                                    <a t-field="o.event_related"/>
+                                </strong>
+                            </div>
+                            <br/>
+
+
+                            <strong>Yours Sincerely.</strong>
+
+
+                        </div>
+                    </div>
+
+                </t>
+                       </t>
+            </t>
+        </t>
+    </template>
+</odoo>

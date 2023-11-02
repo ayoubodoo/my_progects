@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dh_autorisation_sortie_form">
+            <field name="name">dh.autorisation.sortie.form</field>
+            <field name="model">dh.autorisation.sortie</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="employee_id"/>
+                            </group>
+                            <group>
+                                <field name="check_out"/>
+                                <field name="check_in"/>
+                            </group>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_autorisation_sortie_tree">
+            <field name="name">dh.autorisation.sortie.tree</field>
+            <field name="model">dh.autorisation.sortie</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" create="0">
+                   <field name="employee_id"/>
+                    <field name="check_out"/>
+                   <field name="check_in"/>
+                   <field name="motif"/>
+                   <field name="leave_hours" widget="float_time"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="dh_autorisation_sortie_action" model="ir.actions.act_window">
+            <field name="name"> Autorisation Sortie </field>
+            <field name="res_model">dh.autorisation.sortie</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p> </p>
+            </field>
+        </record>
+
+     <menuitem id="dh_autorisation_sortie" name="Autorisation Sortie"
+        parent="hr_attendance.menu_hr_attendance_manage_attendances" sequence="10" action="dh_autorisation_sortie_action"/>
+    </data>
+</odoo>

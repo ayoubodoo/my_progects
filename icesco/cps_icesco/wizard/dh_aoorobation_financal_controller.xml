@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="dh_approbation_financal_controller_wizard_form">
+        <field name="name">dh.approbation.financal.controller.wizard.form</field>
+        <field name="model">dh.approbation.financal.controller.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <sheet>
+                <group>
+<!--                    <field name="date_dg"/>-->
+                    <field name="signature_financal_controller" widget="signature"/>
+
+                </group>
+            </sheet>
+
+            <footer>
+                    <button string="Approve" name="button_financial_affair_approval" type="object"/>
+                    <button special="cancel" string="Cancel"/>
+            </footer>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_approbation_financal_controller_wizard">
+        <field name="name"> Financial Controller Approval </field>
+        <field name="res_model">dh.approbation.financal.controller.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="dh_approbation_financal_controller_wizard_form"/>
+    </record>
+
+
+</odoo>

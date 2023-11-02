@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dh_icesco_awards_form_view">
+            <field name="name">dh.awards.form</field>
+            <field name="model">dh.awards</field>
+            <field name="arch" type="xml">
+                <form string="الجوائز">
+                    <sheet>
+                        <group col="2">
+                            <group>
+                                <field name="name"/>
+                                <field name="pays_id" domain="[('is_member_state','=',True)]"/>
+                                <field name="direction_id"/>
+                            </group>
+                            <group>
+                                <field name="annee"/>
+                                <field name="date"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_icesco_awards_tree">
+            <field name="name">dh.awards.tree</field>
+            <field name="model">dh.awards</field>
+            <field name="arch" type="xml">
+                <tree string="الجوائز">
+<!--                    <field name="annee"/>-->
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="pays_id" domain="[('is_member_state','=',True)]" invisible="0"/>
+                                        <field name="direction_id"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record model="ir.actions.act_window" id="action_dh_icesco_awards">
+            <field name="name">قائـــــمة الجوائز</field>
+            <field name="res_model">dh.awards</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="dh_icesco_awards_tree"/>
+        </record>
+          <menuitem id="icesco_awardss_menu" name="قائـــــمة الجوائز"
+                  parent="project.menu_project_config"
+                  action="action_dh_icesco_awards" sequence="34"/>
+
+    </data>
+</odoo>

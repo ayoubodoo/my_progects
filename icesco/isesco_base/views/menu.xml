@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem sequence="1"
+                  name="Inventory Status Report" id="inventory_status_repport_menu_1"
+                  parent="stock.menu_warehouse_report"
+                  action="isesco_base.action_view_stock_situation_form2"/>
+    </data>
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--    <record id="view_salary_form_inherite" model="ir.ui.view">-->
+<!--        <field name="name">hr.payroll_ma.bulletin.form.inherit</field>-->
+<!--        <field name="model">hr.payroll_ma.bulletin</field>-->
+<!--        <field name="inherit_id" ref="kzm_payroll_ma.salary_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <field  name="company_id" position='after'>-->
+<!--                <field name="remaining_leaves"/>-->
+<!--            </field>-->
+<!--        </field>-->
+<!--    </record>-->
+
+    <record id="view_rubrique_form_inherite" model="ir.ui.view">
+        <field name="name">hr.payroll_ma.rubrique.form.inherit</field>
+        <field name="model">hr.payroll_ma.rubrique</field>
+        <field name="inherit_id" ref="kzm_payroll_ma.rubrique_form"/>
+        <field name="arch" type="xml">
+
+            <field  name="formule" position='after'>
+                <field name="is_grade"/>
+
+                <field name="is_scolarite"/>
+<!--                <field name="is_transpor"/>-->
+                <field name="line_ids" attrs="{'invisible': [('is_grade', '=', False)]}">
+                    <tree>
+                        <field name="category_id"/>
+                        <field name="amount"/>
+                    </tree>
+                    <form>
+                        <group>
+                            <field name="category_id"/>
+                            <field name="amount"/>
+                        </group>
+                    </form>
+                </field>
+            </field>
+        </field>
+    </record>
+
+</odoo>

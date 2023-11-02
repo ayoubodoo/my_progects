@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="cps_report_list_event"
+            model="event.event"
+            string="List of participants"
+            report_type="qweb-pdf"
+            name="cps_icesco.cps_dh_report_list_participant_event"
+            file="cps_icesco.cps_dh_report_list_participant_event"/>
+
+    <template id="cps_dh_report_list_participant_event">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <h3>
+                            <a style="color:#1D8348">List of Participants</a>
+                        </h3>
+                        <br/>
+                        <br/>
+
+                        <div class="row">
+
+                            <table width="100%" style="margin-left:50px;margin-top:50px;border: None solid black;">
+                                <tr>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>Contact :</span>
+                                        </strong>
+
+                                    </td>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>Attendee Name:</span>
+                                        </strong>
+
+                                    </td>
+
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>Email :</span>
+                                        </strong>
+
+                                    </td>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>Phone :</span>
+                                        </strong>
+
+                                    </td>
+                                    <td style="width:50px;height:60px;">
+                                        <strong>
+                                            <span>Status :</span>
+                                        </strong>
+
+                                    </td>
+
+
+                                </tr>
+                                <t t-foreach="o.registration_ids" t-as="line">
+
+                                    <tr>
+                                        <td style="width:50px;height:60px;">
+                                            <span t-field="line.partner_id"/>
+
+                                        </td>
+                                        <td style="width:50px;height:60px;">
+                                            <span t-field="line.name"/>
+                                        </td>
+
+                                        <td style="width:50px;height:60px;">
+                                            <span t-field="line.email"/>
+                                        </td>
+                                        <td style="width:50px;height:60px;">
+                                            <span t-field="line.phone"/>
+                                        </td>
+                                        <td style="width:50px;height:60px;">
+                                            <span t-field="line.state"/>
+                                        </td>
+
+                                    </tr>
+
+                                </t>
+
+
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

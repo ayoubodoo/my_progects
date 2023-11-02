@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_hr_category_form">
+        <field name="name">dh.interviews.form</field>
+        <field name="model">dh.interviews</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <notebook>
+                        <page>
+                            <field name="interview_lines">
+                            <tree editable="bottom">
+                                <field name="interviewr_id"/>
+                                 <field name="knowledge_field" width="1"/>
+                                 <field name="leadership_quality" width="1"/>
+                                 <field name="eq" width="1"/>
+                                 <field name="experience" width="1"/>
+                                 <field name="languages" width="1"/>
+                                 <field name="total" width="1"/>
+                            </tree>
+                            </field>
+
+                        </page>
+
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="hr_recruitment.hr_applicant_view_form">
+        <field name="name">Jobs - Recruitment Form</field>
+        <field name="model">hr.applicant</field>
+        <field name="arch" type="xml">
+          <form string="Jobs - Recruitment Form">
+            <header>
+                <button string="Create Employee" name="create_employee_from_applicant" type="object"
+                        class="oe_highlight" attrs="{'invisible': ['|',('emp_id', '!=', False),('active', '=', False)]}" confirm="Are you sure?"/>
+                <button string="Refuse" name="archive_applicant" type="object" attrs="{'invisible': [('active', '=', False)]}"/>
+                <button string="Restore" name="reset_applicant" type="object" attrs="{'invisible': [('active', '=', True)]}"/>
+                <field name="stage_id" widget="statusbar" options="{'clickable': '1', 'fold_field': 'fold'}" attrs="{'invisible': [('active', '=', False),('emp_id', '=', False)]}"/>
+            </header>
+            <sheet>
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_applications_email"
+                            class="oe_stat_button"
+                            icon="fa-pencil"
+                            type="object"
+                            attrs="{'invisible': [('application_count', '=', 0)]}">
+                        <field name="application_count" widget="statinfo" string="Other Applications"/>
+                    </button>
+                    <button name="action_makeMeeting" class="oe_stat_button" icon="fa-calendar" type="object"
+                         help="Schedule interview with this applicant">
+                        <field name="meeting_count" widget="statinfo" string="Meetings"/>
+                    </button>
+                </div>
+                <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                <field name="kanban_state" widget="kanban_state_selection"/>
+                <field name="active" invisible="1"/>
+                <field name="legend_normal" invisible="1"/>
+                <field name="legend_blocked" invisible="1"/>
+                <field name="legend_done" invisible="1"/>
+                <div class="oe_title">
+                    <label for="name" class="oe_edit_only"/>
+                    <h1><field name="name"/></h1>
+                    <h2 class="o_row">
+                        <div>
+                            <label for="partner_name" class="oe_edit_only"/>
+                            <field name="partner_name"/>
+                        </div>
+                    </h2>
+                </div>
+                <group>
+                    <group>
+                        <field name="partner_id" invisible="1" />
+                        <field name="email_from" widget="email"/>
+                        <field name="email_cc" groups="base.group_no_one"/>
+                        <field name="partner_phone" widget="phone"/>
+                        <field name="partner_mobile" widget="phone"/>
+                        <field name="type_id" placeholder="Degree"/>
+                    </group>
+                    <group>
+                        <field name="categ_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}"/>
+                        <field name="user_id"/>
+                        <field name="priority" widget="priority"/>
+                        <field name="medium_id" groups="base.group_no_one" />
+                        <field name="source_id"/>
+                    </group>
+
+
+                </group>
+                <separator string="Application Summary"/>
+                <field name="description" placeholder="Feedback of interviews..."/>
+                    <notebook>
+                        <page string="Private Informations">
+                            <group>
+
+                                            <field name="date_birth"/>
+                <field name="adresse"/>
+                <field name="nationality"/>
+                <field name="country_residince"/>
+                <field name="city"/>
+                <field name="state"/>
+                <field name="zip"/>
+                            </group>
+                        </page>
+                         <page  string="Resume">
+
+                             <group string="Education">
+                    <field name="bachelor"/>
+                    <field name="master"/>
+                    <field name="phd"/>
+                </group>
+              <group string="Expérience">
+                    <field name="nbr_years_experience"/>
+                    <field name="current_latest_job_title"/>
+                    <field name="societe_job"/>
+                    <field name="had_experience_international_organization"/>
+                    <field name="name_international_organization" attrs="{'invisible': [('had_experience_international_organization', '=', False)]}"/>
+                </group>
+              <group string="Langues">
+                    <field name="language_1"/>
+                    <field name="language_2"/>
+                    <field name="language_3"/>
+                    <field name="language_4"/>
+                    <field name="language_5"/>
+                </group>
+                        </page>
+                    <page string="Interviews">
+                        <field name="interview_ids">
+                            <tree editable="bottom">
+                                <field name="date_interview" width="1"/>
+                                <field name="time_interview" widget='float_time' width="1"/>
+<!--                                 <field name="knowledge_field" width="1"/>-->
+<!--                                 <field name="leadership_quality" width="1"/>-->
+<!--                                 <field name="eq" width="1"/>-->
+<!--                                 <field name="experience" width="1"/>-->
+<!--                                 <field name="languages" width="1"/>-->
+                                 <field name="total" width="1"/>
+                                 <field name="comment" width="2"/>
+    <!--                             <button name="submit_action" type="object"-->
+    <!--                            string="Submit"-->
+    <!--                           />-->
+
+
+                                 <button
+                                string="Scoring"
+                                type="object"
+                                name="open_one2many_line"
+                                context="{'default_active_id': active_id}"
+                                >
+                            </button>
+                                 <button name="%(meeting_invitation_action_wizard)d" string="Meeting Invitation"
+
+                                class="btn btn-sm btn-primary" type="action"
+                                />
+
+
+
+                            </tree>
+
+                        </field>
+                    </page>
+                        <page string="Job">
+                              <group>
+                        <field name="job_id"/>
+                        <field name="department_id"/>
+                        <field name="company_id" groups="base.group_multi_company" options='{"no_open":True}' />
+                    </group>
+                        </page>
+
+                    <page string="Contract">
+
+                         <group>
+                        <label for="salary_expected"/>
+                        <div class="o_row">
+                            <field name="salary_expected"/>
+                            <span attrs="{'invisible':[('salary_expected_extra','=',False)]}"> + </span>
+                            <field name="salary_expected_extra" placeholder="Extra advantages..."/>
+                        </div>
+                        <label for="salary_proposed"/>
+                        <div class="o_row">
+                            <field name="salary_proposed"/>
+                            <span attrs="{'invisible':[('salary_proposed_extra','=',False)]}"> + </span>
+                            <field name="salary_proposed_extra" placeholder="Extra advantages..."/>
+                        </div>
+                        <field name="availability"/>
+                        <field name="emp_id" invisible="1"/>
+                    </group>
+                    </page>
+                      <page  string="HR Setting">
+                            <group>
+                              <field name="category_id"/>
+                     <field name="grade_id"/>
+                                <field name="nationality"/>
+
+                   <field name="code"/>
+                <field name="amount"/>
+
+                <field name="family_allowance"/>
+                <field name="trans_allowance" invisible="0"/>
+                <field name="gross_salary" invisible="0"/>
+                <field name="net_salary" invisible="0"/>
+                            </group>
+                        </page>
+
+                </notebook>
+            </sheet>
+            <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers"/>
+                <field name="activity_ids" widget="mail_activity"/>
+                <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients', 'open_attachments': True}"/>
+            </div>
+          </form>
+        </field>
+    </record>
+
+</odoo>

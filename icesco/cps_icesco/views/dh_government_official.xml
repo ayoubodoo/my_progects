@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dh_government_official_form">
+            <field name="name">dh.government.officials.form</field>
+            <field name="model">dh.government.official</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                             <field name="title"/>
+                            <field name="official_name"/>
+                            <field name="contact_email" widget="email"/>
+                            <field name="phone" widget="phone"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_government_official_tree">
+            <field name="name">dh.government.official.tree</field>
+            <field name="model">dh.government.official</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="official_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="dh_government_official_action" model="ir.actions.act_window">
+            <field name="name">Government Official</field>
+            <field name="res_model">dh.government.official</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p>Add a Government Officials</p>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="project_task_inherit_view_formm">
+            <field name="name">project.task.form</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="department_id" readonly="1" force_save="1"/>
+                </xpath>
+                <xpath expr="//field[@name='project_id']" position="after">
+                    <field name="type_activity" string="نوع النشاط"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

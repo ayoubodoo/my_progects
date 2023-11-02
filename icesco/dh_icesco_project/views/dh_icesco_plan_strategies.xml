@@ -1,0 +1,217 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="dh_icesco_plan_strategies_form">
+            <field name="name">dh.icesco.plan.strategies.form</field>
+            <field name="model">dh.icesco.plan.strategies</field>
+            <field name="arch" type="xml">
+                <form string="الخطة الإستراتيجية" create="0" edit="0" delete="0">
+                    <!--                <sheet>-->
+                    <!--                    <group>-->
+                    <!--                        <group>-->
+                    <!--                            <field name="strategie"/>-->
+                    <!--                        </group>-->
+                    <!--                        <group>-->
+                    <!--                            <field name="date"/>-->
+                    <!--                        </group>-->
+                    <!--                    </group>-->
+                    <!--                </sheet>-->
+
+                    <div t-attf-class="oe_kanban_global_click" style="margin:25px;">
+                        <group string=" " style="color:#008484;">
+                            <field name="plan_strategies_kanban_ids" nolabel="1"
+                                   context="{'default_dh_icesco_goal_strategy_id': active_id}">
+                                <kanban delete="true">
+                                    <field name="id"/>
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="description"/>
+                                    <field name="image"/>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div style="width: 100%;important;">
+                                                <!--                            <a href="{! '/web#model=dh.icesco.plan.strategies.kanban&amp;id='+<t t-esc='record.id.raw_value'/>+'&amp;view_type=form&amp;'}" target="_new" >-->
+
+                                                <!--                            <div class="o_kanban_image">-->
+                                                <!--                              <img t-att-src="kanban_image('dh.icesco.plan.strategies.kanban', 'image', record.id.raw_value)"-->
+                                                <!--                                   alt="Image"/>-->
+                                                <!--                            </div>-->
+                                                <div class="oe_kanban_details">
+                                                    <ul>
+                                                        <li class="mb4">
+
+                                                            <t t-if="record.name.raw_value">
+                                                                <h5 style="font-size: 18px;color:#FFC000;">
+                                                                    <field name="name"/>
+                                                                </h5>
+                                                            </t>
+                                                        </li>
+                                                        <li>
+                                                            <t t-if="record.description.raw_value">
+                                                                <h4>
+                                                                    <field name="description"/>
+                                                                </h4>
+                                                            </t>
+                                                        </li>
+                                                        <li style="text-align:center!important;">
+                                                            <t t-if="record.image.raw_value">
+                                                                <img t-att-src="kanban_image('dh.icesco.plan.strategies.kanban', 'image', record.id.raw_value)"
+                                                                     alt="Image" style="width: 100%;height: auto;"/>
+                                                            </t>
+                                                        </li>
+                                                        <!--                                <li>-->
+                                                        <!--                                  <div t-if="record.sequence.value">-->
+                                                        <!--                                    <field name="sequence"/>-->
+                                                        <!--                                  </div>-->
+                                                        <!--                                </li>-->
+
+                                                    </ul>
+                                                </div>
+
+                                                <!--                            </a>-->
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                            </field>
+                        </group>
+                    </div>
+                    <div t-attf-class="oe_kanban_global_click" style="margin:25px;">
+                        <group string="الأهداف الإستراتيجية للإيسيسكو" style="color:#008484;">
+                            <field name="goal_strategies_kanban_ids" nolabel="1"
+                                   context="{'default_dh_icesco_goal_strategy_id': active_id}">
+                                <kanban delete="true">
+                                    <field name="id"/>
+                                    <field name="sequence"/>
+                                    <field name="orientation_id"/>
+                                    <field name="orientation_short_name"/>
+                                    <field name="description"/>
+                                    <field name="percentage"/>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div style="width: 30%;important;">
+                                                <!--                            <a href="{! '/web#model=dh.icesco.goal.strategies.kanban&amp;id='+<t t-esc='record.id.raw_value'/>+'&amp;view_type=form&amp;'}" target="_new" >-->
+
+                                                <!--                            <div class="o_kanban_image">-->
+                                                <!--                              <img t-att-src="kanban_image('dh.icesco.goal.strategies.kanban', 'image', record.id.raw_value)"-->
+                                                <!--                                   alt="Image"/>-->
+                                                <!--                            </div>-->
+                                                <div class="oe_kanban_details" style="margin-bottom:5px;">
+                                                    <ul style="margin-bottom:20px;">
+                                                        <li class="mb4">
+
+                                                            <t t-if="record.orientation_id.raw_value">
+<!--                                                                <h5 style="font-size: 18px;color:#4285F4; font-weight: 900; margin-bottom:20px;">-->
+                                                                <h5 style="font-size: 18px;color:#FFBC3C; font-weight: 900; margin-bottom:20px;">
+                                                                    <field name="orientation_short_name"/>
+                                                                </h5>
+                                                            </t>
+<!--                                                            <br style="line-height:1px!important;"/>-->
+                                                            <t t-if="record.description.raw_value">
+                                                                <h2 class="text-left" style="font-size: 14px;margin-bottom:20px;">
+                                                                    <field name="description"/>
+                                                                </h2>
+                                                            </t>
+                                                        </li>
+<!--                                                        <br style="line-height:1px!important;"/>-->
+                                                        <li>
+<!--                                                            <t t-if="record.percentage.raw_value">-->
+                                                            <field name="percentage" widget="progressbar">
+                                                            </field>
+<!--                                                            </t>-->
+                                                        </li>
+<!--                                                        <br style="line-height:1px!important;"/>-->
+                                                    </ul>
+                                                </div>
+                                                <!--                                <div class="oe_kanban_global_click" style="float:left!important;background-color:#008484;">-->
+                                                <!--                                    <button t-if="record.id" name="action_orientation_button" type="object" class="btn btn-danger oe_kanban_action oe_kanban_action_button" style="background-color:#008484;">-->
+                                                <!--                                        <span style="font-size: 8px; color:white;">المؤشرات الاستراتيجية</span>-->
+                                                <!--                                    </button>-->
+                                                <!--                                </div>-->
+                                                <div class="oe_kanban_global_click"
+                                                     style="float:left!important;margin-left:2px;">
+                                                    <button t-if="record.id" name="view_group_by_orien" type="object"
+                                                            class="btn btn-primary oe_kanban_action oe_kanban_action_button dh_button_change">
+                                                        <span style="font-size: 12px;">نتائج المحاور</span>
+                                                    </button>
+                                                </div>
+
+                                                <div class="oe_kanban_global_click"
+                                                     style="float:left!important;margin-left:2px;">
+                                                    <button t-if="record.id" name="action_project_button" type="object"
+                                                            class="btn btn-primary oe_kanban_action oe_kanban_action_button dh_button_change">
+                                                        <span style="font-size: 12px;">المؤشرات الإستراتيجية
+                                                        </span>
+                                                    </button>
+                                                </div>
+
+
+
+                                                <div class="oe_kanban_global_click"
+                                                     style="float:left!important;margin-left:2px;">
+                                                    <button t-if="record.id" name="action_project_project_button" type="object"
+                                                            class="btn btn-primary oe_kanban_action oe_kanban_action_button dh_button_change">
+                                                        <span style="font-size: 12px;">المحاور</span>
+                                                    </button>
+                                                </div>
+
+                                                <!--                                    <div>-->
+                                                <!--                                        <button string="Procurement Request" name="" type="action"/>-->
+                                                <!--                                    <div/>-->
+                                                <!--                            </a>-->
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                            </field>
+                        </group>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_icesco_plan_strategies_kanban_form_view">
+            <field name="name">dh.icesco.plan.strategies.kanban.form</field>
+            <field name="model">dh.icesco.plan.strategies.kanban</field>
+            <field name="arch" type="xml">
+                <form string="الخطة الإستراتيجية للإيسيسكو">
+                    <sheet>
+                        <group col="2">
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="image"/>
+                            </group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                            <group>
+                                <field name="dh_icesco_plan_strategy_id" invisible="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_icesco_plan_strategies_tree">
+            <field name="name">dh_icesco_plan_strategies.tree</field>
+            <field name="model">dh.icesco.plan.strategies</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="strategie"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_dh_icesco_plan_strategies">
+            <field name="name">أهلا بك في نظام إدارة أداء للإيسيسكو</field>
+            <field name="res_model">dh.icesco.plan.strategies</field>
+            <field name="view_mode">form</field>
+            <field name="res_id" eval="1"/>
+        </record>
+
+    </data>
+</odoo>

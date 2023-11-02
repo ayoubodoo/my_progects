@@ -1,0 +1,121 @@
+# -*- coding: utf-8 -*-
+{
+    'name': "Cps Icesco",
+    'summary': """
+        Short (1 phrase/line) summary of the module's purpose, used as
+        subtitle on modules listing or apps.openerp.com""",
+
+    'description': """
+        Long description of module's purpose
+    """,
+
+    'author': "Capital Project Strategies",
+    'website': "http://www.yourcompany.com",
+
+    # Categories can be used to filter modules in modules listing
+    # Check https://github.com/odoo/odoo/blob/13.0/odoo/addons/base/data/ir_module_category_data.xml
+    # for the full list
+    'category': 'Uncategorized',
+    'version': '0.1',
+
+    # any module necessary for this one to work correctly
+    'depends': ['base', 'hr_expense', 'isesco_hr', 'hr_attendance', 'hr_holidays', 'account', 'hr_attendance',
+                'icesco_project', 'contacts','project','mail','hr','mail','hr_contract', 'kzm_payroll_holiday'],
+
+    # always loaded
+    'data': [
+        'data/data.xml',
+        'data/sequence.xml',
+        'data/mail_activity.xml',
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        'views/cps_expense_type.xml',
+        'data/mail_template.xml',
+        'views/dh_hr_payroll.xml',
+        'views/ir_model.xml',
+        'views/mail_activity_type.xml',
+        'views/cps_expense_billeterie.xml',
+        'views/hr_expense.xml',
+        'views/cps_hr_leave.xml',
+        'views/event_event.xml',
+        'views/cps_hr_horaire.xml',
+        'views/account_account.xml',
+        'views/cps_hr_attendance.xml',
+        'views/cps_hr_correction.xml',
+        'wizard/hr_attendance_wizard.xml',
+        'wizard/cps_asset_wizard.xml',
+        'views/res_country.xml',
+        'views/cps_room.xml',
+        'views/settings.xml',
+        'views/cps_country.xml',
+        'views/cps_account_move.xml',
+        'views/dh_flag_reference.xml',
+        'views/dh_national_days.xml',
+        'views/dh_government_official.xml',
+        'views/dh_sector.xml',
+        'views/dh_sector.xml',
+        'views/dh_project_type.xml',
+        'views/dh_activity_type.xml',
+        'views/dh_scope_type.xml',
+        'views/dh_tasks.xml',
+        'views/hr_project.xml',
+        'views/dh_strategic_objectives.xml',
+        'views/dh_support.xml',
+        'views/res_partner.xml',
+        'views/dh_lang.xml',
+        'views/hr_department.xml',
+        'views/dh_product_category.xml',
+        'views/cps_resource_calendar_leaves.xml',
+        'views/cps_product_template.xml',
+        'views/dh_autorization_sortie.xml',
+        'views/res_users.xml',
+        'views/res_company.xml',
+        'views/hr_employee.xml',
+        'views/helpdesk_ticket.xml',
+        'views/fleet_vehicule_log_services.xml',
+        'views/cps_purchase_order.xml',
+        'views/dh_account_move.xml',
+        'views/cps_stock_move_line.xml',
+        'views/type_attachment.xml',
+        'views/hr_expense_sheet.xml',
+        'views/dh_attachment_tasks.xml',
+        'views/dh_product.xml',
+        # 'views/dh_moyen_transport.xml',
+        'reports/dh_depense_caisse.xml',
+        'reports/dh_demande_financier_repport.xml',
+        'reports/dh_demande_technique_repport.xml',
+        'reports/dh_alimentation_carte_bancaire_repport.xml',
+        'reports/dh_lettre_virement_mise _disposition._repport.xml',
+        'reports/dh_lettre_virement_devise_repport.xml',
+        'reports/dh_virement_mad.xml',
+        'reports/dh_lettre_virement_compte_compte_repport.xml',
+        'reports/dh_demande_administrative_repport.xml',
+        'reports/dh_depense_banque_repport.xml',
+        'reports/dh_virement_salaire.xml',
+        # 'reports/cps_report_event_participants.xml',
+        # 'reports/cps_report_event.xml',
+        'reports/dh_leave_repport.xml',
+        # 'reports/cps_report_event_infos.xml',
+        # 'reports/cps_report_invitation_event.xml',
+        # 'reports/dh_depenses_mission.xml',
+        'reports/excel_reports.xml',
+
+        # 'reports/dh_studio_test.xml',
+        "static/src/xml/templates.xml",
+        'wizard/hr_attendance_employe_wizard.xml',
+        'wizard/presence_report.xml',
+
+        'wizard/dh_approbation_task.xml',
+        'wizard/dh_administrative_affairs_approval.xml',
+        'wizard/dh_aoorobation_financal_controller.xml',
+        'wizard/dh_payment_repports.xml',
+        'views/dh_account_payment_rep.xml',
+        'views/product_search_view.xml',
+    ],
+    # only loaded in demonstration mode
+    'demo': [
+    ],
+    'qweb': [
+        "static/src/xml/attendance.xml",
+    ],
+}

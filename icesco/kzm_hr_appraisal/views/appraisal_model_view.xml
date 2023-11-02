@@ -1,0 +1,73 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="appraisal_model_tree">
+            <field name="name">appraisal.model.tree</field>
+            <field name="model">appraisal.model</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="matrix_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="appraisal_model_form">
+            <field name="name">appraisal.model.form</field>
+            <field name="model">appraisal.model</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title" modifiers="{}">
+                            <h1 modifiers="{}">
+                                <field name="name"
+                                       required="1"
+                                       placeholder="Name"
+                                       string="Name"
+                                       modifiers="{'required':true}"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="matrix_id"/>
+                            </group>
+                            <group>
+                                <field name="concern"/>
+                                <field name="evaluation_pays_member"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Factors">
+                                <field name="factor_ids"/>
+                            </page>
+                            <page string="Axis Evaluations">
+                                <field name="axe_evaluation__ids">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="appraisal_model_search" model="ir.ui.view">
+            <field name="name">appraisal.model.search</field>
+            <field name="model">appraisal.model</field>
+            <field name="arch" type="xml">
+                <search string="Model">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+        <record id="appraisal_model_action" model="ir.actions.act_window">
+            <field name="name">Appraisal Model</field>
+            <field name="res_model">appraisal.model</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new appraisal model
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

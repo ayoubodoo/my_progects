@@ -1,0 +1,174 @@
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.sale</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Attendances" string="Attendances" data-key="hr_attendance"
+                     groups="hr_attendance.group_hr_attendance_manager">
+                    <h2>Retard Time</h2>
+                    <div class="row mt16 o_settings_container" name="pincode_setting_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Retard Time</span>
+                                <div class="text-muted">
+                                    <field name="retard_time" widget="float_time"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Marge Affectation Horaire</h2>
+                    <div class="row mt16 o_settings_container" name="pincode_setting_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Marge Horaire</span>
+                                <div class="text-muted">
+                                    <field name="marge_horaire" widget="float_time"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_config_settings_kzm_hr_appraisal_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.hr.appraisal</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="90"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="kzm_hr_appraisal" id="kzm_hr_appraisal" string="Evaluation"
+                     data-key="kzm_hr_appraisal">
+                    <h2>Evaluation Management</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <div class="row mt16">
+                                    <label for="notif_evaluation"
+                                           class="col-md-3 o_light_label"/>
+                                    <field name="notif_evaluation"/>
+                                </div>
+                                <div class="row mt16">
+                                    <label for="date_evaluation"
+                                           class="col-md-3 o_light_label"/>
+                                    <field name="date_evaluation"/>
+                                </div> <div class="row mt16">
+                                    <label for="notif_reevaluation"
+                                           class="col-md-3 o_light_label"/>
+                                    <field name="notif_reevaluation"/>
+                                </div>
+                                <div class="row mt16">
+                                    <label for="date_reevaluation"
+                                           class="col-md-3 o_light_label"/>
+                                    <field name="date_reevaluation"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_config_settings_kzm_project_project_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.project.project</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="90"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Project" id="project" string="Project"
+                     data-key="project">
+                    <h2>Durée pour envoyer une notification si les piéces jointes ne sont pas définis dans l'activité validée</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <div class="row mt16">
+                                    <label for="duree_notif_attach"
+                                           class="col-md-3 o_light_label"/>
+                                    <field name="duree_notif_attach"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="kzm_hr_appraisal_config_settings_action" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'kzm_hr_appraisal', 'bin_size': False}</field>
+    </record>
+    <menuitem name="Evaluation" id="menu_root" sequence="120" web_icon="kzm_hr_appraisal,static/description/icon.png"/>
+    <menuitem name="Configuration" parent="menu_root" id="kzm_hr_appraisal_configuration" sequence="110"/>
+    <!--        <menuitem id="kzm_hr_appraisal_config_settings_menu" name="Settings"-->
+    <!--            parent="kzm_hr_appraisal_configuration" sequence="0" action="kzm_hr_appraisal_config_settings_action"-->
+    <!--            groups="base.group_system"/>-->
+
+    <record id="empolyee_res_config_settings_view_form_employee" model="ir.ui.view">
+        <field name="name">cps.res.config.settings.view.form.inherit.employee</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="hr.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-string='Employees']" position="inside">
+                <div class="row mt16 o_settings_container">
+                    <div class="col-6 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <label for="salaire_max_logement_social"
+                                   string="Notifications"/>
+                            <div class="text-muted">
+                            </div>
+                            <div class="content-group">
+                                <div class="row mt16">
+                                    <label for="notif_fin_periode_essai"
+                                           class="col-md-3 o_light_label"/>
+                                    <field name="notif_fin_periode_essai"/>
+                                </div>
+                                <div class="row mt16">
+                                    <label for="notif_retraite"
+                                           class="col-md-3 o_light_label"/>
+                                    <field name="notif_retraite"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <label for="salaire_max_logement_social"
+                                   string="Notifications"/>
+                            <div class="text-muted">
+
+                            </div>
+                            <div class="content-group">
+                                <div class="row mt16">
+                                    <label for="date_cin"
+                                           class="col-md-3 o_light_label"/>
+                                    <field name="date_cin"/>
+                                </div>
+                                <div class="row mt16">
+                                    <label for="notif_fin_contrat"
+                                           class="col-md-3 o_light_label"/>
+                                    <field name="notif_fin_contrat"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

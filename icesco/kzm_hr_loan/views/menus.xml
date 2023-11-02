@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem sequence="69"
+                  name="Loans And Advances" id="hr_loan_root"
+                  parent="kzm_payroll_ma.menu_ressources_humaines_root"/>
+        <menuitem sequence="72"
+                  name="My Requests" id="hr_loan_root_my_requests"
+                  action="my_requests_action"
+                  parent="hr_loan_root"/>
+        <menuitem sequence="73"
+                  name="To Approve" id="hr_loan_root_to_approve"
+                  parent="hr_loan_root"
+                  groups="kzm_payroll_ma.group_hr_payroll_manager,kzm_payroll_ma.group_hr_payroll_settings"
+                  action="to_approve_requests_action"
+        />
+        <menuitem sequence="74"
+                  name="All" id="hr_loan_root_all"
+                  groups="kzm_payroll_ma.group_hr_payroll_manager,kzm_payroll_ma.group_hr_payroll_settings"
+                  parent="hr_loan_root"
+                  action="all_requests_action"
+        />
+    </data>
+</odoo>

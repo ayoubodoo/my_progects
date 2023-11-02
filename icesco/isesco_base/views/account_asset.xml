@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cps_view_asset_form" model="ir.ui.view">
+        <field name="name">account.asset.form.inherit</field>
+        <field name="model">account.asset</field>
+        <field name="inherit_id" ref="account_asset.view_account_asset_form"/>
+        <field name="arch" type="xml">
+                <xpath expr="//field[@name='acquisition_date']" position="after">
+                    <field name="taux" readonly="1" attrs="{'invisible': [('taux', 'in', [0,False])]}"/>
+                </xpath>
+                <xpath expr="//button[@name='action_save_model']" position="after">
+                    <button name="%(action_account_asset_wizard)d" string="Modifier Taux" type="action" class="btn btn-secondary"/>
+                </xpath>
+        </field>
+    </record>
+</odoo>

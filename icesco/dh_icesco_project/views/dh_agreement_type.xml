@@ -1,0 +1,37 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="dh_agreement_type_form_view">
+        <field name="name">dh.agreement.type.form</field>
+        <field name="model">dh.agreement.type</field>
+        <field name="arch" type="xml">
+            <form string="أنواع الاتفاقات الدولية">
+                <sheet>
+                    <group col="2">
+                        <group>
+                              <field name="name"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_agreement_type_tree">
+      <field name="name">dh.agreement.type.tree</field>
+      <field name="model">dh.agreement.type</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom" >
+          <field name="name" width="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_agreement_type">
+      <field name="name">أنواع الاتفاقات الدولية</field>
+      <field name="res_model">dh.agreement.type</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>

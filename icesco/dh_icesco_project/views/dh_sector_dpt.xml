@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="sector_dpt_form_view">
+            <field name="name">dh.sector.dpt.form</field>
+            <field name="model">dh.sector.dpt</field>
+            <field name="arch" type="xml">
+                <form >
+                    <sheet>
+                            <group>
+                                <field name="name"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sector_dpt_tree">
+            <field name="name">dh.awards.tree</field>
+            <field name="model">dh.sector.dpt</field>
+            <field name="arch" type="xml">
+                <tree>
+
+                    <field name="name"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+
+
+        <record model="ir.actions.act_window" id="action_dh_sector_dpt">
+            <field name="name">Dpt </field>
+            <field name="res_model">dh.sector.dpt</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="sector_dpt_tree"/>
+        </record>
+          <menuitem id="icesco_dh_sector_dpt" name="dpt"
+                  parent="project.menu_project_config"
+                  action="action_dh_sector_dpt" sequence="200"/>
+
+    </data>
+</odoo>

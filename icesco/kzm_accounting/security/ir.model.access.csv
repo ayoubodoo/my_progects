@@ -1,0 +1,10 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_account_move_reader,account.move user,account.model_account_move,group_expert_comptable_reader,1,0,0,0
+access_account_move_line_reader,account.move.line reader,account.model_account_move_line,group_expert_comptable_reader,1,0,0,0
+access_account_analytic_line_reader,account.analytic.line reader,account.model_account_analytic_line,group_expert_comptable_reader,1,0,0,0
+access_account_journal_reader,account.journal reader,account.model_account_journal,group_expert_comptable_reader,1,0,0,0
+access_account_bank_statement_reader,account.bank.statement reader,account.model_account_bank_statement,group_expert_comptable_reader,1,0,0,0
+access_account_bank_statement_line_reader,account.bank.statement.line reader,account.model_account_bank_statement_line,group_expert_comptable_reader,1,0,0,0
+access_account_reconcile_model_reader,account.reconcile.model reader,account.model_account_reconcile_model,group_expert_comptable_reader,1,0,0,0
+access_account_account_type_reader,account.account.type reader,account.model_account_account_type,group_expert_comptable_reader,1,0,0,0
+

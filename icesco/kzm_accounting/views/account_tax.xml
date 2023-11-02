@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+       <record id="action_servers_taxes_desc" model="ir.actions.server">
+            <field name="sequence" eval="5"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="account.model_account_tax"/>
+            <field name="code">records.get_the_description()</field>
+            <field name="condition">True</field>
+            <field name="name">Mise à jour les libelé taxes</field>
+        </record>
+    </data>
+</odoo>

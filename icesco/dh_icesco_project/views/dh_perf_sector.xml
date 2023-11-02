@@ -1,0 +1,62 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="dh_icesco_sector_form_view">
+        <field name="name">dh.perf.sector.form</field>
+        <field name="model">dh.perf.sector</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group col="2">
+                        <group>
+                            <field name="name"/>
+                            <field name="email"/>
+                            <field name="account_analytic_id"/>
+                        </group>
+                        <group>
+                            <field name="all_project_ids" />
+<!--                            widget="many2many_tags_link"-->
+<!--                            <field name="project_ids" widget="many2many_tags_link"/>-->
+                            <field name="mission_ids" />
+<!--                            widget="many2many_tags_link"-->
+                            <field name="count_mission" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="budget_icesco_reel"/>
+                            <field name="budget_icesco_prevision"/>
+                            <field name="budget_hors_icesco_reel"/>
+                            <field name="budget_hors_icesco_prevision"/>
+                            <field name="expense_mission"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_sector_plan_tree">
+      <field name="name">dh.perf.sector.tree</field>
+      <field name="model">dh.perf.sector</field>
+      <field name="arch" type="xml">
+        <tree >
+            <field name="name" width="1"/>
+            <field name="all_project_ids" width="1" widget="many2many_tags_link"/>
+            <field name="mission_ids" width="1" widget="many2many_tags_link"/>
+            <field name="account_analytic_id"/>
+<!--            <field name="project_ids" width="1" widget="many2many_tags_link"/>-->
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_sector">
+      <field name="name">القاطاعات</field>
+      <field name="res_model">dh.perf.sector</field>
+      <field name="view_mode">tree,form</field>
+<!--        <field name="view_id" ref="dh_icesco_sector_plan_tree"/>-->
+    </record>
+
+      <menuitem id="sectors_menu" name="Sectors"
+                  parent="project.menu_project_config"
+                  action="action_dh_icesco_sector" sequence="4"/>
+
+  </data>
+</odoo>

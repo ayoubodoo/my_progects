@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="activity_reference_form">
+            <field name="name">activity.reference.form</field>
+            <field name="model">activity.reference</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="activity_reference_tree">
+            <field name="name">activity.reference.tree</field>
+            <field name="model">activity.reference</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="activity_reference_action" model="ir.actions.act_window">
+            <field name="name">Activity Reference</field>
+            <field name="res_model">activity.reference</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

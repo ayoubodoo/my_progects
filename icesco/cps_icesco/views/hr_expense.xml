@@ -1,0 +1,31 @@
+<odoo>
+  <data>
+
+    <record id="cps_hr_expense_form_inherit" model="ir.ui.view">
+            <field name="name">cps.hr.expense.form.inherit</field>
+            <field name="model">hr.expense</field>
+            <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>
+            <field name="arch" type="xml">
+                <field name="employee_id" position="after">
+                    <field name="passager_id" domain="[('employee_id', '=', employee_id)]" options="{'no_create': True}"/>
+                </field>
+
+
+
+                 <xpath expr="//field[@name='reference']" position="before">
+                    <field name="required_payment" />
+<!--                    <field name="amount_to_text" />-->
+                </xpath>
+                <div name="button_box" position="inside">
+                    <button class="oe_stat_button" type="object" name="get_billeterie"
+                        icon="fa-book">
+                         <field string="Billeterie" name="billeterie_count" widget="statinfo"/>
+
+                    </button>
+
+                </div>
+            </field>
+        </record>
+
+  </data>
+</odoo>

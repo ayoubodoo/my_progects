@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="cps_asset_wizard_form_wizard_post">
+        <field name="name">cps.asset.wizard.form</field>
+        <field name="model">cps.asset.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <sheet>
+                <group>
+<!--                    <group><field name="first_date"/></group>-->
+                    <group><field name="last_date"/></group>
+                </group>
+                <group>
+                    <group>
+                        <field name="first_code" options="{'no_create_edit': True, 'no_create': True}"/>
+                    </group>
+                    <group>
+                        <field name="end_code" options="{'no_create_edit': True, 'no_create': True}"/>
+                    </group>
+                </group>
+            </sheet>
+            <footer>
+                    <button string="Valider" name="generer_lines" type="object"/>
+                    <button special="cancel" string="Annuler"/>
+            </footer>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_cps_asset_form_wizard">
+        <field name="name">Actifs par date</field>
+        <field name="res_model">cps.asset.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="cps_asset_wizard_form_wizard_post"/>
+    </record>
+
+    <menuitem parent="account.menu_finance_entries_management" id="cps_asset_wizard_menu" action="action_cps_asset_form_wizard" sequence="102"/>
+
+<!--    <record id="action_cps_hr_attendance" model="ir.actions.server">-->
+<!--        <field name="name">Modifier Présences</field>-->
+<!--        <field name="model_id" ref="hr_attendance.model_hr_attendance"/>-->
+<!--        <field name="binding_model_id" ref="hr_attendance.model_hr_attendance"/>-->
+<!--        <field name="binding_view_types">list</field>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="code">-->
+<!--            if records:-->
+<!--                action_values = env.ref('cps_icesco.action_hr_attendance_form_wizard').read()[0]-->
+<!--                action_values.update({'context': env.context})-->
+<!--                action = action_values-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+</odoo>

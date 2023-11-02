@@ -1,0 +1,1900 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="cps_report_event_infos"
+            model="event.event"
+            string="Event infos"
+            report_type="qweb-pdf"
+            name="cps_icesco.cps_dh_report_event_infos"
+            file="cps_icesco.cps_dh_report_event_infos"
+            paperformat="cps_icesco.paperformat_cps"
+    />
+
+    <template id="cps_dh_report_event_infos">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <!--                <t t-call="web.external_layout">-->
+                <t t-call="web.internal_layout">
+                    <div class="page" style="margin-top:25px">
+                        <div class="oe_structure"/>
+                        <div class="container pt-4 pb-5">
+                            <strong>
+                                <h1 class="o_page_header">Internal Memo to DG for an event</h1>
+                            </strong>
+                            <div style="border-top: solid;background-color: #000000;border-width: 1px;"></div>
+
+                        </div>
+
+
+                        <!--                        <h4>-->
+                        <!--                            <a style="color:#1D8348">Event:</a>-->
+                        <!--                            <a t-field="o.name"/>-->
+
+                        <!--                        </h4>-->
+                        <!--                        <div class="col">-->
+                        <!--                        <div class="card">-->
+                        <!--                            <div class="card-body">-->
+
+                        <div>
+                            <div class="form-group ">
+                                <label class="mb-1 text-primary" style="color:#6ebc4c;" for="type">
+                                    <span class="font-weight-bold">Presented by</span>
+                                </label>
+                                <div>
+                                    <span t-if="o.deptartment_id" t-esc="o.deptartment_id.name"/>
+                                    <!--                                                % if o.deptartment_id.id != False:-->
+                                    <!--                                                    ${o.deptartment_id.name}-->
+                                    <!--                                                </t>-->
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label class="mb-1 text-primary" style="color:#6ebc4c;" for="type">
+                                    <span class="font-weight-bold">Event title</span>
+                                </label>
+                                <div>
+                                    <span t-if="o.event_related" t-esc="o.event_related"/>
+                                    <!--                                                % if o.event_related != False:-->
+                                    <!--                                                    ${o.event_related}-->
+                                    <!--                                                </t>-->
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display: inline-block;vertical-align: middle">
+                                    <label class="mb-1 text-primary"
+                                           for="date_begin">
+                                        <span class="font-weight-bold">
+                                            Start date
+                                        </span>
+                                    </label>
+                                    <div>
+                                        <span t-if="o.date_begin" t-esc="o.date_begin"/>
+                                        <!--                                                % if o.date_begin != False:-->
+                                        <!--                                                    ${o.date_begin}-->
+                                        <!--                                                </t>-->
+                                    </div>
+                                </div>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <div style="display: inline-block;vertical-align: middle">
+                                    <label class="mb-1 text-primary"
+                                           for="date_end">
+                                        <span class="font-weight-bold">
+                                            End date
+                                        </span>
+                                    </label>
+                                    <div>
+                                        <span t-if="o.date_end" t-esc="o.date_end"/>
+                                        <!--                                                % if o.date_end != False:-->
+                                        <!--                                                    ${o.date_end}-->
+                                        <!--                                                </t>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <label class="mb-1 text-primary "
+                            >
+                                <span class="font-weight-bold">
+                                    Implementation location
+                                </span>
+                            </label>
+                            <div class="form-group ">
+                                <div class="form-row ">
+                                    <!--                                                <t t-set="location_icesco" t-value="0"/>-->
+                                    <!--                                                <t t-set="location_external" t-value="0"/>-->
+                                    <label>
+                                        <span>
+                                            <span t-if="o.location == 'icesco'">ICESCO</span>
+                                            <span t-if="o.location == 'external'">External</span>
+                                            <span t-if="o.location == 'online'">Online</span>
+                                            <!--                                                        % if o.location == 'icesco':-->
+                                            <!--                                                            ICESCO-->
+                                            <!--                                                        </t>-->
+                                            <!--                                                        % if o.location == 'external':-->
+                                            <!--                                                            External-->
+                                            <!--                                                        </t>-->
+                                            <!--                                                        % if o.location == 'online':-->
+                                            <!--                                                            Online-->
+                                            <!--                                                        </t>-->
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <t t-if="o.location == 'icesco'">
+                                <div class="room_visible form-group ">
+                                    <label class="mb-1 text-primary"
+                                           for="room_id">
+                                        <span class="font-weight-bold">
+                                            Room
+                                        </span>
+                                    </label>
+                                    <div>
+                                        <span>
+                                            <span t-if="o.room_id" t-esc="o.room_id.name"/>
+                                            <!--                                                        % if o.room_id.id != False:-->
+                                            <!--                                                            ${o.room_id.name}-->
+                                            <!--                                                        </t>-->
+                                        </span>
+                                    </div>
+                                </div>
+                            </t>
+                            <t t-if="o.location == 'external'">
+                                <div>
+                                    <div
+                                            style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1 text-primary"
+                                               for="external_member_state">
+                                            <span class="font-weight-bold">
+                                                List of Member States
+                                            </span>
+                                        </label>
+                                        <div>
+                                            <span>
+                                                <span t-if="o.external_member_state"
+                                                      t-esc="o.external_member_state.name"/>
+                                                <!--                                                        % if o.external_member_state.id != False:-->
+                                                <!--                                                            ${o.external_member_state.name}-->
+                                                <!--                                                        </t>-->
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                    <div
+                                            style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1 text-primary"
+                                               for="external_non_member_state">
+                                            <span class="font-weight-bold">
+                                                List of Non-Member States
+                                            </span>
+                                        </label>
+                                        <div>
+                                            <span>
+                                                <span t-if="o.external_non_member_state"
+                                                      t-esc="o.external_non_member_state.name"/>
+                                                <!--                                                        % if o.external_non_member_state.id != False:-->
+                                                <!--                                                            ${o.external_non_member_state.name}-->
+                                                <!--                                                        </t>-->
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="country_visible form-group col-4" style="float:left"
+                                >
+                                    <label class="mb-1 text-primary"
+                                           for="country">
+                                        <span class="font-weight-bold">
+                                            Country
+                                        </span>
+                                    </label>
+                                    <div>
+                                        <span>
+                                            <span t-if="o.country" t-esc="o.country.name"/>
+                                            <!--                                                        % if o.country.id != False:-->
+                                            <!--                                                            ${o.country.name}-->
+                                            <!--                                                        </t>-->
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="city_visible form-group col-4" style="float:left"
+                                >
+                                    <label class="mb-1 text-primary"
+                                           for="city">
+                                        <span class="font-weight-bold">
+                                            City
+                                        </span>
+                                    </label>
+                                    <div>
+                                        <span>
+                                            <span t-if="o.city" t-esc="o.city"/>
+                                            <!--                                                        % if o.city != False:-->
+                                            <!--                                                            ${o.city}-->
+                                            <!--                                                        </t>-->
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="location_visible form-group col-4"
+                                >
+                                    <label class="mb-1 text-primary"
+                                           for="location">
+                                        <span class="font-weight-bold">
+                                            location
+                                        </span>
+                                    </label>
+                                    <div>
+                                        <span>
+                                            <span t-if="o.location_name" t-esc="o.location_name"/>
+                                            <!--                                                        % if o.location_name != False:-->
+                                            <!--                                                            ${o.location_name}-->
+                                            <!--                                                        </t>-->
+                                        </span>
+                                    </div>
+                                </div>
+                            </t>
+                            <div class="form-group" style="background-color:#87CEEB">
+<!--                                <label >-->
+                                    <span class="font-weight-bold" style="color:#ffffff">
+                                        <h3>Event details</h3>
+                                        <div style="line-height:5px;">
+                                            <br/>
+                                        </div>
+                                    </span>
+<!--                                </label>-->
+                            </div>
+                            <div class="form-group ">
+                                <label class="mb-1 text-primary ">
+                                    <span class="font-weight-bold">
+                                        The Initiative is
+                                    </span>
+                                </label>
+                                <div class="form-row ">
+                                    <label>
+                                        <span>
+                                            <span t-if="o.initiative == 'icesco_plan'">Part of ICESCO plan</span>
+                                            <span t-if="o.initiative == 'new'">New proposed activity</span>
+                                            <span t-if="o.initiative == 'cooperation'">Cooperation agreement</span>
+                                            <!--                                                        % if o.initiative == 'icesco_plan':-->
+                                            <!--                                                            Part of ICESCO plan-->
+                                            <!--                                                        </t>-->
+                                            <!--                                                        % if o.initiative == 'new':-->
+                                            <!--                                                            New proposed activity-->
+                                            <!--                                                        </t>-->
+                                            <!--                                                        % if o.initiative == 'cooperation':-->
+                                            <!--                                                            Cooperation agreement-->
+                                            <!--                                                        </t>-->
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <t t-if="o.initiative == 'new'">
+                                <div class="form-group ">
+                                    <label class="mb-1 text-primary"
+                                           for="is_sponsorship_available">
+                                        <span class="font-weight-bold">
+                                            Is Sponsorship Available ?
+                                        </span>
+                                        <!--                                                &amp;nbsp;&amp;nbsp;-->
+                                        <t t-if="o.is_sponsorship_available == True">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_sponsorship_available == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+                                    </label>
+                                </div>
+                                <t t-if="o.is_sponsorship_available == True">
+                                    <div class="visible_estimated_budget" id="estime_budget"
+                                         style="display: inline-block;vertical-align: middle">
+                                        <div>
+                                            <span>
+                                                <strong>Budget :</strong>
+                                            </span>
+                                            <span t-if="o.budget != False" t-esc="o.budget"/>
+                                            <!--                                                        % if o.budget != False:-->
+                                            <!--                                                            ${o.budget}-->
+                                            <!--                                                        </t>-->
+                                        </div>
+                                    </div>
+                                    <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]>
+                                    <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                    <div class="visible_estimated_budget" id="provider"
+                                         style="display: inline-block;vertical-align: middle">
+                                        <div>
+                                            <span>
+                                                <strong>Provider :</strong>
+                                            </span>
+                                            <span t-if="o.provider != False" t-esc="o.provider"/>
+                                            <!--                                                        % if o.provider != False:-->
+                                            <!--                                                            ${o.provider}-->
+                                            <!--                                                        </t>-->
+                                        </div>
+                                    </div>
+                                </t>
+                            </t>
+<!--                            <br/>-->
+<!--                            <br/>-->
+                            <br/>
+                            <div style="line-height:10px;">
+                                <br/>
+                            </div>
+                            <label class="mb-1 text-primary ">
+                                <span class="font-weight-bold">
+                                    The frequency of this initiative
+                                </span>
+                            </label>
+                            <div class="form-group ">
+                                <div class="form-row ">
+                                    <label>
+                                        <span>
+                                            <span t-if="o.frequency == 'first'">First time</span>
+                                            <span t-if="o.frequency == 'regular'">Regular activity</span>
+                                            <span t-if="o.frequency == 'continuity'">Continuity of previous
+                                                collaboration
+                                            </span>
+                                            <!--                                                        % if o.frequency == 'first':-->
+                                            <!--                                                            First time-->
+                                            <!--                                                        </t>-->
+                                            <!--                                                        % if o.frequency == 'regular':-->
+                                            <!--                                                            Regular activity-->
+                                            <!--                                                        </t>-->
+                                            <!--                                                        % if o.frequency == 'continuity':-->
+                                            <!--                                                            Continuity of previous collaboration-->
+                                            <!--                                                        </t>-->
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <label class="mb-1 text-primary " style="display: inline-block;vertical-align: middle;">
+                                <span class="font-weight-bold">Event Stakeholders</span>
+                            </label>
+                            <div style="line-height:8px;">
+                                <br/>
+                            </div>
+                            <div>
+                                <div style="display: inline-block;vertical-align: middle;">
+                                    <label class="mb-1 text-primary ">
+                                        <span class="font-weight-bold">List of member states</span>
+                                    </label>
+                                    <div>
+                                        <span>
+                                            <span t-if="o.member_state_id.id != False" t-esc="o.member_state_id.name"/>
+                                            <!--                                                    % if o.member_state_id.id != False:-->
+                                            <!--                                                        ${o.member_state_id.name}-->
+                                            <!--                                                    </t>-->
+                                        </span>
+                                    </div>
+                                </div>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+
+
+                                <div style="display: inline-block;vertical-align: middle">
+                                    <label class="mb-1 text-primary ">
+                                        <span class="font-weight-bold">List of non-member states</span>
+                                    </label>
+                                    <div>
+                                        <span>
+                                            <span t-if="o.non_member_state_id.id != False"
+                                                  t-esc="o.non_member_state_id.name"/>
+                                            <!--                                                    % if o.non_member_state_id.id != False:-->
+                                            <!--                                                        ${o.non_member_state_id.name}-->
+                                            <!--                                                    </t>-->
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="line-height:5px;">
+                                <br/>
+                            </div>
+                            <t t-if="o.is_ioc_organization != False or o.is_un_organization != False or o.is_au_organization != False or o.is_al_organization != False">
+                                <label class="mb-1 text-primary ">
+                                    <span class="font-weight-bold">Partners</span>
+                                </label>
+                            </t>
+                            <div>
+                                <t t-if="o.is_ioc_organization != False">
+                                    <div style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="is_ioc_organization">
+                                            <span class="font-weight-bold">
+                                                OIC Organizations <![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.is_ioc_organization != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_ioc_organization == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+                                    </div>
+                                </t>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+
+                                <t t-if="o.is_un_organization != False">
+                                    <div style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="is_un_organization">
+                                            <span class="font-weight-bold">
+                                                UN Organizations <![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.is_un_organization != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_un_organization == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+                                    </div>
+                                </t>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+
+                                <t t-if="o.is_au_organization != False">
+                                    <div style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="is_au_organization">
+                                            <span class="font-weight-bold">
+                                                AU Organizations <![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.is_au_organization != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_au_organization == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+                                    </div>
+                                </t>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]>
+                                <![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+
+                                <t t-if="o.is_al_organization != False">
+                                    <div style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="is_al_organization">
+                                            <span class="font-weight-bold">
+                                                AL Organizations <![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.is_al_organization != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_al_organization == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+                                    </div>
+                                </t>
+                            </div>
+
+                            <div style="line-height:5px;">
+                                <br/>
+                            </div>
+                            <t t-if="o.others_organization != False">
+                                <div class="form-group col-4">
+                                    <label class="mb-1" style="color:black" for="type">
+                                        <span class="font-weight-bold">Others</span>
+                                    </label>
+                                    <div>
+                                        <span t-if="o.others_organization != False" t-esc="o.others_organization"/>
+                                        <!--                                                    % if o.others_organization != False:-->
+                                        <!--                                                        ${o.others_organization}-->
+                                        <!--                                                    </t>-->
+                                    </div>
+                                </div>
+                                <div class="form-group col-4">
+                                </div>
+                                <div class="form-group col-4">
+                                </div>
+                            </t>
+                            <div>
+                                <t t-if="o.is_ioc_organization != False or o.is_un_organization != False or o.is_au_organization != False or o.is_au_organization != False">
+                                    <t t-if="o.is_ioc_organization != False">
+                                        <div class="form-group list_oic col-5"
+                                             style="display: inline-block;vertical-align: middle">
+                                            <label class="mb-1 text-primary" for="type">
+                                                <span class="font-weight-bold">List of OIC Organizations</span>
+                                            </label>
+                                            <div>
+                                                <span>
+                                                    <span t-if="o.list_oic_organization.id != False"
+                                                          t-esc="o.list_oic_organization.name"/>
+                                                    <!--                                                        % if o.list_oic_organization.id != False:-->
+                                                    <!--                                                            ${o.list_oic_organization.name}-->
+                                                    <!--                                                        </t>-->
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </t>
+                                    <t t-if="o.is_un_organization != False">
+                                        <div class="form-group list_un col-5"
+                                             style="display: inline-block;vertical-align: middle">
+                                            <label class="mb-1 text-primary" for="type">
+                                                <span class="font-weight-bold">List of UN Organizations</span>
+                                            </label>
+                                            <div>
+                                                <span>
+                                                    <span t-if="o.list_un_organization.id != False"
+                                                          t-esc="o.list_un_organization.name"/>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </t>
+                                    <t t-if="o.is_au_organization != False">
+                                        <div class="form-group list_au col-5"
+                                             style="display: inline-block;vertical-align: middle">
+                                            <label class="mb-1 text-primary " for="type">
+                                                <span class="font-weight-bold">List of AU Organizations</span>
+                                            </label>
+                                            <div>
+                                                <span>
+                                                    <span t-if="o.list_au_organization.id != False"
+                                                          t-esc="o.list_au_organization.name"/>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </t>
+
+                                    <t t-if="o.is_al_organization != False">
+                                        <div class="form-group list_oic col-5"
+                                             style="display: inline-block;vertical-align: middle">
+                                            <label class="mb-1 text-primary" for="type">
+                                                <span class="font-weight-bold">List of AL Organizations</span>
+                                            </label>
+                                            <div>
+                                                <span>
+                                                    <span t-if="o.list_al_organization.id != False"
+                                                          t-esc="o.list_al_organization.name"/>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </t>
+                            </div>
+                            <br/>
+                            <t t-if="o.dg_approval != False or o.is_dg_participation != False or o.is_dpt_participation != False or o.is_external_expert != False">
+                                <label class="mb-1 text-primary " for="dg_approval">
+                                    <span class="font-weight-bold">
+                                        The initiative needs
+                                    </span>
+                                </label>
+                            </t>
+                            <div>
+                                <t t-if="o.dg_approval != False">
+                                    <div class="form-group list_au col-5"
+                                         style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="dg_approval">
+                                            <span class="font-weight-bold">
+                                                DG Approval<![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.dg_approval != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.dg_approval == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+
+                                    </div>
+                                </t>
+                                <t t-if="o.is_dg_participation != False">
+                                    <div class="form-group list_au col-5"
+                                         style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="is_dg_participation">
+                                            <span class="font-weight-bold">
+                                                DG participation <![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.is_dg_participation != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_dg_participation == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+
+                                    </div>
+                                </t>
+                            </div>
+                            <div>
+                                <t t-if="o.is_dpt_participation != False">
+                                    <div class="form-group list_au col-5 "
+                                         style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="is_dpt_participation">
+                                            <span class="font-weight-bold">
+                                                Sector/Department participation<![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.is_dpt_participation != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_dpt_participation == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+
+                                    </div>
+                                </t>
+                                <t t-if="o.is_external_expert != False">
+                                    <div class="form-group list_au col-5"
+                                         style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="is_external_expert">
+                                            <span class="font-weight-bold">
+                                                Hire External Expert<![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.is_external_expert != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_external_expert == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+
+                                    </div>
+                                </t>
+                            </div>
+                            <!--                                        % if o.is_external_expert != False:-->
+                            <!--                                            <div class="form-group col-6 attach_external">-->
+                            <!--                                                % if o.attach_external_export.id != False:-->
+                            <!--                                                    ${o.attach_external_export.db_datas}-->
+                            <!--                                                </t>-->
+                            <!--                                            </div>-->
+                            <!--                                        </t>-->
+                            <br/>
+                            <div class="form-group " style="background-color:#87CEEB">
+                                <label class="mb-1" style="color:#ffffff">
+                                    <span class="font-weight-bold">
+                                        <h3>ICESCO Participation</h3>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-group ">
+                                <label class="mb-1 text-primary"
+                                       for="is_dg_participation_required">
+                                    <span class="font-weight-bold">
+                                        DG Participation required ?
+                                    </span>
+                                    <t t-if="o.is_dg_participation_required != False">
+                                        <input type="checkbox" checked="checked" disabled="disabled"/>
+                                    </t>
+                                    <t t-if="o.is_dg_participation_required == False">
+                                        <input type="checkbox" disabled="disabled"/>
+                                    </t>
+                                </label>
+                            </div>
+                            <t t-if="o.is_dg_participation_required != False">
+                                <div>
+
+
+                                    <div class="form-group col-4 dg_type_participation text-center"
+                                         style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1 text-primary text-center">
+                                            <span class="font-weight-bold text-center">
+                                                In Person
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group col-4 dg_type_participation text-center"
+                                         style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1 text-primary text-center">
+                                            <span class="font-weight-bold text-center">
+                                                Virtual Paricipation
+                                            </span>
+                                        </label>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group list_au col-2"
+                                         style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1 text-center"
+                                               for="is_dg_visit">
+                                            <span class="font-weight-bold">
+                                                Visit
+                                            </span>
+                                            <br/>
+                                            <t t-if="o.is_dg_visit != False">
+                                                <input type="checkbox" checked="checked" disabled="disabled"/>
+                                            </t>
+                                            <t t-if="o.is_dg_visit == False">
+                                                <input type="checkbox" disabled="disabled"/>
+                                            </t>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-group list_au col-2"
+                                         style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1 text-center"
+                                               for="is_dg_event">
+                                            <span class="font-weight-bold">
+                                                Event
+                                            </span>
+                                            <br/>
+                                            <t t-if="o.is_dg_event != False">
+                                                <input type="checkbox" checked="checked" disabled="disabled"/>
+                                            </t>
+                                            <t t-if="o.is_dg_event == False">
+                                                <input type="checkbox" disabled="disabled"/>
+                                            </t>
+                                        </label>
+                                    </div>
+                                    <div class="form-group list_au col-3"
+                                         style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1 text-center"
+                                               for="is_dg_recorded">
+                                            <span class="font-weight-bold">
+                                                Recorded Video
+                                            </span>
+                                            <br/>
+                                            <t t-if="o.is_dg_recorded != False">
+                                                <input type="checkbox" checked="checked" disabled="disabled"/>
+                                            </t>
+                                            <t t-if="o.is_dg_recorded == False">
+                                                <input type="checkbox" disabled="disabled"/>
+                                            </t>
+                                        </label>
+                                    </div>
+                                    <div class="form-group list_au col-3"
+                                         style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1 text-center"
+                                               for="is_dg_video">
+                                            <span class="font-weight-bold">
+                                                Video Conference
+                                            </span>
+                                            <br/>
+                                            <t t-if="o.is_dg_video != False">
+                                                <input type="checkbox" checked="checked" disabled="disabled"/>
+                                            </t>
+                                            <t t-if="o.is_dg_video == False">
+                                                <input type="checkbox" disabled="disabled"/>
+                                            </t>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <t t-if="o.is_dg_visit != False">
+                                    <div class="col-12">
+                                        <div class="form-group col-2 dg_visit"
+                                             style="display: inline-block;vertical-align: middle">
+                                            <label class="mb-1 text-center">
+                                                <span class="font-weight-bold">
+                                                    Visit
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="dg_visit  form-group col-5"
+                                             style="display: inline-block;vertical-align: middle">
+                                            <div class="text-center">
+                                                <span style="float:left">
+                                                    <strong>Key People to meet : </strong>
+                                                </span>
+                                                <span t-if="o.key_people_meet != False" t-esc="o.key_people_meet"/>
+                                                <!--                                                        % if o.key_people_meet != False:-->
+                                                <!--                                                            ${o.key_people_meet}-->
+                                                <!--                                                        </t>-->
+                                            </div>
+                                        </div>
+                                        <div class="dg_visit   form-group col-3"
+                                             style="display: inline-block;vertical-align: middle">
+                                            <div class="text-center">
+                                                <span style="float:left">
+                                                    <strong>Agenda Topics : <![CDATA[&nbsp;]]></strong>
+                                                </span>
+                                                <span t-if="o.agenda_topics != False" t-esc="o.agenda_topics"/>
+                                                <!--                                                        % if o.agenda_topics != False:-->
+                                                <!--                                                            ${o.agenda_topics}-->
+                                                <!--                                                        </t>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_dg_event != False"
+                                       style="display: inline-block;vertical-align: middle">
+                                    <div class="col-12">
+                                        <div class="form-group col-2 dg_event" style="float:left">
+                                            <label class="mb-1 text-center">
+                                                <span class="font-weight-bold">
+                                                    Event
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <t t-if="o.is_opening != False">
+                                            <div class="form-group col-2 dg_event text-center"
+                                                 style="display: inline-block;vertical-align: middle">
+                                                <label class="mb-1 text-center"
+                                                       for="is_opening">
+                                                    <span class="font-weight-bold">
+                                                        Opening <![CDATA[&nbsp;]]>
+                                                    </span>
+                                                    <t t-if="o.is_opening != False">
+                                                        <input type="checkbox" checked="checked" disabled="disabled"/>
+                                                    </t>
+                                                    <t t-if="o.is_opening == False">
+                                                        <input type="checkbox" disabled="disabled"/>
+                                                    </t>
+                                                </label>
+                                            </div>
+                                        </t>
+                                        <t t-if="o.is_closing != False">
+                                            <div class="form-group col-2 dg_event text-center"
+                                                 style="display: inline-block;vertical-align: middle">
+                                                <label class="mb-1 text-center"
+                                                       for="is_closing">
+                                                    <span class="font-weight-bold">
+                                                        Closing <![CDATA[&nbsp;]]>
+                                                    </span>
+                                                    <t t-if="o.is_closing != False">
+                                                        <input type="checkbox" checked="checked" disabled="disabled"/>
+                                                    </t>
+                                                    <t t-if="o.is_closing == False">
+                                                        <input type="checkbox" disabled="disabled"/>
+                                                    </t>
+                                                </label>
+                                            </div>
+                                        </t>
+                                        <t t-if="o.is_panel != False">
+                                            <div class="form-group col-2 dg_event text-center"
+                                                 style="display: inline-block;vertical-align: middle">
+                                                <label class="mb-1 text-center"
+                                                       for="is_panel">
+                                                    <span class="font-weight-bold">
+                                                        Panel <![CDATA[&nbsp;]]>
+                                                    </span>
+                                                    <t t-if="o.is_panel != False">
+                                                        <input type="checkbox" checked="checked" disabled="disabled"/>
+                                                    </t>
+                                                    <t t-if="o.is_panel == False">
+                                                        <input type="checkbox" disabled="disabled"/>
+                                                    </t>
+                                                </label>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_dg_recorded != False"
+                                       style="display: inline-block;vertical-align: middle">
+                                    <div style="float:left">
+                                        <div class="form-group col-2 dg_recorded" style="float:left">
+                                            <label class="mb-1 text-center">
+                                                <span class="font-weight-bold">
+                                                    Recorded video
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="form-group col-4 dg_recorded text-center"
+                                             style="display: inline-block;vertical-align: middle">
+                                            <div class="text-center">
+                                                <span style="float:left">
+                                                    <strong>Duration : <![CDATA[&nbsp;]]></strong>
+                                                </span>
+                                                <span t-if="o.duration_video != False" t-esc="o.duration_video"/>
+                                                <!--                                                        % if o.duration_video != False:-->
+                                                <!--                                                            ${o.duration_video}-->
+                                                <!--                                                        </t>-->
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-4 dg_recorded text-center"
+                                             style="display: inline-block;vertical-align: middle">
+                                            <div class="text-center">
+                                                <span style="float:left">
+                                                    <strong>Deadline of Delivery : <![CDATA[&nbsp;]]></strong>
+                                                </span>
+                                                <span t-if="o.deadline_delivery != False" t-esc="o.deadline_delivery"/>
+                                                <!--                                                        % if o.deadline_delivery != False:-->
+                                                <!--                                                            ${o.deadline_delivery}-->
+                                                <!--                                                        </t>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_dg_video != False"
+                                       style="display: inline-block;vertical-align: middle">
+                                    <div style="float:left">
+                                        <div class="form-group col-2 dg_link" style="float:left">
+                                            <label class="mb-1 text-center">
+                                                <span class="font-weight-bold">
+                                                    Video conference
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="form-group col-10 dg_link"
+                                             style="display: inline-block;vertical-align: middle">
+                                            <div class="text-center">
+                                                <span style="float:left">
+                                                    <strong>Conference link : <![CDATA[&nbsp;]]></strong>
+                                                </span>
+                                                <span t-if="o.conference_link != False"
+                                                      t-esc="o.conference_link"/>
+                                                <!--                                                    % if o.conference_link != False:-->
+                                                <!--                                                        ${o.conference_link}-->
+                                                <!--                                                    </t>-->
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </t>
+<!--                                <br/>-->
+<!--                                <br/>-->
+<!--                                <br/>-->
+                                <div class="form-group  dg_speech_topic">
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+                                    <!--                                    <label class="text-primary  dg_type_participation"-->
+                                    <!--                                           for="location">-->
+                                    <span class="font-weight-bold text-primary ">
+                                        DG Speech information:
+                                    </span>
+                                    <!--                                    </label>-->
+                                </div>
+                                <div style="float:left" class="col-3">
+                                    <label class="mb-1 text-primary"
+                                           for="speech_topic">
+                                        <span class="font-weight-bold">
+                                            Speech topic
+                                        </span>
+                                    </label>
+                                    <div>
+                                        <span>
+                                            <span t-if="o.speech_topic != False" t-esc="o.speech_topic"/>
+                                            <!--                                                            % if o.speech_topic != False:-->
+                                            <!--                                                                ${o.speech_topic}-->
+                                            <!--                                                            </t>-->
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-3 dg_speech_points" style="float:left">
+                                    <div>
+                                        <label class="mb-1 text-primary"
+                                               for="speech_points">
+                                            <span class="font-weight-bold">
+                                                Main Points
+                                            </span>
+                                        </label>
+                                        <div>
+                                            <span>
+                                                <span t-if="o.speech_points != False" t-esc="o.speech_points"/>
+                                                <!--                                                            % if o.speech_points != False:-->
+                                                <!--                                                                ${o.speech_points}-->
+                                                <!--                                                            </t>-->
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group  dg_speech_duration  col-3" style="float:left">
+                                    <div>
+                                        <label class="mb-1 text-primary"
+                                               for="speech_duration">
+                                            <span class="font-weight-bold">
+                                                Speech Duration
+                                            </span>
+                                        </label>
+                                        <div>
+                                            <span>
+                                                <span t-if="o.speech_duration != False" t-esc="o.speech_duration"/>
+                                                <!--                                                            % if o.speech_duration != False:-->
+                                                <!--                                                                ${o.speech_duration}-->
+                                                <!--                                                            </t>-->
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group  dg_speech_date col-3" style="float:left">
+                                    <div>
+                                        <label class="mb-1 text-primary"
+                                               for="date_speech">
+                                            <span class="font-weight-bold">
+                                                Speech date *
+                                            </span>
+                                        </label>
+                                        <div>
+                                            <span>
+                                                <span t-if="o.date_speech != False" t-esc="o.date_speech"/>
+                                                <!--                                                            % if o.date_speech != False:-->
+                                                <!--                                                                ${o.date_speech}-->
+                                                <!--                                                            </t>-->
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="mb-1 text-primary  dg_type_participation"
+                                           for="location">
+                                        <span class="font-weight-bold">
+                                            Information required for DG participation:
+                                        </span>
+                                    </label>
+                                    <br/>
+                                    <t t-if="o.is_many_presidents != False or o.is_one_president != False or o.is_many_ministers != False or o.is_one_minister != False or o.is_professionals != False">
+                                        <label class="mb-1 text-primary  dg_type_participation"
+                                               for="location">
+                                            <span class="font-weight-bold">
+                                                Event is attended by:
+                                            </span>
+                                        </label>
+                                    </t>
+                                </div>
+                                <t t-if="o.is_many_presidents != False">
+                                    <div class="form-group col-3 dg_type_participation text-center" style="float:left">
+                                        <label class="mb-1 text-center"
+                                               for="is_many_presidents">
+                                            <span class="font-weight-bold">
+                                                A+: Two or more Presidents
+                                            </span>
+                                            <br/>
+                                            <t t-if="o.is_many_presidents != False">
+                                                <input type="checkbox" checked="checked" disabled="disabled"/>
+                                            </t>
+                                            <t t-if="o.is_many_presidents == False">
+                                                <input type="checkbox" disabled="disabled"/>
+                                            </t>
+                                        </label>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_one_president != False">
+                                    <div class="form-group col-2 dg_type_participation text-center" style="float:left">
+                                        <label class="mb-1 text-center"
+                                               for="is_one_president">
+                                            <span class="font-weight-bold">
+                                                A: One President
+                                            </span>
+                                            <br/>
+                                            <t t-if="o.is_one_president != False">
+                                                <input type="checkbox" checked="checked" disabled="disabled"/>
+                                            </t>
+                                            <t t-if="o.is_one_president == False">
+                                                <input type="checkbox" disabled="disabled"/>
+                                            </t>
+                                        </label>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_many_ministers != False">
+                                    <div class="form-group col-3 dg_type_participation text-center" style="float:left">
+                                        <label class="mb-1 text-center"
+                                               for="is_many_ministers">
+                                            <span class="font-weight-bold">
+                                                B+: Prime Minister orover Two ministers
+                                            </span>
+                                            <br/>
+                                            <t t-if="o.is_many_ministers != False">
+                                                <input type="checkbox" checked="checked" disabled="disabled"/>
+                                            </t>
+                                            <t t-if="o.is_many_ministers == False">
+                                                <input type="checkbox" disabled="disabled"/>
+                                            </t>
+                                        </label>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_one_minister != False">
+                                    <div class="form-group col-2 dg_type_participation text-center" style="float:left">
+                                        <label class="mb-1 text-center"
+                                               for="is_one_minister">
+                                            <span class="font-weight-bold">
+                                                B: One Minister
+                                            </span>
+                                            <br/>
+                                            <t t-if="o.is_one_minister != False">
+                                                <input type="checkbox" checked="checked" disabled="disabled"/>
+                                            </t>
+                                            <t t-if="o.is_one_minister == False">
+                                                <input type="checkbox" disabled="disabled"/>
+                                            </t>
+                                        </label>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_professionals != False">
+                                    <div class="form-group col-2 dg_type_participation text-center" style="float:left">
+                                        <label class="mb-1 text-center"
+                                               for="is_professionals">
+                                            <span class="font-weight-bold">
+                                                C: Professionals
+                                            </span>
+                                            <br/>
+                                            <t t-if="o.is_professionals != False">
+                                                <input type="checkbox" checked="checked" disabled="disabled"/>
+                                            </t>
+                                            <t t-if="o.is_professionals == False">
+                                                <input type="checkbox" disabled="disabled"/>
+                                            </t>
+                                        </label>
+                                    </div>
+                                </t>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <t t-if="o.is_partnership_govenmental != False or o.is_partnership_international != False or o.is_partnership_nonorganization != False or o.is_partnership_others != False">
+                                    <div class="form-group  dg_type_participation">
+                                        <label class="mb-1 text-primary"
+                                               for="location">
+                                            <span class="font-weight-bold">
+                                                The event will be in partnership with
+                                            </span>
+                                        </label>
+                                    </div>
+                                </t>
+                                <div>
+                                    <t t-if="o.is_partnership_govenmental != False">
+                                        <div class="form-group list_au col-5  dg_type_participation "
+                                             style="display: inline-block;vertical-align: middle">
+                                            <label class="mb-1" for="is_partnership_govenmental">
+                                                <span class="font-weight-bold">
+                                                    A: Governmental organizations<![CDATA[&nbsp;]]>
+                                                </span>
+                                            </label>
+                                            <t t-if="o.is_partnership_govenmental != False">
+                                                <input type="checkbox" checked="checked" disabled="disabled"/>
+                                            </t>
+                                            <t t-if="o.is_partnership_govenmental == False">
+                                                <input type="checkbox" disabled="disabled"/>
+                                            </t>
+                                        </div>
+                                    </t>
+                                    <t t-if="o.is_partnership_international != False">
+                                        <div class="form-group list_au col-5  dg_type_participation"
+                                             style="display: inline-block;vertical-align: middle">
+                                            <label class="mb-1" for="is_partnership_international">
+                                                <span class="font-weight-bold">
+                                                    B: International Organizations<![CDATA[&nbsp;]]>
+                                                </span>
+                                            </label>
+                                            <t t-if="o.is_partnership_international != False">
+                                                <input type="checkbox" checked="checked" disabled="disabled"/>
+                                            </t>
+                                            <t t-if="o.is_partnership_international == False">
+                                                <input type="checkbox" disabled="disabled"/>
+                                            </t>
+
+                                        </div>
+                                    </t>
+                                </div>
+                                <div>
+                                    <t t-if="o.is_partnership_nonorganization != False">
+                                        <div class="form-group list_au col-5  dg_type_participation"
+                                             style="display: inline-block;vertical-align: middle">
+                                            <label class="mb-1" for="is_partnership_nonorganization">
+                                                <span class="font-weight-bold">
+                                                    C: Non-Governmental Organizations<![CDATA[&nbsp;]]>
+                                                </span>
+                                            </label>
+                                            <t t-if="o.is_partnership_nonorganization != False">
+                                                <input type="checkbox" checked="checked" disabled="disabled"/>
+                                            </t>
+                                            <t t-if="o.is_partnership_nonorganization == False">
+                                                <input type="checkbox" disabled="disabled"/>
+                                            </t>
+
+                                        </div>
+                                    </t>
+                                    <t t-if="o.is_partnership_others != False">
+                                        <div class="form-group list_au col-5  dg_type_participation"
+                                             style="display: inline-block;vertical-align: middle">
+                                            <label class="mb-1" for="is_partnership_others">
+                                                <span class="font-weight-bold">
+                                                    D: Others Organizations<![CDATA[&nbsp;]]>
+                                                </span>
+                                            </label>
+                                            <t t-if="o.is_partnership_others != False">
+                                                <input type="checkbox" checked="checked" disabled="disabled"/>
+                                            </t>
+                                            <t t-if="o.is_partnership_others == False">
+                                                <input type="checkbox" disabled="disabled"/>
+                                            </t>
+
+                                        </div>
+                                    </t>
+                                </div>
+                                <label class="form-row  mb-1 text-primary dg_type_participation"
+                                       for="location">
+                                    <span class="font-weight-bold">
+                                        The state member engagement is:
+                                    </span>
+                                </label>
+                                <div class="form-row  dg_type_participation">
+                                    <label>
+                                        <span>
+                                            <t t-if="o.state_engagement == 'high'">
+                                                <![CDATA[&nbsp;]]>   High: Over 6 times in the same year
+                                            </t>
+                                            <t t-if="o.state_engagement == 'medium'">
+                                                <![CDATA[&nbsp;]]>    Medium: Between 3 to 6 times in the same year
+                                            </t>
+                                            <t t-if="o.state_engagement == 'low'">
+                                                <![CDATA[&nbsp;]]>   Low: Less than 3 times in the same year
+                                            </t>
+                                        </span>
+                                    </label>
+
+                                </div>
+                            </t>
+                            <br></br>
+                            <div class="form-group " style="background-color:#87CEEB">
+                                <label class="mb-1" style="color:#ffffff">
+                                    <span class="font-weight-bold">
+                                        <h3>Financial Coverage by Stakeholders</h3>
+                                    </span>
+                                </label>
+                            </div>
+                            <t t-if="o.is_coverage_airflight != False or o.is_coverage_diem != False or o.is_coverage_accomodation != False or o.is_coverage_localtransport != False">
+                                <div class="form-group ">
+                                    <label class="mb-1 text-primary">
+                                        <span class="font-weight-bold">Coverage for</span>
+                                    </label>
+                                </div>
+                            </t>
+                            <t t-if="o.is_coverage_airflight != False">
+                                <div class="form-group col-3" style="float:left">
+                                    <label class="mb-1" for="is_coverage_airflight">
+                                        <span class="font-weight-bold">
+                                            Airflight
+                                        </span>
+                                    </label>
+                                    <br/>
+                                    <t t-if="o.is_coverage_airflight != False">
+                                        <input type="checkbox" checked="checked" disabled="disabled"/>
+                                    </t>
+                                    <t t-if="o.is_coverage_airflight == False">
+                                        <input type="checkbox" disabled="disabled"/>
+                                    </t>
+                                </div>
+                            </t>
+                            <t t-if="o.is_coverage_diem != False">
+                                <div class="form-group col-3" style="float:left">
+                                    <label class="mb-1" for="is_coverage_diem">
+                                        <span class="font-weight-bold">
+                                            Per Diem
+                                        </span>
+                                    </label>
+                                    <br/>
+                                    <t t-if="o.is_coverage_diem != False">
+                                        <input type="checkbox" checked="checked" disabled="disabled"/>
+                                    </t>
+                                    <t t-if="o.is_coverage_diem == False">
+                                        <input type="checkbox" disabled="disabled"/>
+                                    </t>
+                                </div>
+                            </t>
+                            <t t-if="o.is_coverage_accomodation != False">
+                                <div class="form-group col-3" style="float:left">
+                                    <label class="mb-1" for="is_coverage_accomodation">
+                                        <span class="font-weight-bold">
+                                            Accommodations
+                                        </span>
+                                    </label>
+                                    <br/>
+                                    <t t-if="o.is_coverage_accomodation != False">
+                                        <input type="checkbox" checked="checked" disabled="disabled"/>
+                                    </t>
+                                    <t t-if="o.is_coverage_accomodation == False">
+                                        <input type="checkbox" disabled="disabled"/>
+                                    </t>
+                                </div>
+                            </t>
+                            <t t-if="o.is_coverage_localtransport != False">
+                                <div class="form-group col-3" style="float:left">
+                                    <label class="mb-1" for="is_coverage_localtransport">
+                                        <span class="font-weight-bold">
+                                            Local Transportation
+                                        </span>
+                                    </label>
+                                    <br/>
+                                    <t t-if="o.is_coverage_localtransport != False">
+                                        <input type="checkbox" checked="checked" disabled="disabled"/>
+                                    </t>
+                                    <t t-if="o.is_coverage_localtransport == False">
+                                        <input type="checkbox" disabled="disabled"/>
+                                    </t>
+                                </div>
+                            </t>
+                            <t t-if="o.is_coverage_airflight != False">
+                                <div class="form-group col-3 persons_airflight" style="float:left">
+                                    <span>
+                                        <strong>N° persons for Airflight :</strong>
+                                    </span>
+                                    <span>
+                                        <span t-if="o.coverage_persons_airflight != False"
+                                              t-esc="o.coverage_persons_airflight"/>
+                                        <!--                                                    % if o.coverage_persons_airflight != False:-->
+                                        <!--                                                        ${o.coverage_persons_airflight}-->
+                                        <!--                                                    </t>-->
+                                    </span>
+                                </div>
+                            </t>
+                            <t t-if="o.is_coverage_diem != False">
+                                <div class="form-group col-3 persons_por_diem" style="float:left">
+                                    <span>
+                                        <strong>N° persons for Per Diem :</strong>
+                                    </span>
+                                    <span>
+                                        <span t-if="o.coverage_persons_por_diem != False"
+                                              t-esc="o.coverage_persons_por_diem"/>
+                                        <!--                                                    % if o.coverage_persons_por_diem != False:-->
+                                        <!--                                                        ${o.coverage_persons_por_diem}-->
+                                        <!--                                                    </t>-->
+                                    </span>
+                                </div>
+                            </t>
+                            <t t-if="o.is_coverage_accomodation != False">
+                                <div class="form-group col-3 persons_accomodation" style="float:left">
+                                    <span>
+                                        <strong>N° person for Accomodation :</strong>
+                                    </span>
+                                    <span>
+                                        <span t-if="o.coverage_persons_accomodation != False"
+                                              t-esc="o.coverage_persons_accomodation"/>
+                                        <!--                                                    % if o.coverage_persons_accomodation != False:-->
+                                        <!--                                                        ${o.coverage_persons_accomodation}-->
+                                        <!--                                                    </t>-->
+                                    </span>
+                                </div>
+                            </t>
+                            <t t-if="o.is_coverage_localtransport != False">
+                                <div class="form-group col-3 persons_local_transportation" style="float:left">
+                                    <span>
+                                        <strong>N° persons for Local Transportation :</strong>
+                                    </span>
+                                    <span>
+                                        <span t-if="o.coverage_persons_local_transportation != False"
+                                              t-esc="o.coverage_persons_local_transportation"/>
+                                        <!--                                                    % if o.coverage_persons_local_transportation != False:-->
+                                        <!--                                                        ${o.coverage_persons_local_transportation}-->
+                                        <!--                                                    </t>-->
+                                    </span>
+                                </div>
+                            </t>
+                            <t t-if="o.is_increase_competitiveness != False or o.is_increase_fundraising != False or o.is_increase_partnership != False or o.is_increase_services != False">
+                                <div class="form-group ">
+                                    <label class="mb-1 text-primary">
+                                        <span class="font-weight-bold">The impact of this initiative on ICESCO</span>
+                                    </label>
+                                </div>
+                            </t>
+                             <div class="col-12">
+                             <t t-if="o.is_increase_competitiveness != False">
+                                <div class="form-group col-6" style="float:left">
+                                     <label class="mb-1" for="is_increase_competitiveness">
+                                        <span class="font-weight-bold">
+                                            Increase ICESCO competitiveness<![CDATA[&nbsp;]]>
+                                        </span>
+                                    </label>
+                                    <t t-if="o.is_increase_competitiveness != False">
+                                        <input type="checkbox" checked="checked" disabled="disabled"/>
+                                    </t>
+                                    <t t-if="o.is_increase_competitiveness == False">
+                                        <input type="checkbox" disabled="disabled"/>
+                                    </t>
+
+                                </div>
+                             </t>
+                             <t t-if="o.is_increase_fundraising != False">
+                                <div class="form-group col-6" style="float:left">
+                                      <label class="mb-1" for="is_increase_fundraising">
+                                        <span class="font-weight-bold">
+                                            Receive fundraising/sponsorship<![CDATA[&nbsp;]]>
+                                        </span>
+                                    </label>
+                                    <t t-if="o.is_increase_fundraising != False">
+                                        <input type="checkbox" checked="checked" disabled="disabled"/>
+                                    </t>
+                                    <t t-if="o.is_increase_fundraising == False">
+                                        <input type="checkbox" disabled="disabled"/>
+                                    </t>
+
+                                </div>
+                             </t>
+                                 </div>
+                            <div class="col-12">
+                            <t t-if="o.is_increase_partnership != False">
+                                <div class="form-group col-6" style="float:left" >
+                                       <label class="mb-1" for="is_increase_partnership">
+                                        <span class="font-weight-bold">
+                                            Initiate new partnership<![CDATA[&nbsp;]]>
+                                        </span>
+                                    </label>
+                                    <t t-if="o.is_increase_partnership != False">
+                                        <input type="checkbox" checked="checked" disabled="disabled"/>
+                                    </t>
+                                    <t t-if="o.is_increase_partnership == False">
+                                        <input type="checkbox" disabled="disabled"/>
+                                    </t>
+
+                                </div>
+                            </t>
+                            <t t-if="o.is_increase_services != False">
+                                <div class="form-group col-6" style="float:left" >
+                                        <label class="mb-1" for="is_increase_services">
+                                        <span class="font-weight-bold">
+                                            Provide Services for a State Member<![CDATA[&nbsp;]]>
+                                        </span>
+                                    </label>
+                                    <t t-if="o.is_increase_services != False">
+                                        <input type="checkbox" checked="checked" disabled="disabled"/>
+                                    </t>
+                                    <t t-if="o.is_increase_services == False">
+                                        <input type="checkbox" disabled="disabled"/>
+                                    </t>
+
+                                </div>
+                            </t>
+                            </div>
+                            <br/>
+                            <t t-if="o.is_increase_services != False">
+                                <div class="col-12">
+                                <t t-if="o.is_increase_services_expertise != False">
+                                    <div class="form-group col-12 increase_services" >
+                                         <label class="mb-1" for="is_increase_services_expertise">
+                                            <span class="font-weight-bold">
+                                                Provide technical expertise / consultations<![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.is_increase_services_expertise != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_increase_services_expertise == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+
+                                    </div>
+                                </t>
+                                </div>
+                                <div class="col-12">
+                                    <t t-if="o.is_increase_services_capacity != False">
+                                        <div class="form-group col-6 increase_services" style="float:left;">
+                                            <label class="mb-1" for="is_increase_services_capacity">
+                                                <span class="font-weight-bold">
+                                                    Capacity building<![CDATA[&nbsp;]]>
+                                                </span>
+                                            </label>
+                                            <t t-if="o.is_increase_services_capacity != False">
+                                                <input type="checkbox" checked="checked" disabled="disabled"/>
+                                            </t>
+                                            <t t-if="o.is_increase_services_capacity == False">
+                                                <input type="checkbox" disabled="disabled"/>
+                                            </t>
+
+                                        </div>
+                                    </t>
+                                    <t t-if="o.is_increase_services_practice != False">
+                                        <div class="form-group col-6 increase_services" style="float:left">
+                                            <label class="mb-1" for="is_increase_services_practice">
+                                                <span class="font-weight-bold">
+                                                    Sharing a best practice<![CDATA[&nbsp;]]>
+                                                </span>
+                                            </label>
+                                            <t t-if="o.is_increase_services_practice != False">
+                                                <input type="checkbox" checked="checked" disabled="disabled"/>
+                                            </t>
+                                            <t t-if="o.is_increase_services_practice == False">
+                                                <input type="checkbox" disabled="disabled"/>
+                                            </t>
+
+                                        </div>
+                                    </t>
+                                    <t t-if="o.is_support_translation != False">
+                                        <div class="form-group col-6 increase_services">
+                                            <label class="mb-1" for="is_support_translation">
+                                                <span class="font-weight-bold">
+                                                    Enhance mutual collaboration<![CDATA[&nbsp;]]>
+                                                </span>
+                                            </label>
+                                            <t t-if="o.is_support_translation != False">
+                                                <input type="checkbox" checked="checked" disabled="disabled"/>
+                                            </t>
+                                            <t t-if="o.is_support_translation == False">
+                                                <input type="checkbox" disabled="disabled"/>
+                                            </t>
+
+                                        </div>
+                                    </t>
+                                </div>
+                            </t>
+                            <br/>
+                            <br/>
+                            <t t-if="o.translation != False or o.is_support_designing != False or o.is_support_legal != False or o.is_support_finance != False or o.is_support_logistics != False or o.is_support_admin != False or o.is_support_it or o.is_support_media or o.is_support_protocol or o.is_support_other">
+                                <div class="form-group">
+                                    <label class="mb-1 text-primary">
+                                        <span class="font-weight-bold">Internal support required from</span>
+                                    </label>
+                                </div>
+                            </t>
+                            <div class="col-12">
+                                <t t-if="o.translation != False">
+                                    <div class="form-group col-5" style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="translation">
+                                            <span class="font-weight-bold">
+                                                Translation <![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.translation != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.translation == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_support_designing != False">
+                                    <div class="form-group col-6" style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="is_support_designing" style="float:left">
+                                            <span class="font-weight-bold">
+                                                Designing &amp; printing
+                                            </span>
+                                        </label>
+                                        <t t-if="o.is_support_designing != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_support_designing == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_support_legal != False">
+                                    <div class="form-group col-5" style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="is_support_legal">
+                                            <span class="font-weight-bold">
+                                                Legal <![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.is_support_legal != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_support_legal == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_support_finance != False">
+                                    <div class="form-group col-5" style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="is_support_finance">
+                                            <span class="font-weight-bold">
+                                                Finance <![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.is_support_finance != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_support_finance == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_support_logistics != False">
+                                    <div class="form-group col-5" style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="is_support_logistics">
+                                            <span class="font-weight-bold">
+                                                Logistics <![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.is_support_logistics != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_support_logistics == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_support_admin != False">
+                                    <div class="form-group col-5" style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="is_support_admin">
+                                            <span class="font-weight-bold">
+                                                Procurement <![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.is_support_admin != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_support_admin == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_support_it != False">
+                                    <div class="form-group col-5" style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="is_support_it">
+                                            <span class="font-weight-bold">
+                                                IT <![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.is_support_it != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_support_it == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_support_media != False">
+                                    <div class="form-group col-5" style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="is_support_media">
+                                            <span class="font-weight-bold">
+                                                Media <![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.is_support_media != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_support_media == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_support_protocol != False">
+                                    <div class="form-group col-5" style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="is_support_protocol">
+                                            <span class="font-weight-bold">
+                                                Protocol <![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.is_support_protocol != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_support_protocol == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_support_other != False">
+                                    <div class="form-group col-5" style="display: inline-block;vertical-align: middle">
+                                        <label class="mb-1" for="is_support_other">
+                                            <span class="font-weight-bold" >
+                                                Other (specify) <![CDATA[&nbsp;]]>
+                                            </span>
+                                        </label>
+                                        <t t-if="o.is_support_other != False">
+                                            <input type="checkbox" checked="checked" disabled="disabled"/>
+                                        </t>
+                                        <t t-if="o.is_support_other == False">
+                                            <input type="checkbox" disabled="disabled"/>
+                                        </t>
+                                    </div>
+                                </t>
+                            </div>
+                            <div class="col-12">
+                                <t t-if="o.translation != False">
+                                    <div class="form-group col-6" style="float:left">
+                                        <label class="mb-1 text-primary" for="type">
+                                            <span class="font-weight-bold">List of Translation Services</span>
+                                        </label>
+                                        <div>
+                                            <span>
+                                                <span t-if="o.list_translation_service.id != False"
+                                                      t-esc="o.list_translation_service.name"/>
+                                                <!--                                                        % if o.list_translation_service.id != False:-->
+                                                <!--                                                            ${o.list_translation_service.name}-->
+                                                <!--                                                        </t>-->
+                                            </span>
+                                        </div>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_support_designing != False">
+                                    <div class="form-group col-6" style="float:left">
+                                        <label class="mb-1 text-primary" for="type">
+                                            <span class="font-weight-bold">List of Designing and Printing Services</span>
+                                        </label>
+                                        <div>
+                                            <span>
+                                                <span t-if="o.list_designing_service.id != False"
+                                                      t-esc="o.list_designing_service.name"/>
+                                                <!--                                                        % if o.list_designing_service.id != False:-->
+                                                <!--                                                            ${o.list_designing_service.name}-->
+                                                <!--                                                        </t>-->
+                                            </span>
+                                        </div>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_support_legal != False">
+                                    <div class="form-group col-6" style="float:left">
+                                        <label class="mb-1 text-primary" for="type">
+                                            <span class="font-weight-bold">List of Legal Services</span>
+                                        </label>
+                                        <div>
+                                            <span>
+                                                <span t-if="o.list_legal_service.id != False"
+                                                      t-esc="o.list_legal_service.name"/>
+                                                <!--                                                        % if o.list_legal_service.id != False:-->
+                                                <!--                                                            ${o.list_legal_service.name}-->
+                                                <!--                                                        </t>-->
+                                            </span>
+                                        </div>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_support_finance != False">
+                                    <div class="form-group col-6" style="float:left">
+                                        <label class="mb-1 text-primary" for="type">
+                                            <span class="font-weight-bold">List of Finance Services</span>
+                                        </label>
+                                        <div>
+                                            <span>
+                                                <span t-if="o.list_finance_service.id != False"
+                                                      t-esc="o.list_finance_service.name"/>
+                                                <!--                                                        % if o.list_finance_service.id != False:-->
+                                                <!--                                                            ${o.list_finance_service.name}-->
+                                                <!--                                                        </t>-->
+                                            </span>
+                                        </div>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_support_logistics != False">
+                                    <!--                                        % if o.is_support_logistics != False:-->
+                                    <div class="form-group col-6" style="float:left">
+                                        <label class="mb-1 text-primary" for="type">
+                                            <span class="font-weight-bold">List of Logistics Services</span>
+                                        </label>
+                                        <div>
+                                            <span>
+                                                <span t-if="o.list_logistics_service.id != False"
+                                                      t-esc="o.list_logistics_service.name"/>
+                                                <!--                                                        % if o.list_logistics_service.id != False:-->
+                                                <!--                                                            ${o.list_logistics_service.name}-->
+                                                <!--                                                        </t>-->
+                                            </span>
+                                        </div>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_support_admin != False">
+                                    <!--                                        % if o.is_support_admin != False:-->
+                                    <div class="form-group col-6" style="float:left">
+                                        <label class="mb-1 text-primary" for="type">
+                                            <span class="font-weight-bold">List of Procurement Services</span>
+                                        </label>
+                                        <div>
+                                            <span>
+                                                <span t-if="o.list_admin_service.id != False"
+                                                      t-esc="o.list_admin_service.name"/>
+                                                <!--                                                        % if o.list_admin_service.id != False:-->
+                                                <!--                                                            ${o.list_admin_service.name}-->
+                                                <!--                                                        </t>-->
+                                            </span>
+                                        </div>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_support_it != False">
+                                    <!--                                        % if o.is_support_it != False:-->
+                                    <div class="form-group col-6" style="float:left">
+                                        <label class="mb-1 text-primary" for="type">
+                                            <span class="font-weight-bold">List of IT Services</span>
+                                        </label>
+                                        <div>
+                                            <span>
+                                                <span t-if="o.list_it_service.id != False" t-esc="o.list_it_service.name"/>
+                                                <!--                                                        % if o.list_it_service.id != False:-->
+                                                <!--                                                            ${o.list_it_service.name}-->
+                                                <!--                                                        </t>-->
+                                            </span>
+                                        </div>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_support_media != False">
+                                    <!--                                        % if o.is_support_media != False:-->
+                                    <div class="form-group col-6" style="float:left">
+                                        <label class="mb-1 text-primary" for="type">
+                                            <span class="font-weight-bold">List of Media Services</span>
+                                        </label>
+                                        <div>
+                                            <span>
+                                                <span t-if="o.list_media_service.id != False"
+                                                      t-esc="o.list_media_service.name"/>
+                                                <!--                                                        % if o.list_media_service.id != False:-->
+                                                <!--                                                            ${o.list_media_service.name}-->
+                                                <!--                                                        </t>-->
+                                            </span>
+                                        </div>
+                                    </div>
+                                </t>
+                                <t t-if="o.is_support_protocol != False">
+                                    <!--                                        % if o.is_support_protocol != False:-->
+                                    <div class="form-group col-6" style="float:left">
+                                        <label class="mb-1 text-primary" for="type">
+                                            <span class="font-weight-bold">List of Protocol Services</span>
+                                        </label>
+                                        <div>
+                                            <span>
+                                                <span t-if="o.list_protocol_service.id != False"
+                                                      t-esc="o.list_protocol_service.name"/>
+                                                <!--                                                        % if o.list_protocol_service.id != False:-->
+                                                <!--                                                            ${o.list_protocol_service.name}-->
+                                                <!--                                                        </t>-->
+                                            </span>
+                                        </div>
+                                    </div>
+                                </t>
+                                <!--                                        % if o.is_support_other != False:-->
+                                <!--                                            <div class="form-group col-4" >-->
+                                <!--                                                <label class="mb-1 text-primary" for="type">-->
+                                <!--                                                    <span class="font-weight-bold">List of Others Services</span>-->
+                                <!--                                                </label>-->
+                                <!--                                                <div>-->
+                                <!--                                                    <span>-->
+                                <!--                                                        % if o.list_others_service.id != False:-->
+                                <!--                                                            ${o.list_others_service.name}-->
+                                <!--                                                        </t>-->
+                                <!--                                                    </span>-->
+                                <!--                                                </div>-->
+                                <!--                                            </div>-->
+                                <!--                                        </t>-->
+                                <t t-if="o.is_support_other != False">
+                                    <!--                                        % if o.is_support_other != False:-->
+                                    <div class="form-group col-6 support_other">
+                                        <label class="mb-1 text-primary">
+                                            <span class="font-weight-bold">Others Services</span>
+                                        </label>
+                                        <span>
+                                            <span t-if="o.services_other != False" t-esc="o.services_other"/>
+                                            <!--                                                    % if o.services_other != False:-->
+                                            <!--                                                        ${o.services_other}-->
+                                            <!--                                                    </t>-->
+                                        </span>
+                                    </div>
+                                </t>
+                            </div>
+                            <div class="col-12" style="float:left">
+                                <div class="form-group ">
+                                    <label class="mb-1 text-primary">
+                                        <span class="font-weight-bold">Suppliers for :</span>
+                                    </label>
+                                    <span>
+                                        <span t-if="o.suppliers_for != False" t-esc="o.suppliers_for"/>
+                                        <!--                                                % if o.suppliers_for != False:-->
+                                        <!--                                                    ${o.suppliers_for}-->
+                                        <!--                                                </t>-->
+                                    </span>
+                                </div>
+                                <div class="form-group ">
+                                    <label class="mb-1 text-primary">
+                                        <span class="font-weight-bold">Sponsors for :</span>
+                                    </label>
+                                    <span>
+                                        <span t-if="o.sponsors_for != False" t-esc="o.sponsors_for"/>
+                                        <!--                                                % if o.sponsors_for != False:-->
+                                        <!--                                                    ${o.sponsors_for}-->
+                                        <!--                                                </t>-->
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,53 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="dh_icesco_office_form_view">
+        <field name="name">dh.icesco.office.form</field>
+        <field name="model">dh.icesco.office</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group col="2">
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                            <field name="type" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_office_plan_tree">
+      <field name="name">dh.icesco.office.tree</field>
+      <field name="model">dh.icesco.office</field>
+      <field name="arch" type="xml">
+        <tree>
+<!--            <field name="sequence" width="1"/>-->
+            <field name="name" width="1"/>
+            <field name="description" width="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_office_delegate">
+      <field name="name">المندوبيات/المكاتب الإقليمية/المراكز الخارجية</field>
+      <field name="res_model">dh.icesco.office</field>
+      <field name="view_mode">tree,form</field>
+<!--        <field name="domain">[('type', '=', 'delegate')]</field>-->
+<!--        <field name="context">{'default_type': 'delegate'}</field>-->
+    </record>
+
+<!--    <record model="ir.actions.act_window" id="action_dh_icesco_office_regional_office">-->
+<!--      <field name="name">المكاتب الإقليمية</field>-->
+<!--      <field name="res_model">dh.icesco.office</field>-->
+<!--      <field name="view_mode">tree,form</field>-->
+<!--        <field name="domain">[('type', '=', 'regional_office')]</field>-->
+<!--        <field name="context">{'default_type': 'regional_office'}</field>-->
+<!--    </record>-->
+
+  </data>
+</odoo>

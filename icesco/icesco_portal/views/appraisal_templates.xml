@@ -1,0 +1,836 @@
+<odoo>
+    <data>
+
+        <template id="appraisal_portal_my_home" name="Portal My Home: Appraisal" inherit_id="portal.portal_my_home" priority="40">
+            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+<!--                <t t-if="project_count" t-call="portal.portal_docs_entry">-->
+<!--                    <t t-set="title">Projects</t>-->
+<!--                    <t t-set="url" t-value="'/my/projects'"/>-->
+<!--                    <t t-set="count" t-value="project_count"/>-->
+<!--                </t>-->
+                <t t-if="task_count" t-call="portal.portal_docs_entry">
+                    <t t-set="title">Appraisals</t>
+                    <t t-set="url" t-value="'/my/appraisal'"/>
+                    <t t-set="count" t-value="appraisal_count"/>
+                </t>
+            </xpath>
+        </template>
+
+        <template id="portal_appraisal_page" name="Appraisal Portal Template">
+            <t t-call="portal.portal_layout">
+                <t t-set="wrapwrap_classes" t-value="'o_portal_bg_dark'"/>
+                <br/>
+                <t t-call="portal.portal_record_layout">
+                    <t t-set="card_header">
+                        <div class="row no-gutters">
+                            <div class="col-md-1">
+                                <div class="form-inline ml-lg-2" id="button_header">
+                                    <a t-attf-href="/my/appraisal">
+                                        <button class="btn btn-primary o_wprofile_submit_btn">
+                                            Retour
+                                        </button>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <!--                            <div class="col-md-1">-->
+                            <!--                                <div class="form-inline ml-lg-2" id="button_header">-->
+                            <!--                                    <a t-attf-href="/event/edit/#{event.id}">-->
+                            <!--                                        <button  class="btn btn-primary o_wprofile_submit_btn">-->
+                            <!--                                            Edit-->
+                            <!--                                        </button>-->
+                            <!--                                    </a>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
+                            <div class="col-md-6 text-center">
+                                <h5 class="mb-1 mb-md-0">
+                                    <span t-esc="'Appraisal : '+str(appraisal.name)"/>
+                                    <!--small class="text-muted">(#<span t-field="event.id"/>)
+                                    </small-->
+                                </h5>
+                            </div>
+                            <div class="col-md-4 text-md-right">
+                                <div>
+                                    <small class="text-right">State:</small>
+                                    <span t-field="appraisal.state"
+                                          t-if="appraisal.state == 'draft'"
+                                          t-attf-class="badge badge-pill badge-warning">
+                                    </span>
+                                    <span t-field="appraisal.state"
+                                          t-if="appraisal.state == 'closed'"
+                                          t-attf-class="badge badge-pill badge-danger">
+                                    </span>
+                                    <span
+                                            t-field="appraisal.state"
+                                            t-if="appraisal.state == 'validation'"
+                                            t-attf-class="badge badge-pill badge-green">
+                                    </span>
+                                    <span
+                                            t-field="appraisal.state"
+                                            t-if="appraisal.state == 'approved'"
+                                            t-attf-class="badge badge-pill badge-info">
+                                    </span>
+                                    <br/>
+                                </div>
+                                <!--                                <span t-esc="event.get_next_position()" t-if="event.statut == 'charged'"-->
+                                <!--                                      t-attf-class="badge badge-pill badge-{{'success' if event.state == 'delivered' else 'info' }}"-->
+                                <!--                                      title="Current stage of this event"/>-->
+
+                                <!--                                <span t-field="event.current_position.name" t-if="event.statut != 'charged'"-->
+                                <!--                                      t-attf-class="badge badge-pill badge-{{'success' if event.state == 'delivered' else 'info' }}"-->
+                                <!--                                      title="Current stage of this event"/>-->
+
+                            </div>
+                        </div>
+                    </t>
+                    <t t-set="card_body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="row mb-4">
+                                    <strong class="col-lg-3">Pays</strong>
+                                    <span lass="col-lg-9"
+                                          t-field="appraisal.employee_id.name"/>
+                                </div>
+                                <div class="row mb-4">
+                                    <strong class="col-lg-3">Evaluation Date</strong>
+                                    <span class="col-lg-9"
+                                          t-esc="appraisal.evaluation_date.strftime('%d/%m/%Y')"/>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="row mb-4">
+                                    <strong class="col-lg-3">Note</strong>
+                                    <span lass="col-lg-9"
+                                          t-field="appraisal.appraisal_note"/>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+<!--                        <div id="request_communication" class="mt-4">-->
+<!--                            <h2>Messages</h2>-->
+<!--                            <t t-call="portal.message_thread">-->
+<!--                                <t t-set="object" t-value="appraisal"/>-->
+<!--                            </t>-->
+<!--                        </div>-->
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="portal_my_appraisal" name="My appraisal">
+            <t t-call="portal.portal_layout">
+
+
+                <t t-set="breadcrumbs_searchbar" t-value="True"/>
+                <!--                <t t-set="searchbar_inputs" t-value="True" />-->
+                <t t-call="portal.portal_searchbar">
+                    <t t-set="title">Appraisal</t>
+                </t>
+                <t t-if="not grouped_event">
+                    <p>There are currently no appraisal.</p>
+                </t>
+                <div class="col">
+                    <a t-attf-href="/appraisal/create">
+                        <button
+                                class="btn btn-primary o_wprofile_submit_btn">
+                            Add Appraisal
+                        </button>
+                    </a>
+                </div>
+                <br/>
+                <br/>
+
+
+                <t t-if="grouped_appraisal" t-call="portal.portal_table">
+                    <thead>
+                        <tr class="active"
+                            t-attf-class="{{'thead-light' if not groupby == 'none' else ''}}">
+                            <th>Name</th>
+                            <th>Pays</th>
+                            <th>Note</th>
+                            <th>Evaluation Date</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <t t-foreach="grouped_appraisal" t-as="appraisal">
+                        <tbody>
+                            <t t-foreach="appraisal" t-as="line">
+                                <tr>
+                                    <td>
+<!--                                        <a t-attf-href="/my/appraisal/#{line.id}">-->
+                                            <small>#</small>
+                                            <span t-esc="line.name"/>
+<!--                                        </a>-->
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.employee_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.appraisal_note"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.evaluation_date.strftime('%d/%m/%Y')"/>
+                                    </td>
+                                    <td>
+                                        <t t-if="line.state == 'draft'">
+                                            <span t-attf-class="badge badge-pill badge-warning">Draft</span>
+                                        </t>
+                                        <t t-if="line.state == 'closed'">
+                                            <span
+                                                    t-attf-class="badge badge-pill badge-danger">
+                                                Closed
+                                            </span>
+                                        </t>
+                                        <t t-if="line.state == 'validation'">
+                                            <span
+                                                    t-attf-class="badge badge-pill badge-success">
+                                                En validation
+                                            </span>
+                                        </t>
+                                        <t t-if="line.state == 'approved'">
+                                            <span
+                                                    t-attf-class="badge badge-pill badge-info">
+                                                Approved
+                                            </span>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+        <template id="appraisal_submit" name="Request: Create a Appraisal">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <style>
+                table {
+                      border-collapse: collapse;
+                      width: 100%;
+                    }
+
+                    th, td {
+                      text-align: left;
+                      padding: 8px;
+                    }
+
+                    tr:nth-child(even) {background-color: #f2f2f2;}
+            </style>
+            <t t-set="body_classname" t-value="'o_wprofile_body'"/>
+            <t t-call="website.layout">
+                <div id="wrap" class="o_wprofile_wrap">
+                    <div class="container pt-4 pb-5">
+                        <h1 class="o_page_header">Member States Satisfaction Survey</h1>
+                        <t t-call="icesco_portal.appraisal_content"/>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="appraisal_content" name="Appraisal">
+            <div>
+                <div class="form-inline ml-lg-2" id="button_header">
+                    <a t-attf-href="/my/appraisal">
+                        <button class="btn btn-primary o_wprofile_submit_btn">
+                            Retour
+                        </button>
+                    </a>
+                </div>
+                <br/>
+                <div class="form-group col-12">
+                    <p class="alert alert-danger" t-if="error"
+                       role="alert">
+                        <t t-esc="error"/>
+                    </p>
+                </div>
+                <form t-attf-action="/appraisal/submit_request" method="post"
+                      role="form" name="create_request"
+                      class="o_wprofile_editor_form js_website_submit_form row"
+                      enctype="multipart/form-data">
+                    <input type="hidden" id="csrf_token" name="csrf_token"
+                           t-att-value="request.csrf_token()"/>
+                    <input type="file" class="d-none o_forum_file_upload" name="ufile"
+                           accept="image/*"/>
+                    <input type="hidden" name="url_param"
+                           t-att-value="request.params.get('url_param')"/>
+
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+<!--                                    <div class="form-group col-12">-->
+<!--                                        <label class="mb-1 text-primary" style="color:#598c7c;" for="type">-->
+<!--                                            <span class="font-weight-bold">Pays</span>-->
+<!--                                        </label>-->
+<!--                                        <select class="form-control"-->
+<!--                                                name="deptartment_id" id="deptartment_id" placeholder="Departments">-->
+<!--                                            &lt;!&ndash;                                                <option value="0"></option>&ndash;&gt;-->
+<!--                                            <t t-foreach="departments or []"-->
+<!--                                               t-as="deptartment_id">-->
+<!--                                                <option t-att-value="deptartment_id.id">-->
+<!--                                                    <t t-esc="deptartment_id.name"/>-->
+<!--                                                </option>-->
+<!--                                            </t>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group col-6">-->
+<!--                                        <label class="mb-1 text-primary"-->
+<!--                                               for="date_begin">-->
+<!--                                            <span class="font-weight-bold">-->
+<!--                                                Evaluation Date-->
+<!--                                            </span>-->
+<!--                                        </label>-->
+<!--                                        <div>-->
+<!--                                            <input type="datetime-local" name="date_begin" id="date_begin"-->
+<!--                                                   placeholder="Date Evaluation *"-->
+<!--                                                   class="form-control"-->
+<!--                                                   t-att-value="evaluation_date"-->
+<!--                                                   required="True"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                    <br/>
+                                    <div class="row">
+                                        <div>
+                                                    <div class="col-12 text-center">
+                                                        <img src="/icesco_portal/static/description/isesco2.jpg"
+                                                             style="max-width:150px;max-height:150px;"
+                                                             class="center" alt="Logo"/>
+                                                    <div>
+                                                    <br/>
+                                                    <div style="overflow-x: auto;">
+                                                        <table>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>
+                                                                        <div></div>
+                                                                    </th>
+                                                                    <th align="center">
+                                                                        <div>
+                                                                            <div>
+                                                                                <span class="text-format-content">
+                                                                                    <span>Very satisfied</span>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </th>
+                                                                    <th align="center">
+                                                                        <div>
+                                                                            <div>
+                                                                                <span class="text-format-content ">
+                                                                                    <span>Somewhat satisfied</span>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </th>
+                                                                    <th align="center">
+                                                                        <div>
+                                                                            <div>
+                                                                                <span class="text-format-content">
+                                                                                    Neither satisfied nor dissatisfied
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </th>
+                                                                    <th align="center">
+                                                                        <div>
+                                                                            <div>
+                                                                                <span class="text-format-content ">
+                                                                                    Somewhat dissatisfied
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </th>
+                                                                    <th align="center">
+                                                                        <div>
+                                                                            <div>
+                                                                                <span class="text-format-content ">Very
+                                                                                    dissatisfied
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr role="radiogroup">
+                                                                    <td role="radio">
+                                                                        <div></div>
+                                                                        <div>
+                                                                            <div>
+                                                                                <span class="text-format-content ">
+                                                                                    Overall, how satisfied are you with
+                                                                                    ICESCO's services?
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="5" name="question_1"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="4" name="question_1"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="3" name="question_1"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="2" name="question_1"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="1" name="question_1"/>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div></div>
+                                                                        <div>
+                                                                            <div>
+                                                                                <span class="text-format-content ">
+                                                                                    <span>How satisfied are you with
+                                                                                        ICESCO’s projects and events in
+                                                                                        the field of Education?
+                                                                                    </span>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="5" name="question_2"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="4" name="question_2"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="3" name="question_2"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="2" name="question_2"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="1" name="question_2"/>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div></div>
+                                                                        <div>
+                                                                            <div>
+                                                                                <span class="text-format-content ">
+                                                                                    <span>How satisfied are you with
+                                                                                        ICESCO’s projects and events in
+                                                                                        the field of Science &amp;
+                                                                                        Technology?
+                                                                                    </span>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="5" name="question_3"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="4" name="question_3"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="3" name="question_3"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="2" name="question_3"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="1" name="question_3"/>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div></div>
+                                                                        <div>
+                                                                            <div>
+                                                                                <span class="text-format-content ">
+                                                                                    <span>How satisfied are you with
+                                                                                        ICESCO’s projects and events in
+                                                                                        the field of Social and Human
+                                                                                        Sciences?
+                                                                                    </span>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="5" name="question_4"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="4" name="question_4"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="3" name="question_4"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="2" name="question_4"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="1" name="question_4"/>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div></div>
+                                                                        <div>
+                                                                            <div>
+                                                                                <span class="text-format-content ">
+                                                                                    <span>How satisfied are you with
+                                                                                        ICESCO’s projects and events in
+                                                                                        the field of Culture and
+                                                                                        Communication?
+                                                                                    </span>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="5" name="question_5"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="4" name="question_5"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="3" name="question_5"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="2" name="question_5"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="1" name="question_5"/>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div></div>
+                                                                        <div>
+                                                                            <div>
+                                                                                <span class="text-format-content ">How
+                                                                                    satisfied are you with ICESCO’s
+                                                                                    projects and events in the field of
+                                                                                    Arabic language?
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="5" name="question_6"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="4" name="question_6"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="3" name="question_6"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="2" name="question_6"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="1" name="question_6"/>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div></div>
+                                                                        <div>
+                                                                            <div>
+                                                                                <span class="text-format-content ">
+                                                                                    <span>How satisfied are you with
+                                                                                        ICESCO’s projects and events in
+                                                                                        the field of Civilizational
+                                                                                        Dialogue?
+                                                                                    </span>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="5" name="question_7"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="4" name="question_7"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="3" name="question_7"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="2" name="question_7"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="1" name="question_7"/>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div></div>
+                                                                        <div>
+                                                                            <div>
+                                                                                <span class="text-format-content ">
+                                                                                    <span>How satisfied are you with
+                                                                                        ICESCO’s projects and events in
+                                                                                        the field of Strategic
+                                                                                        Foresight?
+                                                                                    </span>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="5" name="question_8"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="4" name="question_8"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="3" name="question_8"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="2" name="question_8"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="1" name="question_8"/>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div></div>
+                                                                        <div>
+                                                                            <div>
+                                                                                <span class="text-format-content ">
+                                                                                    <span>How satisfied are you with the
+                                                                                        agreements and partnerships made
+                                                                                        by ICESCO?
+                                                                                    </span>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="5" name="question_9"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="4" name="question_9"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="3" name="question_9"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="2" name="question_9"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="1" name="question_9"/>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div></div>
+                                                                        <div>
+                                                                            <div>
+                                                                                <span class="text-format-content ">
+                                                                                    <span>How satisfied are you with
+                                                                                        ICESCO's coordination and
+                                                                                        communication with
+                                                                                    </span>
+                                                                                    <span></span>
+                                                                                    <span>you</span>
+                                                                                    <span>?</span>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="5" name="question_10"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="4" name="question_10"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="3" name="question_10"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="2" name="question_10"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="1" name="question_10"/>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div></div>
+                                                                        <div>
+                                                                            <div>
+                                                                                <span class="text-format-content ">
+                                                                                    <span>How satisfied are you with the
+                                                                                        quantity of information you
+                                                                                        receive about ICESCO and its
+                                                                                        activities?
+                                                                                    </span>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="5" name="question_11"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="4" name="question_11"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="3" name="question_11"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="2" name="question_11"/>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div>
+                                                                            <input type="radio" t-attf-value="1" name="question_11"/>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <p class="alert alert-danger" t-if="error"
+                                           role="alert">
+                                            <t t-esc="error"/>
+                                        </p>
+                                    </div>
+                                    <div class="col">
+                                        <button type="submit"
+                                                class="btn btn-primary o_wprofile_submit_btn">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--            <div id="request_communication" class="mt-4">-->
+            <!--                        <h2>History</h2>-->
+            <!--                        <t t-call="portal.message_thread">-->
+            <!--&lt;!&ndash;                            <t t-set="object" t-value="event"/>&ndash;&gt;-->
+            <!--                        </t>-->
+            <!--            </div>-->
+        </template>
+    </data>
+</odoo>

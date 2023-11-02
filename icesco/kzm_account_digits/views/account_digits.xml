@@ -1,0 +1,39 @@
+<odoo>
+
+    <record model="ir.ui.view" id="digit_account_view_inherited">
+        <field name="name">account.digits</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-key='account']" position="inside">
+                <h2>Account digits</h2>
+                <div class="row mt16 o_settings_container" id="account_digits">
+                    <div class="col-12 col-lg-6 o_setting_box" groups="account.group_account_user">
+                        <div class="o_setting_left_pane">
+                            <field name="account_digit"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="account_digit"/>
+                            <div class="text-muted">
+                                Update digits for the account accountant
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" groups="account.group_account_user">
+                        <button name="update_account_code_digit" type="object" string="Update All account code digits" class="oe_highlight"/>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="update_account_code_server_action" model="ir.actions.server">
+        <field name="name">Update account code digit</field>
+        <field name="model_id" ref="account.model_account_account"/>
+        <!--            <field name="binding_model_id" ref="account.model_account_invoice" />-->
+        <field name="state">code</field>
+        <field name="code">
+            records.update_account_code_digit()
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="cps_product_template_view_form_inherit" model="ir.ui.view">
+        <field name="name">cps.product.template.view.form.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view" />
+        <field name="arch" type="xml">
+            <field name="barcode" position="after">
+<!--                <field name="is_qty_minimal1"/>-->
+                <field name="qty_restant"/>
+                <field name="qty_minimal"/>
+            </field>
+            <field name="default_code" position="replace">
+                <label for="default_code"/>
+                <div class="o_row" name="update_default_code">
+                            <field name="default_code" readonly="1" attrs="{'invisible': [('product_variant_count', '&gt;', 1)]}"/>
+                            <button string="Update Reference" type="object"
+                                name="regenerer_default_code"
+                                class="oe_link oe_inline" confirm="Êtes-vous sûr de modifier la réference de l'article"/>
+                        </div>
+
+            </field>
+        </field>
+    </record>
+
+    <record id="cps_product_product_view_form_inherit" model="ir.ui.view">
+        <field name="name">cps.product.product.view.form.inherit</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="arch" type="xml">
+            <field name="default_code" position="replace">
+                <field name="default_code" readonly="1"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

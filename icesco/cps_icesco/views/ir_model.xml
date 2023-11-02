@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ir_model_form_add_membert" model="ir.ui.view">
+        <field name="name">ir.model.form</field>
+        <field name="model">ir.model</field>
+        <field name="inherit_id" ref="base.view_model_form"/>
+        <field name="arch" type="xml">
+            <field name="model" position="after">
+                <field name="add_notification_mail"/>
+            </field>
+        </field>
+    </record>
+</odoo>

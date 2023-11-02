@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.module.category" id="icesco_validation_account_move_line">
+            <field name="name">Validation les écritures comptables</field>
+            <field name="sequence">101</field>
+        </record>
+
+        <record id="icesco_validation_account_move_line_validate_1" model="res.groups">
+            <field name="name">Groupe Validation 1</field>
+            <field name="implied_ids" eval="[(6,0, [ref('base.group_user')])]"/>
+            <field name="category_id" ref="isesco_base.icesco_validation_account_move_line"/>
+        </record>
+
+        <record id="icesco_validation_account_move_line_validate_2" model="res.groups">
+            <field name="name">Groupe Validation 2</field>
+            <field name="implied_ids" eval="[(6,0, [ref('base.group_user')])]"/>
+            <field name="category_id" ref="isesco_base.icesco_validation_account_move_line"/>
+        </record>
+
+    </data>
+</odoo>

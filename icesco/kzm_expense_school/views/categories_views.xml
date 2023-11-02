@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="icesco_hr_contract_category_custom" model="ir.ui.view">
+            <field name="name">icesco.hr.expense.sheet.form.inherit</field>
+            <field name="model">hr.contract.category</field>
+            <field name="inherit_id" ref="isesco_hr.hr_contract_category_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page name="expenses" string="Expenses">
+                        <group>
+                            <group name="scholar">
+                                <field name="scholarship_refund"/>
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+    </data>
+</odoo>

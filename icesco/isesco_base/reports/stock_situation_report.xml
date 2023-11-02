@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="stock_situation"
+            model="stock.situation"
+            string="stock situation repport"
+            name="isesco_base.id_temp"
+            file="isesco_base.id_temp"
+            report_type="qweb-pdf"/>
+
+    <template id="id_temp">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <div class="header">
+                    <div class="row">
+                        <div class="col-4 text-left" style="font-size: 13px">
+                            <span t-field="o.date"/>
+
+                        </div>
+
+                        <div class="col-4 text-center">
+                            <br/>
+                            <br/>
+                            <strong>
+                                <span style="font-size: 25px;font-weight: bold;text-decoration: underline;">Stock
+                                    situation
+                                </span>
+                            </strong>
+                            <br/>
+                            <br/>
+                            <div style="font-size: 13px;font-weight: bold;">Du :
+                                <span t-field="o.inventory_datetime_start"/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Au :
+                                <span t-field="o.inventory_datetime_end"/>
+                            </div>
+                            <br/>
+
+                        </div>
+                        <div class="col-4 text-right">
+                            <img src="/isesco_base/static/isesco.png" style="max-width:150px;max-height:150px;"
+                                 class="right" alt="Logo"/>
+                            <br/>
+                            <br/>
+                        </div>
+                    </div>
+                </div>
+                <div class="page article">
+                    <br/>
+                    <br/>
+                    <table class="table table-sm o_main_table table-bordered text-center">
+                        <thead>
+                            <tr style="background-color:#b5e7a0;font-size: 15px;">
+                                <th name="th_n">
+                                    <strong>Code Article</strong>
+                                </th>
+                                <th name="th_quantity">
+                                    <strong>&#160;&#160;&#160;&#160;&#160;&#160;Désignation &#160;&#160;&#160;&#160;&#160;&#160;</strong>
+                                </th>
+                                <th name="initial">
+                                    <strong>Stock Initial</strong>
+                                </th>
+                                <th name="in">
+                                    <strong>Qté Entrée</strong>
+                                </th>
+                                <th name="out">
+                                    <strong>Qté Sortie</strong>
+                                </th>
+                                <th name="final">
+                                    <strong>Stock Final
+                                    </strong>
+                                </th>
+                                <th name="price">
+                                    <strong>Prix U.HT.</strong>
+                                </th>
+                                <th name="value_in">
+                                    <strong>Valeur Entrée</strong>
+                                </th>
+                                <th name="value_out">
+                                    <strong>Valeur Sortie</strong>
+                                </th>
+                                <th name="value">
+                                    <strong>Valeur</strong>
+                                </th>
+                            </tr>
+                            <tbody>
+                            <t t-set="total_in" t-value="0"/>
+                            <t t-set="total_out" t-value="0"/>
+                            <t t-set="total_value" t-value="0"/>
+                            <t t-set="lines" t-value="o.get_situation()"/>
+                                <t t-foreach="lines" t-as="line">
+                                    <tr style="font-size: 14px;">
+                                        <td>
+                                            <span t-esc="line['product_code']"/>
+                                        </td>
+
+                                        <td>
+                                            <span t-esc="line['product_id']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="line['qty_available']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="line['quantity_in']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="line['quantity_out']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="line['stock_final']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="'{:.2f}'.format(line['price_cost'])"/>
+                                        </td>
+
+                                        <td>
+                                            <span t-esc="'{:.2f}'.format(line['value_in'])"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="'{:.2f}'.format(line['value_out'])"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="'{:.2f}'.format(line['value'])"/>
+                                        </td>
+                                        <t t-set="total_in" t-value="total_in+line['value_in']"/>
+                                        <t t-set="total_out" t-value="total_out+line['value_out']"/>
+                                        <t t-set="total_value" t-value="total_value+line['value']"/>
+                                    </tr>
+
+                                </t>
+                                <tr style="font-size: 14px;">
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+
+                                        <td>
+                                            <span t-esc="'{:.2f}'.format(total_in)"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="'{:.2f}'.format(total_out)"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="'{:.2f}'.format(total_value)"/>
+                                        </td>
+                                    </tr>
+                            </tbody>
+                        </thead>
+                    </table>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+
+
+
+
+            </t>
+
+        </t>
+    </template>
+
+
+</odoo>

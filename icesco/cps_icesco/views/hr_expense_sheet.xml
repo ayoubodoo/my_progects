@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_expense_sheet_view_form_inherit_payroll" model="ir.ui.view">
+        <field name="name">hr.expense.sheet.view.form.payroll</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="replace">
+                <field name="state" widget="statusbar" statusbar_visible="draft,submit,approve,approve_controller,approve_director,post,done"/>
+            </xpath>
+            <xpath expr="//button[@name='action_sheet_move_create']" position="replace">
+                <button name="action_sheet_move_create" string="Post Journal Entries" type="object" groups="account.group_account_manager" attrs="{'invisible': [('state', '!=', 'approve_director')]}" class="oe_highlight o_expense_sheet_post"/>
+            </xpath>
+            <xpath expr="//button[@name='action_sheet_move_create']" position="after">
+                <button name="action_sheet_validate_controller" string="Controller Validation" type="object" groups="cps_icesco.icesco_financial_controller" attrs="{'invisible': [('state', '!=', 'approve')]}" class="oe_highlight o_expense_sheet_post"/>
+                <button name="action_sheet_validate_director" string="Director Validation" type="object" groups="cps_icesco.icesco_financial_affairs" attrs="{'invisible': [('state', '!=', 'approve_controller')]}" class="oe_highlight o_expense_sheet_post"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,318 @@
+<odoo>
+    <data>
+
+        <template id="portal_my_home_partner" name="Portal My Home : partner entries"
+                  inherit_id="portal.portal_my_home"
+                  priority="30">
+            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="title">Member states</t>
+                    <t t-set="url" t-value="'/my/kanban/partners'"/>
+                    <t t-set="count" t-value="members_count"/>
+                </t>
+            </xpath>
+        </template>
+
+        <template id="cps_portal_my_home_menu_partners"
+                  name="Portal layout : Requests menu entries"
+                  inherit_id="portal.portal_breadcrumbs" priority="30">
+            <xpath expr="//ol[hasclass('o_portal_submenu')]" position="replace">
+                <ol t-if="page_name != 'home'" class="o_portal_submenu breadcrumb mb-0 py-2 flex-grow-1">
+                    <li class="breadcrumb-item"><a href="/my/home" aria-label="Home" title="Home"><i class="fa fa-home"/></a></li>
+                    <li t-if="page_name == 'partner'"
+                        t-attf-class="breadcrumb-item #{'active ' if not partner else ''}">
+                        <a t-attf-href="/my/kanban/partners?{{ keep_query() }}">Member States</a>
+                    </li>
+                </ol>
+            </xpath>
+            <xpath position="replace" expr="//a[@href='/my/home']">
+                <a href="/my/home" aria-label="Home" title="Home">
+                    <i class="fa fa-home"/>
+                </a>
+            </xpath>
+        </template>
+
+        <template id="portal_my_partners" name="Member States">
+            <t t-call="portal.portal_layout">
+                <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+                <t t-call="portal.portal_searchbar">
+                    <t t-set="title">Member States</t>
+                </t>
+                <t t-if="not partners">
+                    <div class="alert alert-warning mt8" role="alert">
+                        There are no Member States.
+                    </div>
+                </t>
+
+<!--                <t t-if="partners" t-call="portal.portal_table">-->
+<!--                    <tbody>-->
+<!--                        <tr t-foreach="partners" t-as="partner">-->
+<!--                            <td>-->
+<!--                                <a t-attf-href="/my/partner/#{partner.id}?{{ keep_query() }}"><span t-field="partner.name"/></a>-->
+<!--                            </td>-->
+<!--                            <td class="text-right">-->
+<!--                                <a t-attf-href="/my/partners?{{keep_query(filterby=partner.id)}}">-->
+<!--&lt;!&ndash;                                    <t t-esc="partner.member_count" />&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <t t-esc="partner.label_members" />&ndash;&gt;-->
+<!--                                </a>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                    </tbody>-->
+<!--                </t>-->
+            </t>
+        </template>
+
+        <template id="portal_my_choices" name="Choices">
+            <t t-call="portal.portal_layout">
+                <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+                <t t-call="portal.portal_searchbar">
+                    <t t-set="title"></t>
+                </t>
+            </t>
+        </template>
+
+        <template id="tasks_kanban_select" inherit_id="icesco_portal.portal_my_choices">
+            <xpath expr="//t[@t-call='portal.portal_layout']/t[@t-call='portal.portal_searchbar']" position="after">
+                <div class="kanban_view_partner" style="text-align: center">
+                    <div class="column-container container_partner dd">
+                        <ul class="column choice_kanban kanban To-do">
+                            <li class="dd-item_choice">
+<!--                                        <div style="height: 100px;">-->
+<!--&lt;!&ndash;                                            <div class="text partner_text" style="text-align:center">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <a t-attf-href="/my/partner/#{partner.id}?{{ keep_query() }}"><span t-field="partner.name" t-att-title="partner.name"/></a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <div class="text partner_partner">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <t t-if="partner.partner_id">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    <span t-field="partner.sudo().partner_id.name" t-att-title="partner.sudo().partner_id.name"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                </t>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </div>&ndash;&gt;-->
+<!--                                        </div>-->
+                                <div class="text members_partner" style="margin-top:40px;">
+<!--                                            <a t-attf-href="/my/kanban/members?{{keep_query(filterby=partner.id)}}" t-att-title="partner.name">-->
+<!--                                            </a>-->
+                                    <ul style="list-style: none;">
+                                        <a t-attf-href="/proposition/create">
+                                            <li class="mb12">
+                                                  <span class="font-weight-bold" style="font-size: 22px;color:white!important;">
+                                                    اقتراح مبادرة أو نشاط
+                                                  </span>
+                                            </li>
+                                        </a>
+                                      </ul>
+
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="column choice_kanban kanban To-do">
+                            <li class="dd-item_choice">
+<!--                                        <div style="height: 100px;">-->
+<!--&lt;!&ndash;                                            <div class="text partner_text" style="text-align:center">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <a t-attf-href="/my/partner/#{partner.id}?{{ keep_query() }}"><span t-field="partner.name" t-att-title="partner.name"/></a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <div class="text partner_partner">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <t t-if="partner.partner_id">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    <span t-field="partner.sudo().partner_id.name" t-att-title="partner.sudo().partner_id.name"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                </t>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </div>&ndash;&gt;-->
+<!--                                        </div>-->
+                                <div class="text members_partner" style="margin-top:40px;">
+<!--                                            <a t-attf-href="/my/kanban/members?{{keep_query(filterby=partner.id)}}" t-att-title="partner.name">-->
+<!--                                            </a>-->
+                                    <ul style="list-style: none;">
+                                        <a t-attf-href="/my/kanban/goals">
+                                            <li class="mb12">
+                                                  <span class="font-weight-bold" style="font-size: 22px;color:white!important;">
+                                                    المشاركة أو استضافة مبادرة أو نشاط
+                                                  </span>
+                                            </li>
+                                        </a>
+                                      </ul>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="partner_kanban_searchbar_partner" inherit_id="icesco_portal.portal_my_partners">
+<!--            <xpath expr="//t[@t-call='portal.portal_layout']/t[@t-call='portal.portal_searchbar']" position="before">-->
+<!--                <div class="view_buttons" style="padding:25px;">-->
+<!--                    <button class="btn btn-primary partner_list" style="float:right;margin-left:15px;background-color: #00A09D;">-->
+<!--                        <i class="fa fa-list" aria-hidden="false" />-->
+<!--                    </button>-->
+<!--                    <button class="btn btn-primary kanban_partner graph_invoice" style="float:right;background-color: #00A09D;">-->
+<!--                        <i class="fa fa-th" aria-hidden="false" />-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </xpath>-->
+
+            <xpath expr="//t[@t-call='portal.portal_layout']/t[@t-call='portal.portal_searchbar']" position="after">
+                <div class="kanban_view_partner">
+                    <div class="col-12" style=" text-align: center; margin-top:30px; margin-bottom:30px;">
+                       <span style="font-weight: bold ; font-size:16px">Member States</span>
+                    </div>
+                    <div class="column-container container_partner dd">
+                        <t t-foreach="partners" t-as="partner">
+                            <t t-if="partner">
+                                <ul class="column partner_kanban kanban To-do">
+                                    <li class="dd-item_partner">
+<!--                                        <div style="height: 100px;">-->
+<!--&lt;!&ndash;                                            <div class="text partner_text" style="text-align:center">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <a t-attf-href="/my/partner/#{partner.id}?{{ keep_query() }}"><span t-field="partner.name" t-att-title="partner.name"/></a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <div class="text partner_partner">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <t t-if="partner.partner_id">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    <span t-field="partner.sudo().partner_id.name" t-att-title="partner.sudo().partner_id.name"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                </t>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </div>&ndash;&gt;-->
+<!--                                        </div>-->
+                                        <div class="text members_partner" style="display: flex; align-items: center; "> <!-- text-align:center; -->
+<!--                                            <a t-attf-href="/my/kanban/members?{{keep_query(filterby=partner.id)}}" t-att-title="partner.name">-->
+<!--                                            </a>-->
+                                            <ul style="list-style: none;">
+                                                <li>
+                                                    <a t-attf-href="/my/kanban/partners/#{partner.id}">
+                                                          <t t-if="partner.image_1920">
+                                                              <img  t-att-src="image_data_uri(partner.image_1920)" style="width: 120px;height: 60px;margin-bottom:10px;margin-top:5px;" alt="Image"/>
+                                                          </t>
+                                                    </a>
+                                                  </li>
+                                                <li class="mb4">
+                                                    <t t-if="partner.name">
+                                                      <span class="font-weight-bold" style="font-size: 14px;">
+                                                        <t t-esc="partner.name"/>
+                                                      </span>
+                                                    </t>
+                                                </li>
+                                                  <li>
+                                                      <t t-if="partner.country_capital.name">
+                                                          <span style="font-size: 12px;">
+                                                              <t t-esc="partner.country_capital.name"/>
+                                                          </span>
+                                                      </t>
+                                                  </li>
+                                                <li>
+                                                      <t t-if="partner.national_day">
+                                                          <span class="font-weight-bold" style="font-size: 12px;">
+                                                              <t t-esc="partner.portal_national_day"/>
+                                                          </span>
+                                                      </t>
+                                                  </li>
+                                              </ul>
+
+                                        </div>
+
+                                    </li>
+                                </ul>
+                            </t>
+                        </t>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="portal_my_partner" name="Member States">
+            <t t-call="portal.portal_layout">
+
+
+                <t t-set="breadcrumbs_searchbar" t-value="True"/>
+                <!--                <t t-set="searchbar_inputs" t-value="True" />-->
+                <t t-call="portal.portal_searchbar">
+                    <t t-set="title">Member States</t>
+                </t>
+                <t t-if="not grouped_partner">
+                    <p>There are currently no Member States.</p>
+                </t>
+                <div class="col">
+                    <a t-attf-href="/partner/create">
+                        <button
+                                class="btn btn-success o_wprofile_submit_btn">
+                            Add a partner
+                        </button>
+                    </a>
+                </div>
+                <br/>
+
+
+                <t t-if="grouped_partner" t-call="portal.portal_table">
+                    <thead>
+                        <tr class="active"
+                            t-attf-class="{{'thead-light' if not groupby == 'none' else ''}}">
+                            <th>partners</th>
+                            <!--                            <th>Categorie</th>-->
+<!--                            <th>Start Date</th>-->
+<!--                            <th>End Date</th>-->
+                        </tr>
+                    </thead>
+                    <t t-foreach="grouped_partner" t-as="partner">
+                        <tbody>
+                            <t t-foreach="partner" t-as="line">
+                                <tr>
+                                    <td>
+                                        <a t-attf-href="/my/partner/#{line.id}">
+                                            <small>#</small>
+                                            <span t-esc="line.name"/>
+                                        </a>
+                                    </td>
+                                    <!--                                    <td>-->
+                                    <!--                                        <span t-field="line.event_type_id.name"/>-->
+                                    <!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-esc="line.date_begin.strftime('%d/%m/%Y')"/>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-esc="line.date_end.strftime('%d/%m/%Y')"/>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-field="line.seats_reserved"/>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-field="line.seats_min"/>-->
+<!--                                    </td>-->
+                                    <!--                                    <td>-->
+                                    <!--                                        <span t-field="line.user_id.name"/>-->
+                                    <!--                                    </td>-->
+                                    <!--                                    <td>-->
+                                    <!--                                        <t t-if="line.state == 'draft'">-->
+                                    <!--                                            <span t-attf-class="badge badge-pill badge-warning">Unconfirmed</span>-->
+                                    <!--                                        </t>-->
+                                    <!--                                        <t t-if="line.state == 'cancel'">-->
+                                    <!--                                            <span-->
+                                    <!--                                                    t-attf-class="badge badge-pill badge-danger">-->
+                                    <!--                                                Cancelled-->
+                                    <!--                                            </span>-->
+                                    <!--                                        </t>-->
+                                    <!--                                        <t t-if="line.state == 'confirm'">-->
+                                    <!--                                            <span-->
+                                    <!--                                                    t-attf-class="badge badge-pill badge-success">-->
+                                    <!--                                                Confirmed-->
+                                    <!--                                            </span>-->
+                                    <!--                                        </t>-->
+                                    <!--                                        <t t-if="line.state == 'done'">-->
+                                    <!--                                            <span-->
+                                    <!--                                                    t-attf-class="badge badge-pill badge-info">-->
+                                    <!--                                                Done-->
+                                    <!--                                            </span>-->
+                                    <!--                                        </t>-->
+                                    <!--                                    </td>-->
+
+<!--                                    <td class='d-none d-md-table-cell'>-->
+<!--                                        <span-->
+<!--                                                t-esc="line.create_date.strftime('%d/%m/%Y')"/>-->
+<!--                                    </td>-->
+                                    <!--                                    <td><a t-attf-href="/event/delete/#{line.id}"><i class="fa fa-trash"/></a></td>-->
+                                </tr>
+                            </t>
+                        </tbody>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+    </data>
+</odoo>

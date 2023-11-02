@@ -1,0 +1,65 @@
+<odoo>
+ <data>
+     <record model="ir.ui.view" id="resource_calendar_leaves_form_view">
+            <field name="name">resource calendar leaves form</field>
+            <field name="model">resource.calendar.leaves</field>
+            <field name="arch" type="xml">
+                <form string="Jours Fériés">
+                    <sheet>
+                        <field name="name"/>
+                        <field name="resource_id"/>
+                        <field name="company_id"/>
+                        <field name="calendar_id"/>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+     <record model="ir.ui.view" id="resource_calendar_leaves_tree_view">
+            <field name="name">resource calendar leaves</field>
+            <field name="model">resource.calendar.leaves</field>
+            <field name="arch" type="xml">
+                <tree string="Jours Fériés" editable="bottom">
+                    <field name="name"/>
+                    <field name="resource_id"/>
+                    <field name="company_id"/>
+                    <field name="calendar_id"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                </tree>
+            </field>
+        </record>
+
+     <record model="ir.ui.view" id="resource_calendar_leaves_search_view">
+            <field name="name">resource calendar leaves</field>
+            <field name="model">resource.calendar.leaves</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="resource_id"/>
+                    <field name="company_id"/>
+                    <field name="calendar_id"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                </search>
+            </field>
+        </record>
+
+
+
+   <record id="acton_resource_calendar_leaves" model="ir.actions.act_window">
+        <field name="name">Jours Fériés </field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">resource.calendar.leaves</field>
+        <field name="domain">[("resource_id", "=", False)]</field>
+
+        <field name="view_mode">tree,form</field>
+   </record>
+
+       <menuitem id="menucps_acton_resource_calendar_leaves"  action="acton_resource_calendar_leaves" name="Jours Fériés"  parent="hr_holidays.menu_hr_holidays_configuration" groups="hr_holidays.group_hr_holidays_user"  sequence="2"/>
+
+
+ </data>
+</odoo>

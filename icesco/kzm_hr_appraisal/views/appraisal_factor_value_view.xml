@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="appraisal_rating_factor_value_tree">
+            <field name="name">appraisal.rating.factor.value.tree</field>
+            <field name="model">appraisal.rating.factor.value</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="level"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="appraisal_rating_factor_value_form">
+            <field name="name">appraisal.rating.factor.value.form</field>
+            <field name="model">appraisal.rating.factor.value</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="level" required="1"/>
+                            <field name="evaluation_pays_member"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="appraisal_rating_factor_value_search" model="ir.ui.view">
+            <field name="name">appraisal.rating.factor.value.search</field>
+            <field name="model">appraisal.rating.factor.value</field>
+            <field name="arch" type="xml">
+                <search string="Rating Factor Values">
+                    <field name="name"/>
+                    <field name="level"/>
+                </search>
+            </field>
+        </record>
+        <record id="appraisal_rating_factor_value_action" model="ir.actions.act_window">
+            <field name="name">Appraisal Rating Factor Value</field>
+            <field name="res_model">appraisal.rating.factor.value</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new appraisal raiting factor values
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

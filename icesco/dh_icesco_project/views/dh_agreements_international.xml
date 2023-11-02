@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="dh_agreements_international_form_view">
+        <field name="name">dh.agreements.international.form</field>
+        <field name="model">dh.agreements.international</field>
+        <field name="arch" type="xml">
+            <form string="قائمة الاتفاقات الدولية">
+                <sheet>
+                    <group col="2">
+                        <group>
+                            <field name="year"/>
+                            <field name="date"/>
+                              <field name="name"/>
+                            <field name="type_agr"/>
+                            <field name="category"/>
+
+                            <field name="partner_id"/>
+                            <field name="type_partenaire"/>
+
+                        </group>
+                        <group>
+                        </group>
+                        <group colspan="2">
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_agreements_international_tree">
+      <field name="name">dh.agreements.international.tree</field>
+      <field name="model">dh.agreements.international</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom" >
+            <field name="year" width="1"/>
+            <field name="date" width="1"/>
+            <field name="name" width="1" string="الإسم"/>
+           <field name="type_agr" width="1"/>
+            <field name="partner_id" width="1"/>
+            <field name="type_partenaire" width="1"/>
+            <field name="category" width="1"/>
+            <field name="received_amount" width="1"/>
+            <field name="received_amount_prevu" width="1"/>
+            <button string="Partnership sectors" name="action_view_partnership_sectors" type="object"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_agreements_international">
+      <field name="name">قائمة الاتفاقات الدولية</field>
+      <field name="res_model">dh.agreements.international</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>

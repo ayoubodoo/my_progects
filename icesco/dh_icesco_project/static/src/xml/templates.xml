@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template
+        id="operation_plan_assets_backend"
+        name="operation_plan_assets"
+        inherit_id="web.assets_backend"
+    >
+        <xpath expr="." position="inside">
+            <script
+                type="text/javascript"
+                src="/dh_icesco_project/static/src/js/operational_group_by.js"
+            />
+        </xpath>
+    </template>
+</odoo>

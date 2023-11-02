@@ -1,0 +1,55 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="analyse_budget_approved_graph_form_view">
+        <field name="name">analyse.budget.approved.graph.form</field>
+        <field name="model">analyse.budget.approved.graph</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button string="Recalculer" name="recalcule_button" type="object"
+                            class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="type"/>
+                    </group>
+                    <notebook>
+                      <page>
+                          <field name="analyse_budget_ids" readonly="1">
+                            <tree>
+                              <field name="name"/>
+                              <field name="budget_consommed" sum="Total"/>
+                              <field name="budget_proposed" sum="Total"/>
+                            </tree>
+                          </field>
+                      </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="analyse_budget_approved_graph_tree">
+      <field name="name">analyse.budget.approved.graph.tree</field>
+      <field name="model">analyse.budget.approved.graph</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+<!--            <field name="type"/>-->
+            <field name="value"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_analyse_budget_approved_graph">
+      <field name="name">Percentage</field>
+      <field name="res_model">analyse.budget.approved.graph</field>
+<!--      <field name="view_mode">tree,form</field>-->
+      <field name="view_mode">tree,form</field>
+<!--        <field name="res_id" eval="1"/>-->
+    </record>
+
+  </data>
+</odoo>

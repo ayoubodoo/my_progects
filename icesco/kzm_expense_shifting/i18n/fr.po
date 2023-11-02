@@ -1,0 +1,697 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* kzm_expense_shifting
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-14 16:13+0000\n"
+"PO-Revision-Date: 2020-07-14 16:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: kzm_expense_shifting
+#: code:addons/kzm_expense_shifting/models/models.py:0
+#, python-format
+msgid "%s didn't have a contract category"
+msgstr "%s n’a pas de catégorie de contrat"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__message_needaction
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__message_needaction
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__activity_ids
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__activity_ids
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__activity_exception_decoration
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__activity_exception_decoration
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__activity_state
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__activity_state
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense__activity_name
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__activity_name
+msgid "Activity name"
+msgstr "Nom de l'activité"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense__activity_number
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__activity_number
+msgid "Activity number"
+msgstr "Numéro d'activité"
+
+#. module: kzm_expense_shifting
+#: model:ir.actions.act_window,name:kzm_expense_shifting.all_shifting_expenses_action
+msgid "All Shifting Expenses"
+msgstr "Tous les frais de déplacements"
+
+#. module: kzm_expense_shifting
+#: model:ir.ui.menu,name:kzm_expense_shifting.all_shifting_expenses_menu
+msgid "All Shifting expenses"
+msgstr "Tous les frais de déplacements"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__allowed_amount
+msgid "Allowed Amount"
+msgstr "Montant accordé"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__amount
+msgid "Amount"
+msgstr "Montant"
+
+#. module: kzm_expense_shifting
+#: model_terms:ir.ui.view,arch_db:kzm_expense_shifting.shifting_expense_form_view
+msgid "Applicant"
+msgstr "Demandeur"
+
+#. module: kzm_expense_shifting
+#: model_terms:ir.ui.view,arch_db:kzm_expense_shifting.shifting_expense_form_view
+msgid "Application"
+msgstr "Demande"
+
+#. module: kzm_expense_shifting
+#: model:product.product,name:kzm_expense_shifting.shifting_expense_product_id
+#: model:product.template,name:kzm_expense_shifting.shifting_expense_product_id_product_template
+msgid "Article des Frais de déplacements"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__message_attachment_count
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__message_attachment_count
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model_terms:ir.ui.view,arch_db:kzm_expense_shifting.shifting_expense_form_view
+msgid "Cancel"
+msgstr "Refuser"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields.selection,name:kzm_expense_shifting.selection__hr_expense_shifting__state__canceled
+msgid "Canceled"
+msgstr "Refusé"
+
+#. module: kzm_expense_shifting
+#: model:ir.ui.menu,name:kzm_expense_shifting.categories_menus
+msgid "Categories"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_contract_category__compensation_ids
+msgid "Compensations"
+msgstr "Indemnités journalières"
+
+#. module: kzm_expense_shifting
+#: model:ir.ui.menu,name:kzm_expense_shifting.configuration_menu
+msgid "Configuration"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model_terms:ir.ui.view,arch_db:kzm_expense_shifting.shifting_expense_form_view
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields.selection,name:kzm_expense_shifting.selection__hr_expense_shifting__state__confirmed
+msgid "Confirmed"
+msgstr "Confirmé par le responsable"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__contract_category_id
+msgid "Contract Category"
+msgstr "Catégorie de contrat"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__create_uid
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_line__create_uid
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__create_uid
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__create_date
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_line__create_date
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__create_date
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__currency_id
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: kzm_expense_shifting
+#: model:ir.model,name:kzm_expense_shifting.model_icesco_daily_compensation
+msgid "Daily compensation"
+msgstr "Indemnité journalière"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__date
+msgid "Date"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__days_number
+msgid "Days Number"
+msgstr "Nombre de jours"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__demand_date
+msgid "Demand date"
+msgstr "Date de la demande"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_contract_category__dependent_ids
+msgid "Dependent"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_line__dependent_id
+msgid "Dependents"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__deplacement_date
+msgid "Deplacement date"
+msgstr "Date du déplacement"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__display_name
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_line__display_name
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__display_name
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_line__document_ids
+msgid "Documents"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields.selection,name:kzm_expense_shifting.selection__hr_expense_shifting__state__draft
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__employee_id
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_line__employee_id
+msgid "Employee"
+msgstr "Employé"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_line__expense_id
+msgid "Expense"
+msgstr "Note de frais"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__hr_expense_id
+msgid "Expense sheet"
+msgstr "Feuille de note de frais"
+
+#. module: kzm_expense_shifting
+#: code:addons/kzm_expense_shifting/models/models.py:0
+#, python-format
+msgid "Expense sheet from %s"
+msgstr "Note de frais de %s"
+
+#. module: kzm_expense_shifting
+#: model_terms:ir.ui.view,arch_db:kzm_expense_shifting.shifting_expense_form_view
+msgid "Expenses"
+msgstr "Note de frais"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__message_follower_ids
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__message_follower_ids
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__message_channel_ids
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__message_channel_ids
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__message_partner_ids
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__message_partner_ids
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.module.category,name:kzm_expense_shifting.mo_category
+msgid "Gestion Shifting Expenses"
+msgstr "Gestion des frais de déplacements"
+
+#. module: kzm_expense_shifting
+#: model:ir.model,name:kzm_expense_shifting.model_hr_contract_category
+msgid "HR Contract Category"
+msgstr "Catégories de contrats"
+
+#. module: kzm_expense_shifting
+#: model_terms:ir.ui.view,arch_db:kzm_expense_shifting.shifting_expense_tree_view
+msgid "Hr Expense Shifting"
+msgstr "Frais de déplacements"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__id
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_line__id
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__id
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__id
+msgid "ID"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__activity_exception_icon
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__activity_exception_icon
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting__activity_exception_icon
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting_zone__activity_exception_icon
+#: model:ir.model.fields,help:kzm_expense_shifting.field_icesco_daily_compensation__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting__message_needaction
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting__message_unread
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting_zone__message_needaction
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting_zone__message_unread
+#: model:ir.model.fields,help:kzm_expense_shifting.field_icesco_daily_compensation__message_needaction
+#: model:ir.model.fields,help:kzm_expense_shifting.field_icesco_daily_compensation__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting__message_has_error
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting__message_has_sms_error
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting_zone__message_has_error
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting_zone__message_has_sms_error
+#: model:ir.model.fields,help:kzm_expense_shifting.field_icesco_daily_compensation__message_has_error
+#: model:ir.model.fields,help:kzm_expense_shifting.field_icesco_daily_compensation__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_line__inscription_fees
+msgid "Inscription fees"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__message_is_follower
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__message_is_follower
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__is_resp
+msgid "Is Responsible"
+msgstr "Est un responsable"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__job_id
+msgid "Job Position"
+msgstr "Poste occupé"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting____last_update
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_line____last_update
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone____last_update
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__write_uid
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_line__write_uid
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__write_uid
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__write_date
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_line__write_date
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__write_date
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__message_main_attachment_id
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__message_main_attachment_id
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.module.category,description:kzm_expense_shifting.mo_category
+msgid "Manage Shifting Expenses"
+msgstr "Gère les frais de déplacements"
+
+#. module: kzm_expense_shifting
+#: model:ir.ui.menu,name:kzm_expense_shifting.managers_menu
+msgid "Managers"
+msgstr "Responsables"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__message_has_error
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__message_has_error
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__message_ids
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__message_ids
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.actions.act_window,name:kzm_expense_shifting.my_shifting_expenses_action
+msgid "My Shifting Expenses"
+msgstr "Mes frais de déplacements"
+
+#. module: kzm_expense_shifting
+#: model:ir.ui.menu,name:kzm_expense_shifting.my_shifting_expenses_menu
+msgid "My Shifting expenses"
+msgstr "Mes frais de déplacements"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__name
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__activity_date_deadline
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__activity_date_deadline
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__activity_summary
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__activity_summary
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__activity_type_id
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__activity_type_id
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__message_needaction_counter
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__message_needaction_counter
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__message_has_error_counter
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__message_has_error_counter
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting__message_needaction_counter
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting_zone__message_needaction_counter
+#: model:ir.model.fields,help:kzm_expense_shifting.field_icesco_daily_compensation__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting__message_has_error_counter
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting_zone__message_has_error_counter
+#: model:ir.model.fields,help:kzm_expense_shifting.field_icesco_daily_compensation__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting__message_unread_counter
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting_zone__message_unread_counter
+#: model:ir.model.fields,help:kzm_expense_shifting.field_icesco_daily_compensation__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields.selection,name:kzm_expense_shifting.selection__hr_expense_shifting__state__paid
+msgid "Paid"
+msgstr "Payé"
+
+#. module: kzm_expense_shifting
+#: model_terms:ir.ui.view,arch_db:kzm_expense_shifting.shifting_expense_form_view
+msgid "Pay"
+msgstr "Payer"
+
+#. module: kzm_expense_shifting
+#: model_terms:ir.ui.view,arch_db:kzm_expense_shifting.shifting_expense_form_view
+msgid "Re draft"
+msgstr "Remettre en brouillon"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__name
+msgid "Reference"
+msgstr "Référence"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__activity_user_id
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__activity_user_id
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__activity_user_id
+msgid "Responsible User"
+msgstr "Responsable"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__message_has_sms_error
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__message_has_sms_error
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_line__shiftingarship_fees
+msgid "Scholarship fees"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__department_id
+msgid "Service"
+msgstr "Département"
+
+#. module: kzm_expense_shifting
+#: model_terms:ir.ui.view,arch_db:kzm_expense_shifting.shifting_expense_form_view
+msgid "Shifting Expense Form"
+msgstr "Formulaire de frais de déplacements"
+
+#. module: kzm_expense_shifting
+#: model:res.groups,name:kzm_expense_shifting.shifting_expense_super
+msgid "Shifting Expense Responsible"
+msgstr "Responsable de frais de déplacements"
+
+#. module: kzm_expense_shifting
+#: model:res.groups,name:kzm_expense_shifting.shifting_expense_user
+msgid "Shifting Expense User"
+msgstr "Utilisateur des frais de déplacements"
+
+#. module: kzm_expense_shifting
+#: model:res.groups,name:kzm_expense_shifting.shifting_expense_responsible
+msgid "Shifting Expense Validator"
+msgstr "Validateur des frais de déplacements"
+
+#. module: kzm_expense_shifting
+#: model:ir.actions.act_window,name:kzm_expense_shifting.shifting_expenses_to_approve_action
+msgid "Shifting Expenses to approve"
+msgstr "Frais de déplacement à approuver"
+
+#. module: kzm_expense_shifting
+#: model:ir.model,name:kzm_expense_shifting.model_hr_expense_shifting
+msgid "Shifting expense"
+msgstr "Frais de déplacements"
+
+#. module: kzm_expense_shifting
+#: model:ir.model,name:kzm_expense_shifting.model_hr_expense_shifting_line
+msgid "Shifting expense lines"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:mail.activity.type,name:kzm_expense_shifting.shifting_expense_to_validate_activity
+msgid "Shifting expense to pay "
+msgstr "Frais de déplacement à payer"
+
+#. module: kzm_expense_shifting
+#: model:ir.ui.menu,name:kzm_expense_shifting.main_shifting_expense_menu
+#: model:ir.ui.menu,name:kzm_expense_shifting.shifting_expense_menu
+msgid "Shifting expenses"
+msgstr "Frais de déplacements"
+
+#. module: kzm_expense_shifting
+#: model:ir.model,name:kzm_expense_shifting.model_hr_expense_shifting_zone
+msgid "Shifting zone"
+msgstr "Zone"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__zone_id
+msgid "Shifting zones"
+msgstr "Zones"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__state
+msgid "State"
+msgstr "État"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting__activity_state
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting_zone__activity_state
+#: model:ir.model.fields,help:kzm_expense_shifting.field_icesco_daily_compensation__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model_terms:ir.ui.view,arch_db:kzm_expense_shifting.shifting_expense_form_view
+msgid "Submit"
+msgstr "Soumettre"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_line__subtotal
+msgid "Subtotal"
+msgstr "Sous total"
+
+#. module: kzm_expense_shifting
+#: code:addons/kzm_expense_shifting/models/models.py:0
+#, python-format
+msgid ""
+"The shifting expense of <strong>%s</strong> has been confirmed by "
+"<strong>%s</strong> , at <strong>%s</strong>."
+msgstr ""
+"Le frais de déplacement de <strong>%s</strong> a été confirmé par "
+"<strong>%s</strong> , le <strong>%s</strong>."
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields.selection,name:kzm_expense_shifting.selection__hr_expense_shifting__state__to_approve
+msgid "To Approve"
+msgstr "À approuver"
+
+#. module: kzm_expense_shifting
+#: model:ir.ui.menu,name:kzm_expense_shifting.shifting_expense_to_approve_menu
+msgid "To approve"
+msgstr "À approuver"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting__activity_exception_decoration
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting_zone__activity_exception_decoration
+#: model:ir.model.fields,help:kzm_expense_shifting.field_icesco_daily_compensation__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:product.product,uom_name:kzm_expense_shifting.shifting_expense_product_id
+#: model:product.template,uom_name:kzm_expense_shifting.shifting_expense_product_id_product_template
+msgid "Units"
+msgstr "Unités"
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__message_unread
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__message_unread
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__message_unread_counter
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__message_unread_counter
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting__website_message_ids
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_hr_expense_shifting_zone__website_message_ids
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting__website_message_ids
+#: model:ir.model.fields,help:kzm_expense_shifting.field_hr_expense_shifting_zone__website_message_ids
+#: model:ir.model.fields,help:kzm_expense_shifting.field_icesco_daily_compensation__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: code:addons/kzm_expense_shifting/models/models.py:0
+#, python-format
+msgid "You cannot delete a shifting expense which is in %s state."
+msgstr "Vous ne pouvez pas supprimer un frais de déplacement en état %s."
+
+#. module: kzm_expense_shifting
+#: code:addons/kzm_expense_shifting/models/models.py:0
+#, python-format
+msgid ""
+"You didn't have the right to delete shifting expense.Please contact the "
+"administrator."
+msgstr ""
+"Vous n’avez pas le droit de supprimer un frais de déplacement. Veuillez "
+"contacter l’administrateur."
+
+#. module: kzm_expense_shifting
+#: model:ir.model.fields,field_description:kzm_expense_shifting.field_icesco_daily_compensation__shifting_zone_id
+msgid "Zone"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:ir.actions.act_window,name:kzm_expense_shifting.sh_zones_action
+#: model:ir.ui.menu,name:kzm_expense_shifting.zones_menus
+#: model_terms:ir.ui.view,arch_db:kzm_expense_shifting.shifting_zone_expense_form_view
+#: model_terms:ir.ui.view,arch_db:kzm_expense_shifting.shifting_zone_expense_tree_view
+msgid "Zones"
+msgstr ""
+
+#. module: kzm_expense_shifting
+#: model:mail.activity.type,name:kzm_expense_shifting.shifting_expense_to_approve_activity
+msgid "shifting expense to approve"
+msgstr "frais de déplacement à approuver"

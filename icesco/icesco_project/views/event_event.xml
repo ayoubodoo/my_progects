@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="event_event_form_inherit" model="ir.ui.view">
+            <field name="name">event.event.form.inherit</field>
+            <field name="model">event.event</field>
+            <field name="inherit_id" ref="event.view_event_form"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field name="project_id"/>
+                    <field name="task_id" domain="[('project_id','=',project_id)]" options="{'no_create': True, 'no_create_edit':True, 'no_open': True}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

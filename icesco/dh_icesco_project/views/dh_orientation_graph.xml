@@ -1,0 +1,65 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="dh_orientations_graph_form_view">
+        <field name="name">dh.orientations.graph.form</field>
+        <field name="model">dh.orientations.graph</field>
+        <field name="arch" type="xml">
+            <form>
+<!--                <header>-->
+<!--                    <button string="Recalculer" name="recalcule_button" type="object"-->
+<!--                            class="oe_highlight"/>-->
+<!--                </header>-->
+                <sheet>
+<!--                    <group>-->
+<!--                        <field name="name"/>-->
+<!--                    </group>-->
+                    <group>
+                        <field name="type" invisible="1"/>
+                    </group>
+                    <notebook>
+                      <page string="Orientations" name="orientations">
+                          <field name="orientation_ids" readonly="1">
+                            <tree>
+                              <field name="name"/>
+                              <field name="percentage_of_done_percent" widget="percentage"/>
+                            </tree>
+                          </field>
+                      </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_orientations_graph_tree">
+      <field name="name">dh.orientations.graph.tree</field>
+      <field name="model">dh.orientations.graph</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="type"/>
+            <field name="value"/>
+        </tree>
+      </field>
+    </record>
+
+<!--    <record model="ir.actions.act_window" id="action_dh_orientations_graph">-->
+<!--      <field name="name">orientations</field>-->
+<!--      <field name="res_model">dh.orientations.graph</field>-->
+<!--      <field name="view_type">form</field>-->
+<!--      <field name="view_mode">form</field>-->
+<!--&lt;!&ndash;      <field name="view_mode">form,tree</field>&ndash;&gt;-->
+<!--        <field name="res_id" eval="1"/>-->
+<!--    </record>-->
+
+  <record model="ir.actions.act_window" id="action_dh_orientations_graphh">
+      <field name="name">orientations</field>
+      <field name="res_model">dh.orientations.graph</field>
+      <field name="view_mode">form</field>
+      <field name="target">inline</field>
+        <field name="res_id" eval="1"/>
+    </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.rule" id="liasse_fiche_signalitique_rule">
+            <field name="name">liasse_fiche_signalitique</field>
+            <field name="model_id" ref="model_liasse_fiche_signalitique_erp"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+        <record model="ir.rule" id="liasse_balance_erp_rule">
+            <field name="name">liasse_balance_erp</field>
+            <field name="model_id" ref="model_liasse_balance_erp"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+
+    </data>
+</odoo>

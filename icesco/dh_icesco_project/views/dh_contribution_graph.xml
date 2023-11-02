@@ -1,0 +1,54 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="dh_contribution_graph_form_view">
+        <field name="name">dh.contribution.graph.form</field>
+        <field name="model">dh.contribution.graph</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button string="Recalculer" name="recalcule_button" type="object"
+                            class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="type"/>
+                    </group>
+                    <notebook>
+                      <page>
+                          <field name="contribution_ids" readonly="1">
+                            <tree>
+                              <field name="partner_id"/>
+                              <field name="amount" sum="Total"/>
+                              <field name="amount_not_paid" sum="Total"/>
+                            </tree>
+                          </field>
+                      </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_contribution_graph_tree">
+      <field name="name">dh.contribution.graph.tree</field>
+      <field name="model">dh.contribution.graph</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+<!--            <field name="type"/>-->
+            <field name="value"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_contribution_graph">
+      <field name="name">Percentage</field>
+      <field name="res_model">dh.contribution.graph</field>
+<!--      <field name="view_mode">tree,form</field>-->
+      <field name="view_mode">tree,form</field>
+<!--        <field name="res_id" eval="1"/>-->
+    </record>
+
+  </data>
+</odoo>

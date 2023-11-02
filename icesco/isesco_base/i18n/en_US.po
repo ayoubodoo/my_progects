@@ -1,0 +1,1172 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* isesco_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-06 13:31+0000\n"
+"PO-Revision-Date: 2023-05-06 13:31+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.transfer_letter_report
+msgid "), en faveur de :"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.supplier_return_slip_report
+msgid ""
+",\n"
+"                            Contact :appro@icesco.org"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid ""
+",\n"
+"                     Contact :appro@icesco.org"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.own_external_layout_background
+msgid ""
+",\n"
+"                    Contact :appro@icesco.org"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.transfer_letter_report
+msgid ""
+", nous vous prions de bien vouloir effectuer un virement de la somme de"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.id_temp
+msgid ""
+"<br/>\n"
+"                            <br/>\n"
+"                            <strong>\n"
+"                                <span style=\"font-size: 25px;font-weight: bold;text-decoration: underline;\">Stock\n"
+"                                    situation\n"
+"                                </span>\n"
+"                            </strong>\n"
+"                            <br/>\n"
+"                            <br/>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.out_of_stock_by_destination_report
+msgid ""
+"<span style=\"font-size: 20px;text-decoration: underline;\">\n"
+"                                    <strong>Sorties de stock par destination</strong>\n"
+"                                </span>\n"
+"                                <br/>\n"
+"                                <br/>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.supplier_return_slip_report
+msgid ""
+"<span>\n"
+"                                            <strong>مديريةالشؤون الادارية</strong>\n"
+"                                        </span>\n"
+"                                        <br/>\n"
+"                                        <span>\n"
+"                                            <strong>قسم المخازن</strong>\n"
+"                                        </span>\n"
+"                                        <br/>\n"
+"                                        <br/>\n"
+"                                        <br/>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.supplier_return_slip_report
+msgid ""
+"<span>\n"
+"                                        <strong>Islamic World Educational, Scientific\n"
+"                                        </strong>\n"
+"                                    </span>\n"
+"                                    <br/>\n"
+"                                    <span>\n"
+"                                        <strong>and cultural Organization</strong>\n"
+"                                    </span>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <span>Directorate of Administrative Affairs</span>\n"
+"                                    <br/>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.supplier_return_slip_report
+msgid ""
+"<span>\n"
+"                                        <strong>Organisation du monde Islamique pour\n"
+"                                        </strong>\n"
+"                                    </span>\n"
+"                                    <br/>\n"
+"                                    <span>\n"
+"                                        <strong>L'Education,les Sciences et la Culture\n"
+"                                        </strong>\n"
+"                                    </span>\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <span>Direction des Affaires administratives</span>\n"
+"                                    <br/>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.transfer_letter_report
+msgid "<span><strong>Le Contrôleur financier</strong></span>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.transfer_letter_report
+msgid "<span><strong>Le Directeur général</strong></span>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.transfer_letter_report
+msgid "<span><strong>Le Superviseur de la D.A.F</strong></span>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<span><strong>Remarques :</strong></span>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.supplier_return_slip_report
+msgid "<span>Date</span>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid ""
+"<span>Islamic World Educational, Scientific</span><br/>\n"
+"                        <span>and cultural Organization</span><br/>\n"
+"                        <span>ICESCO</span><br/>\n"
+"                        <span>Directorate of Administrative Affairs</span><br/>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid ""
+"<span>Organisation du monde Islamique pour</span><br/>\n"
+"                        <span>L'Education,les Sciences et la Culture</span><br/>\n"
+"                        <span>ICESCO</span><br/>\n"
+"                        <span>Direction des Affaires administratives</span><br/>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.supplier_return_slip_report
+msgid "<span>Signature du magasinier</span>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.transfer_letter_report
+msgid ""
+"<span>              \n"
+"                                    Veuillez agréer, Messieurs, l’expression de nos sentiments distingués.</span><br/>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.supplier_return_slip_report
+msgid "<strong>Adresse Icesco :</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Amount untaxed</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.supplier_return_slip_report
+msgid "<strong>Article</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.out_of_stock_by_destination_report
+msgid "<strong>Au :   </strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.id_temp
+msgid "<strong>Code Article</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.supplier_return_slip_report
+msgid "<strong>Commande N° :</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Date :</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Date BC:</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Date de livraison prévue:</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Description</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.out_of_stock_by_destination_report
+msgid ""
+"<strong>Destination :     \n"
+"                                </strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Devise:</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Direction des affaires administratives</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.out_of_stock_by_destination_report
+msgid "<strong>Du :   </strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.out_of_stock_by_destination_report
+msgid "<strong>Désignation</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Montant HT</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Montant Remise</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.out_of_stock_by_destination_report
+msgid "<strong>Montant</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.id_temp
+msgid "<strong>Prix U.HT.</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.out_of_stock_by_destination_report
+msgid "<strong>Prix U.HT</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Purchase Representative:</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Qty</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.id_temp
+msgid "<strong>Qté Entrée</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.id_temp
+msgid "<strong>Qté Sortie</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.supplier_return_slip_report
+msgid "<strong>Quantité retournée</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.out_of_stock_by_destination_report
+msgid "<strong>Quantité</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.transfer_letter_report
+msgid "<strong>Rabat, le </strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Responsable de la division</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.supplier_return_slip_report
+msgid "<strong>Reste</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.out_of_stock_by_destination_report
+msgid "<strong>Réference</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.id_temp
+msgid ""
+"<strong>Stock Final\n"
+"                                    </strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.id_temp
+msgid "<strong>Stock Initial</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.out_of_stock_by_destination_report
+msgid "<strong>TOTAL HT MAD</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Taxe 20%</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Total HT</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Total TTC en lettres : </strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Unit Price</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.id_temp
+msgid "<strong>Valeur Entrée</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.id_temp
+msgid "<strong>Valeur Sortie</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.id_temp
+msgid "<strong>Valeur</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Vendor:</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>Your Order Reference:</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "<strong>total TTC</strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.id_temp
+msgid "<strong>      Désignation       </strong>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.transfer_letter_report
+msgid "ADRESSE DU BENEFICAIRE:"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model,name:isesco_base.model_account_move_line
+msgid "Account Move Line"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,help:isesco_base.field_account_move__account_depreciation_id_asset
+msgid "Account used in the depreciation entries, to decrease the asset value."
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,help:isesco_base.field_account_move__account_depreciation_expense_id_asset
+msgid ""
+"Account used in the periodical entries, to record a part of the asset as "
+"expense."
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,help:isesco_base.field_account_move__account_asset_id_asset
+msgid ""
+"Account used to record the purchase of the asset at its original price."
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__acquisition_date_asset
+msgid "Acquisition Date"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__account_analytic_id_asset
+msgid "Analytic Account"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_line__move_asset_id
+msgid "Asset"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__name_asset
+msgid "Asset Name"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_line__asset_taux
+msgid "Asset Taux"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model,name:isesco_base.model_account_asset
+msgid "Asset/Revenue Recognition"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.id_temp
+msgid "Au :"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.supplier_return_slip_report
+msgid "BON DE RETOUR FOURNISSEUR N° :"
+msgstr ""
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/account_general_ledger.py:0
+#, python-format
+msgid "Balance"
+msgstr ""
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/account_general_ledger.py:0
+#, python-format
+msgid "Balance USD"
+msgstr ""
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/account_general_ledger.py:0
+#, python-format
+msgid "Base Amount"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.actions.report,name:isesco_base.supplier_return_slip
+msgid "Bon de retour fournisseur"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__book_value_asset
+msgid "Book Value"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.transfer_letter_report
+msgid "CODE BIC :"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__campaign_id
+msgid "Campaign"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__can_reset
+msgid "Can Reset"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.account_asset_wizard
+#: model_terms:ir.ui.view,arch_db:isesco_base.account_move_wizard
+#: model_terms:ir.ui.view,arch_db:isesco_base.stock_picking_destination_wizard
+#: model_terms:ir.ui.view,arch_db:isesco_base.view_stock_situation_history
+msgid "Cancel"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "Cancelled Purchase Order #"
+msgstr ""
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/account_move.py:0
+#, python-format
+msgid ""
+"Cannot create unbalanced journal entry. Ids: %s\n"
+"Differences debit - credit: %s"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,help:isesco_base.field_stock_situation__inventory_datetime_end
+msgid "Choose a date to get the inventory at that end date"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,help:isesco_base.field_stock_situation__inventory_datetime_start
+msgid "Choose a date to get the inventory at that start date"
+msgstr ""
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/stock.py:0
+#, python-format
+msgid "Choose a type of document before"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.view_stock_situation_history
+msgid "Choose your date"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_asset__code
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__code_asset
+msgid "Code"
+msgstr ""
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/account_general_ledger.py:0
+#, python-format
+msgid "Communication"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_stock_picking_destination_wizard__company_id
+msgid "Company"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model,name:isesco_base.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_asset_wizard__create_uid
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_wizard__create_uid
+#: model:ir.model.fields,field_description:isesco_base.field_stock_picking_destination_wizard__create_uid
+#: model:ir.model.fields,field_description:isesco_base.field_stock_situation__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_asset_wizard__create_date
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_wizard__create_date
+#: model:ir.model.fields,field_description:isesco_base.field_stock_picking_destination_wizard__create_date
+#: model:ir.model.fields,field_description:isesco_base.field_stock_situation__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/account_general_ledger.py:0
+#, python-format
+msgid "Credit"
+msgstr ""
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/account_general_ledger.py:0
+#, python-format
+msgid "Currency"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_line__currency_usd_id
+msgid "Currency USD"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.transfer_letter_report
+msgid "DETAILS :"
+msgstr ""
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/account_general_ledger.py:0
+#: model:ir.model.fields,field_description:isesco_base.field_stock_situation__date
+#, python-format
+msgid "Date"
+msgstr ""
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/account_general_ledger.py:0
+#, python-format
+msgid "Debit"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__value_residual_asset
+msgid "Depreciable Value"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.cps_view_account_move_tree
+msgid "Depreciation"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__account_depreciation_id_asset
+msgid "Depreciation Account"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.cps_view_account_move_tree
+msgid "Depreciation Date"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_stock_picking_destination_wizard__destination_id
+msgid "Destination"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_asset_wizard__display_name
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_wizard__display_name
+#: model:ir.model.fields,field_description:isesco_base.field_stock_picking_destination_wizard__display_name
+#: model:ir.model.fields,field_description:isesco_base.field_stock_situation__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.id_temp
+msgid "Du :"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__deactivate_blockage
+msgid "Déactivé Blockage"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_asset__employee_id
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__employee_id_asset
+msgid "Employée"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_stock_picking_destination_wizard__end_date
+msgid "End date"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__account_depreciation_expense_id_asset
+msgid "Expense Account"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__first_depreciation_date_asset
+msgid "First Depreciation Date"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__account_asset_id_asset
+msgid "Fixed Asset Account"
+msgstr ""
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/account_general_ledger.py:0
+#, python-format
+msgid "General Ledger"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model,name:isesco_base.model_account_general_ledger
+msgid "General Ledger Report"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__gross_increase_value_asset
+msgid "Gross Increase Value"
+msgstr ""
+
+#. module: isesco_base
+#: model:res.groups,name:isesco_base.icesco_validation_account_move_line_validate_1
+msgid "Groupe Validation 1"
+msgstr ""
+
+#. module: isesco_base
+#: model:res.groups,name:isesco_base.icesco_validation_account_move_line_validate_2
+msgid "Groupe Validation 2"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.transfer_letter_report
+msgid "IBAN :"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_asset_wizard__id
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_wizard__id
+#: model:ir.model.fields,field_description:isesco_base.field_stock_picking_destination_wizard__id
+#: model:ir.model.fields,field_description:isesco_base.field_stock_situation__id
+msgid "ID"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.own_external_layout_background
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+#: model_terms:ir.ui.view,arch_db:isesco_base.supplier_return_slip_report
+msgid "Icesco:"
+msgstr ""
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/account_general_ledger.py:0
+#, python-format
+msgid "Initial Balance"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_stock_situation__inventory_datetime_end
+msgid "Inventory End Date"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.actions.act_window,name:isesco_base.action_view_stock_situation_form2
+msgid "Inventory Situation at Date Action"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_stock_situation__inventory_datetime_start
+msgid "Inventory Start Date"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.ui.menu,name:isesco_base.inventory_status_repport_menu_1
+msgid "Inventory Status Report"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,help:isesco_base.field_account_move__salvage_value_asset
+msgid "It is the amount you plan to have that you cannot depreciate."
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__journal_id_asset
+msgid "Journal"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model,name:isesco_base.model_account_move
+msgid "Journal Entries"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.cps_view_account_move_tree
+msgid "Journal Entry"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_asset_wizard____last_update
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_wizard____last_update
+#: model:ir.model.fields,field_description:isesco_base.field_stock_picking_destination_wizard____last_update
+#: model:ir.model.fields,field_description:isesco_base.field_stock_situation____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_asset_wizard__write_uid
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_wizard__write_uid
+#: model:ir.model.fields,field_description:isesco_base.field_stock_picking_destination_wizard__write_uid
+#: model:ir.model.fields,field_description:isesco_base.field_stock_situation__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_asset_wizard__write_date
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_wizard__write_date
+#: model:ir.model.fields,field_description:isesco_base.field_stock_picking_destination_wizard__write_date
+#: model:ir.model.fields,field_description:isesco_base.field_stock_situation__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.actions.act_window,name:isesco_base.cps_move_asset_lines_action
+#: model:ir.ui.menu,name:isesco_base.cps_move_asset_lines_menu
+#: model_terms:ir.ui.view,arch_db:isesco_base.cps_view_account_move_tree
+msgid "Lignes Actifs"
+msgstr ""
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/account_general_ledger.py:0
+#, python-format
+msgid "Load more... (%s remaining)"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.id_temp
+#: model_terms:ir.ui.view,arch_db:isesco_base.out_of_stock_by_destination_report
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+#: model_terms:ir.ui.view,arch_db:isesco_base.supplier_return_slip_report
+msgid "Logo"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.transfer_letter_report
+msgid ""
+"Messieurs,<br/>\n"
+"                                                  \n"
+"                                    Par le débit de notre compte en"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.account_asset_wizard
+#: model_terms:ir.ui.view,arch_db:isesco_base.account_move_wizard
+msgid "Modifier"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.cps_view_asset_form
+#: model_terms:ir.ui.view,arch_db:isesco_base.view_move_form
+msgid "Modifier Taux"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.actions.act_window,name:isesco_base.action_account_asset_wizard
+#: model:ir.actions.act_window,name:isesco_base.action_account_move_wizard
+#: model_terms:ir.ui.view,arch_db:isesco_base.account_asset_wizard
+#: model_terms:ir.ui.view,arch_db:isesco_base.account_move_wizard
+msgid "Modifier le taux"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_line__total
+msgid "Montant USD"
+msgstr "Amount(USD)"
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/account_general_ledger.py:0
+#, python-format
+msgid "Name"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__method_number_asset
+#: model_terms:ir.ui.view,arch_db:isesco_base.cps_view_account_move_tree
+msgid "Nombre d'amortissements"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields.selection,name:isesco_base.selection__account_move_line__validation__none
+msgid "None"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__salvage_value_asset
+msgid "Not Depreciable Value"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,help:isesco_base.field_account_move__first_depreciation_date_asset
+msgid ""
+"Note that this date does not alter the computation of the first journal "
+"entry in case of prorata temporis assets. It simply changes its accounting "
+"date"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_asset__num_serie
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__num_serie_asset
+msgid "Numéro de série"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__original_value_asset
+msgid "Original Value"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.stock_picking_destination_wizard
+msgid "Out of Stock Report"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model,name:isesco_base.model_stock_picking_destination_wizard
+msgid "Out of Stock Report wizard"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.actions.act_window,name:isesco_base.action_stock_picking_destination_wizard
+#: model:ir.ui.menu,name:isesco_base.stock_picking_destination_report
+msgid "Out of Stock by Destination Report"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.actions.report,name:isesco_base.out_of_stock_by_destination
+msgid "Out of stock by destination report"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.supplier_return_slip_report
+msgid ""
+"Page:\n"
+"                            <span class=\"page\"/>\n"
+"                            /\n"
+"                            <span class=\"topage\"/>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.out_of_stock_by_destination_report
+msgid ""
+"Page:\n"
+"                            <span class=\"page\"/>\n"
+"                            sur\n"
+"                            <span class=\"topage\"/>"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.own_external_layout_background
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid ""
+"Page:\n"
+"                    <span class=\"page\"/>\n"
+"                    /\n"
+"                    <span class=\"topage\"/>"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_line__parent_taux
+msgid "Parent Taux"
+msgstr ""
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/account_general_ledger.py:0
+#, python-format
+msgid "Partner"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.stock_picking_destination_wizard
+#: model_terms:ir.ui.view,arch_db:isesco_base.view_stock_situation_history
+msgid "Print"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_purchase_order__print_date
+msgid "Print Date"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model,name:isesco_base.model_product_product
+msgid "Product"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_stock_picking_destination_wizard__product_ids
+msgid "Products"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model,name:isesco_base.model_purchase_order
+msgid "Purchase Order"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "Purchase Order #"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_product_product__articles_qty
+msgid "Quantity"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_asset__remet_taux_zero
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__remet_taux_zero
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_line__asset_remet_taux_zero
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_line__remet_taux_zero
+msgid "Remettre Taux A Zero"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_asset_wizard__remet_taux_zero
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_wizard__remet_taux_zero
+msgid "Remettre taux zero"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.report_purchaseorder_document_inherited_isesco
+msgid "Request for Quotation #"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_res_partner__i_siret
+#: model:ir.model.fields,field_description:isesco_base.field_res_users__i_siret
+msgid "SIRET"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_stock_picking_destination_wizard__start_date
+msgid "Start date"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__state_asset
+msgid "Status Asset"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_stock_situation__stock_move_ids
+msgid "Stock Move"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model,name:isesco_base.model_stock_situation
+msgid "Stock situation"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,help:isesco_base.field_account_move__book_value_asset
+msgid ""
+"Sum of the depreciable value, the salvage value and the book value of all "
+"value increase items"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_asset__taux
+#: model:ir.model.fields,field_description:isesco_base.field_account_asset_wizard__taux
+#: model:ir.model.fields,field_description:isesco_base.field_account_move__taux
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_line__taux
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_wizard__taux
+msgid "Taux"
+msgstr ""
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/account_general_ledger.py:0
+#, python-format
+msgid "Tax Amount"
+msgstr ""
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/account_general_ledger.py:0
+#, python-format
+msgid "Tax Declaration"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,help:isesco_base.field_stock_situation__stock_move_ids
+msgid "Technical: used to compute quantities."
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,help:isesco_base.field_account_move__method_number_asset
+msgid "The number of depreciations needed to depreciate your asset"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,help:isesco_base.field_account_move__campaign_id
+msgid ""
+"This is a name that helps you keep track of your different campaign efforts,"
+" e.g. Fall_Drive, Christmas_Special"
+msgstr ""
+
+#. module: isesco_base
+#: code:addons/isesco_base/models/account_general_ledger.py:0
+#: code:addons/isesco_base/models/account_general_ledger.py:0
+#: model:ir.model.fields,field_description:isesco_base.field_stock_situation__total
+#, python-format
+msgid "Total"
+msgstr ""
+
+#. module: isesco_base
+#: model_terms:ir.ui.view,arch_db:isesco_base.cps_view_account_move_tree
+msgid "Total Amount"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_purchase_order__amount_to_text
+msgid "Total TTC"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.actions.report,name:isesco_base.transfer_letter_report_action
+msgid "Transfer letter"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_account_move_line__validation
+msgid "Validation"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields.selection,name:isesco_base.selection__account_move_line__validation__validation1
+#: model_terms:ir.ui.view,arch_db:isesco_base.account_move_line_tree_inherit
+msgid "Validation 1"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields.selection,name:isesco_base.selection__account_move_line__validation__validation2
+#: model_terms:ir.ui.view,arch_db:isesco_base.account_move_line_tree_inherit
+msgid "Validation 2"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.module.category,name:isesco_base.icesco_validation_account_move_line
+msgid "Validation les écritures comptables"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,field_description:isesco_base.field_purchase_order__partner_id
+msgid "Vendor"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,help:isesco_base.field_account_move__state_asset
+msgid ""
+"When an asset is created, the status is 'Draft'.\n"
+"If the asset is confirmed, the status goes in 'Running' and the depreciation lines can be posted in the accounting.\n"
+"The 'On Hold' status can be set manually when you want to pause the depreciation of an asset for some time.\n"
+"You can manually close an asset when the depreciation is over. If the last line of depreciation is posted, the asset automatically goes in that status."
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model.fields,help:isesco_base.field_purchase_order__partner_id
+msgid "You can find a vendor by its Name, TIN, Email or Internal Reference."
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model,name:isesco_base.model_account_asset_wizard
+msgid "account.asset.wizard"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.model,name:isesco_base.model_account_move_wizard
+msgid "account.move.wizard"
+msgstr ""
+
+#. module: isesco_base
+#: model:ir.actions.report,name:isesco_base.stock_situation
+msgid "stock situation repport"
+msgstr ""

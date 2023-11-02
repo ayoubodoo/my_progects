@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <data noupdate="1">
+  
+    <record id="check_rule1" model="liasse.check.erp">
+      <field name="etat">Actif Vs Passif</field>
+      <field name="code">ACTIF = PASSIF</field>
+      <field eval="[(6, 0, [code_188])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_13368])]" name="coden_min_ids"/>
+      <field eval="[(6, 0, [code_189])]" name="codenp_ids"/>
+      <field eval="[(6, 0, [code_13453])]" name="codenp_min_ids"/>
+    </record>
+    
+    <record id="check_rule2" model="liasse.check.erp">
+      <field name="etat">Actif Net</field>
+      <field name="code">ACTIF BRUT - AMT/PROV = ACTIF NET</field>
+      <field eval="[(6, 0, [code_186])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_187,code_188])]" name="coden_min_ids"/>
+    </record>
+    
+    <record id="check_rule3" model="liasse.check.erp">
+      <field name="etat">CPC Vs Détail CPC</field>
+      <field name="code">ACHATS REVENDUS DE MARCHANDISES</field>
+      <field eval="[(6, 0, [code_1521])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_11223])]" name="coden_min_ids"/>
+      <field eval="[(6, 0, [code_1562])]" name="codenp_ids"/>
+      <field eval="[(6, 0, [code_11224])]" name="codenp_min_ids"/>
+    </record>
+    
+    <record id="check_rule4" model="liasse.check.erp">
+      <field name="etat">CPC Vs Détail CPC</field>
+      <field name="code">ACHATS CONSOMMÉS DE MATIÈRES ET FOURNITURES</field>
+      <field eval="[(6, 0, [code_1525])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_11258])]" name="coden_min_ids"/>
+      <field eval="[(6, 0, [code_1566])]" name="codenp_ids"/>
+      <field eval="[(6, 0, [code_11259])]" name="codenp_min_ids"/>
+    </record>
+ 
+    <record id="check_rule5" model="liasse.check.erp">
+      <field name="etat">CPC Vs Détail CPC</field>
+      <field name="code">AUTRES CHARGES EXTERNES</field>
+      <field eval="[(6, 0, [code_1533])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_11263])]" name="coden_min_ids"/>
+      <field eval="[(6, 0, [code_1574])]" name="codenp_ids"/>
+      <field eval="[(6, 0, [code_11264])]" name="codenp_min_ids"/>
+    </record>
+    
+    <record id="check_rule6" model="liasse.check.erp">
+      <field name="etat">CPC Vs Détail CPC</field>
+      <field name="code">CHARGES DE PERSONNEL</field>
+      <field eval="[(6, 0, [code_1545])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_11268])]" name="coden_min_ids"/>
+      <field eval="[(6, 0, [code_1586])]" name="codenp_ids"/>
+      <field eval="[(6, 0, [code_11269])]" name="codenp_min_ids"/>
+    </record>
+    
+    <record id="check_rule7" model="liasse.check.erp">
+      <field name="etat">CPC Vs Détail CPC</field>
+      <field name="code">AUTRES CHARGES D'EXPLOITATION</field>
+      <field eval="[(6, 0, [code_1550])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_11248])]" name="coden_min_ids"/>
+      <field eval="[(6, 0, [code_1591])]" name="codenp_ids"/>
+      <field eval="[(6, 0, [code_11249])]" name="codenp_min_ids"/>
+    </record>
+    
+    <record id="check_rule8" model="liasse.check.erp">
+      <field name="etat">CPC Vs Détail CPC</field>
+      <field name="code">AUTRES CHARGES FINANCIÈRES</field>
+      <field eval="[(6, 0, [code_1764])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_11308])]" name="coden_min_ids"/>
+      <field eval="[(6, 0, [code_1814])]" name="codenp_ids"/>
+      <field eval="[(6, 0, [code_11309])]" name="codenp_min_ids"/>
+    </record>
+    
+    <record id="check_rule9" model="liasse.check.erp">
+      <field name="etat">CPC Vs Détail CPC</field>
+      <field name="code">AUTRES CHARGES NON COURANTES</field>
+      <field eval="[(6, 0, [code_11383])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_1792])]" name="coden_min_ids"/>
+      <field eval="[(6, 0, [code_11384])]" name="codenp_ids"/>
+      <field eval="[(6, 0, [code_1807])]" name="codenp_min_ids"/>
+    </record>
+    
+    <record id="check_rule10" model="liasse.check.erp">
+      <field name="etat">CPC Vs Détail CPC</field>
+      <field name="code">VENTES DE MARCHANDISES</field>
+      <field eval="[(6, 0, [code_1963])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_11183])]" name="coden_min_ids"/>
+      <field eval="[(6, 0, [code_1989])]" name="codenp_ids"/>
+      <field eval="[(6, 0, [code_11184])]" name="codenp_min_ids"/>
+    </record>
+    
+    <record id="check_rule11" model="liasse.check.erp">
+      <field name="etat">CPC Vs Détail CPC</field>
+      <field name="code">VENTES DE BIENS ET SERVICES PRODUITS</field>
+      <field eval="[(6, 0, [code_1968])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_11188])]" name="coden_min_ids"/>
+      <field eval="[(6, 0, [code_1994])]" name="codenp_ids"/>
+      <field eval="[(6, 0, [code_11189])]" name="codenp_min_ids"/>
+    </record>
+    
+    <record id="check_rule12" model="liasse.check.erp">
+      <field name="etat">CPC Vs Détail CPC</field>
+      <field name="code">VARIATION DES STOCKS DE PRODUITS</field>
+      <field eval="[(6, 0, [code_1976])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_11193])]" name="coden_min_ids"/>
+      <field eval="[(6, 0, [code_2002])]" name="codenp_ids"/>
+      <field eval="[(6, 0, [code_11194])]" name="codenp_min_ids"/>
+    </record>
+    
+    <record id="check_rule13" model="liasse.check.erp">
+      <field name="etat">CPC Vs Détail CPC</field>
+      <field name="code">AUTRES PRODUITS D'EXPLOITATION</field>
+      <field eval="[(6, 0, [code_1981])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_11208])]" name="coden_min_ids"/>
+      <field eval="[(6, 0, [code_2007])]" name="codenp_ids"/>
+      <field eval="[(6, 0, [code_11209])]" name="codenp_min_ids"/>
+    </record>
+    
+    <record id="check_rule14" model="liasse.check.erp">
+      <field name="etat">CPC Vs Détail CPC</field>
+      <field name="code">REPRISES D'EXPLOITATION TRANSFERTS DE CHARGES</field>
+      <field eval="[(6, 0, [code_1985])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_11213])]" name="coden_min_ids"/>
+      <field eval="[(6, 0, [code_2011])]" name="codenp_ids"/>
+      <field eval="[(6, 0, [code_11214])]" name="codenp_min_ids"/>
+    </record>
+    
+    <record id="check_rule15" model="liasse.check.erp">
+      <field name="etat">CPC Vs Détail CPC</field>
+      <field name="code">INTÉRÊTS ET PRODUITS FINANCIERS</field>
+      <field eval="[(6, 0, [code_2022])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_11283])]" name="coden_min_ids"/>
+      <field eval="[(6, 0, [code_2029])]" name="codenp_ids"/>
+      <field eval="[(6, 0, [code_11284])]" name="codenp_min_ids"/>
+    </record>
+    
+    <record id="check_rule16" model="liasse.check.erp">
+      <field name="etat">Résultat</field>
+      <field name="code">Résultat bilan Vs CPC</field>
+      <field eval="[(6, 0, [code_13409])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_11438])]" name="coden_min_ids"/>
+      <field eval="[(6, 0, [code_13420])]" name="codenp_ids"/>
+      <field eval="[(6, 0, [code_11439])]" name="codenp_min_ids"/>
+    </record>
+    
+    <record id="check_rule17" model="liasse.check.erp">
+      <field name="etat">ESG Vs CPC</field>
+      <field name="code">COMPARAISON RESULTAT AVEC CPC</field>
+      <field eval="[(6, 0, [code_11423])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_1332])]" name="coden_min_ids"/>
+      <field eval="[(6, 0, [code_11424])]" name="codenp_ids"/>
+      <field eval="[(6, 0, [code_1357])]" name="codenp_min_ids"/>
+    </record>
+    
+    <record id="check_rule18" model="liasse.check.erp">
+      <field name="etat">Immo Vs Actif</field>
+      <field name="code">COMPARAISON AVEC BILAN</field>
+      <field eval="[(6, 0, [code_10071,code_10080,code_10089])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_497,code_502,code_507])]" name="coden_min_ids"/>
+    </record>
+    
+    <record id="check_rule19" model="liasse.check.erp">
+      <field name="etat">Stock Vs Bilan</field>
+      <field name="code">STOCK AVEC BILAN</field>
+      <field eval="[(6, 0, [code_1888])]" name="coden_ids"/>
+      <field eval="[(6, 0, [code_524])]" name="coden_min_ids"/>
+      <field eval="[(6, 0, [code_1891])]" name="codenp_ids"/>
+      <field eval="[(6, 0, [code_525])]" name="codenp_min_ids"/>
+    </record>
+    
+    <record id="controle_rule1" model="liasse.check.rub.erp">
+      <field name="rub">Produits d'exploitation</field>
+      <field name="compte">71</field>
+      <field eval="[(6, 0, [code_11178])]" name="code_ids"/>
+    </record>
+   
+    <record id="controle_rule2" model="liasse.check.rub.erp">
+      <field name="rub">Charges d'exploitation</field>
+      <field name="compte">61</field>
+      <field eval="[(6, 0, [code_11228])]" name="code_ids"/>
+    </record>
+    
+    <record id="controle_rule3" model="liasse.check.rub.erp">
+      <field name="rub">Produits financiers</field>
+      <field name="compte">73</field>
+      <field eval="[(6, 0, [code_11328])]" name="code_ids"/>
+    </record>
+    
+    <record id="controle_rule4" model="liasse.check.rub.erp">
+      <field name="rub">Charges financières</field>
+      <field name="compte">63</field>
+      <field eval="[(6, 0, [code_11323])]" name="code_ids"/>
+    </record>
+    
+    <record id="controle_rule5" model="liasse.check.rub.erp">
+      <field name="rub">Produits non courants</field>
+      <field name="compte">75</field>
+      <field eval="[(6, 0, [code_11393])]" name="code_ids"/>
+    </record>
+    
+    <record id="controle_rule6" model="liasse.check.rub.erp">
+      <field name="rub">Charges non courantes</field>
+      <field name="compte">65</field>
+      <field eval="[(6, 0, [code_11398])]" name="code_ids"/>
+    </record>
+
+  </data>
+</odoo>

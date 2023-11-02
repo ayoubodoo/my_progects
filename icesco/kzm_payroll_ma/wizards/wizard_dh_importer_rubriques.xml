@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="wizard_dh_importer_rubriques_form_view">
+            <field name="name">wizard stock transfer</field>
+            <field name="model">wizard.dh.importer.rubriques</field>
+            <field name="arch" type="xml">
+                <form string="Importation rubriques">
+                    <group>
+
+                        <field name="attachment_id"/>
+
+
+                    </group>
+                    <footer>
+                         <button name="execute"  type="object" string="IMPOTER" class="btn-primary"/>
+
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,95 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="dh_icesco_informations_form_view">
+        <field name="name">dh.icesco.informations.form</field>
+        <field name="model">dh.icesco.informations</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group col="2">
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="description" widget="html"/>
+                            <field name="type" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_informations_kanban">
+      <field name="name">dh.icesco.informations.kanban</field>
+      <field name="model">dh.icesco.informations</field>
+      <field name="arch" type="xml">
+        <kanban>  <!--default_group_by="priority"-->
+              <field name="name"/>
+              <field name="description"/>
+              <field name="type"/>
+              <field name="sequence"/>
+              <templates>
+                  <t t-name="kanban-box">
+                      <div class="oe_kanban_global_click" style="width: 100%;important;">
+    <!--                              <div class="oe_dropdown_kanban">-->
+    <!--                                  &lt;!&ndash; dropdown menu &ndash;&gt;-->
+    <!--                                  <div class="oe_dropdown_toggle">-->
+    <!--                                      <i class="fa fa-bars fa-lg" title="Manage" aria-label="Manage"/>-->
+    <!--                                      <ul class="oe_dropdown_menu">-->
+    <!--                                          <li>-->
+    <!--                                              <a type="delete">Delete</a>-->
+    <!--                                          </li>-->
+    <!--                                          <li>-->
+    <!--                                              <ul class="oe_kanban_colorpicker"-->
+    <!--                                                  data-field="color"/>-->
+    <!--                                          </li>-->
+    <!--                                      </ul>-->
+    <!--                                  </div>-->
+    <!--                                  <div class="oe_clear"></div>-->
+    <!--                              </div>-->
+                          <div t-attf-class="oe_kanban_content oe_kanban_details d-flex flex-column">
+                              <!-- title -->
+                              <t t-if="record.name.raw_value">
+                                  <h2>
+                                      <strong>
+                                          <field name="name"/>
+                                      </strong>
+                                  </h2>
+                                  <br/>
+                              </t>
+                              <ul style="list-style: none;">
+                                  <t t-if="record.description.raw_value">
+                                      <li>
+                                          <field name="description" widget="html"/>
+                                      </li>
+                                  </t>
+                              </ul>
+
+                          </div>
+                      </div>
+                  </t>
+              </templates>
+          </kanban>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_informations_informations">
+      <field name="name">نظام إدارة الأداء الإستراتيجي للإيسيسكو</field>
+      <field name="res_model">dh.icesco.informations</field>
+      <field name="view_mode">kanban,form</field>
+        <field name="domain">[('type', '=', 'information')]</field>
+        <field name="context">{'default_type': 'information'}</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_informations_questions">
+      <field name="name">الأسئلة الشائعة</field>
+      <field name="res_model">dh.icesco.informations</field>
+      <field name="view_mode">kanban,form</field>
+        <field name="domain">[('type', '=', 'question')]</field>
+        <field name="context">{'default_type': 'question'}</field>
+    </record>
+
+  </data>
+</odoo>

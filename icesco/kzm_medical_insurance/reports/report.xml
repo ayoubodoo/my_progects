@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+          <record id="report_ir_retrait_xlsx" model="ir.actions.report">
+        <field name="name">Rapport </field>
+        <field name="model">report.ir.retrait</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">kzm_medical_insurance.report_ir_retrait_xlsx</field>
+        <field name="report_file">kzm_medical_insurance.report_ir_retrait_xlsx</field>
+        <field name="binding_type">report</field>
+    </record>
+        <record id="paperformat_bank_transfert" model="report.paperformat">
+            <field name="name">Bank Transfert</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+            id="report_bank_transfert"
+            string="Bank Transfert"
+            model="medical.refund.request.run"
+            report_type="qweb-pdf"
+            name="kzm_medical_insurance.template_report_bank_transfert"
+            file="kzm_medical_insurance.template_report_bank_transfert"
+            paperformat="kzm_medical_insurance.paperformat_bank_transfert"
+            print_report_name="'Bank Transfert - %s' % (object.name)"
+        />
+        <report
+            id="report_monthly_prestations"
+            string="Monthly benefit amounts"
+            model="medical.refund.request.run"
+            report_type="qweb-pdf"
+            name="kzm_medical_insurance.template_report_monthly_benefit_amounts"
+            file="kzm_medical_insurance.template_report_monthly_benefit_amounts"
+            paperformat="kzm_medical_insurance.paperformat_bank_transfert"
+            print_report_name="'Monthly benefit amounts - %s' % (object.name)"
+        />
+    </data>
+</odoo>

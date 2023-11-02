@@ -1,0 +1,229 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dh_icesco_chairs_lines_form_view">
+            <field name="name">dh.chairs.line.form</field>
+            <field name="model">dh.chairs.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                             <field name="orientation_id"/>
+                                        <field name="pilliar_id"/>
+                                        <field name="chair_goal_id"/>
+                                        <field name="chair_indicators_id"/>
+                                        <field name="target"/>
+                                        <field name="result"/>
+                                        <field name="percentage_realisation"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_icesco_chairs_form_view">
+            <field name="name">dh.chairs.form</field>
+            <field name="model">dh.chairs</field>
+            <field name="arch" type="xml">
+                <form string="الكراسي">
+                    <sheet>
+                        <group col="2">
+                            <group>
+                                <field name="sector_id"/>
+                                <field name="numero"/>
+                                <field name="name"/>
+
+                                <field name="university"/>
+                                <field name="pays_id" domain="[('is_member_state','=',True)]"/>
+                                <field name="date"/>
+                                <field name="date_chairs"/>
+                            </group>
+                            <group>
+                                <field name="budget_chairs"/>
+                                <field name="budget_icesco"/>
+                                <field name="budget_externe"/>
+                                <field name="tatal_budget_chairs"/>
+                                <field name="consumed_budget"/>
+                                <field name="percentage_budget"/>
+                                <field name="percentage" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="أهداف الكرسي">
+                                <field name="gaol_cairs_id">
+                                    <tree editbale="bottom">
+                                        <field name="orientation_id"/>
+                                        <field name="pilliar_id"/>
+                                        <field name="chair_goal_id"/>
+                                        <field name="chair_indicators_id"/>
+                                        <field name="target"/>
+                                        <field name="result"/>
+                                        <field name="percentage_realisation"/>
+
+                                    </tree>
+                                </field>
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_icesco_chairs_line_tree">
+            <field name="name">dh.chairs.line.tree</field>
+            <field name="model">dh.chairs.line</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="orientation_id"/>
+                    <field name="pilliar_id"/>
+                    <field name="chair_goal_id"/>
+                    <field name="chair_indicators_id"/>
+                    <field name="target"/>
+                    <field name="result"/>
+                    <field name="percentage_realisation"/>
+
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="dh_icesco_chairs_indicatorse_tree">
+            <field name="name">dh.chair.indicators.goal.tree</field>
+            <field name="model">dh.chair.indicators.goal</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="seq"/>
+                    <field name="percentage"/>
+                    <field name="method_mesure"/>
+
+
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="dh_icesco_chairs_indicatorse_form">
+            <field name="name">dh.chair.indicators.goal.form</field>
+            <field name="model">dh.chair.indicators.goal</field>
+            <field name="arch" type="xml">
+
+                <form>
+                    <sheet>
+                        <group>
+                    <field name="seq"/>
+                    <field name="percentage"/>
+                    <field name="method_mesure"/></group>
+</sheet>
+
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="dh_icesco_chairs_tree">
+            <field name="name">dh.chairs.tree</field>
+            <field name="model">dh.chairs</field>
+            <field name="arch" type="xml">
+                <tree string="الكراسي">
+
+                    <field name="sector_id"/>
+                    <field name="numero"/>
+                    <field name="name"/>
+                    <field name="university"/>
+                    <field name="pays_id" domain="[('is_member_state','=',True)]"/>
+                    <!--                    <field name="date"/>-->
+                    <field name="date_chairs"/>
+                    <field name="budget_icesco"/>
+                    <field name="budget_externe"/>
+                    <field name="tatal_budget_chairs"/>
+                    <field name="consumed_budget"/>
+                    <field name="percentage_budget"/>
+
+                </tree>
+            </field>
+        </record>
+        <record id="dh_view_chairs_kanban1" model="ir.ui.view">
+            <field name="name">dh.chairs.kanban</field>
+            <field name="model">dh.chairs</field>
+            <field name="arch" type="xml">
+                <kanban sample="1">
+
+
+                    <templates>
+                        <t t-name="kanban-box">
+
+                            <div class="oe_kanban_card oe_kanban_global_click">
+                                <!--                            <div class="o_kanban_image me-1">-->
+                                <!--                                <field name="image_1920" widget="image" class="oe_avatar"/>-->
+                                <!--                            </div>-->
+                                <div class="oe_kanban_details justify-content-start" style="justify-content: right;">
+                                    <div class="o_kanban_record_top mb-0">
+                                        <div class="o_kanban_record_headings justify-content-start"
+                                             style="justify-content: right;font-size:14px;font-weight: bold;">
+                                            <strong class="o_kanban_record_title">
+                                                <field name="name"/>
+                                            </strong>
+
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <div class="justify-content-start" style="justify-content: right;padding-top:5.5px">
+                                        <div>
+
+                                            <t t-if="record.sector_id.value">
+                                                <b>
+                                                      القطاع :
+                                                </b>
+                                                <field name="sector_id"></field>
+                                            </t>
+                                        </div>
+                                        <div>
+
+                                            <t t-if="record.university.value">
+                                                <b>
+                                                      الجامعة :
+                                                </b>
+                                                <field name="university"></field>
+                                            </t>
+                                        </div>
+                                        <!--                                    <field name="nb_pays_visited"></field>-->
+                                        <div>
+                                            <t t-if="record.date_chairs.value">
+                                                <b>
+                                                      التاريخ:
+                                                </b>
+                                                <field name="date_chairs"></field>
+                                            </t>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+
+
+
+        <record model="ir.actions.act_window" id="action_dh_icesco_chairs">
+            <field name="name">قائـــــمة الكراسي</field>
+            <field name="res_model">dh.chairs</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_id" ref="dh_icesco_chairs_tree"/>
+        </record>
+        <record model="ir.actions.act_window" id="action_dh_icesco_chairs_infos">
+            <field name="name">معلومات عن الكراسي</field>
+            <field name="res_model">dh.chairs</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_id" ref="dh_view_chairs_kanban1"/>
+        </record>
+        <menuitem id="icesco_chairss_menu" name="قائـــــمة الكراسي"
+                  parent="project.menu_project_config"
+                  action="action_dh_icesco_chairs" sequence="37"/>
+
+    </data>
+</odoo>

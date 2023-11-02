@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="generate_heures_sup" model="ir.cron">
+        <field name="name">Generate heures sup</field>
+        <field name="model_id" ref="model_dh_heure_sup"/>
+        <field name="state">code</field>
+        <field name="code">model.cron_week_heure_sup()</field>
+        <field name='interval_number'>1</field>
+        <field name='interval_type'>weeks</field>
+        <field name="numbercall">-1</field>
+    </record>
+    </data>
+</odoo>

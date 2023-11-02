@@ -1,0 +1,1583 @@
+<odoo>
+    <data>
+
+<!--        <template id="assets_frontend" inherit_id="website.assets_frontend" name="Project">-->
+<!--            <xpath expr="." position="inside">-->
+<!--                <script type="text/javascript" src="/icesco_portal/static/src/js/geminate_kanban_view.js"/>-->
+<!--                <link type="text/css" rel="stylesheet" href="/icesco_portal/static/src/css/style.css"/>-->
+<!--            </xpath>-->
+<!--        </template>-->
+
+        <template id="portal_my_home_goal" name="Portal My Home : goal entries"
+                  inherit_id="portal.portal_my_home"
+                  priority="30">
+            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="title">Goals and Pillars</t>
+                    <t t-set="url" t-value="'/my/choice'"/>
+                    <t t-set="count" t-value="goals_count"/>
+                </t>
+            </xpath>
+        </template>
+
+    <template id="project.portal_layout" name="Portal layout: project menu entry" inherit_id="portal.portal_breadcrumbs" priority="40">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="replace">
+            <ol t-if="page_name != 'home'" class="o_portal_submenu breadcrumb mb-0 py-2 flex-grow-1">
+                <li class="breadcrumb-item"><a href="/my/home" aria-label="Home" title="Home"><i class="fa fa-home"/></a></li>
+                <li t-if="page_name == 'project' or project" t-attf-class="breadcrumb-item #{'active ' if not project else ''}">
+                    <a t-if="project" t-attf-href="/my/projects?{{ keep_query() }}">Projects</a>
+                    <t t-else="">Projects</t>
+                </li>
+                <li t-if="project" class="breadcrumb-item active">
+                    <t t-esc="project.name"/>
+                </li>
+                <li t-if="page_name == 'task' or task" t-attf-class="breadcrumb-item #{'active ' if not task else ''}">
+                    <a t-if="task" t-attf-href="/my/tasks?{{ keep_query() }}">Tasks</a>
+                    <t t-else="">Tasks</t>
+                </li>
+                <li t-if="task" class="breadcrumb-item active">
+                    <span t-field="task.name"/>
+                </li>
+            </ol>
+        </xpath>
+    </template>
+
+        <template id="cps_portal_my_home_menu_goals"
+                  name="Portal layout : Requests menu entries"
+                  inherit_id="portal.portal_breadcrumbs" priority="30">
+
+            <xpath expr="//ol[hasclass('o_portal_submenu')]" position="replace">
+                <ol t-if="page_name != 'home'" class="o_portal_submenu breadcrumb mb-0 py-2 flex-grow-1">
+                    <li class="breadcrumb-item"><a href="/my/home" aria-label="Home" title="Home"><i class="fa fa-home"/></a></li>
+                    <li t-if="page_name == 'goal'"
+                        t-attf-class="breadcrumb-item #{'active ' if not goal else ''}">
+                        <a t-attf-href="/my/kanban/goals">Strategic objectives</a>
+                    </li>
+                </ol>
+            </xpath>
+            <xpath position="replace" expr="//a[@href='/my/home']">
+                <a href="/my/home" aria-label="Home" title="Home">
+                    <i class="fa fa-home"/>
+                </a>
+            </xpath>
+        </template>
+
+        <template id="portal_my_goals" name="Goals and Pillars">
+            <t t-call="portal.portal_layout">
+                <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+                <t t-call="portal.portal_searchbar">
+                    <t t-set="title">Strategic objectives</t>
+                </t>
+
+                <t t-if="not goals">
+                    <div class="alert alert-warning mt8" role="alert">
+                        There are no goals.
+                    </div>
+                </t>
+
+<!--                <t t-if="goals" t-call="portal.portal_table">-->
+<!--                    <tbody>-->
+<!--                        <tr t-foreach="goals" t-as="goal">-->
+<!--                            <td>-->
+<!--                                <a t-attf-href="/my/goal/#{goal.id}?{{ keep_query() }}"><span t-field="goal.name"/></a>-->
+<!--                            </td>-->
+<!--                            <td class="text-right">-->
+<!--                                <a t-attf-href="/my/goals?{{keep_query(filterby=goal.id)}}">-->
+<!--&lt;!&ndash;                                    <t t-esc="goal.task_count" />&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <t t-esc="goal.label_tasks" />&ndash;&gt;-->
+<!--                                </a>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                    </tbody>-->
+<!--                </t>-->
+            </t>
+        </template>
+
+        <template id="goal_kanban_searchbar_goal" inherit_id="icesco_portal.portal_my_goals">
+<!--            <xpath expr="//t[@t-call='portal.portal_layout']/t[@t-call='portal.portal_searchbar']" position="before">-->
+<!--                <div class="view_buttons" style="padding:25px;">-->
+<!--                    <button class="btn btn-success goal_list" style="float:right;margin-left:15px;background-color: #00A09D;">-->
+<!--                        <i class="fa fa-list" aria-hidden="false" />-->
+<!--                    </button>-->
+<!--                    <button class="btn btn-success kanban_goal graph_invoice" style="float:right;background-color: #00A09D;">-->
+<!--                        <i class="fa fa-th" aria-hidden="false" />-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </xpath>-->
+
+            <xpath expr="//t[@t-call='portal.portal_layout']/t[@t-call='portal.portal_searchbar']" position="after">
+                <div class="kanban_view_goal">
+                    <div class="col-12" style=" text-align: center; margin-top:30px; margin-bottom:30px;">
+                        <span style="font-weight: bold ; font-size:16px">Strategic objectives</span>
+                    </div>
+                    <div class="column-container container_goal dd">
+                        <t t-foreach="goals" t-as="goal">
+                            <t t-if="goal">
+                                <ul class="column goal_kanban kanban To-do">
+                                    <li class="dd-item_goal">
+                                        <div style="height: 200px;!important">
+                                            <div class="text goal_text" style="text-align:center">
+                                                <a t-attf-href="/my/goal/#{goal.orientation_id.id}/pillars">
+                                                    <span t-field="goal.orientation_short_name" t-att-title="goal.orientation_short_name"/>
+                                                    <br/>
+                                                    <br/>
+                                                    <span style="white-space: initial;" t-field="goal.description" t-att-title="goal.description"/>
+                                                </a>
+                                            </div>
+<!--                                            <div class="text goal_partner">-->
+<!--                                                <t t-if="goal.partner_id">-->
+<!--                                                    <span t-field="goal.sudo().partner_id.name" t-att-title="goal.sudo().partner_id.name"/>-->
+<!--                                                </t>-->
+<!--                                            </div>-->
+                                        </div>
+<!--                                        <div class="text tasks_goal">-->
+<!--                                            <a t-attf-href="/my/kanban/tasks?{{keep_query(filterby=goal.id)}}" t-att-title="goal.name">-->
+<!--&lt;!&ndash;                                                <t t-esc="goal.task_count" />&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <t t-esc="goal.label_tasks" />&ndash;&gt;-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+
+                                    </li>
+                                </ul>
+                            </t>
+                        </t>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="portal_my_goal" name="My goal">
+            <t t-call="portal.portal_layout">
+
+
+                <t t-set="breadcrumbs_searchbar" t-value="True"/>
+                <!--                <t t-set="searchbar_inputs" t-value="True" />-->
+                <t t-call="portal.portal_searchbar">
+                    <t t-set="title">goal</t>
+                </t>
+                <t t-if="not grouped_goal">
+                    <p>There are currently no goal.</p>
+                </t>
+                <div class="col">
+                    <a t-attf-href="/goal/create">
+                        <button
+                                class="btn btn-success o_wprofile_submit_btn">
+                            Add a goal
+                        </button>
+                    </a>
+                </div>
+                <br/>
+
+
+                <t t-if="grouped_goal" t-call="portal.portal_table">
+                    <thead>
+                        <tr class="active"
+                            t-attf-class="{{'thead-light' if not groupby == 'none' else ''}}">
+                            <th>Goals</th>
+                            <!--                            <th>Categorie</th>-->
+<!--                            <th>Start Date</th>-->
+<!--                            <th>End Date</th>-->
+                        </tr>
+                    </thead>
+                    <t t-foreach="grouped_goal" t-as="goal">
+                        <tbody>
+                            <t t-foreach="goal" t-as="line">
+                                <tr>
+                                    <td>
+                                        <a t-attf-href="/my/goal/#{line.id}">
+                                            <small>#</small>
+                                            <span t-esc="line.name"/>
+                                        </a>
+                                    </td>
+                                    <!--                                    <td>-->
+                                    <!--                                        <span t-field="line.event_type_id.name"/>-->
+                                    <!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-esc="line.date_begin.strftime('%d/%m/%Y')"/>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-esc="line.date_end.strftime('%d/%m/%Y')"/>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-field="line.seats_reserved"/>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-field="line.seats_min"/>-->
+<!--                                    </td>-->
+                                    <!--                                    <td>-->
+                                    <!--                                        <span t-field="line.user_id.name"/>-->
+                                    <!--                                    </td>-->
+                                    <!--                                    <td>-->
+                                    <!--                                        <t t-if="line.state == 'draft'">-->
+                                    <!--                                            <span t-attf-class="badge badge-pill badge-warning">Unconfirmed</span>-->
+                                    <!--                                        </t>-->
+                                    <!--                                        <t t-if="line.state == 'cancel'">-->
+                                    <!--                                            <span-->
+                                    <!--                                                    t-attf-class="badge badge-pill badge-danger">-->
+                                    <!--                                                Cancelled-->
+                                    <!--                                            </span>-->
+                                    <!--                                        </t>-->
+                                    <!--                                        <t t-if="line.state == 'confirm'">-->
+                                    <!--                                            <span-->
+                                    <!--                                                    t-attf-class="badge badge-pill badge-success">-->
+                                    <!--                                                Confirmed-->
+                                    <!--                                            </span>-->
+                                    <!--                                        </t>-->
+                                    <!--                                        <t t-if="line.state == 'done'">-->
+                                    <!--                                            <span-->
+                                    <!--                                                    t-attf-class="badge badge-pill badge-info">-->
+                                    <!--                                                Done-->
+                                    <!--                                            </span>-->
+                                    <!--                                        </t>-->
+                                    <!--                                    </td>-->
+
+<!--                                    <td class='d-none d-md-table-cell'>-->
+<!--                                        <span-->
+<!--                                                t-esc="line.create_date.strftime('%d/%m/%Y')"/>-->
+<!--                                    </td>-->
+                                    <!--                                    <td><a t-attf-href="/event/delete/#{line.id}"><i class="fa fa-trash"/></a></td>-->
+                                </tr>
+                            </t>
+                        </tbody>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="portal_my_pillars" name="Pillars">
+            <t t-call="portal.portal_layout">
+                <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+                <t t-call="portal.portal_searchbar">
+                    <t t-set="title">Pillars</t>
+                </t>
+                <t t-if="not pillars">
+                    <div class="alert alert-warning mt8" role="alert">
+                        There are no pillars.
+                    </div>
+                </t>
+                <div class="col-12" style=" text-align: center; margin-top:30px; margin-bottom:30px;">
+                   <span style="font-weight: bold ; font-size:16px">Pillars</span>
+                </div>
+
+                <t t-if="pillars" t-call="portal.portal_table">
+
+                    <thead style="background-color: #e9ecef;">
+                        <tr>
+                            <th class="text-left">Title</th>
+                            <th class="text-right">Submitted Projects</th>
+                            <th/>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="pillars" t-as="pillar">
+                            <td>
+<!--                                <a t-attf-href="/my/project/#{project.id}?{{ keep_query() }}"><span t-field="project.name"/></a>-->
+                                <span t-field="pillar.name"/>
+                            </td>
+                            <td class="text-right">
+                                <a t-attf-href="/my/pillar/#{pillar.id}/projects" class="dh_link">
+<!--                                    <t t-esc="project.task_count"/>-->
+                                    <t t-set="project_count" t-value="pillar.count_my_projects()"></t>
+                                    <t t-esc="project_count"/>
+
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </t>
+            </t>
+        </template>
+
+        <template id="portal_my_projects" name="Projects">
+            <t t-call="portal.portal_layout">
+                <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+                <t t-call="portal.portal_searchbar">
+                    <t t-set="title">Projects</t>
+                </t>
+                <t t-if="not projects">
+                    <div class="alert alert-warning mt8" role="alert">
+                        There are no projects.
+                    </div>
+                </t>
+                <div class="col-12" style=" text-align: center; margin-top:30px; margin-bottom:30px;">
+                   <span style="font-weight: bold ; font-size:16px">Projects</span>
+                </div>
+
+                <t t-if="projects" t-call="portal.portal_table">
+                    <thead style="background-color: #e9ecef;">
+                        <tr>
+                            <th class="text-left">Title</th>
+                            <th class="text-right">Submitted Tasks</th>
+                            <th/>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="projects" t-as="project">
+                            <td>
+<!--                                <a t-attf-href="/my/project/#{project.id}?{{ keep_query() }}"><span t-field="project.name"/></a>-->
+                                <span t-field="project.name"/>
+                            </td>
+                            <td class="text-right">
+                                <a t-attf-href="/my/tasks?{{keep_query(filterby=project.id)}}" class="dh_link">
+<!--                                    <t t-esc="project.task_count"/>-->
+                                    <t t-set="task_count" t-value="project.count_my_tasks()"></t>
+                                    <t t-esc="task_count"/>
+<!--                                    Submitted Tasks-->
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </t>
+            </t>
+        </template>
+
+        <template id="task_kanban_searchbar_task_icon" inherit_id="project.portal_my_tasks">
+            <xpath expr="//t[@t-call='portal.portal_layout']/t[@t-call='portal.portal_searchbar']" position="after">
+                <div class="col">
+                    <a t-attf-href="/task/create/#{keep_query()}">
+                        <button style="margin-bottom:10px;"
+                                class="btn btn-success o_wprofile_submit_btn">
+                            Create task
+                        </button>
+                    </a>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="task_submit_projects" name="Request: Create a task">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $("#is_budget").click(function () {
+                    if ($(this).is(":checked")) {
+                    $(".have_budget").show();
+                    } else {
+                    $(".have_budget").hide();
+                    }
+                });
+                });
+            </script>
+            <t t-set="body_classname" t-value="'o_wprofile_body'"/>
+            <t t-call="website.layout">
+                <div id="wrap" class="o_wprofile_wrap">
+                    <div class="container pt-4 pb-5">
+                        <h1 class="o_page_header d-flex">Create task</h1>
+                        <t t-call="icesco_portal.task_add_projects"/>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="task_add_projects" name="Create Task">
+
+            <div>
+                <div class="form-group col-12">
+                    <p class="alert alert-danger" t-if="error"
+                       role="alert">
+                        <t t-esc="error"/>
+                    </p>
+                </div>
+                <br/>
+                <form t-attf-action="/task/add" method="post"
+                      role="form"
+                      name="create_request"
+                      class="o_wprofile_editor_form js_website_submit_form row"
+                      enctype="multipart/form-data">
+                    <input type="hidden" name="csrf_token"
+                           t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="url_param"
+                           t-att-value="request.params.get('url_param')"/>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Project</span>
+                                        </label>
+                                        <select class="form-control"
+                                                    name="project_id" id="project_id" placeholder="Project" required="True">
+                                                <option value="0" selected="true" disabled="true" >Select Project...</option>
+                                                <t t-foreach="projects or []"
+                                                   t-as="project_id">
+                                                    <option t-att-value="project_id.id"
+                                                            t-att-selected="True if project_id != False and project_id.id == project else False">
+                                                        <t t-esc="project_id.display_name" />
+                                                    </option>
+                                                </t>
+                                            </select>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Activity title</span>
+                                        </label>
+                                        <div>
+                                            <input type="text" name="name_task"
+                                                   id="name_task"
+                                                   class="form-control d-flex"
+                                                   placeholder="Activity title *"
+                                                   required="True"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Activity purpose</span>
+                                        </label>
+                                        <div>
+                                            <input type="text" name="purpose_task"
+                                                   id="purpose_task"
+                                                   class="form-control d-flex"
+                                                   placeholder="Activity purpose *"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Activity Type</span>
+                                        </label>
+                                        <select class="form-control d-flex"
+                                                    name="type_activity" id="type_activity" placeholder="Type" required="True">
+                                                <option value="0" selected="true" disabled="true" >Activity Type</option>
+                                                <t t-foreach="activities or []"
+                                                   t-as="type_activity">
+                                                    <option t-att-value="type_activity.id">
+                                                        <t t-esc="type_activity.display_name"/>
+                                                    </option>
+                                                </t>
+                                            </select>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Activity scope</span>
+                                        </label>
+                                        <select class="form-control d-flex"
+                                                    name="scope_id" id="scope_id" placeholder="Type" required="True">
+                                                <option value="0" selected="true" disabled="true" ></option>
+                                                <t t-foreach="scopes or []"
+                                                   t-as="scope_id">
+                                                    <option t-att-value="scope_id.id">
+                                                        <t t-esc="scope_id.display_name"/>
+                                                    </option>
+                                                </t>
+                                            </select>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;"
+                                               for="is_budget">
+                                            <span class="font-weight-bold d-flex">
+                                                Budget Required ?
+                                            </span>
+                                            &amp;nbsp;&amp;nbsp;
+                                            <input type="checkbox" name="is_budget"
+                                                   id="is_budget"
+                                            />
+                                        </label>
+                                    </div>
+                                    <div class="col-12 have_budget" style="display: none;">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Amount in USD</span>
+                                        </label>
+                                        <input type="number" name="budget"
+                                                   id="budget"
+                                                   class="form-control d-flex"
+                                                    step="0.01"
+                                                   placeholder="Amount in USD *"/>
+                                        <br/>
+                                    </div>
+                                    <div class="form-group col-6 dg_recorded text-center">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span>Proposed Date</span>
+                                        </label>
+                                        <div class="text-center">
+                                            <input type="date" name="proposed_date"
+                                                   id="proposed_date"
+                                                   class="form-control d-flex"
+                                                   placeholder="Proposed Date"
+
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6 concept_note">
+                                        <label style="color:#598c7c;" for="concept_note">
+                                            Proposal / Concept note
+                                            <br/>
+                                            <span class="font-weight-bold text-primary">
+                                                <i class="fa fa-upload" style="margin-top:10px; margin-right:20px;"/>
+                                            </span>
+                                        </label>
+                                        <input type="file" name="concept_note"
+                                               id="concept_note" style="display: none;"
+                                        />
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;"
+                                               for="remarks">
+                                            <span class="font-weight-bold">
+                                                Remarks
+                                            </span>
+                                        </label>
+                                        <input type="text" name="remarks"
+                                                   id="remarks"
+                                                   class="form-control d-flex"
+                                                   placeholder="Remarks"/>
+                                    </div>
+                                    <div class="col d-flex">
+                                        <button type="submit"
+                                                class="btn btn-success o_wprofile_submit_btn">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </template>
+
+        <template id="task_submit" name="Request: Create a task">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $("#is_budget").click(function () {
+                    if ($(this).is(":checked")) {
+                    $(".have_budget").show();
+                    } else {
+                    $(".have_budget").hide();
+                    }
+                });
+                });
+            </script>
+            <t t-set="body_classname" t-value="'o_wprofile_body'"/>
+            <t t-call="website.layout">
+                <div id="wrap" class="o_wprofile_wrap">
+                    <div class="container pt-4 pb-5">
+                        <h1 class="o_page_header d-flex">Create task</h1>
+                        <t t-call="icesco_portal.task_add"/>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="task_add" name="Create Task">
+
+            <div>
+                <div class="form-group col-12">
+                    <p class="alert alert-danger" t-if="error"
+                       role="alert">
+                        <t t-esc="error"/>
+                    </p>
+                </div>
+                <br/>
+                <form t-attf-action="/task/add" method="post"
+                      role="form"
+                      name="create_request"
+                      class="o_wprofile_editor_form js_website_submit_form row"
+                      enctype="multipart/form-data">
+                    <input type="hidden" name="csrf_token"
+                           t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="url_param"
+                           t-att-value="request.params.get('url_param')"/>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Project</span>
+                                        </label>
+                                        <span class="d-flex">
+                                            <t t-esc="name_project"/>
+                                        </span>
+                                    </div>
+                                    <div class="form-group col-12" style="display: none;">
+                                        <label class="mb-1" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Project</span>
+                                        </label>
+                                        <select class="form-control"
+                                                    name="project_id" id="project_id" placeholder="Project" required="True">
+                                                <option value="0" selected="true" disabled="true" >Select Project...</option>
+                                                <t t-foreach="projects or []"
+                                                   t-as="project_id">
+                                                    <option t-att-value="project_id.id"
+                                                            t-att-selected="True if project_id != False and project_id.id == project else False">
+                                                        <t t-esc="project_id.display_name" />
+                                                    </option>
+                                                </t>
+                                            </select>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Activity title</span>
+                                        </label>
+                                        <div>
+                                            <input type="text" name="name_task"
+                                                   id="name_task"
+                                                   class="form-control d-flex"
+                                                   placeholder="Activity title *"
+                                                   required="True"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Activity purpose</span>
+                                        </label>
+                                        <div>
+                                            <input type="text" name="purpose_task"
+                                                   id="purpose_task"
+                                                   class="form-control d-flex"
+                                                   placeholder="Activity purpose *"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Activity Type</span>
+                                        </label>
+                                        <select class="form-control d-flex"
+                                                    name="type_activity" id="type_activity" placeholder="Type" required="True">
+                                                <option value="0" selected="true" disabled="true" >Activity Type</option>
+                                                <t t-foreach="activities or []"
+                                                   t-as="type_activity">
+                                                    <option t-att-value="type_activity.id">
+                                                        <t t-esc="type_activity.display_name"/>
+                                                    </option>
+                                                </t>
+                                            </select>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Activity scope</span>
+                                        </label>
+                                        <select class="form-control d-flex"
+                                                    name="scope_id" id="scope_id" placeholder="Type" required="True">
+                                                <option value="0" selected="true" disabled="true" ></option>
+                                                <t t-foreach="scopes or []"
+                                                   t-as="scope_id">
+                                                    <option t-att-value="scope_id.id">
+                                                        <t t-esc="scope_id.display_name"/>
+                                                    </option>
+                                                </t>
+                                            </select>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;"
+                                               for="is_budget">
+                                            <span class="font-weight-bold d-flex">
+                                                Budget Required ?
+                                            </span>
+                                            &amp;nbsp;&amp;nbsp;
+                                            <input type="checkbox" name="is_budget"
+                                                   id="is_budget"
+                                            />
+                                        </label>
+                                    </div>
+                                    <div class="col-12 have_budget" style="display: none;">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Amount in USD</span>
+                                        </label>
+                                        <input type="number" name="budget"
+                                                   id="budget"
+                                                   class="form-control d-flex"
+                                                    step="0.01"
+                                                   placeholder="Amount in USD *"/>
+                                        <br/>
+                                    </div>
+                                    <div class="form-group col-6 dg_recorded text-center">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span>Proposed Date</span>
+                                        </label>
+                                        <div class="text-center">
+                                            <input type="date" name="proposed_date"
+                                                   id="proposed_date"
+                                                   class="form-control d-flex"
+                                                   placeholder="Proposed Date"
+
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6 concept_note">
+                                        <label style="color:#598c7c;" for="concept_note">
+                                            Proposal / Concept note
+                                            <br/>
+                                            <span class="font-weight-bold text-primary">
+                                                <i class="fa fa-upload" style="margin-top:10px; margin-right:20px;"/>
+                                            </span>
+                                        </label>
+                                        <input type="file" name="concept_note"
+                                               id="concept_note" style="display: none;"
+                                        />
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;"
+                                               for="remarks">
+                                            <span class="font-weight-bold">
+                                                Remarks
+                                            </span>
+                                        </label>
+                                        <input type="text" name="remarks"
+                                                   id="remarks"
+                                                   class="form-control d-flex"
+                                                   placeholder="Remarks"/>
+                                    </div>
+
+<!--                                    <div class="col d-flex">-->
+<!--                                        <button type="submit"-->
+<!--                                                class="btn btn-success o_wprofile_submit_btn">-->
+<!--                                            Submit-->
+<!--                                        </button>-->
+<!--                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="form-group col-6">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="location">
+                                            <span class="font-weight-bold">Hosting place</span>
+                                        </label>
+                                        <div>
+                                            <input type="text" name="location"
+                                                   id="location"
+                                                   class="form-control d-flex"
+                                                   placeholder="Hosting Place *"
+                                                    required="True"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="city">
+                                            <span class="font-weight-bold">City</span>
+                                        </label>
+                                        <div>
+                                            <input type="text" name="city"
+                                                   id="city"
+                                                   class="form-control d-flex"
+                                                   placeholder="City *"
+                                                   required="True"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">The activity is thrown at a level</span>
+                                        </label>
+                                        <div t-foreach="types or []" t-as="type">
+                                            <label>
+                                                <input type="radio" t-attf-name="type"
+                                                       t-att-value="type[0]"/>
+                                                <t t-esc="type[1]"/>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <p style="font-weight: bold;">Sponsored</p>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="is_sponsorise">
+                                            <span class="font-weight-bold">Is Sponsorship Available ?</span>
+                                            &amp;nbsp;&amp;nbsp;
+                                            <input type="checkbox" name="is_sponsorise"
+                                                   id="is_sponsorise"
+                                            />
+                                        </label>
+
+                                    </div>
+                                    <div class="form-group col-12 sponsorised" style="display: none;">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="proposition_sponsor">
+                                            <span class="font-weight-bold">Sponsorship proposal</span>
+                                        </label>
+                                        <div>
+                                            <input type="text" name="proposition_sponsor"
+                                                   id="proposition_sponsor"
+                                                   class="form-control d-flex"
+                                                   placeholder="Sponsorship proposal *"/>
+                                        </div>
+                                    </div>
+                                    <p style="font-weight: bold;">The most prominent personalities that are invited</p>
+                                    <br/>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <th style="font-weight: normal;font-size: small;width:10%; color:#598c7c;">
+                                                <strong>
+                                                    <span >
+                                                        Name
+                                                    </span>
+                                                </strong>
+                                            </th>
+                                            <th style="font-weight: normal;font-size: small;width:10%; color:#598c7c;">
+                                                <strong>
+                                                    <span >
+                                                        Job Title
+                                                    </span>
+                                                </strong>
+                                            </th>
+                                            <th style="font-weight: normal;font-size: small;width:10%; color:#598c7c;">
+                                                <strong>
+                                                    <span >
+                                                        CVs
+                                                    </span>
+                                                </strong>
+                                            </th>
+                                        </tr>
+                                    </table>
+                                    <br/>
+                                    <br/>
+                                    <table class="table table-bordered table-sm" id="tab_logic">
+                                        <tr id='addr' name='addr' class="colis_to_send">
+                                            <td>
+                                                <input type="text" name="invite_name"
+                                                                       id="invite_name"
+                                                                       class="form-control"
+                                                                        />
+                                            </td>
+                                            <td>
+                                                <input type="text" name="job_title"
+                                                                       id="job_title"
+                                                                       class="form-control"
+                                                                        />
+                                            </td>
+                                            <td>
+                                                <label class="mb-1 text-primary attachment_ids"
+                                                       for="attachment_ids">
+                                                    <span class="font-weight-bold">
+                                                        <i class="fa fa-upload" style="margin-top:10px; margin-right:20px;"/>
+                                                    </span>
+                                                </label>
+                                                <input type="file" name="attachment_ids"
+                                                       id="attachment_ids" style="display:none;"
+                                                />
+                                            </td>
+                                        </tr>
+                                        <!--                                                </t>-->
+                                        <!--                                            </t>-->
+                                    </table>
+                                    <div style="margin-bottom: 15px;">
+                                       <a id="add_row" class="btn btn-success btn-sm pull-left" style="color: white;margin-left: 15px;">
+                                            Add line
+                                        </a>
+                                        <a id='delete_row' class="btn btn-danger btn-sm pull-right" style="color: white;margin-left: 15px;">
+                                            Delete line
+                                        </a>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;"
+                                               for="number_participant_out_icesco">
+                                            <span class="font-weight-bold d-flex">
+                                                Number of external participants hosted at the expense of the host country
+<!--                                                عدد المشاركين الخارجيين الذين يتم استضافتهم على نفقة الدولة المضيفة-->
+                                            </span>
+                                        </label>
+                                        <input type="number" name="number_participant_out_icesco"
+                                               id="number_participant_out_icesco"
+                                               class="form-control d-flex"
+                                                step="0.01"/>
+                                    </div>
+                                    <p style="font-weight: bold;">Hosting includes</p>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;"
+                                               for="number_billets">
+                                            <span class="font-weight-bold d-flex">
+                                                Number of airline tickets
+                                            </span>
+                                        </label>
+                                        <input type="number" name="number_billets"
+                                               id="number_billets"
+                                               class="form-control d-flex"
+                                                step="0.01"/>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;"
+                                               for="number_residences">
+                                            <span class="font-weight-bold d-flex">
+                                                Number of stays
+                                            </span>
+                                        </label>
+                                        <input type="number" name="number_residences"
+                                               id="number_residences"
+                                               class="form-control d-flex"
+                                                step="0.01"/>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;"
+                                               for="number_transferts">
+                                            <span class="font-weight-bold d-flex">
+                                                Moves
+                                            </span>
+                                        </label>
+                                        <input type="number" name="number_transferts"
+                                               id="number_transferts"
+                                               class="form-control d-flex"
+                                                step="0.01"/>
+                                    </div>
+                                    <div class="col d-flex">
+                                        <button type="submit"
+                                                class="btn btn-success o_wprofile_submit_btn">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </template>
+
+        <template id="project_submit" name="Request: Create a Project">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--            <script>-->
+<!--                $(document).ready(function(){-->
+<!--                    $("#is_budget").click(function () {-->
+<!--                    if ($(this).is(":checked")) {-->
+<!--                    $(".have_budget").show();-->
+<!--                    } else {-->
+<!--                    $(".have_budget").hide();-->
+<!--                    }-->
+<!--                });-->
+<!--                });-->
+<!--            </script>-->
+            <t t-set="body_classname" t-value="'o_wprofile_body'"/>
+            <t t-call="website.layout">
+                <div id="wrap" class="o_wprofile_wrap">
+                    <div class="container pt-4 pb-5">
+                        <h1 class="o_page_header">Create Project</h1>
+                        <t t-call="icesco_portal.project_add"/>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="project_add" name="Create Project">
+
+            <div>
+                <div class="form-group col-12">
+                    <p class="alert alert-danger" t-if="error"
+                       role="alert">
+                        <t t-esc="error"/>
+                    </p>
+                </div>
+                <br/>
+                <form t-attf-action="/project/add" method="post"
+                      role="form"
+                      name="create_request"
+                      class="o_wprofile_editor_form js_website_submit_form row"
+                      enctype="multipart/form-data">
+                    <input type="hidden" name="csrf_token"
+                           t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="url_param"
+                           t-att-value="request.params.get('url_param')"/>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="form-group col-12 d-flex">
+                                        <label class="mb-1" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Project title</span>
+                                        </label>
+                                        <div>
+                                            <input type="text" name="name_project"
+                                                   id="name_project"
+                                                   class="form-control"
+                                                   placeholder="project name *"
+                                                   required="True"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12 d-flex">
+                                        <label class="mb-1" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Goals</span>
+                                        </label>
+                                        <select class="form-control"
+                                                    name="goal_id" id="goal_id" placeholder="Goal" required="True">
+                                                <option value="0" selected="true" disabled="true" >Goal...</option>
+                                                <t t-foreach="goals or []"
+                                                   t-as="goal_id"
+                                                    t-att-selected="True if goal == goal_id.id else False">
+                                                    <option t-att-value="goal_id.id">
+                                                        <t t-esc="goal_id.display_name"/>
+                                                    </option>
+                                                </t>
+                                            </select>
+                                    </div>
+                                    <div class="col">
+                                        <button type="submit"
+                                                class="btn btn-success o_wprofile_submit_btn">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </template>
+
+        <template id="project.portal_my_task" name="My Tasks">
+            <t t-call="portal.portal_layout">
+                <t t-set="o_portal_fullwidth_alert" groups="project.group_project_user">
+                    <t t-call="portal.portal_back_in_edit_mode">
+                        <t t-set="backend_url"
+                           t-value="'/web#model=project.task&amp;id=%s&amp;view_type=form' % (task.id)"/>
+                    </t>
+                </t>
+
+                <t t-call="portal.portal_record_layout">
+                    <t t-set="card_header">
+                        <div class="row no-gutters">
+                            <div class="col-md">
+                                <h5 class="mb-1 mb-md-0 d-flex">
+                                    <span t-field="task.name"/>
+                                    <small class="text-muted">(#<span t-field="task.id"/>)
+                                    </small>
+                                </h5>
+                            </div>
+                            <div class="col-md text-md-right">
+                                <small class="text-right">Status : </small>
+                                <span t-field="task.stage_id.name" class=" badge badge-pill badge-info"
+                                      title="Current stage of this task"/>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-set="card_body">
+                        <div class="mb-1 d-flex" t-if="user.partner_id.id in task.sudo().project_id.message_partner_ids.ids">
+                            <strong>Project : </strong>
+                            <a t-attf-href="/my/project/#{task.project_id.id}" t-field="task.project_id.name"/>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-12 col-md-6 mb-1 d-flex">
+                                <strong>Date : </strong>
+                                <span t-field="task.create_date" t-options='{"widget": "date"}'/>
+                            </div>
+                            <div class="col-12 col-md-6 d-flex" t-if="task.date_deadline">
+                                <strong>Deadline : </strong>
+                                <span t-field="task.date_deadline" t-options='{"widget": "date"}'/>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-12 col-md-6 mb-1 d-flex" t-if="task.type_activity">
+                                <strong>Activity Type : </strong>
+                                <span t-field="task.type_activity"/>
+                            </div>
+                            <div class="col-12 col-md-6 d-flex" t-if="task.activity_scope">
+                                <strong>Activity scope : </strong>
+                                <span t-field="task.activity_scope"/>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-12 col-md-6 d-flex" t-if="task.amount_usd">
+                                <strong>Amount in USD : </strong>
+                                <span t-field="task.amount_usd"/>
+                            </div>
+                            <div class="col-12 col-md-6 d-flex" t-if="task.remarks">
+                                <strong>Remarks : </strong>
+                                <span t-field="task.remarks"/>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4" t-if="task.user_id or task.partner_id">
+                            <div class="col-12 col-md-6 pb-2" t-if="task.user_id">
+                                <strong class="d-flex">Assigned to</strong>
+                                <div class="row">
+                                    <div class="col flex-grow-0 pr-3">
+                                        <img t-if="task.user_id.image_1024"
+                                             class="rounded-circle mt-1 o_portal_contact_img"
+                                             t-att-src="image_data_uri(task.user_id.image_1024)" alt="Contact"/>
+                                        <img t-else="" class="rounded-circle mt-1 o_portal_contact_img"
+                                             src="/web/static/src/img/user_menu_avatar.png" alt="Contact"/>
+                                    </div>
+                                    <div class="col pl-md-0">
+                                        <div t-field="task.user_id"
+                                             t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="coll-12 col-md-6 pb-2" t-if="task.partner_id">
+                                <strong class="d-flex">Reported by</strong>
+                                <div class="row">
+                                    <div class="col flex-grow-0 pr-3">
+                                        <img t-if="task.partner_id.image_1024"
+                                             class="rounded-circle mt-1 o_portal_contact_img"
+                                             t-att-src="image_data_uri(task.partner_id.image_1024)" alt="Contact"/>
+                                        <img t-else="" class="rounded-circle mt-1 o_portal_contact_img"
+                                             src="/web/static/src/img/user_menu_avatar.png" alt="Contact"/>
+                                    </div>
+                                    <div class="col pl-md-0 d-flex">
+                                        <div t-field="task.partner_id"
+                                             t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" t-if="task.description or task.attachment_ids">
+                            <div t-if="task.description"
+                                 t-attf-class="col-12 col-lg-7 mb-4 mb-md-0 {{'col-lg-7' if task.attachment_ids else 'col-lg-12'}}">
+                                <hr class="mb-1"/>
+                                <strong class="d-block mb-2 d-flex">Description </strong>
+                                <div class="py-1 px-2 bg-100 small d-flex" t-field="task.description"/>
+                            </div>
+<!--                            <div t-if="task.attachment_ids"-->
+<!--                                 t-attf-class="col-12 col-lg-5 o_project_portal_attachments {{'col-lg-5' if task.description else 'col-lg-12'}}">-->
+<!--                                <hr class="mb-1 d-none d-lg-block"/>-->
+<!--                                <strong class="d-block mb-2">Attachments</strong>-->
+<!--                                <div class="row">-->
+<!--                                    <div t-attf-class="col {{'col-lg-6' if not task.description else 'col-lg-12'}}">-->
+<!--                                        <ul class="list-group">-->
+<!--                                            <a class="list-group-item list-group-item-action d-flex align-items-center oe_attachments py-1 px-2"-->
+<!--                                               t-foreach='task.attact/#{attachment_ids' t-as='attachment'-->
+<!--                                               t-attf-href="/web/contenhment.id}?download=true&amp;access_token=#{attachment.access_token}"-->
+<!--                                               target="_blank" data-no-post-process="">-->
+<!--                                                <div class='oe_attachment_embedded o_image o_image_small mr-2 mr-lg-3'-->
+<!--                                                     t-att-title="attachment.name"-->
+<!--                                                     t-att-data-mimetype="attachment.mimetype"-->
+<!--                                                     t-attf-data-src="/web/image/#{attachment.id}/50x40?access_token=#{attachment.access_token}"/>-->
+<!--                                                <div class='oe_attachment_name text-truncate'>-->
+<!--                                                    <t t-esc='attachment.name'/>-->
+<!--                                                </div>-->
+<!--                                            </a>-->
+<!--                                        </ul>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </div>
+                    </t>
+                </t>
+
+                <div class="mt32">
+                    <h4>
+                        <strong>Message and communication history</strong>
+                    </h4>
+                    <t t-call="portal.message_thread">
+                        <t t-set="object" t-value="task"/>
+                        <t t-set="token" t-value="task.access_token"/>
+                        <t t-set="pid" t-value="pid"/>
+                        <t t-set="hash" t-value="hash"/>
+                    </t>
+                </div>
+            </t>
+        </template>
+
+        <template id="proposition_create" name="Request: Create a proposition">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $("#is_sponsorise").click(function () {
+                    if ($(this).is(":checked")) {
+                    $(".sponsorised").show();
+                    } else {
+                    $(".sponsorised").hide();
+                    }
+                    $('.attachment_ids').click(function() {
+                    $('#attachment_ids').click();
+                    });
+                });
+                });
+            </script>
+            <t t-set="body_classname" t-value="'o_wprofile_body'"/>
+            <t t-call="website.layout">
+                <div id="wrap" class="o_wprofile_wrap">
+                    <div class="container pt-4 pb-5">
+                        <h1 class="o_page_header d-flex">Suggest an initiative or activity</h1>
+                        <t t-call="icesco_portal.proposition_add"/>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="proposition_add" name="Create Task">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $("#is_budget").click(function () {
+                    if ($(this).is(":checked")) {
+                    $(".have_budget").show();
+                    } else {
+                    $(".have_budget").hide();
+                    }
+                });
+                });
+            </script>
+            <div>
+                <div class="form-group col-12">
+                    <p class="alert alert-danger" t-if="error"
+                       role="alert">
+                        <t t-esc="error"/>
+                    </p>
+                </div>
+                <br/>
+                <form t-attf-action="/proposition/add" method="post"
+                      role="form"
+                      name="create_request"
+                      class="o_wprofile_editor_form js_website_submit_form row"
+                      enctype="multipart/form-data">
+                    <input type="hidden" name="csrf_token"
+                           t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="url_param"
+                           t-att-value="request.params.get('url_param')"/>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="form-group col-12">
+                                        <label class="mb-1" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Goal</span>
+                                        </label>
+                                        <select class="form-control"
+                                                    name="goal_id" id="goal_id" placeholder="Goal" required="True">
+                                                <option value="0" selected="true" disabled="true" >Select Goal...</option>
+                                                <t t-foreach="goals or []"
+                                                   t-as="goal_id">
+                                                    <option t-att-value="goal_id.id">
+                                                        <t t-esc="goal_id.name" />
+                                                    </option>
+                                                </t>
+                                            </select>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Pillar</span>
+                                        </label>
+                                        <select class="form-control"
+                                                    name="pillar_id" id="pillar_id" placeholder="Pillar" required="True">
+                                                <option value="0" selected="true" disabled="true" >Select Pillar...</option>
+                                                <t t-foreach="pillars or []"
+                                                   t-as="pillar_id">
+                                                    <option t-att-value="pillar_id.id">
+                                                        <t t-esc="pillar_id.name.name"/>
+                                                    </option>
+                                                </t>
+                                            </select>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Project</span>
+                                        </label>
+                                        <select class="form-control"
+                                                    name="project_id" id="project_id" placeholder="Project" required="True">
+                                                <option value="0" selected="true" disabled="true" >Select Project...</option>
+                                                <t t-foreach="projects or []"
+                                                   t-as="project_id">
+                                                    <option t-att-value="project_id.id"
+                                                            t-att-selected="True if project_id != False and project_id.id == project else False">
+                                                        <t t-esc="project_id.name"/>
+                                                    </option>
+                                                </t>
+                                            </select>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Activity title</span>
+                                        </label>
+                                        <div>
+                                            <input type="text" name="name_task"
+                                                   id="name_task"
+                                                   class="form-control d-flex"
+                                                   placeholder="Activity title *"
+                                                   required="True"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Activity purpose</span>
+                                        </label>
+                                        <div>
+                                            <input type="text" name="purpose_task"
+                                                   id="purpose_task"
+                                                   class="form-control d-flex"
+                                                   placeholder="Activity purpose *"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Activity Type</span>
+                                        </label>
+                                        <select class="form-control d-flex"
+                                                    name="type_activity" id="type_activity" placeholder="Type" required="True">
+                                                <option value="0" selected="true" disabled="true" >Activity Type</option>
+                                                <t t-foreach="activities or []"
+                                                   t-as="type_activity">
+                                                    <option t-att-value="type_activity.id">
+                                                        <t t-esc="type_activity.display_name"/>
+                                                    </option>
+                                                </t>
+                                            </select>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Activity scope</span>
+                                        </label>
+                                        <select class="form-control d-flex"
+                                                    name="scope_id" id="scope_id" placeholder="Type" required="True">
+                                                <option value="0" selected="true" disabled="true" ></option>
+                                                <t t-foreach="scopes or []"
+                                                   t-as="scope_id">
+                                                    <option t-att-value="scope_id.id">
+                                                        <t t-esc="scope_id.display_name"/>
+                                                    </option>
+                                                </t>
+                                            </select>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;"
+                                               for="is_budget">
+                                            <span class="font-weight-bold d-flex">
+                                                Budget Required ?
+                                            </span>
+                                            &amp;nbsp;&amp;nbsp;
+                                            <input type="checkbox" name="is_budget"
+                                                   id="is_budget"
+                                            />
+                                        </label>
+                                    </div>
+                                    <div class="col-12 have_budget" style="display: none;">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">Amount in USD</span>
+                                        </label>
+                                        <input type="number" name="budget"
+                                                   id="budget"
+                                                   class="form-control d-flex"
+                                                    step="0.01"
+                                                   placeholder="Amount in USD *"/>
+                                        <br/>
+                                    </div>
+                                    <div class="form-group col-6 dg_recorded text-center">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span>Proposed Date</span>
+                                        </label>
+                                        <div class="text-center">
+                                            <input type="date" name="proposed_date"
+                                                   id="proposed_date"
+                                                   class="form-control d-flex"
+                                                   placeholder="Proposed Date"
+
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6 concept_note">
+                                        <label style="color:#598c7c;" for="concept_note">
+                                            Proposal / Concept note
+                                            <br/>
+                                            <span class="font-weight-bold text-primary">
+                                                <i class="fa fa-upload" style="margin-top:10px; margin-right:20px;"/>
+                                            </span>
+                                        </label>
+
+                                        <input type="file" name="concept_note"
+                                               id="concept_note" style="display:none;"
+                                        />
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;"
+                                               for="remarks">
+                                            <span class="font-weight-bold">
+                                                Remarks
+                                            </span>
+                                        </label>
+                                        <input type="text" name="remarks"
+                                                   id="remarks"
+                                                   class="form-control d-flex"
+                                                   placeholder="Remarks"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+<!--                    </div>-->
+<!--                    <div class="col-12">-->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="form-group col-6">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="location">
+                                            <span class="font-weight-bold">Hosting place</span>
+                                        </label>
+                                        <div>
+                                            <input type="text" name="location"
+                                                   id="location"
+                                                   class="form-control d-flex"
+                                                   placeholder="Hosting Place *"
+                                                    required="True"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="city">
+                                            <span class="font-weight-bold">City</span>
+                                        </label>
+                                        <div>
+                                            <input type="text" name="city"
+                                                   id="city"
+                                                   class="form-control d-flex"
+                                                   placeholder="City *"
+                                                   required="True"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="type">
+                                            <span class="font-weight-bold">The activity is thrown at a level</span>
+                                        </label>
+                                        <div t-foreach="types or []" t-as="type">
+                                            <label>
+                                                <input type="radio" t-attf-name="type"
+                                                       t-att-value="type[0]"/>
+                                                <t t-esc="type[1]"/>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <p style="font-weight: bold;">Sponsored</p>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="is_sponsorise">
+                                            <span class="font-weight-bold">Is Sponsorship Available ?</span>
+                                            &amp;nbsp;&amp;nbsp;
+                                            <input type="checkbox" name="is_sponsorise"
+                                                   id="is_sponsorise"
+                                            />
+                                        </label>
+
+                                    </div>
+                                    <div class="form-group col-12 sponsorised" style="display: none;">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="proposition_sponsor">
+                                            <span class="font-weight-bold">Sponsorship proposal</span>
+                                        </label>
+                                        <div>
+                                            <input type="text" name="proposition_sponsor"
+                                                   id="proposition_sponsor"
+                                                   class="form-control d-flex"
+                                                   placeholder="Sponsorship proposal *"/>
+                                        </div>
+                                    </div>
+                                    <p style="font-weight: bold;">The most prominent personalities that are invited</p>
+                                    <br/>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <th style="font-weight: normal;font-size: small;width:10%; color:#598c7c;">
+                                                <strong>
+                                                    <span >
+                                                        Name
+                                                    </span>
+                                                </strong>
+                                            </th>
+                                            <th style="font-weight: normal;font-size: small;width:10%; color:#598c7c;">
+                                                <strong>
+                                                    <span >
+                                                        Job Title
+                                                    </span>
+                                                </strong>
+                                            </th>
+                                            <th style="font-weight: normal;font-size: small;width:10%; color:#598c7c;">
+                                                <strong>
+                                                    <span >
+                                                        CVs
+                                                    </span>
+                                                </strong>
+                                            </th>
+                                        </tr>
+                                    </table>
+                                    <br/>
+                                    <br/>
+                                    <table class="table table-bordered table-sm" id="tab_logic">
+                                        <tr id='addr' name='addr' class="colis_to_send">
+                                            <td>
+                                                <input type="text" name="invite_name"
+                                                                       id="invite_name"
+                                                                       class="form-control"
+                                                                        />
+                                            </td>
+                                            <td>
+                                                <input type="text" name="job_title"
+                                                                       id="job_title"
+                                                                       class="form-control"
+                                                                        />
+                                            </td>
+                                            <td>
+                                                <label class="mb-1 text-primary attachment_ids"
+                                                       for="attachment_ids">
+                                                    <span class="font-weight-bold">
+                                                        <i class="fa fa-upload" style="margin-top:10px; margin-right:20px;"/>
+                                                    </span>
+                                                </label>
+                                                <input type="file" name="attachment_ids"
+                                                       id="attachment_ids" style="display:none;"
+                                                />
+                                            </td>
+                                        </tr>
+                                        <!--                                                </t>-->
+                                        <!--                                            </t>-->
+                                    </table>
+                                    <div style="margin-bottom: 15px;">
+                                       <a id="add_row" class="btn btn-danger btn-sm pull-left" style="color: white;margin-left: 15px;">
+                                            Add line
+                                        </a>
+                                        <a id='delete_row' class="btn btn-danger btn-sm pull-right" style="color: white;margin-left: 15px;">
+                                            Delete line
+                                        </a>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;"
+                                               for="number_participant_out_icesco">
+                                            <span class="font-weight-bold d-flex">
+                                                Number of external participants hosted at the expense of the host country
+<!--                                                عدد المشاركين الخارجيين الذين يتم استضافتهم على نفقة الدولة المضيفة-->
+                                            </span>
+                                        </label>
+                                        <input type="number" name="number_participant_out_icesco"
+                                               id="number_participant_out_icesco"
+                                               class="form-control d-flex"
+                                                step="0.01"/>
+                                    </div>
+                                    <p style="font-weight: bold;">Hosting includes</p>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;"
+                                               for="number_billets">
+                                            <span class="font-weight-bold d-flex">
+                                                Number of airline tickets
+                                            </span>
+                                        </label>
+                                        <input type="number" name="number_billets"
+                                               id="number_billets"
+                                               class="form-control d-flex"
+                                                step="0.01"/>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;"
+                                               for="number_residences">
+                                            <span class="font-weight-bold d-flex">
+                                                Number of stays
+                                            </span>
+                                        </label>
+                                        <input type="number" name="number_residences"
+                                               id="number_residences"
+                                               class="form-control d-flex"
+                                                step="0.01"/>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="mb-1 d-flex" style="color:#598c7c;"
+                                               for="number_transferts">
+                                            <span class="font-weight-bold d-flex">
+                                                Moves
+                                            </span>
+                                        </label>
+                                        <input type="number" name="number_transferts"
+                                               id="number_transferts"
+                                               class="form-control d-flex"
+                                                step="0.01"/>
+                                    </div>
+                                    <div class="col d-flex">
+                                        <button type="submit"
+                                                class="btn btn-success o_wprofile_submit_btn">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </template>
+
+    </data>
+</odoo>

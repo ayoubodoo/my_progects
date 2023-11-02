@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="cps_hr_horaire_form_view">
+        <field name="name">cps.hr.horaire.form</field>
+        <field name="model">cps.hr.horaire</field>
+        <field name="arch" type="xml">
+            <form string="Horaires">
+                <sheet>
+                    <group col="3">
+<!--                        <group>-->
+<!--                            <field name="date_debut"/>-->
+<!--                            <field name="date_fin"/>-->
+<!--                        </group>-->
+                        <group>
+                            <field name="horaire_debut"/>
+                        </group>
+                        <group>
+                            <field name="horaire_fin"/>
+                        </group>
+                        <group>
+                            <field name="horaire_max_pointage"/>
+                        </group>
+<!--                        <group>-->
+<!--                            <field name="duree_pause"/>-->
+<!--                        </group>-->
+                    </group>
+                    <group col="4">
+                        <group>
+                            <field name="horaire_debut_h25"/>
+                        </group>
+                        <group>
+                            <field name="horaire_fin_h25"/>
+                        </group>
+                        <group>
+                            <field name="horaire_debut_h50"/>
+                        </group>
+                        <group>
+                            <field name="horaire_fin_h50"/>
+                        </group>
+                    </group>
+                    <notebook>
+                            <page string="Dates">
+                                <field name="dates">
+                                    <tree editable="bottom">
+                                        <field name="date_debut"/>
+                                        <field name="date_fin"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="cps_cps_hr_horaire_tree_view">
+        <field name="name">cps.hr.horaire.tree</field>
+        <field name="model">cps.hr.horaire</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="horaire_debut"/>
+                <field name="horaire_fin"/>
+<!--                <field name="duree_pause"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cps_hr_horaire_action">
+		<field name="name">Horaires</field>
+        <field name="view_mode">tree,form</field>
+		<field name="res_model">cps.hr.horaire</field>
+	</record>
+
+    <menuitem id="menu_cps_horaires" name="Horaires" parent="hr_attendance.menu_hr_attendance_manage_attendances" action="cps_hr_horaire_action" sequence="23"/>
+
+</odoo>

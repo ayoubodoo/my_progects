@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dh_lang_form">
+            <field name="name">dh.lang.form</field>
+            <field name="model">dh.lang</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_lang_tree">
+            <field name="name">dh.lang.tree</field>
+            <field name="model">dh.lang</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name" />
+                    <field name="is_arabe" />
+                    <field name="is_french" />
+                    <field name="is_english" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="dh_lang_action" model="ir.actions.act_window">
+            <field name="name">Languages</field>
+            <field name="res_model">dh.lang</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p>Add a Language</p>
+        </field>
+        </record>
+
+        <menuitem name="Languages" id="partner_dh_languages_menu" parent="contacts.menu_localisation" action="dh_lang_action"
+              sequence="16"/>
+
+        <menuitem id="project_dh_languages_menu" name="Languages"
+                  parent="project.menu_project_config"
+                  action="dh_lang_action"/>
+    </data>
+</odoo>

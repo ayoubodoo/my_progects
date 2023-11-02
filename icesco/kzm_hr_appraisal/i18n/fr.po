@@ -1,0 +1,1283 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* kzm_hr_appraisal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-13 11:14+0000\n"
+"PO-Revision-Date: 2023-04-13 11:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: kzm_hr_appraisal
+#: selection:appraisal.appraisal.line,level:0
+msgid "Very satisfied"
+msgstr "Très satisfait"
+
+#. module: kzm_hr_appraisal
+#: selection:appraisal.appraisal.line,level:0
+msgid "Somewhat satisfied"
+msgstr "Satisfait"
+
+#. module: kzm_hr_appraisal
+#: selection:appraisal.appraisal.line,level:0
+msgid "Neither satisfied nor dissatisfied"
+msgstr "Neutre"
+
+#. module: kzm_hr_appraisal
+#: selection:appraisal.appraisal.line,level:0
+msgid "Somewhat dissatisfied"
+msgstr "Insatisfait"
+
+#. module: kzm_hr_appraisal
+#: selection:appraisal.appraisal.line,level:0
+msgid "Very dissatisfied"
+msgstr "Insatisfait"
+
+#. module: kzm_hr_appraisal
+#: model:mail.template,subject:kzm_hr_appraisal.mail_evaluation
+#: model:mail.template,subject:kzm_hr_appraisal.mail_evaluation_good
+msgid ""
+"\n"
+"                    Evaluation ${object.name}\n"
+"                "
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:mail.template,subject:kzm_hr_appraisal.mail_evaluation_manager
+msgid ""
+"\n"
+"                    Evaluations\n"
+"                "
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid "10"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.department_evaluation_template_id
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.gloabal_evaluation_template_id
+msgid ""
+"<br/>\n"
+"                                    Performance Appraisal\n"
+"                                    <br/>"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"<br/>\n"
+"                        <span style=\"font-size:16px\">Annual Performance Scorecard/ تقييم\n"
+"                            الأداء /Fiche de performance annuelle\n"
+"                        </span>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"<br/>\n"
+"                        <span>Evaluating Standards/ معايير التقييم /Standards\n"
+"                            d’évaluation\n"
+"                        </span>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"<br/>\n"
+"                        <span>Evaluation Scorecard Standards/ درجات التقييم / Standards\n"
+"                            Standards de notation d’évaluation\n"
+"                        </span>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"<br/>\n"
+"                        <span>Final Evaluation Score/ مجموع نقط التقييم / Note finale\n"
+"                            d’évaluation\n"
+"                        </span>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:mail.template,body_html:kzm_hr_appraisal.mail_evaluation_manager
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                        <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                            Bonjour,\n"
+"                            <br/>\n"
+"                            <br/>\n"
+"                            Veuillez trouver ci-joint les résultats de vos évaluations.\n"
+"                            <br/>\n"
+"                            <br/>\n"
+"                            Cordialement,\n"
+"                        </p>\n"
+"                    </div>\n"
+"                "
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:mail.template,body_html:kzm_hr_appraisal.mail_evaluation
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"<!--                        <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">-->\n"
+"<!--                            Bonjour ${ctx['name']},-->\n"
+"<!--                            <br/>-->\n"
+"<!--                            <br/>-->\n"
+"<!--&lt;!&ndash;                            L'évaluation ${object.name} a été validée.<br/>&ndash;&gt;-->\n"
+"<!--&lt;!&ndash;                            <br/>&ndash;&gt;-->\n"
+"<!--                            Merci de trouver ci-joint le feedback d'évaluation.-->\n"
+"<!--                            <br/>-->\n"
+"<!--                            <br/>-->\n"
+"<!--                            Cordialement,-->\n"
+"<!--                        </p>-->\n"
+"                        <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                            Dear Colleague,\n"
+"                            <br/>\n"
+"                            Performance appraisal of the previous year kindly find attached the evaluation feedback. Pursuant to Article (68) of the ICESCO’s Personnel Regulation, and with a view to preserving the rights of staff members, the staff member concerned can oppose his/her appraisal result within ten (10) days following the date of receipt of the received email, and that no objections will be accepted after this deadline.\n"
+"                            <br/>\n"
+"                            <br/>\n"
+"                            <div style=\"text-align: right;\"><span style=\"color:rgb(0, 0, 0);font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-weight: inherit; text-align: inherit;\">\n"
+"                            ،السلام عليكم\n"
+"                            <br/>\n"
+"                            بعد تقييم الأداء السنوي للعام السابق، يرجى الإطلاع على مرفق التقييم.  طبقا للمادة 68 من النظام الأساسي للموظفين، وحفاظا على حقوق لك الموظفين بالمنظمة، يحق للموظف الإعتراض على نتيجته في أجل أقصاه 10 أيام من تاريخ التوصل بالإيميل، وانه لن يقبل أي إعتراض بعد انتهاء هذا الأجل\n"
+"                            </span></div>\n"
+"                            <br/>\n"
+"                            <br/>\n"
+"                            Cher Collégue,\n"
+"                            <br/>\n"
+"                            Suite à l’évaluation annuelle des performances de l’année précédente, veuillez trouver ci-joint l’évaluation. En vertu de l’article 68 du Statut du personnel, et afin de préserver les droits de tout le personnel de l’Organisation, le fonctionnaire a le droit de s’opposer à son résultat dans un délai maximum de 10 jours à compter de la date de réception du courriel, ainsi aucune objection ne sera acceptée après ce délai.\n"
+"                        </p>\n"
+"                    </div>\n"
+"                "
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:mail.template,body_html:kzm_hr_appraisal.mail_evaluation_good
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"<!--                        <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">-->\n"
+"<!--                            Bonjour ${ctx['name']},-->\n"
+"<!--                            <br/>-->\n"
+"<!--                            <br/>-->\n"
+"<!--&lt;!&ndash;                            L'évaluation ${object.name} a été validée.<br/>&ndash;&gt;-->\n"
+"<!--&lt;!&ndash;                            <br/>&ndash;&gt;-->\n"
+"<!--                            Merci de trouver ci-joint le feedback d'évaluation.-->\n"
+"<!--                            <br/>-->\n"
+"<!--                            <br/>-->\n"
+"<!--                            Cordialement,-->\n"
+"<!--                        </p>-->\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear Colleague,\n"
+"                        <br/>\n"
+"                        Following the Good rating received by employee ${ctx['name']} during the annual evaluation for year ${ctx['last_year']}, the annual evaluation must be reviewed before May 31st of the current year ${ctx['this_year']}.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <div style=\"text-align: right;\"><span style=\"color:rgb(0, 0, 0);font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-weight: inherit; text-align: inherit;\">\n"
+"                        ،السلام عليكم\n"
+"                        <br/>\n"
+"بعد حصولك على تقييم جيد، خلال التقييم السنوي للعام ${ctx['last_year']}، يجب مراجعة التقييم السنوي قبل 31 مايو ${ctx['this_year']}.\n"
+"                        </span></div>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Cher Collégue,\n"
+"                        <br/>\n"
+"                        Suite à l'obtention de L’appréciation Good, au titre de l'évaluation annuelle de l'année ${ctx['last_year']}, du salarié ${ctx['name']}, l'évaluation annuelle doit être revue avant le 31 Mai ${ctx['this_year']}.\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_rating_factor_form
+msgid "ADD Note"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:res.groups,name:kzm_hr_appraisal.appraisal_group_administrator
+msgid "Administrator"
+msgstr "Administrateur"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Affiliation/ إدارة\n"
+"                                    التعيين /Département d’affiliation :"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.actions.report,name:kzm_hr_appraisal.annual_appraisal_menu_id
+msgid "Annual Performance Appraisal"
+msgstr "Évaluation Annuelle"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.department_evaluation_template_id
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.gloabal_evaluation_template_id
+msgid "Annual performance appraisal"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.actions.act_window,name:kzm_hr_appraisal.appraisal_appraisal_action
+#: model:ir.model,name:kzm_hr_appraisal.model_appraisal_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__appraisal_id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__appraisal_id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_line__appraisal_id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_comment_line__appraisal_id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_hr_employee__appraisal_manager_id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_hr_employee_base__appraisal_manager_id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_hr_employee_public__appraisal_manager_id
+#: model:ir.module.category,name:kzm_hr_appraisal.module_appraisal_category
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_appraisal_search
+msgid "Appraisal"
+msgstr "Evaluation"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Appraisal\n"
+"                                    date/ تاريخ\n"
+"                                    التقييم /Date d’évaluation :"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.actions.act_window,name:kzm_hr_appraisal.appraisal_axis_action
+#: model:ir.model,name:kzm_hr_appraisal.model_appraisal_axis
+msgid "Appraisal Axis"
+msgstr "Axe d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__appraisal_axis_ids
+msgid "Appraisal Axis "
+msgstr "Axe d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.actions.act_window,name:kzm_hr_appraisal.appraisal_axe_evaluation_action
+#: model:ir.model,name:kzm_hr_appraisal.model_appraisal_axis_evaluation
+msgid "Appraisal Axis Evaluation"
+msgstr "Évaluation de l'axe d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model,name:kzm_hr_appraisal.model_appraisal_axis_line
+msgid "Appraisal Axis Line"
+msgstr "Lignes commentaire d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model,name:kzm_hr_appraisal.model_appraisal_comment_line
+msgid "Appraisal Comment Line"
+msgstr "Lignes commentaire d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__appraisal_comment_ids
+msgid "Appraisal Comments "
+msgstr "Commentaires d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.actions.report,name:kzm_hr_appraisal.gloabal_evaluation_menu_id
+#: model:ir.model,name:kzm_hr_appraisal.model_appraisal_global_wizard
+msgid "Appraisal Global Evaluation"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model,name:kzm_hr_appraisal.model_appraisal_appraisal_line
+msgid "Appraisal Line"
+msgstr "Lignes d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__appraisal_line_ids
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis__appraisal_line_id
+msgid "Appraisal Lines"
+msgstr "Lignes d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.actions.act_window,name:kzm_hr_appraisal.appraisal_matrix_action
+#: model:ir.model,name:kzm_hr_appraisal.model_appraisal_matrix
+msgid "Appraisal Matrix"
+msgstr "Matrices d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model,name:kzm_hr_appraisal.model_appraisal_matrix_line
+msgid "Appraisal Matrix Line"
+msgstr "Lignes Matrice d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.actions.act_window,name:kzm_hr_appraisal.appraisal_model_action
+#: model:ir.model,name:kzm_hr_appraisal.model_appraisal_model
+msgid "Appraisal Model"
+msgstr "Modèle d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__appraisal_note
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__appraisal_note_percent
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__stored_appraisal_note
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.dh_appraisal_appraisal_form
+msgid "Appraisal Note"
+msgstr "Note d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.actions.act_window,name:kzm_hr_appraisal.appraisal_rating_factor_action
+msgid "Appraisal Rating Factor"
+msgstr "critères d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.actions.act_window,name:kzm_hr_appraisal.appraisal_rating_factor_value_action
+msgid "Appraisal Rating Factor Value"
+msgstr "Note critère d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model,name:kzm_hr_appraisal.model_appraisal_report_department_wizard
+msgid "Appraisal Report Department Evaluation"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.actions.report,name:kzm_hr_appraisal.report_department_this_year_evaluation_menu_id
+msgid "Appraisal report my department Evaluation"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Appraiser’s\n"
+"                                    Signature/\n"
+"                                    توقيع المُقَيٍم/ / Signature Evaluateur"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Appraiser’s\n"
+"                                    name/ اسم\n"
+"                                    المُقَيٍم/ Nom de l’évaluateur :"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__appreciation
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix_line__appreciation
+msgid "Appreciation"
+msgstr "Appréciation"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_appraisal_form
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.dh_appraisal_appraisal_form
+msgid "Approve"
+msgstr "Approuver"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal__state__approved
+msgid "Approved"
+msgstr "Approuvé"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.department_evaluation_template_id
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.gloabal_evaluation_template_id
+msgid "Areas of improvement For"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__axe_id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_line__axe_id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor__axe_id
+#: model:ir.ui.menu,name:kzm_hr_appraisal.axe_appraisal_menu
+msgid "Axe"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_comment_line__evaluation_axe_id
+#: model:ir.ui.menu,name:kzm_hr_appraisal.axe_evaluation_menu
+msgid "Axe Evaluation"
+msgstr "Axe d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_axis_search
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_matrix_search
+msgid "Axis"
+msgstr "Axes"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_model_form
+msgid "Axis Evaluations"
+msgstr "Axes d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model,name:kzm_hr_appraisal.model_hr_employee_base
+msgid "Basic Employee"
+msgstr "Employé basique"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.global_evaluation_wizard
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.my_department_evaluation_this_year_evaluation_wizard
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.view_report_global_evaluation_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_appraisal_form
+msgid "Career Evolution"
+msgstr "Évolution de carrière"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_appraisal_form
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.dh_appraisal_appraisal_form
+msgid "Close"
+msgstr "Fermer"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal__state__closed
+msgid "Closed"
+msgstr "fermé"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_line__comment
+msgid "Comment"
+msgstr "Commentaire"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_appraisal_form
+msgid "Comments"
+msgstr "Commentaires"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Comments/ ملاحظات /\n"
+"                                    Commentaires"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_model__concern
+msgid "Concern"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.ui.menu,name:kzm_hr_appraisal.configuration_appraisal_rating_factor
+msgid "Configuration"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.actions.act_window,help:kzm_hr_appraisal.appraisal_appraisal_action
+#: model_terms:ir.actions.act_window,help:kzm_hr_appraisal.dh_appraisal_appraisal_action
+msgid "Create a new appraisal"
+msgstr "Créer une nouvelle évaluation"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.actions.act_window,help:kzm_hr_appraisal.appraisal_axe_evaluation_action
+msgid "Create a new appraisal Axis Evaluation"
+msgstr "Créer un nouveau axe d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.actions.act_window,help:kzm_hr_appraisal.appraisal_model_action
+msgid "Create a new appraisal model"
+msgstr "Créer un nouveau modèle d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.actions.act_window,help:kzm_hr_appraisal.appraisal_rating_factor_action
+msgid "Create a new appraisal raiting factor"
+msgstr "Créer un nouveau critère d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.actions.act_window,help:kzm_hr_appraisal.appraisal_rating_factor_value_action
+msgid "Create a new appraisal raiting factor values"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.actions.act_window,help:kzm_hr_appraisal.appraisal_axis_action
+msgid "Create a new axis"
+msgstr "Créer un nouveau axe"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.actions.act_window,help:kzm_hr_appraisal.appraisal_matrix_action
+msgid "Create a new matrix"
+msgstr "Créer une nouvelle matrice"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__create_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__create_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis__create_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_evaluation__create_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_line__create_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_comment_line__create_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_global_wizard__create_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix__create_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix_line__create_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_model__create_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor__create_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor_value__create_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_report_department_wizard__create_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_report_global_evaluation__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__create_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__create_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis__create_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_evaluation__create_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_line__create_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_comment_line__create_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_global_wizard__create_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix__create_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix_line__create_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_model__create_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor__create_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor_value__create_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_report_department_wizard__create_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_report_global_evaluation__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid "Criterias/ Critères"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Current\n"
+"                                    position/\n"
+"                                    المنصب الحالي /Poste actuel :"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__decision
+msgid "Decision"
+msgstr "Décision"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__department_id
+msgid "Departmenet"
+msgstr "Département"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__description
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor__description
+msgid "Description"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__display_name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__display_name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis__display_name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_evaluation__display_name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_line__display_name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_comment_line__display_name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_global_wizard__display_name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix__display_name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix_line__display_name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_model__display_name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor__display_name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor_value__display_name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_report_department_wizard__display_name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_report_global_evaluation__display_name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_report_kzm_hr_appraisal_report_global_evaluation_xlsx__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal__state__draft
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__employee_id
+msgid "Employee"
+msgstr "Employé"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Employee\n"
+"                                    Name/ اسم\n"
+"                                    الموظف /Nom de l’employé :"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_comment_line__employee_comment
+msgid "Employee Comment"
+msgstr "Commentaire Employé"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_global_wizard__end_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_report_department_wizard__end_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_report_global_evaluation__end_date
+msgid "End Date"
+msgstr "Date de fin"
+
+#. module: kzm_hr_appraisal
+#: model:ir.actions.server,name:kzm_hr_appraisal.action_server_evaluation
+msgid "Envoyer l'évaluation(s)"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.ui.menu,name:kzm_hr_appraisal.eva_evaluation_menu
+#: model:ir.ui.menu,name:kzm_hr_appraisal.main_appraisal_rating_factor
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_axe_evaluation_search
+msgid "Evaluation"
+msgstr "Évaluation"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Evaluation Grade /\n"
+"                                    درجة التقييم\n"
+"                                    Note d’évaluation"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Evaluation Total Score /\n"
+"                                    مجموع نقط التقييم\n"
+"                                    Note totale de l’évaluation"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__evaluation_date
+msgid "Evaluation date"
+msgstr "date d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_model__axe_evaluation__ids
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_model__axe_evaluation_report_ids
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_appraisal_form
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.dh_appraisal_appraisal_form
+msgid "Evaluations"
+msgstr "Évaluations"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_appraisal_form
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.dh_appraisal_appraisal_form
+msgid "Evaluations Lines"
+msgstr "Lignes Evaluations"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__evaluator_id
+#: model:res.groups,name:kzm_hr_appraisal.appraisal_group_evaluator
+msgid "Evaluator"
+msgstr "Evaluateur"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_comment_line__evaluator_comment
+msgid "Evaluator Comment"
+msgstr "Commentaire d'évaluateur"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Exceeds\n"
+"                                    Expectations\n"
+"                                    يفوق التوقعات\n"
+"                                    Dépasse les attentes"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal__appreciation__excellent
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal_line__level__excellent
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_matrix_line__appreciation__excellent
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_rating_factor_value__level__excellent
+msgid "Excellent"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__factor_id
+#: model:ir.ui.menu,name:kzm_hr_appraisal.raiting_appraisal_rating_factor
+msgid "Factor"
+msgstr "Critère"
+
+#. module: kzm_hr_appraisal
+#: model:ir.ui.menu,name:kzm_hr_appraisal.raiting_appraisal_rating_factor_value
+msgid "Factor Values"
+msgstr "Notes Critères"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis__factor_ids
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_model__factor_ids
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_axis_form
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_model_form
+msgid "Factors"
+msgstr "Critères"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"GRADES// التقديرات\n"
+"                                    Notes"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.view_report_global_evaluation_form
+msgid "Generate"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.ui.menu,name:kzm_hr_appraisal.wizard_global_evaluation
+msgid "Global Evaluation"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.actions.act_window,name:kzm_hr_appraisal.action_report_global_evaluation
+#: model:ir.actions.report,name:kzm_hr_appraisal.report_global_evaluation_xlsx
+#: model:ir.ui.menu,name:kzm_hr_appraisal.menu_report_global_evaluation
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.view_report_global_evaluation_form
+msgid "Global Evaluation Excel"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal__appreciation__good
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal_line__level__good
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_matrix_line__appreciation__good
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_rating_factor_value__level__good
+msgid "Good"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"ICESCO\n"
+"                                    ID\n"
+"                                    رقم التوظيف\n"
+"                                    / / Matricule ICESCO"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.department_evaluation_template_id
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.gloabal_evaluation_template_id
+msgid "ICESCO ID"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis__id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_evaluation__id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_line__id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_comment_line__id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_global_wizard__id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix__id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix_line__id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_model__id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor__id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor_value__id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_report_department_wizard__id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_report_global_evaluation__id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_report_kzm_hr_appraisal_report_global_evaluation_xlsx__id
+msgid "ID"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix_line__impact
+msgid "Impact"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.actions.act_window,name:kzm_hr_appraisal.my_department_evaluation_this_year_evaluation_wizard_action
+msgid "Imprimer Evaluation mon département"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_evaluation__is_training_action
+msgid "Is training action ?"
+msgstr "Est une action Training?"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal____last_update
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line____last_update
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis____last_update
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_evaluation____last_update
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_line____last_update
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_comment_line____last_update
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_global_wizard____last_update
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix____last_update
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix_line____last_update
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_model____last_update
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor____last_update
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor_value____last_update
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_report_department_wizard____last_update
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_report_global_evaluation____last_update
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_report_kzm_hr_appraisal_report_global_evaluation_xlsx____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__write_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__write_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis__write_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_evaluation__write_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_line__write_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_comment_line__write_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_global_wizard__write_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix__write_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix_line__write_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_model__write_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor__write_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor_value__write_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_report_department_wizard__write_uid
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_report_global_evaluation__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__write_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__write_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis__write_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_evaluation__write_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_line__write_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_comment_line__write_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_global_wizard__write_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix__write_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix_line__write_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_model__write_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor__write_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor_value__write_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_report_department_wizard__write_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_report_global_evaluation__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__level
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor_value__level
+msgid "Level"
+msgstr "Niveau"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.department_evaluation_template_id
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.gloabal_evaluation_template_id
+msgid "Logo"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix_line__matrix_id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_model__matrix_id
+msgid "Matrix"
+msgstr "Matrices"
+
+#. module: kzm_hr_appraisal
+#: model:ir.ui.menu,name:kzm_hr_appraisal.matrix_evaluation_menu
+msgid "Matrix Evaluation"
+msgstr "Matrice Évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix__matrix_line_ids
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_matrix_form
+msgid "Matrix Lines"
+msgstr "Lignes Matrice"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Max Score /\n"
+"                                    <br/>\n"
+"                                    Note maximale"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__maximal_note
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix_line__maximal_note
+msgid "Maximal Note"
+msgstr "Note maximale"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Meets\n"
+"                                    Expectation يرقى إلى التوقعات\n"
+"                                    Répond aux attentes"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix_line__minimal_note
+msgid "Minimal Note"
+msgstr "Note minimal"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_global_wizard__model_evaluation_id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_report_department_wizard__model_evaluation_id
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_model_search
+msgid "Model"
+msgstr "Modèle"
+
+#. module: kzm_hr_appraisal
+#: model:ir.ui.menu,name:kzm_hr_appraisal.model_evaluation_menu
+msgid "Model Evaluation"
+msgstr "Modèle Évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis__name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_evaluation__name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix__name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_model__name
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor__name
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_appraisal_form
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_model_form
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.department_evaluation_template_id
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.dh_appraisal_appraisal_form
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.gloabal_evaluation_template_id
+msgid "Name"
+msgstr "Nom"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Needs\n"
+"                                    Improvement\n"
+"                                    يحتاج للتحسن\n"
+"                                    Nécessite une amélioration"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__is_neither_satisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal__appreciation__neither_satisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal_line__level__neither_satisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_matrix_line__appreciation__neither_satisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_rating_factor_value__level__neither_satisfied
+msgid "Neither satisfied nor dissatisfied"
+msgstr "Neutre"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__note_id
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor_value__name
+msgid "Note"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__number
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor__number
+msgid "Number"
+msgstr "Numéro"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Outstanding\n"
+"                                    ممتاز\n"
+"                                    Excellent"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_model__evaluation_pays_member
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor_value__evaluation_pays_member
+msgid "Pays Member Evaluation"
+msgstr "Evaluation Pays Membre"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Period\n"
+"                                    covered/\n"
+"                                    الفترة الزمنية /Période :"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.department_evaluation_template_id
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.gloabal_evaluation_template_id
+msgid "Position"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.my_department_evaluation_this_year_evaluation_wizard
+msgid "Print Department Evaluation"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.actions.act_window,name:kzm_hr_appraisal.global_evaluation_wizard_action
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.global_evaluation_wizard
+msgid "Print Global Evaluation"
+msgstr "Imprimer l'evaluation global"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"RANGES/ / مجموع\n"
+"                                    الدرجات TOTAL POINTS"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_rating_factor_search
+msgid "Rating Factor"
+msgstr "critère d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_rating_factor_value_search
+msgid "Rating Factor Values"
+msgstr "Notes critère d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__recommended_action
+msgid "Recommended Action"
+msgstr "Action recommandée"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__recruitment_date
+msgid "Recruitment Date"
+msgstr "Date de recrutement"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__name
+msgid "Reference"
+msgstr "Référence"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__dh_remarque
+msgid "Remarque"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.ui.menu,name:kzm_hr_appraisal.reporting_appraisal
+msgid "Reporting"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_appraisal_form
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.dh_appraisal_appraisal_form
+msgid "Reset to Draft"
+msgstr "Remettre en brouillon"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__salary_category_id
+msgid "Salary Category"
+msgstr "Catégorie de salaire"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid "Scores/Notes"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.department_evaluation_template_id
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.gloabal_evaluation_template_id
+msgid "Sector"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__is_somewhat_dissatisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal__appreciation__somewhat_dissatisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal_line__level__somewhat_dissatisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_matrix_line__appreciation__somewhat_dissatisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_rating_factor_value__level__somewhat_dissatisfied
+msgid "Somewhat dissatisfied"
+msgstr "Insatisfait"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__is_somewhat_satisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal__appreciation__somewhat_satisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal_line__level__somewhat_satisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_matrix_line__appreciation__somewhat_satisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_rating_factor_value__level__somewhat_satisfied
+msgid "Somewhat satisfied"
+msgstr "Satisfait"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_global_wizard__start_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_report_department_wizard__start_date
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_report_global_evaluation__start_date
+msgid "Start Date"
+msgstr "Date de debut"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__state
+msgid "State"
+msgstr "Status"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__step_advancement
+msgid "Step Advancement"
+msgstr "Avancement Echelon"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_matrix_line__step_advancement
+msgid "Step advancement"
+msgstr "Etape avancement"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid "TOTAL / المجموع"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.department_evaluation_template_id
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.gloabal_evaluation_template_id
+msgid "TOTAL SCORES"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_axis_line__total_note
+msgid "Total Note"
+msgstr "Note Totale"
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.department_evaluation_template_id
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.gloabal_evaluation_template_id
+msgid "Total Performance Appraisal Scores"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.department_evaluation_template_id
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.gloabal_evaluation_template_id
+msgid "Training For"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Unsatisfactory\n"
+"                                    غير مرض\n"
+"                                    Insatisfaisant"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.appraisal_appraisal_form
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.dh_appraisal_appraisal_form
+msgid "Validate"
+msgstr "Valider"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal__state__validation
+msgid "Validation"
+msgstr "En Validation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_rating_factor__value_ids
+msgid "Values"
+msgstr "Notes"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__is_very_dissatisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal__appreciation__very_dissatisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal_line__level__very_dissatisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_matrix_line__appreciation__very_dissatisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_rating_factor_value__level__very_dissatisfied
+msgid "Very dissatisfied"
+msgstr "Très insatisfait"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal__appreciation__very_good
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal_line__level__very_good
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_matrix_line__appreciation__very_good
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_rating_factor_value__level__very_good
+msgid "Very good"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal_line__is_very_satisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal__appreciation__very_satisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal_line__level__very_satisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_matrix_line__appreciation__very_satisfied
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_rating_factor_value__level__very_satisfied
+msgid "Very satisfied"
+msgstr "Très satisfait"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal__appreciation__weak
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_appraisal_line__level__weak
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_matrix_line__appreciation__weak
+#: model:ir.model.fields.selection,name:kzm_hr_appraisal.selection__appraisal_rating_factor_value__level__weak
+msgid "Weak"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Work\n"
+"                                    performance consistently meets the standards of\n"
+"                                    performance\n"
+"                                    يرقى الأداء دائما للمعايير التي يستلزمها المنصب\n"
+"                                    La performance répond toujours aux normes requises\n"
+"                                    pour\n"
+"                                    le poste"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Work\n"
+"                                    performance does not consistently meet the standards\n"
+"                                    of\n"
+"                                    performance\n"
+"                                    لا يرقى الأداء دائما للمعايير التي يستلزمها المنصب\n"
+"                                    La performance ne répond pas toujours aux normes\n"
+"                                    requises pour le poste."
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Work\n"
+"                                    performance is below standards of performance\n"
+"                                    required\n"
+"                                    الأداء دون المعايير التي يستلزمها المنصب\n"
+"                                    La performance est en-dessous des normes requises\n"
+"                                    pour\n"
+"                                    le poste."
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Work\n"
+"                                    performance is consistently above the standards of\n"
+"                                    performance.\n"
+"                                    الأداء يتجاوز دائما المعايير التي يستلزمها المنصب\n"
+"                                    La performance dépasse toujours les normes requises\n"
+"                                    pour\n"
+"                                    le poste"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.annual_performance_appraisal_employee_template_id
+msgid ""
+"Work\n"
+"                                    performance is consistently superior to standards of\n"
+"                                    performance\n"
+"                                    يفوق الأداء المعايير التي يستلزمها المنصب\n"
+"                                    La performance dépasse toujours largement les normes\n"
+"                                    requises pour le poste"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model,name:kzm_hr_appraisal.model_appraisal_rating_factor
+msgid "appraisal rating factor"
+msgstr "critères d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model,name:kzm_hr_appraisal.model_appraisal_rating_factor_value
+msgid "appraisal rating factor value"
+msgstr "Note critère d'évaluation"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model.fields,field_description:kzm_hr_appraisal.field_appraisal_appraisal__model_evaluation_id
+msgid "model"
+msgstr "modèle"
+
+#. module: kzm_hr_appraisal
+#: model:ir.model,name:kzm_hr_appraisal.model_report_global_evaluation
+msgid "report.global.evaluation"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.model,name:kzm_hr_appraisal.model_report_kzm_hr_appraisal_report_global_evaluation_xlsx
+msgid "report.kzm_hr_appraisal.report_global_evaluation_xlsx"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model:ir.ui.menu,name:kzm_hr_appraisal.wizard_my_department_evaluation_this_year
+msgid "Évaluation de mon département"
+msgstr ""
+
+#. module: kzm_hr_appraisal
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.dh_aappraisal_appraisal_tree
+#: model_terms:ir.ui.view,arch_db:kzm_hr_appraisal.dh_appraisal_appraisal_form
+msgid "الدولة"
+msgstr "Pays"

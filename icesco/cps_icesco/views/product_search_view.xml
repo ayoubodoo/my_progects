@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_search_panel_vieww" model="ir.ui.view">
+        <field name="name">inherit.product.template.search</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view"/>
+        <field name="arch" type="xml">
+<!--            <xpath expr="//search" position="inside">-->
+<!--                <searchpanel class="">-->
+<!--                    <field name="categ_id" groupby="" icon="fa-filter"/>-->
+<!--                </searchpanel>-->
+<!--            </xpath>-->
+
+            <separator/>
+
+            <xpath expr="//filter[@name='inactive']" position='after'>
+
+
+                <filter string="Reached Minimum quantity" name="is_qty_minimale" domain="[('qty_minimal','=',True)]"/>
+
+                <group expand="1" string="Group By">
+                    <filter string="Atteint Quantité minimale" name="is_qty_minimal"
+                            context="{'group_by':'qty_minimal'}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product.product_template_kanban_view" model="ir.ui.view">
+        <field name="name">Product.template.product.kanban</field>
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="product_variant_count"/>
+                <field name="currency_id"/>
+                <field name="activity_state"/>
+                <field name="qty_minimal"/>
+                <progressbar field="activity_state"
+                             colors='{"planned": "success", "today": "warning", "overdue": "danger"}'/>
+                <templates>
+                    <t t-name="kanban-box">
+
+                        <t t-if="record.qty_minimal.raw_value == true">
+
+                            <div class="oe_kanban_global_click" style="background-color:red">
+<!--                            <div class="oe_kanban_global_click">-->
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('product.template', 'image_128', record.id.raw_value)"
+                                         alt="Product" class="o_image_64_contain"/>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name"/>
+                                        <small t-if="record.default_code.value">[<field name="default_code"/>]
+                                        </small>
+                                    </strong>
+                                    <div t-if="record.product_variant_count.value &gt; 1"
+                                         groups="product.group_product_variant">
+                                        <strong>
+                                            <t t-esc="record.product_variant_count.value"/>
+                                            Variants
+                                        </strong>
+                                    </div>
+                                    <div name="tags"/>
+                                    <ul>
+                                        <li>Price:
+                                            <field name="lst_price" widget="monetary"
+                                                   options="{'currency_field': 'currency_id', 'field_digits': True}"></field>
+                                        </li>
+
+                                    </ul>
+                                    <div name="tags"/>
+                                </div>
+                            </div>
+
+                        </t>
+                        <t t-else="">
+                            <div class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('product.template', 'image_128', record.id.raw_value)"
+                                         alt="Product" class="o_image_64_contain"/>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name"/>
+                                        <small t-if="record.default_code.value">[<field name="default_code"/>]
+                                        </small>
+                                    </strong>
+                                    <div t-if="record.product_variant_count.value &gt; 1"
+                                         groups="product.group_product_variant">
+                                        <strong>
+                                            <t t-esc="record.product_variant_count.value"/>
+                                            Variants
+                                        </strong>
+                                    </div>
+                                    <div name="tags"/>
+                                    <ul>
+                                        <li>Price:
+                                            <field name="lst_price" widget="monetary"
+                                                   options="{'currency_field': 'currency_id', 'field_digits': True}"></field>
+                                        </li>
+                                    </ul>
+                                    <div name="tags"/>
+                                </div>
+                            </div>
+                        </t>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+</odoo>

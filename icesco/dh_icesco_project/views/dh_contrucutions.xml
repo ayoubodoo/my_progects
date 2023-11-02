@@ -1,0 +1,28 @@
+<odoo>
+     <record model="ir.ui.view" id="dh_icesco_contrubutions_tree">
+            <field name="name">dh.contrubution.tree</field>
+            <field name="model">dh.contrubution</field>
+            <field name="arch" type="xml">
+                <tree  editable="bottom" string="Contrubutions">
+                    <field name="partner_id" width="1"/>
+                    <field name="three_years" width="1"/>
+                    <field name="date_1" width="1"/>
+                    <field name="pourcentage" width="1" widget="percentage"/>
+                    <field name="amount_contrubutions" width="1"/>
+                    <field name="amount" width="1"/>
+                    <field name="date" width="1"/>
+                    <field name="performance" width="1"/>
+                    <field name="amount_not_paid" width="1"/>
+
+
+                </tree>
+            </field>
+        </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_contrubutions_tree">
+            <field name="name">contributions</field>
+            <field name="res_model">dh.contrubution</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="dh_icesco_contrubutions_tree"/>
+        </record>
+</odoo>

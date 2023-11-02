@@ -1,0 +1,45 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="dh_agreement_international_sector_form_view">
+        <field name="name">dh.agreements.international.sectors.form</field>
+        <field name="model">dh.agreements.international.sectors</field>
+        <field name="arch" type="xml">
+            <form string="Agreements International Sectors">
+                <sheet>
+                    <group col="2">
+                        <group>
+                            <field name="sector_id"/>
+                            <field name="facet_exchange"/>
+                        </group>
+                        <group>
+                            <field name="received_amount"/>
+                            <field name="received_amount_prevu"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_agreement_international_sector_tree">
+      <field name="name">dh.agreements.international.sectors.tree</field>
+      <field name="model">dh.agreements.international.sectors</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+            <field name="sector_id" width="1"/>
+            <field name="received_amount" width="1"/>
+            <field name="received_amount_prevu" width="1"/>
+            <field name="facet_exchange" width="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_risks_addressing">
+      <field name="name">Agreements International Sectors</field>
+      <field name="res_model">dh.agreements.international.sectors</field>
+      <field name="view_mode">tree</field>
+        <field name="view_id" ref="dh_agreement_international_sector_tree"/>
+    </record>
+
+  </data>
+</odoo>

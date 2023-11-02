@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_account_update_wizard_form">
+            <field name="name">Account update</field>
+            <field name="model">account.update.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div>Please ensure that you have two columns in your csv file : 'code' and 'compte_name'</div>
+                    <group>
+                        <field name="filename" invisible="1"/>
+                        <field name="file" filename="filename" widget="binary"/>
+                    </group>
+                    <footer>
+                        <button special="cancel" string="Cancel" class="btn-primary"/>
+                        <button string="Update" class="oe_highlight" type="object" name="update_accounts"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_account_update_wizard" model="ir.actions.act_window">
+            <field name="name">Account update</field>
+            <field name="res_model">account.update.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_account_update_wizard" name="Account update" parent="account.account_account_menu"
+                  sequence="110" action="action_account_update_wizard" groups="account.group_account_manager"/>
+    </data>
+</odoo>

@@ -1,0 +1,45 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="dh_ndicator_result_typee_form_view">
+        <field name="name">dh.indicator.result.type.form</field>
+        <field name="model">dh.indicator.result.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    
+                        <group>
+                            <field name="name"/>
+                           
+                        </group>
+                     
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_ndicator_result_typee_tree">
+      <field name="name">dh.indicator.result.type.tree</field>
+      <field name="model">dh.indicator.result.type</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+
+            <field name="name" />
+
+
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="dh_indicator_result_typee_action">
+      <field name="name">Stages</field>
+      <field name="res_model">dh.indicator.result.type</field>
+      <field name="view_mode">tree</field>
+    </record>
+    <menuitem id="icesco_result_indicato_type_menu" name="Operational Indicators Types"
+                  parent="project.menu_project_config"
+                  action="dh_indicator_result_typee_action" sequence="50"/>
+
+
+
+  </data>
+</odoo>

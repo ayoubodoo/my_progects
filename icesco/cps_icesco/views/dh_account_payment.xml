@@ -1,0 +1,16 @@
+<odoo>
+
+
+    <record id="dh_account_payment_form_view_inherit" model="ir.ui.view">
+        <field name="name">account.payment.form.inherit</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='post']" position="before">
+                <button name="%(action_account_payment_check_wizard)d" class="oe_highlight" string="Print Check MA" type="action"
+                        />
+
+            </xpath>
+        </field>
+    </record>
+</odoo>

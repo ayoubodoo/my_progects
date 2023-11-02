@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+<template id="template_report_bank_transfert">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="refund">
+
+            <div class="page article " style="font-size: 13px; !important;padding: 8px 8px 8px 8px !important;">
+                <div class="row">
+                    <div style="width:100%">
+                         <table width="100%">
+                             <tr>
+                                 <td style="font-size:30px; !important">
+                                    <strong>Bank Transfers : <span t-field="refund.date_start" t-options='{"format": "yyyy-MM"}'/></strong>
+                                 </td>
+                             </tr>
+                            <tr style="border: 1px solid black;">
+                                <td style="border: 1px solid black;" width="80%"><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                    <t t-if="res_company.partner_id.bank_ids">
+                                        <strong>
+                                          Total
+                                        </strong>
+                                    </t>
+                                </td>
+                                <td style="border: 1px solid black;" class="align-middle text-center"  width="20%"><t t-esc="'{0:.2f}'.format(refund.sum_real_total_to_refund)"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                  </div>
+                <t t-set="var" t-value="0"/>
+                <div style="width:100%" t-foreach='refund.return_grouped_requestors()' t-as='request'>
+                    <t t-if="var!=0">
+                    <p style="page-break-before:always;"/>
+                    </t>
+                    <t t-set="var" t-value="1"/>
+                    <table style="border: 1px solid black;margin-top:20px;" width="100%">
+                        <tr style="border: 1px solid black;">
+                            <td style="border: 1px solid black;margin-left:5px;" width="20%"><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <strong>
+                                    <t t-esc="request[0][0][2]"/>
+                                </strong>
+                            </td>
+                            <td width="40%"></td>
+                            <td width="30%"></td>
+                            <td width="10%" style="border: 1px solid black;width:10%;margin-left:5px;"><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                <strong>
+                                    <t t-esc="'{0:.2f}'.format(request[1])"/>
+                                </strong>
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="width:100%">
+                    <table style="border: 1px solid black;margin-top:10px" width="100%">
+                            <tr style="border: 1px solid black;">
+                                <th align="center" class="align-middle text-center" style="border: 1px solid black;" width="20%"><strong>Adherant</strong></th>
+                                <th align="center" class="align-middle text-center" style="border: 1px solid black;" width="40%"><strong>Agency Adress</strong></th>
+                                <th align="center" class="align-middle text-center" style="border: 1px solid black;" width="30%"><strong>Account Number</strong></th>
+                                <th align="center" class="align-middle text-center" style="border: 1px solid black;" width="10%"><strong>Total Refund</strong></th>
+                            </tr>
+                            <t t-foreach='request[0]' t-as='req'>
+                                <tr >
+                                 <td style="border: 1px solid black;" class="align-middle text-center"><t t-esc="req[0].display_name"/></td>
+                                <td style="border: 1px solid black;" class="align-middle text-center"><t t-esc="req[0].bank.name"/>-<t t-esc="req[0].agence"/></td>
+                                <td style="border: 1px solid black;" class="align-middle text-center"><t t-esc="req[0].compte"/></td>
+                                <td style="border: 1px solid black;" class="align-middle text-center"><t t-esc="'{0:.2f}'.format(req[1])"/></td>
+                             </tr>
+                            </t>
+                        <style>
+                                tr:nth-child(even) {
+                                  background-color: #f2f2f2;
+                                }
+                            </style>
+                    </table>
+                        </div>
+                 </div>
+            </div>
+
+             <div class="footer">
+                 <div class="row">
+                        <table border="0">
+                            <tr >
+                                <td align="center">Page : <span class="page"/>/<span class="topage"/></td>
+                            </tr>
+                        </table>
+                     </div>
+             </div>
+        </t>
+    </t>
+
+</template>
+    </data>
+</odoo>

@@ -1,0 +1,305 @@
+<odoo>
+  <data>
+      <record id="event.action_event_view" model="ir.actions.act_window">
+          <field name="name">DG Office</field>
+      </record>
+    <record id="cps_event_event_form_inherit" model="ir.ui.view">
+            <field name="name">cps.event.event.form.inherit</field>
+            <field name="model">event.event</field>
+            <field name="inherit_id" ref="event.view_event_form"/>
+            <field name="arch" type="xml">
+                <header>
+<!--                    <xpath expr="//field[@name='state']" position="attributes">-->
+<!--                        <attribute name="statusbar_visible">"draft,validation,approved,closed,postponed"</attribute>-->
+<!--                    </xpath>-->
+<!--                    <xpath expr="//field[@name='state']" position="replace">-->
+<!--                        <field name="type" ref="custome_fields.type"/>-->
+<!--                        <field name="type"/>-->
+<!--                    </xpath>-->
+                </header>
+
+                <field name="state" position="replace">
+                        <field name="state" widget="statusbar" statusbar_visible="draft,postponed,delegated,modified,confirm,done"/>
+                </field>
+                <field name="organizer_id" position="replace">
+                    <field name="organizer_id" invisible="1"/>
+                </field>
+                <field name="twitter_hashtag" position="replace">
+                    <field name="twitter_hashtag" invisible="1"/>
+                </field>
+                <field name="event_type_id" position="replace">
+                    <field name="event_type_id" invisible="1"/>
+                </field>
+                <field name="auto_confirm" position="replace">
+                    <field name="auto_confirm" invisible="1"/>
+                </field>
+                <field name="address_id" position="replace">
+                    <field name="address_id" invisible="1"/>
+                </field>
+                <field name="company_id" position="replace">
+                    <field name="company_id" invisible="1"/>
+                </field>
+                <field name="user_id" position="replace">
+                    <field name="user_id" invisible="1"/>
+                </field>
+                <field name="user_id" position="replace">
+                    <field name="user_id" invisible="1"/>
+                </field>
+<!--                <button name="button_confirm" position="after">-->
+<!--                    <button string="Test mail" name="testt" type="object" class="oe_highlight"/>-->
+<!--                </button>-->
+                <button name="button_confirm" position="replace">
+                    <button string="Confirm Event" name="button_confirm" states="draft" type="object" class="oe_highlight" invisible="1"/>
+                </button>
+                <button name="button_done" position="replace">
+                    <button string="Finish Event" name="button_done" states="confirm" type="object" class="oe_highlight" groups="cps_icesco.icesco_confirm_event"/>
+                </button>
+                <button name="button_draft" position="replace">
+                    <button string="Set To Draft" name="button_draft" states="cancel,done" type="object" groups="cps_icesco.icesco_confirm_event"/>
+                </button>
+                <xpath expr="//header//button[@name='button_cancel'][1]" position="replace">
+                    <button string="Cancel Event" name="button_cancel" type="object" groups="cps_icesco.icesco_confirm_event" attrs="{'invisible': ['|', ('seats_expected', '!=', 0), ('state', 'not in', ['draft', 'confirm'])]}"/>
+                </xpath>
+                <xpath expr="//header//button[@name='button_cancel'][2]" position="replace">
+                    <button string="Cancel Event" name="button_cancel" type="object" groups="cps_icesco.icesco_confirm_event" confirm="Are you sure you want to cancel this event? All the linked attendees will be cancelled as well." attrs="{'invisible': ['|', ('seats_expected', '=', 0), ('state', 'not in', ['draft', 'confirm'])]}"/>
+                </xpath>
+                <field name="auto_confirm" position="after">
+                    <field name="location" widget="radio" options="{'horizontal': true}"/>
+                    <field name="location_required" attrs="{'required': [('location', '=', False)]}" invisible="1"/>
+                    <field name="room_id" attrs="{'invisible': [('location', '!=', 'icesco')], 'required': [('location', '=', 'icesco')]}"/>
+                    <field name="external_member_state" attrs="{'invisible': [('location', '!=', 'external')], 'required': [('location', '=', 'external')]}"/>
+                    <field name="external_non_member_state" attrs="{'invisible': [('location', '!=', 'external')], 'required': [('location', '=', 'external')]}"/>
+                    <field name="country" attrs="{'invisible': [('location', '!=', 'external')], 'required': [('location', '=', 'external')]}"/>
+                    <field name="city" attrs="{'invisible': [('location', '!=', 'external')], 'required': [('location', '=', 'external')]}"/>
+                    <field name="location_name" attrs="{'invisible': [('location', '!=', 'external')], 'required': [('location', '=', 'external')]}"/>
+<!--                    <field name="project_id"/>-->
+<!--                    <field name="task_id"/>-->
+                </field>
+                <field name="organizer_id" position="after">
+                    <field name="deptartment_id" options="{'no_create': True}"/>
+                    <field name="event_related"/>
+                </field>
+                <xpath expr="//page[1]" position="attributes">
+                    <attribute name='invisible'>1</attribute>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page name="dg_directions" string="DG directions box after submission" groups="cps_icesco.icesco_confirm_event">
+                        <group col="2">
+                            <group>
+                                <field name="dg_approved"/>
+                                <field name="dg_postponed"/>
+                                <field name="dg_delegated"/>
+                                <field name="dg_modified"/>
+                            </group>
+                            <group attrs="{'invisible': [('dg_postponed', '=', False)]}">
+                                <field name="postponed_date"/>
+                            </group>
+                            <group attrs="{'invisible': [('dg_delegated', '=', False)]}">
+                                <field name="delegation"/>
+                            </group>
+                            <group attrs="{'invisible': [('dg_modified', '=', False)]}">
+                                <field name="modified_budget"/>
+                                <field name="modified_program"/>
+                                <field name="modified_attendees"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page name="details" string="Event details">
+                        <group col="3">
+                            <group string="The initiative is">
+                                <field name="initiative" widget="radio" nolabel="1"/>
+                                <field name="is_sponsorship_available" attrs="{'invisible': [('initiative', '!=', 'new')]}"/>
+                                <field name="budget" attrs="{'invisible': [('is_sponsorship_available', '=', False)]}"/>
+                                <field name="provider" attrs="{'invisible': [('is_sponsorship_available', '=', False)]}"/>
+                                <field name="initiative_required" attrs="{'required': [('initiative', '=', False)]}" invisible="1"/>
+                            </group>
+                            <group string="The frequency of this initiative">
+                                <field name="frequency" widget="radio" nolabel="1"/>
+                                <field name="frequency_required" attrs="{'required': [('frequency', '=', False)]}" invisible="1"/>
+                            </group>
+                            <group string="Event Stakeholders">
+                                <field name="member_state_id"/>
+                                <field name="non_member_state_id"/>
+                            </group>
+                            <group string="Partners">
+                                <field name="is_ioc_organization"/>
+                                <field name="is_un_organization"/>
+                                <field name="is_au_organization"/>
+                                <field name="is_al_organization"/>
+                                <field name="others_organization"/>
+                                <field name="list_oic_organization" attrs="{'invisible': [('is_ioc_organization', '!=', True)]}"/>
+                                <field name="list_un_organization" attrs="{'invisible': [('is_un_organization', '!=', True)]}"/>
+                                <field name="list_au_organization" attrs="{'invisible': [('is_au_organization', '!=', True)]}"/>
+                                <field name="list_al_organization" attrs="{'invisible': [('is_al_organization', '!=', True)]}"/>
+                            </group>
+                            <group string="The Initiative needs">
+                                <group>
+                                    <field name="dg_approval" />
+                                    <field name="is_dg_participation"/>
+                                    <field name="is_dpt_participation"/>
+                                    <field name="is_external_expert"/>
+                                    <field name="attach_external_export" widget="many2many_binary" nolabel="1" attrs="{'invisible': [('is_external_expert', '!=', True)]}"/>
+<!--                                    <field name="is_estimated_budget"/>-->
+<!--                                    <field name="dg_initiative_required" invisible="1"/>-->
+                                </group>
+                            </group>
+                        </group>
+                    </page>
+                    <page name="participation" string="ICESCO participation">
+                        <group col="3">
+                            <group string="DG participation">
+<!--                                <field name="dg_participation" widget="radio" nolabel="1"/>-->
+<!--                                <field name="dg_participation_required" attrs="{'required': [('dg_participation', '=', False)]}" invisible="1"/>-->
+                                <field name="is_dg_participation_required"/>
+                                <field name="is_dg_visit" attrs="{'invisible': [('is_dg_participation_required', '!=', True)]}"/>
+                                <field name="is_dg_event" attrs="{'invisible': [('is_dg_participation_required', '!=', True)]}"/>
+                                <field name="is_dg_recorded" attrs="{'invisible': [('is_dg_participation_required', '!=', True)]}"/>
+                                <field name="is_dg_video" attrs="{'invisible': [('is_dg_participation_required', '!=', True)]}"/>
+                            </group>
+                            <group string="DG Speech informations" attrs="{'invisible': [('is_dg_participation_required', '=', False)]}">
+                                <field name="key_people_meet" attrs="{'invisible': [('is_dg_visit', '!=', True)]}"/>
+                                <field name="agenda_topics" attrs="{'invisible': [('is_dg_visit', '!=', True)]}"/>
+                                <field name="is_opening" attrs="{'invisible': [('is_dg_event', '!=', True)]}"/>
+                                <field name="is_closing" attrs="{'invisible': [('is_dg_event', '!=', True)]}"/>
+                                <field name="is_panel" attrs="{'invisible': [('is_dg_event', '!=', True)]}"/>
+                                <field name="deadline_delivery" attrs="{'invisible': [('is_dg_recorded', '!=', True)]}"/>
+                                <field name="duration_video" attrs="{'invisible': [('is_dg_recorded', '!=', True)]}"/>
+                                <field name="conference_link" attrs="{'invisible': [('is_dg_video', '!=', True)]}" widget="url"/>
+                                <field name="speech_topic"/>
+                                <field name="speech_points"/>
+                                <field name="speech_duration" widget="float_time" />
+                                <field name="date_speech"/>
+                            </group>
+                            <group string="Participation level required for DG participation" attrs="{'invisible': [('is_dg_participation_required', '=', False)]}">
+<!--                                <field name="participation_level" widget="radio" nolabel="1"/>-->
+<!--                                <field name="participation_level_required" attrs="{'required': [('participation_level', '=', False)]}" invisible="1"/>-->
+                                <field name="is_many_presidents" attrs="{'invisible': [('is_dg_participation_required', '!=', True)]}"/>
+                                <field name="is_one_president" attrs="{'invisible': [('is_dg_participation_required', '!=', True)]}"/>
+                                <field name="is_many_ministers" attrs="{'invisible': [('is_dg_participation_required', '!=', True)]}"/>
+                                <field name="is_one_minister" attrs="{'invisible': [('is_dg_participation_required', '!=', True)]}"/>
+                                <field name="is_professionals" attrs="{'invisible': [('is_dg_participation_required', '!=', True)]}"/>
+                            </group>
+                            <group string="The event will be in partnership with" attrs="{'invisible': [('is_dg_participation_required', '!=', True)]}">
+                                <group>
+                                    <field name="is_partnership_govenmental"/>
+                                    <field name="is_partnership_international"/>
+                                </group>
+                                <group>
+                                    <field name="is_partnership_nonorganization"/>
+                                    <field name="is_partnership_others"/>
+                                </group>
+                            </group>
+                            <group string="The state member engagement is:" attrs="{'invisible': [('is_dg_participation_required', '!=', True)]}">
+                                <field name="state_engagement" widget="radio" nolabel="1"/>
+                                <field name="state_engagement_required" attrs="{'required': [('state_engagement', '=', False)]}" invisible="1"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page name="finance" string="Financial coverage by Skateholders">
+                        <group col="3">
+                            <group string="Covergage for">
+                                <group>
+                                    <field name="is_coverage_airflight"/>
+                                    <field name="is_coverage_diem"/>
+                                </group>
+                                <group>
+                                    <field name="is_coverage_accomodation"/>
+                                    <field name="is_coverage_localtransport"/>
+                                </group>
+                                <group colspan="2">
+                                    <field name="coverage_persons" invisible="1"/>
+                                    <field name="coverage_persons_airflight" attrs="{'invisible': [('is_coverage_airflight', '!=', True)]}"/>
+                                    <field name="coverage_persons_por_diem" attrs="{'invisible': [('is_coverage_diem', '!=', True)]}"/>
+                                    <field name="coverage_persons_accomodation" attrs="{'invisible': [('is_coverage_accomodation', '!=', True)]}"/>
+                                    <field name="coverage_persons_local_transportation" attrs="{'invisible': [('is_coverage_localtransport', '!=', True)]}"/>
+                                </group>
+                            </group>
+                            <group string="Internal Support required">
+                                <group>
+                                    <field name="translation"/>
+                                    <field name="is_support_designing"/>
+                                </group>
+                                <group>
+                                    <field name="is_support_legal"/>
+                                    <field name="is_support_finance"/>
+                                </group>
+                                <group>
+                                    <field name="is_support_logistics"/>
+                                    <field name="is_support_protocol"/>
+                                </group>
+                                <group>
+                                    <field name="is_support_admin"/>
+                                    <field name="is_support_it"/>
+                                </group>
+                                <group>
+                                    <field name="is_support_media"/>
+                                    <field name="is_support_other"/>
+                                </group>
+                                <group colspan="2">
+                                    <field name="list_translation_service" attrs="{'invisible': [('translation', '=', False)]}"/>
+                                    <field name="list_designing_service" attrs="{'invisible': [('is_support_designing', '=', False)]}"/>
+                                    <field name="list_legal_service" attrs="{'invisible': [('is_support_legal', '=', False)]}"/>
+                                    <field name="list_finance_service" attrs="{'invisible': [('is_support_finance', '=', False)]}"/>
+                                    <field name="list_logistics_service" attrs="{'invisible': [('is_support_logistics', '=', False)]}"/>
+                                    <field name="list_admin_service" attrs="{'invisible': [('is_support_admin', '=', False)]}"/>
+                                    <field name="list_it_service" attrs="{'invisible': [('is_support_it', '=', False)]}"/>
+                                    <field name="list_media_service" attrs="{'invisible': [('is_support_media', '=', False)]}"/>
+                                    <field name="list_protocol_service" attrs="{'invisible': [('is_support_protocol', '=', False)]}"/>
+<!--                                    <field name="list_others_service" attrs="{'invisible': [('is_support_other', '=', False)]}"/>-->
+                                    <field name="services_other" attrs="{'invisible': [('is_support_other', '=', False)]}"/>
+                                    <field name="suppliers_for"/>
+                                    <field name="sponsors_for"/>
+                                </group>
+                            </group>
+                            <group string="The impact of this initiative on ICESCO">
+                                <group>
+                                    <field name="is_increase_competitiveness"/>
+                                    <field name="is_increase_fundraising"/>
+                                    <field name="is_increase_partnership"/>
+                                    <field name="is_increase_services"/>
+                                </group>
+                                <group attrs="{'invisible': [('is_increase_services', '=', False)]}">
+                                    <field name="is_increase_services_expertise"/>
+                                    <field name="is_increase_services_capacity"/>
+                                    <field name="is_increase_services_practice"/>
+                                    <field name="is_increase_services_collaboration"/>
+                                </group>
+                            </group>
+<!--                            <group string="The event will be in partnership with" options="{'horizontal': true}">-->
+<!--                                <group>-->
+<!--                                    <field name="is_partnership_govenmental"/>-->
+<!--                                    <field name="is_partnership_international"/>-->
+<!--                                </group>-->
+<!--                                <group>-->
+<!--                                    <field name="is_partnership_nonorganization"/>-->
+<!--                                    <field name="is_partnership_others"/>-->
+<!--                                </group>-->
+<!--                            </group>-->
+<!--                            <group string="State member engagement with ICESCO this year">-->
+<!--                                <field name="state_engagement" widget="radio" nolabel="1"/>-->
+<!--                            </group>-->
+                        </group>
+                    </page>
+                    <page name="attachment" string="Attachments">
+                        <group col="3">
+                            <group>
+                                <field name="attach_invitation_id" widget="many2many_binary" nolabel="1"/>
+                            </group>
+                            <group>
+                                <field name="attach_note_id" widget="many2many_binary" nolabel="1"/>
+                            </group>
+                            <group>
+                                <field name="attach_participants_id" widget="many2many_binary" nolabel="1"/>
+                            </group>
+                        </group>
+                    </page>
+
+                </xpath>
+
+            </field>
+        </record>
+
+  </data>
+</odoo>
+
+

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <report
+        id="print_pb_check_report_action"
+        model="account.payment"
+        string="Print Check"
+        report_type="qweb-pdf"
+        name="l10n_ma_bp_check_printing.check_pb_print_report"
+        file="l10n_ma_bp_check_printing.check_print_report"
+        paperformat="l10n_ma_bp_check_printing.paperformat_check_ma"
+        menu="False"
+        />
+    <template id="check_pb_print_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+
+                    <div class="page article">
+                        <div class="row">
+                        <div class="col-4 text-left">
+                           <br/><br/>
+                        </div>
+                        <div class="col-4 text-middle">
+                        </div>
+                        <div class="col-4 text-right">
+                             <span t-field="o.amount_add"/><br/>
+                        </div>
+                    </div><br/>
+                        <div class="row">
+                            <div class="col-3 text-left">
+                                <br/>
+                            </div>
+                            <div class="col-6 text-center">
+                                <span t-field="o.check_amount_in_words"/>
+                                <br/>
+                            </div>
+                            <div class="col-3 text-right">
+                                <br/>
+                            </div>
+                        </div>
+                        <div class="row" style="line-height:30px">
+                            <div class="col-2 text-left">
+                            </div>
+                            <div class="col-8 text-center">
+                                <br/>
+                                <span t-field="o.partner_id"/>
+                            </div>
+                            <div class="col-2 text-right">
+                            </div>
+                        </div>
+                        <div class="row" style="line-height:50px">
+                            <div class="col-4 text-left">
+                               <br/>
+                            </div>
+                            <div class="col-8 text-center">
+                                <div class="row">
+                                    <div class="col-4 text-center">
+
+                                </div>
+                                <div class="col-6 text-right">
+
+                                    <span t-esc="datetime.datetime.now().strftime('%d/%m/%Y')"/>
+                                </div>
+                                <div class="col-4 text-center">
+
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                              <br/>
+
+                            </div>
+                            <div class="col-8 text-left">
+                            </div>
+                        </div>
+
+                    </div>
+            </t>
+        </t>
+    </template>
+</odoo>

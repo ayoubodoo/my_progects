@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="stock.report_delivery_document">
+        <t t-call="web.html_container">
+            <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)"/>
+            <div class="footer text-center border-top border-dark" style="padding-top: 10px; font-size: 15px">
+                <div>Icesco:
+
+                    <span t-field="o.company_id.street"/>,
+                    <span t-field="o.company_id.city"/>
+                    <span t-field="o.company_id.country_id"/>,
+                     Contact :appro@icesco.org
+
+                </div>
+                <div t-if="report_type == 'pdf'" class="text-muted">
+                    Page:
+                    <span class="page"/>
+                    /
+                    <span class="topage"/>
+                </div>
+            </div>
+            <div class="header">
+
+                <div class="row">
+                    <div class="col-4 text-center" style="font-size: 13px;">
+                        <span>
+                            <strong>Islamic World Educational, Scientific</strong>
+                        </span>
+                        <br/>
+                        <span>
+                            <strong>and cultural Organization</strong>
+                        </span>
+                        <br/>
+                        <br/>
+                        <span>Directorate of Administrative Affairs</span>
+                        <br/>
+                    </div>
+                    <div class="col-4 text-center">
+                        <img src="/isesco_base/static/isesco.png"
+                             style="max-width:150px;max-height:150px;"
+                             class="center" alt="Logo"/>
+                        <br/>
+                        <br/>
+                        <div class="text-center" style="font-size: 14px;">
+                            <span>
+                                <strong>مديريةالشؤون الادارية</strong>
+                            </span>
+                            <br/>
+                            <span>
+                                <strong>قسم المخازن</strong>
+                            </span>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </div>
+
+                    </div>
+                    <div class="col-4 text-center"
+                         style="font-size: 13px;font-weight: bold;">
+                        <span>
+                            <strong>Organisation du monde Islamique pour</strong>
+                        </span>
+                        <br/>
+                        <span>
+                            <strong>L'Education,les Sciences et la Culture</strong>
+                        </span>
+                        <br/>
+                        <br/>
+                        <span>Direction des Affaires administratives</span>
+                        <br/>
+                    </div>
+                </div>
+
+            </div>
+            <div class="page article" style="font-size: 15px;">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <div class=" text-center">
+                    <div style="border: 1px solid;background-color:#b5e7a0;">
+                        <p class=" text-center">
+                            <b>
+                                <h5>BON DE LIVRAISON N° :&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                    <span t-field="o.name"/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                    : سند التسليم رقم
+
+                                </h5>
+                            </b>
+                        </p>
+                    </div>
+
+                </div>
+                <br/>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4 text-left">
+                            <p class="m-0">
+                                <strong>Direction / Division :</strong>
+                            </p>
+                        </div>
+                        <div class="col-4 text-center">
+                            <p t-field="o.partner_id" class="m-0"/>
+                        </div>
+                        <div t-if="o.scheduled_date" class="col-4 text-right">
+                            <p class="m-0">
+                                <strong>
+                                    القسم
+                                    /
+                                    المديرية
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div t-if="o.scheduled_date" class="col-4 text-left">
+                            <p class="m-0">
+                                <strong>Date de BL :</strong>
+                            </p>
+                        </div>
+                        <div t-if="o.scheduled_date" class="col-4 text-center">
+                            <p t-field="o.date_done" t-options='{"widget": "date"}'
+                               class="m-0"/>
+                        </div>
+                        <div t-if="o.scheduled_date" class="col-4 text-right">
+                            <p class="m-0">
+                                <strong>: تاريخ السند</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div t-if="o.scheduled_date" class="col-4">
+                            <p class="m-0">
+                                <strong>Bureau N° :</strong>
+                            </p>
+                        </div>
+                        <div class="col-4 text-center">
+                            <p t-field="o.partner_id.street" class="m-0"/>
+                        </div>
+                        <div t-if="o.scheduled_date" class="col-4 text-right">
+                            <p class="m-0">
+                                <strong>:
+                                    رقم
+                                    مكتب
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <table class="table table-sm o_main_table table-bordered text-center">
+                    <thead>
+                        <tr style="background-color:#b5e7a0;">
+                            <th name="th_n">
+                                <strong>Code Article&#160;&#160;&#160;&#160;القن
+                                </strong>
+                            </th>
+                            <th name="th_description">
+                                <strong>Désignation &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                    الاسم
+                                </strong>
+                            </th>
+                            <th name="th_quantity">
+                                <strong>Quantité &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                    الكمية
+                                </strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-set="lines"
+                           t-value="o.move_lines.filtered(lambda x: x.product_uom_qty)"/>
+                        <tr t-foreach="lines" t-as="move">
+                            <td>
+                                <span t-field="move.product_id.default_code"/>
+                            </td>
+                            <td>
+                                <span t-field="move.product_id"/>
+                                <p t-if="move.description_picking != move.product_id.description">
+                                    <span t-field="move.description_picking"/>
+                                </p>
+                            </td>
+                            <td>
+                                <span t-field="move.product_uom_qty"/>
+                                <span t-field="move.product_uom"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-sm o_main_table table-bordered">
+                    <thead>
+                        <tr style="background-color:#b5e7a0;">
+                            <th>
+                                <br/>
+                            </th>
+                            <th>
+                                <br/>
+                            </th>
+                            <th>
+                                <br/>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+                <br/>
+                <table class="table table-sm o_main_table table-bordered text-center"
+                       style="font-size: 13px;">
+                    <thead>
+                        <tr style="width: 80px;">
+                            <th style="width: 80px;">
+                                <span>توقيع المتلقي</span>
+                                <br/>
+                                <span>Signature du réceptionnaire</span>
+                            </th>
+                            <th style="width: 80px;">
+                                <span>إسم المتلقي</span>
+                                <br/>
+                                <span>Nom du réceptionnaire</span>
+                            </th>
+                            <th style="width: 80px;">
+                                <span>تاريخ التسليم</span>
+                                <br/>
+                                <span>Date Livraison</span>
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <br/>
+                                <br/>
+                                <br/>
+                            </td>
+                            <td>
+                                <br/>
+                                <br/>
+                                <br/>
+                            </td>
+                            <td>
+                                <br/>
+                                <br/>
+                                <br/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="footer text-center"
+                     style="padding-top: 10px; font-size: 15px">
+                    <div t-if="report_type == 'pdf'" class="text-muted">
+                        Page:
+                        <span class="page"/>
+                        /
+                        <span class="topage"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
+

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="main_icesco_project_strategies_menu"
+              name="نظام إدارة الأداء الإستراتيجي للإيسيسكو"
+              sequence="1" web_icon="dh_icesco_project,static/description/icon.jpg" groups="dh_icesco_project.suivi_performance"
+    />
+
+    <menuitem id="icesco_general_menu" name="الصفحة الرئيسية"
+              parent="main_icesco_project_strategies_menu" sequence="0"  action="action_dh_icesco_plan_strategies"/>
+    <menuitem id="icesco_general1_menuu" name="الأداء الإستراتيجي"
+             parent="main_icesco_project_strategies_menu" sequence="1"/>
+    <menuitem id="parent_general_test_menuu" name="تفاصيل الأداء الإستراتيجي" parent="icesco_general1_menuu" sequence="1" groups="dh_icesco_project.icesco_optional_menus_access"/>
+     <menuitem id="parent_test22_menuu" name="test" parent="parent_general_test_menuu"  action="action_dh_perf_operation" sequence="1" groups="dh_icesco_project.icesco_menus" />
+
+<!--    <menuitem id="icesco_general11_menu" name="الأداء الإستراتيجي"-->
+<!--             action="dh_action_contacts" parent="icesco_general1_menu" sequence="1"/>-->
+<!--    <menuitem id="icesco_general11_menu" name="الأداء الإستراتيجي"-->
+<!--              action="dh_action_contacts" parent="icesco_general1_menu" sequence="1"/>-->
+
+     <menuitem id="icesco_performance_operational_menu" name="الأداء التشغيلي"
+              parent="main_icesco_project_strategies_menu" sequence="3"/>
+
+    <menuitem id="icesco_performance_finance_menuu" name="الأداء المالي"
+              parent="main_icesco_project_strategies_menu" sequence="4"/>
+    <menuitem id="icesco_performance_finance_menuu1" name="تفاصيل الأداء المالي" groups="dh_icesco_project.icesco_optional_menus_access"
+              parent="icesco_performance_finance_menuu" sequence="2"/>
+
+    <menuitem id="icesco_performance_finance_menu_test1" name="test1"
+              action="action_dh_perf_operation" parent="icesco_performance_finance_menuu1" sequence="1" groups="dh_icesco_project.icesco_menus"/>
+
+    <menuitem id="icesco_partenariats_menuu" name="الشراكات الدولية"
+              parent="main_icesco_project_strategies_menu" sequence="5"/>
+    <menuitem id="icesco_partenariats_menuu1" name="تفاصيل الشراكات الدولية" groups="dh_icesco_project.icesco_optional_menus_access"
+              parent="icesco_partenariats_menuu" sequence="2"/>
+
+    <menuitem id="icesco_partenariats_menu_test1" name="testpart"
+              action="action_dh_perf_operation" parent="icesco_partenariats_menuu1" sequence="1" groups="dh_icesco_project.icesco_menus"/>
+
+    <menuitem id="icesco_member_states_main__menu" name=" الدول الأعضاء"
+              parent="main_icesco_project_strategies_menu" sequence="6"/>
+
+<!--    <menuitem id="icesco_member_states_menu" name=" الدول الأعضاء"-->
+<!--              action="dh_action_contacts" parent="icesco_member_states_main__menu" sequence="1"/>-->
+
+
+<!--    <menuitem id="icesco_contribution_member_states_menu" name="Contribution of member states"-->
+<!--              action="dh_action_contacts" parent="icesco_member_states_main__menu" sequence="2"/>-->
+
+    <menuitem id="icesco_reports_menu" name="التقارير" groups="dh_icesco_project.icesco_menus"
+              parent="main_icesco_project_strategies_menu" sequence="9"/>
+
+    <menuitem id="icesco_member_states2_menu" name=" الدول الأعضاء"
+              action="dh_action_contacts" parent="icesco_reports_menu" sequence="7"/>
+
+<!--    <menuitem id="dh_icesco_plan_strategies_menu" name="الخطة الإستراتيجية" parent="icesco_general_menu"-->
+<!--              action="action_dh_icesco_plan_strategies"/>-->
+
+<!--    <menuitem id="dh_icesco_goal_strategies_menu" name="الأهداف الاستراتيجية" parent="icesco_general_menu"-->
+<!--              action="action_dh_icesco_goal_strategies"/>-->
+
+    <menuitem id="dh_agreements_international_menu" name="قائمة الاتفاقات الدولية" parent="icesco_general_menu"
+              action="action_dh_agreements_international" sequence="20" groups="dh_icesco_project.icesco_optional_menus_access"/>
+
+<!--    <menuitem id="dh_agreement_type_menu" name="أنواع الاتفاقات الدولية" parent="icesco_general_menu"-->
+<!--              action="action_dh_agreement_type" sequence="25"/>-->
+
+<!--    <menuitem id="dh_agreement_category_menu" name=""فئات الاتفاقات الدولية" parent="icesco_general_menu"-->
+<!--              action="action_dh_agreement_category" sequence="25"/>-->
+
+<!--    <menuitem id="icesco_operational_plan_menu" name="الخطة التشغيلية"-->
+<!--              parent="main_icesco_project_strategies_menu" sequence="3"/>-->
+
+    <menuitem id="parent_dh_icesco_perf_operational_plan_menu" name="تفاصيل الخطة التشغيلية العامة" parent="icesco_performance_operational_menu" sequence="1" groups="dh_icesco_project.icesco_optional_menus_access"/>
+
+    <menuitem id="dh_icesco_perf_operational_plan_menu" name="الخطة التشغيلية العامة" parent="parent_dh_icesco_perf_operational_plan_menu"
+              action="action_dh_icesco_perf_project_task" sequence="1" groups="dh_icesco_project.icesco_optional_menus_access"/>
+
+    <menuitem id="parent_dh_icesco_perf_goals_project_task_menu" name="الأهداف / المحاور / المشاريع" parent="icesco_performance_operational_menu" sequence="2" groups="dh_icesco_project.icesco_optional_menus_access"/>
+
+    <menuitem id="dh_icesco_perf_sector_menu" name="القطاعات" parent="icesco_reports_menu"
+              action="action_dh_icesco_sector" sequence="6" groups="dh_icesco_project.icesco_optional_menus_access"/>
+
+    <menuitem id="dh_icesco_perf_goals_menu" name="الأهداف" parent="parent_dh_icesco_perf_goals_project_task_menu"
+              action="action_dh_icesco_goals" sequence="2" groups="dh_icesco_project.icesco_optional_menus_access"/>
+
+<!--    <menuitem id="dh_icesco_perf_project_menu" name="المشاريع" parent="parent_dh_icesco_perf_goals_project_task_menu"-->
+<!--              action="action_dh_project_project" sequence="3"/>-->
+
+    <menuitem id="dh_icesco_perf_project_task_menu" name="المشاريع" parent="parent_dh_icesco_perf_goals_project_task_menu"
+              action="action_dh_project_project" sequence="4" groups="dh_icesco_project.icesco_optional_menus_access"/>
+
+    <menuitem id="parent_dh_perf_operation_menu" name="تفاصيل العمليات" parent="icesco_performance_operational_menu" sequence="6" groups="dh_icesco_project.icesco_optional_menus_access"/>
+
+    <menuitem id="dh_perf_operation_menu" name="العمليات" parent="parent_dh_perf_operation_menu"
+              action="action_dh_perf_operation" sequence="6" />
+    <menuitem id="parent_test_menuu" name="تفاصيل الأداء التشغيلي" parent="icesco_performance_operational_menu" sequence="2" groups="dh_icesco_project.icesco_optional_menus_access"/>
+
+    <menuitem id="dh_perf_operation_menuu" name="test" parent="parent_test_menuu"
+                  action="action_dh_perf_operation" sequence="1" groups="dh_icesco_project.icesco_menus"/>
+
+
+
+<!--    <menuitem id="dh_icesco_operational_plan_menu" name="الخطة التشغيلية العامة" parent="icesco_operational_plan_menu"-->
+<!--              action="action_dh_icesco_operational_plan" sequence="1"/>-->
+
+
+<!--    <menuitem id="dh_icesco_operational_indicators_all_menu" name="المؤشرات" parent="icesco_operational_plan_menu"-->
+<!--              action="action_dh_icesco_operational_indicators_all" sequence="2"/>-->
+
+<!--    <menuitem id="dh_icesco_operational_plan_project_menu" name="المبادرات" parent="icesco_operational_plan_menu" sequence="3"/>-->
+
+<!--    <menuitem id="dh_icesco_operational_plan_sub_operations_menu" name="العمليات" parent="dh_icesco_operational_plan_project_menu"-->
+<!--              action="action_dh_icesco_operational_indicators_sub_operations" sequence="4"/>-->
+
+<!--    <menuitem id="dh_icesco_operational_plan_activity_menu" name="الأنشطة" parent="dh_icesco_operational_plan_project_menu"-->
+<!--              action="action_dh_icesco_operational_indicators_activity" sequence="5"/>-->
+
+<!--    <menuitem id="dh_icesco_operational_plan_service_menu" name="الخدمات" parent="dh_icesco_operational_plan_project_menu"-->
+<!--              action="action_dh_icesco_operational_indicators_service" sequence="6"/>-->
+
+<!--    <menuitem id="dh_icesco_operational_plan_process_menu" name="العمليات" parent="icesco_operational_plan_menu" sequence="7"/>-->
+
+<!--    <menuitem id="dh_icesco_operational_plan_sub_process_menu" name="العمليات" parent="dh_icesco_operational_plan_process_menu"-->
+<!--              action="action_dh_icesco_operational_indicators_process" sequence="8"/>-->
+
+
+
+<!--    <menuitem id="dh_icesco_operational_strategies_menu" name="الأداء التشغيلي العام" parent="icesco_performance_operational_menu"-->
+<!--              action="action_dh_icesco_performance_strategies"/>-->
+
+    <menuitem id="cps_dh_icesco_perf_goals_menu" name="الأهداف" parent="project.menu_main_pm"
+              action="action_dh_icesco_goals" sequence="2"/>
+
+    <menuitem id="icesco_performance_strategies_menu" name="المؤشرات"
+              parent="project.menu_main_pm" sequence="7"/>
+
+    <menuitem id="dh_icesco_performance_strategies_menu" name="المؤشرات الإستراتيجية" parent="icesco_performance_strategies_menu"
+              action="cps_action_dh_icesco_capacity_operational_plan"/>
+
+    <menuitem id="cps_dh_icesco_performance_operationals_menu" name="المؤشرات التشغيلية" parent="icesco_performance_strategies_menu"
+        action="action_cps_dh_icesco_capacity_operational_indicators"/>
+
+<!--    <menuitem id="icesco_performance_analysis_menu" name="تحليل الأداء"-->
+<!--              parent="main_icesco_project_strategies_menu" sequence="5" action="action_dh_icesco_performance_analysis"/>-->
+    <menuitem id="parent_action_dh_mission_menu" name="Missions"
+              parent="main_icesco_project_strategies_menu" sequence="7"/>
+    <menuitem id="parent_action_dh_mission_donnees_menu" name="تفاصيل بيانات المهام"
+              parent="parent_action_dh_mission_menu" sequence="1" groups="dh_icesco_project.icesco_optional_menus_access"/>
+     <menuitem id="parent_action_dh_mission_donnees_menu_test" name="test" parent="parent_action_dh_mission_donnees_menu"
+                  action="action_dh_perf_operation" sequence="1" groups="dh_icesco_project.icesco_menus"/>
+
+    <menuitem id="dh_icesco_dh_mission_menu1" name="Missions" parent="icesco_reports_menu"
+              action="dh_mission_task_all" sequence="10"/>
+    <menuitem id="dh_icesco_dh_mission_menu" name="Missions" parent="parent_action_dh_mission_menu"
+              action="dh_mission_task_all" sequence="2" groups="dh_icesco_project.icesco_optional_menus_access"/>
+<!--              action="action_dh_mission" sequence="1"/>-->
+
+<!--    <menuitem id="dh_icesco_dh_experts_menu" name="الخبراء" parent="parent_action_dh_mission_menu"-->
+<!--              action="action_employee_kanban" sequence="12"/>-->
+
+    <menuitem id="dh_icesco_capacity_operational_plan_menu" name="المؤشرات الإستراتيجية" parent="icesco_reports_menu"
+             sequence="1" action="action_dh_icesco_capacity_operational_plan"/>
+
+    <menuitem id="dh_icesco_capacity_operational_indicators_menu" name="المؤشرات التشغيلية" parent="icesco_reports_menu"
+               sequence="2" action="action_dh_icesco_capacity_operational_indicators"/>
+
+    <menuitem id="dh_icesco_operational_plan_kanban_project_menu" name="المشاريع (المنجزة، قيد التنفيذ، المتأخرة)" parent="icesco_reports_menu"
+           sequence="3" action="action_dh_icesco_operational_plan_kanban_project"/>
+
+    <menuitem id="dh_icesco_operational_plan_kanban_project_done_menu" name="المشاريع المنجزة" parent="icesco_reports_menu"
+           sequence="3"   action="action_dh_icesco_operational_plan_kanban_project_done" groups="dh_icesco_project.icesco_optional_menus_access"/>
+
+    <menuitem id="dh_icesco_operational_plan_kanban_project_progress_menu" name="المشاريع قيد التنفيذ" parent="icesco_reports_menu"
+             sequence="4" action="action_dh_icesco_operational_plan_kanban_project_progress" groups="dh_icesco_project.icesco_optional_menus_access"/>
+
+    <menuitem id="dh_icesco_operational_plan_kanban_project_late_menu" name="المشاريع المتأخرة" parent="icesco_reports_menu"
+             sequence="5"  action="action_dh_icesco_operational_plan_kanban_project_late" groups="dh_icesco_project.icesco_optional_menus_access"/>
+
+<!--    <menuitem id="dh_icesco_capacity_operational_plan_processes_menu" name="تقرير عن العمليات" parent="icesco_reports_menu"-->
+<!--              action="action_dh_icesco_capacity_operational_plan_processes"/>-->
+
+<!--    <menuitem id="dh_icesco_capacity_operational_plan_services_menu" name="تقرير عن الخدمات" parent="icesco_reports_menu"-->
+<!--              action="action_dh_icesco_capacity_operational_plan_services"/>-->
+
+<!--    <menuitem id="dh_icesco_capacity_operational_plan_projects_menu" name="تقرير عن المشاريع المقدمة داخل الدول الأعضاء" parent="icesco_reports_menu"-->
+<!--              action="action_dh_icesco_capacity_operational_plan_projects"/>-->
+
+    <menuitem id="icesco_offices_menu" name="المندوبيات"
+              parent="main_icesco_project_strategies_menu" sequence="8"/>
+
+    <menuitem id="dh_icesco_office_delegate_menu" name="المندوبيات/المكاتب الإقليمية/المراكز الخارجية" parent="icesco_offices_menu"
+              action="action_dh_icesco_office_delegate"/>
+
+<!--    <menuitem id="dh_icesco_office_regional_office_menu" name="المكاتب الإقليمية" parent="icesco_offices_menu"-->
+<!--              action="action_dh_icesco_office_regional_office"/>-->
+
+    <menuitem id="icesco_informations_menu" name="حول نظام إدارة الأداء"
+              parent="main_icesco_project_strategies_menu" sequence="11"/>
+
+    <menuitem id="dh_icesco_informations_informations_menu" name="نظام إدارة الأداء الإستراتيجي للإيسيسكو" parent="icesco_informations_menu"
+              action="action_dh_icesco_informations_informations"/>
+
+<!--    <menuitem id="dh_icesco_informations_questions_menu" name="الأسئلة الشائعة" parent="icesco_informations_menu"-->
+<!--              action="action_dh_icesco_informations_questions"/>-->
+
+    <record id="dh_action_discuss" model="ir.actions.client">
+            <field name="name">Discuss</field>
+            <field name="tag">mail.discuss</field>
+            <field name="res_model">mail.channel</field>
+            <field name="params" eval="&quot;{
+                'default_active_id': 1
+            }&quot;"/>
+        </record>
+
+    <menuitem
+        id="dh_menu_discuss"
+        name="تواصل معنا"
+        action="dh_action_discuss"
+        parent="icesco_informations_menu"/>
+
+<!--    <menuitem id="icesco_duties_all_sectors_menu" name="المهام الموكلة لكافة القطاعات"-->
+<!--              parent="main_icesco_project_strategies_menu" sequence="8"/>-->
+
+<!--    <menuitem id="dh_icesco_performance_strategies_all_experts_menu" name="المهام الموكلة لكافة الخبراء" parent="icesco_duties_all_sectors_menu"-->
+<!--              action="action_dh_icesco_performance_strategies_all_experts"/>-->
+
+
+
+</odoo>

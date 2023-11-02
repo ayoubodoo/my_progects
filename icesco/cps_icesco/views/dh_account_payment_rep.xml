@@ -1,0 +1,92 @@
+<odoo>
+
+
+    <record id="dh_res_bank_form_view_inherit" model="ir.ui.view">
+        <field name="name">base.view_res_bank_form.form.inherit</field>
+        <field name="model">res.bank</field>
+        <field name="inherit_id" ref="base.view_res_bank_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='bic']" position="after">
+                <field name="acn"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="dh_account_payment_form_view_inherit" model="ir.ui.view">
+        <field name="name">account.payment.form.inherit</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='destination_journal_id']" position="replace">
+                                <field name="destination_journal_id" widget="selection" attrs="{'required': [('payment_type', '=', 'transfer')], 'invisible': [('payment_type', 'not in', ('transfer','virements_compte_compte'))]}"/>
+
+            </xpath>
+
+            <xpath expr="//field[@name='payment_method_id']" position="replace">
+                                                <field name="payment_method_id" widget="radio" attrs="{'invisible': [('hide_payment_method', '=', True)]}"/>
+
+            </xpath>
+
+            <xpath expr="//field[@name='partner_type']" position="replace">
+                <field name="partner_type" widget="selection"
+                       attrs="{'required': [('state', '=', 'draft'), ('payment_type', 'in', ('inbound', 'outbound'))], 'invisible': [('payment_type', 'not in', ('inbound', 'outbound','virement_internationaux'))]}"/>
+
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="replace">
+
+                <field name="partner_id"
+                       attrs="{'required': [('state', '=', 'draft'), ('payment_type', 'in', ('inbound', 'outbound'))], 'invisible': [('payment_type', 'not in', ('inbound', 'outbound','virement_internationaux'))]}"
+                       context="{'default_is_company': True}"/>
+
+            </xpath>
+
+
+            <xpath expr="//field[@name='communication']" position="after">
+                <field name="amount_to_text" invisible="1"/>
+                <field name="details" attrs="{'invisible': [('payment_type', '!=', 'virement_internationaux')]}"/>
+
+            </xpath>
+
+            <xpath expr="//field[@name='payment_method_id']" position="after">
+                <field name="bank_intermidiaire" attrs="{'invisible': [('payment_type', '!=', 'virement_internationaux')]}"/>
+
+            </xpath> <xpath expr="//field[@name='payment_date']" position="after">
+                <field name="mise_desposition" attrs="{'invisible': [('payment_type', '!=', 'virement_salaires')]}"/>
+                <field name="amount_mise_desposition" attrs="{'invisible': [('mise_desposition', '!=', True)]}"/>
+
+            </xpath>
+
+            <xpath expr="//field[@name='communication']" position="after">
+                <field name="is_signature_controlleur_financiere" invisible="1"/>
+                <field name="is_signature_supperviseur_affairs_financiere" invisible="1"/>
+                <field name="is_signature_dg" invisible="1"/>
+                <field name="is_signature_dg_adjoint" invisible="1"/>
+                <field name="is_signature_caissier" invisible="1"/>
+                <field name="is_signature_benefciaire" invisible="1"/>
+                <field name="is_signature_res_financier" invisible="1"/>
+                <field name="type" invisible="0"/>
+
+                <field name="senario" invisible="0"/>
+                <field name="signature_supperviseur_affairs_financiere" widget="signature" invisible="1"/>
+                <field name="signature_controlleur_financiere" widget="signature" invisible="1"/>
+                <field name="signature_res_financier" widget="signature" invisible="1"/>
+
+
+                <field name="signature_dg" widget="signature" invisible="1"/>
+                <field name="signature_dg_adjoint" widget="signature" invisible="1"/>
+                <field name="signature_caissier" widget="signature" invisible="1"/>
+
+                <field name="signature_benefciaire" widget="signature" invisible="1"/>
+
+
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <button name="%(cps_icesco.action_payemnt_wizard)d" class="oe_highlight" string="Print Repports"
+                        context="{'default_type': type,'default_senario': senario,'default_is_signature_dg':is_signature_dg,'default_is_signature_dg_adjoint':is_signature_dg_adjoint,'default_is_signature_caissier':is_signature_caissier,'default_is_signature_benefciaire':is_signature_benefciaire ,'default_is_signature_controlleur_financiere':is_signature_controlleur_financiere,'default_is_signature_supperviseur_affairs_financiere':is_signature_supperviseur_affairs_financiere,'default_is_signature_res_financier':is_signature_res_financier }"
+                        type="action"/>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>

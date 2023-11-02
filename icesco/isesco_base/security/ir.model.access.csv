@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stock_situation_manager,stock.situation,model_stock_situation,,1,1,1,1
+access_account_move_wizard,account.move.wizard,isesco_base.model_account_move_wizard,,1,1,1,1
+access_account_asset_wizard,account.asset.wizard,isesco_base.model_account_asset_wizard,,1,1,1,1

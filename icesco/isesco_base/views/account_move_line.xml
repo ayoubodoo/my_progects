@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_move_line_tree_inherit" model="ir.ui.view">
+        <field name="name">account.move.line.tree.inherit</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_tree"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='credit']" position="after">
+                    <field name="taux"/>
+                    <field name="move_asset_id" invisible="1"/>
+                    <field name="currency_usd_id" invisible="1"/>
+                    <field name="total" widget="monetary" options="{'currency_field': 'currency_usd_id'}"/>
+                </xpath>
+                <xpath expr="//field[@name='parent_state']" position="after">
+                    <field name="validation" invisible="0"/>
+<!--                    <field name="show_validation1" invisible="0"/>-->
+<!--                    <field name="show_validation2" invisible="0"/>-->
+                    <button name="validate1" string="Validation 1" type="object"
+                            groups="isesco_base.icesco_validation_account_move_line_validate_1"
+                               class="oe_highlight" attrs="{'invisible': ['|',('parent_state', '!=', 'posted'),('validation','!=','none')]}"/>
+                    <button name="validate2" string="Validation 2" type="object"
+                            groups="isesco_base.icesco_validation_account_move_line_validate_2"
+                               class="oe_highlight" attrs="{'invisible': ['|',('parent_state', '!=', 'posted'),('validation','!=','validation1')]}"/>
+                </xpath>
+           </data>
+        </field>
+    </record>
+
+        <record id="account_move_line_form_inherit" model="ir.ui.view">
+        <field name="name">account.move.line.form.inherit</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='credit']" position="after">
+                    <field name="taux"/>
+                    <field name="currency_usd_id" invisible="1"/>
+                    <field name="total" widget="monetary" options="{'currency_field': 'currency_usd_id'}"/>
+                </xpath>
+           </data>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,3554 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* icesco_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-21 12:21+0000\n"
+"PO-Revision-Date: 2023-06-21 12:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid ""
+"1. National commission\n"
+"                                    secretary general"
+msgstr ""
+"2. أمين عام \n"
+"                                    اللجنة الوطنية"
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid ""
+"3. National\n"
+"                                        Commission Team"
+msgstr ""
+"3. فريق اللجنة\n"
+"                                        الوطنية"
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_appraisal_page
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_event_page
+msgid "<small class=\"text-right\">State:</small>"
+msgstr "<small class=\"text-right\">حالة:</small>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid ""
+"<span class=\"font-weight-bold d-flex\">\n"
+"                                                                Supporting documents\n"
+"                                                            </span>\n"
+"                                                            <br/>"
+msgstr ""
+"<span class=\"font-weight-bold d-flex\">\n"
+"                                                                الوثائق الداعمة\n"
+"                                                            </span>\n"
+"                                                            <br/>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid ""
+"<span class=\"font-weight-bold d-flex\">\n"
+"                                                Budget Required ?\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                الميزانية المطلوبة؟\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid ""
+"<span class=\"font-weight-bold d-flex\">\n"
+"                                                Moves\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold d-flex\">\n"
+"                                                الإنتقالات\n"
+"                                            </span>"
+
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid ""
+"<span class=\"font-weight-bold d-flex\">\n"
+"                                                Number of stays\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold d-flex\">\n"
+"                                                عدد الإقامات\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold text-center\">\n"
+"                                                In Person\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold text-center\">\n"
+"                                                شخصيا\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold text-center\">\n"
+"                                                Virtual Paricipation\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold text-center\">\n"
+"                                               المشاركة الافتراضية\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.tasks_kanban_select
+msgid ""
+"<span class=\"font-weight-bold\" style=\"font-size: 22px;color:white!important;\">\n"
+"                                                    اقتراح مبادرة أو نشاط\n"
+"                                                  </span>"
+msgstr ""
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.tasks_kanban_select
+msgid ""
+"<span class=\"font-weight-bold\" style=\"font-size: 22px;color:white!important;\">\n"
+"                                                    المشاركة أو استضافة مبادرة أو نشاط\n"
+"                                                  </span>"
+msgstr ""
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    Attendees / Participants\n"
+"                                                    <i class=\"fa fa-upload\"/>\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                   الحضور / المشاركون\n"
+"                                                    <i class=\"fa fa-upload\"/>\n"
+"                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    DG Speech information:\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    معلومات خطاب المدير عام DG::\n"
+"                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    DG participation\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                   مشاركة المدير العام\n"
+"                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    Event / project Concept Note\n"
+"                                                    <i class=\"fa fa-upload\"/>\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                  مذكرة الحدث / المشروع\n"
+"                                                    <i class=\"fa fa-upload\"/>\n"
+"                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    Implementation location\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                   موقع التنفيذ\n"
+"                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    Invitation\n"
+"                                                    <i class=\"fa fa-upload\"/>\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    الدعوة\n"
+"                                                    <i class=\"fa fa-upload\"/>\n"
+"                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    Main Points\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                   النقاط الرئيسية\n"
+"                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    Participation level required for DG participation\n"
+"\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    مستوى المشاركة المطلوب لمشاركة المديرية العامة\n"
+"\n"
+"                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    Speech Duration (min)\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    مدة الخطاب (دقائق)\n"
+"                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    Speech date *\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                   تاريخ الخطاب *\n"
+"                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    Speech topic\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                  موضوع الخطاب\n"
+"                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    State member engagement with ICESCO this year\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                   مشاركة الدول الأعضاء مع الإيسيسكو هذا العام\n"
+"                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    The Initiative is\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    المبادرة\n"
+"                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    The event will be in partnership with\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    الحدث سيكون بالشراكة مع\n"
+"                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    The frequency of this initiative\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                    وتيرة هذه المبادرة\n"
+"                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                A+: Two or more Presidents\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                              A+:   رئيسان أو أكثر\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                A: Governmental organization\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                A: منظمة حكومية\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                A: Governmental organizations\n"
+"                                            </span>"
+msgstr ""
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                A: One President\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                A:رئيس واحد\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                AL Organizations\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                               منظمات AL\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                AU Organizations\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                            منظمات الاتحاد الأفريقي  \n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Accommodations\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                أماكن الإقامة\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Airflight\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                رحلة جوية\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Attach CVs\n"
+"                                                <i class=\"fa fa-upload\"/>\n"
+"                                            </span>"
+msgstr ""
+"                                               إرفاق السير الذاتية\n"
+"                                                <i class=\"fa fa-upload\"/>\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Attendees / Participants\n"
+"                                                <i class=\"fa fa-upload\"/>\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                الحضور / المشاركون\n"
+"                                                <i class=\"fa fa-upload\"/>\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                B+: Prime Minister or over Two ministers\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                B+:رئيس مجلس الوزراء أو أكثر من وزيرين\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                B: International Organization\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                B: منظمة عالمية\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                B: International Organizations\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                B: منظمة عالمية\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                B: One Minister\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                B: وزير واحد\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                C: Non-Governmental Organization\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                C: منظمة غير حكومية\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                C: Non-Governmental Organizations\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                C: منظمات غير حكومية\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                C: Professionals\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                C: المهنيين\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Capacity building\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                               قدرة البناء\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                City\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                المدينة\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Closing\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                إغلاق\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Country\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                الدولة\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Create Event ?\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                               انشاء حدث ؟\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                D: Others Organization\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                D: منظمات أخرى\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                D: Others Organizations\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                D: منظمات أخرى\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                DG Approval\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                موافقة المديرية العامة\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                DG Participation required ?\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                               هل مشاركة المديرية العامة مطلوبة؟\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                DG participation\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                               مشاركة المديرية العامة\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Designing &amp; printing\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                تصميم &amp; طباعة\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                End date\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                تاريخ الانتهاء\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Enhance mutual collaboration\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                تعزيز التعاون المتبادل\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Estimated Budget\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                الميزانية التقديرية\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Event\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                حدث\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Event\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                حدث\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Event Concept Note\n"
+"                                                <i class=\"fa fa-upload\"/>\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                مذكرة الحدث\n"
+"                                                <i class=\"fa fa-upload\"/>\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Finance\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                تمويل\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Hire External Expert\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                تعيين خبير خارجي\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                IT\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                تكنولوجيا المعلومات\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Increase ICESCO competitiveness\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                               زيادة تنافسية الإيسيسكو\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Initiate new partnership\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                               بدء شراكة جديدة\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Invitation\n"
+"                                                <i class=\"fa fa-upload\"/>\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                الدعوة\n"
+"                                                <i class=\"fa fa-upload\"/>\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Is Sponsorship Available ?\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                هل الرعاية متاحة؟\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Legal\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                قانوني\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                List of Member States\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                قائمة الدول الأعضاء\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                List of Non-Member States\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                               قائمة الدول غير الأعضاء\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Local Transportation\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                نقل محلي\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Logistics\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                الخدمات اللوجستية\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Media\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                وسائط\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                OIC Organizations\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                               منظمات منظمة التعاون الإسلاميs\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Opening\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                افتتاح\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Other (specify)\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                               أخرى (حدد)\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Panel\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                لوحة\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Per Diem\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                كل يوم\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Procurement\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                شراء\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Protocol\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                بروتوكول\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Provide Services for a State Member\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                               تقديم خدمات لدولة عضو\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Provide technical expertise / consultations\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                تقديم الخبرة / الاستشارات الفنية\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Receive fundraising/sponsorship\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                               الحصول على تمويل / رعاية\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Recorded Video\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                فيديو مسجل\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Recorded video\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                               فيديو مسجل\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Remarks\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                ملاحظات\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Room\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                غرفة\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Sector/Department participation\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                               مشاركة القطاع / القسم\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Sharing a best practice\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                تبادل أفضل الممارسات\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Start date\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                               تاريخ البدء\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                The event will be in partnership with\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                الحدث سيكون بالشراكة مع\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Translation\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                ترجمة\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                UN Organizations\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                منظمات الأمم المتحدة\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Video Conference\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                مؤتمر عبر الفيديو\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Video conference\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                مؤتمر عبر الفيديو\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Visit\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                زيارة\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                Visit\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                زيارة\n"
+"                                            </span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                                location\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                                الموقع\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                            Event is attended by:\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                            الحدث بحضور:\n"
+"                                        </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                            Implementation location\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                            موقع التنفيذ\n"
+"                                        </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                            Information required for DG participation:\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                            المعلومات المطلوبة لمشاركة المديرية العامة:\n"
+"                                        </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                            The Initiative is\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                            المبادرة\n"
+"                                        </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                            The frequency of this initiative\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                            وتيرة هذه المبادرة\n"
+"                                        </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                            The initiative needs\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                       متطلبات المبادرة\n"
+"                                        </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">\n"
+"                                            The state member engagement is:\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">\n"
+"                                           مشاركة الدولة العضو هي:\n"
+"                                        </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid "<span class=\"font-weight-bold\">Activity Type</span>"
+msgstr "<span class=\"font-weight-bold\">نوع النشاط</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid "<span class=\"font-weight-bold\">Activity purpose</span>"
+msgstr "<span class=\"font-weight-bold\">الهدف من النشاط</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid "<span class=\"font-weight-bold\">Activity scope</span>"
+msgstr "<span class=\"font-weight-bold\">نطاق النشاط</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid "<span class=\"font-weight-bold\">Activity title</span>"
+msgstr "<span class=\"font-weight-bold\">عنوان النشاط</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid "<span class=\"font-weight-bold\">Amount in USD</span>"
+msgstr "<span class=\"font-weight-bold\">المبلغ بالدولار الأمريكي</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid "<span class=\"font-weight-bold\">City</span>"
+msgstr "<span class=\"font-weight-bold\">المدينة</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "<span class=\"font-weight-bold\">Contact to Commission</span>"
+msgstr "<span class=\"font-weight-bold\">التواصل مع اللجان الوطنية الأخرى</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "<span class=\"font-weight-bold\">Contact to Department</span>"
+msgstr "<span class=\"font-weight-bold\">التواصل مع القسم</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "<span class=\"font-weight-bold\">Copy also to</span>"
+msgstr "<span class=\"font-weight-bold\">..نسخة أيضا إلى</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "<span class=\"font-weight-bold\">Copy to</span>"
+msgstr "<span class=\"font-weight-bold\">نسخة الى</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "<span class=\"font-weight-bold\">Coverage for</span>"
+msgstr "<span class=\"font-weight-bold\">تغطية ل</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">Event Stakeholders</span>"
+msgstr "<span class=\"font-weight-bold\">أصحاب الحدث</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">Event title</span>"
+msgstr "<span class=\"font-weight-bold\">عنوان الحدث</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+msgid "<span class=\"font-weight-bold\">Goal</span>"
+msgstr "<span class=\"font-weight-bold\">الهدف</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.project_add
+msgid "<span class=\"font-weight-bold\">Goals</span>"
+msgstr "<span class=\"font-weight-bold\">الأهداف</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid "<span class=\"font-weight-bold\">Hosting place</span>"
+msgstr "<span class=\"font-weight-bold\">مكان الإستضافة</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "<span class=\"font-weight-bold\">Internal Support required</span>"
+msgstr "<span class=\"font-weight-bold\">مطلوب دعم داخلي</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">Internal support required from</span>"
+msgstr "<span class=\"font-weight-bold\">الدعم الداخلي المطلوب من</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid ""
+"<span class=\"font-weight-bold\">Is Sponsorship Available ?</span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+msgstr ""
+"<span class=\"font-weight-bold\">توفر الرعاية ؟</span>\n"
+"                                            &amp;nbsp;&amp;nbsp;"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">List of AL Organizations</span>"
+msgstr "<span class=\"font-weight-bold\">قائمة المنظمات AL</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">List of AU Organizations</span>"
+msgstr "<span class=\"font-weight-bold\">قائمة منظمات الاتحاد الأفريقي</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid ""
+"<span class=\"font-weight-bold\">List of Designing and printing Services\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">قائمة خدمات التصميم والطباعة\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">List of Finance Services</span>"
+msgstr "<span class=\"font-weight-bold\">قائمة الخدمات المالية</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">List of IT Services</span>"
+msgstr "<span class=\"font-weight-bold\">قائمة خدمات تكنولوجيا المعلومات</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">List of Legal Services</span>"
+msgstr "<span class=\"font-weight-bold\">قائمة الخدمات القانونيةs</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">List of Logistics Services</span>"
+msgstr "<span class=\"font-weight-bold\">قائمة الخدمات اللوجستية</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">List of Media Services</span>"
+msgstr "<span class=\"font-weight-bold\">قائمة خدمات الوسائط</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">List of OIC Organizations</span>"
+msgstr ""
+"<span class=\"font-weight-bold\">قائمة منظمات منظمة التعاون الإسلامي</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">List of Procurement Services</span>"
+msgstr "<span class=\"font-weight-bold\">قائمة خدمات المشتريات</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">List of Protocol Services</span>"
+msgstr "<span class = \"font-weight-bold \"> قائمة خدمات البروتوكول </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">List of Translation Services</span>"
+msgstr "<span class=\"font-weight-bold\">قائمة خدمات الترجمة</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">List of UN Organizations</span>"
+msgstr "<span class=\"font-weight-bold\">قائمة منظمات الأمم المتحدة</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">List of member states</span>"
+msgstr "<span class=\"font-weight-bold\">الدول الأعضاء</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">List of non-member states</span>"
+msgstr "<span class=\"font-weight-bold\">قائمة الدول غير الأعضاء</span>"
+
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid ""
+"<span class=\"font-weight-bold\">Official Request</span>\n"
+"                                                            <span class=\"font-weight-bold text-primary\">\n"
+"                                                                <i class=\"fa fa-upload\" style=\"margin-right:30px;\"/>\n"
+"                                                            </span>\n"
+"                                                            <br/>"
+msgstr ""
+"<span class=\"font-weight-bold\">الطلب الرسمي</span>&amp;nbsp;<span class=\"font-weight-bold text-primary\"><i class=\"fa fa-upload\" style=\"margin-right:30px;\"/>\n"
+"                                                            </span>\n"
+"                                                            <br/>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">Others Services</span>"
+msgstr "<span class=\"font-weight-bold\">خدمات أخرى</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">Others</span>"
+msgstr "<span class=\"font-weight-bold\">أخرى</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">Partners</span>"
+msgstr "<span class=\"font-weight-bold\">شركاء</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+msgid "<span class=\"font-weight-bold\">Pillar</span>"
+msgstr "<span class=\"font-weight-bold\">المحور</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "<span class=\"font-weight-bold\">Presented by</span>"
+msgstr "<span class=\"font-weight-bold\">قدم بواسطة</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.project_add
+msgid "<span class=\"font-weight-bold\">Project title</span>"
+msgstr "<span class=\"font-weight-bold\">عنوان المحور </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid "<span class=\"font-weight-bold\">Project</span>"
+msgstr "<span class=\"font-weight-bold\">عنوان المشروع</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "<span class=\"font-weight-bold\">Related to event/project titled</span>"
+msgstr "<span class=\"font-weight-bold\">ذات صلة بالحدث / عنوان المشروع </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "<span class=\"font-weight-bold\">Required</span>"
+msgstr "<span class=\"font-weight-bold\">المطلوب</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "<span class=\"font-weight-bold\">Resume</span>"
+msgstr "<span class=\"font-weight-bold\">المحتوى</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">Sponsors for *</span>"
+msgstr "<span class=\"font-weight-bold\">الرعاة لـ *</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid "<span class=\"font-weight-bold\">Sponsorship proposal</span>"
+msgstr "<span class=\"font-weight-bold\">مقترح الرعاية</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "<span class=\"font-weight-bold\">Stakeholders engaged</span>"
+msgstr "<span class=\"font-weight-bold\">مشاركة المالكون</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "<span class=\"font-weight-bold\">Subject</span>"
+msgstr "<span class=\"font-weight-bold\">الموضوع</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">Suppliers for *</span>"
+msgstr "<span class=\"font-weight-bold\">الموردين *</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">Task</span>"
+msgstr "<span class=\"font-weight-bold\">مهمة</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid "<span class=\"font-weight-bold\">The activity is thrown at a level</span>"
+msgstr "<span class=\"font-weight-bold\">سيتم طرح النشاط على مستوى</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid ""
+"<span class=\"font-weight-bold\">The impact of this initiative on ICESCO\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold\">تأثير هذه المبادرة على الإيسيسكو\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span class=\"font-weight-bold\">project</span>"
+msgstr "<span class=\"font-weight-bold\">المشروع</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+msgid ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>How satisfied are you with\n"
+"                                                                                        ICESCO's coordination and\n"
+"                                                                                        communication with\n"
+"                                                                                    </span>\n"
+"                                                                                    <span/>\n"
+"                                                                                    <span>you</span>\n"
+"                                                                                    <span>?</span>\n"
+"                                                                                </span>"
+msgstr ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>ما مدى رضاك عن\n"
+"                                                                                      تنسيق\n"
+"                                                                                       وتواصل الإيسيسكو\n"
+"                                                                                    </span>\n"
+"                                                                                    <span/>\n"
+"                                                                                    <span>معكم</span>\n"
+"                                                                                    <span>؟</span>\n"
+"                                                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+msgid ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>How satisfied are you with\n"
+"                                                                                        ICESCO’s projects and events in\n"
+"                                                                                        the field of Civilizational\n"
+"                                                                                        Dialogue?\n"
+"                                                                                    </span>\n"
+"                                                                                </span>"
+msgstr ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>ما مدى رضاك عن\n"
+"                                                                                       المشاريع والفعاليات التي تقدمها الإيسيسكو\n"
+"                                                                                        في مجال الحوار\n"
+"                                                                                       الحضاري؟\n"
+"                                                                                    </span>\n"
+"                                                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+msgid ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>How satisfied are you with\n"
+"                                                                                        ICESCO’s projects and events in\n"
+"                                                                                        the field of Culture and\n"
+"                                                                                        Communication?\n"
+"                                                                                    </span>\n"
+"                                                                                </span>"
+msgstr ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>ما مدى رضاك عن\n"
+"                                                                                       المشاريع والفعاليات التي تقدمها الإيسيسكو \n"
+"                                                                                       في مجال الثقافة و\n"
+"                                                                                        الاتصال؟\n"
+"                                                                                    </span>\n"
+"                                                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+msgid ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>How satisfied are you with\n"
+"                                                                                        ICESCO’s projects and events in\n"
+"                                                                                        the field of Education?\n"
+"                                                                                    </span>\n"
+"                                                                                </span>"
+msgstr ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>ما مدى رضاك عن \n"
+"                                                                                       المشاريع والفعاليات التي تقدمها الإيسيسكو\n"
+"                                                                                        في مجال التربية؟\n"
+"                                                                                    </span>\n"
+"                                                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+msgid ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>How satisfied are you with\n"
+"                                                                                        ICESCO’s projects and events in\n"
+"                                                                                        the field of Science &amp;\n"
+"                                                                                        Technology?\n"
+"                                                                                    </span>\n"
+"                                                                                </span>"
+msgstr ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>ما مدى رضاك عن\n"
+"                                                                                        المشاريع والفعاليات التي تقدمها\n"
+"                                                                                      الإيسيسكو في مجال العلوم  &amp;\n"
+"                                                                                        والتقنية؟\n"
+"                                                                                    </span>\n"
+"                                                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+msgid ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>How satisfied are you with\n"
+"                                                                                        ICESCO’s projects and events in\n"
+"                                                                                        the field of Social and Human\n"
+"                                                                                        Sciences?\n"
+"                                                                                    </span>\n"
+"                                                                                </span>"
+msgstr ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>ما مدى رضاك عن \n"
+"                                                                                        المشاريع والفعاليات التي تقدمها الإيسيسكو\n"
+"                                                                                        في مجال العلوم الاجتماعية \n"
+"                                                                                        والإنسانية؟\n"
+"                                                                                    </span>\n"
+"                                                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+msgid ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>How satisfied are you with\n"
+"                                                                                        ICESCO’s projects and events in\n"
+"                                                                                        the field of Strategic\n"
+"                                                                                        Foresight?\n"
+"                                                                                    </span>\n"
+"                                                                                </span>"
+msgstr ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>ما مدى رضاك عن \n"
+"                                                                                        المشاريع والفعاليات التي تقدمها الإيسيسكو\n"
+"                                                                                        في مجال الاستشراف \n"
+"                                                                                        الاستراتيجي؟\n"
+"                                                                                    </span>\n"
+"                                                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+msgid ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>How satisfied are you with the\n"
+"                                                                                        agreements and partnerships made\n"
+"                                                                                        by ICESCO?\n"
+"                                                                                    </span>\n"
+"                                                                                </span>"
+msgstr ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>ما مدى رضاك عن \n"
+"                                                                                        عن الاتفاقيات والشراكات\n"
+"                                                                                         التي تمت من خلال الإيسيسكو؟\n"
+"                                                                                    </span>\n"
+"                                                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+msgid ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>How satisfied are you with the\n"
+"                                                                                        quantity of information you\n"
+"                                                                                        receive about ICESCO and its\n"
+"                                                                                        activities?\n"
+"                                                                                    </span>\n"
+"                                                                                </span>"
+msgstr ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>ما مدى رضاك\n"
+"                                                                                        عن نسبة المعلومات \n"
+"                                                                                        التي تصلك عن الإيسيسكو\n"
+"                                                                                       وأنشطتها؟\n"
+"                                                                                    </span>\n"
+"                                                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+msgid ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>Somewhat satisfied</span>\n"
+"                                                                                </span>"
+msgstr ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    <span>راضي</span>\n"
+"                                                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+msgid ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    Overall, how satisfied are you with\n"
+"                                                                                    ICESCO's services?\n"
+"                                                                                </span>"
+msgstr ""
+"<span class=\"text-format-content \">\n"
+"                                                                                   ما مدى رضاك عن الخدمات التي تقدمها الإيسيسكو؟\n"
+"                                                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+msgid ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    Somewhat dissatisfied\n"
+"                                                                                </span>"
+msgstr ""
+"<span class=\"text-format-content \">\n"
+"                                                                                    غير راضي\n"
+"                                                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+msgid ""
+"<span class=\"text-format-content \">How\n"
+"                                                                                    satisfied are you with ICESCO’s\n"
+"                                                                                    projects and events in the field of\n"
+"                                                                                    Arabic language?\n"
+"                                                                                </span>"
+msgstr ""
+"<span class=\"text-format-content \">How\n"
+"                                                                                    ما مدى رضاك عن \n"
+"                                                                                  المشاريع والفعاليات التي تقدمها الإيسيسكو في مجال\n"
+"                                                                                    اللغة العربية؟\n"
+"                                                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+msgid ""
+"<span class=\"text-format-content \">Very\n"
+"                                                                                    dissatisfied\n"
+"                                                                                </span>"
+msgstr ""
+"<span class=\"text-format-content \">غير\n"
+"                                                                                    راضي\n"
+"                                                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+msgid ""
+"<span class=\"text-format-content\">\n"
+"                                                                                    <span>Very satisfied</span>\n"
+"                                                                                </span>"
+msgstr ""
+"<span class=\"text-format-content\">\n"
+"                                                                                    <span>راضي تماما </span>\n"
+"                                                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+msgid ""
+"<span class=\"text-format-content\">\n"
+"                                                                                    Neither satisfied nor dissatisfied\n"
+"                                                                                </span>"
+msgstr ""
+"<span class=\"text-format-content\">\n"
+"                                                                                    محايد\n"
+"                                                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.partner_kanban_searchbar_partner
+msgid "<span style=\"font-weight: bold ; font-size:16px\">Member States</span>"
+msgstr "<span style=\"font-weight: bold ; font-size:16px\">الدول الأعضاء</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_pillars
+msgid "<span style=\"font-weight: bold ; font-size:16px\">Pillars</span>"
+msgstr "<span style=\"font-weight: bold ; font-size:16px\">المحاور</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_projects
+msgid "<span style=\"font-weight: bold ; font-size:16px\">Projects</span>"
+msgstr "<span style=\"font-weight: bold ; font-size:16px\">المشاريع</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.goal_kanban_searchbar_goal
+msgid ""
+"<span style=\"font-weight: bold ; font-size:16px\">Strategic "
+"objectives</span>"
+msgstr ""
+"<span style=\"font-weight: bold ; font-size:16px\">المشاركة في استراتيجية "
+"الإيسيسكو</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid ""
+"<span>\n"
+"                                                    Administration\n"
+"                                                </span>"
+msgstr ""
+"<span>\n"
+"                                                       الإدارة\n"
+"                                                    </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid ""
+"<span>\n"
+"                                                    Contact email\n"
+"                                                </span>"
+msgstr ""
+"<span>\n"
+"                                             البريد الاكتروني\n"
+"                                                </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid ""
+"<span>\n"
+"                                                    Day\n"
+"                                                </span>"
+msgstr ""
+"<span>\n"
+"                                                        يوم\n"
+"                                                    </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid ""
+"<span>\n"
+"                                                    Name\n"
+"                                                </span>"
+msgstr ""
+"<span>\n"
+"                                                        اسم\n"
+"                                                    </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid ""
+"<span>\n"
+"                                                    Phone\n"
+"                                                </span>"
+msgstr ""
+"<span>\n"
+"                                                        الهاتف\n"
+"                                                    </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid ""
+"<span>\n"
+"                                                    Title\n"
+"                                                </span>"
+msgstr ""
+"<span>\n"
+"                                                        العنوان\n"
+"                                                    </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span>Agenda Topics</span>"
+msgstr "<span>مواضيع جدول الأعمال</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "<span>Attachments</span>"
+msgstr "<span>المرفقات</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span>Budget</span>"
+msgstr "<span>الميزانية</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span>Conference link</span>"
+msgstr "<span>رابط المؤتمر</span"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "<span>DG Participation information</span>"
+msgstr "<span>معلومات مشاركة المدير العام</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span>Deadline of Delivery</span>"
+msgstr "<span>الموعد النهائي للتسليم</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span>Duration (min)</span>"
+msgstr "<span>المدة (بالدقائق)</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "<span>Event / project details</span>"
+msgstr "<span>تفاصيل الحدث / المشروع</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span>Key People to meet</span>"
+msgstr "<span>الأشخاص الرئيسيين للقاء</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span>N° person for Accomodation</span>"
+msgstr "<span>عدد الأشخاص للسكن</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span>N° persons for Airflight</span>"
+msgstr "<span>عدد الأشخاص للطائرة</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span>N° persons for Local Transportation</span>"
+msgstr "<span>عدد الأشخاص للنقل المحلي</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span>N° persons for Per Diem</span>"
+msgstr "<span>عدد الأشخاص لكل يوم</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid "<span>Proposed Date</span>"
+msgstr "<span>التاريخ المقترح</span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "<span>Provider</span>"
+msgstr "<span> مقدم </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_event_page
+msgid "<strong class=\"col-lg-3\">City</strong>"
+msgstr "<strong class=\"col-lg-3\">المدينة</strong>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_event_page
+msgid "<strong class=\"col-lg-3\">Country</strong>"
+msgstr "<strong class =\"col-lg-3 \"> البلد </strong"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_appraisal_page
+msgid "<strong class=\"col-lg-3\">Evaluation Date</strong>"
+msgstr ""
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_event_page
+msgid "<strong class=\"col-lg-3\">Implementation location</strong>"
+msgstr "<strong class=\"col-lg-3\">موقع التنفيذ</strong>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_event_page
+msgid "<strong class=\"col-lg-3\">Location</strong>"
+msgstr "<strong class=\"col-lg-3\">الموقع</strong>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_appraisal_page
+msgid "<strong class=\"col-lg-3\">Note</strong>"
+msgstr ""
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_appraisal_page
+msgid "<strong class=\"col-lg-3\">Pays</strong>"
+msgstr ""
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_event_page
+msgid "<strong class=\"col-lg-3\">Presented by</strong>"
+msgstr "<strong class=\"col-lg-3\"> مقدم من قبل </strong>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_event_page
+msgid "<strong class=\"col-lg-3\">Reserved Seats</strong>"
+msgstr "<strong class=\"col-lg-3\">مقاعد محجوزة</strong>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_event_page
+msgid "<strong class=\"col-lg-3\">Room</strong>"
+msgstr "<strong class=\"col-lg-3\">غرفة</strong"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_event_page
+msgid "<strong class=\"col-lg-3\">Start Date</strong>"
+msgstr ""
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_event_page
+msgid "<strong class=\"col-lg-3\">Start End</strong>"
+msgstr "<strong class=\"col-lg-3\">تاريخ الانتهاء</strong>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid ""
+"<strong>\n"
+"                                                    <span>\n"
+"                                                        CVs\n"
+"                                                    </span>\n"
+"                                                </strong>"
+msgstr ""
+"<strong>\n"
+"                                                    <span>\n"
+"                                                        السيرة الذاتية\n"
+"                                                    </span>\n"
+"                                                </strong>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid ""
+"<strong>\n"
+"                                                    <span>\n"
+"                                                        Job Title\n"
+"                                                    </span>\n"
+"                                                </strong>"
+msgstr ""
+"<strong>\n"
+"                                                    <span>\n"
+"                                                         المسمى الوظيفي\n"
+"                                                    </span>\n"
+"                                                </strong>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid "Activity Type"
+msgstr "نوع النشاط"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid "Activity purpose *"
+msgstr "الهدف من النشاط *"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid "Activity title *"
+msgstr "عنوان النشاط *"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_appraisal
+msgid "Add Appraisal"
+msgstr "إضافة تقييم"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_event
+msgid "Add Internal Memo to DG for an event"
+msgstr "أضف مذكرة داخلية إلى DG لحدث"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_goal
+msgid "Add a goal"
+msgstr " أضف هدفًا"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_partner
+msgid "Add a partner"
+msgstr "أضف شريكا"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid "Add line"
+msgstr "أضف"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "Agenda Topics"
+msgstr "موضوع جدول الأعمال"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "All"
+msgstr "الكل"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid "Amount in USD *"
+msgstr "المبلغ بالدولار الأمريكي *"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_appraisal
+msgid "Appraisal"
+msgstr "خدمة الرضا"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Appraisal Date"
+msgstr "تاريخ التقييم"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Appraisal Name"
+msgstr "اسم التقييم"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_portal_my_home
+msgid "Appraisals"
+msgstr "خدمة الرضا"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_appraisal
+msgid "Approved"
+msgstr "موافقة"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "Attachments"
+msgstr "المرفقات"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_event
+msgid "Cancelled"
+msgstr "ملغى"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid ""
+"Changing VAT number is not allowed once document(s) have been issued for "
+"your account. Please contact us directly for this operation."
+msgstr ""
+"لا يسمح بتغيير رقم ضريبة القيمة المضافة بعد إصدار الفواتير لحسابك. برجاء "
+"التواصل معنا مباشرة لإتمام هذه العملية."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid "City *"
+msgstr "المدينة *"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_appraisal
+msgid "Closed"
+msgstr "مغلق"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "Commission"
+msgstr "اللجنة"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "Conference link"
+msgstr "رابط المؤتمر"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_event
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "Contact Commission"
+msgstr "التواصل مع اللجنة"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid "Contact Details"
+msgstr "بيانات جهة الاتصال"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "Contact Us"
+msgstr "تواصل معنا"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid "Contact email"
+msgstr "البريد الاكتروني"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "Copy also to.."
+msgstr "..نسخة أيضا إلى"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "Copy to.."
+msgstr "نسخة الى.."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "Coverage for N person"
+msgstr "تغطية لعدد الأشخاص"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.project_submit
+msgid "Create Project"
+msgstr "أنشئ مشروع"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Create date"
+msgstr "تاريخ الإنشاء"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_kanban_searchbar_task_icon
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_submit
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_submit_projects
+msgid "Create task"
+msgstr "إقتراح نشاط"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_event
+msgid "Creation date"
+msgstr "تاريخ الإنشاء"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "Date Begin *"
+msgstr "تاريخ البدء"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "Date End *"
+msgstr "تاريخ الانتهاء"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid "Day"
+msgstr "يوم"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "Deadline of Delivery"
+msgstr "الموعد النهائي للتسليم"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid "Delete line"
+msgstr "مسح"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "Department"
+msgstr "قسم"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "Departments"
+msgstr "الإدارات"
+
+#. module: icesco_portal
+#: model:res.groups,name:icesco_portal.group_portal_direct_acces
+msgid "Direct Acess Portal "
+msgstr "بوابة الوصول المباشر"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_event
+msgid "Done"
+msgstr "منجز"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_appraisal
+msgid "Draft"
+msgstr "مسودة<br/>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_edit
+msgid "Edit Request"
+msgstr "تحرير الطلب"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_appraisal
+msgid "En validation"
+msgstr "قيد التحقق"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_event
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "Estimated Budget *"
+msgstr "الميزانية التقديرية *"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_appraisal
+msgid "Evaluation Date"
+msgstr "تاريخ التقييم"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_event
+msgid "Event"
+msgstr "الحدث"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "Event / project name *"
+msgstr "اسم الحدث / المشروع *"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "Event details"
+msgstr "تفاصيل الحدث"
+
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "Financial Coverage by Stakeholders"
+msgstr "التغطية المالية من قبل المالكون"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.project_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+msgid "Goal"
+msgstr "هدف"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.project_add
+msgid "Goal..."
+msgstr "هدف..."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_goal
+msgid "Goals"
+msgstr "الأهداف"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_home_goal
+msgid "Goals and Pillars"
+msgstr "الأهداف والمحاور"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.cps_portal_my_home_menu_events
+#: model_terms:ir.ui.view,arch_db:icesco_portal.cps_portal_my_home_menu_goals
+#: model_terms:ir.ui.view,arch_db:icesco_portal.cps_portal_my_home_menu_partners
+msgid "Home"
+msgstr "الصفحة الرئيسية"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid "Hosting Place *"
+msgstr "مكان الإستضافة *"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid "Hosting includes"
+msgstr "الإستضافة تتضمن"
+
+#. module: icesco_portal
+#: model:res.groups,name:icesco_portal.group_icesco_acces
+msgid "ICESCO Acess Portal "
+msgstr "بوابة دخول الإيسيسكو"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "ICESCO Participation"
+msgstr "مشاركة الإيسيسكو"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.partner_kanban_searchbar_partner
+msgid "Image"
+msgstr "صورة"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.cps_portal_my_home_menu_events
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_home_event
+msgid "Internal Memo to DG"
+msgstr "المشاركة في استراتيجية الإيسيسكو"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_submit
+msgid "Internal Memo to DG for an event"
+msgstr "مذكرة داخلية للمدير العام لحدث"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Invalid Email! Please enter a valid email address."
+msgstr "البريد الإلكتروني غير صالح! برجاء إدخال بريد صالح."
+
+
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "Key People to meet"
+msgstr "الأشخاص الأساسيون الذين سيتلتقي بهم"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "Key Points *"
+msgstr "النقاط الرئيسية *"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Last Stage Update"
+msgstr "آخر تحديث للمرحلة"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "List of AL Organizations"
+msgstr "قائمة المنظمات AL"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "List of AU Organizations"
+msgstr "قائمة منظمات الاتحاد الأفريقي"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "List of Designing and printing Services"
+msgstr "قائمة خدمات التصميم والطباعة"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "List of Finance Services"
+msgstr "قائمة الخدمات المالية"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "List of IT Services"
+msgstr "قائمة خدمات تكنولوجيا المعلومات"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "List of Legal Services"
+msgstr "قائمة الخدمات القانونية"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "List of Logistics Services"
+msgstr "قائمة الخدمات اللوجستية"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "List of Media Services"
+msgstr "قائمة خدمات الوسائط"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "List of Member States"
+msgstr "قائمة الدول الأعضاء"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "List of Non-Member States"
+msgstr "قائمة الدول غير الأعضاء"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "List of OIC Organizations"
+msgstr "قائمة منظمات منظمة التعاون الإسلامي"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "List of Procurement Services"
+msgstr "قائمة خدمات المشتريات"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "List of Protocol Services"
+msgstr "قائمة خدمات البروتوكول"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "List of Translation Services"
+msgstr "قائمة خدمات الترجمة"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "List of UN Organizations"
+msgstr "قائمة منظمات الأمم المتحدة"
+
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+msgid "Logo"
+msgstr ""
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "Main Points"
+msgstr "النقاط الرئيسية"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Member State"
+msgstr "دولة عضو"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.cps_portal_my_home_menu_partners
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_partner
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_partners
+msgid "Member States"
+msgstr "الدول الأعضاء"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_submit
+msgid "Member States Satisfaction Survey"
+msgstr "استبيان رضا الدول الأعضاء"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_home_partner
+msgid "Member states"
+msgstr "الدول الأعضاء"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_event_page
+msgid "Messages"
+msgstr "رسائل"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_event
+msgid "Minimum Attendees"
+msgstr "الحد الأدنى من الحضور"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_appraisal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+#, python-format
+msgid "Name"
+msgstr "الاسم"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid "National Day"
+msgstr "اليوم الوطني"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid "National commission"
+msgstr "اللجنة الوطنية"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "New project"
+msgstr "مشروع جديد"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "New task"
+msgstr "مهمة جديدة"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Newest"
+msgstr "الأحدث"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "Non Member States *"
+msgstr "الدول غير الأعضاء *"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "None"
+msgstr "لا شيء"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_appraisal
+msgid "Note"
+msgstr "النقطة"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid ""
+"Number of external participants hosted at the expense of the host country"
+msgstr "عدد المشاركين الخارجيين الذين يتم استضافتهم على نفقة الدولة المضيفة"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "N° person for Accomodation"
+msgstr "عدد الأشخاص للسكن"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "N° persons for Airflight"
+msgstr "عدد الأشخاص للرحلة"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "N° persons for Local Transportation"
+msgstr "عدد الأشخاص للنقل المحلي"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "N° persons for Per Diem"
+msgstr "عدد الأشخاص لوسائل النقل المحلية"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid "Official Website"
+msgstr "الموقع الرسمي"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid "Official language"
+msgstr "اللغة الرسمية"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid "Official language..."
+msgstr "اللغة الرسمية..."
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#, python-format
+msgid "Others"
+msgstr "آخرون"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "Partners *"
+msgstr "شركاء *"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_appraisal
+#, python-format
+msgid "Pays"
+msgstr "الدولة"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid "Phone"
+msgstr "هاتف"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+msgid "Pillar"
+msgstr "محور"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_pillars
+msgid "Pillars"
+msgstr "المحاور"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+#, python-format
+msgid "Project"
+msgstr "المشروع"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_projects
+msgid "Projects"
+msgstr "المشاريع"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid ""
+"Proposal / Concept note\n"
+"                                            <br/>\n"
+"                                            <span class=\"font-weight-bold text-primary\">\n"
+"                                                <i class=\"fa fa-upload\" style=\"margin-top:10px; margin-right:20px;\"/>\n"
+"                                            </span>"
+msgstr ""
+"&amp;nbsp;الوثائق الداعمة / المذكرة المقترحة<br/><span class=\"font-weight-bold text-primary\"><i class=\"fa fa-upload\" style=\"margin-top:10px; margin-right:20px;\"/>\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid "Proposed Date"
+msgstr "التاريخ المقترح"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "Provider"
+msgstr "المزود"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid "Remarks"
+msgstr "ملاحظات"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "Required.."
+msgstr "مطلوب.."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_event
+msgid "Reserved Seats"
+msgstr "مقاعد محجوزة"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Responsible"
+msgstr "المسؤول"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "Resume.."
+msgstr "المحتوى.."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_appraisal_page
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_event_page
+msgid "Retour"
+msgstr "رجوع"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Search <span class=\"nolabel\"> (in Content)</span>"
+msgstr "البحث <span class=\"nolabel\"> (في المحتوى)</span>"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Search in All"
+msgstr "البحث في الكل"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Search in Customer"
+msgstr "البحث في العملاء"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Search in Messages"
+msgstr "البحث في الرسائل"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Search in Name"
+msgstr "ابحث في الاسم"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Search in Stages"
+msgstr "البحث في المراحل"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Search in name"
+msgstr "ابحث في الاسم"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Search in pays"
+msgstr "البحث في الدول"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Search in responsible"
+msgstr "ابحث في المسؤول"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "Select Commission..."
+msgstr "حدد اللجنة ..."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "Select Department..."
+msgstr "حدد القسم ..."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+msgid "Select Goal..."
+msgstr "حدد الهدف ..."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+msgid "Select Pillar..."
+msgstr "حدد المحور ..."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid "Select Project..."
+msgstr "حدد المشروع ..."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "Select Task..."
+msgstr "حدد نشاط ..."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+msgid "Since"
+msgstr "منذ"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Some required fields are empty."
+msgstr "بعض الحقول المطلوبة فارغة."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "Specify"
+msgstr "حدد"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "Speech Duration"
+msgstr "مدة الخطاب"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "Speech Duration (in minutes) *"
+msgstr "مدة الخطاب (بالدقائق) *"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "Speech Topic"
+msgstr "موضوع الكلام"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "Speech Topic *"
+msgstr " * موضوع الخطاب"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "Speech date *"
+msgstr "تاريخ الخطاب *"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid "Sponsored"
+msgstr "الرعاية"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "Sponsors for"
+msgstr "الرعاة ل"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "Sponsors for *"
+msgstr "*الرعاة ل "
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid "Sponsorship proposal *"
+msgstr "مقترح الرعاية *"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Stage"
+msgstr "المرحلة"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "Participation"
+msgstr "مشاركة"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_event
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "State"
+msgstr "الحالة"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_appraisal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_event
+#, python-format
+msgid "Statut"
+msgstr "الحالة"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.cps_portal_my_home_menu_goals
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_goals
+msgid "Strategic objectives"
+msgstr "الأهداف الاستراتيجية"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+msgid "Subject.."
+msgstr "موضوع.."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.appraisal_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.contact_us
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+#: model_terms:ir.ui.view,arch_db:icesco_portal.project_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid "Submit"
+msgstr "ارسال"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_pillars
+msgid "Submitted Projects"
+msgstr "المشاريع المقدمة"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_projects
+msgid "Submitted Tasks"
+msgstr "الأنشطة المقدمة"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_create
+msgid "Suggest an initiative or activity"
+msgstr "إقتراح مبادرة أو نشاط"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "Suppliers for"
+msgstr "الموردين"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "Suppliers for *"
+msgstr "* الموردين"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid "The most prominent personalities that are invited"
+msgstr "أبرز الشخصيات المدعوة"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_partner
+msgid "There are currently no Member States."
+msgstr "لا توجد حاليا أي دول أعضاء."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_appraisal
+msgid "There are currently no appraisal."
+msgstr "لا يوجد حاليا أي آراء."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_event
+msgid "There are currently no event."
+msgstr "لا يوجد حاليا أي حدث."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_goal
+msgid "There are currently no goal."
+msgstr "لا يوجد هدف حاليا."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_partners
+msgid "There are no Member States."
+msgstr "لا توجد دول أعضاء."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_goals
+msgid "There are no goals."
+msgstr "لا توجد أهداف."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_pillars
+msgid "There are no pillars."
+msgstr "لا توجد محاور."
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_projects
+msgid "There are no projects."
+msgstr "لا توجد مشاريع."
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_pillars
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_projects
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_partner_details
+#, python-format
+msgid "Title"
+msgstr "العنوان"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add_projects
+msgid "Type"
+msgstr "نوع"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_event
+msgid "Unconfirmed"
+msgstr "غير مؤكد"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "Video Duration"
+msgstr "مدة الفيديو"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "city *"
+msgstr "مدينة *"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "countries"
+msgstr "الدول"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_event
+msgid "event"
+msgstr "الحدث"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#, python-format
+msgid "event number"
+msgstr "رقم الحدث"
+
+#. module: icesco_portal
+#: code:addons/icesco_portal/controllers/controllers.py:0
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_goal
+#, python-format
+msgid "goal"
+msgstr "هدف"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "location *"
+msgstr "الموقع *"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "members"
+msgstr "الأعضاء"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "or"
+msgstr "أو"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.portal_my_partner
+msgid "partners"
+msgstr "شركاء"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "project"
+msgstr "المشروع"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.project_add
+msgid "project name *"
+msgstr "اسم المشروع *"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "project_initiative_new"
+msgstr ""
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content_edit
+msgid "rooms"
+msgstr "غرف"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.event_content
+msgid "specify *"
+msgstr "حدد *"
+
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_layout
+msgid ""
+"<i class=\"fa fa-pencil\"/>\n"
+"                                                Edit"
+msgstr ""
+"<i class=\"fa fa-pencil\"/>\n"
+"                                                تعديل"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid ""
+"<span>\n"
+"                                                    Contact email\n"
+"                                                </span>"
+msgstr ""
+"<span>\n"
+"                                                     البريد الاكتروني\n"
+"                                                </span>"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid ""
+"<span>\n"
+"                                                    Phone\n"
+"                                                </span>"
+msgstr ""
+"<span>\n"
+"                                                    هاتف\n"
+"                                                </span>"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid ""
+"<span>\n"
+"                                                    Title\n"
+"                                                </span>"
+msgstr ""
+"<span>\n"
+"                                                    عنوان\n"
+"                                                </span>"
+
+#. module: portal
+#: model:ir.model,name:portal.model_res_partner
+#: model:ir.model.fields,field_description:portal.field_portal_wizard_user__partner_id
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Contact Details"
+msgstr "تفاصيل جهة الاتصال"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Contact email"
+msgstr "تواصل بالبريد الاكتروني"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.wizard_view
+msgid "Contacts"
+msgstr "جهات الاتصال"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Country Capital"
+msgstr "عاصمة الدولة"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_layout
+msgid "Country capital :"
+msgstr "العاصمة:"
+
+
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Name"
+msgstr "الاسم"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_layout
+msgid "Special Occasion :"
+msgstr "المناسبات المهمة:"
+
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_layout
+msgid "National day :"
+msgstr "اليوم الوطني:"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_layout
+msgid "Official Leaders Name :"
+msgstr "الحاكم:"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Official Website"
+msgstr "الموقع الرسمي"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_layout
+msgid "Official country name :"
+msgstr "الاسم الرسمي للدولة:"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Official language"
+msgstr "اللغة الرسمية"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Official language..."
+msgstr "اللغة الرسمية..."
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Official name"
+msgstr "المسمى الوظيفي"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Phone"
+msgstr "رقم الهاتف"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Photo of Secretary General"
+msgstr "صورة الأمين العام"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_layout
+msgid "Population :"
+msgstr "عدد السكان :"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_layout
+msgid "Official language :"
+msgstr "اللغة الرسمية:"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_layout
+msgid "Used language :"
+msgstr "اللغة المستخدمة:"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_layout
+msgid "Muslim Population :"
+msgstr "السكان المسلمين:"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_layout
+msgid "Type :"
+msgstr "النوع:"
+
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_layout
+msgid "GPD per capital :"
+msgstr "الناتج المحلي الإجمالي للفرد الواحد:"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Title"
+msgstr "الإسم "
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Since"
+msgstr "تاريخ التعيين"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid ""
+"<span>\n"
+"                                                        Administration\n"
+"                                                    </span>"
+msgstr ""
+"<span>\n"
+"                                                       الإدارة\n"
+"                                                    </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid ""
+"<span class=\"font-weight-bold d-flex\">\n"
+"                                                Number of airline tickets\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"font-weight-bold d-flex\">\n"
+"                                                عدد تذاكر الطيران\n"
+"                                            </span>"
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_add
+#: model_terms:ir.ui.view,arch_db:icesco_portal.task_add
+msgid ""
+"<strong>\n"
+"                                                    <span>\n"
+"                                                        Name\n"
+"                                                    </span>\n"
+"                                                </strong>"
+msgstr ""
+"<strong>\n"
+"                                                    <span>\n"
+"                                                        الإسم\n"
+"                                                    </span>\n"
+"                                                </strong>"
+
+
+#. module: icesco_portal
+#: model_terms:ir.ui.view,arch_db:icesco_portal.proposition_create
+msgid "Hosting"
+msgstr "الإستضافة"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "King / Queen"
+msgstr "ملك / ملكة"
+
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Location"
+msgstr "موقع"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Muslim population in %"
+msgstr "٪ نسبة السكان المسلمين"
+
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Name National Day"
+msgstr "اسم اليوم الوطني"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "National Day"
+msgstr "اليوم الوطني"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Official country name"
+msgstr "الاسم الرسمي للدولة"
+
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Official leaders name"
+msgstr "الحاكم"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Other National Days"
+msgstr " المناسبات المهمة"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Population number"
+msgstr "عدد السكان"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "President"
+msgstr "رئيس"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Type Country"
+msgstr "نوع الدولة"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Type Country..."
+msgstr "نوع الدولة ..."
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "2. National commission deputy secretary general or his representative"
+msgstr "2. نائب أمين عام اللجنة الوطنية أو من ينوب عنه"
+
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Country Capital..."
+msgstr "عاصمة الدولة..."
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Flag Color references (HEX,RGB)"
+msgstr "(الرمز السداسي, المرشحات)إشارات لون العلامة"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "GPD per capital"
+msgstr "الناتج المحلي الإجمالي للفرد الواحد"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "General informations"
+msgstr "المعلومات العامة"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "HEX"
+msgstr "الرمز السداسي"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Position"
+msgstr "منصب"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Website"
+msgstr "الموقع"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Year of foundation"
+msgstr "عام التأسيس"
+
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Fax"
+msgstr "فاكس"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Job title"
+msgstr "المسمى الوظيفي"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "2. Head of National Commission"
+msgstr "1. رئيس اللجنة الوطنية"
+
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "1. National commission secretary general"
+msgstr "2. أمين عام اللجنة الوطنية"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "3. National Commission Team"
+msgstr "3. فريق اللجنةالوطنية "
+
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "National commission"
+msgstr "اللجنة الوطنية"
+
+
+
+

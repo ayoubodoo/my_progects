@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="cps_stock_move_line_view_form_inherit" model="ir.ui.view">
+        <field name="name">cps.stock.move.line.view.form.inherit</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_move_line_form"/>
+        <field name="arch" type="xml">
+            <field name="reference" position="replace">
+                <field name="picking_id" string="Reference"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="cps_stock_move_line_view_tree_inherit" model="ir.ui.view">
+        <field name="name">cps.stock.move.line.view.tree.inherit</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_move_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="reference" position="replace">
+                <field name="picking_id" widget="many2one_clickable" string="Reference"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.actions.act_window" id="cps_event_country_action">
+        <field name="name">Cps Country Room</field>
+        <field name="view_mode">tree,form</field>
+        <field name="res_model">cps.country</field>
+    </record>
+<!--    <menuitem name="Countries" id="menu_event_countriess" action="cps_event_country_action" parent="event.menu_event_configuration"/>-->
+
+
+</odoo>

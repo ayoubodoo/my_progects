@@ -1,0 +1,181 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="dh_icesco_performance_strategies_form_view">
+        <field name="name">dh.icesco.performance.strategies.form</field>
+        <field name="model">dh.icesco.performance.strategies</field>
+        <field name="arch" type="xml">
+            <form string="الأداء الاستراتيجي">
+                <sheet>
+                    <group col="3">
+                        <group colspan="3">
+                            <field name="strategie"/>
+                        </group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="type"/>
+                        </group>
+                        <group>
+                            <field name="ability_id"/>
+                        </group>
+                        <group>
+                            <field name="responsable_id"/>
+                        </group>
+                        <group>
+                            <field name="measure_cycle"/>
+                        </group>
+                        <group>
+                            <field name="target"/>
+                        </group>
+                        <group>
+                            <field name="actual"/>
+                        </group>
+                        <group>
+                            <field name="stereotypes"/>
+                        </group>
+                        <group>
+                            <field name="performance_ratio"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_performance_strategies_result_form_view">
+        <field name="name">dh.icesco.performance.strategies.result.form</field>
+        <field name="model">dh.icesco.performance.strategies</field>
+        <field name="arch" type="xml">
+            <form string="الأداء الاستراتيجي">
+                <sheet>
+                    <group col="3">
+                        <group colspan="3">
+                            <field name="strategie"/>
+                        </group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="type"/>
+                        </group>
+                        <group>
+                            <field name="ability_id"/>
+                        </group>
+                        <group>
+                            <field name="responsable_id"/>
+                        </group>
+                        <group>
+                            <field name="measure_cycle"/>
+                        </group>
+                        <group>
+                            <field name="target"/>
+                        </group>
+                        <group>
+                            <field name="actual"/>
+                        </group>
+                        <group>
+                            <field name="stereotypes"/>
+                        </group>
+                        <group>
+                            <field name="performance_ratio"/>
+                        </group>
+                        <group>
+                            <field name="result_actual"/>
+                        </group>
+                        <group>
+                            <field name="source_result"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="الأدلة">
+                            <field name="document_ids" nolabel="1" widget='many2many_binary'/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_performance_strategies_plan_tree">
+      <field name="name">dh.icesco.performance.strategies.tree</field>
+      <field name="model">dh.icesco.performance.strategies</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="sequence" width="1"/>
+            <field name="name" width="1"/>
+            <field name="responsable_id" width="1"/>
+            <field name="measure_cycle" width="1"/>
+            <field name="target" width="1"/>
+            <field name="actual" width="1"/>
+            <field name="stereotypes" width="1"/>
+            <field name="performance_ratio" widget="progressbar" width="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="cps_dh_icesco_performance_strategies_plan_tree">
+      <field name="name">cps.dh.icesco.performance.strategies.tree</field>
+      <field name="model">dh.icesco.performance.strategies</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="sequence" width="1"/>
+            <field name="name" width="1"/>
+            <field name="target" width="1"/>
+            <field name="actual" width="1"/>
+            <field name="performance_ratio" widget="progressbar" width="1"/>
+            <field name="stereotypes" width="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_performance_strategies_plan_all_experts_tree">
+      <field name="name">dh.icesco.performance.strategies.all.experts.tree</field>
+      <field name="model">dh.icesco.performance.strategies</field>
+      <field name="arch" type="xml">
+        <tree create="0" delete="0">
+            <field name="sequence" width="1"/>
+            <field name="strategie" invisible="1"/>
+            <field name="expert_id" width="1" widget="many2many_tags_link"/>
+            <field name="name" width="1"/>
+            <field name="type" width="1"/>
+            <field name="ability_id" width="1"/>
+            <field name="responsable_id" width="1"/>
+            <field name="measure_cycle" width="1"/>
+            <field name="target" width="1"/>
+            <field name="actual" width="1"/>
+            <field name="stereotypes" width="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_performance_strategies">
+      <field name="name">الأداء الاستراتيجي</field>
+      <field name="res_model">dh.icesco.performance.strategies</field>
+      <field name="view_mode">tree,form</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_icesco_performance_strategies_plan_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('dh_icesco_performance_strategies_form_view')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_cps_dh_icesco_performance_strategies">
+      <field name="name">الأداء الاستراتيجي</field>
+      <field name="res_model">dh.icesco.performance.strategies</field>
+      <field name="view_mode">tree,form</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('cps_dh_icesco_performance_strategies_plan_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('dh_icesco_performance_strategies_form_view')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_performance_strategies_all_experts">
+      <field name="name">نتائج المؤشر</field>
+      <field name="res_model">dh.icesco.performance.strategies</field>
+      <field name="view_mode">tree,form</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_icesco_performance_strategies_plan_all_experts_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('dh_icesco_performance_strategies_result_form_view')})]"/>
+    </record>
+
+  </data>
+</odoo>

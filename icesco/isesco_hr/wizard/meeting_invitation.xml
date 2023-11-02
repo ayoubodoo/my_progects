@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+    <record model="ir.ui.view" id="dh_meeting_invitation_wizard">
+        <field name="name">dh.meeting.invitation.wizard.form</field>
+        <field name="model">dh.meeting.invitation.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <sheet>
+                <group>
+                    <group><field name="type"/></group>
+                    <group><field name="meeting_link" widget="url" attrs="{'invisible': [('type', '!=', 'online')]}"/></group>
+<!--                    <group><field name="applicant_id"/></group>-->
+<!--                    <group><field name="interview_id"/></group>-->
+                </group>
+
+
+            </sheet>
+            <footer>
+                    <button string="Interview Invitation" name="interview_invitation_mail" type="object"/>
+<!--                    <button string="Interview Invitation(Face to Face)" name="interview_invitation_mail" type="object"/>-->
+                    <button special="cancel" string="Annuler"/>
+            </footer>
+        </field>
+    </record>
+
+     <record model="ir.actions.act_window" id="meeting_invitation_action_wizard">
+        <field name="name">Meting invitation</field>
+        <field name="res_model">dh.meeting.invitation.wizard</field>
+
+        <field name="view_mode">form</field>
+        <field name="context">{'default_applicant_id':active_id,'default_interview_id':active_id}</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="dh_meeting_invitation_wizard"/>
+    </record>
+    </data>
+
+</odoo>

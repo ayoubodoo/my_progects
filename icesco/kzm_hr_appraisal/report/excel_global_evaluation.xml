@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="report_global_evaluation_xlsx" model="ir.actions.report">
+        <field name="name">Global Evaluation Excel</field>
+        <field name="model">report.global.evaluation</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">kzm_hr_appraisal.report_global_evaluation_xlsx</field>
+        <field name="report_file">kzm_hr_appraisal.report_global_evaluation_xlsx</field>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

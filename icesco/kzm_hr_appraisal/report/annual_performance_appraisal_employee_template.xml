@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <report
+                id="annual_appraisal_menu_id"
+                string="Annual Performance Appraisal"
+                model="appraisal.appraisal"
+                report_type="qweb-pdf"
+                name="kzm_hr_appraisal.annual_performance_appraisal_employee_template_id"
+                file="kzm_hr_appraisal.annual_performance_appraisal_employee_template"
+        />
+        <template id="annual_performance_appraisal_employee_template_id">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.basic_layout">
+                        <div class="header">
+                            <div style="text-align:center">
+                                <div width="100%"
+                                     style="font-size: 13px;font-weight: bold;">
+                                    <img src="/isesco_base/static/isesco.png"
+                                         style="max-width:100px;max-height:100px;"
+                                         class="center" alt="Logo"/>
+                                </div>
+                                <br/>
+                                <div width="100%">
+                                    <b style="font-size:20px;color:#35572f">
+                                        <span t-esc="doc.model_evaluation_id.name"/>
+                                    </b>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <table class="table" width="100%">
+                            <tr>
+                                <td width="50%" style="background-color:#bbf5a4">
+                                    Employee
+                                    Name/ اسم
+                                    الموظف /Nom de l’employé :
+                                </td>
+                                <td class="text-center " width="50%"
+                                    style="border: 1px solid #39d453;">
+                                    <span t-esc="doc.employee_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="50%" style="background-color:#bbf5a4">ICESCO
+                                    ID
+                                    رقم التوظيف
+                                    / / Matricule ICESCO
+                                </td>
+                                <td class="text-center " width="50%" style="">
+                                    <span t-esc="doc.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="50%" style="background-color:#bbf5a4">Current
+                                    position/
+                                    المنصب الحالي /Poste actuel :
+                                </td>
+                                <td class="text-center " width="50%"
+                                    style="border: 1px solid #39d453;">
+                                    <span t-esc="doc.employee_id.sudo().job_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="50%" style="background-color:#bbf5a4">
+                                    Affiliation/ إدارة
+                                    التعيين /Département d’affiliation :
+                                </td>
+                                <td class="text-center " width="50%"
+                                    style="border: 1px solid #39d453;">
+                                    <span t-esc="doc.employee_id.department_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="50%" style="background-color:#bbf5a4">
+                                    Appraiser’s
+                                    name/ اسم
+                                    المُقَيٍم/ Nom de l’évaluateur :
+                                </td>
+                                <td class="text-center " width="50%"
+                                    style="border: 1px solid #39d453;">
+                                    <span t-esc="doc.evaluator_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="50%" style="background-color:#bbf5a4">Period
+                                    covered/
+                                    الفترة الزمنية /Période :
+                                </td>
+                                <td class="text-center " width="50%"
+                                    style="border: 1px solid #39d453;">
+                                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y')"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="50%" style="background-color:#bbf5a4">
+                                    Appraisal
+                                    date/ تاريخ
+                                    التقييم /Date d’évaluation :
+                                </td>
+                                <td class="text-center "
+                                    style="border: 1px solid #bbf5a4;">
+                                    <span t-esc="doc.evaluation_date"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <span style="font-size:16px">Annual Performance Scorecard/ تقييم
+                            الأداء /Fiche de performance annuelle
+                        </span>
+                        <br/>
+                        <table width="100%">
+                            <tr>
+                                <td style="border:none !important"></td>
+                                <td style="border: 1px solid #39d453;background-color:#bbf5a4">
+                                    Criterias/ Critères
+                                </td>
+                                <td style="border: 1px solid #39d453;background-color:#bbf5a4">
+                                    Scores/Notes
+                                </td>
+                                <td style="border: 1px solid #39d453;background-color:#bbf5a4">
+                                    Max Score /
+                                    <br/>
+                                    Note maximale
+                                </td>
+                            </tr>
+                            <t t-foreach="doc.get_factors()" t-as="line">
+                                <t t-set="total_notes" t-value="0"/>
+                                <t t-set="total_maximal_notes" t-value="0"/>
+                                <t t-set="var" t-value="0"/>
+                                <t t-foreach="line[1]" t-as="val">
+                                    <tr>
+                                        <t t-if="var==0">
+                                            <td style="background-color:#bbf5a4"
+                                                t-att-rowspan="line[2]">
+                                                <span t-esc="line[0].name"/>
+                                            </td>
+                                            <t t-set="var" t-value="1"/>
+                                        </t>
+                                        <td style="background-color:#ced1cb">
+                                            <span t-esc="val[0].factor_id.name"/>
+                                        </td>
+                                        <td class="text-center "
+                                            style="background-color:#ced1cb">
+                                            <span t-esc="val[1].name"/>
+                                        </td>
+                                        <td class="text-center "
+                                            style="background-color:#ced1cb">
+                                            <span t-esc="val[2]"/>
+                                        </td>
+                                    </tr>
+                                    <t t-set="total_notes"
+                                       t-value="total_notes+val[1].name"/>
+                                    <t t-set="total_maximal_notes"
+                                       t-value="total_maximal_notes+val[2]"/>
+                                </t>
+                                <tr>
+                                    <td style="border:none !important"></td>
+                                    <td style="border: 1px solid #39d453;background-color:#35572f;color:white">
+                                        TOTAL / المجموع
+                                    </td>
+                                    <td class="text-center "
+                                        style="border: 1px solid #39d453;background-color:#ced1cb">
+                                        <span t-esc="total_notes"/>
+                                    </td>
+                                    <td class="text-center "
+                                        style="border: 1px solid #39d453;background-color:#ced1cb">
+                                        <span t-esc="total_maximal_notes"/>
+                                    </td>
+                                </tr>
+                                <tr style="height:40px"></tr>
+                            </t>
+                        </table>
+                        <br/>
+                        <span>Final Evaluation Score/ مجموع نقط التقييم / Note finale
+                            d’évaluation
+                        </span>
+                        <br/>
+                        <table class="table"
+                               width="100%">
+                            <tr>
+                                <td style="background-color:#35572f;color:white"
+                                    width="25%">Evaluation Total Score /
+                                    مجموع نقط التقييم
+                                    Note totale de l’évaluation
+                                </td>
+                                <td width="25%" style="background-color:#ced1cb">
+                                    <span t-esc="doc.appraisal_note"/>
+                                </td>
+                                <td style="background-color:#35572f;color:white"
+                                    width="25%">Evaluation Grade /
+                                    درجة التقييم
+                                    Note d’évaluation
+                                </td>
+                                <td width="25%" style="background-color:#ced1cb;">
+                                    <span t-field="doc.appreciation"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <table width="100%">
+                            <tr>
+                                <td style="border:none !important"></td>
+                                <td style="background-color:#ced1cb">Comments/ ملاحظات /
+                                    Commentaires
+                                </td>
+                                <td style="background-color:#ced1cb">Appraiser’s
+                                    Signature/
+                                    توقيع المُقَيٍم/ / Signature Evaluateur
+                                </td>
+                            </tr>
+                            <t t-foreach="doc.appraisal_comment_ids" t-as="comment">
+                                <tr>
+                                    <td style="background-color:#bbf5a4">
+                                        <span t-esc="comment.evaluation_axe_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="comment.evaluator_comment"/>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </t>
+                        </table>
+                        <br/>
+                        <span>Evaluation Scorecard Standards/ درجات التقييم / Standards
+                            Standards de notation d’évaluation
+                        </span>
+                        <br/>
+                        <table width="100%">
+                            <tr>
+                                <td style="background-color:#ced1cb">RANGES/ / مجموع
+                                    الدرجات TOTAL POINTS
+                                </td>
+                                <td style="background-color:#ced1cb">GRADES// التقديرات
+                                    Notes
+                                </td>
+                            </tr>
+                            <t t-foreach="doc.model_evaluation_id.matrix_id.matrix_line_ids"
+                               t-as="matrix_line">
+                                <tr>
+                                    <td class="text-center " width="50%"
+                                        style="background-color:#d2ebb9">
+                                        <span t-esc="matrix_line.minimal_note"/>
+                                        -
+                                        <span t-esc="matrix_line.maximal_note"/>
+                                    </td>
+                                    <td width="50%" class="text-center ">
+                                        <span t-field="matrix_line.appreciation"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </table>
+                        <br/>
+                        <span>Evaluating Standards/ معايير التقييم /Standards
+                            d’évaluation
+                        </span>
+                        <br/>
+                        <table border="1" class="border border-success">
+                            <tr class="border border-success">
+                                <td style="background-color:#d2ebb9" width="10%"
+                                    class="border border-success">1
+                                </td>
+                                <td style="background-color:#d2ebb9" width="10%"
+                                    class="border border-success">2
+                                </td>
+                                <td width="15%" class="border border-success">
+                                    Unsatisfactory
+                                    غير مرض
+                                    Insatisfaisant
+                                </td>
+                                <td width="65%" class="border border-success">Work
+                                    performance is below standards of performance
+                                    required
+                                    الأداء دون المعايير التي يستلزمها المنصب
+                                    La performance est en-dessous des normes requises
+                                    pour
+                                    le poste.
+                                </td>
+                            </tr>
+                            <tr class="border border-success">
+                                <td style="background-color:#abd483" width="10%"
+                                    class="border border-success">2
+                                </td>
+                                <td style="background-color:#abd483" width="10%"
+                                    class="border border-success">4
+                                </td>
+                                <td width="15%" class="border border-success">Needs
+                                    Improvement
+                                    يحتاج للتحسن
+                                    Nécessite une amélioration
+                                </td>
+                                <td width="65%" class="border border-success">Work
+                                    performance does not consistently meet the standards
+                                    of
+                                    performance
+                                    لا يرقى الأداء دائما للمعايير التي يستلزمها المنصب
+                                    La performance ne répond pas toujours aux normes
+                                    requises pour le poste.
+                                </td>
+                            </tr>
+                            <tr class="border border-success">
+                                <td style="background-color:#80bd44" width="10%"
+                                    class="border border-success">3
+                                </td>
+                                <td style="background-color:#80bd44" width="10%"
+                                    class="border border-success">6
+                                </td>
+                                <td width="15%" class="border border-success">Exceeds
+                                    Expectations
+                                    يفوق التوقعات
+                                    Dépasse les attentes
+                                </td>
+                                <td width="65%" class="border border-success">Work
+                                    performance consistently meets the standards of
+                                    performance
+                                    يرقى الأداء دائما للمعايير التي يستلزمها المنصب
+                                    La performance répond toujours aux normes requises
+                                    pour
+                                    le poste
+                                </td>
+                            </tr>
+                            <tr class="border border-success">
+                                <td style="background-color:#63a324" width="10%"
+                                    class="border border-success">4
+                                </td>
+                                <td style="background-color:#63a324" width="10%"
+                                    class="border border-success">8
+                                </td>
+                                <td width="15%" class="border border-success">Meets
+                                    Expectation يرقى إلى التوقعات
+                                    Répond aux attentes
+                                </td>
+                                <td width="65%" class="border border-success">Work
+                                    performance is consistently above the standards of
+                                    performance.
+                                    الأداء يتجاوز دائما المعايير التي يستلزمها المنصب
+                                    La performance dépasse toujours les normes requises
+                                    pour
+                                    le poste
+                                </td>
+                            </tr>
+                            <tr class="border border-success">
+                                <td style="background-color:#407808" width="10%"
+                                    class="border border-success">5
+                                </td>
+                                <td style="background-color:#407808" width="10%"
+                                    class="border border-success">10
+                                </td>
+                                <td width="15%" class="border border-success">
+                                    Outstanding
+                                    ممتاز
+                                    Excellent
+                                </td>
+                                <td width="65%" class="border border-success">Work
+                                    performance is consistently superior to standards of
+                                    performance
+                                    يفوق الأداء المعايير التي يستلزمها المنصب
+                                    La performance dépasse toujours largement les normes
+                                    requises pour le poste
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="footer text-center "
+                             style="padding-top: 10px; font-size: 15px">
+                            <img src="/isesco_base/static/isesco.png"
+                                 style="max-width:100px;max-height:100px;"
+                                 class="center" alt="Logo"/>
+                            <img src="/kzm_hr_appraisal/static/description/footer.png"
+                                 style="width:500px;height:auto;float:left"/>
+                        </div>
+                        <style>
+                            td{
+                            padding:12px;
+                            border: 1px solid #39d453;
+                            }
+                        </style>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

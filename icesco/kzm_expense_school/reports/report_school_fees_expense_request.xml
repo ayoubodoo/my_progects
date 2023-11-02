@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="school_fees_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+            <div class="header">
+
+                <div class="row" >
+                    <div class="col-3 text-center" style="font-size: 13px;">
+                        <img src="/isesco_base/static/isesco.png" style="max-width:150px;max-height:150px;"
+                     class="center" alt="Logo"/>
+                        <br/>
+                        <br/>
+                    </div>
+                    <div class="col-6 text-center">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                         <div class="text-center" style="font-size: 12px;">
+                             <span><strong dir="ltr" t-field="o.academic_year"/><strong> طلب صرف تعويضات مصاريف التمدرس للسنة الدراسية</strong></span>
+                         </div>
+                        <br/>
+                        <br/>
+
+                    </div>
+                    <div class="col-3 text-center"  style="font-weight: bold;">
+                        <div  style="font-size: 6px; color: #aab57c;">
+                            <div class="col-12">
+                                <img src="/kzm_expense_school/static/description/logo2.png" style="max-width:200px;max-height:200px;padding"/>
+                            </div>
+                            <div class="col-12">
+                                <span><strong>مديريةالشؤون الادارية / قسم المورد البشرية</strong></span><br/>
+                            </div>
+                            <div class="col-12">
+                                <span><strong>Directorate of Administrative Affairs / Division of Human Resources</strong></span><br/>
+                            </div>
+                            <div class="col-12">
+                                <span><strong>Direction des affaires administratives / Division des ressources humaines</strong></span>
+                            </div>
+                         </div>
+                        </div>
+                </div>
+
+            </div>
+
+            <div class="page article" style="font-size: 10px;">
+                <br/>
+                 <br/>
+                    <table class="table table-bordered text-center" style="font-size: 10px;">
+                <thead>
+                    <tr>
+                        <th style="border: 1px solid black !important;">ملاحظات</th>
+                        <th style="border: 1px solid black !important;">أسماء الأطفال الذين هم في سن التمدرس</th>
+                        <th style="border: 1px solid black !important;"><span t-field="o.employee_id.category_id.category_id.scholarship_refund"/> % من الراتب السنوي الإجمالي</th>
+                        <th style="border: 1px solid black !important;"> <span t-esc="o.number_of_months"/> -- الراتب الإجمالي السنوي </th>
+                        <th style="border: 1px solid black !important;">الدرجة</th>
+                        <th style="border: 1px solid black !important;">تاريخ الميلاد</th>
+                        <th style="border: 1px solid black !important;">اسم الموظف</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid black !important;">
+                            <span></span>
+                        </td>
+                        <td style="border: 1px solid black !important;">
+                            <t t-foreach="o.expense_line_ids" t-as="child">
+                            <span><strong t-field="child.dependent_id.name"/><strong> -</strong></span><br/>
+                            </t>
+                        </td>
+                        <td style="border: 1px solid black !important;">
+                            <strong t-field="o.max_refund_amount"/>
+                        </td>
+                        <td style="border: 1px solid black !important;">
+                            <span><strong t-field="o.employee_annual_salary"/></span>
+                        </td>
+                        <td style="border: 1px solid black !important;">
+                            <span><strong t-field="o.employee_id.category_id"/></span>
+                        </td>
+                        <td style="border: 1px solid black !important;">
+                            <span><strong t-field="o.employee_id.birthday"/></span>
+                        </td>
+                        <td style="border: 1px solid black !important;">
+                            <span><strong t-field="o.employee_id"/></span>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+                <br/>
+                <table class="table text-center" style="font-size: 10px;border-collapse:separate;border-spacing:0 5px;">
+                    <thead style="background-color:#C0C0C0;">
+                        <tr>
+                            <th style="border: 1px solid black !important;">ملاحظات</th>
+                            <th style="border: 1px solid black !important;">% 75</th>
+                            <th style="border: 1px solid black !important;">المجموع</th>
+                            <th style="border: 1px solid black !important;">مصاريف النمدرس حسب الوثائق المقدمة</th>
+                            <th style="border: 1px solid black !important;">مصاريف التسجيل حسب الوثائق المقدمة</th>
+                            <th style="border: 1px solid black !important;">الشهر / الفصل</th>
+                            <th style="border: 1px solid black !important;">اسم الطفل</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="o.expense_line_ids" t-as="child">
+                            <tr>
+                                <td style="border: 1px solid black !important;"><p><strong t-field="o.note"/></p></td>
+                                <td style="border: 1px solid black !important;"><span><strong t-esc="'{0:.2f}'.format(min(child.subtotal*0.75, o.max_refund_amount))"/></span></td>
+                                <td style="border: 1px solid black !important;"><span><strong t-field="child.subtotal"/></span></td>
+                                <td style="border: 1px solid black !important;"><span><strong t-field="child.schoolarship_fees"/></span></td>
+                                <td style="border: 1px solid black !important;"><span><strong t-field="child.inscription_fees"/></span></td>
+                                <td style="border: 1px solid black !important;"><span><strong t-field="o.academic_year"/></span></td>
+                                <td style="border: 1px solid black !important;"><span><strong t-field="child.dependent_id.name"/></span></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <div class="text-left" style="padding-top: 10px; font-size: 13px; padding-left:200px;">
+<!--                    <strong><span> درهم </span><span dir="ltr" t-esc="'{0:,.2f}'.format(min(o.fees_total, o.max_refund_amount))"/><span> المبلغ المستحق أداؤه </span> </strong>-->
+                    <strong><span> درهم </span><span dir="ltr" t-esc="'{0:,.2f}'.format(min(o.fees_total, o.max_refund_amount))"/><span> المبلغ المستحق أداؤه </span> </strong>
+                </div>
+                    <div class="text-left" style="padding-top: 150px; font-size: 13px; padding-left:100px;">
+                        <strong><span> مدير الشؤون الإدارية </span></strong>
+                    </div>
+                    <div class="text-left" style="padding-top: 50px; font-size: 13px; padding-left:100px;">
+                        <span t-esc="o.get_administration_director()"/>
+                    </div>
+                </div>
+
+        </t>
+        </t>
+    </template>
+
+     <report
+        id="school_fees_expense"
+        model="hr.expense.school"
+        string="School Fees Expense Report"
+        name="kzm_expense_school.school_fees_report"
+        file="kzm_expense_school.school_fees_expense"
+        report_type="qweb-pdf" />
+</odoo>

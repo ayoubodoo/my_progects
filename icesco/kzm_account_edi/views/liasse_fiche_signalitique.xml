@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="liasse_fiche_view_form_erp" model="ir.ui.view">
+			<field name="name">Fiche signalitique</field>
+			<field name="model">liasse.fiche.signalitique.erp</field>
+			<field name="arch" type="xml">
+				<form string="Balance">
+					<group col="6" colspan="6">
+						<field name="company_id" groups="base.group_multi_company"
+                                   options="{'no_open': True, 'no_create': True}"/>
+						<field name="tp"/>
+						<field name="id_fiscal" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_fiche_view_tree_erp" model="ir.ui.view">
+			<field name="name">Fiche signalitique</field>
+			<field name="model">liasse.fiche.signalitique.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Balance">
+					<field name="company_id" />
+					<field name="tp" />
+					<field name="id_fiscal" />
+				</tree>
+			</field>
+		</record>
+        <record id="action_liasse_fiche_erp" model="ir.actions.act_window">
+			<field name="name">Fiche signalitique</field>
+			<field name="res_model">liasse.fiche.signalitique.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+        <menuitem id="sub_fiche_erp" name="Fiche signalitique" parent="main_balance_general_erp"
+			sequence="1" action="action_liasse_fiche_erp" />
+
+    </data>
+</odoo>

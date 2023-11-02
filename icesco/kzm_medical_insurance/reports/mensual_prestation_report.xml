@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+<template id="template_report_monthly_benefit_amounts">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="refund">
+
+            <div class="page article " style="font-size: 13px; !important;padding: 8px 8px 8px 8px !important;">
+                <div class="row">
+                         <table width="100%" style="margin-bottom:20px">
+                             <tr>
+                                 <td style="font-size:30px; !important">
+                                    <strong>Calculated Amount of Monthly deposits : <span t-field="refund.date_start" t-options='{"format": "yyyy-MM"}'/></strong>
+                                 </td>
+                             </tr>
+
+                         </table>
+                </div>
+                <t t-set="total" t-value="0"/>
+                <div style="width:100%" t-foreach='refund.get_report_values()' t-as='line'>
+
+                    <table style="border: 1px solid black;margin-top:20px;" width="100%">
+                        <tr style="border: 1px solid black;">
+                                <td style="border: 1px solid black;width:90%;margin-left:5px;"><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]><![CDATA[&nbsp;]]>
+                                        <strong>
+                                          <t t-esc="line[0].display_name"/>
+                                        </strong>
+                                </td>
+                            <td width="10%" style="padding:4px">
+                                <strong>
+                                <span>  <t t-esc="'{0:.2f}'.format(line[1][0][2])"/></span>
+                                     <t t-set="total" t-value="total+line[1][0][2]"/>
+                            </strong>
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="width:100%">
+                    <table style="border: 1px solid black;margin-top:10px" width="100%">
+
+                        <th style="border: 1px solid black;" class="align-middle text-center">Affiliate</th>
+                        <t t-set="prestations" t-value="refund.get_prestations()"/>
+                        <th t-foreach='prestations' t-as='request' style="border: 1px solid black;" class="align-middle text-center">
+                            <t t-esc="prestations[request]"/>
+                        </th>
+                        <th>
+                            Cumul a date
+                        </th>
+                        <t t-set="lines" t-value="line[1]"/>
+                        <tr t-foreach='lines' t-as='req'>
+                            <td style="border: 1px solid black;" class="align-middle text-center">
+                                <t t-esc="req[0]"/>
+                            </td>
+                            <t t-set="values" t-value="req[1]"/>
+                            <td style="border: 1px solid black;" class="align-middle text-center" t-foreach='values' t-as='val'>
+                                <t t-esc="'{0:.2f}'.format(values[val])"/>
+                            </td>
+                            <td style="border: 1px solid black;" class="align-middle text-center">
+                                <t t-esc="sum(refund.refund_request_ids.filtered(lambda x:x.employee_id.display_name == req[0]).medical_presentation_ids.mapped('cumul_date'))"/>
+                            </td>
+                        </tr>
+                        <style>
+                                tr:nth-child(even) {
+                                  background-color: #f2f2f2;
+                                }
+                            </style>
+                    </table>
+
+                        </div>
+                 </div>
+                 <div style="float:right">
+                            <br/>
+                            <span style="font-size:18px">Total : <t t-esc="round(total,2)"/></span>
+                        </div>
+            </div>
+             <div class="footer">
+                 <div class="row">
+                        <table border="0">
+                            <tr >
+                                <td align="center">Page : <span class="page"/>/<span class="topage"/></td>
+                            </tr>
+                        </table>
+                     </div>
+             </div>
+        </t>
+    </t>
+
+</template>
+    </data>
+</odoo>

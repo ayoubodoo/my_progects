@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="intervention_type_form">
+            <field name="name">intervention.type.form</field>
+            <field name="model">intervention.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="intervention_type_tree">
+            <field name="name">intervention.type.tree</field>
+            <field name="model">intervention.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="intervention_type_action" model="ir.actions.act_window">
+            <field name="name">Intervention Type</field>
+            <field name="res_model">intervention.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

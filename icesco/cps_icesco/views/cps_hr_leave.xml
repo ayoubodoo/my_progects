@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--     <record id="dh_leave_report_view_form_inherit" model="ir.ui.view">-->
+<!--            <field name="name">dh.leave.report.tree.inherit</field>-->
+<!--            <field name="model">hr.leave.report</field>-->
+<!--            <field name="inherit_id" ref="hr_holidays.hr_leave_report_tree"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//field[@name='name']" position="after">-->
+<!--                    <field name="moyens_transport_id"/>-->
+
+<!--                </xpath>-->
+<!--            </field>-->
+<!--     </record>-->
+     <record id="dh_leave_view_form_inherit" model="ir.ui.view">
+            <field name="name">dh.leave.view.form.inherit</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_view_form_manager"/>
+            <field name="arch" type="xml">
+
+<!--                <xpath expr="//field[@name='holiday_type']" position="after">-->
+<!--                    <field name="rest_leave"/>-->
+
+<!--                </xpath>-->
+                <xpath expr="//field[@name='report_note']" position="after">
+                    <field name="rest_leave"/>
+                </xpath>
+                <xpath expr="//field[@name='employee_id']" position="replace">
+                    <field name="employee_id" groups="hr_holidays.group_hr_holidays_user" options="{'no_quick_create': True, 'no_create_edit': True, 'no_create': True}" attrs="{'required': [('holiday_type', '=', 'employee')],'invisible': [('holiday_type', '!=', 'employee')]}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+    <record id="dh_hr_leave_view_form_manager_approve_inherit" model="ir.ui.view">
+            <field name="name">dh.leave.view.approve.form.inherit</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_view_form_manager_approve"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='employee_id']" position="replace">
+                    <field name="employee_id" nolabel="1" options="{'no_quick_create': True, 'no_create_edit': True, 'no_create': True}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+
+    <record model="ir.ui.view" id="cps_hr_leave_form_view">
+        <field name="name">cps.hr.leave.form</field>
+        <field name="model">cps.hr.leave</field>
+        <field name="arch" type="xml">
+            <form string="Gestion absence">
+                <header>
+                    <button string="Filtrer" name="action_filter_attendances" type="object" states="draft"/>
+                    <button string="Valider absence" name="action_valider_absence" type="object" states="draft"/>
+                    <!--<button string="Corriger" name="action_corriger_pointage" type="object" states="pret"/>-->
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="date_absence"/>
+                        </group>
+<!--                        <group>-->
+<!--                            <field name="equipe"/>-->
+<!--                        </group>-->
+                    </group>
+                    <field name="leave_lines">
+                        <tree editable="bottom" limit="100">
+                            <field name="matricule" string="Mat."/>
+                            <field name="employee_id" string="Nom"/>
+<!--                            <field name="horaire_id"/>-->
+                            <field name="leave_type"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cps_hr_leave_action">
+		<field name="name">Gestion absence</field>
+        <field name="view_mode">tree,form</field>
+		<field name="res_model">cps.hr.leave</field>
+	</record>
+
+    <record model="ir.ui.view" id="cps_hr_leave_tree_view">
+        <field name="name">cps.hr.leave.tree</field>
+        <field name="model">cps.hr.leave</field>
+        <field name="arch" type="xml">
+            <tree name="Absence">
+                <field name="date_absence"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem id="correction_absence" name="Gestion Absences" parent="hr_attendance.menu_hr_attendance_manage_attendances" action="cps_hr_leave_action" sequence="22"/>
+
+</odoo>

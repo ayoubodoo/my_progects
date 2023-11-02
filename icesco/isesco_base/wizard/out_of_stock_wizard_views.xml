@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="stock_picking_destination_wizard" model="ir.ui.view">
+        <field name="name">stock.picking.destination.wizard.form</field>
+        <field name="model">stock.picking.destination.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Out of Stock Report">
+                <group>
+                    <group>
+                        <field name="start_date"/>
+                        <field name="destination_id"/>
+                    </group>
+                    <group>
+                        <field name="end_date"/>
+                    </group>
+                </group>
+                <footer>
+
+                    <button name="print_report"
+                            string="Print" type="object"
+                            class="btn-primary"/>
+                    <button string="Cancel"
+                            class="btn-secondary"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_stock_picking_destination_wizard" model="ir.actions.act_window">
+        <field name="name">Out of Stock by Destination Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">stock.picking.destination.wizard</field>
+        <field name="view_id" ref="isesco_base.stock_picking_destination_wizard"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="stock_picking_destination_report" name="Out of Stock by Destination Report" parent="stock.menu_warehouse_report"
+            action="action_stock_picking_destination_wizard"/>
+</odoo>

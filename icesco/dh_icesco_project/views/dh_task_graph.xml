@@ -1,0 +1,58 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="dh_task_graph_form_view">
+        <field name="name">dh.task.graph.form</field>
+        <field name="model">dh.task.graph</field>
+        <field name="arch" type="xml">
+            <form>
+<!--                <header>-->
+<!--                    <button string="Recalculer" name="recalcule_button" type="object"-->
+<!--                            class="oe_highlight"/>-->
+<!--                </header>-->
+                <sheet>
+<!--                    <group>-->
+<!--                        <field name="name"/>-->
+<!--                    </group>-->
+                    <group>
+                        <field name="type"/>
+                    </group>
+                    <notebook>
+                      <page string="Tasks" name="tasks">
+                          <field name="task_ids" readonly="1">
+                            <tree editable="bottom">
+                              <field name="name"/>
+                              <field name="pencentage_report" sum="Total"/>
+                              <field name="pencentage_done" sum="Total"/>
+                            </tree>
+                          </field>
+                      </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_task_graph_tree">
+      <field name="name">dh.task.graph.tree</field>
+      <field name="model">dh.task.graph</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="type"/>
+            <field name="value_taux_livraison"/>
+            <field name="value_taux_realisation"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_task_graph">
+      <field name="name">tasks</field>
+      <field name="res_model">dh.task.graph</field>
+<!--      <field name="view_mode">tree,form</field>-->
+      <field name="view_mode">form</field>
+        <field name="res_id" eval="1"/>
+    </record>
+
+  </data>
+</odoo>

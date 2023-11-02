@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="school_expense_form_view">
+        <field name="name">hr.expense.school.form</field>
+        <field name="model">hr.expense.school</field>
+        <field name="arch" type="xml">
+            <form string="School Expense Form">
+                <field name="hr_expense_id" invisible="1"/>
+                <field name="is_resp" invisible="1"/>
+                <header>
+                    <button name="draft_action" type="object"
+                            string="Re draft"
+                            groups="kzm_expense_school.school_expense_responsible"
+                            states="paid,canceled,confirmed"/>
+
+                    <button name="approve_action" type="object"
+                            string="Submit"
+                            states="draft"/>
+
+                    <button name="confirme_action" type="object"
+                            string="Confirm" states="to_approve"
+                            groups="kzm_expense_school.school_expense_responsible"
+                            class="oe_highlight"/>
+
+                    <button name="validate_action" type="object"
+                            string="Pay" states="confirmed"
+                            groups="kzm_expense_school.school_expense_responsible"
+                            class="oe_highlight"/>
+
+                    <button name="cancel_action"
+                            type="object"
+                            string="Cancel"
+                            groups="kzm_expense_school.school_expense_responsible"
+                            states="to_approve,confirmed"/>
+
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="see_expense"
+                                class="oe_stat_button"
+                                string="Expenses"
+                                type="object"
+                                attrs="{'invisible': [('hr_expense_id', '=', False)]}"
+                                icon="fa-dollar">
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="employee_id" required="1" domain="[('contract_id', '!=', False)]"
+                                   attrs="{'readonly': ['|', ('state', 'in', ['paid', 'confirmed', 'canceled']),('is_resp', '=', False)]}"/>
+                            <field name="job_id" attrs="{'invisible': [('job_id', '=', False)]}"/>
+                            <field name="department_id" attrs="{'invisible': [('department_id', '=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="demand_date" required="1"
+                                   attrs="{'readonly': [('state', 'in', ['paid', 'confirmed', 'canceled'])]}"/>
+                            <field name="academic_year"/>
+                            <field name="number_of_months"/>
+                            <field name="salaire_brut"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="lines" string="Lines">
+                            <field name="dependent_ids" invisible="1"/>
+                            <field name="expense_line_ids"
+                                   attrs="{'readonly': ['|', ('state', 'in', ['paid', 'confirmed', 'canceled'])]}">
+                                <tree string="Expenses Lines" editable="bottom">
+                                    <field name="dependent_id" options="{'no_create': True}" domain="[('type', '=', 'child'),('employee_id', '=', parent.employee_id), ('id', 'not in', parent.dependent_ids)]" required="1"/>
+                                    <field name="inscription_fees"/>
+                                    <field name="schoolarship_fees"/>
+                                    <field name="currency_id"/>
+                                    <field name="rate"/>
+                                    <field name="document_ids" widget="many2many_tags"/>
+                                    <field name="subtotal"/>
+                                </tree>
+                                <form>
+                                    <group>
+<!--                                        <field name="employee_id"  invisible="1"/>-->
+                                        <field name="dependent_id" domain="[('employee_id', '=', parent.employee_id), ('id', 'not in', parent.dependent_ids)]" options="{'no_create': True}"/>
+                                        <field name="document_ids" widget="many2many_tags"/>
+                                    </group>
+                                    <group>
+                                        <field name="inscription_fees"/>
+                                        <field name="schoolarship_fees"/>
+                                        <field name="subtotal"/>
+                                    </group>
+                                </form>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right">
+                                <field name="max_refund_amount" widget="monetary"
+                                       options="{'currency_field': 'currency_id'}"/>
+                                <div class="oe_subtotal_footer_separator oe_inline">
+                                    <label for="fees_total"/>
+                                </div>
+                                <field name="fees_total" nolabel="1" class="oe_subtotal_footer_separator"
+                                       widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            </group>
+                        </page>
+                    </notebook>
+                    <group>
+                        <field name="note"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="school_expense_tree_view">
+        <field name="name">hr.expense.school.tree</field>
+        <field name="model">hr.expense.school</field>
+        <field name="arch" type="xml">
+            <tree string="Hr Expense School">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="job_id"/>
+                <field name="department_id"/>
+                <field name="demand_date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="all_school_expenses_action">
+        <field name="name">All School Expenses</field>
+        <field name="res_model">hr.expense.school</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="my_school_expenses_action">
+        <field name="name">My School Expenses</field>
+        <field name="res_model">hr.expense.school</field>
+        <field name="domain">[('employee_id.user_id', '=', uid)]</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="school_expenses_to_approve_action">
+        <field name="name">School Expenses to approve</field>
+        <field name="res_model">hr.expense.school</field>
+        <field name="domain">[('state', '=', 'to_approve')]</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!--        <record model="ir.actions.act_window" id="missions_to_paid_action">-->
+    <!--            <field name="name">Mission to paid</field>-->
+    <!--            <field name="res_model">hr.expense.school</field>-->
+    <!--            <field name="domain">[('state', '=', 'confirmed')]</field>-->
+    <!--            <field name="view_mode">tree,form</field>-->
+    <!--        </record>-->
+
+</odoo>

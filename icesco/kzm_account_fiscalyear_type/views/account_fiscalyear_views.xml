@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Inherit Form View to Modify it -->
+        <record id="kzm_view_date_range_type_tree_inherit" model="ir.ui.view">
+		    <field name="name">date.range.type.tree.inherit</field>
+		    <field name="model">date.range.type</field>
+		    <field name="inherit_id" ref="date_range.view_date_range_type_tree"/>
+		    <field name="arch" type="xml">
+		        <xpath expr="//field[@name='name']" position="after">
+		            <!--<field name="fiscal_period"/>-->
+					<field name="kzm_is_quinzaine" readonly="0"/>
+		        </xpath>
+		    </field>
+		</record>
+
+		<record id="view_date_range_type_form_view_inherited" model="ir.ui.view">
+		    <field name="name">date.range.type.tree.inherit</field>
+		    <field name="model">date.range.type</field>
+		    <field name="inherit_id" ref="date_range.view_date_range_type_form_view"/>
+		    <field name="arch" type="xml">
+		        <xpath expr="//field[@name='name']" position="after">
+					<field name="kzm_is_quinzaine" readonly="0"/>
+		        </xpath>
+		    </field>
+		</record>
+
+        <record id="kzm_view_date_range_form" model="ir.ui.view">
+		    <field name="name">cps.date.range.form</field>
+		    <field name="model">date.range</field>
+		    <field name="inherit_id" ref="account_fiscal_period.view_date_range_fiscalperiod_form_view"/>
+		    <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='previous_fiscal_year']" position="after">
+                    <field name="kzm_is_quinzaine" invisible="1"/>
+                    <field name="mois"
+                           attrs="{'invisible': [('kzm_is_quinzaine', '!=', True)]}"/>
+                    <field name="annee"
+                           attrs="{'invisible': [('kzm_is_quinzaine', '!=', True)]}"/>
+                </xpath>
+                <xpath expr="//header" position="inside">
+                    <field name="kzm_is_fiscalyear" invisible="1"/>
+                    <button name="quinzaine"
+                            string="Generate fortnights"
+                            type="object" class="oe_highlight"
+                            attrs="{'invisible': [('kzm_is_fiscalyear', '!=', True)]}"/>
+                </xpath>
+                <xpath expr="//header//button[@name='create_period']" position="attributes">
+                    <attribute name="attrs">
+                        {'invisible': [('kzm_is_fiscalyear', '!=', True)]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//header//button[@name='create_period3']"
+                       position="attributes">
+                    <attribute name="attrs">
+                        {'invisible': [('kzm_is_fiscalyear', '!=', True)]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//notebook"
+                       position="inside">
+                    <page string="Quinzaines" attrs="{'invisible': [('kzm_is_fiscalyear', '!=', True)]}">
+                            <field name="quinzaine_ids">
+                                <tree editable="bottom">
+                                    <field name="annee"/>
+                                    <field name="mois"/>
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="date_start"/>
+                                    <field name="date_end"/>
+                                </tree>
+                            </field>
+                        </page>
+                </xpath>
+		    </field>
+		</record>
+    </data>
+</openerp>

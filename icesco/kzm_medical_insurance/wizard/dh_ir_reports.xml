@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_report_ir_retrait_form" model="ir.ui.view">
+        <field name="name">report.ir.retrait.form</field>
+        <field name="model">report.ir.retrait</field>
+        <field name="arch" type="xml">
+            <form string="Rapport Retrait">
+                <group>
+
+                        <field name="annee"/>
+
+                </group>
+                <footer>
+                        <button name="generate_excel" string="Génerer Rapport retrait" type="object" class="btn-primary" />
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+           </form>
+        </field>
+    </record>
+     <record id="action_report_ir_retrait" model="ir.actions.act_window">
+        <field name="name">Rapport Retrait</field>
+        <field name="res_model">report.ir.retrait</field>
+        <field name="view_mode">form</field>
+         <field name="view_id" ref="view_report_ir_retrait_form"/>
+        <field name="target">new</field>
+    </record>
+
+     <menuitem id="dh_assurance_medicale_rapports"
+                  sequence="25"
+                  name="Rapports"
+                  parent="main_insurance_menu"
+
+      />
+
+    <menuitem id="menu_report_ir_retrait" name="Rapport Retrait" action="action_report_ir_retrait" parent="dh_assurance_medicale_rapports" sequence="150" />
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+	    <record id="account_payment_method_action" model="ir.actions.act_window">
+	        <field name="name">Account Payment Method</field>
+	        <field name="res_model">account.payment.method</field>
+			<field name="type">ir.actions.act_window</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="domain">[]</field>
+	        <field name="context">{}</field>
+	    </record>
+	    
+	    <record id="account_full_reconcile_action" model="ir.actions.act_window">
+	        <field name="name">Account Full Reconcile</field>
+	        <field name="res_model">account.full.reconcile</field>
+			<field name="type">ir.actions.act_window</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="domain">[]</field>
+	        <field name="context">{}</field>
+	    </record>
+	    
+	    <record id="account_reconcile_method_action" model="ir.actions.act_window">
+	        <field name="name">Account Reconcile Method</field>
+	        <field name="res_model">account.reconcile.model</field>
+			<field name="type">ir.actions.act_window</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="domain">[]</field>
+	        <field name="context">{}</field>
+	    </record>
+	    
+        <record id="action_account_type_form" model="ir.actions.act_window">
+            <field name="name">Account Types</field>
+            <field name="res_model">account.account.type</field>
+			<field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem action="account_reconcile_method_action" id="menu_reconcile_method_action" parent="account.account_management_menu"/>
+        <menuitem action="account_full_reconcile_action" id="menu_full_reconcile_action" parent="account.account_management_menu"/>
+        <menuitem action="account_payment_method_action" id="menu_payment_method_action" parent="account.account_management_menu"/>
+        <menuitem action="action_account_type_form" id="menu_account_type_action" parent="account.account_management_menu"/>
+        
+    </data>
+</odoo>

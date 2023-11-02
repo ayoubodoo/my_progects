@@ -1,0 +1,72 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="dh_icesco_proposition_form">
+            <field name="name">dh.icesco.proposition.form</field>
+            <field name="model">dh.icesco.proposition</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="location"/>
+                                <field name="city"/>
+                                <field name="type"/>
+                            </group>
+                            <group>
+                                <field name="is_sponsorise"/>
+                                <field name="proposition_sponsor"/>
+                                <field name="task_id"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="participant_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="job_title"/>
+                                    <field name="attachment_ids" widget="many2many_binary"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="number_participant_out_icesco"/>
+                                <field name="number_billets"/>
+                            </group>
+                            <group>
+                                <field name="number_residences"/>
+                                <field name="number_transferts"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_icesco_proposition_tree">
+            <field name="name">dh.icesco.proposition.tree</field>
+            <field name="model">dh.icesco.proposition</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+         <record model="ir.actions.act_window" id="action_dh_icesco_proposition">
+            <field name="name">Propositions</field>
+            <field name="res_model">dh.icesco.proposition</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="dh_icesco_proposition_menu" name="Propositions"
+                  parent="project.menu_project_config"
+                  action="action_dh_icesco_proposition" sequence="16"/>
+
+    </data>
+</odoo>

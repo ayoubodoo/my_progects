@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_db_backup_extension_gcloud" model="ir.ui.view">
+        <field name="name">auto.backup.google.storage</field>
+        <field name="model">db.backup</field>
+        <field name="inherit_id" ref="auto_backup.view_backup_conf_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//separator[1]" position="before">
+                <div attrs="{'invisible': [('method', '!=', 'gcloud')]}">
+                    <group string="Google cloud Settings">
+                        <field name="GOOGLE_APPLICATION_CREDENTIALS"
+                               attrs="{'required':[('method', '=', 'gcloud')]}"/>
+                        <field name="bucket_name" placeholder="cps"
+                               attrs="{'required':[('method', '=', 'gcloud')]}"/>
+                        <button
+                            name="action_gcloud_test_connection"
+                            type="object"
+                            string="Test GCloud Connection"
+                            icon="fa-television"/>
+                    </group>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

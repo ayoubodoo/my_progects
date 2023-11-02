@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+<!--    <record id="report_ir_recruitement_scoring" model="ir.actions.report">-->
+<!--        <field name="name">Recruitement Committee Scoring</field>-->
+<!--        <field name="model">hr.applicant</field>-->
+<!--        <field name="report_type">xlsx</field>-->
+<!--        <field name="report_name">isesco_hr.report_ir_recruitement_scoring_xlsx</field>-->
+<!--        <field name="report_file">isesco_hr.report_ir_recruitement_scoring_xlsx</field>-->
+<!--        <field name="binding_type">report</field>-->
+<!--    </record>-->
+    <report
+    id="report_ir_recruitement_scoring"
+    model="hr.applicant"
+    string="Recruitement Committee Scoring"
+    report_type="xlsx"
+    name="isesco_hr.report_ir_recruitement_scoring_xlsx"
+    file="isesco_hr.report_ir_recruitement_scoring_xlsx"
+
+/>
+
+    <report
+    id="report_ir_simulateur"
+    model="hr.applicant"
+    string="Simulateur ICESCO_ Payroll "
+    report_type="xlsx"
+    name="isesco_hr.report_ir_simulateur"
+    file="isesco_hr.report_ir_simulateur"
+
+/>
+
+
+</odoo>

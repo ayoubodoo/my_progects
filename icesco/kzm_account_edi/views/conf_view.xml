@@ -1,0 +1,1361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record id="liasse_extra_view_form_erp" model="ir.ui.view">
+			<field name="name">Extra field</field>
+			<field name="model">liasse.extra.field.erp</field>
+			<field name="arch" type="xml">
+				<form string="Extra field">
+					<group col="4" colspan="4" string="Detail cpc">
+						<field name="code0cpc" />
+					</group>
+					<group col="4" colspan="4" string="Provision">
+						<field name="code1prov" />
+					</group>
+					<group col="4" colspan="4" string="Fusion">
+						<field name="code2fusion" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_conf_view_form_erp" model="ir.ui.view">
+			<field name="name">Configuration</field>
+			<field name="model">liasse.configuration.erp</field>
+			<field name="arch" type="xml">
+				<form string="Configuration">
+					<separator string="Association des codes EDI" />
+					<group col="4" colspan="4">
+						<field name="code" />
+						<field name="type" />
+						<field name="compte"
+							attrs="{'invisible': [('type','in',['1','2'])],'required':[('type','not in',['1','2','3','4'])]}">
+							<tree editable="bottom">
+								<field name="compte"></field>
+							</tree>
+						</field>
+						<field name="comptem" string="Comptes exclus"
+							attrs="{'invisible': [('type','in',['1','2'])],'required':[('type','not in',['1','2','3','4'])]}">
+							<tree editable="bottom">
+								<field name="compte"></field>
+							</tree>
+						</field>
+					</group>
+					<group attrs="{'invisible': [('type','in',['0','5','6'])]}"
+						col="4" colspan="4">
+
+						<field name="code_ids" attrs="{'required':[('type','in',['1','2','3','4'])]}"
+							widget="many2many_tags" string="Somme" />
+						<field name="code_min_ids" attrs="{'invisible': [('type','in',['1','3','4'])]}"
+							widget="many2many_tags" string="Minus" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_conf_view_tree_erp" model="ir.ui.view">
+			<field name="name">Configuration</field>
+			<field name="model">liasse.configuration.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Configuration">
+					<field name="compte" />
+					<field name="code" />
+					<field name="type" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_code_view_tree_erp" model="ir.ui.view">
+			<field name="name">Codification EDI</field>
+			<field name="model">liasse.code.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Configuration">
+					<field name="code" />
+					<field name="valeur" attrs="{'invisible': [('type','=','2')]}" />
+					<field name="type" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_code_view_form_erp" model="ir.ui.view">
+			<field name="name">Codification EDI</field>
+			<field name="model">liasse.code.erp</field>
+			<field name="arch" type="xml">
+				<form string="Configuration">
+					<group col="4" colspan="4">
+						<field name="code" />
+						<field name="type" />
+						<field name="valeur" attrs="{'invisible': [('type','=','2')]}" />
+						<field name="valeur_ids" attrs="{'invisible': [('type','in',['0','1'])]}">
+							<tree>
+								<field name="valeur" />
+								<field name="ligne" />
+							</tree>
+						</field>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_actif_view_tree_erp" model="ir.ui.view">
+			<field name="name">Bilan Actif</field>
+			<field name="model">liasse.bilan.actif.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Bilan Actif" editable="bottom">
+					<field name="lib" />
+					<field name="code1" />
+					<field name="code2" />
+					<field name="code3" />
+					<field name="code4" />
+					<field name="type" />
+					<field name="sequence" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_passif_view_tree_erp" model="ir.ui.view">
+			<field name="name">Bilan Passif</field>
+			<field name="model">liasse.bilan.passif.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Bilan Passif" editable="bottom">
+					<field name="lib" />
+					<field name="code1" />
+					<field name="code2" />
+					<field name="type" />
+					<field name="sequence" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_cpc_view_tree_erp" model="ir.ui.view">
+			<field name="name">CPC</field>
+			<field name="model">liasse.cpc.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="CPC" editable="bottom">
+					<field name="lib" />
+					<field name="code1" />
+					<field name="code2" />
+					<field name="code3" />
+					<field name="code4" />
+					<field name="type" />
+					<field name="sequence" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_tfr_view_tree_erp" model="ir.ui.view">
+			<field name="name">TFR</field>
+			<field name="model">liasse.tfr.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="TFR" editable="bottom">
+					<field name="lettre" />
+					<field name="num" />
+					<field name="op" />
+					<field name="lib" />
+					<field name="code1" />
+					<field name="code2" />
+					<field name="type" />
+					<field name="sequence" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_caf_view_tree_erp" model="ir.ui.view">
+			<field name="name">CAF</field>
+			<field name="model">liasse.caf.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="CAF" editable="bottom">
+					<field name="lettre" />
+					<field name="num" />
+					<field name="op" />
+					<field name="lib" />
+					<field name="code1" />
+					<field name="code2" />
+					<field name="type" />
+					<field name="sequence" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_det_cpc_view_tree_erp" model="ir.ui.view">
+			<field name="name">Det CPC</field>
+			<field name="model">liasse.det.cpc.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="det cpc" editable="bottom">
+					<field name="poste" />
+					<field name="lib" />
+					<field name="code1" />
+					<field name="code2" />
+					<field name="type" />
+					<field name="sequence" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_amort_view_tree_erp" model="ir.ui.view">
+			<field name="name">Amortissement</field>
+			<field name="model">liasse.amort.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="amortissement" editable="bottom">
+					<field name="lib" />
+					<field name="code1" />
+					<field name="code2" />
+					<field name="code3" />
+					<field name="code4" />
+					<field name="type" />
+					<field name="sequence" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_prov_view_tree_erp" model="ir.ui.view">
+			<field name="name">Provision</field>
+			<field name="model">liasse.provision.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="provision" editable="bottom">
+					<field name="lib" />
+					<field name="code1" />
+					<field name="code2" />
+					<field name="code3" />
+					<field name="code4" />
+					<field name="code5" />
+					<field name="code6" />
+					<field name="code7" />
+					<field name="code8" />
+					<field name="type" />
+					<field name="sequence" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_stock_view_tree_erp" model="ir.ui.view">
+			<field name="name">Stock</field>
+			<field name="model">liasse.stock.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="stock" editable="bottom">
+					<field name="lib" />
+					<field name="code1" />
+					<field name="code2" />
+					<field name="code3" />
+					<field name="code4" />
+					<field name="code5" />
+					<field name="code6" />
+					<field name="code7" />
+					<field name="type" />
+					<field name="sequence" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_creditbail_view_tree_erp" model="ir.ui.view">
+			<field name="name">Credit bail</field>
+			<field name="model">liasse.credit.bail.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Credit bail">
+					<field name="extra_field_clos" />
+					<field name="credit_bail_ids" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_creditbail2_view_form_erp" model="ir.ui.view">
+			<field name="name">Credit bail</field>
+			<field name="model">liasse.credit.bail.erp</field>
+			<field name="arch" type="xml">
+				<form string="Credit bail">
+					<group string="extra field">
+						<field name="extra_field_clos" />
+					</group>
+					<separator string="Section illimitée"></separator>
+					<field name="credit_bail_ids" nolabel="1">
+						<tree string="stock" editable="bottom">
+							<field name="code0" />
+							<field name="code1" />
+							<field name="code2" />
+							<field name="code3" />
+							<field name="code4" />
+							<field name="code5" />
+							<field name="code6" />
+							<field name="code7" />
+							<field name="code8" />
+							<field name="code9" />
+							<field name="code10" />
+							<field name="type" />
+							<!--  <field name="sequence" />-->
+						</tree>
+					</field>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_pmvalue_view_tree_erp" model="ir.ui.view">
+			<field name="name">Plus Moins values</field>
+			<field name="model">liasse.pm.value.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="PM value">
+					<field name="extra_field_clos" />
+					<field name="pm_val_ids" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_pmvalue_view_form_erp" model="ir.ui.view">
+			<field name="name">Plus Moins values</field>
+			<field name="model">liasse.pm.value.erp</field>
+			<field name="arch" type="xml">
+				<form>
+					<group col="4" colspan="4" string="Extra field">
+						<field name="extra_field_clos" />
+					</group>
+					<group col="8" colspan="8" string="Total">
+						<field name="compte_princ" />
+						<field name="montant_brut" />
+						<field name="amort_cumul" />
+						<field name="val_net_amort" />
+						<field name="prod_cess" />
+						<field name="plus_value" />
+						<field name="moins_value" />
+					</group>
+					<separator string="Section Illimitée" />
+					<field name="pm_val_ids">
+						<tree string="PM value" editable="bottom">
+							<field name="code0" />
+							<field name="code1" />
+							<field name="code2" />
+							<field name="code3" />
+							<field name="code4" />
+							<field name="code5" />
+							<field name="code6" />
+							<field name="code7" />
+							<field name="type" />
+							<!--  <field name="sequence" />-->
+						</tree>
+					</field>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_titre_particip_view_tree_erp" model="ir.ui.view">
+			<field name="name">titre particip</field>
+			<field name="model">liasse.titre.particip.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Titre particip">
+					<field name="titre_particip_ids" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_titre_particip_view_form_erp" model="ir.ui.view">
+			<field name="name">titre particip</field>
+			<field name="model">liasse.titre.particip.erp</field>
+			<field name="arch" type="xml">
+				<form>
+					<group col="8" colspan="8" string="Total">
+						<!-- <field name="code1" /> -->
+						<field name="code2" />
+						<field name="code3" />
+						<field name="code4" />
+						<field name="code5" />
+						<field name="code6" />
+						<field name="code7" />
+						<field name="code8" />
+						<field name="code9" />
+					</group>
+					<separator string="Section Illimitée" />
+					<field name="titre_particip_ids">
+						<tree string="PM value" editable="bottom">
+							<field name="code0" />
+							<field name="code1" />
+							<field name="code2" />
+							<field name="code3" />
+							<field name="code4" />
+							<field name="code5" />
+							<field name="code6" />
+							<field name="code7" />
+							<field name="code8" />
+							<field name="code9" />
+							<field name="type" />
+							<!--  <field name="sequence" />-->
+						</tree>
+					</field>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_repart_cs_view_tree_erp" model="ir.ui.view">
+			<field name="name">repart cs</field>
+			<field name="model">liasse.repart.cs.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Repartition cs">
+					<field name="montant_capital" />
+					<field name="repart_cs_ids" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_repart_cs_view_form_erp" model="ir.ui.view">
+			<field name="name">repart cs</field>
+			<field name="model">liasse.repart.cs.erp</field>
+			<field name="arch" type="xml">
+				<form string="Repartition cs">
+					<group>
+						<field name="montant_capital" />
+					</group>
+					<field name="repart_cs_ids">
+						<tree string="Repartition cs" editable="bottom">
+							<field name="code0" />
+							<field name="code1" />
+							<field name="code2" />
+							<field name="code3" />
+							<field name="code4" />
+							<field name="code5" />
+							<field name="code6" />
+							<field name="code7" />
+							<field name="code8" />
+							<field name="code9" />
+							<field name="type" />
+							<!--  <field name="sequence" />-->
+						</tree>
+					</field>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_interet_cs_view_tree_erp" model="ir.ui.view">
+			<field name="name">repart cs</field>
+			<field name="model">liasse.repart.cs.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Repartition cs">
+					<field name="montant_capital" />
+					<field name="repart_cs_ids" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_repart_cs_view_form_erp" model="ir.ui.view">
+			<field name="name">repart cs</field>
+			<field name="model">liasse.repart.cs.erp</field>
+			<field name="arch" type="xml">
+				<form string="Repartition cs">
+					<group>
+						<field name="montant_capital" />
+					</group>
+					<field name="repart_cs_ids">
+						<tree string="Repartition cs" editable="bottom">
+							<field name="code0" />
+							<field name="code1" />
+							<field name="code2" />
+							<field name="code3" />
+							<field name="code4" />
+							<field name="code5" />
+							<field name="code6" />
+							<field name="code7" />
+							<field name="code8" />
+							<field name="code9" />
+							<field name="type" />
+							<!-- <field name="sequence" />-->
+						</tree>
+					</field>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_interet_view_form_erp" model="ir.ui.view">
+			<field name="name">Interet</field>
+			<field name="model">liasse.interets.erp</field>
+			<field name="arch" type="xml">
+				<form string="Interet">
+					<group>
+						<field name="code0" />
+					</group>
+					<group col="4" colspan="4" string="Total">
+						<field name="code1" />
+						<field name="code2" />
+						<field name="code3" />
+						<field name="code4" />
+						<field name="code5" />
+						<field name="code6" />
+					</group>
+					<group string="Associés">
+						<field name="interets_associe" nolabel="1">
+							<tree editable="bottom">
+								<field name="code0" />
+								<field name="code1" />
+								<field name="code2" />
+								<field name="code3" />
+								<field name="code4" />
+								<field name="code5" />
+								<field name="code6" />
+								<field name="code7" />
+								<field name="code8" />
+								<field name="code9" />
+								<field name="code10" />
+								<field name="code11" />
+								<field name="code12" />
+								<field name="type" />
+								<!-- <field name="sequence" />-->
+							</tree>
+						</field>
+					</group>
+					<group string="Tiers">
+						<field name="interets_tier" nolabel="1">
+							<tree editable="bottom">
+								<field name="code0" />
+								<field name="code1" />
+								<field name="code2" />
+								<field name="code3" />
+								<field name="code4" />
+								<field name="code5" />
+								<field name="code6" />
+								<field name="code7" />
+								<field name="code8" />
+								<field name="code9" />
+								<field name="code10" />
+								<field name="code11" />
+								<field name="code12" />
+								<field name="type" />
+								<!--  <field name="sequence" />-->
+							</tree>
+						</field>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_beaux_view_tree_erp" model="ir.ui.view">
+			<field name="name">BEAUX</field>
+			<field name="model">liasse.beaux.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Beaux">
+					<field name="code0" />
+					<field name="beaux_ids" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_beaux_view_form_erp" model="ir.ui.view">
+			<field name="name">Beaux</field>
+			<field name="model">liasse.beaux.erp</field>
+			<field name="arch" type="xml">
+				<form string="Beaux">
+					<group col="4" colspan="4" string="Total">
+						<field name="code0" />
+						<field name="code1" />
+					</group>
+					<group string="section illimitée">
+						<field name="beaux_ids" nolabel="1">
+							<tree string="Repartition cs" editable="bottom">
+								<field name="code0" />
+								<field name="code1" />
+								<field name="code2" />
+								<field name="code3" />
+								<field name="code4" />
+								<field name="code5" />
+								<field name="code6" />
+								<field name="code7" />
+								<field name="type" />
+								<!--  <field name="sequence" />-->
+							</tree>
+						</field>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_passage_view_form_erp" model="ir.ui.view">
+			<field name="name">Passage</field>
+			<field name="model">liasse.passage.erp</field>
+			<field name="arch" type="xml">
+				<form string="Interet">
+					<group string="RESULTAT NET COMPTABLE" col="4" colspan="4">
+						<field name="code0" />
+						<field name="code1" />
+						<field name="code2" />
+						<field name="code3" />
+					</group>
+					<group string="REINTEGRATIONS FISCALES COURANTES">
+						<field name="passages_rfc" nolabel="1" context="{'type_in':'0'}">
+							<tree string="Intertes" editable="bottom">
+								<field name="code0" />
+								<field name="code1" required="True" />
+								<!-- <field name="code2" /> -->
+							</tree>
+						</field>
+					</group>
+					<group string="REINTEGRATIONS FISCALES NON COURANTES">
+						<field name="passages_rfnc" nolabel="1" context="{'type_in':'1'}">
+							<tree string="Intertes" editable="bottom">
+								<field name="code0" />
+								<field name="code1" required="True" />
+								<!-- <field name="code2" /> -->
+							</tree>
+						</field>
+					</group>
+					<group string="DEDUCTIONS FISCALES COURANTES">
+						<field name="passages_dfc" nolabel="1" context="{'type_in':'2'}">
+							<tree string="Intertes" editable="bottom">
+								<field name="code0" />
+								<!-- <field name="code1" /> -->
+								<field name="code2" required="True" />
+							</tree>
+						</field>
+					</group>
+					<group string="DEDUCTIONS FISCALES NON COURANTES">
+						<field name="passages_dfnc" nolabel="1" context="{'type_in':'3'}">
+							<tree string="Intertes" editable="bottom">
+								<field name="code0" />
+								<!-- <field name="code1" /> -->
+								<field name="code2" required="True" />
+							</tree>
+						</field>
+					</group>
+					<separator string="Total" />
+					<group col="4" colspan="4">
+						<field name="code4" />
+						<field name="code5" />
+					</group>
+					<group string="RESULTAT BRUT FISCAL" col="4" colspan="4">
+						<field name="code6" />
+						<field name="code7" />
+						<field name="code8" />
+						<field name="code9" />
+					</group>
+					<group string="REPORTS DEFICITAIRES IMPUTES " col="4"
+						colspan="4">
+						<field name="code10" />
+						<!-- <field name="code11" /> -->
+						<field name="code12" />
+						<!-- <field name="code13" /> -->
+						<field name="code14" />
+						<!-- <field name="code15" /> -->
+						<field name="code16" />
+						<!-- <field name="code17" /> -->
+					</group>
+					<group string="RESULTAT NET FISCAL" col="4" colspan="4">
+						<field name="code18" />
+						<field name="code19" />
+						<field name="code20" />
+						<field name="code21" />
+					</group>
+					<group string="CUMUL DES AMORTISSEMENTS FISCALEMENT DIFFERES"
+						col="4" colspan="4">
+						<field name="code22" />
+					</group>
+					<group string="CUMUL DES DEFICITS FISCAUX RESTANT A REPORTER"
+						col="4" colspan="4">
+						<field name="code23" />
+						<field name="code24" />
+						<field name="code25" />
+						<field name="code26" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_affect_view_form_erp" model="ir.ui.view">
+			<field name="name">Affectation</field>
+			<field name="model">liasse.affect.erp</field>
+			<field name="arch" type="xml">
+				<form>
+					<group string="ORIGINE DES RESULTATS A AFFECTER" col="4"
+						colspan="4">
+						<field name="code0" />
+						<field name="code1" />
+						<field name="code2" />
+						<field name="code3" />
+						<field name="code4" />
+						<field name="code5" />
+					</group>
+					<group string="AFFECTATION DES RESULTATS" col="4" colspan="4">
+						<field name="code6" />
+						<field name="code7" />
+						<field name="code8" />
+						<field name="code9" />
+						<field name="code10" />
+						<field name="code11" />
+						<field name="code12" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_encour_view_form_erp" model="ir.ui.view">
+			<field name="name">Encouragement</field>
+			<field name="model">liasse.encour.erp</field>
+			<field name="arch" type="xml">
+				<form>
+					<group string="Ventes" col="6" colspan="6">
+						<field name="code0" />
+						<field name="code1" />
+						<field name="code2" />
+						<field name="code3" />
+						<field name="code4" />
+						<field name="code5" />
+						<field name="code6" />
+						<field name="code7" />
+						<field name="code8" />
+					</group>
+					<group string="Lotissement et promotion immobilière" col="6"
+						colspan="6">
+						<field name="code9" />
+						<field name="code10" />
+						<field name="code11" />
+						<field name="code12" />
+						<field name="code13" />
+						<field name="code14" />
+						<field name="code15" />
+						<field name="code16" />
+						<field name="code17" />
+					</group>
+					<group string="Prestations de services" col="6" colspan="6">
+						<field name="code18" />
+						<field name="code19" />
+						<field name="code20" />
+						<field name="code21" />
+						<field name="code22" />
+						<field name="code23" />
+						<field name="code24" />
+						<field name="code25" />
+						<field name="code26" />
+					</group>
+					<group string="Produits et Subventions" col="6" colspan="6">
+						<field name="code27" />
+						<field name="code28" />
+						<field name="code29" />
+						<field name="code30" />
+						<field name="code31" />
+						<field name="code32" />
+					</group>
+					<group string="Subventions d'équilibre" col="6" colspan="6">
+						<field name="code33" />
+						<field name="code34" />
+						<field name="code35" />
+						<field name="code36" />
+						<field name="code37" />
+						<field name="code38" />
+						<field name="code39" />
+						<field name="code40" />
+						<field name="code41" />
+						<field name="code42" />
+						<field name="code43" />
+						<field name="code44" />
+					</group>
+					<group string="Totaux partiels" col="6" colspan="6">
+						<field name="code45" />
+						<field name="code46" />
+						<field name="code47" />
+					</group>
+					<group string="Profits" col="6" colspan="6">
+						<field name="code48" />
+						<field name="code49" />
+						<field name="code50" />
+						<field name="code51" />
+						<field name="code52" />
+						<field name="code53" />
+					</group>
+					<group string="Total général" col="6" colspan="6">
+						<field name="code54" />
+						<field name="code55" />
+						<field name="code56" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_fusion_view_form_erp" model="ir.ui.view">
+			<field name="name">Fusion</field>
+			<field name="model">liasse.fusion.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Fusion" editable="bottom">
+					<field name="lib" />
+					<field name="code1" />
+					<field name="code2" />
+					<field name="code3" />
+					<field name="code4" />
+					<field name="code5" />
+					<field name="code6" />
+					<field name="code7" />
+					<field name="code8" />
+					<field name="type" />
+					<field name="sequence" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="liasse_immo_view_form_erp" model="ir.ui.view">
+			<field name="name">Immobilisation</field>
+			<field name="model">liasse.immo.erp</field>
+			<field name="arch" type="xml">
+				<form>
+					<group string="IMMOBILISATION EN NON-VALEURS" col="9"
+						colspan="9">
+						<field name="code0" />
+						<field name="code1" nolabel="1" />
+						<field name="code2" nolabel="1" />
+						<field name="code3" nolabel="1" />
+						<field name="code4" nolabel="1" />
+						<field name="code5" nolabel="1" />
+						<field name="code6" nolabel="1" />
+						<field name="code7" nolabel="1" />
+
+						<field name="fp_mb" />
+						<field name="fp_aug_acq" nolabel="1" />
+						<field name="fp_aug_pd" nolabel="1" />
+						<field name="fp_aug_vir" nolabel="1" />
+						<field name="fp_dim_cess" nolabel="1" />
+						<field name="fp_dim_ret" nolabel="1" />
+						<field name="fp_dim_vir" nolabel="1" />
+						<field name="fp_mbf" nolabel="1" />
+
+						<field name="charge_mb" />
+						<field name="charge_aug_acq" nolabel="1" />
+						<field name="charge_aug_pd" nolabel="1" />
+						<field name="charge_aug_vir" nolabel="1" />
+						<field name="charge_dim_cess" nolabel="1" />
+						<field name="charge_dim_ret" nolabel="1" />
+						<field name="charge_dim_vir" nolabel="1" />
+						<field name="charge_mbf" nolabel="1" />
+
+						<field name="prime_mb" />
+						<field name="prime_aug_acq" nolabel="1" />
+						<field name="prime_aug_pd" nolabel="1" />
+						<field name="prime_aug_vir" nolabel="1" />
+						<field name="prime_dim_cess" nolabel="1" />
+						<field name="prime_dim_ret" nolabel="1" />
+						<field name="prime_dim_vir" nolabel="1" />
+						<field name="prime_mbf" nolabel="1" />
+
+					</group>
+					<group string="IMMOBILISATIONS INCORPORELLES" col="9"
+						colspan="9">
+						<field name="code8" />
+						<field name="code9" nolabel="1" />
+						<field name="code10" nolabel="1" />
+						<field name="code11" nolabel="1" />
+						<field name="code12" nolabel="1" />
+						<field name="code13" nolabel="1" />
+						<field name="code14" nolabel="1" />
+						<field name="code15" nolabel="1" />
+
+
+						<field name="immord_mb" />
+						<field name="immord_aug_acq" nolabel="1" />
+						<field name="immord_aug_pd" nolabel="1" />
+						<field name="immord_aug_vir" nolabel="1" />
+						<field name="immord_dim_cess" nolabel="1" />
+						<field name="immord_dim_ret" nolabel="1" />
+						<field name="immord_dim_vir" nolabel="1" />
+						<field name="immord_mbf" nolabel="1" />
+
+						<field name="brevet_mb" />
+						<field name="brevet_aug_acq" nolabel="1" />
+						<field name="brevet_aug_pd" nolabel="1" />
+						<field name="brevet_aug_vir" nolabel="1" />
+						<field name="brevet_dim_cess" nolabel="1" />
+						<field name="brevet_dim_ret" nolabel="1" />
+						<field name="brevet_dim_vir" nolabel="1" />
+						<field name="brevet_mbf" nolabel="1" />
+
+						<field name="fond_mb" />
+						<field name="fond_aug_acq" nolabel="1" />
+						<field name="fond_aug_pd" nolabel="1" />
+						<field name="fond_aug_vir" nolabel="1" />
+						<field name="fond_dim_cess" nolabel="1" />
+						<field name="fond_dim_ret" nolabel="1" />
+						<field name="fond_dim_vir" nolabel="1" />
+						<field name="fond_mbf" nolabel="1" />
+
+						<field name="autre_incorp_mb" />
+						<field name="autre_incorp_aug_acq" nolabel="1" />
+						<field name="autre_incorp_aug_pd" nolabel="1" />
+						<field name="autre_incorp_aug_vir" nolabel="1" />
+						<field name="autre_incorp_dim_cess" nolabel="1" />
+						<field name="autre_incorp_dim_ret" nolabel="1" />
+						<field name="autre_incorp_dim_vir" nolabel="1" />
+						<field name="autre_incorp_mbf" nolabel="1" />
+
+					</group>
+					<group string="IMMOBILISATIONS CORPORELLES" col="9" colspan="9">
+						<field name="code16" />
+						<field name="code17" nolabel="1" />
+						<field name="code18" nolabel="1" />
+						<field name="code19" nolabel="1" />
+						<field name="code20" nolabel="1" />
+						<field name="code21" nolabel="1" />
+						<field name="code22" nolabel="1" />
+						<field name="code23" nolabel="1" />
+
+						<field name="terrain_mb" />
+						<field name="terrain_aug_acq" nolabel="1" />
+						<field name="terrain_aug_pd" nolabel="1" />
+						<field name="terrain_aug_vir" nolabel="1" />
+						<field name="terrain_dim_cess" nolabel="1" />
+						<field name="terrain_dim_ret" nolabel="1" />
+						<field name="terrain_dim_vir" nolabel="1" />
+						<field name="terrain_mbf" nolabel="1" />
+
+						<field name="constructions_mb" />
+						<field name="constructions_aug_acq" nolabel="1" />
+						<field name="constructions_aug_pd" nolabel="1" />
+						<field name="constructions_aug_vir" nolabel="1" />
+						<field name="constructions_dim_cess" nolabel="1" />
+						<field name="constructions_dim_ret" nolabel="1" />
+						<field name="constructions_dim_vir" nolabel="1" />
+						<field name="constructions_mbf" nolabel="1" />
+
+						<field name="inst_mb" />
+						<field name="inst_aug_acq" nolabel="1" />
+						<field name="inst_aug_pd" nolabel="1" />
+						<field name="inst_aug_vir" nolabel="1" />
+						<field name="inst_dim_cess" nolabel="1" />
+						<field name="inst_dim_ret" nolabel="1" />
+						<field name="inst_dim_vir" nolabel="1" />
+						<field name="inst_mbf" nolabel="1" />
+
+						<field name="mat_mb" />
+						<field name="mat_aug_acq" nolabel="1" />
+						<field name="mat_aug_pd" nolabel="1" />
+						<field name="mat_aug_vir" nolabel="1" />
+						<field name="mat_dim_cess" nolabel="1" />
+						<field name="mat_dim_ret" nolabel="1" />
+						<field name="mat_dim_vir" nolabel="1" />
+						<field name="mat_mbf" nolabel="1" />
+
+						<field name="mob_mb" />
+						<field name="mob_aug_acq" nolabel="1" />
+						<field name="mob_aug_pd" nolabel="1" />
+						<field name="mob_aug_vir" nolabel="1" />
+						<field name="mob_dim_cess" nolabel="1" />
+						<field name="mob_dim_ret" nolabel="1" />
+						<field name="mob_dim_vir" nolabel="1" />
+						<field name="mob_mbf" nolabel="1" />
+
+						<field name="autre_corp_mb" />
+						<field name="autre_corp_aug_acq" nolabel="1" />
+						<field name="autre_corp_aug_pd" nolabel="1" />
+						<field name="autre_corp_aug_vir" nolabel="1" />
+						<field name="autre_corp_dim_cess" nolabel="1" />
+						<field name="autre_corp_dim_ret" nolabel="1" />
+						<field name="autre_corp_dim_vir" nolabel="1" />
+						<field name="autre_corp_mbf" nolabel="1" />
+
+						<field name="immocc_mb" />
+						<field name="immocc_aug_acq" nolabel="1" />
+						<field name="immocc_aug_pd" nolabel="1" />
+						<field name="immocc_aug_vir" nolabel="1" />
+						<field name="immocc_dim_cess" nolabel="1" />
+						<field name="immocc_dim_ret" nolabel="1" />
+						<field name="immocc_dim_vir" nolabel="1" />
+						<field name="immocc_mbf" nolabel="1" />
+
+						<field name="mati_mb" />
+						<field name="mati_aug_acq" nolabel="1" />
+						<field name="mati_aug_pd" nolabel="1" />
+						<field name="mati_aug_vir" nolabel="1" />
+						<field name="mati_dim_cess" nolabel="1" />
+						<field name="mati_dim_ret" nolabel="1" />
+						<field name="mati_dim_vir" nolabel="1" />
+						<field name="mati_mbf" nolabel="1" />
+
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_dotation_view_form_erp" model="ir.ui.view">
+			<field name="name">Dotation</field>
+			<field name="model">liasse.dotation.erp</field>
+			<field name="arch" type="xml">
+				<form>
+					<group col="4" colspan="4" string="Extra field">
+						<field name="montant_global" />
+						<field name="clos" />
+						<field name="date_from" />
+						<field name="date_end" />
+					</group>
+					<group col="8" colspan="8" string="Total">
+						<field name="val_acq" />
+						<field name="val_compt" />
+						<field name="amort_ant" />
+						<field name="amort_ded_et" />
+						<field name="amort_ded_e" />
+						<field name="amort_fe" />
+					</group>
+					<separator string="Section Illimitée" />
+					<field name="dotation_line_ids">
+						<tree string="PM value" editable="bottom">
+							<field name="code0" />
+							<field name="code1" />
+							<field name="code2" />
+							<field name="code3" />
+							<field name="code4" />
+							<field name="code5" />
+							<field name="code6" />
+							<field name="code7" />
+							<field name="code8" />
+							<field name="code9" />
+						</tree>
+					</field>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_tva_view_form_erp" model="ir.ui.view">
+			<field name="name">TVA</field>
+			<field name="model">liasse.tva.erp</field>
+			<field name="arch" type="xml">
+				<form>
+					<group string="A. T.V.A. Facturée " col="4" colspan="4">
+						<field name="tva_facsd" nolabel="1" />
+						<field name="tva_faco" nolabel="1" />
+						<field name="tva_facd" nolabel="1" />
+						<field name="tva_facsf" nolabel="1" />
+					</group>
+					<group string="B. T.V.A. Récupérable" col="4" colspan="4">
+						<field name="tva_recsd" nolabel="1" />
+						<field name="tva_reco" nolabel="1" />
+						<field name="tva_recd" nolabel="1" />
+						<field name="tva_recsf" nolabel="1" />
+					</group>
+					<group string="Sur charges" col="4" colspan="4">
+						<field name="tva_charsd" nolabel="1" />
+						<field name="tva_charo" nolabel="1" />
+						<field name="tva_chard" nolabel="1" />
+						<field name="tva_charsf" nolabel="1" />
+					</group>
+					<group string="Sur immobilisations" col="4" colspan="4">
+						<field name="tva_immosd" nolabel="1" />
+						<field name="tva_immoo" nolabel="1" />
+						<field name="tva_immod" nolabel="1" />
+						<field name="tva_immosf" nolabel="1" />
+					</group>
+					<group string="C. T.V.A. due ou crédit de T.V.A = (A - B )"
+						col="4" colspan="4">
+						<field name="tva_totalsd" nolabel="1" />
+						<field name="tva_totalo" nolabel="1" />
+						<field name="tva_totald" nolabel="1" />
+						<field name="tva_totalsf" nolabel="1" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="liasse_compte_view_tree_erp" model="ir.ui.view">
+			<field name="name">Comptes comptables</field>
+			<field name="model">liasse.compte.erp</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Compte" editable="bottom">
+					<field name="compte" />
+					<field name="conf_id" />
+				</tree>
+			</field>
+		</record>
+<!--  
+		<record id="liasse_compte_comptable_view_tree" model="ir.ui.view">
+			<field name="name">Comptes comptables</field>
+			<field name="model">liasse.plan.comptable</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Compte" editable="bottom">
+					<field name="compte" />
+				</tree>
+			</field>
+		</record>-->
+
+		<record id="action_liasse_compte_erp" model="ir.actions.act_window">
+			<field name="name">Configuration</field>
+			<field name="res_model">liasse.compte.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- <record id="action_liasse_plan_comptable" model="ir.actions.act_window">
+			<field name="name">Plan Comptable</field>
+			<field name="res_model">liasse.plan.comptable</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>-->
+
+		<record id="action_liasse_conf_erp" model="ir.actions.act_window">
+			<field name="name">Configuration</field>
+			<field name="res_model">liasse.configuration.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_liasse_actif_erp" model="ir.actions.act_window">
+			<field name="name">Bilan actif</field>
+			<field name="res_model">liasse.bilan.actif.erp</field>
+
+			<field name="view_mode">tree</field>
+		</record>
+
+		<record id="action_liasse_passif_erp" model="ir.actions.act_window">
+			<field name="name">Bilan passif</field>
+			<field name="res_model">liasse.bilan.passif.erp</field>
+
+			<field name="view_mode">tree</field>
+		</record>
+
+		<record id="action_liasse_cpc_erp" model="ir.actions.act_window">
+			<field name="name">CPC </field>
+			<field name="res_model">liasse.cpc.erp</field>
+
+			<field name="view_mode">tree</field>
+		</record>
+
+		<record id="action_liasse_tfr_erp" model="ir.actions.act_window">
+			<field name="name">TFR</field>
+			<field name="res_model">liasse.tfr.erp</field>
+
+			<field name="view_mode">tree</field>
+		</record>
+
+		<record id="action_liasse_caf_erp" model="ir.actions.act_window">
+			<field name="name">CAF</field>
+			<field name="res_model">liasse.caf.erp</field>
+
+			<field name="view_mode">tree</field>
+		</record>
+
+		<record id="action_liasse_det_cpc_erp" model="ir.actions.act_window">
+			<field name="name">Detail CPC</field>
+			<field name="res_model">liasse.det.cpc.erp</field>
+
+			<field name="view_mode">tree</field>
+		</record>
+
+
+		<record id="action_liasse_amort_erp" model="ir.actions.act_window">
+			<field name="name">Amortissement</field>
+			<field name="res_model">liasse.amort.erp</field>
+
+			<field name="view_mode">tree</field>
+		</record>
+
+		<record id="action_liasse_prov_erp" model="ir.actions.act_window">
+			<field name="name">Provision</field>
+			<field name="res_model">liasse.provision.erp</field>
+
+			<field name="view_mode">tree</field>
+		</record>
+
+		<record id="action_liasse_stock_erp" model="ir.actions.act_window">
+			<field name="name">Stock</field>
+			<field name="res_model">liasse.stock.erp</field>
+
+			<field name="view_mode">tree</field>
+		</record>
+
+		<record id="action_liasse_creditbail_erp" model="ir.actions.act_window">
+			<field name="name">Credit bail</field>
+			<field name="res_model">liasse.credit.bail.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_liasse_pmvalue_erp" model="ir.actions.act_window">
+			<field name="name">PM Value</field>
+			<field name="res_model">liasse.pm.value.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_liasse_titreparticip_erp" model="ir.actions.act_window">
+			<field name="name">Titres de participation</field>
+			<field name="res_model">liasse.titre.particip.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_liasse_repart_cs_erp" model="ir.actions.act_window">
+			<field name="name">Etat du repartition c.s.</field>
+			<field name="res_model">liasse.repart.cs.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_liasse_interet_erp" model="ir.actions.act_window">
+			<field name="name">Interets des emprunts</field>
+			<field name="res_model">liasse.interets.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_liasse_beaux_erp" model="ir.actions.act_window">
+			<field name="name">Locations et Beaux</field>
+			<field name="res_model">liasse.beaux.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_liasse_passage_erp" model="ir.actions.act_window">
+			<field name="name">Passage</field>
+			<field name="res_model">liasse.passage.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_liasse_affect_erp" model="ir.actions.act_window">
+			<field name="name">Affectation</field>
+			<field name="res_model">liasse.affect.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_liasse_encour_erp" model="ir.actions.act_window">
+			<field name="name">Encouragement</field>
+			<field name="res_model">liasse.encour.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_liasse_fusion_erp" model="ir.actions.act_window">
+			<field name="name">Fusion</field>
+			<field name="res_model">liasse.fusion.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_liasse_code_erp" model="ir.actions.act_window">
+			<field name="name">Codification EDI</field>
+			<field name="res_model">liasse.code.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_liasse_tva_erp" model="ir.actions.act_window">
+			<field name="name">TVA</field>
+			<field name="res_model">liasse.tva.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_liasse_immo_erp" model="ir.actions.act_window">
+			<field name="name">Immobilisation</field>
+			<field name="res_model">liasse.immo.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_liasse_dotation_erp" model="ir.actions.act_window">
+			<field name="name">Dotation aux amortissements</field>
+			<field name="res_model">liasse.dotation.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_liasse_extra_erp" model="ir.actions.act_window">
+			<field name="name">Extra field codification</field>
+			<field name="res_model">liasse.extra.field.erp</field>
+
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem id="main_liasse_conf_erp" name="Configuration" parent="liasse_normale_erp"
+			sequence="3" groups="base.group_system"/>
+
+		  <menuitem id="sub_liasse_compte_erp" name="Comptes configurés"
+			parent="main_liasse_conf_erp" sequence="2" action="action_liasse_compte_erp" />
+
+		<!--  <menuitem id="sub_liasse_plan_comptable" name="Comptes comptables"
+			parent="main_liasse_conf" sequence="1" action="action_liasse_plan_comptable" />-->
+
+		<menuitem id="sub_liasse_conf_erp" name="Association des code EDI"
+			parent="main_liasse_conf_erp" sequence="3" action="action_liasse_conf_erp" />
+
+		<menuitem id="sub_liasse_code_erp" name="Codification EDI"
+			parent="main_liasse_conf_erp" sequence="4" action="action_liasse_code_erp" />
+
+		<menuitem id="sub_liasse_tab_erp" name="Codification des tableaux"
+			parent="main_liasse_conf_erp" sequence="5" />
+
+		<menuitem id="sub_liasse_bilan_erp" name="Bilan" parent="sub_liasse_tab_erp" />
+
+		<menuitem id="sub_liasse_actif_erp" name="Bilan Actif" parent="sub_liasse_bilan_erp"
+			action="action_liasse_actif_erp" />
+
+		<menuitem id="sub_liasse_passif_erp" name="Bilan Passif" parent="sub_liasse_bilan_erp"
+			action="action_liasse_passif_erp" />
+
+		<menuitem id="sub_liasse_cpc_erp" parent="sub_liasse_tab_erp"
+			sequence="4" action="action_liasse_cpc_erp" />
+		<menuitem id="sub_liasse_esg_erp" parent="sub_liasse_tab_erp"
+			sequence="5" name="ESG" />
+		<menuitem id="sub_liasse_tfr_erp" parent="sub_liasse_esg_erp" action="action_liasse_tfr_erp" />
+		<menuitem id="sub_liasse_caf_erp" parent="sub_liasse_esg_erp" action="action_liasse_caf_erp" />
+
+		<menuitem id="sub_liasse_det_cpc_erp" parent="sub_liasse_tab_erp"
+			sequence="6" action="action_liasse_det_cpc_erp" />
+
+		<menuitem id="sub_liasse_amort_erp" parent="sub_liasse_tab_erp"
+			sequence="7" action="action_liasse_amort_erp" />
+		<menuitem id="sub_liasse_prov_erp" parent="sub_liasse_tab_erp"
+			sequence="7" action="action_liasse_prov_erp" />
+
+		<menuitem id="sub_liasse_stock_erp" parent="sub_liasse_tab_erp"
+			sequence="8" action="action_liasse_stock_erp" />
+
+		<menuitem id="sub_liasse_creditbail_erp" parent="sub_liasse_tab_erp"
+			sequence="9" action="action_liasse_creditbail_erp" />
+
+		<menuitem id="sub_liasse_pmvalue_erp" parent="sub_liasse_tab_erp"
+			sequence="10" action="action_liasse_pmvalue_erp" />
+
+		<menuitem id="sub_liasse_titreparticip_erp" parent="sub_liasse_tab_erp"
+			sequence="11" action="action_liasse_titreparticip_erp" />
+
+		<menuitem id="sub_liasse_repart_cs_erp" parent="sub_liasse_tab_erp"
+			sequence="12" action="action_liasse_repart_cs_erp" />
+
+		<menuitem id="sub_liasse_interet_erp" parent="sub_liasse_tab_erp"
+			sequence="13" action="action_liasse_interet_erp" />
+
+		<menuitem id="sub_liasse_beaux_erp" parent="sub_liasse_tab_erp"
+			sequence="14" action="action_liasse_beaux_erp" />
+
+		<menuitem id="sub_liasse_passage_erp" parent="sub_liasse_tab_erp"
+			sequence="15" action="action_liasse_passage_erp" />
+
+		<menuitem id="sub_liasse_affect_erp" parent="sub_liasse_tab_erp"
+			sequence="16" action="action_liasse_affect_erp" />
+
+		<menuitem id="sub_liasse_encour_erp" parent="sub_liasse_tab_erp"
+			sequence="17" action="action_liasse_encour_erp" />
+
+		<menuitem id="sub_liasse_fusion_erp" parent="sub_liasse_tab_erp"
+			sequence="18" action="action_liasse_fusion_erp" />
+
+		<menuitem id="sub_liasse_tva_erp" parent="sub_liasse_tab_erp"
+			sequence="19" action="action_liasse_tva_erp" />
+
+		<menuitem id="sub_liasse_immo_erp" parent="sub_liasse_tab_erp"
+			sequence="20" action="action_liasse_immo_erp" />
+
+		<menuitem id="sub_liasse_dotation_erp" parent="sub_liasse_tab_erp"
+			sequence="21" action="action_liasse_dotation_erp" />
+
+		<menuitem id="sub_liasse_extra_erp" name="Codification des extra field"
+			parent="main_liasse_conf_erp" sequence="6" action="action_liasse_extra_erp" />
+	</data>
+</odoo>

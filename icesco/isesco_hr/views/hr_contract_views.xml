@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product.product_category_list_view" model="ir.ui.view">
+            <field name="name">product.category.list</field>
+            <field name="model">product.category</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <tree string="Product Categories">
+                    <field name="display_name" string="Product Category"/>
+                    <field name="code_prefix"/>
+                </tree>
+            </field>
+    </record>
+
+    <!-- contract -->
+    <record id="hr_contract_view_form_inherite" model="ir.ui.view">
+        <field name="name">hr.contract.form.inherit</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <field name="rubrique_ids" position='before'>
+                <field name="is_rubrique_dependent" invisible="1"/>
+                <button string="Generate rubrique dependent" type="object" name="generate_rubrique_dependent"
+                        class="oe_highlight"/>
+            </field>
+            <field name="job_id" position='after'>
+                <field name="category_id"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- category -->
+    <record model="ir.ui.view" id="hr_contract_category_form">
+        <field name="name">hr.contract.category.form</field>
+        <field name="model">hr.contract.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                        </group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <field name="grade_ids" />
+                    </group>
+                    <notebook>
+                        <page name="grades" string="Grades">
+                            <field name="grade_ids">
+                                <tree>
+                                    <field name="code"/>
+                                    <field name="name"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name='expenses' string="Expenses">
+
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="hr_contract_category_tree">
+        <field name="name">hr.contract.category.tree</field>
+        <field name="model">hr.contract.category</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code" />
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="hr_contract_category_action" model="ir.actions.act_window">
+        <field name="name">Contract Category</field>
+        <field name="res_model">hr.contract.category</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+              Create a new contract category
+            </p>
+        </field>
+    </record>
+
+    <!-- grade -->
+    <record model="ir.ui.view" id="hr_contract_grade_form">
+        <field name="name">hr.contract.grade.form</field>
+        <field name="model">hr.contract.grade</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code" />
+                        </group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="hr_contract_grade_tree">
+        <field name="name">hr.contract.grade.tree</field>
+        <field name="model">hr.contract.grade</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code" />
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="hr_contract_grade_action" model="ir.actions.act_window">
+        <field name="name">Contract Grade</field>
+        <field name="res_model">hr.contract.grade</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+              Create a new contract grade
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="menu_contract_configuration"
+        parent="hr.menu_human_resources_configuration"
+        name="Contract"
+        sequence="7"/>
+
+    <menuitem
+        id="kzm_hr_contract_type.hr_menu_contract_type"
+        name="Contract Type"
+        parent="menu_contract_configuration"
+        sequence="10"/>
+    <menuitem
+        id="hr_menu_contract_category"
+        action="hr_contract_category_action"
+        parent="menu_contract_configuration"
+        sequence="14"/>
+    <menuitem
+        id="hr_menu_contract_grade"
+        action="hr_contract_grade_action"
+        parent="menu_contract_configuration"
+        sequence="16"/>
+
+</odoo>

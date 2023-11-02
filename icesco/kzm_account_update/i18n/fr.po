@@ -1,0 +1,93 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* kzm_account_update
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-18 14:08+0000\n"
+"PO-Revision-Date: 2019-07-18 14:08+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: kzm_account_update
+#: model:ir.model,name:kzm_account_update.model_account_account
+msgid "Account"
+msgstr "Compte"
+
+#. module: kzm_account_update
+#: model:ir.actions.act_window,name:kzm_account_update.action_account_update_wizard
+#: model:ir.ui.menu,name:kzm_account_update.menu_account_update_wizard
+msgid "Account update"
+msgstr "Mise à jour des comptes"
+
+#. module: kzm_account_update
+#: model_terms:ir.ui.view,arch_db:kzm_account_update.view_account_update_wizard_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: kzm_account_update
+#: model:ir.model.fields,field_description:kzm_account_update.field_account_update_wizard__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: kzm_account_update
+#: model:ir.model.fields,field_description:kzm_account_update.field_account_update_wizard__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: kzm_account_update
+#: model:ir.model.fields,field_description:kzm_account_update.field_account_update_wizard__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: kzm_account_update
+#: model:ir.model.fields,field_description:kzm_account_update.field_account_update_wizard__file
+msgid "File"
+msgstr "Fichier"
+
+#. module: kzm_account_update
+#: model:ir.model.fields,help:kzm_account_update.field_account_update_wizard__file
+msgid "File to check and import, csv format"
+msgstr "Fichier à vérifier et importer, format csv"
+
+#. module: kzm_account_update
+#: model:ir.model.fields,field_description:kzm_account_update.field_account_update_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: kzm_account_update
+#: model:ir.model.fields,field_description:kzm_account_update.field_account_update_wizard____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: kzm_account_update
+#: model:ir.model.fields,field_description:kzm_account_update.field_account_update_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: kzm_account_update
+#: model:ir.model.fields,field_description:kzm_account_update.field_account_update_wizard__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: kzm_account_update
+#: model_terms:ir.ui.view,arch_db:kzm_account_update.view_account_update_wizard_form
+msgid "Please ensure that you have does two columns in your csv file : 'compte' and 'compte_name'"
+msgstr "Assurez-vous d'avoir ces deux colonnes dans votre fichier csv : 'compte' et 'compte_name'"
+
+#. module: kzm_account_update
+#: model_terms:ir.ui.view,arch_db:kzm_account_update.view_account_update_wizard_form
+msgid "Update"
+msgstr "Mettre à jour"
+
+#. module: kzm_account_update
+#: model:ir.model,name:kzm_account_update.model_account_update_wizard
+msgid "account.update.wizard"
+msgstr ""
+

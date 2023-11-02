@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dh_strategic_objectives_form">
+            <field name="name">dh.strategic.objectives.form</field>
+            <field name="model">dh.strategic.objectives</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <notebook>
+                            <page string="projects" name="projects">
+
+
+                                <field name="projects_ids" widget="many2many" domain="[('strategic_id','=',False)]">
+                                    <tree editable="bottom">
+
+
+                                        <field name="name"/>
+                                        <field name="description"/>
+                                        <field name="date_start"/>
+                                        <field name="date_end"/>
+
+                                    </tree>
+                                </field>
+                            </page>
+
+
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_strategic_objectives_tree">
+            <field name="name">dh.strategic.objectives.tree</field>
+            <field name="model">dh.strategic.objectives</field>
+            <field name="arch" type="xml">
+
+                <tree>
+
+
+                    <field name="name"/>
+                </tree>
+
+            </field>
+        </record>
+
+        <record id="dh_strategic_objectives_action" model="ir.actions.act_window">
+            <field name="name">Strategic Objectives</field>
+            <field name="res_model">dh.strategic.objectives</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p>Add a strategic objectives</p>
+            </field>
+        </record>
+
+<!--        <menuitem id="project_goals_menu" name=" Goals "-->
+<!--                  parent="project.menu_main_pm"-->
+<!--                  action="cps_icesco.dh_strategic_objectives_action" sequence="0"/>-->
+    </data>
+</odoo>

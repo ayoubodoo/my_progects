@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="dh_offer_letter_repport1"
+            model="hr.applicant"
+            string="Offer Letter"
+            report_type="qweb-pdf"
+            name="isesco_hr.dh_offer_letter_repport"
+            file="isesco_hr.dh_offer_letter_repport"/>
+
+
+
+
+
+
+
+
+    <template id="dh_offer_letter_repport">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+
+
+
+                    <div class="page article" style="padding-left:8%;padding-right:8%;font-size:18px;font-family:Arial;text-align: justify;
+  text-justify: inter-word;">
+                        <div class="header">
+
+      <img src="/isesco_hr/static/img/img.png"
+                         style="width:800px;height:140px;float:center;padding-left:6%;padding-right:6%"/>
+
+                        </div>
+                        <div  style="border-bottom: solid;;border-width: 3px;">
+                            First name:   <span t-field="doc.partner_name"/>
+                            <br/>
+Last name:
+                             <br/>
+Tel. no:   <span t-field="doc.partner_phone"/>
+                             <br/>
+Date:   <span t-field="doc.partner_phone"/>
+                               <div class="text-center ">
+                            <b style="font-size:22px">
+Offer Letter
+
+                            </b>
+                        </div>
+                        </div>
+
+
+
+
+                        <p>
+<br/>
+                           Dear <span t-field="doc.partner_name"/>,
+                        </p>
+
+
+                        <div style="font-family:Arial;">
+
+                            <div>
+
+                                    Following our interview, we are pleased to announce that your application for the position of<span
+                                        t-field="doc.job_id.name"/>.This event will be organized at
+                                   at the
+                                        <span t-field="doc.department_id.display_name"/>
+
+                                   of ICESCO has been accepted.
+
+                            </div>
+                            <br/>
+                            <div>
+                               This appointment will take the form of a contract of which will take effect on the date of signing
+
+                                with a probationary period of not less than 3 months.
+                            </div>
+                            <br/>
+                            <div>
+                               In accordance with the Staff Regulations, your professional classification is as follows:
+
+
+                                <div>
+                                     <br/>
+                                  <table id="infos" style="padding-left:15%;padding-right:15%;font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;border: 1px solid #ddd;font-size:20px">
+  <tr >
+    <td style="border: 1px solid #ddd;background-color: #50813E;color:white">Category</td>
+    <td style="border: 1px solid #ddd;background-color: #f2f2f2;"> <span t-field="doc.category_contract_id.display_name"/> </td>
+
+  </tr>
+ <tr style="border: 1px solid #ddd;">
+    <td style="border: 1px solid #ddd;background-color: #50813E;color:white;">Grade</td>
+    <td  class="text:center"  style="border: 1px solid #ddd;background-color: #f2f2f2;">
+
+                         <span t-field="doc.grade_id.display_name"/>
+
+
+    </td>
+
+  </tr>
+ <tr style="border: 1px solid #ddd;">
+    <td style="border: 1px solid #ddd;background-color: #50813E;color:white">Base Salary</td>
+    <td class="text:center"  style="border: 1px solid #ddd;background-color: #f2f2f2;">
+                         <span t-field="doc.amount"/>
+
+
+    </td>
+
+  </tr>
+ <tr style="border: 1px solid #ddd;">
+     <t t-set="housing_allowance" t-value="doc.amount*0.2"/>
+    <td style="border: 1px solid #ddd;background-color: #50813E;color:white">Housing Allowances</td>
+    <td class="text:center"   style="border: 1px solid #ddd;background-color: #f2f2f2;">
+   <span t-esc="housing_allowance"/>
+
+    </td>
+
+  </tr>
+ <tr style="border: 1px solid #ddd;">
+<!--     <t t-if="doc.nationality=='Morocoo'">-->
+<!--          <t t-set="transport_allowance" t-value="0"/>-->
+<!--     </t>-->
+<!--     <t t-else="">-->
+<!--         <t t-set="transport_allowance" t-value="doc.trans_allowance"/>-->
+
+<!--     </t>-->
+<!--              <t t-set="transport_allowance" t-value="doc.trans_allowance"/>-->
+
+
+    <td style="border: 1px solid #ddd;background-color: #50813E;color:white">Transport Allowances</td>
+    <td class="text:center"  style="border: 1px solid #ddd;background-color: #f2f2f2;">  <span t-esc="doc.trans_allowance"/></td>
+
+
+  </tr>
+ <tr style="border: 1px solid #ddd;">
+    <td style="border: 1px solid #ddd;background-color: #50813E;color:white">Family Allowances</td>
+    <td class="text:center"  style="border: 1px solid #ddd;background-color: #f2f2f2;"><span t-esc="doc.family_allowance"/></td>
+
+  </tr>
+ <tr style="border: 1px solid #ddd;">
+       <t t-set="expatriation_allowance" t-value="doc.amount*0.2"/>
+   <td style="border: 1px solid #ddd;background-color: #50813E;color:white">Expatriation Allowance</td>
+    <td class="text:center"  style="border: 1px solid #ddd;background-color: #f2f2f2;">
+   <span t-esc="expatriation_allowance"/></td>
+
+  </tr>
+ <tr style="border: 1px solid #ddd;">
+<!--       <t t-set="gross_salary" t-value="doc.amount*0.2+doc.amount*0.25+float(doc.family_allowance)+float(transport_allowance)+doc.amount"/>-->
+    <td style="border: 1px solid #ddd;background-color: #50813E;color:white">Gross Salary</td>
+    <td class="text:center"  style=" border: 1px solid #ddd;background-color: #f2f2f2;">
+
+         <span t-esc="doc.gross_salary"/>
+    </td>
+
+  </tr>
+ <tr style="border: 1px solid #ddd;">
+          <t t-set="health_insurance" t-value="doc.amount*0.03"/>
+
+     <td style="border: 1px solid #ddd;background-color: #50813E;"><b>Health Insurance(3% of Base Salary)</b></td>
+    <td class="text:center"  style="border: 1px solid #ddd;background-color: #f2f2f2;">
+ <span t-esc="health_insurance"/></td>
+  </tr>
+<tr style="border: 1px solid #ddd;">
+              <t t-set="end_service" t-value="doc.amount*0.0025"/>
+
+    <td style="border: 1px solid #ddd;background-color: #50813E;"><b>End of Service contribution(2.5% of Base Salary)</b></td>
+    <td class="text:center"   style="border: 1px solid #ddd;background-color: #f2f2f2;">
+
+         <span t-esc="end_service"/>
+    </td>
+
+  </tr>
+  <tr style="border: 1px solid #ddd;">
+<!--              <t t-set="salary_net" t-value="gross_salary-(doc.amount*0.0025)-(doc.amount*0.03)"/>-->
+
+    <td style="border: 1px solid #ddd;background-color: #50813E;color:white">Net Salary</td>
+    <td class="text:center"   style="border: 1px solid #ddd;background-color: #f2f2f2;">
+
+         <span t-esc="doc.net_salary"/>
+    </td>
+  </tr>
+</table>
+
+                                </div>
+                                 <p style="page-break-after:always;"></p>
+
+                                <div>
+                              <br/>
+                                You  will  be  entitled  to  a  paid  annual  leave  equivalent  to  2.5  working  days  for  each  month worked.
+                                                          <br/>
+                                                          <br/>
+You  will  also  benefit  from  an  insurance  against  accidents  at  work  and  an  internal  mutual insurance specific to ICESCO staff.
+                                <br/>
+                                <br/>
+You will also have the possibility to join the end-of-service indemnity fund under the conditions specified in ICESCO's Staff Regulations.
+                                <br/>
+                                <br/>
+                                Please return a copy of this letter to us as soon as possible, with your signature preceded by the handwritten mention read and approved.
+                                <br/>
+                                <br/>
+We welcome you to ICESCO  <span t-field="doc.text"/> with the expression of our best wishes.
+                            </div>
+                            <br/>
+                            <br/>
+
+Done in Rabat,
+<br/>
+<br/>
+<br/>
+
+                        </div>
+
+                         <div class="row">
+                        <div class="col-6 text:left">
+Signature of ICESCO
+
+                        </div>
+                        <div class="col-6 text:right">
+
+                                     <span style="padding-left:20%"> Signature of the employee</span>
+
+
+
+                        </div>
+
+                    </div>
+                    </div>
+                    </div>
+
+
+
+
+            </t>
+        </t>
+    </template>
+</odoo>

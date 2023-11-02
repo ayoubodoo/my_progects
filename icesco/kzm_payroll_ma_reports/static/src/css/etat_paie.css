@@ -1,0 +1,215 @@
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1107305727 0 0 415 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073786111 1 0 415 0;}
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:Calibri;
+	mso-bidi-font-family:Calibri;
+	color:black;}
+h1
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-style-link:"Titre 1 Car";
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:4.35pt;
+	margin-bottom:0cm;
+	margin-left:.5pt;
+	margin-bottom:.0001pt;
+	text-align:center;
+	text-indent:-.5pt;
+	line-height:107%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:white;
+	background:black;
+	mso-font-kerning:0pt;
+	mso-bidi-font-weight:normal;}
+span.Titre1Car
+	{mso-style-name:"Titre 1 Car";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Titre 1";
+	mso-ansi-font-size:14.0pt;
+	font-family:"Times New Roman","serif";
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:white;
+	mso-fareast-language:FR;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:Arial;
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.0pt 842.0pt;
+	margin:27.45pt 35.1pt 53.9pt 28.55pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+@page WordSection2
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 70.85pt 70.85pt 70.85pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.WordSection2
+	{page:WordSection2;}
+table.MsoNormalTable
+	{mso-style-name:"Tableau Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin-top:0cm;
+	mso-para-margin-right:0cm;
+	mso-para-margin-bottom:8.0pt;
+	mso-para-margin-left:0cm;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-fareast-language:EN-US;}
+table.MsoTableGrid
+	{mso-style-name:"Grille du tableau";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-priority:39;
+	mso-style-unhide:no;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-fareast-language:EN-US;}
+table.TableGrid
+	{mso-style-name:TableGrid;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	}
+
+//journal_paie.xml
+
+.tg  {}
+.tg td{font-family:Arial, sans-serif;font-size:15px;padding:3px 3px;border-color: #ddd;
+        border-style:solid ;border-width:1px;overflow:hidden;word-break:normal;text-align:center;}
+.tg th{font-family:Arial, sans-serif;font-size:15px;font-weight:normal;border-color: #ddd;
+        padding:3px 3px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;
+        text-align:center;}
+.titre_header { width : 100%; }
+.nom_company {width : 40%; float :left;}
+.titre_report{width : 60%; float :left;}
+.soustitre_header { width : 100%; text-align :center; float : left;margin-top:-5px;}
+
+//fin journal_paie.xml
+
+//rep_cnss.xml & rep_amo.xml
+.t_cnss { position: fixed;padding: 15px 3px 0px 3px;bottom:0; width : 100%;float : left;position: static; z-index: 1}
+
+.tg_cnss  {border-collapse:collapse;border-spacing:0;width:100%;border-color: #ddd}
+.tg_cnss td{font-family:Arial, sans-serif;font-size:14px;padding:4px 4px;border-color: #ddd;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg_cnss th{ height : 20px;padding:9px 7px;font-weight: bold;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 4px;border-style:solid;border-color: #ddd;border-width:1px;overflow:hidden;word-break:normal;}
+.tg_cnss .tg-yw4l{vertical-align:top}
+.tg_cnss .tg-yw43{vertical-align:top;text-align : center;}
+.tg_cnss .tg-yw42{vertical-align:top;width:45%;}
+
+//fin rep_cnss.xml & rep_amo.xml
+
+//livre_paie.xml
+
+.tglp  {border-collapse:collapse;border-spacing:0;width:100%;border-color: #ddd;}
+.tglp td{font-family:Arial, sans-serif;font-size:14px;border-style:solid;border-color: #ddd;border-width:1px;overflow:hidden;word-break:normal;}
+.tglp .tg-lp10{vertical-align:top;font-weight: bold;padding:3px 2px;text-align:center;font-size:12px;}
+.tglp .tg-lp11{vertical-align:top;text-align:center;padding:2px 2px;}
+.tglp .tg-lp12{border : none;font-weight: bold;padding:4px 4px;}
+
+//fin livre_paie.xml
+
+//rep_amo.xml
+
+.tgamo  {border-collapse:collapse;border-spacing:0;width:100%;border-color: #ddd;}
+.tgamo td{font-family:Arial, sans-serif;font-size:14px;padding:4px 4px;border-style:solid;border-color: #ddd;border-width:1px;overflow:hidden;word-break:normal;}
+.tgamo th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 4px;border-style:solid;border-color: #ddd;border-width:1px;overflow:hidden;word-break:normal;}
+.tgamo .tg-yw4l{vertical-align:top}
+.tgamo .tg-yw43{vertical-align:top;text-align : center;}
+.tgamo .tg-yw42{vertical-align:top;width:45%;}
+
+//fin rep_amo.xml
+
+.tg157  {border-collapse:collapse;border-spacing:0;width:100%;}
+.tg157 td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;}
+

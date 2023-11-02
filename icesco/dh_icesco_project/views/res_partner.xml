@@ -1,0 +1,590 @@
+<odoo>
+    <data>
+        <record id="dh_partner_view_experts_form" model="ir.ui.view">
+            <field name="name">experts.form</field>
+            <field name="model">hr.employee</field>
+            <field name="arch" type="xml">
+                <form>
+                                  <field name="active" invisible="1"/>
+                    <field name="user_partner_id" invisible="1"/>
+                    <field name="hr_presence_state" invisible="1"/>
+                    <field name="user_id" invisible="1"/>
+                    <header>
+                        <button string="Chat" class="btn btn-primary o_employee_chat_btn" attrs="{'invisible': [('user_id','=', False)]}"/>
+                        <button name="320" string="Launch Plan" type="action" groups="hr.group_hr_manager"/>
+                    </header>
+                    <sheet>
+                        <div name="button_box" class="oe_button_box">
+                            <button id="hr_presence_button" class="oe_stat_button" disabled="1" attrs="{'invisible': ['|', ('last_activity', '=', False), ('user_id', '=', False)]}">
+                                <div role="img" class="fa fa-fw fa-circle text-success o_button_icon" attrs="{'invisible': [('hr_presence_state', '!=', 'present')]}" aria-label="Available" title="Available"/>
+                                <div role="img" class="fa fa-fw fa-circle text-warning o_button_icon" attrs="{'invisible': [('hr_presence_state', '!=', 'to_define')]}" aria-label="Away" title="Away"/>
+                                <div role="img" class="fa fa-fw fa-circle text-danger o_button_icon" attrs="{'invisible': [('hr_presence_state', '!=', 'absent')]}" aria-label="Not available" title="Not available"/>
+
+                                <div class="o_stat_info" attrs="{'invisible': [('hr_presence_state', '=', 'present')]}">
+                                    <span class="o_stat_text">
+                                        Not Connected
+                                    </span>
+                                </div>
+                                <div class="o_stat_info" attrs="{'invisible': [('hr_presence_state', '!=', 'present')]}">
+                                    <span class="o_stat_value" attrs="{'invisible': [('last_activity_time', '=', False)]}">
+                                        <field name="last_activity_time"/>
+                                    </span>
+                                    <span class="o_stat_value" attrs="{'invisible': [('last_activity_time', '!=', False)]}">
+                                        <field name="last_activity"/>
+                                    </span>
+                                    <span class="o_stat_text">Present Since</span>
+                                </div>
+                            </button>
+                        </div>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                        <field name="image_1920" widget="image" class="oe_avatar" options="{&quot;zoom&quot;: true, &quot;preview_image&quot;:&quot;image_128&quot;}"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Employee's Name" required="True"/>
+                            </h1>
+                            <h2>
+                                <field name="job_title" placeholder="Job Position"/>
+                            </h2>
+                            <field name="category_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}" placeholder="Tags" groups="hr.group_hr_manager"/>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="mobile_phone" widget="phone"/>
+                                <field name="work_phone" widget="phone"/>
+                                <field name="work_email" widget="email"/>
+                                <field name="work_location"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                            </group>
+                            <group>
+                                <field name="department_id"/>
+                                <field name="department_racine"/>
+                                <field name="job_id"/>
+                                <field name="parent_id"/>
+                                <!--<field name="user_id"/>-->
+                            </group>
+                            </group>
+                    </sheet>
+
+
+                </form>
+
+            </field>
+        </record>
+
+
+        <record id="dh_partner_view_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='sales_purchases']" position="after">
+                    <page string="نوع الشريك">
+                        <group>
+                            <field name="institution_gouv_etat_member"/>
+                            <field name="institution_gouv_etat_non_member"/>
+                            <field name="organisation_mondiale_rare"/>
+                            <field name="organisation_locale"/>
+                            <field name="organisation_regional"/>
+                            <field name="type_partenaire" invisible="1"/>
+                            <field name="mission_ids" invisible="1"/>
+                            <field name="count_mission" invisible="1"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="dh_view_partner_kanban" model="ir.ui.view">
+            <field name="name">dh.partner.kanban</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//kanban" position="attributes">
+                    <attribute name="default_order">dh_order</attribute>
+                </xpath>
+                <xpath expr="//div[hasclass('oe_kanban_global_click')]" position="replace">
+                    <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban"
+                         style="direction:ltr!important;">
+                        <t t-if="!record.is_company.raw_value">
+                            <t t-if="record.type.raw_value === 'delivery'" t-set="placeholder"
+                               t-value="'/base/static/img/truck.png'"/>
+                            <t t-elif="record.type.raw_value === 'invoice'" t-set="placeholder"
+                               t-value="'/base/static/img/money.png'"/>
+                            <t t-else="" t-set="placeholder" t-value="'/base/static/img/avatar_grey.png'"/>
+                            <div class="o_kanban_image_fill_left d-none d-md-block"
+                                 t-attf-style="background-image:url('#{kanban_image('res.partner', 'image_128', record.id.raw_value,  placeholder)}')">
+                                <img class="o_kanban_image_inner_pic" t-if="record.parent_id.raw_value"
+                                     t-att-alt="record.parent_id.value"
+                                     t-att-src="kanban_image('res.partner', 'image_128', record.parent_id.raw_value)"/>
+                            </div>
+                            <div class="o_kanban_image d-md-none"
+                                 t-attf-style="background-image:url('#{kanban_image('res.partner', 'image_128', record.id.raw_value,  placeholder)}')">
+                                <img class="o_kanban_image_inner_pic" t-if="record.parent_id.raw_value"
+                                     t-att-alt="record.parent_id.value"
+                                     t-att-src="kanban_image('res.partner', 'image_128', record.parent_id.raw_value)"/>
+                            </div>
+                        </t>
+                        <t t-else="">
+                            <t t-set="placeholder" t-value="'/base/static/img/company_image.png'"/>
+                            <div class="o_kanban_image_fill_left o_kanban_image_full"
+                                 t-attf-style="background-image: url(#{kanban_image('res.partner', 'image_128', record.id.raw_value, placeholder)})"
+                                 role="img"/>
+                        </t>
+                        <div class="oe_kanban_details">
+                            <strong class="o_kanban_record_title oe_partner_heading">
+                                <t t-if="record.official_country_name.raw_value">
+                                    <field name="official_country_name"/>
+                                </t>
+                                <t t-else="">
+                                    <field name="display_name"/>
+                                </t>
+                            </strong>
+                            <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
+                            <ul>
+                                <li t-if="record.parent_id.raw_value and !record.function.raw_value">
+                                    <field name="parent_id"/>
+                                </li>
+                                <li t-if="!record.parent_id.raw_value and record.function.raw_value">
+                                    <field name="function"/>
+                                </li>
+                                <li t-if="record.parent_id.raw_value and record.function.raw_value">
+                                    <field name="function"/>
+                                    at
+                                    <field name="parent_id"/>
+                                </li>
+                                <li t-if="record.city.raw_value and !record.country_id.raw_value">
+                                    <field name="city"/>
+                                </li>
+                                <li t-if="!record.city.raw_value and record.country_id.raw_value">
+                                    <field name="country_id"/>
+                                </li>
+                                <li t-if="record.city.raw_value and record.country_id.raw_value"><field name="city"/>,
+                                    <field name="country_id"/>
+                                </li>
+                                <li t-if="record.email.raw_value" class="o_text_overflow">
+                                    <field name="email"/>
+                                </li>
+                            </ul>
+                            <div class="oe_kanban_partner_links"/>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="dh_pays_member_view_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Partners">
+                    <sheet>
+                        <!--                    <div name="button_box">-->
+                        <!--                        <button type="object"-->
+                        <!--                                name="action_view_activities"-->
+                        <!--                                style="margin-left:30px; margin-right:30px; padding:30px;">-->
+                        <!--                            <div >-->
+                        <!--                                <span class="o_stat_text">عدد الأنشطة     </span>-->
+                        <!--                                <span class="o_stat_value" widget="statinfo">-->
+                        <!--                                    <field name="dh_count_activities" widget="statinfo" nolabel="1"/>-->
+                        <!--                                </span>-->
+                        <!--                            </div>-->
+                        <!--                        </button>-->
+                        <!--                        <button type="object"-->
+                        <!--                                name="action_view_agreements"-->
+                        <!--                                >-->
+                        <!--                            <div style="padding:10px">-->
+                        <!--                                <span class="o_stat_value" widget="statinfo">-->
+                        <!--                                    <field name="count_agreements" widget="statinfo" nolabel="1" colspan="2" class="mr4"/>-->
+                        <!--                                </span>-->
+                        <!--                                <span class="o_stat_text">عدد الإتفاقيات</span>-->
+                        <!--                            </div>-->
+                        <!--                        </button>-->
+                        <!--                        <button type="object"-->
+                        <!--                                name="action_view_chaises"-->
+                        <!--                                >-->
+                        <!--                            <div style="padding-left:10px;">-->
+                        <!--                                <span class="o_stat_value" widget="statinfo">-->
+                        <!--                                    <field name="count_chaises" widget="statinfo" nolabel="1" colspan="2" class="mr4"/>-->
+                        <!--                                </span>-->
+                        <!--                                <span class="o_stat_text">عدد الكراسي</span>-->
+                        <!--                            </div>-->
+                        <!--                        </button>-->
+                        <!--                        <button type="object"-->
+                        <!--                                name="action_view_recompenses"-->
+                        <!--                                >-->
+                        <!--                            <div style="padding-left:10px;">-->
+                        <!--                                <span class="o_stat_value" widget="statinfo">-->
+                        <!--                                    <field name="count_recompenses" widget="statinfo" nolabel="1" colspan="2" class="mr4"/>-->
+                        <!--                                </span>-->
+                        <!--                                <span class="o_stat_text">عدد الجوائز</span>-->
+                        <!--                            </div>-->
+                        <!--                        </button>-->
+                        <!--                        <button type="object"-->
+                        <!--                                name="action_view_subventions"-->
+                        <!--                                >-->
+                        <!--                            <div style="padding:10px">-->
+                        <!--                                <span class="o_stat_value" widget="statinfo">-->
+                        <!--                                    <field name="count_subventions" widget="statinfo" nolabel="1" colspan="2" class="mr4"/>-->
+                        <!--                                </span>-->
+                        <!--                                <span class="o_stat_text">عدد المنح</span>-->
+                        <!--                            </div>-->
+                        <!--                        </button>-->
+                        <!--                        <button type="object"-->
+                        <!--                                name="action_view_type_projects"-->
+                        <!--                                style="margin-left:30px; margin-right:30px; padding:30px;">-->
+                        <!--                            <div >-->
+                        <!--                                <span class="o_stat_text">نوع المشاريع     </span>-->
+                        <!--                                <span class="o_stat_value" widget="statinfo">-->
+                        <!--                                    <field name="count_type_projects" widget="statinfo" nolabel="1"/>-->
+                        <!--                                </span>-->
+                        <!--                            </div>-->
+                        <!--                        </button>-->
+                        <!--                        <button type="object"-->
+                        <!--                                name="action_view_projects"-->
+                        <!--                                style="margin-left:80px; margin-right:80px; padding:30px;">-->
+                        <!--                            <div >-->
+                        <!--                                <span class="o_stat_text">عدد المشاريع     </span>-->
+                        <!--                                <span class="o_stat_value" widget="statinfo">-->
+                        <!--                                    <field name="count_projects" widget="statinfo" nolabel="1"/>-->
+                        <!--                                </span>-->
+                        <!--                            </div>-->
+                        <!--                        </button>-->
+                        <!--                    </div>-->
+                        <field name="active" invisible="1"/>
+                        <field name="type" invisible="1"/>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                                attrs="{'invisible': [('active', '=', True)]}"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Name"
+                                       attrs="{'required' : [('type', '=', 'contact')]}"/>
+                            </h1>
+                        </div>
+                        <br/>
+                        <br/>
+                        <field name="image_1920" widget='image' class="oe_avatar"
+                               options='{"preview_image": "image_128"}' style="float:left"/>
+
+
+                        <notebook colspan="4">
+                            <page string="General informations" name="general_info">
+                                <p style="font-size :16px;font-weight: bold;">معلومات الدولة:</p>
+                                <group>
+                                    <field name="official_country_name" string="الاسم الرسمي للدولة" invisible="1"/>
+                                    <field name="dh_order" string="الرقم الترتيبي" invisible="1"/>
+                                    <field name="official_leaders" string="الاسم الرسمي للقادة" invisible="1"/>
+                                    <field name="country_type" string="نوع" invisible="1"/>
+                                    <field name="country_capital" string="عاصمة البلد"/>
+                                    <field name="official_language" string="لغة رسمية">
+                                        <!--                                    widget="many2many_tags_link"-->
+                                        <tree editable="bottom">
+                                            <field name="name"/>
+                                        </tree>
+                                    </field>
+                                    <field name="population" string="عدد السكان" invisible="1"/>
+                                </group>
+                                <group>
+                                    <field name="name_national_day" string="اسم اليوم الوطني" invisible="1"/>
+                                    <field name="national_day" string="اليوم الوطني"/>
+                                    <!--                                <field name="portal_national_day" string="بوابة اليوم الوطني"/>-->
+                                    <!--                                <field name="other_national_days" string="أيام وطنية أخرى">-->
+                                    <!--                                    <tree editable="bottom">-->
+                                    <!--                                        <field name="name" string="الاسم الرسمي للدولة"/>-->
+                                    <!--                                        <field name="date" string="الاسم الرسمي للدولة"/>-->
+                                    <!--                                    </tree>-->
+                                    <!--                                </field>-->
+                                    <!--                                <field name="country_flag" widget="many2many_binary" string=""/>-->
+                                    <!--                                <field name="flag_color" string="لون العلم"/>-->
+                                    <field name="muslim_population" string="٪ نسبة السكان المسلمين"
+                                           invisible="1"/> <!-- widget="percentage" -->
+                                    <field name="gpd_per_capital" string="الناتج المحلي الإجمالي للفرد الواحد"
+                                           invisible="1"/>
+                                </group>
+                                <p style="font-size :16px;font-weight: bold;" invisible="1">المسؤولون الحكوميون:</p>
+                                <field name="government_officials" nolabel="1" string="الاسم الرسمي للدولة"
+                                       invisible="1">
+                                    <tree editable="bottom">
+                                        <field name="title" string="عنوان"/>
+                                        <field name="official_name" string="اسم رسمي"/>
+                                        <field name="position" string="موضع"/>
+                                        <field name="since" string="منذ"/>
+                                        <field name="contact_email" widget="email" string="البريد الاكتروني"/>
+                                        <field name="phone" widget="phone" string="هاتف"/>
+                                        <field name="photo" widget="many2many_binary" string="صورة"/>
+                                        <field name="website" widget="url" string="الموقع الرسمي"/>
+                                        <!--                             <field name="photo" widget="many2many_binary"/> -->
+                                    </tree>
+                                </field>
+                                <p style="font-size :16px;font-weight: bold;">اللجنة الوطنية:</p>
+                                <group col="1">
+                                    <group>
+                                        <field name="year_fondation_national_commission" string="عام التأسيس"
+                                               invisible="1"/>
+                                        <field name="location_national_commission" string="موقع"/>
+                                    </group>
+                                    <group string="جهة الاتصال">
+                                        <field name="email_national_commission" widget="email" string="بريد إلكتروني"/>
+                                        <field name="contact_national_commission" widget="phone" string="هاتف"/>
+                                        <field name="fax_national_commission" widget="phone" string="فاكس"/>
+                                        <field name="website_national_commission" widget="url" string="الموقع الرسمي"/>
+                                    </group>
+                                </group>
+                                <p style="font-size :16px;font-weight: bold;">رئيس اللجنة الوطنية:
+                                </p>
+                                <group col="1">
+                                    <group>
+                                        <field name="name_head_national_commission" string="الاسم"/>
+                                        <field name="tasks_head_national_commission" string="المهام"/>
+                                    </group>
+                                </group>
+                                <p style="font-size :16px;font-weight: bold;">أمين عام اللجنة الوطنية أو من ينوب عنه:
+                                </p>
+                                <group>
+                                    <field name="commission_title" string="عنوان" invisible="1"/>
+                                    <field name="official_name" string="اسم"/>
+                                    <field name="work_official_name" string="المسمى الوظيفي"/>
+                                    <field name="phone_commission" widget="email" string="هاتف" invisible="1"/>
+                                    <field name="email_commission" string="البريد الاكتروني"/>
+                                    <field name="since" string="منذ" invisible="1"/>
+                                    <field name="photo" widget="many2many_binary" string="صورة" invisible="1"/>
+                                </group>
+                                <p style="font-size :16px;font-weight: bold;" invisible="1">نائب أمين عام اللجنة الوطنية
+                                    أو من ينوب عنه:
+                                </p>
+                                <group invisible="1">
+                                    <field name="commission_title_deputy" string="عنوان"/>
+                                    <field name="official_name_deputy" string="اسم رسمي"/>
+                                    <field name="phone_commission_deputy" string="هاتف"/>
+                                    <field name="email_commission_deputy" widget="email" string="البريد الاكتروني"/>
+                                    <field name="since_deputy" string="منذ"/>
+                                    <field name="photo_deputy" widget="many2many_binary" string="صورة"/>
+                                </group>
+                                <p style="font-size :16px;font-weight: bold;">فريق اللجنة الوطنية:</p>
+                                <field name="commission_team_ids" nolabel="1" string="الاسم الرسمي للدولة">
+                                    <tree editable="bottom">
+                                        <field name="title" string="اسم"/>
+                                        <field name="official_name" string="الإدارة"/>
+                                        <field name="contact_email" widget="email" string="البريد الاكتروني"/>
+                                        <field name="phone" widget="phone" string="هاتف"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="الإتفاقيات">
+                                <field name="agreements" context="{'default_partner_id': active_id}">
+                                    <tree create="0" delete="0" edit="0">
+                                        <field name="year" width="1"/>
+                                        <field name="name" width="1" string="الإسم"/>
+                                        <field name="type_agr" width="1"/>
+                                        <field name="type_partenaire" width="1"/>
+                                        <field name="category" width="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="الكراسي">
+                                <field name="chaises" context="{'default_pays_id': active_id}">
+                                    <tree create="0" delete="0" edit="0">
+                                        <field name="sector_id"/>
+                                        <field name="numero"/>
+                                        <field name="name"/>
+                                        <field name="university"/>
+                                        <field name="date"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="الجوائز">
+                                <field name="recompenses" context="{'default_pays_id': active_id}">
+                                    <tree create="0" delete="0" edit="0">
+                                        <field name="annee"/>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="المنح">
+                                <field name="subventions" context="{'default_pays_id': active_id}">
+                                    <tree create="0" delete="0" edit="0">
+                                        <field name="niveau_scolaire"/>
+                                        <field name="etudiants" widget="many2many_tags_link"/>
+                                        <!--                                    <field name="anee_bourse"/>-->
+                                        <field name="annee_bourse"/>
+                                        <field name="periode_avalibality"/>
+                                        <field name="fin_avalibality"/>
+                                        <field name="bourse"/>
+                                        <field name="symbol"/>
+                                        <field name="pilliar_id"/>
+                                        <field name="etablissement"/>
+                                        <field name="etat_bourse"/>
+                                        <field name="suivi"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="المشاريع و الأنشطة">
+                                <button type="object"
+                                        name="action_view_activities"
+                                        style="margin-left:30px; margin-right:30px; padding:30px;float:right;">
+                                    <div>
+                                        <span class="o_stat_text">عدد الأنشطة</span>
+                                        <span class="o_stat_value" widget="statinfo">
+                                            <field name="dh_count_activities" widget="statinfo" nolabel="1"/>
+                                        </span>
+                                    </div>
+                                </button>
+                                <!--                            <button type="object"-->
+                                <!--                                    name="action_view_type_projects"-->
+                                <!--                                    style="margin-left:30px; margin-right:30px; padding:30px;float:right;">-->
+                                <!--                                <div >-->
+                                <!--                                    <span class="o_stat_text">نوع المشاريع     </span>-->
+                                <!--                                    <span class="o_stat_value" widget="statinfo">-->
+                                <!--                                        <field name="count_type_projects" widget="statinfo" nolabel="1"/>-->
+                                <!--                                    </span>-->
+                                <!--                                </div>-->
+                                <!--                            </button>-->
+                                <button type="object"
+                                        name="action_view_projects"
+                                        style="margin-left:30px; margin-right:30px; padding:30px;float:right;">
+                                    <div>
+                                        <span class="o_stat_text">عدد المشاريع</span>
+                                        <span class="o_stat_value" widget="statinfo">
+                                            <field name="count_projects" widget="statinfo" nolabel="1"/>
+                                        </span>
+                                    </div>
+                                </button>
+                                <button type="object"
+                                        name="action_view_missions"
+                                        style="margin-left:30px; margin-right:30px; padding:30px;float:right;">
+                                    <div>
+                                        <span class="o_stat_text">Missions Number</span>
+                                        <span class="o_stat_value" widget="statinfo">
+                                            <field name="count_missions" widget="statinfo" nolabel="1"/>
+                                        </span>
+                                    </div>
+                                </button>
+                            </page>
+                            <page string="نوع الشريك" groups="dh_icesco_project.icesco_menus">
+                                <group>
+                                    <field name="institution_gouv_etat_member" string="مؤسسة حكومية"/>
+                                    <field name="institution_gouv_etat_non_member" string="مؤسسة العمل الإنساني"/>
+                                    <field name="organisation_mondiale_rare" string="الدول غير الأعضاء	"/>
+                                    <field name="organisation_locale" string="الدول الأعضاء"/>
+                                    <field name="organisation_regional" string="القطاع الخاص"/>
+                                    <field name="mission_ids" invisible="1"/>
+                                    <field name="count_mission" invisible="1"/>
+                                </group>
+                            </page>
+                            <page string="Contributions">
+                                <!--                                <group>-->
+                                <!--                                    <field name="contribution_budget"/>-->
+                                <!--                                </group>-->
+                                <!--                                <group string="Contributions">-->
+                                <!--                                    <group>-->
+                                <!--                                        <field name="received_amount"/>-->
+                                <!--                                    </group>-->
+                                <!--                                    <group>-->
+                                <!--                                        <field name="date_last_batch"/>-->
+                                <!--                                    </group>-->
+                                <!--                                </group>-->
+                                <!--                                <group string="Arrears">-->
+                                <!--                                    <group>-->
+                                <!--                                        <field name="amount"/>-->
+                                <!--                                    </group>-->
+                                <!--                                    <group>-->
+                                <!--                                        <field name="years"/>-->
+                                <!--                                    </group>-->
+                                <!--                                </group>-->
+                                <field name="contrubutions_ids">
+                                    <tree editable="bottom">
+                                        <field name="three_years" width="1"/>
+                                        <field name="date" width="1"/>
+                                        <field name="pourcentage" width="1"/>
+                                        <field name="amount_contrubutions" width="1"/>
+                                        <field name="amount" width="1"/>
+                                        <field name="date_1" width="1"/>
+                                        <field name="performance" width="1"/>
+                                        <field name="amount_not_paid" width="1"/>
+
+                                    </tree>
+                                </field>
+
+                            </page>
+
+                            <page string="Additional financial support">
+                                <field name="financal_support">
+                                    <tree editable="bottom">
+                                        <field name="date" width="1"/>
+                                        <field name="project_id" width="1"/>
+                                        <field name="support_foundation" width="2"/>
+                                        <field name="amount" width="1"/>
+                                    </tree>
+
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="dh_member_view_partner_tree" model="ir.ui.view">
+            <field name="name">dh.member.res.partner.tree</field>
+            <field name="model">res.partner</field>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Contacts" default_order="dh_order">
+                    <field name="official_country_name" string="الاسم"/>
+                    <field name="country_capital" string="عاصمة البلد"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="cps_dh_member_view_partner_tree" model="ir.ui.view">
+            <field name="name">cps.dh.member.res.partner.tree</field>
+            <field name="model">res.partner</field>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Contacts" default_order="dh_order">
+                    <field name="name" string="الاسم"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="dh_action_contacts" model="ir.actions.act_window">
+            <field name="name">Contacts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="search_view_id" ref="base.view_res_partner_filter"/>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('base.res_partner_kanban_view')}),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_member_view_partner_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('dh_pays_member_view_partner_form')})]"/>
+            <field name="view_id" ref="dh_pays_member_view_partner_form"/>
+            <field name="context">{'default_is_company': True,'default_is_member_state': True}</field>
+            <field name="domain">[('is_member_state','=',True)]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a contact in your address book
+                </p>
+                <p>
+                    Odoo helps you to easily track all activities related to a customer.
+                </p>
+            </field>
+        </record>
+
+        <record id="cps_dh_action_contacts" model="ir.actions.act_window">
+            <field name="name">Contacts Partenaires</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="search_view_id" ref="base.view_res_partner_filter"/>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('base.res_partner_kanban_view')}),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('cps_dh_member_view_partner_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('dh_pays_member_view_partner_form')})]"/>
+            <field name="view_id" ref="dh_pays_member_view_partner_form"/>
+            <field name="context">{'default_is_company': True,'default_is_member_state': True}</field>
+            <field name="domain">[('is_member_state','=',True)]</field>
+        </record>
+    </data>
+</odoo>

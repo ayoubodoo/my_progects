@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="report_presences_xlsx" model="ir.actions.report">
+        <field name="name">Etat Présence</field>
+        <field name="model">report.presence</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">cps_icesco.report_presence_xlsx</field>
+        <field name="report_file">cps_icesco.report_presence_xlsx</field>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

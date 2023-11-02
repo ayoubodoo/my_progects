@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="medical_record_management" model="ir.module.category">
+            <field name="name">Medical records management</field>
+            <field name="description">Helps you manage your medical records</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <record id="medical_insurance_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="medical_record_management"/>
+        </record>
+
+        <record id="medical_insurance_responsible" model="res.groups">
+            <field name="name">Responsible</field>
+            <field name="category_id" ref="medical_record_management"/>
+            <field name="implied_ids" eval="[(4, ref('kzm_medical_insurance.medical_insurance_user'))]"/>
+        </record>
+
+
+        <record id="medical_insurance_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('kzm_medical_insurance.medical_insurance_user'), ref('kzm_payroll_ma.group_hr_payroll_settings'), ref('kzm_medical_insurance.medical_insurance_responsible')])]"/>
+            <field name="category_id" ref="medical_record_management"/>
+        </record>
+
+        <!--        rules-->
+
+        <record id="my_refund_requests" model="ir.rule">
+            <field name="name">My refund requests</field>
+            <field ref="model_medical_refund_request" name="model_id"/>
+            <field name="domain_force">[
+                ('employee_id.user_id','=',user.id)]
+            </field>
+            <field name="groups" eval="[(6,0, [ref('kzm_medical_insurance.medical_insurance_user')])]"/>
+        </record>
+        <record model="ir.rule" id="refund_all">
+            <field name="name">All refunds</field>
+            <field name="model_id" ref="model_medical_refund_request"/>
+            <field name="groups" eval="[(6,0,[ref('kzm_medical_insurance.medical_insurance_manager'),ref('kzm_medical_insurance.medical_insurance_responsible')])]"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+<!--    <record id="refund_all" model="ir.rule">-->
+<!--        <field name="name">All refunds</field>-->
+<!--        <field ref="model_medical_refund_request" name="model_id"/>-->
+<!--        <field name="domain_force">[(1,'=',1)]</field>-->
+<!--        <field name="groups" eval="[(4, ref('kzm_medical_insurance.medical_insurance_manager')),(4, ref('kzm_medical_insurance.medical_insurance_responsible'))]"/>-->
+<!--    </record>-->
+
+    </data>
+
+
+</odoo>

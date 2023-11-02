@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dh_moyen_transport_form">
+            <field name="name">dh.moyen.transport.form</field>
+            <field name="model">dh.moyen.transport</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_moyen_transport_tree">
+            <field name="name">dh.moyen.transport.tree</field>
+            <field name="model">dh.moyen.transport</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                     <field name="name"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="dh_moyen_transport_action" model="ir.actions.act_window">
+            <field name="name">Means of transport</field>
+            <field name="res_model">dh.moyen.transport</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p>Add a mean of transport</p>
+        </field>
+        </record>
+<!--          <menuitem id="dh_moyen_transport_menu" name="Means of transport "-->
+<!--                  parent="project.menu_project_config"-->
+<!--                  action="cps_icesco.dh_moyen_transport_action" sequence="39"/>-->
+    </data>
+</odoo>

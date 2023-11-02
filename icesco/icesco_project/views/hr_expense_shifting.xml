@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <record id="hr_expense_shifting_form_inherit" model="ir.ui.view">
+            <field name="name">hr.expense.shifting.form.inherit</field>
+            <field name="model">hr.expense.shifting</field>
+            <field name="inherit_id" ref="kzm_expense_shifting.shifting_expense_form_view"/>
+            <field name="arch" type="xml">
+                <field name="activity_name" position="after">
+                    <field name="project_id"/>
+                </field>
+                <xpath expr="//field[@name='hr_expense_id']" position="replace">
+                    <field name="hr_expense_id"
+                           context="{'default_project_id':project_id}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

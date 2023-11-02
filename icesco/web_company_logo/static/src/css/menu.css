@@ -1,0 +1,13 @@
+#company-logo {
+    height: 46px;
+    width: 100px;
+    margin-top: -6px!important;
+    margin-left: -16px!important;
+}
+.o_switch_company_menu{
+    display: none!important;
+}
+
+.o_menu_toggle{
+    display: none!important;
+}

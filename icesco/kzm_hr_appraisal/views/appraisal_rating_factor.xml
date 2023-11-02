@@ -1,0 +1,59 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="appraisal_rating_factor_tree">
+            <field name="name">appraisal.rating.factor.tree</field>
+            <field name="model">appraisal.rating.factor</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="number"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="axe_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="appraisal_rating_factor_form">
+            <field name="name">appraisal.rating.factor.form</field>
+            <field name="model">appraisal.rating.factor</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="number"/>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="axe_id"/>
+                            </group>
+                            <label for="description"/>
+                            <field name="description"/>
+                            <separator string="ADD Note" colspan="4"/>
+                            <field name="value_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="appraisal_rating_factor_search" model="ir.ui.view">
+            <field name="name">appraisal.rating.factor.search</field>
+            <field name="model">appraisal.rating.factor</field>
+            <field name="arch" type="xml">
+                <search string="Rating Factor">
+                    <field name="number"/>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+        <record id="appraisal_rating_factor_action" model="ir.actions.act_window">
+            <field name="name">Appraisal Rating Factor</field>
+            <field name="res_model">appraisal.rating.factor</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new appraisal raiting factor
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

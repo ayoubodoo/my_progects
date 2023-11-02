@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_hr_absence_tree" model="ir.ui.view">
+            <field name="name">dhr.absence.tree</field>
+            <field name="model">hr.absence</field>
+            <field name="arch" type="xml">
+                <tree string="Absences">
+                    <field name="matricule"/>
+                    <field name="employee_id"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_absence_action" model="ir.actions.act_window">
+            <field name="name">Absences</field>
+            <field name="res_model">hr.absence</field>
+            <field name="view_mode">tree,kanban,form</field>
+<!--            <field name="context">{"search_default_today":1}</field>-->
+<!--            <field name="search_view_id" ref="hr_attendance_view_filter" />-->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_empty_folder">
+                    No attendance records found
+                </p><p>
+                    The attendance records of your employees will be displayed here.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_hr_attendance_view_absences" name="Absences" parent="hr_attendance.menu_hr_attendance_manage_attendances" sequence="11" groups="hr_attendance.group_hr_attendance_user" action="hr_absence_action"/>
+
+
+    </data>
+</odoo>

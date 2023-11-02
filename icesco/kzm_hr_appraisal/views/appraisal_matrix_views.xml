@@ -1,0 +1,87 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="appraisal_matrix_tree">
+            <field name="name">appraisal.matrix.tree</field>
+            <field name="model">appraisal.matrix</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="appraisal_matrix_form">
+            <field name="name">appraisal.matrix.form</field>
+            <field name="model">appraisal.matrix</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <separator string="Matrix Lines"/>
+                        <field name="matrix_line_ids">
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="appraisal_matrix_search" model="ir.ui.view">
+            <field name="name">appraisal.matrix.search</field>
+            <field name="model">appraisal.matrix</field>
+            <field name="arch" type="xml">
+                <search string="Axis">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+        <record id="appraisal_matrix_action" model="ir.actions.act_window">
+            <field name="name">Appraisal Matrix</field>
+            <field name="res_model">appraisal.matrix</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new matrix
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="appraisal_matrix_line_tree">
+            <field name="name">appraisal.matrix.line.tree</field>
+            <field name="model">appraisal.matrix.line</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="minimal_note"/>
+                    <field name="maximal_note"/>
+                    <field name="appreciation"/>
+                    <field name="step_advancement"/>
+                    <field name="impact"/>
+                    <field name="matrix_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="appraisal_matrix_line_form">
+            <field name="name">appraisal.matrix.line.form</field>
+            <field name="model">appraisal.matrix.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="minimal_note" required="1"/>
+                                <field name="appreciation"/>
+
+                            </group>
+                            <group>
+                                 <field name="maximal_note" required="1"/>
+                                <field name="step_advancement"/>
+                                <field name="matrix_id" invisible="1"/>
+                            </group>
+                            <label for="impact"/>
+                             <field name="impact"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

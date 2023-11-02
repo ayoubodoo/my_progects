@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="fleet_vehicule_log_services_form_view">
+        <field name="name">fleet.vehicle.log.services.form.inherit</field>
+        <field name="model">fleet.vehicle.log.services</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet" position="before">
+                <header>
+                    <button name="create_purchase" string="Cree BC" type="object" class="btn btn-secondary" confirm="Etes-vous sûr de cree un bon de commande pour ce service?"/>
+                </header>
+            </xpath>
+            <xpath expr="/form/sheet/group" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button type="object" style="width: 10%!important;"
+                            name="action_view_commandes_achat"
+                            class="oe_stat_button" icon="fa-money">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value" widget="statinfo">
+                                <field name="count_purchase_order" widget="statinfo" nolabel="1" colspan="2" class="mr4"/>
+                            </span>
+                            <span class="o_stat_text">Cde. achat</span>
+                        </div>
+                    </button>
+                </div>
+            </xpath>
+            <xpath expr="/form/sheet/group/group/field[@name='vehicle_id']" position="before">
+                <field name="product_id"/>
+                <field name="price_unit"/>
+                <field name="qty"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

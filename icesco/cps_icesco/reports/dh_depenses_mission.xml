@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="paperformat_cps" model="report.paperformat">
+            <field name="name">cps A4</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">90</field>
+            <field name="margin_bottom">4</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">10</field>
+            <field name="dpi">90</field>
+        </record>
+<!--     paperformat="cps_icesco.paperformat_cps"-->
+    <report
+            id="dh_depenses_mission_infos11"
+            model="hr.expense"
+            string="Fiche Dépense "
+            report_type="qweb-pdf"
+            name="cps_icesco.dh_depenses_mission_infos"
+            file="cps_icesco.dh_depenses_mission_infos"
+
+
+
+
+    />
+<!--    <report-->
+<!--            id="dh_depenses_mission_infos11"-->
+<!--            model="hr.expense"-->
+<!--            string="Dépense "-->
+<!--            report_type="qweb-pdf"-->
+<!--            name="cps_icesco.dh_depenses_mission_infos"-->
+<!--            file="cps_icesco.dh_depenses_mission_infos"-->
+<!--            -->
+
+
+
+<!--    />-->
+
+    <!--          <record id="dh_depenses_mission_infos" model="ir.actions.report">-->
+    <!--            <field name="name">Dépenses Informations</field>-->
+    <!--            <field name="model">hr.expense</field>-->
+    <!--            <field name="report_type">qweb-pdf</field>-->
+    <!--            <field name="report_name">cps_icesco.dh_depenses_mission_infos</field>-->
+    <!--            <field name="report_file">cps_icesco.dh_depenses_mission_infos</field>-->
+    <!--            <field name="print_report_name">'Dépenses Informations'</field>-->
+    <!--            <field name="binding_model_id" ref="model_hr_expense"/>-->
+    <!--            <field name="binding_type">report</field>-->
+    <!--        </record>-->
+    <template id="dh_depenses_mission_infos">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <!--                <t t-call="web.external_layout">-->
+                <div class="page article" style="font-size:10px;position: static;">
+
+
+
+                        <div class="header row" style="font-size:18px;">
+                            <div class="col-4 text-center">
+
+                                منظمة العالم الإسلامي للتربية والعلوم والثقافة
+                                <br/>
+                               -----إيسيسكو------
+                                                                <br/>
+
+                               ----ICESCO-----
+
+
+                            </div>
+
+                            <div class="col-4 center text-center" style="font-size:18px;">
+
+                              بطاقة الصرف
+                                                                <br/>
+
+                               Programmes'Expenditure Form
+                                                                <br/>
+
+                               Fiche des dépensesd du Programme
+
+
+                            </div>
+
+
+                            <div
+                                    style="padding-left:10%">
+                                <img src="/isesco_base/static/isesco.png"
+                                     style="max-width:200px;max-height:190px;"
+                                     class="col-4" alt="Logo"/>
+                            </div>
+                        </div>
+
+
+                    <div class="row" style="font-size:14px;">
+
+                        <div class="col-4">
+
+                           بطاقة الصرف
+                            <br/>
+                            Person in charge of achievement
+                             <br/>
+                           Personne chargée de la réalisation des dépenses du Programme
+                            <p style="border: 1px solid">
+<span t-esc="o.employee_id.display_name"/>                            </p>
+                        </div>
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-4">
+
+
+                                 Form N
+                                </div>
+                                <div class="col-4" >
+                                    <span t-field="o.form_numero" />
+                                </div>
+
+                                <div class="col-4 text-left;" style="text-align: right;">
+
+
+                                   رقم البطاقة
+
+
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-4">
+
+                                    <p>Finacial year/Exercice</p>
+                                </div>
+
+                                <div class="col-4" >
+                                    <span t-esc="datetime.date.today().strftime('%Y')"/>
+                                </div>
+
+                                <div class="col-4 text-left;" style="text-align: right;">
+
+
+                                    <p>السنة المالية</p>
+                                </div>
+
+                            </div>
+
+                            <div class="row" style="font-size:14px;">
+                                <div class="col-4">
+
+                                    <p>Directorate/Direction</p>
+
+                                </div>
+                                <div class="col-4">
+                                </div>
+
+                                <div class="col-4 text-left;" style="text-align: right;">
+
+                                    <p>المديرية </p>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="font-size:12px;">
+
+
+                        <div class="col-6">
+                            <div class="row">
+
+                                <div class="col-4">
+
+                                    <p>Serial Number of Achievement No/N de série de réalisation</p>
+                                </div>
+                                <div class="col-4" >
+                                   <span t-field="o.task_id.code_activity" />
+                                </div>
+                                <div class="col-4 text-left" style="text-align: right">
+
+                                    <p style="text-align: right;">رقم لمتسلسل للانجاز</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+
+                                <div class="col-4">
+
+                                    <p>Achievement No/N de réalisation</p>
+                                </div>
+                                <div class="col-4" >
+                                                                        <span t-field="o.activity_number" />
+
+                                </div>
+                                <div class="col-4 text-left" style="text-align: right;">
+
+                                    <p style="text-align: right;">رقم الانجاز</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+
+                            <p>Achievement Title /Nom de réalisation</p>
+                        </div>
+
+
+                        <div class="col-4">
+                                                                        <span t-field="o.task_id.name" />
+                        </div>
+                        <div class="col-4 text-left" style="text-align: right;padding-left:21%">
+                            <p style="text-align: right;">اسم الانجاز</p>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="row col-6">
+                            <div class="col-4">
+                                <p>Venue of implementation /Lieu d'exécution</p>
+                            </div>
+                            <div class="col-4">
+<span t-field="o.venue_implementation"/>
+                            </div>
+                            <div class="col-4 text-left" style="text-align: right">
+
+                                <p style="text-align: right;">مكان التنفيد</p>
+                            </div>
+                        </div>
+                        <div class="row col-6">
+
+                            <div class="col-4">
+
+                                <p>Date of implementation /Date d'exécution</p>
+                            </div>
+                            <div class="col-4">
+
+<span t-field="o.date_implementation"/>
+                            </div>
+
+
+                            <div class="col-4 text-left" style="text-align: right;margin-left:15%">
+
+                                    <p style="text-align: right;">تاريخ التنفيد</p>
+                                </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="row" >
+                        <div class="col-4">
+
+                            <p>Cooperating party (if any) /Partie coopérante(le cas échéant) :</p>
+                        </div>
+                        <div class="col-4">
+                                                        <span t-field="o.cooperating_party"/>
+
+                        </div>
+
+                        <div class="col-4 text-left" style="text-align: right;padding-left:21%">
+
+                            <p style="text-align: right;">الجهة المتعاونة</p>
+                        </div>
+                    </div>
+
+                    <div class="row" >
+                        <div class="col-4">
+
+                            <p>Implementation party/Partie chargée de l'exécution :</p>
+                        </div>
+                        <div class="col-4">
+<span t-field="o.implementation_party"/>
+                        </div>
+                        <div class="col-4 text-left" style="text-align: right;padding-left:21%">
+
+                            <p style="text-align: right;">الجهة المنفذة</p>
+                        </div>
+                    </div>
+
+
+<!--                    <div class="row" >-->
+<!--                        <div class="col-4">-->
+
+<!--                            <p>Implementation party/Partie chargée de l'exécution :</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-4"/>-->
+<!--                        <div class="col-4 text-left" style="text-align: right;padding-left:21%">-->
+
+<!--                            <p style="text-align: right;">الجهة المنفذة</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+                    <div class="row" >
+                        <div class="col-4">
+
+                            <p>Achievement budget /Budget de la réalisation :</p>
+                        </div>
+                        <div class="col-4">
+                            <span t-field="o.achievement_budget"/>
+                        </div>
+                        <div class="col-4 text-left" style="text-align: right;padding-left:21%">
+
+                            <p style="text-align: right;">موازنة الانجاز</p>
+                        </div>
+                    </div>
+                    <div class="row">
+
+
+                        <div class="col-6 row" >
+                            <div class="col-6">
+
+                                <p>Contribution of cooperating party/Contribution de la partiecoopérante(USD):</p>
+                            </div>
+                            <div class="col-2">
+                                                            <span t-field="o.budget_out_icesco"/>
+
+                            </div>
+                            <div class="col-4 text-left" style="text-align: right;">
+
+                                <p style="text-align: right;">حصة الجهة المتعاونة</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 row" >
+                            <div class="col-4">
+
+                                <p>Contribution of ISESCO/Contribution de L'ISESCO(USD):</p>
+                            </div>
+                            <div class="col-4">
+                                <span t-field="o.task_id.budget_icesco"/>
+                            </div>
+                            <div class="col-4 text-left" style="text-align: right;margin-left:15%">
+
+                                <p style="text-align: right;">حصة الإيسيسكو</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div >
+                        <table style="border:3px solid black;" class="table table-sm" name="stock_move_table">
+                            <thead>
+                                <tr>
+                                    <th style="border:3px!important solid black;background-color: #D9D9D9">
+
+                                            <strong>الرصيد</strong>
+                                     <br/>
+                                            <strong>Balance</strong>
+                                                                           <br/>
+
+                                            <strong>Solde</strong>
+
+                                    </th>
+                                    <th style="border:3px solid black;background-color: #D9D9D9">
+
+                                            <strong>المطلوب سلفا</strong>
+                                                                           <br/>
+
+                                            <strong>Requierd Payement</strong>
+                                                                             <br/>
+
+
+                                      <strong>Payement requis</strong>
+
+                                    </th>
+                                    <th style="border:3px solid black;background-color: #D9D9D9">
+
+                                            <strong>الباقي</strong>
+                                                                        <br/>
+
+                                            <strong>Remainder</strong>
+                                                                            <br/>
+
+                                            <strong>Reliquat</strong>
+
+                                    </th>
+                                    <th style="border:3px solid black;background-color: #D9D9D9">
+
+                                            <strong>المدفوع مسبقا</strong>
+                                                                             <br/>
+
+                                            <strong>Previous payment</strong>
+                                                                             <br/>
+
+
+                                            <strong>Payment précedent</strong>
+
+                                    </th>
+                                    <th style="border:3px solid black;background-color: #D9D9D9">
+
+                                            <strong>الموازنة المعتمدة</strong>
+                                                                         <br/>
+
+                                            <strong>Allocated budget</strong>
+                                                                             <br/>
+
+                                   <strong>Budget alloué</strong>
+
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                                                              <t t-set="remainder" t-value="o.task_id.budget_icesco - o.task_id.total_depense"/>
+                                                                              <t t-set="solde" t-value="remainder - o.required_payment"/>
+
+                                <tr>
+                                    <td style="border:3px solid black">
+                                                                                <span t-esc="solde"/>
+
+                                    </td>
+                                    <td style="border:3px solid black">
+                                                                                <span t-esc="o.required_payment"/>
+
+
+                                    </td>
+                                    <td style="border:3px solid black">
+                                                                                <span t-esc="remainder"/>
+
+
+                                    </td>
+                                    <td style="border:3px solid black">
+                                                                                <span t-esc="o.task_id.total_depense"/>
+
+
+                                    </td>
+
+                                    <td style="border:3px solid black">
+                                        <span t-esc="o.task_id.budget_icesco"/>
+
+                                    </td>
+
+
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="row" >
+                        <div class="col-4">
+
+                            <p>Subject of Expenditure/Objet de dépense</p>
+                        </div>
+                        <div class="col-4">
+                            <span t-field="o.product_id.display_name"/>
+                        </div>
+                        <div class="col-4 text-left" style="text-align: right;padding-left:21%">
+
+                            <p style="text-align: right;">نوعية الصرف</p>
+                        </div>
+                    </div>
+
+                    <div class="row" >
+                        <div class="col-4">
+
+                            <p>Beneficiary of Expenditure /Bénéficiaire de de dépense :</p>
+                        </div>
+                        <div class="col-4" >
+                            <span t-field="o.employee_id.display_name"/>
+                        </div>
+                        <div class="col-4 text-left" style="text-align: right;padding-left:21%">
+
+                            <p style="text-align: right;">المستفيد من الصرف</p>
+                        </div>
+                    </div>
+
+                    <div class="row" >
+                        <div class="col-4">
+
+                            <p>Additional information/Informations complémentaire :</p>
+                        </div>
+                        <div class="col-4">
+                            <span t-field="o.other_info"/>
+                        </div>
+                        <div class="col-4 text-left" style="text-align: right;padding-left:21%">
+
+                            <p style="text-align: right;">معلومات إضافية</p>
+                        </div>
+                    </div>
+
+
+                    <div class="row" >
+                        <div class="col-4">
+
+                            <p>Method of paymentn/Mode de paiement :</p>
+                        </div>
+                        <div class="col-4" >
+                            <span t-field="o.payment_mode"/>
+                        </div>
+                        <div class="col-4 text-left" style="text-align: right;padding-left:21%">
+
+                            <p style="text-align: right;">طريقة التسديد</p>
+                        </div>
+                    </div>
+
+                    <div class="row" style="font-size:10px;font-weight: bold;">
+                        <div class="col-4">
+
+                            <p>N.B: When transfer:</p>
+                        </div>
+                        <div class="col-4">
+                            <p>N.B: Quand transfert:</p>
+                        </div>
+                        <div class="col-4 text-left" style="text-align: right;">
+
+                            <p style="text-align: right;">ملحوظة: عند التحويل</p>
+                        </div>
+                    </div>
+                    <div class="row" style="font-size:10px;">
+                        <div class="col-4">
+
+                            <p>Please attach copy of Bank full adress</p>
+                        </div>
+                        <div class="col-4">
+                            <p>Joindre copie de l'adresse bancaiore (complète)</p>
+                        </div>
+                        <div class="col-4 text-left" style="text-align: right;">
+
+                            <p style="text-align: right;">ارفاق العنوان البنكي</p>
+                        </div>
+                    </div>
+
+
+                    <div class="row" >
+                        <div class="col-4 ">
+                            <p class="text-center">المديرية</p>
+                            <p class="text-center" style="float:center">Directorate/Direction/Division</p>
+
+                                <div><img t-if="o.signature_dg" t-att-src="image_data_uri(o.signature_dg)" style="width: 300px;height: 50px;float:center" class="text-center"/></div>
+                                <div class="row" >
+                                    <div class="col-4">
+                                        <p>Date</p>
+                                    </div>
+                                    <div class="col-4"  >
+                                        <span t-field="o.date_dg"/>
+                                    </div>
+                                    <div class="col-4">
+                                        <p style="text-align: right;">التاريخ</p>
+                                    </div>
+
+                                </div>
+
+
+
+
+                        </div>
+                        <div class="col-8">
+                            <table style="border:3px solid black;" class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th style="border:3px!important solid black;background-color: #D9D9D9">
+                                            <p>
+                                                <strong>Balance</strong><span  style="padding-left:10%"  t-esc="solde"/>
+                                            </p>
+                                            <p>
+                                                <strong>Amount due to paied in letters</strong>  <span style="padding-left:10%" t-esc="o.amount_in_words(solde,o.company_id.currency_id.display_name)"/>
+                                            </p>
+                                            <p>
+                                                <strong>Montant à payer en lettres</strong>  <span style="padding-left:10%" t-esc="o.amount_in_words_fr(solde,o.company_id.currency_id.with_context(lang='fr_FR').display_name)"/>
+                                            </p>
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td style="border:3px solid black">
+
+                                        </td>
+
+
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <br/>
+
+                    <div class="row text-center" style="font-size:12px" >
+                        <div class="col-4 ">
+
+                           المراقب المالي
+                            <br/>
+                          Financal Controller
+                                 <br/>
+                          Controleur financier
+                            <br/>
+                            <div><img t-if="o.signature_financal_controller" t-att-src="image_data_uri(o.signature_financal_controller)" style="width: 300px;height: 50px;float:center" class="text-center"/></div>
+
+
+                        </div>
+                        <div class="col-4 ">
+                        </div>
+                        <div class="col-4 ">
+                            مديرية الشؤون المالية
+                                 <br/>
+                           Directorate of Financial Affairs
+                           <br/>
+                                Direction des affaires financières
+                            <br/>
+                            <div><img t-if="o.signature_directorate_financial_affairs" t-att-src="image_data_uri(o.signature_directorate_financial_affairs)" style="width: 300px;height: 50px;float:center" class="text-center"/></div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="footer">
+
+                        <div class="row" >
+                            <div class="col-6">
+                                <div class="row" >
+                                    <div class="col-4">
+                                        <p>Date</p>
+                                    </div>
+                                    <div class="col-4">
+                                         <span t-field="o.date_signature_financal_controller"/>
+                                    </div>
+                                    <div class="col-4">
+                                        <p>التاريخ</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row text-right" >
+                                    <div class="col-4">
+                                        <p>Date</p>
+                                    </div>
+                                    <div class="col-4" >
+                                        <span t-field="o.date_adm_affairs"/>
+                                    </div>
+                                    <div class="col-4">
+                                        <p>التاريخ</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </t>
+        </t>
+        <!--        </t>-->
+    </template>
+</odoo>

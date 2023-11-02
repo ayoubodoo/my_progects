@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="kzm_res_geographical">
+            <field name="name">cps.res.geographical.form</field>
+            <field name="model">res.geographical</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="kzm_res_geographical_tree">
+            <field name="name">cps.res.geographical.tree</field>
+            <field name="model">res.geographical</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="kzm_res_geographical_action"
+                model="ir.actions.act_window">
+            <field name="name">Geographical</field>
+            <field name="res_model">res.geographical</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

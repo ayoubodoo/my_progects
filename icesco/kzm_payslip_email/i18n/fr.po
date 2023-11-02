@@ -1,0 +1,74 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* kzm_payslip_email
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-04 21:25+0000\n"
+"PO-Revision-Date: 2020-06-04 21:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: kzm_payslip_email
+#: model:mail.template,body_html:kzm_payslip_email.notif_hr_payroll_ma_bulletin
+msgid ""
+"\n"
+"\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 14px; color: rgb(34, 34, 34); padding:0px;width:600px;background: #FFFFFF repeat top /100%; \">\n"
+"     <p>Dear,</p>\n"
+"    <br/>\n"
+"      <div>\n"
+"        Please find attached your pay slip for ${object.period_id.name}.\n"
+"      </div>\n"
+"    <br/>\n"
+"    <p>Best regards</p>\n"
+"\n"
+"</div>\n"
+"    \n"
+"\n"
+"\n"
+"            "
+msgstr ""
+"\n"
+"\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 14px; color: rgb(34, 34, 34); padding:0px;width:600px;background: #FFFFFF repeat top /100%; \">\n"
+"     <p>Bonjour,</p>\n"
+"    <br/>\n"
+"      <div>\n"
+"        Veuillez trouver ci-joint votre bulletin de paie du mois ${object.period_id.name}.\n"
+"      </div>\n"
+"    <br/>\n"
+"    <p>Merci</p>\n"
+"\n"
+"</div>\n"
+"    \n"
+"\n"
+"\n"
+"            "
+
+#. module: kzm_payslip_email
+#: model:mail.template,subject:kzm_payslip_email.notif_hr_payroll_ma_bulletin
+msgid "Pay Slip ${object.period_id.name}"
+msgstr "Bulletin de paie ${object.period_id.name}"
+
+#. module: kzm_payslip_email
+#: model:ir.model,name:kzm_payslip_email.model_hr_payroll_ma
+msgid "Saisie des bulletins"
+msgstr ""
+
+#. module: kzm_payslip_email
+#: model_terms:ir.ui.view,arch_db:kzm_payslip_email.hr_payroll_ma_form_inherit
+#: model_terms:ir.ui.view,arch_db:kzm_payslip_email.salary_form_inherit
+msgid "Send Email"
+msgstr "Envoyer l'email"
+
+#. module: kzm_payslip_email
+#: model_terms:ir.ui.view,arch_db:kzm_payslip_email.hr_payroll_ma_form_inherit
+msgid "Send Emails"
+msgstr "Envoyer les emails"

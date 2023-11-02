@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="own_external_layout_background" inherit_id="web.external_layout_background" primary="True">
+         <xpath expr="//div[hasclass('footer')]" position="replace">
+              <div class="footer text-center border-top border-dark"
+                 style="padding-top: 10px; font-size: 15px">
+                <div>Icesco:
+
+                    <span t-field="o.company_id.street"/>,
+                    <span t-field="o.company_id.city"/>
+                    <span t-field="o.company_id.country_id"/>,
+                    Contact :appro@icesco.org
+                </div>
+                <div t-if="report_type == 'pdf'" class="text-muted">
+                    Page:
+                    <span class="page"/>
+                    /
+                    <span class="topage"/>
+                </div>
+            </div>
+         </xpath>
+    </template>
+    <template id="own_layout" inherit_id="web.external_layout" primary="True">
+         <xpath expr="//t[@t-call='web.external_layout_standard']" position="attributes">
+             <attribute name="t-call">isesco_base.own_external_layout_background</attribute>
+         </xpath>
+        <xpath expr="//t[@t-call='{{company.external_report_layout_id.key}}']" position="attributes">
+             <attribute name="t-call">isesco_base.own_external_layout_background</attribute>
+         </xpath>
+    </template>
+    <template id="report_purchasequotation_document"
+              inherit_id="purchase.report_purchasequotation_document">
+        <xpath expr="//t[@t-call='web.external_layout']" position="attributes">
+            <attribute name="t-call">isesco_base.own_layout</attribute>
+        </xpath>
+    </template>
+    <template id="report_purchase_request"
+              inherit_id="purchase_request.report_purchase_request">
+        <xpath expr="//t[@t-call='web.external_layout']" position="attributes">
+            <attribute name="t-call">isesco_base.own_layout</attribute>
+        </xpath>
+    </template>
+    <template id="report_purchase_requisitions"
+              inherit_id="purchase_requisition.report_purchaserequisitions">
+        <xpath expr="//t[@t-call='web.external_layout']" position="attributes">
+            <attribute name="t-call">isesco_base.own_layout</attribute>
+        </xpath>
+    </template>
+
+</odoo>

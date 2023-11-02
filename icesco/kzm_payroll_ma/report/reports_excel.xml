@@ -1,0 +1,127 @@
+<odoo>
+  <data>
+        <report
+            id="journal_paie_id_excel"
+            string="Journal de paie Excel"
+            model="hr.payroll_ma"
+            report_type="xlsx"
+            name="kzm_payroll_ma.journal_paie_xlsx"
+            file="Journal de paie Excel"/>
+
+      <report
+            id="journal_paie_bulletin_id_excel"
+            string="Journal de paie Excel"
+            model="hr.payroll_ma.bulletin"
+            report_type="xlsx"
+            name="kzm_payroll_ma.journal_paie_bulletin_xlsx"
+            file="Journal de paie Excel"/>
+
+      <report
+            id="journal_paie_by_department_id_excel"
+            string="Journal de paie by department Excel"
+            model="hr.payroll_ma"
+            report_type="xlsx"
+            name="kzm_payroll_ma.journal_paie_by_department_xlsx"
+            file="Journal de paie par department Excel"/>
+
+      <report
+            id="journal_paie_bulletin_by_department_id_excel"
+            string="Journal de paie by department Excel"
+            model="hr.payroll_ma.bulletin"
+            report_type="xlsx"
+            name="kzm_payroll_ma.journal_paie_bulletin_by_department_xlsx"
+            file="Journal de paie par department Excel"/>
+
+      <report
+            id="journal_paie_bulletin_by_period_id_excel"
+            string="Journal de paie by period Excel"
+            model="hr.payroll_ma.bulletin"
+            report_type="xlsx"
+            name="kzm_payroll_ma.journal_paie_bulletin_by_period_xlsx"
+            file="Journal de paie par period Excel"/>
+
+      <report
+            id="journal_paie_bulletin_by_period_id_excel"
+            string="Journal de paie by period Excel"
+            model="hr.payroll_ma.bulletin"
+            report_type="xlsx"
+            name="kzm_payroll_ma.journal_paie_bulletin_by_period_xlsx"
+            file="Journal de paie par period Excel"/>
+
+      <report
+            id="journal_paie_bulletin_by_period_department_id_excel"
+            string="Journal de paie by periode/Departement Excel"
+            model="hr.payroll_ma.bulletin"
+            report_type="xlsx"
+            name="kzm_payroll_ma.journal_paie_bull_by_per_depart_xlsx"
+            file="Journal de paie par periode/Departement Excel"/>
+
+
+      <report
+            id="livre_paie_id_excel"
+            string="Livre de paie Excel"
+            model="hr.payroll_ma"
+            report_type="xlsx"
+            name="kzm_payroll_ma.livre_paie_xlsx"
+            file="Livre de paie Excel"/>
+
+      <report
+            id="livre_paie_bulletin_id_excel"
+            string="Livre de paie Excel"
+            model="hr.payroll_ma.bulletin"
+            report_type="xlsx"
+            name="kzm_payroll_ma.livre_paie_bulletin_xlsx"
+            file="Livre de paie Excel"/>
+
+<!--      -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+      <report
+            id="dh_journal_paie_id_excel"
+            string="Journal de paie Excel (New)"
+            model="hr.payroll_ma"
+            report_type="xlsx"
+            name="kzm_payroll_ma.dh_journal_paie_xlsx"
+            file="Journal de paie Excel"/>
+
+      <report
+            id="dh_journal_paie_id_by_department_excel"
+            string="Journal de paie Excel par departement (New)"
+            model="hr.payroll_ma"
+            report_type="xlsx"
+            name="kzm_payroll_ma.dh_journal_paie_by_department_xlsx"
+            file="Journal de paie Excel par departement"/>
+
+      <report
+            id="dh_journal_id_paie_bulletin_xlsx"
+            string="Journal de paie Excel (New)"
+            model="hr.payroll_ma.bulletin"
+            report_type="xlsx"
+            name="kzm_payroll_ma.dh_journal_department_xlsx"
+            file="Livre de paie Excel"/>
+
+      <report
+            id="dh_journal_bulletin_id_paie_bulletin_xlsx"
+            string="Journal de paie Excel par departement (New)"
+            model="hr.payroll_ma.bulletin"
+            report_type="xlsx"
+            name="kzm_payroll_ma.dh_journal_bulletin_department_xlsx"
+            file="Livre de paie Excel par departement"/>
+
+      <report
+            id="dh_cotisation_paie_xlsx"
+            string="Cotisation de paie (New)"
+            model="hr.payroll_ma"
+            report_type="xlsx"
+            name="kzm_payroll_ma.dh_cotisation_xlsx"
+            file="Cotisation de paie"/>
+
+      <report
+            id="dh_cotisation_paie_bulletin_xlsx"
+            string="Cotisation de paie (New)"
+            model="hr.payroll_ma.bulletin"
+            report_type="xlsx"
+            name="kzm_payroll_ma.dh_cotisation_bulletin_xlsx"
+            file="Cotisation de paie"/>
+
+  </data>
+</odoo>

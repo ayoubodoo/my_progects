@@ -1,0 +1,56 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="dh_pilliar_graph_form_view">
+        <field name="name">dh.pilliar.graph.form</field>
+        <field name="model">dh.pilliar.graph</field>
+        <field name="arch" type="xml">
+            <form>
+<!--                <header>-->
+<!--                    <button string="Recalculer" name="recalcule_button" type="object"-->
+<!--                            class="oe_highlight"/>-->
+<!--                </header>-->
+                <sheet>
+<!--                    <group>-->
+<!--                        <field name="name"/>-->
+<!--                    </group>-->
+                    <group>
+                        <field name="type" invisible="1"/>
+                    </group>
+                    <notebook>
+                      <page string="Pilliars" name="pilliars">
+                          <field name="pilliar_ids" readonly="1">
+                            <tree>
+                              <field name="name"/>
+                              <field name="percentage_of_done_percent" widget="percentage" sum="Total"/>
+                            </tree>
+                          </field>
+                      </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_pilliar_graph_tree">
+      <field name="name">dh.pilliar.graph.tree</field>
+      <field name="model">dh.pilliar.graph</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="type"/>
+            <field name="value"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_pilliar_graph">
+      <field name="name">pilliars</field>
+      <field name="res_model">dh.pilliar.graph</field>
+<!--      <field name="view_mode">tree,form</field>-->
+      <field name="view_mode">form</field>
+        <field name="res_id" eval="1"/>
+    </record>
+
+  </data>
+</odoo>

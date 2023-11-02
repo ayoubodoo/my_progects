@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="dh_dh_budget_transfert_tree">
+        <field name="name">dh.budget.transfert.tree</field>
+        <field name="model">dh.budget.transfert</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="task_ids"/>
+                <field name="task_dest_id"/>
+                <field name="project_dest_id"/>
+                <field name="montant"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+    <record id="dh_dh_budget_transfert_form" model="ir.ui.view">
+        <field name="name">dh.budget.transfert.form</field>
+        <field name="model">dh.budget.transfert</field>
+        <field name="arch" type="xml">
+            <form string="Retirer un montant">
+                <header>
+                    <!--                          groups="dh_icesco_project.icesco_dg"-->
+                    <button string="Valider" name="action_valide" type="object" states="draft"
+                            groups="dh_icesco_project.icesco_dg"/>
+                    <!--                    <button string="Valider absence" name="action_valider_absence" type="object" states="draft"/>-->
+                    <!--<button string="Corriger" name="action_corriger_pointage" type="object" states="pret"/>-->
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="task_ids"/>
+                        <field name="task_dest_id"/>
+                        <field name="project_dest_id"/>
+                    </group>
+                    <group>
+                        <field name="montant"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_budget_transfert">
+        <field name="name">Budget Transfer</field>
+        <field name="res_model">dh.budget.transfert</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--    <record model="ir.ui.view" id="project_task_inherit_view_form">-->
+    <!--        <field name="name">project.task.form</field>-->
+    <!--        <field name="model">project.task</field>-->
+    <!--        <field name="inherit_id" ref="project.view_task_form2"/>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <xpath expr="//field[@name='project_id']" position='before'>-->
+    <!--                <field name="code_activity"/>-->
+
+    <!--            </xpath>-->
+    <!--            <xpath expr="//field[@name='tag_ids']" position="after">-->
+    <!--                <field name="budget_initial"/>-->
+    <!--                <field name="budget_remaining"/>-->
+    <!--                <field name="budget_consumed"/>-->
+    <!--            </xpath>-->
+    <!--    <record model="ir.ui.view" id="project_task_inherit_view_form">-->
+    <!--        <field name="name">project.task.form</field>-->
+    <!--        <field name="model">project.task</field>-->
+    <!--        <field name="inherit_id" ref="project.view_task_form2"/>-->
+    <!--        <field name="arch" type="xml">-->
+
+    <!--            <xpath expr="//notebook" position="inside">-->
+    <!--                <page name="expense_info" string="Expenses Info">-->
+    <!--                    <field name="expense_ids">-->
+    <!--                        <tree editable="bottom">-->
+    <!--                            <field name="name"/>-->
+    <!--                            &lt;!&ndash;                            <field name="unit_amount"/>&ndash;&gt;-->
+    <!--                            <field name="product_uom_category_id"/>-->
+    <!--                            &lt;!&ndash;                            <label for="quantity"/>&ndash;&gt;-->
+
+    <!--                            <field name="product_uom_id"/>-->
+
+    <!--                            <field name="tax_ids" widget="many2many_tags_link"/>-->
+    <!--                            <field name="total_amount" string="Montant"/>-->
+    <!--                            <field name="state" invisible="1"/>-->
+    <!--                            <field name="company_id" invisible="1"/>-->
+    <!--                        </tree>-->
+    <!--                        <form>-->
+    <!--                            <group>-->
+    <!--                                <field name="name"/>-->
+    <!--                                &lt;!&ndash;                            <field name="unit_amount"/>&ndash;&gt;-->
+    <!--                                <field name="product_uom_category_id"/>-->
+    <!--                                &lt;!&ndash;                            <label for="quantity"/>&ndash;&gt;-->
+
+    <!--                                <field name="product_uom_id"/>-->
+
+    <!--                                <field name="tax_ids" widget="many2many_tags_link"/>-->
+    <!--                                <field name="total_amount" string="Montant"/>-->
+    <!--                                <field name="state" invisible="1"/>-->
+    <!--                                <field name="company_id" invisible="1"/>-->
+    <!--                            </group>-->
+    <!--                        </form>-->
+    <!--                    </field>-->
+    <!--                </page>-->
+    <!--            </xpath>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+    <record model="ir.ui.view" id="dh_mission_tree">
+        <field name="name">dh.mission.tree</field>
+        <field name="model">dh.mission.goal</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_mission">
+        <field name="name">المهمات الرسمية</field>
+        <field name="res_model">dh.mission.goal</field>
+        <field name="view_mode">tree</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_mission_tree')})]"/>
+    </record>
+    <record model="ir.ui.view" id="dh_hr_expense_mission_view_form">
+        <field name="name">dh.hr.expense.mission.form</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet" position="inside">
+                <notebook>
+                    <page string="DG Signature" name="signature_dfa">
+                        <group>
+                            <!--                            <field name="date_dg"/>-->
+                            <field name="signature_dg" nolabel="1" widget="signature"/>
+                        </group>
+                    </page>
+                    <page string="Directorate of Financial Affairs Signature" name="signature_dfa">
+                        <group>
+                            <field name="signature_directorate_financial_affairs" widget="signature" nolabel="1"
+                                   attrs="{'readonly': [('signature_dg', '==', False)]}"/>
+                        </group>
+                    </page>
+                    <page string="Financal Controller Signature" name="signature_fc">
+                        <group>
+                            <field name="signature_financal_controller" widget="signature" nolabel="1"
+                                   attrs="{'readonly': ['|',('signature_directorate_financial_affairs', '==', False),('signature_dg', '==', False)]}"/>
+                        </group>
+                    </page>
+
+                    <page string="Other Informations" name="other_info">
+                        <group>
+                            <field name="other_info" nolabel="1"/>
+                        </group>
+                    </page>
+                </notebook>
+            </xpath>
+            <!--            <xpath expr="//field[@name='project_id']" position="attributes">-->
+            <!--                <attribute name="domain">['|', ('state2','=','valide'), ('is_mission','=', False)]</attribute>-->
+            <!--            </xpath>-->
+            <xpath expr="//field[@name='employee_id']" position="after">
+                <field name="cooperating_party"/>
+                <field name="implementation_party"/>
+                <field name="venue_implementation"/>
+                <field name="date_implementation"/>
+                <field name="form_numero" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='project_id']" position="after">
+                <field name="task_id"
+                       domain="['|', ('project_id','=', project_id), ('parent_id.project_id','=', project_id)]"
+                       attrs="{'readonly': [('project_id', '==', False)]}"
+                       context="{'default_project_id': project_id}"/>
+                <!--                <field name="sub_task_id" domain="[('parent_id','=', task_id)]" attrs="{'readonly': [('task_id', '==', False)]}" context="{'default_parent_id': task_id, 'is_mission': True}"/>-->
+            </xpath>
+            <xpath expr="//field[@name='employee_id']" position="attributes">
+                <attribute name="string">Bénéficiaire</attribute>
+            </xpath>
+            <xpath expr="//field[@name='passager_id']" position="attributes">
+                <attribute name="string">Enfant</attribute>
+            </xpath>
+            <xpath expr="//field[@name='reference']" position="attributes">
+                <attribute name="string">Numéro</attribute>
+            </xpath>
+            <!--                <field name="company_id"/>-->
+        </field>
+    </record>
+    <record model="ir.ui.view" id="dh_search_task_project">
+        <field name="name">dh.search.task.project</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_search_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='my_tasks']" position="replace">
+                <filter string="My activities" name="my_tasks" domain="[('user_id', '=', uid)]"/>
+            </xpath>
+            <xpath expr="//filter[@name='my_followed_tasks']" position="replace">
+                <filter string="Followed Tasks" name="my_followed_tasks" domain="[('message_is_follower', '=', True)]"/>
+            </xpath>
+            <xpath expr="//group[@expand='0']" position="inside">
+                <filter string="Activity Type" name="type_activity" context="{'group_by':'type_activity'}"/>
+                <filter string="Non sector programmes" name="non_sector_programmes_id"
+                        context="{'group_by':'non_sector_programmes_id'}"/>
+            </xpath>
+
+        </field>
+    </record>
+    <record model="ir.ui.view" id="dh__task_project_title">
+        <field name="name">dh.title.task.project</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.quick_create_task_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="replace">
+                <field name="name" string="Activity Title"/>
+            </xpath>
+
+
+        </field>
+    </record>
+    <!--Bruillon, Approuve, Valide, Encours, Termine-->
+
+    <!--    wizard Projects budget-->
+    <record id="view_dh_project_budget_wizard" model="ir.ui.view">
+        <field name="name">Retirer un montant</field>
+        <field name="model">dh.project.budget.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Retirer un montant">
+                <group>
+                    <field name="task_ids" domain="[('project_id','=',active_id)]"/>
+                    <field name="project_dest_id"/>
+                    <field name="task_dest_id" domain="[('project_id','=',project_dest_id)]"/>
+
+                    <field name="montant"/>
+                    <field name="description"/>
+                </group>
+
+                <footer>
+                    <button name="action_done_show_wizard" string="Confirm" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="btn btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="dh_project_budget_wizard_action_server" model="ir.actions.act_window">
+        <field name="name">Retirer un montant</field>
+        <field name="res_model">dh.project.budget.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_dh_project_budget_wizard"/>
+        <field name="target">new</field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_projecttt_task_mission_view_form">
+        <field name="name">dh.project.task.mission.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button" type="object" name="get_missions"
+                        icon="fa-tasks">
+                    <field string="مهام" name="mission_count" widget="statinfo"/>
+                </button>
+                <button class="oe_stat_button" type="object" name="get_depenses"
+                        icon="fa-money">
+                    <field string="حساب المصاريف" name="depense_count" widget="statinfo"/>
+                </button>
+                <button class="oe_stat_button" type="object" name="get_billeterie"
+                        icon="fa-money" invisible="1">
+                    <field string="Billeterie Infos" name="billeterie_count" widget="statinfo"/>
+                </button>
+                <!--                <button class="oe_stat_button" type="object" name="get_budget_icesco"-->
+                <!--                    icon="fa-dollar">-->
+                <!--                    <field string="ميزانية الإيسيسكو" name="budget_icesco_count" widget="statinfo"/>-->
+                <!--                </button>-->
+                <!--                <button class="oe_stat_button" type="object" name="get_budget_extra_reel"-->
+                <!--                    icon="fa-dollar">-->
+                <!--                    <field string="الميزانية الإضافية" name="budget_extra_reel_count" widget="statinfo"/>-->
+                <!--                </button>-->
+                <!--                <button class="oe_stat_button" type="object" name="get_budget_extra_indirect"-->
+                <!--                    icon="fa-dollar">-->
+                <!--                    <field string="الميزانية الإضافية غير المباشرة" name="budget_extra_indirect_count" widget="statinfo"/>-->
+                <!--                </button>-->
+                <button class="oe_stat_button" type="object" name="get_budget_transfers"
+                        icon="fa-exchange">
+                    <field string="Budget Transfers" name="budget_transfer_count" widget="statinfo"/>
+                </button>
+            </div>
+            <xpath expr="//button[@name='action_subtask']" position='replace'>
+                <button name="action_subtask" type="object" class="oe_stat_button" icon="fa-tasks"
+                        attrs="{'invisible' : ['|', ('parent_id', '!=', False), ('id', '=', False)]}"
+                        context="{'default_user_id': user_id, 'default_parent_id': id, 'default_project_id': subtask_project_id}"
+                        groups="dh_icesco_project.group_hide_buttons">
+                    <field string="Sub-tasks" name="subtask_count" widget="statinfo"/>
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='project_id']" position='replace'>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position='replace'>
+            </xpath>
+            <xpath expr="//field[@name='date_deadline']" position='replace'>
+            </xpath>
+
+            <xpath expr="//field[@name='date_assign']" position="before">
+                <field name="proposition_id"/>
+                <field name="budget_initial"/>
+                <field name="percent_consumed_icesco" invisible="0"/>
+
+                <field name="country_id"/>
+                <field name="office_id"/>
+            </xpath>
+
+            <xpath expr="//div[hasclass('oe_title')]" position="replace">
+                <div class="oe_title pr-0">
+                    <h4>
+                        <label for="sequence" string="Activity Code"/>
+                        <field name="sequence" string="Activity Code"/>
+                    </h4>
+                    <h1 class="d-flex flex-row justify-content-between" style="width:1000px;">
+                        <field name="priority" widget="priority" class="mr-3"/>
+                        <field name="name" widget="text" class="o_task_name text-truncate" placeholder="Task Title..."
+                               default_focus="1"/>
+                        <field name="kanban_state" widget="state_selection" class="ml-auto"/>
+                    </h1>
+                </div>
+            </xpath>
+
+            <xpath expr="//group[1]" position="after">
+                <group col="2">
+
+                    <group name="project_info" string="Activity General Infos">
+
+                        <field name="code_project"/>
+                        <field name="project_id"/>
+<!--                        <field name="sequence" string="Activity Code"/>-->
+<!--                        <field name="name" string="Activity"/>-->
+                        <field name="sector_id"/>
+                        <field name="expert"/>
+                        <field name="manner_convening"/>
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                        <field name="user_id" invisible="1"/>
+
+
+                        <field name="department_id" invisible="1"/>
+                        <field name="stage_id" invisible="1"/>
+                        <field name="etape_done" invisible="1"/>
+                        <field name="state_ratio" invisible="1"/>
+
+                        <field name="date_deadline" invisible="1"/>
+
+
+                        <field name="pays_member_cible_id" invisible="1"/>
+
+
+
+                    </group>
+
+
+                    <group col="1" name="activity_balancing" string="Activity Balancing">
+
+                        <group string="Activity Budget">
+                            <field name="budget_icesco" string="Budget from ISESCO"/>
+                            <field name="budget_out_icesco" readonly="1" string="Budget Out ISESCO"/>
+                            <field name="budget_extra_reel" string="Budget Extra Direct" style="margin-right: 20px;width:90% !important;"/>
+
+                            <field name="budget_compta" string="Le montant reçu en comptabilité" style="margin-right: 50px;width:80% !important;"/>
+                            <field name="budget_extra_indirect" string="Budget Extra Indirect" style="margin-right: 20px;width:90% !important;"/>
+                            <field name="type_budget_extra_indirect" string="Type Budget - Détails" style="margin-right: 50px; width:80% !important;"/>
+
+
+                            <field name="budget_consumed"/>
+                            <field name="budget_remaining"/>
+
+                        </group>
+
+
+<!--                        <group string="Details">-->
+
+
+<!--                            <field name="budget_initial"/>-->
+<!--                            <field name="budget_consumed"/>-->
+<!--                            <field name="budget_remaining"/>-->
+<!--                        </group>-->
+
+
+<!--                        <group string="Accounting">-->
+<!--                            <field name="budget_extra_indirect"/>-->
+<!--                        </group>-->
+
+
+                    </group>
+
+
+                </group>
+                <group col="2">
+
+
+                    <group string="Partnership">
+                        <group name="Suggested partners for the activity:">
+                            <field name="is_mission" invisible="1"/>
+                            <field name="user_paren_employee_res_id" invisible="1"/>
+                            <field name="partenaire_ids" string="External Partner"/>
+<!--                            widget="many2many_tags_link" -->
+                            <field name="partenaire_inernal"/>
+<!--                             widget="many2many_tags_link"-->
+
+                            <!--                <field name="pays_member_cible_id"/>-->
+
+
+                            <field name="pays_members_cibles" />
+<!--                            widget="many2many_tags_link"-->
+                            <field name="pays_no_members_cibles" />
+<!--                            widget="many2many_tags_link"-->
+                            <field name="nombre_beneficiaires"/>
+                        </group>
+                    </group>
+
+
+                    <group name="engagements" string="Engagements">
+                        <field name="expected_outputs"/>
+                        <field name="risks_addressing"/>
+<!--                         widget="many2many_tags_link"-->
+                        <field name="link_dev_goals" />
+<!--                        widget="many2many_tags_link"-->
+                        <field name="key_performance_indicators"/>
+                        <field name="non_sector_programmes_id"/>
+                    </group>
+
+                </group>
+
+                <group name="evaluation" string="Task Evaluation">
+                    <group name="Activity performance indicators">
+                        <field name="actual"/>
+                        <field name="target"/>
+                        <field name="target_of_actual"/>
+
+                        <field name="pencentage_done" invisible="1"/>
+                        <field name="percentage_of_done" widget="percentpie"/>
+                        <field name="pencentage_report" widget="percentpie"/>
+
+
+                    </group>
+                </group>
+
+            </xpath>
+            <!--            <xpath expr="//form/sheet" position='inside'>-->
+
+
+            <!--                                 <group string="strategic performance">-->
+            <!--                     <group>-->
+            <!--                     <group>-->
+            <!--                   <field name="budget_icesco" readonly="1"/>-->
+            <!--                <field name="budget_out_icesco" readonly="1"/>-->
+            <!--                            <field name="budget_extra_reel"/>-->
+            <!--                <field name="budget_extra_indirect"/>-->
+            <!--                <field name="budget_compta"/>-->
+            <!--                <field name="expected_outputs"/>-->
+            <!--                         </group><group>-->
+            <!--                <field name="partenaire_ids" widget="many2many_tags_link" />-->
+            <!--                <field name="pays_members_cibles" widget="many2many_tags_link" />-->
+            <!--                <field name="pays_no_members_cibles" widget="many2many_tags_link" />-->
+            <!--                <field name="nombre_beneficiaires"/>-->
+            <!--                <field name="risks_addressing" widget="many2many_tags_link"/>-->
+            <!--                <field name="link_dev_goals" widget="many2many_tags_link"/>-->
+            <!--                <field name="key_performance_indicators"/>-->
+
+            <!--                     </group>-->
+            <!--                     </group>-->
+            <!--</group>-->
+
+            <!--            </xpath>-->
+
+
+            <xpath expr="//field[@name='tag_ids']" position='attributes'>
+
+                <attribute name="invisible">1</attribute>
+
+            </xpath>
+            <!--            <xpath expr="//field[@name='project_id']" position='after'>-->
+            <!--                <field name="code_activity"/>-->
+            <!--                <field name="code_project"/>-->
+            <!--                <field name="expert"/>-->
+            <!--                <field name="sector_id"/>-->
+
+            <!--                <field name="manner_convening"/>-->
+
+
+            <!--            </xpath>-->
+
+            <!--            <field name="user_id" position="after">-->
+            <!--                <field name="fournisseur"/>-->
+            <!--            </field>-->
+
+            <!--            <field name="legend_done" position="after">-->
+            <!--                <field name="is_mission" invisible="1"/>-->
+            <!--                <field name="user_paren_employee_res_id" invisible="1"/>-->
+            <!--&lt;!&ndash;                <field name="pays_member_cible_id"/>&ndash;&gt;-->
+
+            <!--                <field name="partenaire_ids" widget="many2many_tags_link"/>-->
+            <!--                <field name="pays_members_cibles" widget="many2many_tags_link"/>-->
+            <!--                <field name="pays_no_members_cibles" widget="many2many_tags_link"/>-->
+            <!--                <field name="nombre_beneficiaires"/>-->
+            <!--            </field>-->
+            <xpath expr="//page[@name='description_page']" position="replace">
+                <page name="description_page" string="ملاحظات">
+                    <field name="description" type="html"/>
+                    <div class="d-none oe_clear"/>
+                </page>
+            </xpath>
+            <xpath expr="//button[@name='action_assign_to_me']" position="after">
+                <button string="Approuver" name="action_aprouvee" type="object"
+                        class="oe_highlight"
+                        attrs="{'invisible': ['|','|',('is_mission','!=', True), ( 'state2', '!=', 'draft'),( 'user_paren_employee_res_id', '=', 'uid')]}"/>
+                <button string="Valider" name="action_valide" type="object"
+                        attrs="{'invisible': ['|',('is_mission','!=', True),( 'state2', 'in',  ['draft', 'valide','aprouvee','termine'])]}"
+                        class="oe_highlight" groups="dh_icesco_project.icesco_dg"/>
+                <button string="Encours" name="action_en_cours" type="object"
+                        attrs="{'invisible': ['|',('is_mission','!=', True),( 'state2', '!=', 'aprouvee')]}"
+                        class="oe_highlight"/>
+                <button string="Terminer" name="action_termine" type="object" class="oe_highlight"
+                        attrs="{'invisible': ['|',('is_mission','!=', True),( 'state2', '!=', 'valide')]}"/>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <field name="state2" widget="statusbar" statusbar_visible="draft,aprouvee,valide,termine"
+                       attrs="{'invisible':[('is_mission','!=', True)]}"/>
+            </xpath>
+
+            <xpath expr="//notebook/page[@name='description_page']" position="replace"/>
+
+            <xpath expr="//notebook" position="inside">
+                <!--                <page name="missions_info" string="Missions Infos">-->
+                <!--                    <group>-->
+
+                <!--                        <field name="total_depense" readonly="1"/>-->
+                <!--                        <field name="chef_secteur"/>-->
+                <!--                        <field name="expert"/>-->
+                <!--                        <field name="directeur_administratif"/>-->
+                <!--                    </group>-->
+
+                <!--                </page>-->
+                <!--                 <page string="strategic performance">-->
+                <!--                     <group>-->
+                <!--                     <group>-->
+                <!--                   <field name="budget_icesco" readonly="1"/>-->
+                <!--                <field name="budget_out_icesco" readonly="1"/>-->
+                <!--                            <field name="budget_extra_reel"/>-->
+                <!--                <field name="budget_extra_indirect"/>-->
+                <!--                <field name="budget_compta"/>-->
+                <!--                <field name="expected_outputs"/>-->
+                <!--                         </group><group>-->
+                <!--                <field name="partenaire_ids" widget="many2many_tags_link" />-->
+                <!--                <field name="pays_members_cibles" widget="many2many_tags_link" />-->
+                <!--                <field name="pays_no_members_cibles" widget="many2many_tags_link" />-->
+                <!--                <field name="nombre_beneficiaires"/>-->
+                <!--                <field name="risks_addressing" widget="many2many_tags_link"/>-->
+                <!--                <field name="link_dev_goals" widget="many2many_tags_link"/>-->
+                <!--                <field name="key_performance_indicators"/>-->
+
+                <!--                     </group>-->
+                <!--                     </group>-->
+                <!--</page>-->
+                <page name="expense_info" string="Expense Infos" invisible="1">
+                    <field name="expenses_ids" readonly="1">
+                        <tree editable="bottom">
+                            <field name="name"/>
+                            <!--                            <field name="unit_amount"/>-->
+                            <field name="product_uom_category_id"/>
+                            <!--                            <label for="quantity"/>-->
+
+                            <field name="product_uom_id"/>
+
+                            <field name="tax_ids" />
+<!--                            widget="many2many_tags_link"-->
+                            <field name="total_amount" string="Montant"/>
+                            <field name="state" invisible="1"/>
+                            <field name="company_id" invisible="1"/>
+                        </tree>
+                        <form>
+                            <group>
+                                <field name="name"/>
+                                <!--                            <field name="unit_amount"/>-->
+                                <field name="product_uom_category_id"/>
+                                <!--                            <label for="quantity"/>-->
+
+                                <field name="product_uom_id"/>
+
+                                <field name="tax_ids" />
+<!--                                widget="many2many_tags_link"-->
+                                <field name="total_amount" string="Montant"/>
+                                <field name="state" invisible="1"/>
+                                <field name="company_id" invisible="1"/>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+                <page name="billeterie_info" string="Bulleterie Infos" invisible="1">
+                    <field name="billeterie_ids" readonly="1">
+                        <tree editable="bottom">
+                            <field name="name"/>
+                            <field name="employee_id"/>
+                            <field name="date"/>
+                            <field name="type_ids" widget="many2many_tags_link"/>
+                            <field name="montant"/>
+                            <field name="ville_depart"/>
+                            <field name="ville_arrivee"/>
+                        </tree>
+                    </field>
+                </page>
+                <page name="goals_info" string="Goals Infos">
+                    <field name="goals_mission_ids">
+                        <tree editable="bottom">
+                            <field name="name"/>
+                            <field name="done"/>
+                        </tree>
+                    </field>
+                </page>
+                <!--                <page string="DG Signature" name="signature_dfa">-->
+                <!--                    <group>-->
+                <!--                        <field name="date_dg"/>-->
+                <!--                        <field name="signature_dg" widget="signature"/>-->
+                <!--                    </group>-->
+                <!--                </page>-->
+                <!--                <page string="Directorate of Financial Affairs Signature" name="signature_dfa">-->
+                <!--                    <group>-->
+                <!--                        <field name="date_adm_affairs"/>-->
+                <!--                        <field name="signature_adm_affairs" widget="signature"/>-->
+                <!--                    </group>-->
+                <!--                </page>-->
+                <!--                <page string="Financal Controller Signature" name="signature_fc">-->
+                <!--                    <group>-->
+                <!--                        <field name="date_signature_financal_controller"/>-->
+                <!--                        <field name="signature_financal_controller" widget="signature"/>-->
+                <!--                    </group>-->
+                <!--                </page>-->
+
+                <!--                <page string="Notes">-->
+                <!--                    <field name="notes"/>-->
+
+                <!--                </page>-->
+
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_dh_mission_formm" model="ir.ui.view">
+        <field name="name">dh.project.mission.task.form</field>
+        <field name="model">project.task</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                        <group col="2">
+                        <group>
+                        <field name="sector_dpt_id" string="Dpt"/>
+                        <field name="beneficiary"/>
+                        <!--                        <field name="country_id"/>-->
+                        <!--                        <field name="is_member_state"/>-->
+                        <field name="destination"/>
+                    </group>
+                             <group>
+                        <field name="mission_form_ab"/>
+                        <field name="mission_repport"/>
+                        <field name="pencentage_done" string="Mission objectives fulfilment percentage"/>
+
+                    </group>
+                    </group>
+                    <group col="2">
+                <group string="Mission Reference">
+                    <field name="name" string="Mission Title"/>
+                        <field name="part_action_plan"/>
+
+                    </group>
+                    <group string="Duration of mission">
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+
+                    </group>
+
+                    </group>
+
+                    <group col="2" string="Mission Budget">
+                        <group>
+
+                            <field name="per_diem"/>
+                            <field name="tickets"/>
+                             <field name="funded_by_icesco"/>
+
+                        </group>
+                        <group col="2" string="Extra fees">
+<group>
+                            <field name="accommodation"/>
+                            <field name="transportation"/>
+                            <field name="registration_fee"/>
+                            </group>
+                            <group>
+                            <field name="extra_weight"/>
+                            <field name="medical_expense"/>
+                            <field name="total_cost"/>
+
+                        </group>
+                        </group>
+                    </group>
+
+
+                  <notebook>
+                      <page string="Mission Objectives">
+                          <field name="goals_mission_ids">
+                               <tree editable="bottom">
+                                                      <field name="name" width="1"/>
+                                                      <field name="done" width="1"/>
+                               </tree>
+
+
+
+                          </field>
+                      </page>
+                      <page string="Comments">
+                          <field name="comments"/>
+                      </page>
+                  </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_dh_mission_tree" model="ir.ui.view">
+        <field name="name">dh.project.mission.task.tree</field>
+        <field name="model">project.task</field>
+        <field name="arch" type="xml">
+            <tree string="المهام">
+                <field name="name" string="Mission"/>
+                   <field name="sector_dpt_id"  string="Dpt" optional="show"/>
+                        <field name="beneficiary" optional="show"/>
+
+                <field name="date_start"/>
+                        <field name="date_end"/>
+                <field name="mission_form_ab"  optional="show"/>
+                        <field name="mission_repport"  optional="show"/>
+                        <field name="pencentage_done"  optional="show" string="Mission objectives fulfilment percentage"/>
+
+                   <field name="accommodation"  optional="show"/>
+                            <field name="transportation"  optional="show"/>
+                            <field name="registration_fee"  optional="show"/>
+                   <field name="extra_weight"  optional="show"/>
+                            <field name="medical_expense"  optional="show"/>
+                            <field name="total_cost"  optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="project.open_view_project_all" model="ir.actions.act_window">
+        <field name="name">Projects</field>
+        <field name="res_model">project.project</field>
+        <field name="domain">[]</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="view_id" ref="project.view_project_kanban"/>
+        <field name="search_view_id" ref="project.view_project_project_filter"/>
+        <field name="target">main</field>
+        <!--        <field name="domain">[('is_mission','=',False)]</field>-->
+        <!--        <field name="context">{'default_is_mission':False}</field>-->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new project
+            </p>
+            <p>
+                Or <a type="action" name="%(project.ir_actions_server_project_sample)d" tabindex="-1">activate a sample
+                project
+            </a> to play with.
+            </p>
+        </field>
+    </record>
+
+    <record id="dh_mission_task_all" model="ir.actions.act_window">
+        <field name="name">المهمات الرسمية</field>
+        <field name="res_model">project.task</field>
+        <field name="domain">[]</field>
+        <field name="view_mode">tree,form</field>
+
+        <!--        <field name="view_id" ref="project.view_project_kanban"/>-->
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_icesco_project.view_dh_mission_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('dh_icesco_project.view_dh_mission_formm')})]"/>
+        <field name="domain">[('is_mission','=',True)]</field>
+        <field name="context">{'default_is_mission':True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new misssion
+            </p>
+            <p>
+                Or <a type="action" name="%(project.ir_actions_server_project_sample)d" tabindex="-1">activate a sample
+                project
+            </a> to play with.
+            </p>
+        </field>
+    </record>
+
+
+    <!--    <record id="dh_icesco_hr_expense_inherit" model="ir.ui.view">-->
+    <!--        <field name="name">dh.icesco.hr.expense.form.inherit</field>-->
+    <!--        <field name="model">hr.expense</field>-->
+    <!--        <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <xpath expr="//field[@name='total_amount']" position="after">-->
+    <!--                <field name="project_id"/>-->
+
+    <!--            </xpath>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+
+</odoo>

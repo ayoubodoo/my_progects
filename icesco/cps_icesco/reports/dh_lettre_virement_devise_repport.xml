@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <report
+            id="dh_lettre_virement_devise"
+            model="account.payment"
+            string="Lettre virement devise "
+            report_type="qweb-pdf"
+            name="cps_icesco.dh_lettre_virement_devise11"
+            file="cps_icesco.dh_lettre_virement_devise11"
+
+
+    />
+    <template id="dh_lettre_virement_devise11">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <!--                <t t-call="web.external_layout">-->
+                <div class="page article"
+                     style="padding-left:6%;padding-right:6%;font-size :20px;font-weight-bold; text-align: justify;text-justify: inter-word;">
+
+                    <div style="padding-top:1%">
+                        <div class="row">
+                            <div class="col-4">
+                                <strong>
+
+                                    <span>N/Réf. : DAF/</span>
+                                    <span t-esc="o.payment_reference"/>
+
+                                </strong>
+                            </div>
+                            <div class="col-4">
+
+                                <strong>
+
+                                    <div class="text-center">Rabat, le
+                                        <span t-esc="datetime.date.today().strftime('%d-%m-%Y')"/>
+                                    </div>
+                                </strong>
+                            </div>
+                            <div class="col-4"/>
+
+                        </div>
+                        <br/>
+                        <span t-esc="o.journal_id.bank_id.name"/>
+
+                        <br/>
+                        <span t-esc="o.journal_id.bank_id.street"/>
+                        <span t-esc="o.journal_id.bank_id.city"/>
+                        <span t-esc="o.journal_id.bank_id.country.display_name"/>
+
+
+                        <br/>
+                        <strong>
+                            <span t-esc="o.journal_id.bank_id.city"/>
+                        </strong>
+                        <br/>
+                        <br/>
+                        Messieurs,
+                        <br/>
+                        <br/>
+                        Par le débit de notre compte en Dollars n° 
+                        <strong>
+                            <span t-esc="o.journal_id.bank_account_id.acc_number"/>
+                        </strong>
+                         nous vous prions de bien vouloir effectuer un virement de la somme de 
+                        <strong>
+                            <span t-esc="o.amount"/>
+                             
+                            <span t-esc="o.currency_id.display_name"/>( <span t-esc="o.check_amount_in_words"/>  )
+
+                        </strong>
+                         
+                        ,en faveur de :
+
+
+                        <br/>
+                        <br/>
+                        <div class="text-center" style="font-weight-bold;">
+                             <strong> 
+                            <span t-esc="o.partner_id.display_name"/>
+                        </strong>
+                            <br/>
+                            A/C N°  
+                            <span t-esc="o.partner_id.bank_ids.bank_id.acn"/>
+
+                            <br/>
+                            BANQUE 
+                            <span t-esc="o.partner_id.bank_ids.bank_id.name"/>
+                            <br/>
+                            ADRESSE DE BANQUE  
+                            <span t-esc="o.partner_id.bank_ids.bank_id.street"/>
+                            <span t-esc="o.partner_id.bank_ids.bank_id.city"/>
+                            <span t-esc="o.partner_id.bank_ids.bank_id.country.display_name"/>
+                            <br/>
+                            SWIFT CODE  
+                            <span t-esc="o.journal_id.bank_id.bic"/>
+                            <br/>
+                            BANQUE INTERMEDIAIRE  
+                            <span t-esc="o.bank_intermidiaire.display_name"/>
+                            <br/>
+                            A/C N°  
+                            <span t-esc="o.bank_intermidiaire.acn"/>
+                            <br/>
+                            ADRESSE DE BANQUE  
+                            <span t-esc="o.bank_intermidiaire.street"/>
+                            <span t-esc="o.bank_intermidiaire.city"/>
+                            <span t-esc="o.bank_intermidiaire.display_name"/>
+                            <br/>
+                            DETAILS :  
+                            <span t-esc="o.details"/>
+
+                        </div>
+                        <br/>
+                        <span style="padding-left:10%">Veuillez agréer, Messieurs, l’expression de nos sentiments
+                            distingués.
+                        </span>
+
+                        <br/>
+                        <div class="row" style="padding-top:5%;padding-left:5%;">
+                            <t t-if="o.senario == 's1' ">
+                                <div class="col-4">
+
+                                    <span class="text-center">
+                                        Responsable de la DA
+                                        <br/>
+                                        Mme Jihane El Assimi
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_supperviseur_affairs_financiere"
+                                         t-att-src="image_data_uri(o.signature_supperviseur_affairs_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                                <div class="col-4">
+
+
+                                    <span class="text-center">
+                                        Le Contrôleur financier
+                                        <br/>
+                                        Mme Khadija Sadrati
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_controlleur_financiere"
+                                         t-att-src="image_data_uri(o.signature_controlleur_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                                <div class="col-4" style="float:right">
+
+                                    Le Directeur général
+                                    <br/>
+
+                                    Dr. Salim M. AlMalik
+                                    <br/>
+                                    <img t-if="o.signature_dg" t-att-src="image_data_uri(o.signature_dg)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                            </t>
+                            <t t-if="o.senario == 's2' ">
+                                <div class="col-4">
+
+                                    <span class="text-center">
+                                        Le Directeur général Adjoint
+                                        <br/>
+                                        Dr. Abdellah Benaurafa
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_dg_adjoint"
+                                         t-att-src="image_data_uri(o.signature_dg_adjoint)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                                <div class="col-4">
+
+
+                                    <span class="text-center">
+                                        Le Contrôleur financier
+                                        <br/>
+                                        Mme Khadija Sadrat
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_controlleur_financiere"
+                                         t-att-src="image_data_uri(o.signature_controlleur_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                                <div class="col-4" style="float:right">
+
+                                    Superviseur des affairs financières
+                                    <br/>
+
+                                    Dr. Salim M. AlMalik
+                                    <br/>
+                                    <img t-if="o.signature_dg" t-att-src="image_data_uri(o.signature_dg)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                            </t>
+                            <t t-if="o.senario == 's3' ">
+                                <div class="col-4">
+
+                                    <span class="text-center">
+                                        Responsable de la DA
+                                        <br/>
+                                        Mme Jihane El Assimi
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_supperviseur_affairs_financiere"
+                                         t-att-src="image_data_uri(o.signature_supperviseur_affairs_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+
+                                <div class="col-4">
+                                </div>
+                                <div class="col-4">
+
+
+                                    <span class="text-center">
+                                        Le Contrôleur financier
+                                        <br/>
+                                        Mme Khadija Sadrat
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_controlleur_financiere"
+                                         t-att-src="image_data_uri(o.signature_controlleur_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                            </t>
+                            <t t-if="o.senario == 's4' ">
+                                <div class="col-4">
+
+                                    <span class="text-center">
+                                        Responsable de la DA
+                                        <br/>
+                                        Mme Jihane El Assimi
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_supperviseur_affairs_financiere"
+                                         t-att-src="image_data_uri(o.signature_supperviseur_affairs_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+
+                                <div class="col-4">
+                                </div>
+                                <div class="col-4" style="float:right">
+
+                                    Le Directeur général
+                                    <br/>
+
+                                    Dr. Salim M. AlMalik
+                                    <br/>
+                                    <img t-if="o.signature_dg" t-att-src="image_data_uri(o.signature_dg)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                            </t>
+                            <t t-if="o.senario == 's5' ">
+                                <div class="col-4">
+
+
+                                    <span class="text-center">
+                                        Le Contrôleur financier
+                                        <br/>
+                                        Mme Khadija Sadrat
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_controlleur_financiere"
+                                         t-att-src="image_data_uri(o.signature_controlleur_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+
+                                <div class="col-4">
+                                </div>
+                                <div class="col-4">
+
+                                    <span class="text-center">
+                                        Le Directeur général Adjoint
+                                        <br/>
+                                        Dr. Abdellah Benaurafa
+
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_dg_adjoint"
+                                         t-att-src="image_data_uri(o.signature_dg_adjoint)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                            </t>
+                            <t t-if="o.senario == 's6' ">
+                                <div class="col-4" style="float:right">
+
+                                    Superviseur des affairs financières
+                                    <br/>
+
+                                    Dr. Salim M. AlMalik
+                                    <br/>
+                                    <img t-if="o.signature_supperviseur_affairs_financiere"
+                                         t-att-src="image_data_uri(o.signature_supperviseur_affairs_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+
+                                <div class="col-4">
+                                </div>
+                                <div class="col-4">
+
+                                    <span class="text-center">
+                                        Responsable de la DA
+                                        <br/>
+                                        Dr. Abdellah Benaurafa
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_dg_adjoint"
+                                         t-att-src="image_data_uri(o.signature_dg_adjoint)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                            </t>
+                            <t t-if="o.senario == 's7' ">
+                                <div class="col-4">
+
+
+                                    <span class="text-center">
+                                        Le Contrôleur financier
+                                        <br/>
+                                        Mme Khadija Sadrat
+                                    </span>
+                                    <br/>
+                                    <img t-if="o.signature_controlleur_financiere"
+                                         t-att-src="image_data_uri(o.signature_controlleur_financiere)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+
+                                <div class="col-4">
+                                </div>
+                                <div class="col-4" style="float:right">
+
+                                    Le Directeur général
+                                    <br/>
+
+                                    Dr. Salim M. AlMalik
+                                    <br/>
+                                    <img t-if="o.signature_dg" t-att-src="image_data_uri(o.signature_dg)"
+                                         style="width: 300px;height: 50px;float:center" class="text-center"/>
+
+
+                                </div>
+                            </t>
+
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

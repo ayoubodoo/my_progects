@@ -1,0 +1,368 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="aappraisal_appraisal_tree">
+            <field name="name">appraisal.appraisal.tree</field>
+            <field name="model">appraisal.appraisal</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="department_id"/>
+                    <field name="salary_category_id"/>
+                    <field name="recruitment_date"/>
+                    <field name="model_evaluation_id"/>
+                    <field name="evaluator_id"/>
+                    <field name="evaluation_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="appraisal_appraisal_form">
+            <field name="name">appraisal.appraisal.form</field>
+            <field name="model">appraisal.appraisal</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="Validate" name="action_validate" states="draft" type="object"
+                                class="oe_highlight"/>
+                        <button string="Approve" name="action_approve" states="validation" type="object"
+                                class="oe_highlight"/>
+                        <button string="Close" name="action_close" states="validation,approved" type="object"/>
+                        <button string="Reset to Draft" name="action_draft" type="object" states="validation,approved"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,validation,approved,closed"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title" modifiers="{}">
+                            <h1 modifiers="{}">
+                                <field name="name"
+                                       required="1"
+                                       placeholder="Name"
+                                       string="Name"
+                                       modifiers="{'required':true}"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="employee_id" required="1"/>
+                                <field name="department_id"/>
+                                <field name="salary_category_id"/>
+                                <field name="recruitment_date"/>
+                            </group>
+                            <group>
+                                <field name="model_evaluation_id" required="1"/>
+                                <field name="evaluator_id" required="1" readonly="1" force_save="1"/>
+                                <field name="evaluation_date"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="evaluations" string="Evaluations">
+                                <separator string="Evaluations Lines"/>
+                                <field name="appraisal_line_ids">
+                                    <tree editable="bottom">
+                                        <field name="axe_id" readonly="1" force_save="1"/>
+                                        <field name="number" force_save="1" readonly="1"/>
+                                        <field name="factor_id" force_save="1" readonly="1"/>
+                                        <field name="description" readonly="1" force_save="1"/>
+                                        <field name="note_id" force_save="1" context="{'factor_id': factor_id}"/>
+                                        <field name="level" force_save="1" readonly="1"/>
+                                    </tree>
+                                </field>
+                                <separator string="Comments"/>
+                                <field name="appraisal_axis_ids">
+                                    <tree editable="bottom">
+                                        <field name="axe_id" readonly="1" force_save="1"/>
+                                        <field name="total_note" readonly="1" force_save="1"/>
+                                        <field name="comment"/>
+                                    </tree>
+                                </field>
+                                 <group>
+                                    <group>
+                                        <field name="maximal_note"/>
+                                        <field name="appraisal_note"/>
+                                        <field name="appreciation"/>
+                                    </group>
+                                    <group>
+                                       <field name="recommended_action"/>
+                                       <field name="decision"/>
+                                       <field name="step_advancement"/>
+
+                                    </group>
+                                    <!-- <group>
+                                         <label for="employee_recontracted"></label>
+                                    </group>
+                                    <group>
+                                        <field name="employee_recontracted" string=" "/>
+                                    </group> -->
+                                </group>
+                            </page>
+                            <page name="evaluations" string="Career Evolution">
+                                <field name="appraisal_comment_ids">
+                                    <tree editable="bottom">
+                                        <field name="evaluation_axe_id" readonly="1" force_save="1"/>
+                                        <field name="employee_comment"/>
+                                        <field name="evaluator_comment"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="appraisal_appraisal_search" model="ir.ui.view">
+            <field name="name">appraisal.appraisal.search</field>
+            <field name="model">appraisal.appraisal</field>
+            <field name="arch" type="xml">
+                <search string="Appraisal">
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                </search>
+            </field>
+        </record>
+        <record id="appraisal_appraisal_action" model="ir.actions.act_window">
+            <field name="name">Appraisal 1</field>
+            <field name="res_model">appraisal.appraisal</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new appraisal
+                </p>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="appraisal_appraisal_tree">
+            <field name="name">appraisal.appraisal.line.tree</field>
+            <field name="model">appraisal.appraisal.line</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="number"/>
+                    <field name="factor_id"/>
+                    <field name="description"/>
+                    <field name="note_id"/>
+                    <field name="level"/>
+                    <field name="axe_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="appraisal_appraisal_line_form">
+            <field name="name">appraisal.appraisal.line.form</field>
+            <field name="model">appraisal.appraisal.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="number"/>
+                                <field name="factor_id"/>
+
+                            </group>
+                            <group>
+                                <field name="note_id" force_save="1"/>
+                                <field name="level" force_save="1"/>
+                                <field name="axe_id"/>
+                            </group>
+                            <label for="description"/>
+                            <field name="description"/>
+                        </group>
+                        <!--                        <separator string="Axis"/>-->
+                        <!--                        <field name="axe_ids"/>-->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="appraisal_axis_line_tree">
+            <field name="name">appraisal.axis.line.tree</field>
+            <field name="model">appraisal.axis.line</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="axe_id"/>
+                    <field name="total_note"/>
+                    <field name="comment"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="appraisal_axis_line_form">
+            <field name="name">appraisal.axis.line.form</field>
+            <field name="model">appraisal.axis.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="axe_id"/>
+                            <field name="total_note"/>
+                            <field name="comment"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="appraisal_comment_line_tree">
+            <field name="name">appraisal.comment.line.tree</field>
+            <field name="model">appraisal.comment.line</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="evaluation_axe_id"/>
+                    <field name="employee_comment"/>
+                    <field name="evaluator_comment"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="appraisal_comment_line_form">
+            <field name="name">appraisal.comment.line.form</field>
+            <field name="model">appraisal.comment.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="evaluation_axe_id"/>
+                            <field name="employee_comment"/>
+                            <field name="evaluator_comment"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_server_evaluation" model="ir.actions.server">
+            <field name="name">Envoyer l'évaluation(s)</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_appraisal_appraisal"/>
+            <field name="binding_model_id" ref="model_appraisal_appraisal"/>
+            <field name="state">code</field>
+            <field name="code">
+            action = env['appraisal.appraisal'].mailmessage()</field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_appraisal_appraisal_form">
+            <field name="name">appraisal.appraisal.form</field>
+            <field name="model">appraisal.appraisal</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="Validate" name="action_validate" states="draft" type="object"
+                                class="oe_highlight"/>
+                        <button string="Approve" name="action_approve" states="validation" type="object"
+                                class="oe_highlight"/>
+                        <button string="Close" name="action_close" states="validation,approved" type="object"/>
+                        <button string="Reset to Draft" name="action_draft" type="object" states="validation,approved"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,validation,approved,closed"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title" modifiers="{}">
+                            <h1 modifiers="{}">
+                                <field name="name"
+                                       required="1"
+                                       placeholder="Name"
+                                       string="Name"
+                                       modifiers="{'required':true}"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="employee_id" required="1" string="الدولة" domain="[('is_member_state', '=', True)]"/>
+<!--                                <field name="dh_appraisal_note"/>-->
+<!--                                <field name="dh_remarque"/>-->
+<!--                                <field name="department_id"/>-->
+<!--                                <field name="salary_category_id"/>-->
+<!--                                <field name="recruitment_date"/>-->
+                            </group>
+                            <group>
+                                <field name="model_evaluation_id" required="1" invisible="1"/>
+<!--                                <field name="evaluator_id" required="1" readonly="1" force_save="1"/>-->
+                                <field name="evaluation_date"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="evaluations" string="Evaluations">
+                                <separator string="Evaluations Lines"/>
+                                <field name="appraisal_line_ids">
+                                    <tree editable="bottom">
+                                        <field name="axe_id" readonly="1" force_save="1" invisible="1"/>
+                                        <field name="number" force_save="1" readonly="1" invisible="1"/>
+                                        <field name="factor_id" force_save="1" readonly="1" invisible="1"/>
+                                        <field name="description" readonly="1" force_save="1"/>
+                                        <field name="is_very_satisfied" force_save="1" />
+                                        <field name="is_somewhat_satisfied" force_save="1" />
+                                        <field name="is_neither_satisfied" force_save="1" />
+                                        <field name="is_somewhat_dissatisfied" force_save="1" />
+                                        <field name="is_very_dissatisfied" force_save="1" />
+                                        <field name="note_id" force_save="1" context="{'factor_id': factor_id}" invisible="1"/>
+                                        <field name="level" string="Appraisal Note" force_save="1" invisible="1"/>
+                                    </tree>
+                                </field>
+<!--                                <separator string="Comments"/>-->
+<!--                                <field name="appraisal_axis_ids">-->
+<!--                                    <tree editable="bottom">-->
+<!--                                        <field name="axe_id" readonly="1" force_save="1"/>-->
+<!--                                        <field name="total_note" readonly="1" force_save="1"/>-->
+<!--                                        <field name="comment"/>-->
+<!--                                    </tree>-->
+<!--                                </field>-->
+                                 <group>
+                                    <group>
+<!--                                        <field name="maximal_note"/>-->
+                                        <field name="appraisal_note_percent" widget="percentage"/>
+<!--                                        <field name="appreciation"/>-->
+                                    </group>
+<!--                                    <group>-->
+<!--                                       <field name="recommended_action"/>-->
+<!--                                       <field name="decision"/>-->
+<!--                                       <field name="step_advancement"/>-->
+
+<!--                                    </group>-->
+                                    <!-- <group>
+                                         <label for="employee_recontracted"></label>
+                                    </group>
+                                    <group>
+                                        <field name="employee_recontracted" string=" "/>
+                                    </group> -->
+                                </group>
+                            </page>
+<!--                            <page name="evaluations" string="Career Evolution">-->
+<!--                                <field name="appraisal_comment_ids">-->
+<!--                                    <tree editable="bottom">-->
+<!--                                        <field name="evaluation_axe_id" readonly="1" force_save="1"/>-->
+<!--                                        <field name="employee_comment"/>-->
+<!--                                        <field name="evaluator_comment"/>-->
+<!--                                    </tree>-->
+<!--                                </field>-->
+<!--                            </page>-->
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_aappraisal_appraisal_tree">
+            <field name="name">appraisal.appraisal.tree</field>
+            <field name="model">appraisal.appraisal</field>
+            <field name="arch" type="xml">
+                <tree>
+<!--                    <field name="name" string="الدولة"/>-->
+                    <field name="employee_id" string="الدولة" />
+                    <field name="evaluation_date"/>
+<!--                    <field name="state"/>-->
+                    <field name="appraisal_note_percent" widget="percentage"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="dh_appraisal_appraisal_action" model="ir.actions.act_window">
+            <field name="name">Appraisal</field>
+            <field name="res_model">appraisal.appraisal</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref=""/>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_aappraisal_appraisal_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('dh_appraisal_appraisal_form')})]"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new appraisal
+                </p>
+            </field>
+            <field name="context">{'default_model_evaluation_id': 28}</field>
+        </record>
+
+
+
+    </data>
+</odoo>

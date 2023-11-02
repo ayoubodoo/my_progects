@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+    <template id="bulletin_paie" inherit_id="kzm_payroll_ma.bulletin_paie" priority="25">
+        <!--<xpath expr="//span[@t-field='o.employee_id.address_home']" position="replace">-->
+            <!--&lt;!&ndash;<span t-field="o.employee_id.address_home"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;<span t-field="o.employee_id.address_id"&ndash;&gt;-->
+            <!--&lt;!&ndash;t-options='{"widget": "contact", "fields": ["address"]}'/>&ndash;&gt;-->
+        <!--</xpath>-->
+        <xpath expr="//table[2]//tr[5]/td[5]/strong" position="replace">
+            <strong>Catégorie/Grade : </strong>
+        </xpath>
+        <xpath expr="//table[2]//tr[5]/td[6]/span" position="replace">
+            <span align="right" t-field="o.employee_id.category_id.code"/>-<span align="right" t-field="o.employee_id.category_id.grade_id.code"/>
+        </xpath>
+        <xpath expr="//table[2]//tr[2]/td[1]/strong" position="replace">
+            <strong>CINE/N°Passeport : </strong>
+        </xpath>
+        <xpath expr="//table[2]//tr[2]/td[6]" position="replace">
+        </xpath>
+        <xpath expr="//table[2]//tr[2]/td[5]" position="replace">
+        </xpath>
+        <xpath expr="//table[2]//tr[2]/td[4]" position="replace">
+            <td colspan="3" style="border-right: 2px solid black;">
+                <span t-field="o.employee_id.address_id"
+                t-options='{"widget": "contact", "fields": ["address"]}'/>
+            </td>
+        </xpath>
+        <xpath expr="//table[2]//tr[1]/td[5]" position="replace">
+            <td style="text-align: left;"><strong>Situation de famille : </strong></td>
+        </xpath>
+        <xpath expr="//table[2]//tr[1]/td[6]" position="replace">
+            <td style="border-right: 2px solid black;text-align: left;"><span t-field="o.employee_id.marital"/></td>
+        </xpath>
+<!--        <xpath expr="//table[2]//tr[6]/td" position="inside">-->
+<!--            <span t-field="o.remaining_leaves"/>-->
+<!--            <span> j</span>-->
+<!--        </xpath>-->
+        <xpath expr="//table[2]//tr[3]" position="replace">
+        </xpath>
+        <!--<xpath expr="//table[2]//tr[3]/td" position="attributes">-->
+            <!--<attribute name="style">display:none;</attribute>-->
+        <!--</xpath>-->
+        <!--<xpath expr="//table[2]//tr[3]/td[2]" position="attributes">-->
+            <!--<attribute name="style">display:none;</attribute>-->
+        <!--</xpath>-->
+        <xpath expr="//div[hasclass('page')]/div[2]/table/tr/td[5]" position="replace">
+        </xpath>
+        <xpath expr="//div[hasclass('page')]/div[2]/table/tr[2]/td[5]" position="replace">
+        </xpath>
+        <xpath expr="//div[hasclass('page')]/div[2]/table/tr[3]/td[5]" position="replace">
+        </xpath>
+    </template>
+
+    </data>
+</odoo>

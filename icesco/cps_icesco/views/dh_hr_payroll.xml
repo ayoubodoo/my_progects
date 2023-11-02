@@ -1,0 +1,15 @@
+<odoo>
+        <record id="view_rubrique_form_inherite111" model="ir.ui.view">
+        <field name="name">hr.payroll_ma.rubrique.form.inherit11</field>
+        <field name="model">hr.payroll_ma.rubrique</field>
+        <field name="inherit_id" ref="kzm_payroll_ma.rubrique_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='formule']" position="after">
+
+               <field name="is_transport"/>
+
+
+            </xpath>
+        </field>
+        </record>
+</odoo>

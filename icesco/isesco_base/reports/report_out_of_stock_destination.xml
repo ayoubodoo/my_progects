@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <report
+            id="out_of_stock_by_destination"
+            string="Out of stock by destination report"
+            model="stock.picking.destination.wizard"
+            report_type="qweb-pdf"
+            name="isesco_base.out_of_stock_by_destination_report"
+            file="isesco_base.report_out_of_stock_destination"
+            menu="False"/>
+
+    <template id="out_of_stock_by_destination_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <div class="header">
+                    <div class="row">
+                        <div class="col-2 text-left" style="font-size: 14px;">
+                            <br/>
+                            <span t-esc="datetime.datetime.now().strftime('%d/%m/%Y')"/>
+                        </div>
+                        <div class="col-6 text-center">
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div class="text-center">
+                                <span style="font-size: 20px;text-decoration: underline;">
+                                    <strong>Sorties de stock par destination</strong>
+                                </span>
+                                <br/>
+                                <br/>
+                                <span style="font-size: 14px;">
+                                    <strong>Du : &#160;&#160;</strong>
+                                    <t t-esc="o.start_date"/>
+                                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                    <strong>Au : &#160;&#160;</strong>
+                                    <t t-esc="o.end_date"/>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-4 text-center"
+                             style="font-size: 13px;font-weight: bold;">
+                            <img src="/isesco_base/static/isesco.png"
+                                 style="max-width:200px;max-height:200px;"
+                                 class="center" alt="Logo"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="page article" style="font-size: 15px;">
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <div class="col text-left">
+                            <p class="m-0">
+                                <strong>Destination :&#160;&#160;&#160;&#160;&#160;
+                                </strong>
+                                <strong t-field="o.destination_id"/>
+                            </p>
+                        </div>
+                    </div>
+                    <br/>
+                    <table class="table o_main_table text-left"
+                           style="font-size: 14px;">
+                        <thead style="border:2px solid black !important;">
+                            <tr style="background-color:#b5e7a0;">
+                                <th style="border-bottom:2px solid black !important;border-top:2px solid black !important;">
+                                    <strong>Réference</strong>
+                                </th>
+                                <th style="border-bottom:2px solid black !important;border-top:2px solid black !important;">
+                                    <strong>Désignation</strong>
+                                </th>
+                                <th style="border-bottom:2px solid black !important;border-top:2px solid black !important;">
+                                    <strong>Quantité</strong>
+                                </th>
+                                <th style="border-bottom:2px solid black !important;border-top:2px solid black !important;">
+                                    <strong>Prix U.HT</strong>
+                                </th>
+                                <th style="border-bottom:2px solid black !important;border-top:2px solid black !important;">
+                                    <strong>Montant</strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="products" t-value="o.product_ids"/>
+                            <tr t-foreach="products" t-as="product">
+                                <td style="border-bottom:1px solid black !important;">
+                                    <span t-field="product.default_code"/>
+                                </td>
+                                <td style="border-bottom:1px solid black !important;">
+                                    <span t-field="product.name"/>
+                                </td>
+                                <td class="text-center"
+                                    style="border-bottom:1px solid black !important;">
+                                    <span t-field="product.articles_qty"/>
+                                </td>
+                                <td class="text-right"
+                                    style="border-bottom:1px solid black !important;">
+                                    <span t-esc="round(product.standard_price,2)"/>
+                                </td>
+                                <td class="text-right"
+                                    style="border-bottom:1px solid black !important;">
+                                    <span>
+                                        <strong t-esc="round(product.articles_qty*product.standard_price,2)"/>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table o_main_table text-right"
+                           style="font-size: 14px;">
+                        <tr style="background-color:#b5e7a0;border:2px solid black !important;">
+                            <td style="border-bottom:2px solid black !important;border-top:2px solid black !important;">
+                                <strong></strong>
+                            </td>
+                            <td style="border-bottom:2px solid black !important;border-top:2px solid black !important;">
+                                <strong>TOTAL HT MAD</strong>
+                            </td>
+                            <td style="border-bottom:2px solid black !important;border-top:2px solid black !important;">
+                                <strong t-esc="round(sum([product.articles_qty*product.standard_price for product in products]),2)"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <br/>
+                    <br/>
+                    <div class="footer text-center"
+                         style="padding-top: 10px; font-size: 12px;">
+                        <div t-if="report_type == 'pdf'" class="text-muted">
+                            Page:
+                            <span class="page"/>
+                            sur
+                            <span class="topage"/>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
+

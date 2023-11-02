@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="kzm_project_nature">
+            <field name="name">cps.project.nature.form</field>
+            <field name="model">project.nature</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                            </group>
+                            <group>
+                                <field name="project_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="kzm_project_nature_tree">
+            <field name="name">cps.project.nature.tree</field>
+            <field name="model">project.nature</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="project_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="kzm_project_nature_action" model="ir.actions.act_window">
+            <field name="name">Nature</field>
+            <field name="res_model">project.nature</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

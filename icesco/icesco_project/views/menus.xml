@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+<!--        <menuitem id="menu_icesco" name="Icesco projects"-->
+<!--                  parent="project.menu_main_pm"-->
+<!--                  sequence="8"/>-->
+
+<!--        <menuitem id="project_action_menu" name="Nature" parent="menu_icesco"-->
+<!--                  sequence="1"-->
+<!--                  action="icesco_project.kzm_project_nature_action"/>-->
+
+<!--        <menuitem id="project_plan_menu" name="Beneficiary Category"-->
+<!--                  parent="menu_icesco"-->
+<!--                  sequence="2"-->
+<!--                  action="icesco_project.kzm_project_beneficiary_category_action"/>-->
+
+<!--        <menuitem id="project_scrum_review_menu" name="Geographical"-->
+<!--                  parent="menu_icesco"-->
+<!--                  sequence="3"-->
+<!--                  action="icesco_project.kzm_res_geographical_action"/>-->
+
+        <menuitem id="intervention_type_menu" name="Intervention Type"
+                  parent="project.menu_project_config"
+                  action="icesco_project.intervention_type_action"/>
+
+        <menuitem id="res_stakeholder" name="Stakeholder"
+                  parent="project.menu_project_config"
+                  action="icesco_project.res_stakeholder_action"/>
+
+        <menuitem id="activity_reference_menu" name="Activity Reference"
+                  parent="project.menu_project_config"
+                  action="icesco_project.activity_reference_action"/>
+
+
+        <menuitem id="res_city_menu" name="City"
+                  parent="project.menu_project_config"
+                  action="icesco_project.res_city_action"/>
+
+    </data>
+</odoo>

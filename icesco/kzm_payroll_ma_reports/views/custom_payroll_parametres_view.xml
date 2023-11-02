@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+        <record id="kzm_res_config_settings_view_form_employee" model="ir.ui.view">
+        <field name="name">cps.res.config.settings.view.form.inherit.employee</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="hr.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-string='Employees']" position="inside">
+                <div class="row mt16 o_settings_container">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <label for="banque_virement_paie" string="Informations Virement"/>
+                            <div class="text-muted">
+
+                            </div>
+                            <div class="content-group">
+                                <div class="row mt16">
+                                    <label for="banque_virement_paie" class="col-md-3 o_light_label"/>
+                                    <field name="banque_virement_paie"/>
+                                </div>
+                                <div class="row mt16">
+                                    <label for="rib_virement_paie" class="col-md-3 o_light_label"/>
+                                    <field name="rib_virement_paie"/>
+                                </div>
+                                <div class="row mt16">
+                                    <label for="agence_virement_paie" class="col-md-3 o_light_label"/>
+                                    <field name="agence_virement_paie"/>
+                                </div>
+                                <div class="row mt16">
+                                    <label for="ville_agence_virement_paie" class="col-md-3 o_light_label"/>
+                                    <field name="ville_agence_virement_paie"/>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

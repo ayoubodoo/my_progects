@@ -1,0 +1,332 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* isesco_hr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-06 14:30+0000\n"
+"PO-Revision-Date: 2020-07-06 14:30+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee_dependent__discharge_rate
+msgid "% discharge"
+msgstr "% de charge"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee_dependent__age
+msgid "Age"
+msgstr "Age"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_res_company__age_limit
+#: model:ir.model.fields,field_description:isesco_hr.field_res_config_settings__age_limit
+#: model_terms:ir.ui.view,arch_db:isesco_hr.res_config_settings_view_form
+msgid "Allowed Age"
+msgstr "Age autorisé"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_category__amount
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee_dependent__amount
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_payroll_ma_rubrique_line__amount
+msgid "Amount"
+msgstr "Montant"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_category__category_id
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_payroll_ma_rubrique_line__category_id
+msgid "Category"
+msgstr "Catégories"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee__category_id
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract__category_id
+msgid "Category"
+msgstr "Catégorie salariale"
+
+#. module: isesco_hr
+#: model:ir.model.fields.selection,name:isesco_hr.selection__hr_employee_dependent__type__child
+msgid "Child"
+msgstr "Enfant"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_category__code
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_grade__code
+msgid "Code"
+msgstr "Code"
+
+#. module: isesco_hr
+#: model:ir.model,name:isesco_hr.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: isesco_hr
+#: model:ir.model,name:isesco_hr.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de config"
+
+#. module: isesco_hr
+#: model:ir.model,name:isesco_hr.model_hr_contract
+#: model:ir.ui.menu,name:isesco_hr.menu_contract_configuration
+msgid "Contract"
+msgstr "Contrat"
+
+#. module: isesco_hr
+#: model:ir.actions.act_window,name:isesco_hr.hr_contract_category_action
+#: model:ir.ui.menu,name:isesco_hr.hr_menu_contract_category
+msgid "Contract Category"
+msgstr "Catégorie"
+
+#. module: isesco_hr
+#: model:ir.actions.act_window,name:isesco_hr.hr_contract_grade_action
+#: model:ir.ui.menu,name:isesco_hr.hr_menu_contract_grade
+msgid "Contract Grade"
+msgstr "Grade"
+
+#. module: isesco_hr
+#: model_terms:ir.actions.act_window,help:isesco_hr.hr_contract_category_action
+msgid "Create a new contract category"
+msgstr "Créer une nouvelle catégorie de contrat"
+
+#. module: isesco_hr
+#: model_terms:ir.actions.act_window,help:isesco_hr.hr_contract_grade_action
+msgid "Create a new contract grade"
+msgstr "Créer une nouvelle grade de contrat"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_category__create_uid
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_category__create_uid
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_grade__create_uid
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee_dependent__create_uid
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_payroll_ma_rubrique_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_category__create_date
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_category__create_date
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_grade__create_date
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee_dependent__create_date
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_payroll_ma_rubrique_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee_dependent__birthday
+msgid "Date of Birth"
+msgstr "Date de naissance"
+
+#. module: isesco_hr
+#: model_terms:ir.ui.view,arch_db:isesco_hr.res_config_settings_view_form
+msgid "Default Leave Type"
+msgstr "Type de congé par défaut"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee__dependent_ids
+msgid "Dependents"
+msgstr "Enfant et personnes à charges"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_category__name
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_grade__name
+msgid "Description"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_category__display_name
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_grade__display_name
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee_dependent__display_name
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_job_isesco__display_name
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_payroll_ma_rubrique_line__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model,name:isesco_hr.model_hr_employee
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee_dependent__employee_id
+msgid "Employee"
+msgstr "Employé"
+
+#. module: isesco_hr
+#: model_terms:ir.ui.view,arch_db:isesco_hr.hr_contract_view_form_inherite
+msgid "Generate rubrique dependent"
+msgstr "Générer la rubrique personnes à charges"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_job__grade_id
+msgid "Grade"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_category__grade_ids
+msgid "Grades"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model,name:isesco_hr.model_hr_category
+msgid "HR Category"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model,name:isesco_hr.model_hr_contract_category
+msgid "HR Contract Category"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model,name:isesco_hr.model_hr_contract_grade
+msgid "HR Contract Grade"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model,name:isesco_hr.model_hr_employee_dependent
+msgid "HR Employee Dependent"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_category__id
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_grade__id
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee_dependent__id
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_job_isesco__id
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_payroll_ma_rubrique_line__id
+msgid "ID"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_payroll_ma_rubrique__is_grade
+msgid "Is grade?"
+msgstr "Est un grade?"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_category____last_update
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_grade____last_update
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee_dependent____last_update
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_job_isesco____last_update
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_payroll_ma_rubrique_line____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_category__write_uid
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_grade__write_uid
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee_dependent__write_uid
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_job_isesco__write_uid
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_payroll_ma_rubrique_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_category__write_date
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract_grade__write_date
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee_dependent__write_date
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_job_isesco__write_date
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_payroll_ma_rubrique_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_res_company__leave_type_id
+#: model:ir.model.fields,field_description:isesco_hr.field_res_config_settings__leave_type_id
+msgid "Leave Type"
+msgstr "Type de congé"
+
+#. module: isesco_hr
+#: model:ir.model,name:isesco_hr.model_hr_payroll_ma_ligne_rubrique
+msgid "Ligne Rubrique"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_payroll_ma_rubrique__line_ids
+msgid "Lines"
+msgstr "Lignes"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_category__name
+msgid "Name"
+msgstr "Catégorie salariale"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee__partner
+#: model:ir.model.fields.selection,name:isesco_hr.selection__hr_employee_dependent__type__partner
+msgid "Partner"
+msgstr "Conjoint"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee_dependent__name
+msgid "Person"
+msgstr "Personne"
+
+#. module: isesco_hr
+#: code:addons/isesco_hr/models/hr_contract.py:0
+#, python-format
+msgid "Please confiqure a rubrique for dependent!"
+msgstr "Veuillez configurer une rubrique pour les personnes à charges!"
+
+#. module: isesco_hr
+#: code:addons/isesco_hr/models/hr_payroll_ma.py:0
+#, python-format
+msgid "Please enter a valid formula!"
+msgstr "Veuillez saisir une formule valide!"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_payroll_ma_bulletin__remaining_leaves
+msgid "Remaining Leaves"
+msgstr "Nbr congés restants"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee__retirement_date
+msgid "Retirement date"
+msgstr "Date de retraite"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_payroll_ma_rubrique_line__rubrique_id
+msgid "Rubrique"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_res_company__rubrique_dependent_id
+#: model:ir.model.fields,field_description:isesco_hr.field_res_config_settings__rubrique_dependent_id
+msgid "Rubrique dependents"
+msgstr "Rubrique personnes à charges"
+
+#. module: isesco_hr
+#: model:ir.actions.act_window,name:isesco_hr.action_hr_category
+#: model:ir.ui.menu,name:isesco_hr.menu_view_hr_category
+msgid "Salary Categories"
+msgstr "Catégories salariales"
+
+#. module: isesco_hr
+#: model_terms:ir.ui.view,arch_db:isesco_hr.res_config_settings_view_form
+msgid "Section for children and dependents"
+msgstr "Rubrique des enfants et personnes à charges"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee__total_amount
+msgid "Total amount"
+msgstr "Montant de base"
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_employee_dependent__type
+msgid "Type"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model,name:isesco_hr.model_hr_payroll_ma_rubrique_line
+msgid "hr.payroll_ma.rubrique.line"
+msgstr ""
+
+#. module: isesco_hr
+#: model:ir.model.fields,field_description:isesco_hr.field_hr_contract__is_rubrique_dependent
+msgid "is rubrique dependent?"
+msgstr "Est une rubrique des personnes à charges?"
+
+#. module: isesco_hr
+#: model:ir.model,name:isesco_hr.model_hr_payroll_ma_rubrique
+msgid "rubrique"
+msgstr "Rubrique"

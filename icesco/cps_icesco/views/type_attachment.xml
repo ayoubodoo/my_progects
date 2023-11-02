@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dh_type_attachment_form">
+            <field name="name">dh.type.attachment.form</field>
+            <field name="model">type.attachment</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_type_attachment_tree">
+            <field name="name">type.attachment.tree</field>
+            <field name="model">type.attachment</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="dh_type_attachment_action" model="ir.actions.act_window">
+            <field name="name">Type attachment</field>
+            <field name="res_model">type.attachment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p>Add Type</p>
+        </field>
+        </record>
+
+        <menuitem id="dh_menu_type_attachment" name="Type attachment"
+        parent="project.menu_project_config" sequence="10" action="dh_type_attachment_action"/>
+    </data>
+</odoo>

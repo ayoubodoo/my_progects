@@ -1,0 +1,66 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="dh_expenses_purchases_form_view">
+        <field name="name">dh.expense.purchase.form</field>
+        <field name="model">dh.expense.purchase</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button string="Recalculer" name="recalcule_expenses_purchasess" type="object"
+                            class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <notebook>
+                      <page string="Expenses" name="expenses">
+                          <field name="expense_ids" readonly="1">
+                            <tree>
+                                <button name="open_line" type="object" String="Transport" icon="fa-pencil-square-o"/>
+                              <field name="name"/>
+                              <field name="total_amount" sum="total"/>
+                              <field name="state" invisible="1"/>
+                            </tree>
+                          </field>
+                      </page>
+                        <page string="Purchases" name="purchases">
+                          <field name="purchase_ids" readonly="1">
+                            <tree>
+                                <button name="open_line" type="object" String="Transport" icon="fa-pencil-square-o"/>
+                              <field name="name"/>
+                              <field name="amount_total" sum="total"/>
+                                <field name="state" invisible="1"/>
+
+                            </tree>
+                          </field>
+                      </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_expenses_purchases_tree">
+      <field name="name">dh.expense.purchase.tree</field>
+      <field name="model">dh.expense.purchase</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="amount_expenses"/>
+            <field name="amount_purchases"/>
+            <field name="amount_expenses_purchases"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_expenses_purchases">
+      <field name="name">Expenses/Purchases</field>
+      <field name="res_model">dh.expense.purchase</field>
+      <field name="view_mode">tree,form</field>
+<!--      <field name="view_mode">form</field>-->
+<!--        <field name="res_id" eval="1"/>-->
+    </record>
+
+  </data>
+</odoo>

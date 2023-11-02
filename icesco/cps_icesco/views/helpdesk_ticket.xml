@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="cps_helpdesk_ticket" model="ir.ui.view">
+        <field name='name'>cps.helpdesk.ticket.form.inherit</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
+        <field name="arch" type="xml">
+            <field name='description' position="after">
+                <notebook>
+                    <page name="icesco_infos" string="Ticket details">
+                        <group>
+                            <group class ='left'>
+                                <field name="event_id"/>
+                                <field name="deptartment_id"/>
+                                <field name="date_start"/>
+    <!--                            <field name="local_time"/>-->
+                                <field name="duration"/>
+                            </group>
+                            <group class ='right'>
+                                <field name="room_id"/>
+                                <field name="meeting_link"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group class ='left'>
+                                <field name="data_uploading"/>
+                                <field name="meeting_zoom_link"/>
+                                <field name="registration_link"/>
+                                <field name="video_recording"/>
+<!--                                <field name="is_translation"/>-->
+                                <field name="is_translation_arabic"/>
+                                <field name="is_translation_english"/>
+                                <field name="is_translation_french"/>
+                                <field name="list_it_service" attrs="{'invisible': [('is_translation_arabic', '=', False), ('is_translation_english', '=', False), ('is_translation_french', '=', False)]}"/>
+                            </group>
+                            <group class ='right'>
+                                <field name="video_conference_management"/>
+                                <field name="webinar_link"/>
+                                <field name="webinar_attendees" attrs="{'invisible': [('webinar_link', '=', False)]}"/>
+                                <field name="website_edition"/>
+                                <field name="waiting_room"/>
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </field>
+    </record>
+</odoo>

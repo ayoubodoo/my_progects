@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="icesco_hr_expense_inherit" model="ir.ui.view">
+        <field name="name">icesco.hr.expense.form.inherit</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_id']" position="after">
+                <field name="activity_number"/>
+                <field name="activity_name"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

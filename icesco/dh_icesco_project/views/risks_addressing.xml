@@ -1,0 +1,41 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="risks_addressing_form_view">
+        <field name="name">risks.addressing.form</field>
+        <field name="model">risks.addressing</field>
+        <field name="arch" type="xml">
+            <form string="Addressing global risks">
+                <sheet>
+                    <group col="2">
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="risks_addressing_tree">
+      <field name="name">risks.addressing.tree</field>
+      <field name="model">risks.addressing</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+            <field name="name" width="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_risks_addressing">
+      <field name="name">Addressing global risks</field>
+      <field name="res_model">risks.addressing</field>
+      <field name="view_mode">tree</field>
+        <field name="view_id" ref="risks_addressing_tree"/>
+    </record>
+
+    <menuitem id="risks_addressing_menu" name="Addressing global risks"
+                  parent="project.menu_project_config"
+                  action="action_risks_addressing" sequence="37"/>
+
+  </data>
+</odoo>

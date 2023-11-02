@@ -1,0 +1,77 @@
+.bg-light {
+  /*background-color: #D9E7E2 !important;*/
+  /*color: #DBB152*/
+  /*background: radial-gradient(ellipse at center, #e3eff5, #D2dde3);*/
+  background-image: url('../img/bg_site.png');
+}
+
+.dh_header {
+    background: url('../img/bannier_icesco3.jpg') no-repeat;
+    height: 100px;
+    background-size: 100% 100%;
+    /*-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;*/
+    /*-webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;*/
+}
+
+.dh_header_app {
+    background: url('../img/background.png') fixed center;
+    height: 40px;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    /*-webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;*/
+}
+
+.o_portal_wrap {
+    background: url('../img/background.png') fixed center;
+    /*background-color: #CCECCF !important;*/
+    margin-bottom: 200px;
+}
+
+main {
+    background: url('../img/background.png') fixed center;
+    /*background-color: #CCECCF !important;*/
+}
+
+/*#wrapwrap.o_portal {
+    background-image: url('../img/background.png');
+    /*background-color: #CCECCF !important;
+}*/
+
+/*.o_portal_wrap .o_portal_navbar {
+    background-image: url('../img/background.png');
+}*/
+
+.list-group-item {
+    /*background-color: #D2dde3;*/
+    background-image: url('../img/bg_menu.jpg');
+    /*background: radial-gradient(ellipse at center, #efefef2e, #5cb1a536);*/
+}
+
+.o_portal_wrap .o_portal_navbar {
+    background-color: #d2dde300 !important;
+}
+
+/*a {
+    color: #000000cf !important;
+    }*/
+
+.badge-secondary {
+    color: #fff;
+    background-color: #22851b94;
+}
+
+.o_main_navbar {
+    background-color: black!important;
+    /*background-image: url('../img/background_backend.jpeg')!important;*/
+}
+

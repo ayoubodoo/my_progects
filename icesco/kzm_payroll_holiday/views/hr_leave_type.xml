@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<data>
+    <record model="ir.ui.view" id="hr_holiday_status_view_form_inherit">
+        <field name="name">hr.leave.type.inherit</field>
+        <field name="model">hr.leave.type</field>
+        <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='notification']" position="inside">
+                <group name="payroll" string="Payroll">
+                    <field name="payed"/>
+                    <field name="unpaid"/>
+                    <field name="is_urgent"/>
+                    <field name="is_maternite"/>
+                    <field name="is_maladie"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</data>

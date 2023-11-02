@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="contact_us" name="Contact us">
+            <t t-set="body_classname" t-value="'o_wprofile_body'"/>
+            <t t-call="website.layout">
+                <div id="wrap" class="o_wprofile_wrap">
+                    <div class="container pt-4 pb-5">
+                        <div class="form-group col-12">
+                            <p class="alert alert-danger" t-if="error"
+                               role="alert">
+                                <t t-esc="error"/>
+                            </p>
+                        </div>
+                        <br/>
+                        <h1 class="o_page_header">Contact Us</h1>
+                            <div>
+                                <form t-attf-action="/contactus/sent" method="post"
+                                      role="form"
+                                      name="create_request"
+                                      class="o_wprofile_editor_form js_website_submit_form row"
+                                      enctype="multipart/form-data">
+                                    <input type="hidden" name="csrf_token"
+                                           t-att-value="request.csrf_token()"/>
+                                    <input type="hidden" name="url_param"
+                                           t-att-value="request.params.get('url_param')"/>
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="form-group col-12">
+                                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="department_id">
+                                                            <span class="font-weight-bold">Contact to Department</span>
+                                                        </label>
+                                                        <select class="form-control"
+                                                                    name="department_id" id="department_id" placeholder="Department" required="True">
+                                                                <option value="0" selected="true" disabled="true" >Select Department...</option>
+                                                                <t t-foreach="departments or []"
+                                                                   t-as="department_id">
+                                                                    <option t-att-value="department_id.id">
+                                                                        <t t-esc="department_id.display_name" />
+                                                                    </option>
+                                                                </t>
+                                                            </select>
+                                                    </div>
+                                                    <div class="form-group col-12">
+                                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="copy_to">
+                                                            <span class="font-weight-bold">Copy to</span>
+                                                        </label>
+                                                        <div>
+                                                            <input type="text" name="copy_to"
+                                                                   id="copy_to"
+                                                                   class="form-control d-flex"
+                                                                   placeholder="Copy to.."
+                                                                    t-att-value="amana_name"
+                                                                    disabled="disabled"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-12">
+                                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="copy_aussi_to">
+                                                            <span class="font-weight-bold">Copy also to</span>
+                                                        </label>
+                                                        <div>
+                                                            <input type="text" name="copy_aussi_to"
+                                                                   id="copy_aussi_to"
+                                                                   class="form-control d-flex"
+                                                                   placeholder="Copy also to.."/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-12">
+                                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="subject">
+                                                            <span class="font-weight-bold">Subject</span>
+                                                        </label>
+                                                        <div>
+                                                            <input type="text" name="subject"
+                                                                   id="subject"
+                                                                   class="form-control d-flex"
+                                                                   placeholder="Subject.."
+                                                                   required="True"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-12">
+                                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="resume">
+                                                            <span class="font-weight-bold">Resume</span>
+                                                        </label>
+                                                        <div>
+                                                            <input type="text" name="resume"
+                                                                   id="resume"
+                                                                   class="form-control d-flex"
+                                                                   placeholder="Resume.."/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-12">
+                                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="required">
+                                                            <span class="font-weight-bold">Required</span>
+                                                        </label>
+                                                        <div>
+                                                            <input type="text" name="required"
+                                                                   id="required"
+                                                                   class="form-control d-flex"
+                                                                   placeholder="Required.."/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-12">
+                                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="official_request">
+                                                            <span class="font-weight-bold">Official Request</span>
+                                                            <span class="font-weight-bold text-primary">
+                                                                <i class="fa fa-upload" style="margin-right:30px;"/>
+                                                            </span>
+                                                            <br/>
+                                                        </label>
+                                                        <div>
+                                                            <input type="file" name="official_request"
+                                                                   id="official_request" style="display:none;"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-12">
+                                                        <label class="mb-1 d-flex" style="color:#598c7c;"
+                                                               for="support_docs">
+                                                            <span class="font-weight-bold d-flex">
+                                                                Supporting documents
+                                                            </span>
+                                                            <br/>
+                                                            <span class="font-weight-bold text-primary">
+                                                                <i class="fa fa-upload" style="margin-right:30px;"/>
+                                                            </span>
+                                                        </label>
+                                                        <input type="file" name="support_docs"
+                                                                   id="support_docs" style="display:none;"
+                                                            />
+                                                    </div>
+                                                    <div class="col d-flex">
+                                                        <button type="submit"
+                                                                class="btn btn-success o_wprofile_submit_btn">
+                                                            Submit
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                <!--            &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+                        <br/>
+                        <br/>
+                        <br/>
+                        <h1 class="o_page_header">Contact Commission</h1>
+                        <div>
+<!--                                <div class="form-group col-12">-->
+<!--                                    <p class="alert alert-danger" t-if="error"-->
+<!--                                       role="alert">-->
+<!--                                        <t t-esc="error"/>-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                                <br/>-->
+                                <form t-attf-action="/contactcommission/sent" method="post"
+                                      role="form"
+                                      name="create_request"
+                                      class="o_wprofile_editor_form js_website_submit_form row"
+                                      enctype="multipart/form-data">
+                                    <input type="hidden" name="csrf_token"
+                                           t-att-value="request.csrf_token()"/>
+                                    <input type="hidden" name="url_param"
+                                           t-att-value="request.params.get('url_param')"/>
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="form-group col-12">
+                                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="commission_id">
+                                                            <span class="font-weight-bold">Contact to Commission</span>
+                                                        </label>
+                                                        <select class="form-control"
+                                                                    name="commission_id" id="commission_id" placeholder="Commission" required="True">
+                                                                <option value="0" selected="true" disabled="true" >Select Commission...</option>
+                                                                <t t-foreach="commissions or []"
+                                                                   t-as="commission_id">
+                                                                    <option t-att-value="commission_id.id">
+                                                                        <t t-esc="commission_id.display_name" />
+                                                                    </option>
+                                                                </t>
+                                                            </select>
+                                                    </div>
+                                                    <div class="form-group col-12">
+                                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="com_copy_to">
+                                                            <span class="font-weight-bold">Copy to</span>
+                                                        </label>
+                                                        <div>
+                                                            <input type="text" name="com_copy_to"
+                                                                   id="com_copy_to"
+                                                                   class="form-control d-flex"
+                                                                   placeholder="Copy to.."
+                                                                    t-att-value="amana_name"
+                                                                    disabled="disabled"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-12">
+                                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="com_subject">
+                                                            <span class="font-weight-bold">Subject</span>
+                                                        </label>
+                                                        <div>
+                                                            <input type="text" name="com_subject"
+                                                                   id="com_subject"
+                                                                   class="form-control d-flex"
+                                                                   placeholder="Subject.."
+                                                                   required="True"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-12">
+                                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="com_resume">
+                                                            <span class="font-weight-bold">Resume</span>
+                                                        </label>
+                                                        <div>
+                                                            <input type="text" name="com_resume"
+                                                                   id="com_resume"
+                                                                   class="form-control d-flex"
+                                                                   placeholder="Resume.."/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-12">
+                                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="com_required">
+                                                            <span class="font-weight-bold">Required</span>
+                                                        </label>
+                                                        <div>
+                                                            <input type="text" name="com_required"
+                                                                   id="com_required"
+                                                                   class="form-control d-flex"
+                                                                   placeholder="Required.."/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-12">
+                                                        <label class="mb-1 d-flex" style="color:#598c7c;" for="com_official_request">
+                                                            <span class="font-weight-bold">Official Request</span>
+                                                            <br/>
+                                                            <span class="font-weight-bold text-primary">
+                                                                <i class="fa fa-upload" style="margin-right:30px;"/>
+                                                            </span>
+                                                        </label>
+                                                        <div>
+                                                            <input type="file" name="com_official_request"
+                                                                   id="com_official_request" style="display:none;"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-12">
+                                                        <label class="mb-1 d-flex" style="color:#598c7c;"
+                                                               for="com_support_docs">
+                                                            <span class="font-weight-bold d-flex">
+                                                                Supporting documents
+                                                            </span>
+                                                            <br/>
+                                                            <span class="font-weight-bold text-primary">
+                                                                <i class="fa fa-upload" style="margin-right:30px;"/>
+                                                            </span>
+                                                        </label>
+
+                                                        <input type="file" name="com_support_docs"
+                                                                   id="com_support_docs" style="display:none;"
+                                                            />
+                                                    </div>
+                                                    <div class="col d-flex">
+                                                        <button type="submit"
+                                                                class="btn btn-success o_wprofile_submit_btn">
+                                                            Submit
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+</odoo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="cps_product_order_view_form_inherit" model="ir.ui.view">
+        <field name="name">cps.purchase.order.view.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/div[hasclass('oe_button_box')]" position="inside">
+                <button type="object" style="width: 10%!important;"
+                        name="action_view_demande_achat"
+                        class="oe_stat_button" icon="fa-money">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value" widget="statinfo">
+                            <field name="count_req_purchase" widget="statinfo" nolabel="1" colspan="2" class="mr4"/>
+                        </span>
+                        <span class="o_stat_text">Demande. achat</span>
+                    </div>
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='qty_invoiced']" position="after">
+                 <field name="dimension"/>
+            </xpath>
+            <field name="company_id" position="after">
+                <field name="remise_total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            </field>
+        </field>
+    </record>
+</odoo>

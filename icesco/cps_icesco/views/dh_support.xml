@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dh_support_form">
+            <field name="name">dh.support.form</field>
+            <field name="model">dh.support</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_support_tree">
+            <field name="name">dh.support.tree</field>
+            <field name="model">dh.support</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="dh_support_action" model="ir.actions.act_window">
+            <field name="name"> Supporting Projects </field>
+            <field name="res_model">dh.support</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p>Add a supporting project </p>
+        </field>
+        </record>
+
+        <menuitem id="support_menu" name="Supporting Projects"
+                  parent="project.menu_project_config"
+                  action="cps_icesco.dh_support_action" sequence="19"/>
+    </data>
+</odoo>

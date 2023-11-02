@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+        <menuitem id="main_appraisal_rating_factor"
+                  name="Evaluation"
+                  sequence="1" web_icon="kzm_hr_appraisal,static/description/icon.png"
+        />
+        <menuitem id="configuration_appraisal_rating_factor"
+                  name="Configuration"
+                  sequence="100"
+                  parent="main_appraisal_rating_factor"
+                  groups="kzm_hr_appraisal.appraisal_group_administrator"
+        />
+         <menuitem id="raiting_appraisal_rating_factor"
+                   name="Factor"
+                   sequence="1"
+                   parent="configuration_appraisal_rating_factor"
+                   action="appraisal_rating_factor_action"
+        />
+        <menuitem id="raiting_appraisal_rating_factor_value"
+                   name="Factor Values"
+                   sequence="2"
+                   parent="configuration_appraisal_rating_factor"
+                   action="appraisal_rating_factor_value_action"
+        />
+        <menuitem id="axe_appraisal_menu"
+                   name="Axe"
+                   sequence="2"
+                   parent="configuration_appraisal_rating_factor"
+                   action="appraisal_axis_action"
+        />
+         <menuitem id="axe_evaluation_menu"
+                   name="Axe Evaluation"
+                   sequence="3"
+                   parent="configuration_appraisal_rating_factor"
+                   action="appraisal_axe_evaluation_action"
+        />
+        <menuitem id="matrix_evaluation_menu"
+                   name="Matrix Evaluation"
+                   sequence="3"
+                   parent="configuration_appraisal_rating_factor"
+                   action="appraisal_matrix_action"
+        />
+        <menuitem id="model_evaluation_menu"
+                   name="Model Evaluation"
+                   sequence="4"
+                   parent="configuration_appraisal_rating_factor"
+                   action="appraisal_model_action"
+        />
+        <menuitem id="eva_evaluation_menu"
+                   name="Evaluation"
+                   sequence="1"
+                   parent="main_appraisal_rating_factor"
+                   action="appraisal_appraisal_action"
+        />
+
+    </data>
+</odoo>

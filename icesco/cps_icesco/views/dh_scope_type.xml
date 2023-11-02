@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dh_scope_type_form">
+            <field name="name">dh.scope.type.form</field>
+            <field name="model">dh.scope.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="type_activity"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_scope_type_tree">
+            <field name="name">dh.scope.type.tree</field>
+            <field name="model">dh.scope.type</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                     <field name="name"/>
+                     <field name="type_activity"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="dh_icesco_scope_type_action" model="ir.actions.act_window">
+            <field name="name">scope types </field>
+            <field name="res_model">dh.scope.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p>Add an scope type</p>
+        </field>
+        </record>
+          <menuitem id="icesco_scopes_type_menu" name="ICESCO scope Types "
+                  parent="project.menu_project_config"
+                  action="cps_icesco.dh_icesco_scope_type_action" sequence="19"/>
+    </data>
+</odoo>

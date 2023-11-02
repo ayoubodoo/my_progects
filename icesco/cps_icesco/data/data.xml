@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="ir_cron_correction_pointage_actions" model="ir.cron">
+            <field name="name">Correction Pointage</field>
+            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.correction_pointage_all()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="ir_cron_sortie_auto_pointage_actions" model="ir.cron">
+            <field name="name">Sortie automatique 00H Pointage</field>
+            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.sortie_automatique_pointage()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="paperformat_cps" model="report.paperformat">
+            <field name="name">cps A4</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">15</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="ir_cron_mail_notif_attach_tasks" model="ir.cron">
+            <field name="name">Mail notif attach Task</field>
+            <field name="model_id" ref="project.model_project_task"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.mail_notif_attach_tasks()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="ir_cron_verify_periode_essaie" model="ir.cron">
+            <field name="name">Verify periode essaie</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.verify_periode_essaie()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="ir_cron_verify_periode_end_contract" model="ir.cron">
+            <field name="name">Verify end contrat</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.verify_end_contract()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="ir_cron_verify_childrens_age" model="ir.cron">
+            <field name="name">Verify childrens age</field>
+            <field name="model_id" ref="isesco_hr.model_hr_employee_dependent"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.verify_age()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="ir_cron_verify_childrens_age_limit_remboursement" model="ir.cron">
+            <field name="name">Verify childrens age limit remboursement</field>
+            <field name="model_id" ref="isesco_hr.model_hr_employee_dependent"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.verify_age_limit_remboursement()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="ir_cron_verify_retirement_date" model="ir.cron">
+            <field name="name">Verify retirement date</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.verify_retirement_date()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+
+        </record>
+
+        <record id="ir_cron_atteindre_plafont_prestation" model="ir.cron">
+            <field name="name">Verify plafond prestation mutuelle</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.atteindre_plafond_type_mutuelle()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <!--        <record id="ir_cron_verify_cin_exp" model="ir.cron">-->
+        <!--            <field name="name">Vérifie exp cin</field>-->
+        <!--            <field name="model_id" ref="hr.model_hr_employee"/>-->
+        <!--            <field name="state">code</field>-->
+        <!--             <field name="type">ir.actions.server</field>-->
+        <!--            <field name="code">model.verify_date_cin()</field>-->
+        <!--            <field name="interval_number">1</field>-->
+        <!--            <field name="interval_type">days</field>-->
+        <!--            <field name="numbercall">-1</field>-->
+        <!--            <field name="active" eval="True"/>-->
+        <!--        </record>-->
+        <record id="ir_cron_verify_cin_exp1" model="ir.cron">
+            <field name="name">Vérifie l'expiration de cin</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.verify_date_cin1()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="ir_cron_verify_date_passeport" model="ir.cron">
+            <field name="name">Vérifier l'expiration du passeport</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.verify_date_passeport()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="ir_cron_verify_carte_diplomatique" model="ir.cron">
+            <field name="name">Vérifier l'expiration du carte diplomatique</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.verify_date_carte_diplomatique()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="ir_cron_mail_notif_evaluation" model="ir.cron">
+            <field name="name">Mail notif evaluation</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.mail_notif_evaluation()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="ir_cron_mail_notif_reevaluation" model="ir.cron">
+            <field name="name">Mail notif réévaluation</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.mail_notif_reevaluation()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="ir_cron_mail_notif_injustify_abscence" model="ir.cron">
+            <field name="name">Mail  absence non justifié </field>
+            <field name="model_id" ref="documents_hr_holidays.model_hr_leave"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.mail_unjusify_abscence_employees()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="ir_cron_mail_notif_injustify_retard_employee" model="ir.cron">
+            <field name="name">Mail  Retard Employee </field>
+            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.mail_unjusify_retard_employees()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(days=1)).strftime('%Y-%m-%d 11:00:00')" />
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="ir_cron_mail_notif_injustify_retard_getionnaire" model="ir.cron">
+            <field name="name">Mail  Retard Gestionnaire </field>
+            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.mail_unjusify_retard_gestionnaire()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(days=1)).strftime('%Y-%m-%d 10:00:00')" />
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="ir_cron_mail_notif_rh_day_retard_getionnaire" model="ir.cron">
+            <field name="name">Mail  Retard Jour To HR</field>
+            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.mail_hr_day_retard_employees()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="ir_cron_mail_notif_rh_week_retard_getionnaire" model="ir.cron">
+            <field name="name">Mail  Retard week To HR</field>
+            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.mail_hr_week_retard_employees()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">weeks</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="ir_cron_mail_notif_rh_month_retard_getionnaire" model="ir.cron">
+            <field name="name">Mail  Retard month To HR</field>
+            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.mail_hr_month_retard_employees()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="ir_cron_mail_notif_rh_worked_houres" model="ir.cron">
+            <field name="name">Mail heures travaillées</field>
+            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.mail_hours_number()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="ir_cron_mail_notif_rh_worked_houres1" model="ir.cron">
+            <field name="name">Mail heures travaillées(Vendredi)</field>
+            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="code">model.mail_hours_number2()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+
+<!--        <record id="ir_cron_mail_notif_rh_entree_anomalie1" model="ir.cron">-->
+<!--            <field name="name">Anomalie Entrée avant heure</field>-->
+<!--            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="type">ir.actions.server</field>-->
+<!--            <field name="code">model.mail_entree_anomalie()</field>-->
+<!--            <field name="interval_number">1</field>-->
+<!--            <field name="interval_type">days</field>-->
+<!--            <field name="numbercall">-1</field>-->
+<!--            <field name="active" eval="True"/>-->
+<!--        </record>-->
+
+<!--        <record id="ir_cron_mail_notif_rh_sortie_anomalie1" model="ir.cron">-->
+<!--            <field name="name">Anomalie Sortie aprés heure</field>-->
+<!--            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="type">ir.actions.server</field>-->
+<!--            <field name="code">model.mail_sortie_anomalie()</field>-->
+<!--            <field name="interval_number">1</field>-->
+<!--            <field name="interval_type">days</field>-->
+<!--            <field name="numbercall">-1</field>-->
+<!--            <field name="active" eval="True"/>-->
+<!--        </record>-->
+
+    </data>
+</odoo>

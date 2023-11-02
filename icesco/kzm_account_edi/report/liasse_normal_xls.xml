@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="action_liasse_normal_erp" model="ir.actions.report.xml">
+			<field name="report_type">pdf</field>
+			<field name="report_name">liasse.normal.erp
+			</field>
+			<field name="model">liasse.balance.erp</field>
+			<field name="type">ir.actions.report.xml</field>
+			<field name="name">Report</field>
+			<field name="report_rml">liasse_normal/report/bilan_actif.rml
+			</field>
+			<field name="report_file">liasse_normal/report/bilan_actif.rml
+			</field>
+		</record>
+	</data>
+</odoo>

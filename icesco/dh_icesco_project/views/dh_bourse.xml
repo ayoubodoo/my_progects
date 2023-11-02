@@ -1,0 +1,73 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dh_icesco_bourse_form_view">
+            <field name="name">dh.bourse.form</field>
+            <field name="model">dh.bourse</field>
+            <field name="arch" type="xml">
+                <form string="المنح">
+                    <sheet>
+                        <group col="2">
+                            <group>
+                                <field name="pays_id" domain="[('is_member_state','=',True)]"/>
+                                <field name="niveau_scolaire"/>
+                                <field name="etudiants" />
+<!--                                widget="many2many_tags_link"-->
+                            </group>
+                            <group></group>
+                            <group>
+
+<!--                                <field name="anee_bourse"/>-->
+                                <field name="annee_bourse"/>
+                                <field name="bourse"/>
+                                <field name="symbol"/>
+                                <field name="periode_avalibality"/>
+                                <field name="fin_avalibality"/>
+                                <field name="etat_bourse"/>
+                            </group>
+                            <group>
+                                <field name="pilliar_id"/>
+                                <field name="etablissement"/>
+                                <field name="suivi"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_icesco_bourse_tree">
+            <field name="name">dh.bourse.tree</field>
+            <field name="model">dh.bourse</field>
+            <field name="arch" type="xml">
+                <tree  editable="bottom" string="المنح">
+                    <field name="pays_id" domain="[('is_member_state','=',True)]"/>
+                    <field name="niveau_scolaire"/>
+                    <field name="etudiants" />
+<!--                    widget="many2many_tags_link"-->
+<!--                    <field name="anee_bourse"/>-->
+                    <field name="annee_bourse"/>
+                    <field name="periode_avalibality"/>
+                    <field name="fin_avalibality"/>
+                    <field name="bourse"/>
+                    <field name="symbol"/>
+                    <field name="pilliar_id"/>
+                    <field name="etablissement"/>
+                    <field name="etat_bourse"/>
+                    <field name="suivi"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_dh_icesco_bourse">
+            <field name="name">قائـــــمة الطلبة الممنوحـــين</field>
+            <field name="res_model">dh.bourse</field>
+            <field name="view_mode">tree,form</field>
+<!--            <field name="view_id" ref="dh_icesco_bourse_tree"/>-->
+        </record>
+          <menuitem id="icesco_bourses_menu" name="قائـــــمة الطلبة الممنوحـــين "
+                  parent="project.menu_project_config"
+                  action="action_dh_icesco_bourse" sequence="30"/>
+
+    </data>
+</odoo>

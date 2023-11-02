@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="project_task_inherit_view_tree">
+        <field name="name">project.task.tree</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_tree2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="replace">
+            </xpath>
+
+            <xpath expr="//field[@name='partner_id']" position="replace">
+                <field name="sector_id"/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="sequence"/>
+            </xpath>
+
+
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="project_task_inherit_view_form">
+        <field name="name">project.task.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <!--            <xpath expr="//field[@name='partner_id']" position="replace">-->
+            <!--            </xpath>-->
+
+            <xpath expr="//field[@name='project_id']" position="after">
+                <!--                    <field name="order_ids"/>-->
+            </xpath>
+            <xpath expr="/form/header/field[@name='stage_id']" position="replace">
+                <field name="stage_id" invisible="1"/>
+            </xpath>
+            <xpath expr="/form/header" position="inside">
+                <button
+                        name="button_draft"
+                        type="object"
+                        attrs="{'invisible': [('dh_state', '!=', 'dg_approval')]}"
+                        string="Remettre Brouillon"
+                />
+                <button name="%(cps_icesco.action_dh_approbation_dg_wizard)d" string="DG approval" type="action"
+                        class="btn btn-secondary" groups="dh_icesco_project.icesco_dg"
+                        attrs="{'invisible': [('dh_state', 'not in', ['draft', 'admin_affair_approval'])]}"/>
+
+                <!--                    <button-->
+                <!--                      name="button_dg_approval"-->
+                <!--                      type="object" groups="dh_icesco_project.icesco_dg"-->
+                <!--                      attrs="{'invisible': [('dh_state', 'not in', ['draft', 'admin_affair_approval'])]}"-->
+                <!--                      string="DG approval 1"-->
+                <!--                    />-->
+                <button
+                        name="%(cps_icesco.action_dh_approbation_administrative_affairs_wizard)d"
+                        type="action" groups="cps_icesco.icesco_admin_affairs"
+                        attrs="{'invisible': [('dh_state', 'not in', ['dg_approval', 'financial_affair_approval'])]}"
+                        string="Administrative affairs approval"
+                />
+                <!--                <button-->
+                <!--                        name="button_admin_affair_approval"-->
+                <!--                        type="object" groups="cps_icesco.icesco_admin_affairs"-->
+                <!--                        attrs="{'invisible': [('dh_state', 'not in', ['dg_approval', 'financial_affair_approval'])]}"-->
+                <!--                        string="Administrative affairs approval"-->
+                <!--                />-->
+
+                <button
+                        name="%(cps_icesco.action_dh_approbation_financal_controller_wizard)d"
+                        type="action" groups="cps_icesco.icesco_financial_affairs"
+                        attrs="{'invisible': [('dh_state', 'not in', ['admin_affair_approval', 'validate'])]}"
+                        string="Financial affairs approval"
+                />
+
+
+                <button
+                        name="button_validate"
+                        type="object" groups="dh_icesco_project.group_cabdg"
+                        attrs="{'invisible': [('dh_state', '!=', 'financial_affair_approval')]}"
+                        string="Validate"
+                />
+                <field name="dh_state" widget="statusbar"
+                       statusbar_visible="draft,dg_approval,admin_affair_approval,financial_affair_approval,validate"/>
+            </xpath>
+
+            <xpath expr="//notebook" position="inside">
+                <page string="Budget Transfers" invisible="1">
+
+                    <field name="transfer_ids11">
+                        <tree editable="bottom">
+                            <field name="task_ids" context="{'default_task_ids': active_id}"/>
+                            <field name="task_dest_id"/>
+                            <field name="project_dest_id"/>
+                            <field name="montant"/>
+                            <field name="description"/>
+                        </tree>
+                    </field>
+
+                </page>
+                <page string="Attachments" name="dh_attachments">
+                    <field name="date_validation" invisible="1"/>
+                    <field name="dh_attachment_ids">
+                        <tree editable="bottom">
+                            <field name="description"/>
+                            <field name="file" widget="many2many_binary"/>
+                        </tree>
+                    </field>
+                </page>
+                <page string="Supports">
+                    <group string="Internal Support required">
+                        <group>
+                            <field name="translation"/>
+                            <field name="is_support_designing"/>
+                        </group>
+                        <group>
+                            <field name="is_support_legal"/>
+                            <field name="is_support_finance"/>
+                        </group>
+                        <group>
+                            <field name="is_support_logistics"/>
+                            <field name="is_support_protocol"/>
+                        </group>
+                        <group>
+                            <field name="is_support_admin"/>
+                            <field name="is_support_it"/>
+                        </group>
+                        <group>
+                            <field name="is_support_media"/>
+                        </group>
+                    </group>
+                    <group colspan="2">
+                        <field name="list_translation_service" attrs="{'invisible': [('translation', '=', False)]}"/>
+                        <field name="list_designing_service"
+                               attrs="{'invisible': [('is_support_designing', '=', False)]}"/>
+                        <field name="list_legal_service" attrs="{'invisible': [('is_support_legal', '=', False)]}"/>
+                        <field name="list_finance_service" attrs="{'invisible': [('is_support_finance', '=', False)]}"/>
+                        <field name="list_logistics_service"
+                               attrs="{'invisible': [('is_support_logistics', '=', False)]}"/>
+                        <field name="list_admin_service" attrs="{'invisible': [('is_support_admin', '=', False)]}"/>
+                        <field name="list_it_service" attrs="{'invisible': [('is_support_it', '=', False)]}"/>
+                        <field name="list_media_service" attrs="{'invisible': [('is_support_media', '=', False)]}"/>
+                        <field name="list_protocol_service"
+                               attrs="{'invisible': [('is_support_protocol', '=', False)]}"/>
+                    </group>
+                </page>
+                <!--                    <page string="Budget Transfers">-->
+
+                <!--                         <field name="transfer_ids" >-->
+                <!--                            <tree editable="bottom">-->
+                <!--                             <field name="task_ids" context="{'default_task_ids': active_id}"/>-->
+                <!--                    <field name="task_dest_id"/>-->
+                <!--                    <field name="project_dest_id"/>-->
+                <!--                    <field name="montant"/>-->
+                <!--                    <field name="description"/>-->
+                <!--                            </tree>-->
+                <!--                            </field>-->
+
+                <!--                    </page>-->
+                <!--                    <page string="Budget Transfers1">-->
+
+                <!--                         <field name="transfer_ids1">-->
+                <!--                            <tree editable="bottom">-->
+                <!--                              <field name="task_ids" context="{'default_task_ids': active_id}"/>-->
+                <!--                    <field name="task_dest_id"/>-->
+                <!--                    <field name="project_dest_id"/>-->
+                <!--                    <field name="montant"/>-->
+                <!--                    <field name="description"/>-->
+                <!--                            </tree>-->
+                <!--                            </field>-->
+
+                <!--                    </page>-->
+                <!--                    <field name="order_ids"/>-->
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="purchase_order_form_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="icesco_project.purchase_order_form_inherit"/>
+        <field name="arch" type="xml">
+            <field name="currency_id" position="after">
+                <field name="project_id"/>
+                <field name="task_id" domain="[('project_id', '=', project_id)]"
+                       options="{'no_create': True, 'no_create_edit':True}"/>
+
+            </field>
+        </field>
+    </record>
+
+    <record id="purchase_request_form_inherit" model="ir.ui.view">
+        <field name="name">purchase.request.form.inherit</field>
+        <field name="model">purchase.request</field>
+        <field name="inherit_id" ref="purchase_request.view_purchase_request_form"/>
+        <field name="arch" type="xml">
+            <field name="project_id" position="after">
+                <field name="task_id" domain="[('project_id', '=', project_id)]"
+                       options="{'no_create': True, 'no_create_edit':True}"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_perf_project_task_tree">
+        <field name="name">dh.perf.project.task.tree</field>
+        <field name="model">project.task</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+
+<!--                <field name="code_goal" width="1"/>-->
+                <field name="orientation_id" width="1"
+                       context="{'default_pilliar_ids': [pilliar_id], 'form_view_ref': 'dh_icesco_orientations_form_view'}"/> <!--attrs="{'readonly': [('sector_id', '==', False)]}" domain="[('sector_id', '=', sector_id)]" context="{'default_sector_id': sector_id}"-->
+<!--                <field name="code_pillar" width="1" />-->
+
+                <field name="pilliar_id" width="1"
+                       context="{'default_project_ids': [project_id], 'default_orientation_id': orientation_id, 'form_view_ref': 'dh_project_project_form_view'}"/>
+<!--                                <field name="code_projet" width="1" />-->
+
+                <field name="project_id" width="1" string='المشروع'
+                       context="{'default_pilliar_id': pilliar_id, 'default_sector_id': sector_id, 'form_view_ref': 'hrt_project_view_form'}"/>
+                                                <field name="sequence" width="1" string="Task Code"/>
+
+
+                <field name="name" width="1" string='النشاط'/>
+                <field name="sector_id" width="1" domain="[('project_ids', 'in', [project_id])]"
+                       context="{'default_project_ids': [project_id], 'form_view_ref': 'dh_icesco_sector_form_view'}"/>
+                <!--                <field name="milestones" widget="many2many_tags_link" width="1"/>-->
+
+                <field name="type_activity" string="نوع النشاط" width="1"/>
+                <field name="date_start" width="1"/>
+                <field name="date_end" width="1"/>
+
+                <field name="pays_members_cibles" width="1" widget="many2many_tags_link"/>
+                <field name="pays_no_members_cibles" width="1" widget="many2many_tags_link"/>
+                <field name="partenaire_ids" width="1" widget="many2many_tags_link"
+                       domain="['|', '|', '|', '|', ('institution_gouv_etat_member', '=', True), ('institution_gouv_etat_non_member', '=', True), ('organisation_mondiale_rare', '=', True), ('organisation_locale', '=', True), ('organisation_regional', '=', True)]"/>
+                <field name="nombre_beneficiaires" width="1"/>
+                <field name="mode_convo" width="1"/>
+                <!--                <field name="budget_icesco" width="1"/>-->
+                <!--                <field name="budget_out_icesco" width="1"/>-->
+                <field name="budget_total_icesco" width="1"/>
+                <field name="year_bud" width="1"/>
+<!--                <field name="expert_task" width="1"/>-->
+                <field name="equipe_responsable_ids" widget="many2many_tags" width="1"/>
+                <field name="result_attendus" width="1"/>
+                <field name="company_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_perf_project_task_details_tree">
+        <field name="name">dh.perf.project.task.details.tree</field>
+        <field name="model">project.task</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+
+<!--                <field name="code_pillar" width="1"/>-->
+                <field name="pilliar_id" width="1"/>
+<!--                <field name="code_project" width="1"/>-->
+                <field name="project_id" width="1" string='المشروع' domain="[('pilliar_id','=', pilliar_id)]"
+                       attrs="{'readonly': [('pilliar_id', '==', False)]}"
+                       context="{'default_pilliar_id': pilliar_id}"/>
+                               <field name="sequence" width="1" string="Task Code"/>
+
+
+                <field name="name" width="1" string='النشاط' context="{'default_project_id': project_id}"/>
+                <!--                <field name="milestones" widget="many2many_tags_link" width="1"/>-->
+                <field name="sector_id" width="1"/>
+
+                <field name="type_activity" string="نوع النشاط" width="1"/>
+                <field name="operational_indecator_id" widget="many2many_tags_link" width="1" optional="show"/>
+
+                <field name="date_start" width="1"/>
+                <field name="date_end" width="1"/>
+                <field name="rate_ratio" width="1"/>
+                <field name="state_ratio" width="1"/>
+
+                <field name="pays_members_cibles" width="1" widget="many2many_tags"/>
+                <field name="pays_no_members_cibles" width="1" widget="many2many_tags"/>
+                <field name="partenaire_ids" width="1" widget="many2many_tags_link"
+                       domain="['|', '|', '|', '|', ('institution_gouv_etat_member', '=', True), ('institution_gouv_etat_non_member', '=', True), ('organisation_mondiale_rare', '=', True), ('organisation_locale', '=', True), ('organisation_regional', '=', True)]"/>
+                <field name="nombre_beneficiaires" width="1" optional="show"/>
+                <field name="mode_convo" width="1" optional="show"/>
+                <field name="budget_employers" width="1" optional="show"/>
+                <field name="budget_icesco" width="1" optional="show"/>
+                <field name="budget_out_icesco" width="1" optional="show"/>
+                <field name="budget_extra_reel" width="1" optional="show"/>
+                <field name="budget_extra_indirect" width="1" optional="show"/>
+                <!--                <field name="year_bud" width="1" optional="show"/>-->
+<!--                <field name="expert_task" width="1" optional="show"/>-->
+                <field name="equipe_responsable_ids" widget="many2many_tags" width="1" optional="show"/>
+                <field name="result_attendus" width="1" optional="show"/>
+
+                <field name="operational_indecator_result_id" widget="many2many_tags_link" width="1" optional="show"/>
+                <field name="percentage_of_done_percent" widget="percentage" width="1" optional="show"/>
+                <field name="respect_time" width="1" optional="show"/>
+<!--                <field name="target" width="1" optional="show"/>-->
+<!--                <field name="actual" width="1" optional="show"/>-->
+                <field name="target_of_actual" width="1" optional="show"/>
+                <button name="view_show_indicators" string="المؤشرات" type="object" class="btn btn-primary"/>
+                <field name="company_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_dh_project_task_kanban_2">
+        <field name="name">dh.project.task.kanban.2</field>
+        <field name="model">project.task</field>
+        <field name="arch" type="xml">
+            <kanban create="0">  <!--default_group_by="priority"-->
+                <field name="name"/>
+                <field name="respect_time"/>
+                <field name="target_of_actual"/>
+                <field name="target"/>
+                <field name="actual"/>
+                <field name="dh_state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <t t-if="record.dh_state.raw_value == 'draft'">
+                            <div class="oe_kanban_global_click" style="background:#fff1ef; ">
+                                <!--                              <div class="oe_dropdown_kanban">-->
+                                <!--                                  &lt;!&ndash; dropdown menu &ndash;&gt;-->
+                                <!--                                  <div class="oe_dropdown_toggle">-->
+                                <!--                                      <i class="fa fa-bars fa-lg" title="Manage" aria-label="Manage"/>-->
+                                <!--                                      <ul class="oe_dropdown_menu">-->
+                                <!--                                          <li>-->
+                                <!--                                              <a type="delete">Delete</a>-->
+                                <!--                                          </li>-->
+                                <!--                                          <li>-->
+                                <!--                                              <ul class="oe_kanban_colorpicker"-->
+                                <!--                                                  data-field="color"/>-->
+                                <!--                                          </li>-->
+                                <!--                                      </ul>-->
+                                <!--                                  </div>-->
+                                <!--                                  <div class="oe_clear"></div>-->
+                                <!--                              </div>-->
+                                <div t-attf-class="oe_kanban_content oe_kanban_details d-flex flex-column">
+                                    <div style="background-color:#d9d9dc;height:42px;">
+                                        <div class="oe_kanban_global_click"
+                                             style="float:left!important;margin-left: 5px;margin-bottom: 10px;margin-top: 5px;">
+                                                <button name="view_show_indicators" type="object"
+                                                        class="btn btn-primary oe_kanban_action oe_kanban_action_button"
+                                                        style="background-color:#008484;">
+                                                    <span style="font-size: 12px; color:white;">المؤشرات التشغيلية</span>
+                                                </button>
+                                                <button name="view_form_activity" type="object"
+                                                        class="btn btn-primary oe_kanban_action oe_kanban_action_button"
+                                                        style="background-color:#008484;">
+                                                    <span style="font-size: 12px; color:white;">التفاصيل</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    &#x2063;
+                                    <!-- title -->
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <t t-if="record.name.raw_value">
+
+                                                <h2>
+                                                    <strong>
+                                                        <field name="name"/>
+                                                    </strong>
+                                                </h2>
+                                            </t>
+                                        </div>
+                                        <div class="col-12 text:right">
+                                            <t t-if="record.code_activity.raw_value">
+                                                <h4 style="float:right">
+                                                    <strong>
+                                                        <field name="code_activity" readonly="1"/>
+                                                    </strong>
+                                                </h4>
+
+                                            </t>
+                                        </div>
+
+
+                                    </div>
+                                    <t t-if="record.percentage_of_done.raw_value != 0">
+                                        <ul style="list-style: none;">
+                                            <li class="dh_pie">
+                                                <field style="font-size: 0px;" name="percentage_of_done"
+                                                       widget="percentpie"
+                                                       nolabel="1"/>
+                                            </li>
+                                            <li>
+                                                <span>نسبة تحقيق المؤشرات</span>
+                                                <field name="target_of_actual"/>
+                                                %
+                                            </li>
+<!--                                            <li>-->
+<!--                                                <span>المستهدف</span>-->
+<!--                                                <field name="target"/>-->
+<!--                                                %-->
+<!--                                                <span>النتيجة الفعلية</span>-->
+<!--                                                <field name="actual"/>-->
+<!--                                                %-->
+<!--                                            </li>-->
+                                        </ul>
+                                    </t>
+                                    <t t-else="">
+                                        <ul style="list-style: none;display:none;">
+                                            <li class="dh_pie">
+                                                <field style="font-size: 0px;" name="percentage_of_done"
+                                                       widget="percentpie"
+                                                       nolabel="1"/>
+                                            </li>
+                                            <li>
+                                                <span>نسبة تحقيق المؤشرات</span>
+                                                <field name="target_of_actual"/>
+                                                %
+                                            </li>
+<!--                                            <li>-->
+<!--                                                <span>المستهدف</span>-->
+<!--                                                <field name="target"/>-->
+<!--                                                %-->
+<!--                                                <span>النتيجة الفعلية</span>-->
+<!--                                                <field name="actual"/>-->
+<!--                                                %-->
+<!--                                            </li>-->
+                                        </ul>
+                                    </t>
+                                </div>
+
+                            </div>
+                        </t>
+
+                        <t t-else="">
+                            <div class="oe_kanban_global_click">
+                                <!--                              <div class="oe_dropdown_kanban">-->
+                                <!--                                  &lt;!&ndash; dropdown menu &ndash;&gt;-->
+                                <!--                                  <div class="oe_dropdown_toggle">-->
+                                <!--                                      <i class="fa fa-bars fa-lg" title="Manage" aria-label="Manage"/>-->
+                                <!--                                      <ul class="oe_dropdown_menu">-->
+                                <!--                                          <li>-->
+                                <!--                                              <a type="delete">Delete</a>-->
+                                <!--                                          </li>-->
+                                <!--                                          <li>-->
+                                <!--                                              <ul class="oe_kanban_colorpicker"-->
+                                <!--                                                  data-field="color"/>-->
+                                <!--                                          </li>-->
+                                <!--                                      </ul>-->
+                                <!--                                  </div>-->
+                                <!--                                  <div class="oe_clear"></div>-->
+                                <!--                              </div>-->
+                                <div t-attf-class="oe_kanban_content oe_kanban_details d-flex flex-column">
+                                                                        <div style="background-color:#c2c0c2;height:42px;margin-left: 5px">
+                                    <div class="oe_kanban_global_click"
+                                         style="float:left!important;margin-left:2px;margin-bottom: 10px;margin-top: 5px;">
+                                        <button name="view_show_indicators" type="object"
+                                                class="btn btn-primary oe_kanban_action oe_kanban_action_button"
+                                                style="background-color:#008484;">
+                                            <span style="font-size: 12px; color:white;">المؤشرات التشغيلية</span>
+                                        </button>
+                                        <button name="view_form_activity" type="object"
+                                                class="btn btn-primary oe_kanban_action oe_kanban_action_button"
+                                                style="background-color:#008484;">
+                                            <span style="font-size: 12px; color:white;">التفاصيل</span>
+                                        </button>
+                                    </div>
+                                        </div>
+                                    &#x2063;
+                                    <!-- title -->
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <t t-if="record.name.raw_value">
+
+                                                <h2>
+                                                    <strong>
+                                                        <field name="name"/>
+                                                    </strong>
+                                                </h2>
+                                            </t>
+                                        </div>
+                                        <div class="col-12 text:right">
+                                            <t t-if="record.code_activity.raw_value">
+                                                <h4 style="float:right">
+                                                    <strong>
+                                                        <field name="code_activity" readonly="1"/>
+                                                    </strong>
+                                                </h4>
+
+                                            </t>
+                                        </div>
+
+
+                                    </div>
+                                    <t t-if="record.percentage_of_done.raw_value != 0">
+                                        <ul style="list-style: none;">
+                                            <li class="dh_pie">
+                                                <field style="font-size: 0px;" name="percentage_of_done"
+                                                       widget="percentpie"
+                                                       nolabel="1"/>
+                                            </li>
+                                            <li>
+                                                <span>نسبة تحقيق المؤشرات</span>
+                                                <field name="target_of_actual"/>
+                                                %
+                                            </li>
+<!--                                            <li>-->
+<!--                                                <span>المستهدف</span>-->
+<!--                                                <field name="target"/>-->
+<!--                                                %-->
+<!--                                                <span>النتيجة الفعلية</span>-->
+<!--                                                <field name="actual"/>-->
+<!--                                                %-->
+<!--                                            </li>-->
+                                        </ul>
+                                    </t>
+                                    <t t-else="">
+                                        <ul style="list-style: none;display:none;">
+                                            <li class="dh_pie">
+                                                <field style="font-size: 0px;" name="percentage_of_done"
+                                                       widget="percentpie"
+                                                       nolabel="1"/>
+                                            </li>
+                                            <li>
+                                                <span>نسبة تحقيق المؤشرات</span>
+                                                <field name="target_of_actual"/>
+                                                %
+                                            </li>
+<!--                                            <li>-->
+<!--                                                <span>المستهدف</span>-->
+<!--                                                <field name="target"/>-->
+<!--                                                %-->
+<!--                                                <span>النتيجة الفعلية</span>-->
+<!--                                                <field name="actual"/>-->
+<!--                                                %-->
+<!--                                            </li>-->
+                                        </ul>
+                                    </t>
+                                </div>
+
+                            </div>
+
+
+                        </t>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_perf_project_task">
+        <field name="name">الخطة التشغيلية العامة</field>
+        <field name="res_model">project.task</field>
+        <field name="view_mode">tree</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_perf_project_task_tree')})]"/>
+    </record>
+
+    <record id="project.view_task_project_user_graph" model="ir.ui.view">
+        <field name="name">report.project.task.user.graph</field>
+        <field name="model">report.project.task.user</field>
+        <field name="arch" type="xml">
+            <graph string="Tasks Analysis" type="bar">
+                <field name="project_id" type="row"/>
+                <field name="sector_id" type="col"/>
+                <field name="nbr" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_task_project_user_graph_sector" model="ir.ui.view">
+        <field name="name">report.project.task.user.graph.sector</field>
+        <field name="model">report.project.task.user</field>
+        <field name="arch" type="xml">
+            <graph string="Tasks Analysis" type="bar">
+                <field name="sector_id" type="col"/>
+<!--                <field name="sector_id" type="col"/>-->
+                <field name="nbr" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_project_task_user_sector_tree" model="ir.actions.act_window">
+            <field name="name">Tasks Analysis By Sector</field>
+            <field name="res_model">report.project.task.user</field>
+            <field name="view_mode">graph,pivot</field>
+            <field name="search_view_id" ref="project.view_task_project_user_search"/>
+            <field name="view_id" ref="dh_icesco_project.view_task_project_user_graph_sector"/>
+            <field name="context">{'group_by_no_leaf':1,'group_by':[]}</field>
+            <field name="help">This report allows you to analyse the performance of your projects and users. You can analyse the quantities of tasks, the hours spent compared to the planned hours, the average number of days to open or close a task, etc.</field>
+        </record>
+
+    <menuitem id="menu_project_task_user_sector"
+                  name="Analyse des tâches par secteur"
+                  action="dh_icesco_project.action_project_task_user_sector_tree"
+                  parent="project.menu_project_report"
+                  sequence="11"/>
+
+</odoo>

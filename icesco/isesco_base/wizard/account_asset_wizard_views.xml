@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="account_asset_wizard" model="ir.ui.view">
+        <field name="name">account.asset.wizard.form</field>
+        <field name="model">account.asset.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Modifier le taux">
+                <group>
+                    <group>
+                        <field name="taux"/>
+                        <field name="remet_taux_zero"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="write_taux"
+                            string="Modifier" type="object"
+                            class="btn-primary"/>
+                    <button string="Cancel"
+                            class="btn-secondary"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_account_asset_wizard" model="ir.actions.act_window">
+        <field name="name">Modifier le taux</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.asset.wizard</field>
+        <field name="view_id" ref="isesco_base.account_asset_wizard"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

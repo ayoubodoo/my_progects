@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="1">
+
+		<record id="seq_liasse_actif_erp" model="ir.sequence">
+			<field name="name">Sequence</field>
+			<field name="code">liasse.bilan.actif.erp</field>
+			<field name="padding">2</field>
+		</record>
+	</data>
+</odoo>

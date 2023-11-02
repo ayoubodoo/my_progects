@@ -1,0 +1,1857 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* kzm_payroll_ma
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-18 18:07+0000\n"
+"PO-Revision-Date: 2021-02-18 18:07+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,help:kzm_payroll_ma.field_hr_payroll_ma_rubrique__formule
+msgid ""
+"\n"
+"                    Pour les rubriques de type majoration, on utilise les variables suivantes :\n"
+"                    salaire_base : Salaire de base\n"
+"                    hour_base : Salaire horaire\n"
+"                    normal_hours : Les heures normales\n"
+"                    working_days : Jours travaillés (imposable)\n"
+"        "
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: code:addons/kzm_payroll_ma/models/date_range.py:0
+#, python-format
+msgid "%s is not a valid range (%s > %s)"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: code:addons/kzm_payroll_ma/models/date_range.py:0
+#, python-format
+msgid "%s overlaps %s"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_payroll_ma_rubrique__heures_sup__100
+msgid "100%"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_payroll_ma_rubrique__heures_sup__25
+msgid "25%"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_payroll_ma_rubrique__heures_sup__50
+msgid "50%"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid ""
+"<b>\n"
+"                                                <strong>Net à payer :</strong>\n"
+"                                            </b>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<b>A payer</b>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<b>A retenir</b>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<b>Base</b>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<b>Désignation</b>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<b>Part Patronal</b>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<b>Taux</b>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<b>Total brut</b>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_hr_contract_form_inherits
+msgid "<span>/ heure</span>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>Adresse :</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>Annuel</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>Brut imposable</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>CIN :</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>CNSS:</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>Date embauche :</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>Date naissance :</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>Emargement</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>Jours travaillés</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>Matricule :</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>Mensuel</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>Net imposable</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>Nom et prénom :</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>Nombre de jours de congés restants:</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>N° d'enfants :</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>N° de charges :</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>Poste occupé :</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>Retenue I.R</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>Salaire de base :</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>Signature :</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "<strong>Situation de famille :</strong>"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__logement
+msgid "Abattement Fr Logement"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__absence
+msgid "Absence"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__absence
+msgid "Absences"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:res.groups,name:kzm_payroll_ma.group_hr_payroll_settings
+msgid "Admin"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__address_home
+msgid "Adresse Personnelle"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__address
+msgid "Adresse Professionnelle"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__afficher
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__afficher
+msgid "Afficher"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,help:kzm_payroll_ma.field_hr_payroll_ma_rubrique__afficher
+msgid "Afficher cette rubrique sur le bulletin de paie"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__affilie
+msgid "Affilié"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__agence
+msgid "Agence"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+msgid "Ajouter Employés"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.actions.act_window,name:kzm_payroll_ma.anciennete_all_act
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__annees_anciennete
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__anciennete
+#: model:ir.ui.menu,name:kzm_payroll_ma.anciennete_all_mi
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.anciennete_form
+msgid "Ancienneté"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.wizard_hours_form_view
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.wizard_jours_form_view
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.wizard_rub_form_view
+msgid "Annuler"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_payroll_ma__state__cancelled
+msgid "Annulé"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.kzm_res_config_settings_view_form_employee
+msgid "Appliquer"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__arrondi
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company__arrondi
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__arrondi
+msgid "Arrondi"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_payroll_ma_bulletin_line__type__other
+msgid "Autre"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_payroll_ma_rubrique__type__avantage
+msgid "Avantage"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__avantage
+msgid "Avantages"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__bank
+msgid "Banque Marocaine"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.actions.act_window,name:kzm_payroll_ma.config_banques
+#: model:ir.ui.menu,name:kzm_payroll_ma.payroll_ma_bank_configure
+msgid "Banques"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.ir_tree
+msgid "Baremes IR"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.anciennete_tree
+msgid "Baremes anciennete"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.ui.menu,name:kzm_payroll_ma.payroll_ma_configure_baremes
+msgid "Barèmes"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.ir_form
+msgid "Barèmes IR"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.anciennete_form
+msgid "Barèmes ancienneté"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__base
+msgid "Base"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_payroll_ma__state__draft
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+msgid "Brouillon"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__id_bulletin
+msgid "Bulletin"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+msgid "Bulletin de paie"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.actions.report,name:kzm_payroll_ma.bulletin_paie_id
+msgid "Bulletin de paie "
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__bulletin_line_ids
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.salary_form
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_employee_form_inherits
+msgid "Bulletins"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.actions.act_window,name:kzm_payroll_ma.act_hr_employee_2_payslips
+#: model:ir.actions.act_window,name:kzm_payroll_ma.action_salary_tree
+#: model:ir.ui.menu,name:kzm_payroll_ma.menu_bulletin
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_payslip_filter
+msgid "Bulletins de paie"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__cin
+msgid "CIN"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company__cin_employee_obligatoire
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__cin_employee_obligatoire
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.kzm_res_config_settings_view_form_employee
+msgid "CIN Obligatoire pour l'Employeé"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__ssnid
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_employee_form_inherits
+msgid "CNSS"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.salary_form
+msgid "Calculer bulletin"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+msgid "Calculer bulletins"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__categorie
+msgid "Catégorie"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_employee_form_inherits
+msgid "Catégories"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,help:kzm_payroll_ma.field_hr_employee__date
+msgid "Cette date est requise pour le calcul de la prime d'ancienneté"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company__charge
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__charge
+msgid "Charges familiales"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_employee__mode_reglement__cheque
+msgid "Chèque"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__number
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation__code
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__code
+msgid "Code"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ligne_rubrique__note
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__note
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.ligne_rubrique_form
+msgid "Commentaire"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model,name:kzm_payroll_ma.model_res_company
+msgid "Company"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__has_chart_of_accounts
+msgid "Company has a chart of accounts"
+msgstr "La société a un plan comptable"
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.cotisation_form
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+msgid "Comptabilité"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__debit_account_id
+msgid "Compte Débit"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__compte
+msgid "Compte bancaire"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__credit_account_id
+msgid "Compte crédit"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation__credit_account_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__credit_account_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company__salary_credit_account_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__salary_credit_account_id
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_salary_line_form
+msgid "Compte de crédit"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company__credit_account_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__credit_account_id
+msgid "Compte de crédit IR"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation__debit_account_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__debit_account_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company__salary_debit_account_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__salary_debit_account_id
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_salary_line_form
+msgid "Compte de débit"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model,name:kzm_payroll_ma.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de config"
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_employee_form_inherits
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_hr_contract_form_inherits
+msgid "Configuration de la paie"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+msgid "Confirmer"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_payroll_ma__state__confirmed
+msgid "Confirmé"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__conge
+msgid "Congé"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ligne_rubrique__id_contract
+msgid "Contrat"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__employee_contract_id
+msgid "Contrat de travail"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_payroll_ma_bulletin_line__type__cotisation
+msgid "Cotisation"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation__plafonee
+msgid "Cotisation plafonée"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.actions.act_window,name:kzm_payroll_ma.cotisation_all_act
+#: model:ir.model,name:kzm_payroll_ma.model_hr_payroll_ma_cotisation
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation_type__cotisation_ids
+#: model:ir.ui.menu,name:kzm_payroll_ma.cotisation_all_mi
+#: model:ir.ui.menu,name:kzm_payroll_ma.payroll_ma_configure_cotisations
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.cotisation_tree
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.cotisation_type_form
+msgid "Cotisations"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cotisations_employer
+msgid "Cotisations Employeur"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cotisations_employee
+msgid "Cotisations Employé"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__create_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_anciennete__create_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__create_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__create_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation__create_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation_type__create_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ir__create_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ligne_rubrique__create_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__create_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_hours_import_wizard__create_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_jours_import_wizard__create_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_rub_import_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__create_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_anciennete__create_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__create_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__create_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation__create_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation_type__create_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ir__create_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ligne_rubrique__create_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__create_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_hours_import_wizard__create_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_jours_import_wizard__create_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_rub_import_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cumul_avantages
+msgid "Cumul Avantages"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cumul_avn
+msgid "Cumul Avtg en nature"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cumul_er_cotis
+msgid "Cumul Cotis employeur"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cumul_ee_cotis
+msgid "Cumul Cotis employé"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cumul_igr
+msgid "Cumul IR"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cumul_igr_brut_n_1
+msgid "Cumul IR Brut N-1"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cumul_igr_n_1
+msgid "Cumul IR N-1"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cumul_indemnites_fp
+msgid "Cumul Indemn. frais professionnels"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cumul_sb
+msgid "Cumul SB"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cumul_sbi
+msgid "Cumul SBI"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cumul_sni
+msgid "Cumul SNI"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cumul_sni_n_1
+msgid "Cumul SNI N-1"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cumul_base
+msgid "Cumul base"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cumul_normal_hours
+msgid "Cumul des HT"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cumul_work_days
+msgid "Cumul des JT"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cumul_exo
+msgid "Cumul exonéré"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__cumul_fp
+msgid "Cumul frais professionnels"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+msgid "Cumuls"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__date_salary
+msgid "Date"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model,name:kzm_payroll_ma.model_date_range
+msgid "Date Range"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model,name:kzm_payroll_ma.model_date_range_type
+msgid "Date Range Type"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.ui.menu,name:kzm_payroll_ma.menu_date_range_action_hr
+msgid "Date Ranges"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__date
+msgid "Date d'embauche"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__date_start
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__date_start
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ligne_rubrique__date_start
+msgid "Date début"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__date_end
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__date_end
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ligne_rubrique__date_stop
+msgid "Date fin"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.inherit_view_date_range_form_view
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.inherit_view_date_range_tree
+msgid "Date range"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.ui.menu,name:kzm_payroll_ma.menu_date_range_hr
+msgid "Date ranges"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__date_salary
+msgid "Date salaire"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_payroll_ma_rubrique__categorie__deduction
+msgid "Deduction"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__name
+msgid "Description"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation__name
+msgid "Designation"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_date_range__display_name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_date_range_type__display_name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_contract__display_name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__display_name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_anciennete__display_name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__display_name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__display_name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation__display_name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation_type__display_name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ir__display_name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ligne_rubrique__display_name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__display_name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_hours_import_wizard__display_name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_jours_import_wizard__display_name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_rub_import_wizard__display_name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company__display_name
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.kzm_res_config_settings_view_form_employee
+msgid "Données de la paie"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_anciennete__debuttranche
+msgid "Début Tranche"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ir__debuttranche
+msgid "Début de Tranche"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__deductible
+msgid "Déductible"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__deduction
+msgid "Déductions"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation_type__name
+msgid "Désignation"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.actions.act_window,name:kzm_payroll_ma.act_hr_payroll_ma_ecriture
+msgid "Ecritures Comptables"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model,name:kzm_payroll_ma.model_hr_employee
+msgid "Employee"
+msgstr "Employé"
+
+#. module: kzm_payroll_ma
+#: model:ir.model,name:kzm_payroll_ma.model_hr_contract
+msgid "Employee Contract"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company__display_employee_contribution
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__display_employee_contribution
+msgid "Employee Contribution"
+msgstr "Afficher la part patronale"
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.kzm_res_config_settings_view_form_employee
+msgid "Employee's Contribution"
+msgstr "Afficher la part patronale"
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__employee_id
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_payslip_filter
+msgid "Employé"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_employee__mode_reglement__espece
+msgid "Espèce"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,help:kzm_payroll_ma.field_hr_employee__affilie
+msgid "Est ce qu on va calculer les cotisations pour cet employé"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,help:kzm_payroll_ma.field_hr_employee__anciennete
+msgid "Est ce que cet employé bénificie de la prime d'ancienneté"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__exoneration
+msgid "Exonérations"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_hours_import_wizard__file_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_jours_import_wizard__file_id
+msgid "Fichier"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_rub_import_wizard__file_id
+msgid "Fichiers"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_anciennete__fintranche
+msgid "Fin Tranche"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ir__fintranche
+msgid "Fin de tranche"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__formule
+msgid "Formule"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company__fraispro
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__fraispro
+msgid "Frais Professionnels"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__frais_pro
+msgid "Frais professionnels"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_hr_contract_form_inherits
+msgid "Gains mensuels en espèces"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.ui.menu,name:kzm_payroll_ma.payroll_ma_configure
+msgid "Gestion Paie"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.ui.menu,name:kzm_payroll_ma.menu_hr_root_payroll_ma
+msgid "Gestion de la paie"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.module.category,description:kzm_payroll_ma.category_payroll
+#: model:ir.module.category,name:kzm_payroll_ma.category_payroll
+msgid "Gestion de paie"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_payslip_filter
+msgid "Group By"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__has_default_company
+msgid "Has Default Company"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__has_cotisation
+msgid "Has cotisation"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__has_journal
+msgid "Has journal"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__has_parametre
+msgid "Has parametres"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__has_rubriques
+msgid "Has rubriques"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__normal_hours
+msgid "Heures travaillées durant le mois"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_contract__type__horaire
+msgid "Horaire"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_date_range__id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_date_range_type__id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_contract__id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_anciennete__id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation__id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation_type__id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ir__id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ligne_rubrique__id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_hours_import_wizard__id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_jours_import_wizard__id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_rub_import_wizard__id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company__id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__id
+msgid "ID"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.actions.act_window,name:kzm_payroll_ma.ir_all_act
+#: model:ir.model,name:kzm_payroll_ma.model_hr_payroll_ma_ir
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__ir
+#: model:ir.ui.menu,name:kzm_payroll_ma.ir_all_mi
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.ir_form
+msgid "IR"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_contract__ir
+msgid "IR?"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.wizard_hours_form_view
+msgid "Import Heures"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.wizard_rub_form_view
+msgid "Import Rubriques"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.actions.act_window,name:kzm_payroll_ma.wizard_hours_import_action
+msgid "Import heures"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.actions.act_window,name:kzm_payroll_ma.wizard_jours_import_action
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.wizard_jours_form_view
+msgid "Import jours"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.actions.act_window,name:kzm_payroll_ma.wizard_rub_import_action
+msgid "Import rubrique"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__imposable
+msgid "Imposable"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__igr
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.kzm_res_config_settings_view_form_employee
+msgid "Impot sur le revenu"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__igr_brut
+msgid "Impot sur le revenu brut"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_payroll_ma_rubrique__type__indemnite
+msgid "Indemnité"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__indemnite
+msgid "Indemnités"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__indemnites_frais_pro
+msgid "Indemnités versées à titre de frais professionnels"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.salary_form
+msgid "Info Salaire"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__comment
+msgid "Informations complémentaires"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_employee_form_inherits
+msgid "Infos logement"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__is_generated
+msgid "Is Generated"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__jrs_conge_paye
+msgid "Jour congé payé?"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__journal_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company__journal_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__journal_id
+msgid "Journal"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_employee__type_employe__horaire
+msgid "Journalier"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__working_days
+msgid "Jours travaillés"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_contract__working_days_per_month
+msgid "Jours travaillés par mois"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_date_range____last_update
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_date_range_type____last_update
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_contract____last_update
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma____last_update
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_anciennete____last_update
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin____last_update
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line____last_update
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation____last_update
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation_type____last_update
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ir____last_update
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ligne_rubrique____last_update
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique____last_update
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_hours_import_wizard____last_update
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_jours_import_wizard____last_update
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_rub_import_wizard____last_update
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company____last_update
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__write_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_anciennete__write_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__write_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__write_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation__write_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation_type__write_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ir__write_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ligne_rubrique__write_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__write_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_hours_import_wizard__write_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_jours_import_wizard__write_uid
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_rub_import_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__write_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_anciennete__write_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__write_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__write_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation__write_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation_type__write_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ir__write_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ligne_rubrique__write_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__write_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_hours_import_wizard__write_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_jours_import_wizard__write_date
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_rub_import_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,help:kzm_payroll_ma.field_res_company__charge
+#: model:ir.model.fields,help:kzm_payroll_ma.field_res_config_settings__charge
+msgid "Les charges de famille déduites de IR"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.kzm_res_config_settings_view_form_employee
+msgid "Les charges de famille déduites de IR\""
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model,name:kzm_payroll_ma.model_hr_payroll_ma_ligne_rubrique
+msgid "Ligne Rubrique"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model,name:kzm_payroll_ma.model_hr_payroll_ma_bulletin_line
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_salary_line_form
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_salary_line_tree
+msgid "Ligne de salaire"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__salary_line_ids
+msgid "Lignes de salaire"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.salary_form
+msgid "Lignes du bulletin"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.ligne_rubrique_form
+msgid "Lignes rubriques"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__logement
+msgid "Logement"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.kzm_res_config_settings_view_form_employee
+msgid "Logement social"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_payroll_ma_rubrique__categorie__majoration
+msgid "Majoration"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__matricule
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__matricule
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_payslip_filter
+msgid "Matricule"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_contract__type__mensuel
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_employee__type_employe__mensuel
+msgid "Mensuel"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.wizard_hours_form_view
+msgid ""
+"Merci de ne pas ajouter dans le premier ligne le titre de la colonne. La "
+"première colonne doit être remplie par les matricules. La deuxième colonne "
+"doit être remplie par les heures (entier ou décimal avec séparateur 'point')"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.wizard_jours_form_view
+msgid ""
+"Merci de ne pas ajouter dans le premier ligne le titre de la colonne. La "
+"première colonne doit être remplie par les matricules. La deuxième colonne "
+"doit être remplie par les jours (entier ou décimal avec séparateur 'point')"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.wizard_rub_form_view
+msgid ""
+"Merci de ne pas ajouter dans le premier ligne le titre de la colonne. la "
+"première colonne doit être remplie par les matricules. la deuxième colonne "
+"doit être remplie par les montants (entier ou décimal avec séparateur "
+"'point')"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.actions.act_window,name:kzm_payroll_ma.act_hr_employee_bulletin
+msgid "Mes bulletins de paie"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__mode_reglement
+msgid "Mode de règlement"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_payslip_filter
+msgid "Mois"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ligne_rubrique__montant
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_employee_form_inherits
+msgid "Montant"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__subtotal_employer
+msgid "Montant Employeur"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__subtotal_employee
+msgid "Montant Employé"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__salaire_net_a_payer_text
+msgid "Montant en lettres"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,help:kzm_payroll_ma.field_res_company__hour_day
+#: model:ir.model.fields,help:kzm_payroll_ma.field_res_config_settings__hour_day
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.kzm_res_config_settings_view_form_employee
+msgid "Nbr des heures de travaille par jour"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,help:kzm_payroll_ma.field_res_company__hour_month
+#: model:ir.model.fields,help:kzm_payroll_ma.field_res_config_settings__hour_month
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.kzm_res_config_settings_view_form_employee
+msgid "Nbr des heures de travaille par mois"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company__hour_day
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__hour_day
+msgid "Nbr heures par jour"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company__hour_month
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__hour_month
+msgid "Nbr heures par mois"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__name
+msgid "Nom"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_contract__monthly_hour_number
+msgid "Nombre Heures par mois"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__chargefam
+msgid "Nombre de personnes à charge"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_employee__type_logement__normal
+msgid "Normal"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__note
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_salary_line_form
+msgid "Notes"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__carte_de_sejour
+msgid "N° Carte de séjour"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,help:kzm_payroll_ma.field_hr_payroll_ma_rubrique__sequence
+msgid "Ordre d'affichage dans le bulletin de paie"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__is_hourly
+msgid "Par Heure?"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.kzm_res_config_settings_view_form_employee
+msgid "Paramètres"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model,name:kzm_payroll_ma.model_payroll_hours_import_wizard
+msgid "Payroll Hours Import Wizard"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model,name:kzm_payroll_ma.model_payroll_jours_import_wizard
+msgid "Payroll Jours Import Wizard"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model,name:kzm_payroll_ma.model_payroll_rub_import_wizard
+msgid "Payroll Rub Import Wizard"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__payslip_count
+msgid "Payslip Count"
+msgstr "Décompte de la fiche de paie"
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_payroll_ma__state__paid
+msgid "Payé"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__personnes
+msgid "Personnes"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__move_id
+msgid "Pièce comptable"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation__plafond
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company__plafond
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__plafond
+msgid "Plafond"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__plafond
+msgid "Plafond exonéré"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__pourcentage
+msgid "Pourcentage"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_payroll_ma_rubrique__type__prime
+msgid "Prime"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__prime_anciennete
+msgid "Prime ancienneté"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__anciennete
+msgid "Prime d'ancienneté?"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__prime
+msgid "Primes"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company__prix_achat_max_logement_social
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__prix_achat_max_logement_social
+msgid "Prix d'achat max"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__prix_acquisition_logement
+msgid "Prix d'acquisition"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.view_employee_form_inherits
+msgid "Prêt logement"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__period_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__period_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ligne_rubrique__period_id
+msgid "Période"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.bulletin_paie
+msgid "Période du"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:res.groups,name:kzm_payroll_ma.group_hr_payroll_manager
+msgid "Responsable"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.ui.menu,name:kzm_payroll_ma.menu_ressources_humaines_root
+msgid "Ressources Humaines"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_payroll_ma_bulletin_line__type__retenu
+msgid "Retenue"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ligne_rubrique__rubrique_id
+msgid "Rubrique"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ligne_rubrique__permanent
+msgid "Rubrique Permanente"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_payroll_rub_import_wizard__rub_id
+msgid "Rubrique:"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.actions.act_window,name:kzm_payroll_ma.rubrique_all_act
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_contract__rubrique_ids
+#: model:ir.ui.menu,name:kzm_payroll_ma.rubrique_all_mi
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.rubrique_form
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.rubrique_tree
+msgid "Rubriques"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__id_payroll_ma
+msgid "Réf Paie"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.actions.act_window,name:kzm_payroll_ma.payroll_ma_all_act
+#: model:ir.ui.menu,name:kzm_payroll_ma.menu_hr_payroll_ma
+msgid "Saisie Mensuelle"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model,name:kzm_payroll_ma.model_hr_payroll_ma
+msgid "Saisie des bulletins"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_tree
+msgid "Saisie mensuelle"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.salary_tree
+msgid "Salaire"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_contract__hour_salary
+msgid "Salaire Horaire"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__salaire_net
+msgid "Salaire Net"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__salaire_net_imposable
+msgid "Salaire Net Imposable"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__salaire_net_a_payer
+msgid "Salaire Net à payer"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__salaire_brute
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_payroll_ma_bulletin_line__type__brute
+msgid "Salaire brut"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__salaire_brute_imposable
+msgid "Salaire brut imposable"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__salaire
+msgid "Salaire de Base"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__salaire_base
+msgid "Salaire de base"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__hour_base
+msgid "Salaire horaire"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company__salaire_max_logement_social
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__salaire_max_logement_social
+msgid "Salaire max"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.kzm_res_config_settings_view_form_employee
+msgid "Settings"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_employee__type_logement__social
+msgid "Social"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,help:kzm_payroll_ma.field_hr_employee__ssnid
+msgid "Social Security Number"
+msgstr "Numéro de sécurité sociale"
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_contract__company_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__company_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__company_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__company_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation__company_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation_type__company_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__company_id
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__company_id
+msgid "Société"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ir__somme
+msgid "Somme à déduire"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.rubrique_form
+msgid "Soumise A"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__state
+msgid "Statut"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_company__superficie_max_logement_social
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__superficie_max_logement_social
+msgid "Superficie max (m²)"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__superficie_logement
+msgid "Superficie(m²)"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.cotisation_type_form
+msgid "TYPES DES COTISATIONS"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_anciennete__taux
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ir__taux
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_ligne_rubrique__taux
+msgid "Taux"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__rate_employer
+msgid "Taux Employeur"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__rate_employee
+msgid "Taux Employé"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation__tauxpatronal
+msgid "Taux Patronal"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_cotisation__tauxsalarial
+msgid "Taux Salarial"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__taux_anciennete
+msgid "Taux ancienneté"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__taux_anciennete
+msgid "Taux ancienneté(%)"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin__taux_journalier
+msgid "Taux journalier"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_res_config_settings__chart_template_id
+msgid "Template"
+msgstr "Modèle"
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__temporaire
+msgid "Temporaire"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma__total_net
+msgid "Total net"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model,name:kzm_payroll_ma.model_hr_payroll_ma_anciennete
+msgid "Tranches de la prime d'anciennete"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_contract__type
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_bulletin_line__type
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__type
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.rubrique_form
+msgid "Type"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_contract__cotisation
+msgid "Type cotisation"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__type_employe
+msgid "Type employé"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__type_logement
+msgid "Type logement"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.cotisation_type_tree
+msgid "Types Cotisations"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model,name:kzm_payroll_ma.model_hr_payroll_ma_cotisation_type
+msgid "Types de cotisation"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.actions.act_window,name:kzm_payroll_ma.cotisation_type_all_act
+#: model:ir.ui.menu,name:kzm_payroll_ma.cotisation_type_all_mi
+msgid "Types de cotisations"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.ui.menu,name:kzm_payroll_ma.menu_hr_payroll_teledeclaration_ma
+msgid "Télédéclarations"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_employee__phone_home
+msgid "Téléphone Personnel"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:res.groups,name:kzm_payroll_ma.group_hr_payroll_user
+msgid "Utilisateur"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields,field_description:kzm_payroll_ma.field_hr_payroll_ma_rubrique__heures_sup
+msgid "Valeur heures sup"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.wizard_hours_form_view
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.wizard_jours_form_view
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.wizard_rub_form_view
+msgid "Valider"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.fields.selection,name:kzm_payroll_ma.selection__hr_employee__mode_reglement__virement
+msgid "Virement"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model,name:kzm_payroll_ma.model_hr_payroll_ma_bulletin
+msgid "bulletin"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.actions.act_window,name:kzm_payroll_ma.act_hr_payroo_ma_bulletin
+msgid "bulletins de paie"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model.constraint,message:kzm_payroll_ma.constraint_hr_employee_cin_uniq
+msgid "le numero de la CIN doit etre unique "
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.model,name:kzm_payroll_ma.model_hr_payroll_ma_rubrique
+msgid "rubrique"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.ligne_rubrique_tree
+msgid "rubriques"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+msgid "total_0"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+msgid "total_1"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+msgid "total_2"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+msgid "total_3"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+msgid "total_4"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+msgid "total_5"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+msgid "total_6"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model_terms:ir.ui.view,arch_db:kzm_payroll_ma.hr_payroll_ma_form
+msgid "total_7"
+msgstr ""
+
+#. module: kzm_payroll_ma
+#: model:ir.ui.menu,name:kzm_payroll_ma.menu_kzm_hr_etats_de_paie
+msgid "États de paie"
+msgstr ""

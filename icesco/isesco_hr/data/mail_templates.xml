@@ -1,0 +1,266 @@
+<odoo>
+
+
+    <record id="mail_interview_invitation_face_to_face" model="mail.template">
+        <field name="name">Interview Invitation (Face to Face)</field>
+        <field name="model_id" ref="hr_recruitment.model_hr_applicant"/>
+        <field name="subject">
+            Invitation to an Interview for ${ctx['position']}
+        </field>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Dear ${ctx['applicant']} ,
+
+                    <br/>
+                    <br/>
+
+
+                    Thank you for applying for the ${ctx['position']}  position at the ${ctx['department']}  of ICESCO.
+                    <br/>
+                    <br/>
+
+
+                    we have reviewed your application and you were selected for an interview.
+
+
+                    <br/>
+                    The interview will take place on ${ctx['date']} at ${ctx['time']} in ICESCO’S Head quarter
+in Rabat.
+                    <!--                        <t t-esc="'%02d:%02d' % (int(${ctx['time']}), ${ctx['time']} % 1 * 60)" />-->
+                    <br/>
+                    <br/>
+
+                    Please confirm your availability for the interview by responding to this email.
+                    <br/>
+                    We look forward a meeting with you.
+                    <br/>
+                    <br/>
+                    Best Regards,
+                    <br/>
+                    <br/>
+                    <b>
+                        Human Resources Department of ICESCO
+                    </b>
+                    <br/>
+                    <b>Tel: </b>+212-5375-66052
+                    <br/>
+                    <b>Web: </b><a href="https://www.icesco.org/" target="_blank"
+                           style="color:blue;text-decoration: underline;font-size:13px;">
+                            <b>www.icesco.org/</b>
+                        </a>
+                    <br/>
+                    <b>Address: </b> Avenue des F.A.R. - Hay Ryad, P.O. Box. 2275, Postcode 10104,
+Rabat, Kingdom of Morocco
+                    <br/>
+                    <br/>
+                    <br/>
+                    <img src="/kzm_medical_insurance/static/img/logo.jpeg"
+                         style="width:110px;height:110px;float:left"/>
+                </p>
+            </div>
+        </field>
+    </record>
+    <record id="mail_interview_invitation_online" model="mail.template">
+        <field name="name">Interview Invitation</field>
+        <field name="model_id" ref="hr_recruitment.model_hr_applicant"/>
+        <field name="subject">
+            Interview Invitation
+        </field>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Dear ${ctx['applicant']} ,
+
+                    <br/>
+                    <br/>
+
+
+                    Thank you for applying for the ${ctx['position']}  position at the ${ctx['department']}  of ICESCO.
+                    <br/>
+                    <br/>
+
+
+                    we have reviewed your application and you were selected for an interview.
+
+
+                    <br/>
+                    The interview will take place on ${ctx['date']} at ${ctx['time']} .
+                    <!--                        <t t-esc="'%02d:%02d' % (int(${ctx['time']}), ${ctx['time']} % 1 * 60)" />-->
+                    <br/>
+                    <p>
+                        You can attend the interview using the link mentioned below:
+                    </p>
+                    <br/>
+
+                    <div style="padding-left:20%">
+                        <a href="${ctx['link']}" target="_blank"
+                           style="color:blue;text-decoration: underline;font-size:13px;">
+                            <b>Link of interview</b>
+                        </a>
+                        <!--                              <b style="color:blue;text-decoration: underline;">Link:</b> ${ctx['meeting_link']}-->
+                    </div>
+                    <br/>
+                    Please confirm your availability for the interview by responding to this email.
+                    <br/>
+                    We look forward a meeting with you.
+                    <br/>
+                    <br/>
+                    Best Regards,
+                    <br/>
+                    <br/>
+                    <b>
+                        Human Resources Department of ICESCO
+                    </b>
+                    <br/>
+                    <b>Tel: </b>+212-5375-66052
+                    <br/>
+                    <b>Web: </b><a href="https://www.icesco.org/" target="_blank"
+                           style="color:blue;text-decoration: underline;font-size:13px;">
+                            <b>www.icesco.org/</b>
+                        </a>
+                    <br/>
+                    <b>Address: </b> Avenue des F.A.R. - Hay Ryad, P.O. Box. 2275, Postcode 10104,
+Rabat, Kingdom of Morocco
+                    <br/>
+                    <br/>
+                    <br/>
+                    <img src="/kzm_medical_insurance/static/img/logo.jpeg"
+                         style="width:110px;height:110px;float:left"/>
+                </p>
+            </div>
+        </field>
+    </record>
+
+
+    <record id="mail_applicant_auto_rejection" model="mail.template">
+        <field name="name">Application Response</field>
+        <field name="model_id" ref="hr_recruitment.model_hr_applicant"/>
+        <field name="subject">
+            Application Response
+        </field>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Dear Applicant ,
+
+                    <br/>
+                    <br/>
+
+
+                    Thank you for applying for a job position at ICESCO.
+                    <br/>
+                    <br/>
+
+
+                    We appreciate your interest in our organization.
+
+
+                    <br/>
+                    Unfortunately, after reviewing your application form, we realized that you don't meet our Job
+                    requirements for this position.
+                    <br/>
+                    <p>
+                        We wish you All the success on your journey!
+                    </p>
+                    <br/>
+                    Best Regards,
+                    <br/>
+                    <br/>
+                    <b>
+                        Human Resources Department of ICESCO
+                    </b>
+                    <br/>
+                    <br/>
+                    <img src="/kzm_medical_insurance/static/img/logo.jpeg"
+                         style="width:110px;height:110px;float:left"/>
+                </p>
+            </div>
+        </field>
+    </record>
+    <record id="mail_applicant_rejection" model="mail.template">
+        <field name="name">Interview Response</field>
+        <field name="model_id" ref="hr_recruitment.model_hr_applicant"/>
+        <field name="subject">
+            Interview Response
+        </field>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Dear ${ctx['applicant']} ,
+
+                    <br/>
+                    <br/>
+
+
+                    Thank You for taking the time to meet with us for the ${ctx['position']}.We appreciate your interest
+                    in our organization.
+                    <br/>
+                    <br/>
+
+                    We are writing you to inform you that we have selected the candidate whom we believe matches the job
+                    requirements for the position.
+
+                    <br/>
+                    It is always difficult to choose among the many candidates whom we interview. After careful
+                    consideration, unfortunately, we cannot offer you the Position at this time.
+                    <br/>
+                    <p>
+                        We will, however, maintain your CV in our active files in case a similar position is open in the
+                        future
+                    </p>
+                    <br/>
+
+                    <p>
+                        We wish you all the success.
+                    </p>
+                    <br/>
+                    <br/>
+                    <b>Sincerely,</b>
+                    <br/>
+                    <br/>
+                    <b>
+                        Human Resources Department of ICESCO
+                    </b>
+                    <br/>
+                    <br/>
+                    <img src="/kzm_medical_insurance/static/img/logo.jpeg"
+                         style="width:110px;height:110px;float:left"/>
+                </p>
+            </div>
+        </field>
+    </record>
+
+    <record id="job_offer_mail" model="mail.template">
+        <field name="name">Job Offer</field>
+        <field name="model_id" ref="hr_recruitment.model_hr_applicant"/>
+        <field name="subject">
+            Job Offer
+        </field>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Dear ${ctx['applicant']} ,
+
+                    <br/>
+
+                    <p>
+                       Please find enclosed your job offer.
+                    </p>
+                    <br/>
+                    <br/>
+                    <b>Sincerely,</b>
+                    <br/>
+                    <br/>
+                    <b>
+                        Human Resources Department of ICESCO
+                    </b>
+                    <br/>
+                    <br/>
+                    <img src="/kzm_medical_insurance/static/img/logo.jpeg"
+                         style="width:110px;height:110px;float:left"/>
+                </p>
+            </div>
+        </field>
+    </record>
+</odoo>

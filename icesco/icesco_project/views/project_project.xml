@@ -1,0 +1,183 @@
+<odoo>
+    <data>
+
+
+        <record model="ir.ui.view" id="project_project_view_form">
+            <field name="name">project.project.form</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+
+                 <xpath expr="//page[@name='settings']" position="attributes">
+                    <attribute name="groups">icesco_project.icesco_show_project_details
+                    </attribute>
+                </xpath>
+<!--                <xpath expr="//field[@name='code']" position="replace">-->
+
+<!--                    <field name="code" string="Code project"/>-->
+<!--                </xpath>-->
+
+
+<!--           <xpath expr="//div[@name='options_active']" position="replace">-->
+<!--                     <div name="options_active">-->
+<!--                            <div>-->
+<!--                                <label for="label_tasks" class="oe_inline" string="Name of the activity :"/>-->
+<!--                                <field name="label_tasks" class="oe_inline oe_input_align"/>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                </xpath> -->
+                <xpath expr="//page[@name='emails']" position="attributes">
+                    <attribute name="groups">icesco_project.icesco_show_project_details
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//div[@class='oe_button_box']"
+                       position="inside">
+                    <button class="oe_stat_button" name="purchase_request"
+                            type="object"
+                            icon="fa-book" groups="icesco_project.icesco_show_project_details">
+                        <field string="Purchase requests" name="req_count" widget="statinfo"/>
+                    </button>
+                    <button class="oe_stat_button" name="expense"
+                            type="object"
+                            icon="fa-book">
+                        <field string="Expenses" name="expense_count"
+                               widget="statinfo"/>
+                    </button>
+                    <button class="oe_stat_button" name="purchase_order"
+                            type="object"
+                            icon="fa-book" groups="icesco_project.icesco_show_project_details">
+                        <field string="Purchase orders" name="order_count"
+                               widget="statinfo"/>
+                    </button>
+                    <button class="oe_stat_button" name="expense_shifting"
+                            type="object"
+                            icon="fa-book">
+                        <field string="Missions" name="expenseshifting_count"
+                               widget="statinfo"/>
+                    </button>
+                    <button class="oe_stat_button" name="events"
+                            type="object"
+                            icon="fa-book" groups="icesco_project.icesco_show_project_details">
+                        <field string="Events" name="event_count"
+                               widget="statinfo"/>
+                    </button>
+                </xpath>
+                <xpath expr="//div[hasclass('oe_title')]" position="before">
+                    <label for="code"/>
+                    <field name="code" string="Project code" required="1"/>
+                </xpath>
+
+                <xpath expr="//div[hasclass('oe_title')]" position="after">
+                    <group>
+                        <group>
+                            <field name="analytic_account_id"
+                                   domain="['|', ('company_id', '=', company_id), ('company_id', '=', False)]"
+                                   context="{'default_partner_id': partner_id}"
+                                   groups="analytic.group_analytic_accounting"/>
+                            <field name="activity_reference_ids" invisible="1" widget="many2many_tags"/>
+                            <field name="intervention_type_ids" invisible="1" widget="many2many_tags"/>
+
+                            <field name="expert_id" invisible="1"/>
+                            <field name="geographical_id" invisible="1" widget="many2many_tags"/>
+                            <field name="zone_id" invisible="1" widget="many2many_tags"/>
+                            <field name="country_id" invisible="1" widget="many2many_tags"/>
+<!--                            <field name="department_id"/>-->
+                            <field name="description" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="nature_ids" invisible="1" widget="many2many_tags"/>
+                            <field name="category_ids" invisible="1" widget="many2many_tags"/>
+                            <field name="number" invisible="1"/>
+                            <field name="lieu" invisible="1" widget="many2many_tags"/>
+                            <field name="city_ids" invisible="1" widget="many2many_tags"/>
+                            <field name="execution_country_ids" invisible="1" widget="many2many_tags"/>
+
+                            <field name="budget" invisible="1"/>
+                            <field name="part" invisible="1"/>
+                        </group>
+                    </group>
+                </xpath>
+
+                <xpath expr="//page[@name='settings']//field[@name='analytic_account_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='team_id']" position="after">
+                    <field name="notes"/>
+                </xpath>
+<!--                <xpath expr="//notebook" position="inside">-->
+<!--                    <page name="stakeholders" string="Stakeholders">-->
+<!--                        <field name="stakeholder_ids">-->
+<!--                            <tree editable="bottom">-->
+<!--                                <field name="partner_id"/>-->
+<!--                                <field name="stakeholder_type_ids" widget="many2many_tags"/>-->
+<!--                                <field name="intervention_type_ids" invisible="1" widget="many2many_tags"/>-->
+<!--                                <field name="budget"/>-->
+<!--                            </tree>-->
+<!--                        </field>-->
+<!--                    </page>-->
+<!--                </xpath>-->
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_project_view_tree">
+            <field name="name">project.project.tree</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="replace">
+                </xpath> <xpath expr="//field[@name='name']" position="before">
+                    <field name="code"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <!--  <field name="language_ids"/>-->
+<!--                    <field name="expert_id"  optional="hide"/>-->
+<!--                    <field name="geographical_id" optional="hide"/>-->
+<!--                    <field name="zone_id" optional="hide"/>-->
+<!--                    <field name="country_id"/>-->
+<!--                    <field name="nature_ids" optional="hide"/>-->
+                                        <field name="description"/>
+
+                       <field name="lieu" optional="hide"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="duration" invisible="1"/>
+
+                    <field name="category_ids" />
+                    <field name="pays_cibles" />
+                    <field name="number" optional="hide"/>
+
+                </xpath>
+
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_project_view_kanban">
+            <field name="name">project.project.kanban</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                   <field name="analytic_account_id"/>
+                </xpath>
+                <xpath expr="//div[@class='o_primary']" position="replace">
+                    <div class="o_primary">
+                        <span>
+                            <t t-esc="record.name.value"/>
+                        </span>
+                        <span t-if="record.partner_id.value">
+                            <strong>
+                                <t t-esc="record.partner_id.value"/>
+                            </strong>
+                        </span>
+                        <span t-if="record.analytic_account_id.value">
+                            <strong>
+                                <t t-esc="record.analytic_account_id.value"/>
+                            </strong>
+                        </span>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

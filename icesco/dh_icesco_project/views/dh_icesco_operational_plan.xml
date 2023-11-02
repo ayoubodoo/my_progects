@@ -1,0 +1,677 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="dh_icesco_operational_plan_form_view">
+        <field name="name">dh.icesco.operational.plan.form</field>
+        <field name="model">dh.icesco.operational.plan</field>
+        <field name="arch" type="xml">
+            <form string="الخطة التشغيلية العامة">
+                <header>
+                    <button name="view_group_by_goal" string="Groupe by goal" type="object"/>
+                </header>
+                <sheet>
+                    <group col="3">
+<!--                        <group>-->
+<!--                            <field name="strategie"/>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <field name="standard_government_system_id"/>-->
+<!--&lt;!&ndash;                             widget="many2many_tags_link"&ndash;&gt;-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <field name="strategic_indicator_id"/>-->
+<!--                            <field name="type_operation" invisible="1"/>-->
+<!--                        </group>-->
+                        <group>
+                            <field name="orientation_id"/>
+                        </group>
+<!--                        <group>-->
+<!--                            <field name="level_one_id"/>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <field name="ability_id"/>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <field name="type"/>-->
+<!--                            <field name="type_2" attrs="{'invisible':[('type','!=', 'project')]}"/>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <field name="responsable_id"/>-->
+<!--                        </group>-->
+<!--&lt;!&ndash;                        <group>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <field name="pilliar_id"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </group>&ndash;&gt;-->
+<!--                        <group>-->
+<!--                            <field name="priority"/>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <field name="rate_ratio"/>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <field name="date_start"/>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <field name="date_end"/>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <field name="respect_time" />-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <field name="target"/>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <field name="actual"/>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <field name="percentage_of_done" attrs="{'invisible':[('rate_ratio','!=', 100)]}"/>-->
+<!--                        </group>-->
+                    </group>
+                    <group>
+                        <field name="pilliar_ids"/>
+                    </group>
+<!--                    <notebook>-->
+<!--                        <page string="المؤشرات التشغيلية">-->
+<!--                            <field name="operational_indecator_ids">-->
+<!--                                <tree editable="bottom">-->
+<!--                                    <field name="name"/>-->
+<!--                                    <field name="measure_cycle"/>-->
+<!--                                    <field name="target"/>-->
+<!--                                    <field name="actual"/>-->
+<!--                                </tree>-->
+<!--                            </field>-->
+<!--                        </page>-->
+<!--                        <page string="نتائج المؤشرات التشغيلية">-->
+<!--                            <field name="operational_indecator_result_ids">-->
+<!--                                <tree editable="bottom">-->
+<!--                                    <field name="operational_indicator_id" domain="[('id', 'in', parent.operational_indecator_ids)]" options="{'no_create': True, 'no_create_edit':True}" width="1"/>-->
+<!--                                    <field name="is_done" width="1"/>-->
+<!--                                </tree>-->
+<!--                            </field>-->
+<!--                        </page>-->
+<!--                    </notebook>-->
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_operational_plan_wizard_tree">
+      <field name="name">dh.icesco.operational.plan.wizard.tree</field>
+      <field name="model">dh.icesco.operational.plan</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom" string="المؤشرات">
+            <field name="orientation_id" width="1" string="الهدف"/>
+            <field name="pilliar_ids"  width="1"/>
+<!--            widget="many2many_tags_link"-->
+<!--            <field name="pilliar_id" string="المحور" width="1" options="{'no_create': True, 'no_create_edit':True}" attrs="{'readonly': [('orientation_id', '==', False)]}" domain="[('orientation_id', '=', orientation_id)]"/>-->
+            <field name="strategie" width="1" string="المؤشر الإستراتيجي"/>
+            <field name="rate_ratio" width="1" widget="progressbar"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_operational_plan_tree">
+      <field name="name">dh.icesco.operational.plan.tree</field>
+      <field name="model">dh.icesco.operational.plan</field>
+      <field name="arch" type="xml">
+        <tree>
+<!--            <header>-->
+<!--                <button name="view_group_by_goal" string="Groupe by goal" type="object"/>-->
+<!--            </header>-->
+            <field name="sequence" width="1"/>
+            <field name="orientation_id" width="1"/>
+            <field name="level_one_id" width="1"/>
+            <field name="strategie" width="1"/>
+            <field name="type" width="1"/>
+            <field name="type_2" width="1"/>
+            <field name="responsable_id" width="1"/>
+            <field name="priority" width="1"/>
+            <field name="rate_ratio" widget="progressbar" width="1"/>
+            <field name="percentage_of_done" attrs="{'invisible':[('rate_ratio','!=', 100)]}"/>
+            <field name="date_start" width="1"/>
+            <field name="date_end" width="1"/>
+<!--            <field name="operational_indecator_ids" width="1"/>-->
+            <field name="operational_indecator_id" width="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_capacity_operational_plan_tree">
+      <field name="name">dh.icesco.operational.plan.tree</field>
+      <field name="model">dh.icesco.operational.plan</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="sequence" width="1"/>
+<!--            <field name="orientation_id" width="1"/>-->
+<!--            <field name="level_one_id" width="1"/>-->
+            <field name="strategie" width="1" string="الإسم"/>
+            <field name="responsable_id" width="1"/>
+            <field name="type" width="1"/>
+            <field name="type_2" width="1"/>
+<!--            <field name="priority" width="1"/>-->
+<!--            <field name="rate_ratio" widget="progressbar" width="1"/>-->
+            <field name="date_start" width="1"/>
+            <field name="date_end" width="1"/>
+<!--            <field name="operational_indecator_ids" widget="many2many_tags_link" width="1"/>-->
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_operational_indicators_button_tree">
+      <field name="name">dh.icesco.operational.indicators.button.tree</field>
+      <field name="model">dh.icesco.operational.indicators</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+            <field name="name" string="المؤشر التشغيلي"/>
+            <field name="target"/>
+            <field name="actual" string="النتيجة "/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_operational_indicators_tree">
+      <field name="name">dh.icesco.operational.indicators.tree</field>
+      <field name="model">dh.icesco.operational.indicators</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+<!--            <field name="sequence" width="1"/>-->
+<!--            <field name="operational_plan_id" width="1" domain="[('type_operation', '=', 'operational')]"/>-->
+<!--            <field name="orientation_id" width="1"/>-->
+<!--            <field name="level_one_id" width="1"/>-->
+<!--            <field name="ability_id" width="1"/>-->
+<!--            <field name="type" string="نوع النشاط" width="1"/>-->
+<!--            <field name="responsable_id" width="1"/>-->
+<!--            <field name="priority" width="1"/>-->
+<!--            <field name="rate_ratio" string="المخطط" widget="progressbar" width="1"/>-->
+<!--            <field name="date_start" width="1"/>-->
+<!--            <field name="date_end" width="1"/>-->
+<!--            <field name="name" string="الأنشطة"/>-->
+<!--            <field name="target"/>-->
+<!--            <field name="actual" string="النتيجة الفعلية"/>-->
+            <field name="moyeu_id" width="1"/>
+            <field name="projet_id" width="1"/>
+            <field name="name" string="الأنشطة" width="1"/>
+            <field name="rate_ratio" string="المخطط" widget="progressbar" width="1"/>
+            <field name="type_activity" string="نوع النشاط" width="1"/>
+           <field name="date_start" width="1" string="التاريخ البدء"/> <!-- المقترح -->
+            <field name="date_end" width="1" string="التاريخ الإنتهاء"/>
+            <field name="partenaire_ids" width="1" widget="many2many_tags_link"/>
+            <field name="pays_members_cibles" width="1" />
+<!--            widget="many2many_tags_link"-->
+            <field name="pays_no_members_cibles" width="1"/>
+<!--             widget="many2many_tags_link"-->
+            <field name="nombre_beneficiaires" width="1"/>
+            <field name="mode_convo" width="1"/>
+            <field name="budget_icesco" width="1"/>
+            <field name="budget_out_icesco" width="1"/>
+            <field name="equipe_responsable_ids" width="1"/>
+<!--             widget="many2many_tags_link"-->
+            <field name="result_attendus" width="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_operational_indicators_details_tree">
+      <field name="name">dh.icesco.operational.indicators.tree</field>
+      <field name="model">dh.icesco.operational.indicators</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+            <field name="sequence" width="1"/>
+            <field name="operational_plan_id" width="1" domain="[('type_operation', '=', 'operational')]"/>
+            <field name="orientation_id" width="1"/>
+            <field name="level_one_id" width="1"/>
+            <field name="ability_id" width="1"/>
+            <field name="type" string="نوع النشاط" width="1"/>
+            <field name="responsable_id" width="1"/>
+            <field name="priority" width="1"/>
+            <field name="rate_ratio" string="المخطط" widget="progressbar" width="1"/>
+            <field name="date_start" width="1"/>
+            <field name="date_end" width="1"/>
+            <field name="name" string="الأنشطة"/>
+            <field name="target"/>
+            <field name="actual" string="النتيجة الفعلية"/>
+            <field name="moyeu_id" width="1"/>
+            <field name="projet_id" width="1"/>
+            <field name="name" string="الأنشطة" width="1"/>
+            <field name="rate_ratio" string="المخطط" widget="progressbar" width="1"/>
+            <field name="type_activity" string="نوع النشاط" width="1"/>
+           <field name="date_start" width="1" string="التاريخ البدء"/> <!-- المقترح -->
+            <field name="date_end" width="1" string="التاريخ الإنتهاء"/>
+            <field name="partenaire_ids" width="1" />
+<!--            widget="many2many_tags_link"-->
+            <field name="pays_members_cibles" width="1" />
+<!--            widget="many2many_tags_link"-->
+            <field name="pays_no_members_cibles" width="1" />
+<!--            widget="many2many_tags_link"-->
+            <field name="nombre_beneficiaires" width="1"/>
+            <field name="mode_convo" width="1"/>
+            <field name="budget_icesco" width="1"/>
+            <field name="budget_out_icesco" width="1"/>
+            <field name="equipe_responsable_ids" width="1" />
+<!--            widget="many2many_tags_link"-->
+            <field name="result_attendus" width="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_operational_indicators_tree_operation">
+      <field name="name">dh.icesco.operational.indicators.operation.tree</field>
+      <field name="model">dh.icesco.operational.indicators</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+            <field name="sequence" width="1"/>
+            <field name="class_id" width="1"/>
+<!--            <field name="nbr_operations" width="1"/>-->
+            <field name="name" width="1"/>
+            <field name="code" width="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_operational_indicators_tree_services">
+      <field name="name">dh.icesco.operational.indicators.operation.tree</field>
+      <field name="model">dh.icesco.operational.indicators</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+            <field name="sequence" width="1"/>
+            <field name="class_id" width="1"/>
+<!--            <field name="nbr_operations" width="1"/>-->
+            <field name="name" width="1"/>
+            <field name="code" width="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_operational_indicators_all">
+      <field name="name">dh.icesco.operational.indicators.all.tree</field>
+      <field name="model">dh.icesco.operational.indicators.all</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+            <field name="sequence" width="1"/>
+            <field name="orientation_id" width="1"/>
+            <field name="type" width="1"/>
+            <field name="priority" width="1"/>
+            <field name="indicators" width="1"/>
+            <field name="type_2" width="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_icesco_capacity_operational_indicators_tree">
+      <field name="name">dh.icesco.capacity.operational.indicators.tree</field>
+      <field name="model">dh.icesco.operational.indicators</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+            <field name="sequence" width="1"/>
+            <field name="operational_plan_id" width="1" string="القدرة" domain="[('type_operation', '=', 'capacity')]"/>
+            <field name="orientation_id" width="1"/>
+<!--            <field name="level_one_id" width="1"/>-->
+            <field name="ability_id" width="1"/>
+            <field name="responsable_id" width="1"/>
+            <field name="type" width="1"/>
+            <field name="type_2" width="1"/>
+<!--            <field name="priority" width="1"/>-->
+<!--            <field name="rate_ratio" widget="progressbar" width="1"/>-->
+<!--            <field name="date_start" width="1"/>-->
+<!--            <field name="date_end" width="1"/>-->
+            <field name="name" string="المؤشرات التشغيلية"/>
+            <field name="indicators_result_ids" />
+<!--            widget="many2many_tags_link"-->
+            <field name="target"/>
+            <field name="actual" string="النتيجة الفعلية"/>
+        </tree>
+      </field>
+    </record>
+
+  <record model="ir.ui.view" id="cps_dh_icesco_operational_plan_tree">
+      <field name="name">cps.dh.icesco.operational.plan.tree</field>
+      <field name="model">dh.icesco.operational.plan</field>
+      <field name="arch" type="xml">
+        <tree>
+<!--            <header>-->
+<!--                <button name="view_group_by_goal" string="Groupe by goal" type="object"/>-->
+<!--            </header>-->
+<!--            <field name="sequence" width="1"/>-->
+<!--            <field name="orientation_id" width="1"/>-->
+<!--            <field name="level_one_id" width="1"/>-->
+            <field name="orientation_id" width="1"/>
+            <field name="strategie" width="1"/>
+            <field name="pilliar_ids" width="1" />
+<!--            widget="many2many_tags_link"-->
+            <field name="target" width="1"/>
+            <field name="actual" width="1"/>
+            <field name="rate_ratio" widget="progressbar" width="1"/>
+            <field name="priority" width="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="cps_dh_icesco_capacity_operational_indicators_tree">
+      <field name="name">cps.dh.icesco.capacity.operational.indicators.tree</field>
+      <field name="model">dh.icesco.operational.indicators</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+<!--            <field name="sequence" width="1"/>-->
+            <field name="moyeu_id" width="1"/>
+            <field name="projet_id" width="1" domain="[('pilliar_id','=', moyeu_id)]"
+                       attrs="{'readonly': [('moyeu_id', '==', False)]}"
+                       context="{'default_pilliar_id': moyeu_id}"/>
+            <field name="task_id" width="1" domain="[('project_id','=', projet_id)]"
+                       attrs="{'readonly': [('projet_id', '==', False)]}"
+                       context="{'default_project_id': projet_id}"/>
+            <field name="name" string="المؤشرات التشغيلية"/>
+            <field name="indicators_result_ids" widget="many2many_tags_link" optional="hide"/>
+            <field name="indicator_type" width="1"/>
+            <field name="target"/>
+            <field name="actual" string="النتيجة الفعلية"/>
+            <field name="rate_ratio"/>
+            <field name="deliverables"/>
+            <field name="state"/>
+        </tree>
+      </field>
+    </record>
+
+
+      <record model="ir.ui.view" id="view_dh_icesco_operational_plan_kanban">
+          <field name="name">dh.icesco.operational.plan.kanban</field>
+          <field name="model">dh.icesco.operational.plan</field>
+          <field name="arch" type="xml">
+              <kanban create="0">  <!--default_group_by="priority"-->
+                  <field name="strategie"/>
+                  <field name="priority"/>
+                  <field name="respect_time"/>
+                  <field name="operational_indecator_ids"/>
+                  <field name="rate_ratio"/>
+                  <templates>
+                      <t t-name="kanban-box">
+                          <div class="oe_kanban_global_click">
+<!--                              <div class="oe_dropdown_kanban">-->
+<!--                                  &lt;!&ndash; dropdown menu &ndash;&gt;-->
+<!--                                  <div class="oe_dropdown_toggle">-->
+<!--                                      <i class="fa fa-bars fa-lg" title="Manage" aria-label="Manage"/>-->
+<!--                                      <ul class="oe_dropdown_menu">-->
+<!--                                          <li>-->
+<!--                                              <a type="delete">Delete</a>-->
+<!--                                          </li>-->
+<!--                                          <li>-->
+<!--                                              <ul class="oe_kanban_colorpicker"-->
+<!--                                                  data-field="color"/>-->
+<!--                                          </li>-->
+<!--                                      </ul>-->
+<!--                                  </div>-->
+<!--                                  <div class="oe_clear"></div>-->
+<!--                              </div>-->
+                              <div t-attf-class="oe_kanban_content oe_kanban_details d-flex flex-column">
+                                  <!-- title -->
+                                  <t t-if="record.strategie.raw_value">
+                                      <h2>
+                                          <strong>
+                                              <field name="strategie"/>
+                                          </strong>
+                                      </h2>
+                                      <br/>
+                                  </t>
+                                  <ul style="list-style: none;">
+                                      <t t-if="record.priority.raw_value">
+                                          <li>
+                                              <field name="priority"/>
+                                          </li>
+                                      </t>
+                                      <li>
+                                          <field name="respect_time" widget="percentpie" nolabel="1"/>
+                                      </li>
+<!--                                        <t t-if="record.operational_indecator_ids.raw_value">-->
+                                          <li>
+                                            <strong>المؤشرات</strong><br/>
+                                            <t t-foreach="record.operational_indecator_ids.raw_value" t-as="o">
+                                                - <t t-esc="o.name"/><br/>
+                                            </t>
+                                          </li>
+<!--                                        </t>-->
+                                      <li>
+                                          <field name="rate_ratio" widget="progressbar"/>
+                                          <span>نسبة الإنجاز</span>
+                                      </li>
+                                  </ul>
+
+                              </div>
+                          </div>
+                      </t>
+                  </templates>
+              </kanban>
+          </field>
+      </record>
+
+    <record model="ir.ui.view" id="view_dh_icesco_operational_plan_kanban_2">
+          <field name="name">dh.icesco.operational.plan.kanban.2</field>
+          <field name="model">dh.icesco.operational.plan</field>
+          <field name="arch" type="xml">
+              <kanban>  <!--default_group_by="priority"-->
+                  <field name="strategie"/>
+                  <field name="priority"/>
+                  <field name="respect_time"/>
+                  <field name="operational_indecator_ids"/>
+                  <field name="rate_ratio"/>
+                  <field name="target"/>
+                  <field name="actual"/>
+                  <templates>
+                      <t t-name="kanban-box">
+                          <div class="oe_kanban_global_click">
+<!--                              <div class="oe_dropdown_kanban">-->
+<!--                                  &lt;!&ndash; dropdown menu &ndash;&gt;-->
+<!--                                  <div class="oe_dropdown_toggle">-->
+<!--                                      <i class="fa fa-bars fa-lg" title="Manage" aria-label="Manage"/>-->
+<!--                                      <ul class="oe_dropdown_menu">-->
+<!--                                          <li>-->
+<!--                                              <a type="delete">Delete</a>-->
+<!--                                          </li>-->
+<!--                                          <li>-->
+<!--                                              <ul class="oe_kanban_colorpicker"-->
+<!--                                                  data-field="color"/>-->
+<!--                                          </li>-->
+<!--                                      </ul>-->
+<!--                                  </div>-->
+<!--                                  <div class="oe_clear"></div>-->
+<!--                              </div>-->
+                              <div t-attf-class="oe_kanban_content oe_kanban_details d-flex flex-column">
+                                  <!-- title -->
+                                  <t t-if="record.strategie.raw_value">
+                                      <h2>
+                                          <strong>
+                                              <field name="strategie"/>
+                                          </strong>
+                                      </h2>
+                                      <hr/>
+                                  </t>
+                                  <ul style="list-style: none;">
+                                      <li class="dh_pie">
+                                          <field style="font-size: 0px;" name="respect_time" widget="percentpie" nolabel="1"/>
+                                      </li>
+                                      <li>
+                                          <span>المستهدف</span>
+                                          <field name="target"/> %
+                                          <span>النتيجة الفعلية</span>
+                                          <field name="actual"/> %
+                                      </li>
+                                  </ul>
+
+                              </div>
+                          </div>
+                      </t>
+                  </templates>
+              </kanban>
+          </field>
+      </record>
+
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_operational_plan_kanban_project">
+      <field name="name">مشاريع منجزة</field>
+      <field name="res_model">dh.icesco.operational.plan</field>
+      <field name="view_mode">kanban,form</field>
+        <field name="domain">[('type_operation', '=', 'operational'), ('type', '=', 'project')]</field>
+        <field name="context">{'default_type_operation': 'operational', 'default_type': 'project'}</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_dh_icesco_operational_plan_kanban')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('dh_icesco_operational_plan_form_view')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_operational_plan_kanban_project_done">
+      <field name="name">مشاريع منجزة</field>
+      <field name="res_model">dh.icesco.operational.plan</field>
+      <field name="view_mode">kanban,form</field>
+        <field name="domain">[('type_operation', '=', 'operational'), ('type', '=', 'project'), ('rate_ratio', '>=', 100)]</field>
+        <field name="context">{'default_type_operation': 'operational', 'default_type': 'project'}</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_dh_icesco_operational_plan_kanban')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('dh_icesco_operational_plan_form_view')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_operational_plan_kanban_project_progress">
+      <field name="name">مشاريع قيد التنفيذ</field>
+      <field name="res_model">dh.icesco.operational.plan</field>
+      <field name="view_mode">kanban,form</field>
+        <field name="domain">[('type_operation', '=', 'operational'), ('type', '=', 'project'), ('rate_ratio', '>', 0), ('rate_ratio', '&lt;', 100)]</field>
+        <field name="context">{'default_type_operation': 'operational', 'default_type': 'project'}</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_dh_icesco_operational_plan_kanban')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('dh_icesco_operational_plan_form_view')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_operational_plan_kanban_project_late">
+      <field name="name">مشاريع متأخرة</field>
+      <field name="res_model">dh.icesco.operational.plan</field>
+      <field name="view_mode">kanban,form</field>
+        <field name="domain">[('type_operation', '=', 'operational'), ('type', '=', 'project'), ('date_end', '&lt;', datetime.datetime.now().strftime('%Y-%m-%d'))]</field>
+        <field name="context">{'default_type_operation': 'operational', 'default_type': 'project'}</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_dh_icesco_operational_plan_kanban')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('dh_icesco_operational_plan_form_view')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_operational_plan">
+      <field name="name">الخطة التشغيلية العامة</field>
+      <field name="res_model">dh.icesco.operational.plan</field>
+      <field name="view_mode">tree,form</field>
+        <field name="domain">[('type_operation', '=', 'operational')]</field>
+        <field name="context">{'default_type_operation': 'operational'}</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_icesco_operational_plan_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('dh_icesco_operational_plan_form_view')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_capacity_operational_plan">
+      <field name="name">المؤشرات الإستراتيجية</field>
+      <field name="res_model">dh.icesco.operational.plan</field>
+      <field name="view_mode">tree,form</field>
+        <field name="domain">[('type_operation', '=', 'capacity')]</field>
+        <field name="context">{'default_type_operation': 'capacity'}</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_icesco_operational_plan_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('dh_icesco_operational_plan_form_view')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="cps_action_dh_icesco_capacity_operational_plan">
+      <field name="name">المؤشرات الإستراتيجية</field>
+      <field name="res_model">dh.icesco.operational.plan</field>
+      <field name="view_mode">tree,form</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('cps_dh_icesco_operational_plan_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('dh_icesco_operational_plan_form_view')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_capacity_operational_plan_processes">
+      <field name="name">تقرير العمليات</field>
+      <field name="res_model">dh.icesco.operational.plan</field>
+      <field name="view_mode">tree,form</field>
+        <field name="domain">[('type_operation', '=', 'capacity'), ('type', '=', 'process')]</field>
+        <field name="context">{'default_type_operation': 'capacity', 'default_type': 'process'}</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_icesco_capacity_operational_plan_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('dh_icesco_operational_plan_form_view')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_capacity_operational_plan_services">
+      <field name="name">تقرير الخدمات</field>
+      <field name="res_model">dh.icesco.operational.plan</field>
+      <field name="view_mode">tree,form</field>
+        <field name="domain">[('type_operation', '=', 'capacity'), ('type', '=', 'service')]</field>
+        <field name="context">{'default_type_operation': 'capacity', 'default_type': 'service'}</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_icesco_capacity_operational_plan_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('dh_icesco_operational_plan_form_view')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_capacity_operational_plan_projects">
+      <field name="name">تقرير المشاريع</field>
+      <field name="res_model">dh.icesco.operational.plan</field>
+      <field name="view_mode">tree,form</field>
+        <field name="domain">[('type_operation', '=', 'capacity'), ('type', '=', 'project')]</field>
+        <field name="context">{'default_type_operation': 'capacity', 'default_type': 'project'}</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_icesco_capacity_operational_plan_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('dh_icesco_operational_plan_form_view')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_capacity_operational_indicators">
+      <field name="name">المؤشرات التشغيلية</field>
+      <field name="res_model">dh.icesco.operational.indicators</field>
+      <field name="view_mode">tree</field>
+        <field name="domain">[('type_operation', '=', 'capacity')]</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_icesco_capacity_operational_indicators_tree')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_cps_dh_icesco_capacity_operational_indicators">
+      <field name="name">المؤشرات التشغيلية</field>
+      <field name="res_model">dh.icesco.operational.indicators</field>
+      <field name="view_mode">tree</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('cps_dh_icesco_capacity_operational_indicators_tree')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_operational_indicators_all">
+      <field name="name">المؤشرات</field>
+      <field name="res_model">dh.icesco.operational.indicators.all</field>
+      <field name="view_mode">tree</field>
+        <field name="domain"></field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_icesco_operational_indicators_all')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_operational_indicators_activity">
+      <field name="name">الأنشطة</field>
+      <field name="res_model">dh.icesco.operational.indicators</field>
+      <field name="view_mode">tree</field>
+        <field name="domain">[('type_2', '=', 'activity'), ('type_operation', '=', 'operational')]</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_icesco_operational_indicators_tree')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_operational_indicators_service">
+      <field name="name">الخدمات</field>
+      <field name="res_model">dh.icesco.operational.indicators</field>
+      <field name="view_mode">tree</field>
+        <field name="domain">[('type_2', '=', 'service'), ('type_operation', '=', 'operational')]</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_icesco_operational_indicators_tree')})]"/>
+    </record>
+
+      <record model="ir.actions.act_window" id="action_dh_icesco_operational_indicators_sub_operations">
+      <field name="name">الخدمات</field>
+      <field name="res_model">dh.icesco.operational.indicators</field>
+      <field name="view_mode">tree</field>
+        <field name="domain">[('type_2', '=', 'process'), ('type_operation', '=', 'operational')]</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_icesco_operational_indicators_tree')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dh_icesco_operational_indicators_process">
+      <field name="name">العمليات</field>
+      <field name="res_model">dh.icesco.operational.indicators</field>
+      <field name="view_mode">tree</field>
+        <field name="domain">[('type', '=', 'process'), ('type_operation', '=', 'operational')]</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('dh_icesco_operational_indicators_tree_operation')})]"/>
+    </record>
+
+  </data>
+</odoo>

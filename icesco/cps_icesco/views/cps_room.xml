@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.actions.act_window" id="cps_event_room_action">
+        <field name="name">Cps Event Room</field>
+        <field name="view_mode">tree,form</field>
+        <field name="res_model">cps.event.room</field>
+    </record>
+    <menuitem name="ICESCO rooms" id="menu_event_rooms" action="cps_event_room_action" parent="event.menu_event_configuration"/>
+    <menuitem name="DG Office" id="event.event_main_menu" sequence="65" groups="event.group_event_user" web_icon="event,static/description/icon.png"/>
+
+
+</odoo>

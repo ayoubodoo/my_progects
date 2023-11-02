@@ -1,0 +1,70 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dh_analyse_budget_approved_form_view">
+            <field name="name">analyse.budget.approved.form</field>
+            <field name="model">analyse.budget.approved</field>
+            <field name="arch" type="xml">
+                <form string="الميزانية المعتمدة">
+                    <sheet>
+                        <group col="2">
+                            <field name="sequence"/>
+                            <field name="name"/>
+                            <field name="type"/>
+                        </group>
+                        <group>
+                            <field name="budget_approved"/>
+                            <field name="budget_consommed"/>
+                            <field name="budget_residual"/>
+                            <field name="budget_initial"/>
+                            <field name="budget_proposed"/>
+                            <field name="difference_budget"/>
+
+                        </group>
+                        <group>
+                            <field name="remarques"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_analyse_budget_approved_tree">
+            <field name="name">analyse.budget.approved.tree</field>
+            <field name="model">analyse.budget.approved</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" string="الميزانية المعتمدة">
+                    <field name="sequence"/>
+                    <field name="type"/>
+                    <field name="name"/>
+                    <field name="budget_approved"/>
+                    <field name="budget_consommed"/>
+                    <field name="percentage_budget_consommed"/>
+                    <field name="budget_residual"/>
+                    <field name="percentage_budget_residual"/>
+                    <field name="budget_initial"/>
+                    <field name="percentage_budget_initial"/>
+                    <field name="budget_proposed"/>
+                    <field name="percentage_budget_proposed"/>
+                    <field name="difference_budget"/>
+                    <field name="percentage_difference_budget"/>
+                    <field name="project_icesco" widget="many2many_tags"/>
+                    <field name="project_out_icesco" widget="many2many_tags"/>
+                    <field name="project_semi_icesco" widget="many2many_tags"/>
+                    <field name="remarques"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_dh_analyse_budget_approved">
+            <field name="name">الميزانية المعتمدة</field>
+            <field name="res_model">analyse.budget.approved</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="dh_analyse_budget_approved_tree"/>
+        </record>
+<!--        <menuitem id="icesco_chairss_menu" name="قائـــــمة الكراسي"-->
+<!--                  parent="project.menu_project_config"-->
+<!--                  action="action_dh_icesco_chairs" sequence="37"/>-->
+
+    </data>
+</odoo>

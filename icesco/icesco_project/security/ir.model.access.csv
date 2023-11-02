@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_project_beneficiary_category,icesco_project.project_beneficiary_category,model_project_beneficiary_category,,1,1,1,1
+access_project_nature,icesco_project.project_nature,model_project_nature,,1,1,1,1
+access_res_geographical,icesco_project.res_geographical,model_res_geographical,,1,1,1,1
+access_intervention_type,icesco_project.intervention_type,model_intervention_type,,1,1,1,1
+access_res_stakeholder,icesco_project.res_stakeholder,model_res_stakeholder,,1,1,1,1
+access_res_stakeholder_type,icesco_project.res_stakeholder_type,model_res_stakeholder_type,,1,1,1,1
+access_activity_reference,icesco_project.activity_reference,model_activity_reference,,1,1,1,1
+access_res_city,icesco_project.res_city,model_res_city,,1,1,1,1

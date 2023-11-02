@@ -1,0 +1,248 @@
+.dd-item_goal{
+  display: block;
+  padding: 7px 14px;
+  margin: 7px 14px;
+  color: #333;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 295px;
+  height: 250px;
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 1;
+  background: #6e977c1c;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.dd-item_partner{
+  display: block;
+  padding: 7px 14px;
+  margin: 7px 14px;
+  color: #333;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 240px;
+  height: 200px;
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 1;
+  background: #6e977c1c;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  padding-right: 50px;
+}
+
+.dd-item_choice {
+    display: block;
+    padding: 7px 14px;
+    margin: 7px 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 400px;
+    height: 160px;
+    position: relative;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    z-index: 1;
+    background: #34a9a9;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.choice_kanban {
+    display: inline-block !important;
+    width: 450px;
+}
+
+.text {
+    font-family: "CoHeadlineW23-ArabicLight";
+    src: url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.eot);
+  src: url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.woff2) format('woff2'),
+       url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.woff) format('woff'),
+       url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.ttf) format('truetype');
+  color: grey;
+  font-size: 13px!important;
+  font-weight: bold;
+  /*border-top: 1px solid;*/
+  overflow: hidden;
+}
+
+.goal_text{
+    font-family: "CoHeadlineW23-ArabicLight";
+    src: url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.eot);
+  src: url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.woff2) format('woff2'),
+       url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.woff) format('woff'),
+       url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.ttf) format('truetype');
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.partner_text{
+    font-family: "CoHeadlineW23-ArabicLight";
+    src: url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.eot);
+  src: url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.woff2) format('woff2'),
+       url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.woff) format('woff'),
+       url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.ttf) format('truetype');
+  font-size: 18px;
+  width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.goal_partner{
+    font-family: "CoHeadlineW23-ArabicLight";
+    src: url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.eot);
+  src: url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.woff2) format('woff2'),
+       url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.woff) format('woff'),
+       url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.ttf) format('truetype');
+    width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.partner_partner{
+    font-family: "CoHeadlineW23-ArabicLight";
+    src: url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.eot);
+  src: url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.woff2) format('woff2'),
+       url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.woff) format('woff'),
+       url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.ttf) format('truetype');
+    width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dd {
+  position: relative;
+  display: block;
+  list-style: none;
+}
+
+.create-column {
+    background-color: #0079BF;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.column-container {
+  color: black;
+}
+
+.partner_kanban {
+  width: 244px!important;
+  margin: 0 3px;
+}
+
+.projet_kanban {
+  width: 350px!important;
+  margin: 0 3px;
+}
+
+.goal_kanban {
+  width: 300px!important;
+  margin: 0 3px;
+}
+
+.column-container {
+    overflow: auto;
+    direction: ltr;
+}
+
+.goal_kanban{
+    display: inline-block !important;
+}
+.container_goal{
+    display: inline-block !important;
+}
+
+.partner_kanban{
+    display: inline-block !important;
+
+}
+.container_partner{
+    display: inline !important;
+
+}
+
+/*.o_portal_my_doc_table{
+  display: none;
+}
+.alert-warning{
+  display: none;
+}*/
+
+@font-face {
+  font-family: "CoHeadlineW23-ArabicLight";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.eot);
+  src: url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.woff2) format('woff2'),
+       url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.woff) format('woff'),
+       url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.ttf) format('truetype');
+}
+
+@media (min-width: 320px) and (max-width: 736px){
+
+    .text{
+        font-family: "CoHeadlineW23-ArabicLight";
+        src: url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.eot);
+        src: url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.woff2) format('woff2'),
+       url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.woff) format('woff'),
+       url(/tis_web_arabic/static/src/fonts/Co-Headline-W23-Arabic-Light.ttf) format('truetype');
+      font-size:10px;
+
+    }
+}
+
+header .navbar-brand.logo img {
+    object-fit: contain;
+    display: block;
+    width: 4rem;
+    height: 4rem;
+}
+
+.dh_link{
+    color: #007bff !important;
+}
+
+.js_follow_email{
+    display:none;
+}
+
+.js_follow_btn{
+    display:none;
+}
+
+.o_footer{
+    display:none;
+}

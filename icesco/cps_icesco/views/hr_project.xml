@@ -1,0 +1,95 @@
+<odoo>
+    <data>
+
+
+        <record model="ir.ui.view" id="hrt_project_view_form">
+            <field name="name">project.project.form</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <field name="analytic_account_id" position="after">
+                    <field name="language_ids" invisible="1" widget="many2many_tags" domain="['|','|',('is_arabe', '=', True),('is_french', '=', True),('is_english', '=', True)]" options="{'no_create': True, 'no_create_edit':True, 'no_open': True}"/>
+                </field>
+                 <field name="analytic_account_id" position="attributes">
+
+                      <attribute name='invisible'>1</attribute>
+                </field>
+               <xpath expr="//div[@name='options_active']"  position="replace">
+
+                     <div name="options_active">
+                            <div>
+<!--                                <label for="label_tasks" class="oe_inline" string="Name of the tasks :"/>-->
+<!--                                <field name="label_tasks" class="oe_inline oe_input_align"/>-->
+                            </div>
+                        </div>
+                </xpath>
+<!--                <xpath expr="/form/sheet/notebook" position="inside">-->
+
+<!--                    <page name="pillars" string="Pillars">-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-4">-->
+<!--                            <group string="Project requirement">-->
+<!--                                <group>-->
+<!--                                    <field name="project_type"/>-->
+<!--                                    <field name="sector"/>-->
+<!--                                    <field name="country_budget_available"/>-->
+<!--                                    <field name="budget_required_icesco"/>-->
+<!--                                    <field name="supporting_project" widget="selction"/>-->
+<!--                                </group>-->
+<!--                            </group>-->
+<!--                                </div>-->
+<!--                            <div class="col-4">-->
+<!--                            <group  string="Technical support requirement">-->
+<!--                                <group>-->
+<!--                                    <field name="translation"/>-->
+<!--                                    <field name="is_support_designing"/>-->
+<!--                                </group>-->
+<!--                                <group>-->
+<!--                                    <field name="is_support_legal"/>-->
+<!--                                    <field name="is_support_finance"/>-->
+<!--                                </group>-->
+<!--                                <group>-->
+<!--                                    <field name="is_support_logistics"/>-->
+<!--                                    <field name="is_support_protocol"/>-->
+<!--                                </group>-->
+<!--                                <group>-->
+<!--                                    <field name="is_support_admin"/>-->
+<!--                                    <field name="is_support_it"/>-->
+<!--                                </group>-->
+<!--                                <group>-->
+<!--                                    <field name="is_support_media"/>-->
+<!--                                    <field name="is_support_other"/>-->
+<!--                                </group>-->
+<!--                                <group colspan="2">-->
+<!--                                    <field name="list_translation_service" attrs="{'invisible': [('translation', '=', False)]}"/>-->
+<!--                                    <field name="list_designing_service" attrs="{'invisible': [('is_support_designing', '=', False)]}"/>-->
+<!--                                    <field name="list_legal_service" attrs="{'invisible': [('is_support_legal', '=', False)]}"/>-->
+<!--                                    <field name="list_finance_service" attrs="{'invisible': [('is_support_finance', '=', False)]}"/>-->
+<!--                                    <field name="list_logistics_service" attrs="{'invisible': [('is_support_logistics', '=', False)]}"/>-->
+<!--                                    <field name="list_admin_service" attrs="{'invisible': [('is_support_admin', '=', False)]}"/>-->
+<!--                                    <field name="list_it_service" attrs="{'invisible': [('is_support_it', '=', False)]}"/>-->
+<!--                                    <field name="list_media_service" attrs="{'invisible': [('is_support_media', '=', False)]}"/>-->
+<!--                                    <field name="list_protocol_service" attrs="{'invisible': [('is_support_protocol', '=', False)]}"/>-->
+<!--                                    <field name="list_others_service" attrs="{'invisible': [('is_support_other', '=', False)]}"/>-->
+<!--                                </group>-->
+<!--                            </group>-->
+<!--                        </div>-->
+<!--                                <div class="col-4">-->
+<!--                            <group string="Full proposal document (PDF Upload)">-->
+<!--                                <group>-->
+<!--                                    <field name="file" widget="many2many_binary"/>-->
+
+<!--                                </group>-->
+
+<!--                        </group>-->
+<!--                                </div>-->
+<!--                        </div>-->
+<!--                    </page>-->
+<!--                </xpath>-->
+
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

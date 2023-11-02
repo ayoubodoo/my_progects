@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="dh_report_leaves"
+            model="hr.leave"
+                string="Leave Decision"
+
+            report_type="qweb-pdf"
+            name="cps_icesco.dh_report_leave"
+            file="cps_icesco.dh_report_leave"/>
+
+    <template id="dh_report_leave">
+        <t t-call="web.html_container">
+            <t t-set="count" t-value="0"/>
+
+            <t t-foreach="docs" t-as="doc">
+                <t t-set="count" t-value="count+1"/>
+
+                <div class="page article" style="text-align: justify;">
+                    <div class="header" style="padding-bottom:2%;">
+
+                        <img src="/cps_icesco/static/src/img/img.png"
+                             style="width:800px;height:170px;float:center;padding-left:4%"/>
+
+                    </div>
+                    <div style="margin-left:8%;font-weight:blod;font-size:18px">
+                       <strong> Leave Decision         <span t-esc="('{0:04d}'.format(count))"/>/<span t-esc="datetime.date.today().strftime('%Y')"/></strong>
+
+                    </div>
+
+                    <div style="padding-top:3%">
+
+
+                        <div class="text-center" style="font-size:18px">
+                            <strong>Administrative leave decision</strong>
+                        </div>
+
+
+                        <br/>
+                        <br/>
+                        <div style="text-align: justify;">
+                            <p style="padding-left:10%;padding-right:8%;">
+                                The General Directorate of the Islamic World Educational,By virtue of Article 57 of the
+                                Personnel
+                                <p style="padding-left:8%;padding-right:8%;">
+                                    Regulations of ICESCO.
+                                </p>
+                            </p>
+                            <br/>
+                            <p style="padding-left:10%;padding-right:8%;">
+                                By virtue of Article 57 of the Personnel Regulations of ICESCO, and Further to the
+                                application
+                            </p>
+                            <p style="padding-left:8%;padding-right:8%;">
+
+                                presented by the person concerned on
+                                <!--                        </p>-->
+                                <!--                        <br/>-->
+                                <!--                        <p>-->
+
+                                <span t-field="doc.request_date_from"/>
+                            </p>
+
+                            <br/>
+                            <div class="text-center">
+                                <strong>DECIDES</strong>
+                            </div>
+                            <br/>
+
+                            <p style="padding-left:10%;padding-right:8%;">
+                                To grant an administrative leave of
+                                <b>
+                                    <span t-field="doc.number_of_days"/>
+                                    days
+                                </b>
+                                to
+                                <span t-field="doc.employee_id"/>
+
+
+                                as from
+                                <b>
+                                    <span t-esc="doc.date_from.strftime('%Y-%m-%d')"/>
+
+                                </b>
+
+                                ,
+                            </p>
+                            <p style="padding-left:10%;padding-right:8%;">through
+                                <b>
+                                    <span t-esc="doc.date_to.strftime('%Y-%m-%d')"/>
+
+                                </b>
+                                , under
+                                <b>
+                                    <span t-field="doc.holiday_status_id"/>
+                                </b>
+                            </p>
+                            <br/>
+                            <br/>
+
+                            <p style="padding-left:10%">The person concerned is therefore still entitled, under
+                                <b><span
+                                        t-esc="doc.request_date_from.strftime('%Y')"/>-<span
+                                        t-esc="(int(doc.request_date_from.strftime('%Y')) + 1)"/>:
+                                    <span t-field="doc.rest_leave"/>
+                                    leave days.
+                                </b>
+                            </p>
+
+
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="text-center" style="border-top: 4px solid;font-size:16px;">
+
+                            <p style="padding-top:3%">Dr. Nidal Mohammad Abuzuhri</p>
+
+                            <img src="isesco_hr/static/img/img_1.png"
+                                 style="width:200px;height:100px;float:center;padding-left:4%"/>
+
+
+                            <p>Director of Administrative Affairs</p>
+                            <br/>
+
+
+                            <p>Rabat, on
+                                <span t-esc="datetime.date.today().strftime('%d-%m-%Y')"/>
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </t>
+        </t>
+    </template>
+</odoo>

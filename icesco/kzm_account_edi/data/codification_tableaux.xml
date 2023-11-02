@@ -1,0 +1,3022 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <data noupdate="1">
+    <!--Actif-->
+    <record id="code_tab_497" model="liasse.bilan.actif.erp">
+      <field name="lib">IMMOBILISATIONS EN NON VALEURS  (A)</field>
+      <field name="code1" ref="code_497"/>
+      <field name="code2" ref="code_498"/>
+      <field name="code3" ref="code_499"/>
+      <field name="code4" ref="code_500"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_238" model="liasse.bilan.actif.erp">
+      <field name="lib">Frais préliminaire</field>
+      <field name="code1" ref="code_238"/>
+      <field name="code2" ref="code_241"/>
+      <field name="code3" ref="code_244"/>
+      <field name="code4" ref="code_247"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_239" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Charges … repartir sur plusieurs  exercices</field>
+      <field name="code1" ref="code_239"/>
+      <field name="code2" ref="code_242"/>
+      <field name="code3" ref="code_245"/>
+      <field name="code4" ref="code_248"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_240" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Primes de remboursement des obligations</field>
+      <field name="code1" ref="code_240"/>
+      <field name="code2" ref="code_243"/>
+      <field name="code3" ref="code_246"/>
+      <field name="code4" ref="code_249"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_502" model="liasse.bilan.actif.erp">
+      <field name="lib">IMMOBILISATIONS INCORPORELLES  (B)     </field>
+      <field name="code1" ref="code_502"/>
+      <field name="code2" ref="code_503"/>
+      <field name="code3" ref="code_504"/>
+      <field name="code4" ref="code_505"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_274" model="liasse.bilan.actif.erp">
+      <field name="lib">Immobilisations en recherche et développement</field>
+      <field name="code1" ref="code_274"/>
+      <field name="code2" ref="code_278"/>
+      <field name="code3" ref="code_282"/>
+      <field name="code4" ref="code_286"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_275" model="liasse.bilan.actif.erp">
+      <field name="lib">Brevets, marques, droits et valeurs similaires</field>
+      <field name="code1" ref="code_275"/>
+      <field name="code2" ref="code_279"/>
+      <field name="code3" ref="code_283"/>
+      <field name="code4" ref="code_287"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_276" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Fonds commercial</field>
+      <field name="code1" ref="code_276"/>
+      <field name="code2" ref="code_280"/>
+      <field name="code3" ref="code_284"/>
+      <field name="code4" ref="code_288"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_277" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Autres immobilisations incorporelles</field>
+      <field name="code1" ref="code_277"/>
+      <field name="code2" ref="code_281"/>
+      <field name="code3" ref="code_285"/>
+      <field name="code4" ref="code_289"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_507" model="liasse.bilan.actif.erp">
+      <field name="lib">IMMOBILISATIONS CORPORELLES (C)     </field>
+      <field name="code1" ref="code_507"/>
+      <field name="code2" ref="code_508"/>
+      <field name="code3" ref="code_509"/>
+      <field name="code4" ref="code_510"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_207" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Terrains</field>
+      <field name="code1" ref="code_207"/>
+      <field name="code2" ref="code_214"/>
+      <field name="code3" ref="code_221"/>
+      <field name="code4" ref="code_228"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_208" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Constructions</field>
+      <field name="code1" ref="code_208"/>
+      <field name="code2" ref="code_215"/>
+      <field name="code3" ref="code_222"/>
+      <field name="code4" ref="code_229"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_209" model="liasse.bilan.actif.erp">
+      <field name="lib">*   Installations techniques, matériel et outillage</field>
+      <field name="code1" ref="code_209"/>
+      <field name="code2" ref="code_216"/>
+      <field name="code3" ref="code_223"/>
+      <field name="code4" ref="code_230"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_210" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Matériel transport</field>
+      <field name="code1" ref="code_210"/>
+      <field name="code2" ref="code_217"/>
+      <field name="code3" ref="code_224"/>
+      <field name="code4" ref="code_231"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_211" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Mobilier, matériel de bureau et aménagements divers </field>
+      <field name="code1" ref="code_211"/>
+      <field name="code2" ref="code_218"/>
+      <field name="code3" ref="code_225"/>
+      <field name="code4" ref="code_232"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_212" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Autres immobilisations corporelles</field>
+      <field name="code1" ref="code_212"/>
+      <field name="code2" ref="code_219"/>
+      <field name="code3" ref="code_226"/>
+      <field name="code4" ref="code_233"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_213" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Immobilisations corporelles en cours</field>
+      <field name="code1" ref="code_213"/>
+      <field name="code2" ref="code_220"/>
+      <field name="code3" ref="code_227"/>
+      <field name="code4" ref="code_234"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_512" model="liasse.bilan.actif.erp">
+      <field name="lib">IMMOBILISATIONS FINANCIERES  (D)     </field>
+      <field name="code1" ref="code_512"/>
+      <field name="code2" ref="code_513"/>
+      <field name="code3" ref="code_514"/>
+      <field name="code4" ref="code_515"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_254" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Prêts immobilisés</field>
+      <field name="code1" ref="code_254"/>
+      <field name="code2" ref="code_258"/>
+      <field name="code3" ref="code_262"/>
+      <field name="code4" ref="code_266"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_255" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Autres créances financières</field>
+      <field name="code1" ref="code_255"/>
+      <field name="code2" ref="code_259"/>
+      <field name="code3" ref="code_263"/>
+      <field name="code4" ref="code_267"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_256" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Titres de participation</field>
+      <field name="code1" ref="code_256"/>
+      <field name="code2" ref="code_260"/>
+      <field name="code3" ref="code_264"/>
+      <field name="code4" ref="code_268"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_257" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Autres titres immobilisés</field>
+      <field name="code1" ref="code_257"/>
+      <field name="code2" ref="code_261"/>
+      <field name="code3" ref="code_265"/>
+      <field name="code4" ref="code_269"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_517" model="liasse.bilan.actif.erp">
+      <field name="lib">ECARTS DE CONVERSION -ACTIF  (E)    </field>
+      <field name="code1" ref="code_517"/>
+      <field name="code2" ref="code_518"/>
+      <field name="code3" ref="code_519"/>
+      <field name="code4" ref="code_520"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_192" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Diminution des créances immobilisées</field>
+      <field name="code1" ref="code_192"/>
+      <field name="code2" ref="code_194"/>
+      <field name="code3" ref="code_196"/>
+      <field name="code4" ref="code_198"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_193" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Augmentation des dettes financiéres</field>
+      <field name="code1" ref="code_193"/>
+      <field name="code2" ref="code_195"/>
+      <field name="code3" ref="code_197"/>
+      <field name="code4" ref="code_199"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_291" model="liasse.bilan.actif.erp">
+      <field name="lib">TOTAL I (A+B+C+D+E)</field>
+      <field name="code1" ref="code_291"/>
+      <field name="code2" ref="code_292"/>
+      <field name="code3" ref="code_293"/>
+      <field name="code4" ref="code_294"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_522" model="liasse.bilan.actif.erp">
+      <field name="lib">STOCKS (F)     </field>
+      <field name="code1" ref="code_522"/>
+      <field name="code2" ref="code_523"/>
+      <field name="code3" ref="code_524"/>
+      <field name="code4" ref="code_525"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_160" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Marchandises</field>
+      <field name="code1" ref="code_160"/>
+      <field name="code2" ref="code_165"/>
+      <field name="code3" ref="code_170"/>
+      <field name="code4" ref="code_175"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_161" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Matiéres et fournitures, consommables</field>
+      <field name="code1" ref="code_161"/>
+      <field name="code2" ref="code_166"/>
+      <field name="code3" ref="code_171"/>
+      <field name="code4" ref="code_176"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_162" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Produits en cours</field>
+      <field name="code1" ref="code_162"/>
+      <field name="code2" ref="code_167"/>
+      <field name="code3" ref="code_172"/>
+      <field name="code4" ref="code_177"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_163" model="liasse.bilan.actif.erp">
+      <field name="lib">*  produits intermédiaires et produits résiduels</field>
+      <field name="code1" ref="code_163"/>
+      <field name="code2" ref="code_168"/>
+      <field name="code3" ref="code_173"/>
+      <field name="code4" ref="code_178"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_164" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Produits finis</field>
+      <field name="code1" ref="code_164"/>
+      <field name="code2" ref="code_169"/>
+      <field name="code3" ref="code_174"/>
+      <field name="code4" ref="code_179"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_527" model="liasse.bilan.actif.erp">
+      <field name="lib">CREANCES DE L'ACTIF CIRCULANT  (G)     </field>
+      <field name="code1" ref="code_527"/>
+      <field name="code2" ref="code_528"/>
+      <field name="code3" ref="code_529"/>
+      <field name="code4" ref="code_530"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_122" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Fournis. débiteurs, avances et acomptes</field>
+      <field name="code1" ref="code_122"/>
+      <field name="code2" ref="code_129"/>
+      <field name="code3" ref="code_136"/>
+      <field name="code4" ref="code_143"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_123" model="liasse.bilan.actif.erp">
+      <field name="lib">*   Clients et comptes rattachés</field>
+      <field name="code1" ref="code_123"/>
+      <field name="code2" ref="code_130"/>
+      <field name="code3" ref="code_137"/>
+      <field name="code4" ref="code_144"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_124" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Personnel</field>
+      <field name="code1" ref="code_124"/>
+      <field name="code2" ref="code_131"/>
+      <field name="code3" ref="code_138"/>
+      <field name="code4" ref="code_145"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_125" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Etat</field>
+      <field name="code1" ref="code_125"/>
+      <field name="code2" ref="code_132"/>
+      <field name="code3" ref="code_139"/>
+      <field name="code4" ref="code_146"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_126" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Comptes d'associés</field>
+      <field name="code1" ref="code_126"/>
+      <field name="code2" ref="code_133"/>
+      <field name="code3" ref="code_140"/>
+      <field name="code4" ref="code_147"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_127" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Autres débiteurs</field>
+      <field name="code1" ref="code_127"/>
+      <field name="code2" ref="code_134"/>
+      <field name="code3" ref="code_141"/>
+      <field name="code4" ref="code_148"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_128" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Comptes de régularisation-Actif</field>
+      <field name="code1" ref="code_128"/>
+      <field name="code2" ref="code_135"/>
+      <field name="code3" ref="code_142"/>
+      <field name="code4" ref="code_149"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_181" model="liasse.bilan.actif.erp">
+      <field name="lib">TITRES VALEURS DE PLACEMENT  ( H)     </field>
+      <field name="code1" ref="code_181"/>
+      <field name="code2" ref="code_182"/>
+      <field name="code3" ref="code_183"/>
+      <field name="code4" ref="code_184"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_151" model="liasse.bilan.actif.erp">
+      <field name="lib">ECARTS DE CONVERSION-ACTIF  ( I ) .   (Eléments circulants)     </field>
+      <field name="code1" ref="code_151"/>
+      <field name="code2" ref="code_152"/>
+      <field name="code3" ref="code_153"/>
+      <field name="code4" ref="code_154"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_296" model="liasse.bilan.actif.erp">
+      <field name="lib">                    TOTAL II  ( F+G+H+I )     </field>
+      <field name="code1" ref="code_296"/>
+      <field name="code2" ref="code_297"/>
+      <field name="code3" ref="code_298"/>
+      <field name="code4" ref="code_299"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_532" model="liasse.bilan.actif.erp">
+      <field name="lib">TRESORERIE-ACTIF</field>
+      <field name="code1" ref="code_532"/>
+      <field name="code2" ref="code_533"/>
+      <field name="code3" ref="code_534"/>
+      <field name="code4" ref="code_535"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_303" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Chéques et valeurs … encaisser</field>
+      <field name="code1" ref="code_303"/>
+      <field name="code2" ref="code_306"/>
+      <field name="code3" ref="code_309"/>
+      <field name="code4" ref="code_312"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_304" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Banques, TG et CCP</field>
+      <field name="code1" ref="code_304"/>
+      <field name="code2" ref="code_307"/>
+      <field name="code3" ref="code_310"/>
+      <field name="code4" ref="code_313"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_305" model="liasse.bilan.actif.erp">
+      <field name="lib">*  Caisse, Régie d'avances et accréditifs</field>
+      <field name="code1" ref="code_305"/>
+      <field name="code2" ref="code_308"/>
+      <field name="code3" ref="code_311"/>
+      <field name="code4" ref="code_314"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_316" model="liasse.bilan.actif.erp">
+      <field name="lib">                                     TOTAL III</field>
+      <field name="code1" ref="code_316"/>
+      <field name="code2" ref="code_317"/>
+      <field name="code3" ref="code_318"/>
+      <field name="code4" ref="code_319"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_186" model="liasse.bilan.actif.erp">
+      <field name="lib">           TOTAL GENERAL I+II+III</field>
+      <field name="code1" ref="code_186"/>
+      <field name="code2" ref="code_187"/>
+      <field name="code3" ref="code_188"/>
+      <field name="code4" ref="code_189"/>
+      <field name="type">2</field>
+    </record>
+    <!--Passif-->
+    <record id="code_tab_13400" model="liasse.bilan.passif.erp">
+      <field name="lib">Capital social ou personnel (1) </field>
+      <field name="code1" ref="code_13400"/>
+      <field name="code2" ref="code_13411"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13401" model="liasse.bilan.passif.erp">
+      <field name="lib">Moins : actionnaires, capital souscrit non appelé </field>
+      <field name="code1" ref="code_13401"/>
+      <field name="code2" ref="code_13412"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13402" model="liasse.bilan.passif.erp">
+      <field name="lib">Moins : Capital appelé </field>
+      <field name="code1" ref="code_13402"/>
+      <field name="code2" ref="code_13413"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13403" model="liasse.bilan.passif.erp">
+      <field name="lib">Moins : Dont versé </field>
+      <field name="code1" ref="code_13403"/>
+      <field name="code2" ref="code_13414"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13404" model="liasse.bilan.passif.erp">
+      <field name="lib">Prime d'émission, de fusion, d'apport </field>
+      <field name="code1" ref="code_13404"/>
+      <field name="code2" ref="code_13415"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13405" model="liasse.bilan.passif.erp">
+      <field name="code1" ref="code_13405"/>
+      <field name="lib">Ecarts de réévaluation </field>
+      <field name="code2" ref="code_13416"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13406" model="liasse.bilan.passif.erp">
+      <field name="lib">Réserve légale </field>
+      <field name="code1" ref="code_13406"/>
+      <field name="code2" ref="code_13417"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13407" model="liasse.bilan.passif.erp">
+      <field name="lib">Autres réserves </field>
+      <field name="code1" ref="code_13407"/>
+      <field name="code2" ref="code_13418"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13408" model="liasse.bilan.passif.erp">
+      <field name="lib">Report … nouveau (2) </field>
+      <field name="code1" ref="code_13408"/>
+      <field name="code2" ref="code_13419"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13409" model="liasse.bilan.passif.erp">
+      <field name="lib">Résultat net de l'exercice (2) </field>
+      <field name="code1" ref="code_13409"/>
+      <field name="code2" ref="code_13420"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13410" model="liasse.bilan.passif.erp">
+      <field name="lib">Total des capitaux propres (A) </field>
+      <field name="code1" ref="code_13410"/>
+      <field name="code2" ref="code_13421"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_13397" model="liasse.bilan.passif.erp">
+      <field name="lib">Capitaux propres assimilés (B) </field>
+      <field name="code1" ref="code_13397"/>
+      <field name="code2" ref="code_13422"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_13398" model="liasse.bilan.passif.erp">
+      <field name="lib">Subvention d'investissement </field>
+      <field name="code1" ref="code_13398"/>
+      <field name="code2" ref="code_13423"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13399" model="liasse.bilan.passif.erp">
+      <field name="lib">Provisions réglementées </field>
+      <field name="code1" ref="code_13399"/>
+      <field name="code2" ref="code_13424"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13393" model="liasse.bilan.passif.erp">
+      <field name="lib">Dettes de financement (C) </field>
+      <field name="code1" ref="code_13393"/>
+      <field name="code2" ref="code_13426"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_13394" model="liasse.bilan.passif.erp">
+      <field name="lib">Emprunts obligataires </field>
+      <field name="code1" ref="code_13394"/>
+      <field name="code2" ref="code_13427"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13395" model="liasse.bilan.passif.erp">
+      <field name="lib">Autres dettes de financement </field>
+      <field name="code1" ref="code_13395"/>
+      <field name="code2" ref="code_13428"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13389" model="liasse.bilan.passif.erp">
+      <field name="lib">Provisions durables pour risques et charges (D) </field>
+      <field name="code1" ref="code_13389"/>
+      <field name="code2" ref="code_13430"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_13390" model="liasse.bilan.passif.erp">
+      <field name="lib">Provisions pour risques </field>
+      <field name="code1" ref="code_13390"/>
+      <field name="code2" ref="code_13431"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13391" model="liasse.bilan.passif.erp">
+      <field name="lib">Provisions pour charges </field>
+      <field name="code1" ref="code_13391"/>
+      <field name="code2" ref="code_13432"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13386" model="liasse.bilan.passif.erp">
+      <field name="lib">Ecarts de conversion-passif (E) </field>
+      <field name="code1" ref="code_13386"/>
+      <field name="code2" ref="code_13433"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_13387" model="liasse.bilan.passif.erp">
+      <field name="lib">Augmentation des créances immobilisées </field>
+      <field name="code1" ref="code_13387"/>
+      <field name="code2" ref="code_13434"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13388" model="liasse.bilan.passif.erp">
+      <field name="lib">Diminution des dettes de financement </field>
+      <field name="code1" ref="code_13388"/>
+      <field name="code2" ref="code_13435"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13385" model="liasse.bilan.passif.erp">
+      <field name="lib">TOTAL I (A+B+C+D+E) </field>
+      <field name="code1" ref="code_13385"/>
+      <field name="code2" ref="code_13436"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_13376" model="liasse.bilan.passif.erp">
+      <field name="lib">Dettes du passif circulant (F) </field>
+      <field name="code1" ref="code_13376"/>
+      <field name="code2" ref="code_13437"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_13377" model="liasse.bilan.passif.erp">
+      <field name="lib">Fournisseurs et comptes rattachés </field>
+      <field name="code1" ref="code_13377"/>
+      <field name="code2" ref="code_13438"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13378" model="liasse.bilan.passif.erp">
+      <field name="lib">Clients céditeurs, avances et acomptes </field>
+      <field name="code1" ref="code_13378"/>
+      <field name="code2" ref="code_13439"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13379" model="liasse.bilan.passif.erp">
+      <field name="lib">Personnel </field>
+      <field name="code1" ref="code_13379"/>
+      <field name="code2" ref="code_13440"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13380" model="liasse.bilan.passif.erp">
+      <field name="lib">Organismes sociaux </field>
+      <field name="code1" ref="code_13380"/>
+      <field name="code2" ref="code_13441"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13381" model="liasse.bilan.passif.erp">
+      <field name="lib">Etat </field>
+      <field name="code1" ref="code_13381"/>
+      <field name="code2" ref="code_13442"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13382" model="liasse.bilan.passif.erp">
+      <field name="lib">Comptes d'associés </field>
+      <field name="code1" ref="code_13382"/>
+      <field name="code2" ref="code_13443"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13383" model="liasse.bilan.passif.erp">
+      <field name="lib">Autres créanciers </field>
+      <field name="code1" ref="code_13383"/>
+      <field name="code2" ref="code_13444"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13384" model="liasse.bilan.passif.erp">
+      <field name="lib">Comptes de régularisation passif </field>
+      <field name="code1" ref="code_13384"/>
+      <field name="code2" ref="code_13445"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13375" model="liasse.bilan.passif.erp">
+      <field name="lib">Autres provisions pour risques et charges (G) </field>
+      <field name="code1" ref="code_13375"/>
+      <field name="code2" ref="code_13446"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_13374" model="liasse.bilan.passif.erp">
+      <field name="lib">Ecarts de conversion - passif (Eléments circulants) (H) </field>
+      <field name="code1" ref="code_13374"/>
+      <field name="code2" ref="code_13447"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_13373" model="liasse.bilan.passif.erp">
+      <field name="lib">TOTAL II (F+G+H) </field>
+      <field name="code1" ref="code_13373"/>
+      <field name="code2" ref="code_13448"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_13370" model="liasse.bilan.passif.erp">
+      <field name="lib">Crédits d'escompte </field>
+      <field name="code1" ref="code_13370"/>
+      <field name="code2" ref="code_13449"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13371" model="liasse.bilan.passif.erp">
+      <field name="lib">Crédits de trésorerie </field>
+      <field name="code1" ref="code_13371"/>
+      <field name="code2" ref="code_13450"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13372" model="liasse.bilan.passif.erp">
+      <field name="lib">Banques de régularisation </field>
+      <field name="code1" ref="code_13372"/>
+      <field name="code2" ref="code_13451"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_13369" model="liasse.bilan.passif.erp">
+      <field name="lib">TOTAL III </field>
+      <field name="code1" ref="code_13369"/>
+      <field name="code2" ref="code_13452"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_13368" model="liasse.bilan.passif.erp">
+      <field name="lib">TOTAL GENERAL I+II+III </field>
+      <field name="code1" ref="code_13368"/>
+      <field name="code2" ref="code_13453"/>
+      <field name="type">2</field>
+    </record>
+    <!--CPC-->
+    <record id="code_tab_11176" model="liasse.cpc.erp">
+      <field name="lib">I. PRODUITS D'EXPLOITATION </field>
+      <field name="code1" ref="code_11176"/>
+      <field name="code2" ref="code_11177"/>
+      <field name="code3" ref="code_11178"/>
+      <field name="code4" ref="code_11179"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_11181" model="liasse.cpc.erp">
+      <field name="lib">* Ventes de marchandises (en l'état) </field>
+      <field name="code1" ref="code_11181"/>
+      <field name="code2" ref="code_11182"/>
+      <field name="code3" ref="code_11183"/>
+      <field name="code4" ref="code_11184"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11186" model="liasse.cpc.erp">
+      <field name="lib">* Ventes de biens et services produits = Chiffres d'affaires </field>
+      <field name="code1" ref="code_11186"/>
+      <field name="code2" ref="code_11187"/>
+      <field name="code3" ref="code_11188"/>
+      <field name="code4" ref="code_11189"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11191" model="liasse.cpc.erp">
+      <field name="lib">* Variation de stocks de produits (1) </field>
+      <field name="code1" ref="code_11191"/>
+      <field name="code2" ref="code_11192"/>
+      <field name="code3" ref="code_11193"/>
+      <field name="code4" ref="code_11194"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11196" model="liasse.cpc.erp">
+      <field name="lib">* Immobilisations produites par l'entreprise pour elle-même </field>
+      <field name="code1" ref="code_11196"/>
+      <field name="code2" ref="code_11197"/>
+      <field name="code3" ref="code_11198"/>
+      <field name="code4" ref="code_11199"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11201" model="liasse.cpc.erp">
+      <field name="lib">* Subventions d'exploitation </field>
+      <field name="code1" ref="code_11201"/>
+      <field name="code2" ref="code_11202"/>
+      <field name="code3" ref="code_11203"/>
+      <field name="code4" ref="code_11204"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11206" model="liasse.cpc.erp">
+      <field name="lib">* Autres produits d'exploitation </field>
+      <field name="code1" ref="code_11206"/>
+      <field name="code2" ref="code_11207"/>
+      <field name="code3" ref="code_11208"/>
+      <field name="code4" ref="code_11209"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11211" model="liasse.cpc.erp">
+      <field name="lib">* Reprises d'exploitation : transferts de charges </field>
+      <field name="code1" ref="code_11211"/>
+      <field name="code2" ref="code_11212"/>
+      <field name="code3" ref="code_11213"/>
+      <field name="code4" ref="code_11214"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11216" model="liasse.cpc.erp">
+      <field name="lib">Total I </field>
+      <field name="code1" ref="code_11216"/>
+      <field name="code2" ref="code_11217"/>
+      <field name="code3" ref="code_11218"/>
+      <field name="code4" ref="code_11219"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_11226" model="liasse.cpc.erp">
+      <field name="lib">II. CHARGES D'EXPLOITATION </field>
+      <field name="code1" ref="code_11226"/>
+      <field name="code2" ref="code_11227"/>
+      <field name="code3" ref="code_11228"/>
+      <field name="code4" ref="code_11229"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_11221" model="liasse.cpc.erp">
+      <field name="lib">* Achats revendus(2) de marchandises </field>
+      <field name="code1" ref="code_11221"/>
+      <field name="code2" ref="code_11222"/>
+      <field name="code3" ref="code_11223"/>
+      <field name="code4" ref="code_11224"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11256" model="liasse.cpc.erp">
+      <field name="lib">* Achats consommés(2) de matières et fournitures </field>
+      <field name="code1" ref="code_11256"/>
+      <field name="code2" ref="code_11257"/>
+      <field name="code3" ref="code_11258"/>
+      <field name="code4" ref="code_11259"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11261" model="liasse.cpc.erp">
+      <field name="lib">* Autres charges externes </field>
+      <field name="code1" ref="code_11261"/>
+      <field name="code2" ref="code_11262"/>
+      <field name="code3" ref="code_11263"/>
+      <field name="code4" ref="code_11264"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11251" model="liasse.cpc.erp">
+      <field name="lib">* Impôts et taxes </field>
+      <field name="code1" ref="code_11251"/>
+      <field name="code2" ref="code_11252"/>
+      <field name="code3" ref="code_11253"/>
+      <field name="code4" ref="code_11254"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11266" model="liasse.cpc.erp">
+      <field name="lib">* Charges de personnel </field>
+      <field name="code1" ref="code_11266"/>
+      <field name="code2" ref="code_11267"/>
+      <field name="code3" ref="code_11268"/>
+      <field name="code4" ref="code_11269"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11246" model="liasse.cpc.erp">
+      <field name="lib">* Autres charges d'exploitation </field>
+      <field name="code1" ref="code_11246"/>
+      <field name="code2" ref="code_11247"/>
+      <field name="code3" ref="code_11248"/>
+      <field name="code4" ref="code_11249"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11241" model="liasse.cpc.erp">
+      <field name="lib">* Dotations d'exploitation </field>
+      <field name="code1" ref="code_11241"/>
+      <field name="code2" ref="code_11242"/>
+      <field name="code3" ref="code_11243"/>
+      <field name="code4" ref="code_11244"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11236" model="liasse.cpc.erp">
+      <field name="lib">Total II </field>
+      <field name="code1" ref="code_11236"/>
+      <field name="code2" ref="code_11237"/>
+      <field name="code3" ref="code_11238"/>
+      <field name="code4" ref="code_11239"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_11231" model="liasse.cpc.erp">
+      <field name="lib">III. RESULTAT D'EXPLOITATION (I-II) </field>
+      <field name="code1" ref="code_11231"/>
+      <field name="code2" ref="code_11232"/>
+      <field name="code3" ref="code_11233"/>
+      <field name="code4" ref="code_11234"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_11326" model="liasse.cpc.erp">
+      <field name="lib">IV. PRODUITS FINANCIERS </field>
+      <field name="code1" ref="code_11326"/>
+      <field name="code2" ref="code_11327"/>
+      <field name="code3" ref="code_11328"/>
+      <field name="code4" ref="code_11329"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_11271" model="liasse.cpc.erp">
+      <field name="lib">* Produits des titres de partic. et autres titres immobilisés </field>
+      <field name="code1" ref="code_11271"/>
+      <field name="code2" ref="code_11272"/>
+      <field name="code3" ref="code_11273"/>
+      <field name="code4" ref="code_11274"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11276" model="liasse.cpc.erp">
+      <field name="lib">* Gains de change </field>
+      <field name="code1" ref="code_11276"/>
+      <field name="code2" ref="code_11277"/>
+      <field name="code3" ref="code_11278"/>
+      <field name="code4" ref="code_11279"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11281" model="liasse.cpc.erp">
+      <field name="lib">* Intérêts  et autres produits financiers </field>
+      <field name="code1" ref="code_11281"/>
+      <field name="code2" ref="code_11282"/>
+      <field name="code3" ref="code_11283"/>
+      <field name="code4" ref="code_11284"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11286" model="liasse.cpc.erp">
+      <field name="lib">* Reprises financier : transfert charges </field>
+      <field name="code1" ref="code_11286"/>
+      <field name="code2" ref="code_11287"/>
+      <field name="code3" ref="code_11288"/>
+      <field name="code4" ref="code_11289"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11291" model="liasse.cpc.erp">
+      <field name="lib">. Total IV </field>
+      <field name="code1" ref="code_11291"/>
+      <field name="code2" ref="code_11292"/>
+      <field name="code3" ref="code_11293"/>
+      <field name="code4" ref="code_11294"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_11321" model="liasse.cpc.erp">
+      <field name="lib">V. CHARGES FINANCIERES </field>
+      <field name="code1" ref="code_11321"/>
+      <field name="code2" ref="code_11322"/>
+      <field name="code3" ref="code_11323"/>
+      <field name="code4" ref="code_11324"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_11296" model="liasse.cpc.erp">
+      <field name="lib">* Charges d'intérêts </field>
+      <field name="code1" ref="code_11296"/>
+      <field name="code2" ref="code_11297"/>
+      <field name="code3" ref="code_11298"/>
+      <field name="code4" ref="code_11299"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11301" model="liasse.cpc.erp">
+      <field name="lib">* Pertes de change </field>
+      <field name="code1" ref="code_11301"/>
+      <field name="code2" ref="code_11302"/>
+      <field name="code3" ref="code_11303"/>
+      <field name="code4" ref="code_11304"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11306" model="liasse.cpc.erp">
+      <field name="lib">* Autres charges financières </field>
+      <field name="code1" ref="code_11306"/>
+      <field name="code2" ref="code_11307"/>
+      <field name="code3" ref="code_11308"/>
+      <field name="code4" ref="code_11309"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11311" model="liasse.cpc.erp">
+      <field name="lib">* Dotations financières </field>
+      <field name="code1" ref="code_11311"/>
+      <field name="code2" ref="code_11312"/>
+      <field name="code3" ref="code_11313"/>
+      <field name="code4" ref="code_11314"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11316" model="liasse.cpc.erp">
+      <field name="lib">Total V </field>
+      <field name="code1" ref="code_11316"/>
+      <field name="code2" ref="code_11317"/>
+      <field name="code3" ref="code_11318"/>
+      <field name="code4" ref="code_11319"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_11331" model="liasse.cpc.erp">
+      <field name="lib">VI. RESULTAT FINANCIER (IV-V) </field>
+      <field name="code1" ref="code_11331"/>
+      <field name="code2" ref="code_11332"/>
+      <field name="code3" ref="code_11333"/>
+      <field name="code4" ref="code_11334"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_11336" model="liasse.cpc.erp">
+      <field name="lib">VII. RESULTAT COURANT (III+VI) </field>
+      <field name="code1" ref="code_11336"/>
+      <field name="code2" ref="code_11337"/>
+      <field name="code3" ref="code_11338"/>
+      <field name="code4" ref="code_11339"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_11391" model="liasse.cpc.erp">
+      <field name="lib">VIII. PRODUITS NON COURANTS </field>
+      <field name="code1" ref="code_11391"/>
+      <field name="code2" ref="code_11392"/>
+      <field name="code3" ref="code_11393"/>
+      <field name="code4" ref="code_11394"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_11341" model="liasse.cpc.erp">
+      <field name="lib">* Produits des cessions d'immobilisations </field>
+      <field name="code1" ref="code_11341"/>
+      <field name="code2" ref="code_11342"/>
+      <field name="code3" ref="code_11343"/>
+      <field name="code4" ref="code_11344"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11346" model="liasse.cpc.erp">
+      <field name="lib">* Subventions d'équilibre </field>
+      <field name="code1" ref="code_11346"/>
+      <field name="code2" ref="code_11347"/>
+      <field name="code3" ref="code_11348"/>
+      <field name="code4" ref="code_11349"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11351" model="liasse.cpc.erp">
+      <field name="lib">* Reprises sur subventions d'investissement </field>
+      <field name="code1" ref="code_11351"/>
+      <field name="code2" ref="code_11352"/>
+      <field name="code3" ref="code_11353"/>
+      <field name="code4" ref="code_11354"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11356" model="liasse.cpc.erp">
+      <field name="lib">* Autres produits non courants </field>
+      <field name="code1" ref="code_11356"/>
+      <field name="code2" ref="code_11357"/>
+      <field name="code3" ref="code_11358"/>
+      <field name="code4" ref="code_11359"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11361" model="liasse.cpc.erp">
+      <field name="lib">* Reprises non courantes ; transferts de charges </field>
+      <field name="code1" ref="code_11361"/>
+      <field name="code2" ref="code_11362"/>
+      <field name="code3" ref="code_11363"/>
+      <field name="code4" ref="code_11364"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11366" model="liasse.cpc.erp">
+      <field name="lib">Total VIII </field>
+      <field name="code1" ref="code_11366"/>
+      <field name="code2" ref="code_11367"/>
+      <field name="code3" ref="code_11368"/>
+      <field name="code4" ref="code_11369"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_11396" model="liasse.cpc.erp">
+      <field name="lib">IX. CHARGES NON COURANTES </field>
+      <field name="code1" ref="code_11396"/>
+      <field name="code2" ref="code_11397"/>
+      <field name="code3" ref="code_11398"/>
+      <field name="code4" ref="code_11399"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_11371" model="liasse.cpc.erp">
+      <field name="lib">* Valeurs nettes d'amortissements des immobilisations cédées </field>
+      <field name="code1" ref="code_11371"/>
+      <field name="code2" ref="code_11372"/>
+      <field name="code3" ref="code_11373"/>
+      <field name="code4" ref="code_11374"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11376" model="liasse.cpc.erp">
+      <field name="lib">* Subventions accordées </field>
+      <field name="code1" ref="code_11376"/>
+      <field name="code2" ref="code_11377"/>
+      <field name="code3" ref="code_11378"/>
+      <field name="code4" ref="code_11379"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11381" model="liasse.cpc.erp">
+      <field name="lib">* Autres charges non courants </field>
+      <field name="code1" ref="code_11381"/>
+      <field name="code2" ref="code_11382"/>
+      <field name="code3" ref="code_11383"/>
+      <field name="code4" ref="code_11384"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11386" model="liasse.cpc.erp">
+      <field name="lib">* Dotations non courantes aux amortissements et aux provisions </field>
+      <field name="code1" ref="code_11386"/>
+      <field name="code2" ref="code_11387"/>
+      <field name="code3" ref="code_11388"/>
+      <field name="code4" ref="code_11389"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_11406" model="liasse.cpc.erp">
+      <field name="lib">Total IX </field>
+      <field name="code1" ref="code_11406"/>
+      <field name="code2" ref="code_11407"/>
+      <field name="code3" ref="code_11408"/>
+      <field name="code4" ref="code_11409"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_11401" model="liasse.cpc.erp">
+      <field name="lib">X. RESULTAT NON COURANT (VIII-IX) </field>
+      <field name="code1" ref="code_11401"/>
+      <field name="code2" ref="code_11402"/>
+      <field name="code3" ref="code_11403"/>
+      <field name="code4" ref="code_11404"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_11411" model="liasse.cpc.erp">
+      <field name="lib">XI. RESULTAT AVANT IMPOTS (VII+X) </field>
+      <field name="code1" ref="code_11411"/>
+      <field name="code2" ref="code_11412"/>
+      <field name="code3" ref="code_11413"/>
+      <field name="code4" ref="code_11414"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_11416" model="liasse.cpc.erp">
+      <field name="lib">XII. IMPOTS SUR LES BENEFICES </field>
+      <field name="code1" ref="code_11416"/>
+      <field name="code2" ref="code_11417"/>
+      <field name="code3" ref="code_11418"/>
+      <field name="code4" ref="code_11419"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_11421" model="liasse.cpc.erp">
+      <field name="lib">RESULTAT NET (XI-XII) </field>
+      <field name="code1" ref="code_11421"/>
+      <field name="code2" ref="code_11422"/>
+      <field name="code3" ref="code_11423"/>
+      <field name="code4" ref="code_11424"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_11426" model="liasse.cpc.erp">
+      <field name="lib">XIV. TOTAL DES PRODUITS (I+IV+VIII) </field>
+      <field name="code1" ref="code_11426"/>
+      <field name="code2" ref="code_11427"/>
+      <field name="code3" ref="code_11428"/>
+      <field name="code4" ref="code_11429"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_11431" model="liasse.cpc.erp">
+      <field name="lib">XV. TOTAL DES CHARGES (II+V+IX+XII) </field>
+      <field name="code1" ref="code_11431"/>
+      <field name="code2" ref="code_11432"/>
+      <field name="code3" ref="code_11433"/>
+      <field name="code4" ref="code_11434"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_11436" model="liasse.cpc.erp">
+      <field name="lib">RESULTAT NET (total des produits-total des charges) </field>
+      <field name="code1" ref="code_11436"/>
+      <field name="code2" ref="code_11437"/>
+      <field name="code3" ref="code_11438"/>
+      <field name="code4" ref="code_11439"/>
+      <field name="type">1</field>
+    </record>
+    <!--TFR-->
+    <record id="code_tab_1308" model="liasse.tfr.erp">
+      <field name="lib"> Ventes de Marchandises ( en l'état) </field>
+      <field name="num">1</field>
+      <field name="code1" ref="code_1308"/>
+      <field name="code2" ref="code_1333"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1309" model="liasse.tfr.erp">
+      <field name="lib"> Achats revendus de marchandises </field>
+      <field name="num">2</field>
+      <field name="op">(-)</field>
+      <field name="code1" ref="code_1309"/>
+      <field name="code2" ref="code_1334"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1310" model="liasse.tfr.erp">
+      <field name="lib"> MARGE BRUTES VENTES EN L'ETAT </field>
+      <field name="lettre">I</field>
+      <field name="op">(=)</field>
+      <field name="code1" ref="code_1310"/>
+      <field name="code2" ref="code_1335"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1311" model="liasse.tfr.erp">
+      <field name="lib">PRODUCTION DE L'EXERCICE (3+4+5) </field>
+      <field name="lettre">II</field>
+      <field name="op">(+) </field>
+      <field name="code1" ref="code_1311"/>
+      <field name="code2" ref="code_1336"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1312" model="liasse.tfr.erp">
+      <field name="lib">Ventes de biens et services produits </field>
+      <field name="num">3</field>
+      <field name="code1" ref="code_1312"/>
+      <field name="code2" ref="code_1337"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1313" model="liasse.tfr.erp">
+      <field name="lib">Variation stocks produits </field>
+      <field name="num">4</field>
+      <field name="code1" ref="code_1313"/>
+      <field name="code2" ref="code_1338"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1314" model="liasse.tfr.erp">
+      <field name="lib">Immobilisations produites par l'entreprise pour elle-même </field>
+      <field name="num">5</field>
+      <field name="code1" ref="code_1314"/>
+      <field name="code2" ref="code_1339"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1315" model="liasse.tfr.erp">
+      <field name="lib">CONSOMMATIONS DE L'EXERCICE(6+7) </field>
+      <field name="lettre">III</field>
+      <field name="op">(-)</field>
+      <field name="code1" ref="code_1315"/>
+      <field name="code2" ref="code_1340"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1316" model="liasse.tfr.erp">
+      <field name="lib">Achats consommés de matières et fournitures </field>
+      <field name="num">6</field>
+      <field name="code1" ref="code_1316"/>
+      <field name="code2" ref="code_1341"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1317" model="liasse.tfr.erp">
+      <field name="lib"> Autres charges externes </field>
+      <field name="num">7</field>
+      <field name="code1" ref="code_1317"/>
+      <field name="code2" ref="code_1342"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1318" model="liasse.tfr.erp">
+      <field name="lib">VALEUR AJOUTEE (I+II+III) </field>
+      <field name="lettre">IV</field>
+      <field name="op">(=)</field>
+      <field name="code1" ref="code_1318"/>
+      <field name="code2" ref="code_1343"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1319" model="liasse.tfr.erp">
+      <field name="lib">Subventions d'exploitation </field>
+      <field name="num">8</field>
+      <field name="op">(+)</field>
+      <field name="code1" ref="code_1319"/>
+      <field name="code2" ref="code_1344"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1320" model="liasse.tfr.erp">
+      <field name="lib">Impôts et taxes </field>
+      <field name="num">9</field>
+      <field name="op">(-)</field>
+      <field name="code1" ref="code_1320"/>
+      <field name="code2" ref="code_1345"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1321" model="liasse.tfr.erp">
+      <field name="lib">Charges de personnel </field>
+      <field name="num">10</field>
+      <field name="op">(-)</field>
+      <field name="code1" ref="code_1321"/>
+      <field name="code2" ref="code_1346"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_4063" model="liasse.tfr.erp">
+      <field name="lib">EXCEDENT BRUT D'EXPLOITATION (EBE) OU INSUFFISANCE BRUTE D'EXPLOITATION(IBE) </field>
+      <field name="lettre">V</field>
+      <field name="op">(=)</field>
+      <field name="code1" ref="code_4063"/>
+      <field name="code2" ref="code_4064"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_4066" model="liasse.tfr.erp">
+      <field name="lib">Autres produits d'exploitation </field>
+      <field name="num">11</field>
+      <field name="op">(+)</field>
+      <field name="code1" ref="code_4066"/>
+      <field name="code2" ref="code_4067"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1324" model="liasse.tfr.erp">
+      <field name="lib">Autres charges d'exploitation </field>
+      <field name="num">12</field>
+      <field name="op">(-)</field>
+      <field name="code1" ref="code_1324"/>
+      <field name="code2" ref="code_1349"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1325" model="liasse.tfr.erp">
+      <field name="lib">Reprises d'exploitation, transferts de charges </field>
+      <field name="num">13</field>
+      <field name="op">(+)</field>
+      <field name="code1" ref="code_1325"/>
+      <field name="code2" ref="code_1350"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1326" model="liasse.tfr.erp">
+      <field name="lib">Dotations d'exploitation </field>
+      <field name="num">14</field>
+      <field name="op">(-) </field>
+      <field name="code1" ref="code_1326"/>
+      <field name="code2" ref="code_1351"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1327" model="liasse.tfr.erp">
+      <field name="lib">RESULTAT D'EXPLOITATION(+ou-) </field>
+      <field name="lettre">VI</field>
+      <field name="op">(=)</field>
+      <field name="code1" ref="code_1327"/>
+      <field name="code2" ref="code_1352"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1328" model="liasse.tfr.erp">
+      <field name="lib">RESULTAT FINANCIER </field>
+      <field name="lettre">VII</field>
+      <field name="op"> (+/-) </field>
+      <field name="code1" ref="code_1328"/>
+      <field name="code2" ref="code_1353"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1329" model="liasse.tfr.erp">
+      <field name="lib">RESULTAT COURANT (+ou-) </field>
+      <field name="lettre">VIII</field>
+      <field name="code1" ref="code_1329"/>
+      <field name="code2" ref="code_1354"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1330" model="liasse.tfr.erp">
+      <field name="lib">RESULTAT NON COURAN </field>
+      <field name="lettre">IX</field>
+      <field name="op">(+/-)</field>
+      <field name="code1" ref="code_1330"/>
+      <field name="code2" ref="code_1355"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1331" model="liasse.tfr.erp">
+      <field name="lib">Impôts sur les résultats </field>
+      <field name="num">15</field>
+      <field name="op">(-)</field>
+      <field name="code1" ref="code_1331"/>
+      <field name="code2" ref="code_1356"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1332" model="liasse.tfr.erp">
+      <field name="lib">RESULTAT NET DE L'EXERCICE </field>
+      <field name="lettre">X</field>
+      <field name="op">(=)</field>
+      <field name="code1" ref="code_1332"/>
+      <field name="code2" ref="code_1357"/>
+      <field name="type">2</field>
+    </record>
+    <!--CAF-->
+    <record id="code_tab_1372" model="liasse.caf.erp">
+      <field name="lib">Résultat net de l'exercice </field>
+      <field name="num">1</field>
+      <field name="code1" ref="code_1372"/>
+      <field name="code2" ref="code_1386"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1373" model="liasse.caf.erp">
+      <field name="lib">Bénéfice + </field>
+      <field name="code1" ref="code_1373"/>
+      <field name="code2" ref="code_1387"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1374" model="liasse.caf.erp">
+      <field name="lib">Perte - </field>
+      <field name="code1" ref="code_1374"/>
+      <field name="code2" ref="code_1388"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1375" model="liasse.caf.erp">
+      <field name="lib">Dotations d'exploitation (1) </field>
+      <field name="num">2</field>
+      <field name="op">(+) </field>
+      <field name="code1" ref="code_1375"/>
+      <field name="code2" ref="code_1389"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1376" model="liasse.caf.erp">
+      <field name="lib">Dotations financiéres (1) </field>
+      <field name="num">3</field>
+      <field name="code1" ref="code_1376"/>
+      <field name="code2" ref="code_1390"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1377" model="liasse.caf.erp">
+      <field name="lib">Dotations non courantes (1) </field>
+      <field name="num">4</field>
+      <field name="op">(+)</field>
+      <field name="code1" ref="code_1377"/>
+      <field name="code2" ref="code_1391"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1378" model="liasse.caf.erp">
+      <field name="lib">Reprises d'exploitation (2) </field>
+      <field name="num">5</field>
+      <field name="op">(-)</field>
+      <field name="code1" ref="code_1378"/>
+      <field name="code2" ref="code_1392"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1379" model="liasse.caf.erp">
+      <field name="lib">Reprises financiéres (2) </field>
+      <field name="num">6</field>
+      <field name="op">(-)</field>
+      <field name="code1" ref="code_1379"/>
+      <field name="code2" ref="code_1393"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1380" model="liasse.caf.erp">
+      <field name="lib">  Reprises non courantes (2) </field>
+      <field name="num">7</field>
+      <field name="op">(-)</field>
+      <field name="code1" ref="code_1380"/>
+      <field name="code2" ref="code_1394"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1381" model="liasse.caf.erp">
+      <field name="lib">Produits des cessions d'immobilisation </field>
+      <field name="num">8</field>
+      <field name="op">(-)</field>
+      <field name="code1" ref="code_1381"/>
+      <field name="code2" ref="code_1395"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1382" model="liasse.caf.erp">
+      <field name="lib">Valeurs nettes d'amortiss. des immo. cédées </field>
+      <field name="num">9</field>
+      <field name="op">(+)</field>
+      <field name="code1" ref="code_1382"/>
+      <field name="code2" ref="code_1396"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1383" model="liasse.caf.erp">
+      <field name="lib">CAPACITE D'AUTOFINANCEMENT (C.A.F.) </field>
+      <field name="lettre">I</field>
+      <field name="code1" ref="code_1383"/>
+      <field name="code2" ref="code_1397"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1384" model="liasse.caf.erp">
+      <field name="lib">Distributions de bénéfices </field>
+      <field name="num">10</field>
+      <field name="op"> (-)</field>
+      <field name="code1" ref="code_1384"/>
+      <field name="code2" ref="code_1398"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1385" model="liasse.caf.erp">
+      <field name="lib">AUTOFINANCEMENT </field>
+      <field name="lettre">II</field>
+      <field name="code1" ref="code_1385"/>
+      <field name="code2" ref="code_1399"/>
+      <field name="type">2</field>
+    </record>
+    <!--DETAIL CPC-->
+    <record id="code_tab_1521" model="liasse.det.cpc.erp">
+      <field name="lib"> Achats revendus de marchandises </field>
+      <field name="poste">611</field>
+      <field name="code1" ref="code_1521"/>
+      <field name="code2" ref="code_1562"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1522" model="liasse.det.cpc.erp">
+      <field name="lib">* Achats de marchandises </field>
+      <field name="code1" ref="code_1522"/>
+      <field name="code2" ref="code_1563"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1523" model="liasse.det.cpc.erp">
+      <field name="lib">Variation des stocks de marchandises (ñ) </field>
+      <field name="code1" ref="code_1523"/>
+      <field name="code2" ref="code_1564"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1524" model="liasse.det.cpc.erp">
+      <field name="lib">Total </field>
+      <field name="code1" ref="code_1524"/>
+      <field name="code2" ref="code_1565"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1525" model="liasse.det.cpc.erp">
+      <field name="lib">Achats consommés de matières et fournitures </field>
+      <field name="poste">612</field>
+      <field name="code1" ref="code_1525"/>
+      <field name="code2" ref="code_1566"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1526" model="liasse.det.cpc.erp">
+      <field name="lib">* Achat de matières premières </field>
+      <field name="code1" ref="code_1526"/>
+      <field name="code2" ref="code_1567"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1527" model="liasse.det.cpc.erp">
+      <field name="lib">*Variation des stocks de matières premières (+) </field>
+      <field name="code1" ref="code_1527"/>
+      <field name="code2" ref="code_1568"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1528" model="liasse.det.cpc.erp">
+      <field name="lib">* Achats de matériel et fournitures consommables et d'emballages </field>
+      <field name="code1" ref="code_1528"/>
+      <field name="code2" ref="code_1569"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1529" model="liasse.det.cpc.erp">
+      <field name="lib">Variation des stocks de matières, fournitures et emballages (ñ) </field>
+      <field name="code1" ref="code_1529"/>
+      <field name="code2" ref="code_1570"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1530" model="liasse.det.cpc.erp">
+      <field name="lib">* Achats non stockés de matières et de fournitures </field>
+      <field name="code1" ref="code_1530"/>
+      <field name="code2" ref="code_1571"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1531" model="liasse.det.cpc.erp">
+      <field name="lib">* Achats de travaux, études et prestations de services </field>
+      <field name="code1" ref="code_1531"/>
+      <field name="code2" ref="code_1572"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1532" model="liasse.det.cpc.erp">
+      <field name="lib">Total </field>
+      <field name="code1" ref="code_1532"/>
+      <field name="code2" ref="code_1573"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1533" model="liasse.det.cpc.erp">
+      <field name="lib">Autres charges externes </field>
+      <field name="poste">613/614</field>
+      <field name="code1" ref="code_1533"/>
+      <field name="code2" ref="code_1574"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1534" model="liasse.det.cpc.erp">
+      <field name="lib">*Locations et charges locatives </field>
+      <field name="code1" ref="code_1534"/>
+      <field name="code2" ref="code_1575"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1535" model="liasse.det.cpc.erp">
+      <field name="lib">*Redevances de crédit-bail </field>
+      <field name="code1" ref="code_1535"/>
+      <field name="code2" ref="code_1576"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1536" model="liasse.det.cpc.erp">
+      <field name="lib">*Entretien et réparations </field>
+      <field name="code1" ref="code_1536"/>
+      <field name="code2" ref="code_1577"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1537" model="liasse.det.cpc.erp">
+      <field name="lib">*Primes d'assurances </field>
+      <field name="code1" ref="code_1537"/>
+      <field name="code2" ref="code_1578"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1538" model="liasse.det.cpc.erp">
+      <field name="lib">*Rémunérations du personnel extérieur … l'entreprise </field>
+      <field name="code1" ref="code_1538"/>
+      <field name="code2" ref="code_1579"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1539" model="liasse.det.cpc.erp">
+      <field name="lib">*Rémunérations d'intermédiaires et honoraires </field>
+      <field name="code1" ref="code_1539"/>
+      <field name="code2" ref="code_10091"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1540" model="liasse.det.cpc.erp">
+      <field name="lib">*Redevances pour brevets, marques, droits....... </field>
+      <field name="code1" ref="code_1540"/>
+      <field name="code2" ref="code_10420"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1541" model="liasse.det.cpc.erp">
+      <field name="lib">*Transports </field>
+      <field name="code1" ref="code_1541"/>
+      <field name="code2" ref="code_1582"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1542" model="liasse.det.cpc.erp">
+      <field name="lib">*Déplacements, missions et réceptions </field>
+      <field name="code1" ref="code_1542"/>
+      <field name="code2" ref="code_1583"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1543" model="liasse.det.cpc.erp">
+      <field name="lib">*Reste du poste des autres charges externes </field>
+      <field name="code1" ref="code_1543"/>
+      <field name="code2" ref="code_1584"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1544" model="liasse.det.cpc.erp">
+      <field name="lib">Total </field>
+      <field name="code1" ref="code_1544"/>
+      <field name="code2" ref="code_1585"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1545" model="liasse.det.cpc.erp">
+      <field name="lib">Charges de personnel </field>
+      <field name="poste">617</field>
+      <field name="code1" ref="code_1545"/>
+      <field name="code2" ref="code_1586"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1546" model="liasse.det.cpc.erp">
+      <field name="lib">*Rémunération du personnel </field>
+      <field name="code1" ref="code_1546"/>
+      <field name="code2" ref="code_1587"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1547" model="liasse.det.cpc.erp">
+      <field name="lib">*Charges sociales </field>
+      <field name="code1" ref="code_1547"/>
+      <field name="code2" ref="code_1588"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1548" model="liasse.det.cpc.erp">
+      <field name="lib">*Reste du poste des charges de personnel </field>
+      <field name="code1" ref="code_1548"/>
+      <field name="code2" ref="code_1589"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1549" model="liasse.det.cpc.erp">
+      <field name="lib">Total </field>
+      <field name="code1" ref="code_1549"/>
+      <field name="code2" ref="code_1590"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1550" model="liasse.det.cpc.erp">
+      <field name="lib">618 - Autres charges d'exploitation </field>
+      <field name="code1" ref="code_1550"/>
+      <field name="code2" ref="code_1591"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1551" model="liasse.det.cpc.erp">
+      <field name="lib">*Jetons de présence </field>
+      <field name="code1" ref="code_1551"/>
+      <field name="code2" ref="code_1592"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1552" model="liasse.det.cpc.erp">
+      <field name="lib">*Pertes sur créances irrécouvrables </field>
+      <field name="code1" ref="code_1552"/>
+      <field name="code2" ref="code_1593"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1553" model="liasse.det.cpc.erp">
+      <field name="lib">*Reste du poste des autres charges d'exploitation </field>
+      <field name="code1" ref="code_1553"/>
+      <field name="code2" ref="code_1594"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1733" model="liasse.det.cpc.erp">
+      <field name="lib">Total </field>
+      <field name="code1" ref="code_1733"/>
+      <field name="code2" ref="code_1734"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1764" model="liasse.det.cpc.erp">
+      <field name="lib">Autres charges financières </field>
+      <field name="poste">638</field>
+      <field name="code1" ref="code_1764"/>
+      <field name="code2" ref="code_1814"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1765" model="liasse.det.cpc.erp">
+      <field name="lib">* Charges nettes sur cessions de titres et valeurs de placement </field>
+      <field name="code1" ref="code_1765"/>
+      <field name="code2" ref="code_1815"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1766" model="liasse.det.cpc.erp">
+      <field name="lib">*Reste du poste des autres charges financières </field>
+      <field name="code1" ref="code_1766"/>
+      <field name="code2" ref="code_1816"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1767" model="liasse.det.cpc.erp">
+      <field name="lib">TOTAL</field>
+      <field name="code1" ref="code_1767"/>
+      <field name="code2" ref="code_1817"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1792" model="liasse.det.cpc.erp">
+      <field name="lib">Autres charges non courantes </field>
+      <field name="poste">658</field>
+      <field name="code1" ref="code_1792"/>
+      <field name="code2" ref="code_1807"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1793" model="liasse.det.cpc.erp">
+      <field name="lib">* Pénalités sur marchés et dédits </field>
+      <field name="code1" ref="code_1793"/>
+      <field name="code2" ref="code_1808"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1794" model="liasse.det.cpc.erp">
+      <field name="lib">*Rappels d'impôts (autres qu'impôts sur les résultats) </field>
+      <field name="code1" ref="code_1794"/>
+      <field name="code2" ref="code_1809"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1795" model="liasse.det.cpc.erp">
+      <field name="lib">*Pénalités et amendes fiscales </field>
+      <field name="code1" ref="code_1795"/>
+      <field name="code2" ref="code_1810"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1796" model="liasse.det.cpc.erp">
+      <field name="lib">*Créances devenues irrécouvrables </field>
+      <field name="code1" ref="code_1796"/>
+      <field name="code2" ref="code_1811"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1797" model="liasse.det.cpc.erp">
+      <field name="lib">*Reste du poste des autres charges non courantes </field>
+      <field name="code1" ref="code_1797"/>
+      <field name="code2" ref="code_1812"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1798" model="liasse.det.cpc.erp">
+      <field name="lib">Total </field>
+      <field name="code1" ref="code_1798"/>
+      <field name="code2" ref="code_1813"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1963" model="liasse.det.cpc.erp">
+      <field name="lib">Ventes de marchandises </field>
+      <field name="poste">711</field>
+      <field name="code1" ref="code_1963"/>
+      <field name="code2" ref="code_1989"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1964" model="liasse.det.cpc.erp">
+      <field name="lib">* Ventes de marchandises au Maroc </field>
+      <field name="code1" ref="code_1964"/>
+      <field name="code2" ref="code_1990"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1965" model="liasse.det.cpc.erp">
+      <field name="lib">* Ventes de biens … l'étranger </field>
+      <field name="code1" ref="code_1965"/>
+      <field name="code2" ref="code_1991"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1966" model="liasse.det.cpc.erp">
+      <field name="lib">* Reste du poste des ventes de marchandises </field>
+      <field name="code1" ref="code_1966"/>
+      <field name="code2" ref="code_1992"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1967" model="liasse.det.cpc.erp">
+      <field name="lib">Total </field>
+      <field name="code1" ref="code_1967"/>
+      <field name="code2" ref="code_1993"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1968" model="liasse.det.cpc.erp">
+      <field name="lib">Ventes de biens et services produits </field>
+      <field name="poste">712</field>
+      <field name="code1" ref="code_1968"/>
+      <field name="code2" ref="code_1994"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1969" model="liasse.det.cpc.erp">
+      <field name="lib">*Ventes de biens produits au Maroc </field>
+      <field name="code1" ref="code_1969"/>
+      <field name="code2" ref="code_1995"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1970" model="liasse.det.cpc.erp">
+      <field name="lib">*Ventes de biens … l'étranger </field>
+      <field name="code1" ref="code_1970"/>
+      <field name="code2" ref="code_1996"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1971" model="liasse.det.cpc.erp">
+      <field name="lib">*Ventes des services au Maroc </field>
+      <field name="code1" ref="code_1971"/>
+      <field name="code2" ref="code_1997"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1972" model="liasse.det.cpc.erp">
+      <field name="lib">*Ventes des services … l'étranger </field>
+      <field name="code1" ref="code_1972"/>
+      <field name="code2" ref="code_1998"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1973" model="liasse.det.cpc.erp">
+      <field name="lib">*Redevances pour brevets, marques, droits.. </field>
+      <field name="code1" ref="code_1973"/>
+      <field name="code2" ref="code_1999"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1974" model="liasse.det.cpc.erp">
+      <field name="lib">* Reste du poste des ventes et services produits </field>
+      <field name="code1" ref="code_1974"/>
+      <field name="code2" ref="code_2000"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1975" model="liasse.det.cpc.erp">
+      <field name="lib">Total </field>
+      <field name="code1" ref="code_1975"/>
+      <field name="code2" ref="code_2001"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1976" model="liasse.det.cpc.erp">
+      <field name="lib">Variation des stocks de produits </field>
+      <field name="poste">713</field>
+      <field name="code1" ref="code_1976"/>
+      <field name="code2" ref="code_2002"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1977" model="liasse.det.cpc.erp">
+      <field name="lib">* Variation des stocks des biens produits (+/-) </field>
+      <field name="code1" ref="code_1977"/>
+      <field name="code2" ref="code_2003"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1978" model="liasse.det.cpc.erp">
+      <field name="lib">*Variation des stocks des services produits (+/-) </field>
+      <field name="code1" ref="code_1978"/>
+      <field name="code2" ref="code_2004"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1979" model="liasse.det.cpc.erp">
+      <field name="lib">*Variation des stocks des produits en cours (+/-) </field>
+      <field name="code1" ref="code_1979"/>
+      <field name="code2" ref="code_2005"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1980" model="liasse.det.cpc.erp">
+      <field name="lib">Total </field>
+      <field name="code1" ref="code_1980"/>
+      <field name="code2" ref="code_2006"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1981" model="liasse.det.cpc.erp">
+      <field name="lib">Autres produits d'exploitation </field>
+      <field name="poste">718</field>
+      <field name="code1" ref="code_1981"/>
+      <field name="code2" ref="code_2007"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1982" model="liasse.det.cpc.erp">
+      <field name="lib">* Jetons de présence reçus </field>
+      <field name="code1" ref="code_1982"/>
+      <field name="code2" ref="code_2008"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1983" model="liasse.det.cpc.erp">
+      <field name="lib">*Reste du poste (produits divers) </field>
+      <field name="code1" ref="code_1983"/>
+      <field name="code2" ref="code_2009"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1984" model="liasse.det.cpc.erp">
+      <field name="lib">Total </field>
+      <field name="code1" ref="code_1984"/>
+      <field name="code2" ref="code_2010"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1985" model="liasse.det.cpc.erp">
+      <field name="lib">Reprises d'exploitation transferts de charges </field>
+      <field name="poste">719</field>
+      <field name="code1" ref="code_1985"/>
+      <field name="code2" ref="code_2011"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1986" model="liasse.det.cpc.erp">
+      <field name="lib">*Reprises </field>
+      <field name="code1" ref="code_1986"/>
+      <field name="code2" ref="code_2012"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1987" model="liasse.det.cpc.erp">
+      <field name="lib">*Transferts de charges </field>
+      <field name="code1" ref="code_1987"/>
+      <field name="code2" ref="code_2013"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1988" model="liasse.det.cpc.erp">
+      <field name="lib">Total </field>
+      <field name="code1" ref="code_1988"/>
+      <field name="code2" ref="code_2014"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_2022" model="liasse.det.cpc.erp">
+      <field name="lib">Intérêts et autres produits financiers </field>
+      <field name="poste">738</field>
+      <field name="code1" ref="code_2022"/>
+      <field name="code2" ref="code_2029"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_2024" model="liasse.det.cpc.erp">
+      <field name="lib">*Intérêts et produits assimilés </field>
+      <field name="code1" ref="code_2024"/>
+      <field name="code2" ref="code_2031"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_2025" model="liasse.det.cpc.erp">
+      <field name="lib">*Revenus des créances rattachées … des participations </field>
+      <field name="code1" ref="code_2025"/>
+      <field name="code2" ref="code_2032"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_2026" model="liasse.det.cpc.erp">
+      <field name="lib">*Produits nets sur cessions de titres et valeurs de placement </field>
+      <field name="code1" ref="code_2026"/>
+      <field name="code2" ref="code_2033"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_2027" model="liasse.det.cpc.erp">
+      <field name="lib">*Reste du poste intérêts et autres produits financiers </field>
+      <field name="code1" ref="code_2027"/>
+      <field name="code2" ref="code_2034"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_2028" model="liasse.det.cpc.erp">
+      <field name="lib">Total </field>
+      <field name="code1" ref="code_2028"/>
+      <field name="code2" ref="code_2035"/>
+      <field name="type">2</field>
+    </record>
+
+    <!--Amortiossement-->
+    <record id="code_tab_1231" model="liasse.amort.erp">
+      <field name="lib">IMMOBILISATION EN NON-VALEURS </field>
+      <field name="code1" ref="code_1231"/>
+      <field name="code2" ref="code_1232"/>
+      <field name="code3" ref="code_1233"/>
+      <field name="code4" ref="code_1234"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1236" model="liasse.amort.erp">
+      <field name="lib">* Frais préliminaires </field>
+      <field name="code1" ref="code_1236"/>
+      <field name="code2" ref="code_1237"/>
+      <field name="code3" ref="code_1238"/>
+      <field name="code4" ref="code_1239"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1241" model="liasse.amort.erp">
+      <field name="lib">* Charges … répartir sur plusieurs exercices </field>
+      <field name="code1" ref="code_1241"/>
+      <field name="code2" ref="code_1242"/>
+      <field name="code3" ref="code_1243"/>
+      <field name="code4" ref="code_1244"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1246" model="liasse.amort.erp">
+      <field name="lib">* Primes de remboursement des obligations </field>
+      <field name="code1" ref="code_1246"/>
+      <field name="code2" ref="code_1247"/>
+      <field name="code3" ref="code_1248"/>
+      <field name="code4" ref="code_1249"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1624" model="liasse.amort.erp">
+      <field name="lib">IMMOBILISATIONS INCORPORELLES </field>
+      <field name="code1" ref="code_1624"/>
+      <field name="code2" ref="code_1629"/>
+      <field name="code3" ref="code_1650"/>
+      <field name="code4" ref="code_1679"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1625" model="liasse.amort.erp">
+      <field name="lib">* Immobilisation en recherche et développement </field>
+      <field name="code1" ref="code_1625"/>
+      <field name="code2" ref="code_1630"/>
+      <field name="code3" ref="code_1651"/>
+      <field name="code4" ref="code_1680"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1626" model="liasse.amort.erp">
+      <field name="lib">* Brevets, marques droits et valeurs similaires </field>
+      <field name="code1" ref="code_1626"/>
+      <field name="code2" ref="code_1631"/>
+      <field name="code3" ref="code_1652"/>
+      <field name="code4" ref="code_1681"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1627" model="liasse.amort.erp">
+      <field name="lib">* Fonds commercial </field>
+      <field name="code1" ref="code_1627"/>
+      <field name="code2" ref="code_1632"/>
+      <field name="code3" ref="code_1653"/>
+      <field name="code4" ref="code_1682"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1628" model="liasse.amort.erp">
+      <field name="lib">* Autres immobilisations incorporelles </field>
+      <field name="code1" ref="code_1628"/>
+      <field name="code2" ref="code_1633"/>
+      <field name="code3" ref="code_1654"/>
+      <field name="code4" ref="code_1683"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1700" model="liasse.amort.erp">
+      <field name="lib">IMMOBILISATIONS CORPORELLES </field>
+      <field name="code1" ref="code_1700"/>
+      <field name="code2" ref="code_1708"/>
+      <field name="code3" ref="code_1716"/>
+      <field name="code4" ref="code_1724"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1701" model="liasse.amort.erp">
+      <field name="lib">* Terrains </field>
+      <field name="code1" ref="code_1701"/>
+      <field name="code2" ref="code_1709"/>
+      <field name="code3" ref="code_1717"/>
+      <field name="code4" ref="code_1725"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1702" model="liasse.amort.erp">
+      <field name="lib">* Constructions </field>
+      <field name="code1" ref="code_1702"/>
+      <field name="code2" ref="code_1710"/>
+      <field name="code3" ref="code_1718"/>
+      <field name="code4" ref="code_1726"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1703" model="liasse.amort.erp">
+      <field name="lib">* Installations techniques; matériel et outillage </field>
+      <field name="code1" ref="code_1703"/>
+      <field name="code2" ref="code_1711"/>
+      <field name="code3" ref="code_1719"/>
+      <field name="code4" ref="code_1727"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1704" model="liasse.amort.erp">
+      <field name="lib">* Matériel de transport </field>
+      <field name="code1" ref="code_1704"/>
+      <field name="code2" ref="code_1712"/>
+      <field name="code3" ref="code_1720"/>
+      <field name="code4" ref="code_1728"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1705" model="liasse.amort.erp">
+      <field name="lib">* Mobilier, matériel de bureau et aménagements </field>
+      <field name="code1" ref="code_1705"/>
+      <field name="code2" ref="code_1713"/>
+      <field name="code3" ref="code_1721"/>
+      <field name="code4" ref="code_1729"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1706" model="liasse.amort.erp">
+      <field name="lib">* Autres immobilissations corporelles </field>
+      <field name="code1" ref="code_1706"/>
+      <field name="code2" ref="code_1714"/>
+      <field name="code3" ref="code_1722"/>
+      <field name="code4" ref="code_1730"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1707" model="liasse.amort.erp">
+      <field name="lib">* Immobilisations corporelles en cours </field>
+      <field name="code1" ref="code_1707"/>
+      <field name="code2" ref="code_1715"/>
+      <field name="code3" ref="code_1723"/>
+      <field name="code4" ref="code_1731"/>
+      <field name="type">0</field>
+    </record>
+    <!--Provision-->
+    <record id="code_tab_1748" model="liasse.provision.erp">
+      <field name="lib">1. Provisions pour dépréciation de l'actif immobilisé </field>
+      <field name="code1" ref="code_1748"/>
+      <field name="code2" ref="code_1749"/>
+      <field name="code3" ref="code_1750"/>
+      <field name="code4" ref="code_1751"/>
+      <field name="code5" ref="code_1752"/>
+      <field name="code6" ref="code_1753"/>
+      <field name="code7" ref="code_1754"/>
+      <field name="code8" ref="code_1755"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1784" model="liasse.provision.erp">
+      <field name="lib">2. Provisions réglementées </field>
+      <field name="code1" ref="code_1784"/>
+      <field name="code2" ref="code_1785"/>
+      <field name="code3" ref="code_1786"/>
+      <field name="code4" ref="code_1787"/>
+      <field name="code5" ref="code_1788"/>
+      <field name="code6" ref="code_1789"/>
+      <field name="code7" ref="code_1790"/>
+      <field name="code8" ref="code_1791"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1827" model="liasse.provision.erp">
+      <field name="lib">3. Provisons durables pour risques et charges </field>
+      <field name="code1" ref="code_1827"/>
+      <field name="code2" ref="code_1828"/>
+      <field name="code3" ref="code_1829"/>
+      <field name="code4" ref="code_1830"/>
+      <field name="code5" ref="code_1831"/>
+      <field name="code6" ref="code_1832"/>
+      <field name="code7" ref="code_1833"/>
+      <field name="code8" ref="code_1834"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1844" model="liasse.provision.erp">
+      <field name="lib">SOUS TOTAL (A) </field>
+      <field name="code1" ref="code_1844"/>
+      <field name="code2" ref="code_1845"/>
+      <field name="code3" ref="code_1846"/>
+      <field name="code4" ref="code_1847"/>
+      <field name="code5" ref="code_1848"/>
+      <field name="code6" ref="code_1849"/>
+      <field name="code7" ref="code_1850"/>
+      <field name="code8" ref="code_1851"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1877" model="liasse.provision.erp">
+      <field name="lib">4. Provisions pour dépréciation de l'actif circulant (hors trésorerie) </field>
+      <field name="code1" ref="code_1877"/>
+      <field name="code2" ref="code_1878"/>
+      <field name="code3" ref="code_1879"/>
+      <field name="code4" ref="code_1880"/>
+      <field name="code5" ref="code_1881"/>
+      <field name="code6" ref="code_1882"/>
+      <field name="code7" ref="code_1883"/>
+      <field name="code8" ref="code_1884"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1894" model="liasse.provision.erp">
+      <field name="lib">5. Autres Provisions pour risques et charge </field>
+      <field name="code1" ref="code_1894"/>
+      <field name="code2" ref="code_1895"/>
+      <field name="code3" ref="code_1896"/>
+      <field name="code4" ref="code_1897"/>
+      <field name="code5" ref="code_1898"/>
+      <field name="code6" ref="code_1899"/>
+      <field name="code7" ref="code_1900"/>
+      <field name="code8" ref="code_1901"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1903" model="liasse.provision.erp">
+      <field name="lib">6. Provisions pour dépréciation des comptes de trésorerie </field>
+      <field name="code1" ref="code_1903"/>
+      <field name="code2" ref="code_1904"/>
+      <field name="code3" ref="code_1905"/>
+      <field name="code4" ref="code_1906"/>
+      <field name="code5" ref="code_1907"/>
+      <field name="code6" ref="code_1908"/>
+      <field name="code7" ref="code_1909"/>
+      <field name="code8" ref="code_1910"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1912" model="liasse.provision.erp">
+      <field name="lib">SOUS TOTAL (B) </field>
+      <field name="code1" ref="code_1912"/>
+      <field name="code2" ref="code_1913"/>
+      <field name="code3" ref="code_1914"/>
+      <field name="code4" ref="code_1915"/>
+      <field name="code5" ref="code_1916"/>
+      <field name="code6" ref="code_1917"/>
+      <field name="code7" ref="code_1918"/>
+      <field name="code8" ref="code_1919"/>
+      <field name="type">2</field>
+    </record>
+    <record id="code_tab_1921" model="liasse.provision.erp">
+      <field name="lib">TOTAL (A+B) </field>
+      <field name="code1" ref="code_1921"/>
+      <field name="code2" ref="code_1922"/>
+      <field name="code3" ref="code_1923"/>
+      <field name="code4" ref="code_1924"/>
+      <field name="code5" ref="code_1925"/>
+      <field name="code6" ref="code_1926"/>
+      <field name="code7" ref="code_1927"/>
+      <field name="code8" ref="code_1928"/>
+      <field name="type">2</field>
+    </record>
+    <!--Stock-->
+    <record id="code_tab_1401" model="liasse.stock.erp">
+      <field name="lib">I. Stocks Approvisionnement </field>
+      <field name="code1" ref="code_1401"/>
+      <field name="code2" ref="code_1402"/>
+      <field name="code3" ref="code_1403"/>
+      <field name="code4" ref="code_1404"/>
+      <field name="code5" ref="code_1405"/>
+      <field name="code6" ref="code_1406"/>
+      <field name="code7" ref="code_1407"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1409" model="liasse.stock.erp">
+      <field name="lib">1- Biens et produits destinés à la revente en l'état </field>
+      <field name="code1" ref="code_1409"/>
+      <field name="code2" ref="code_1410"/>
+      <field name="code3" ref="code_1411"/>
+      <field name="code4" ref="code_1412"/>
+      <field name="code5" ref="code_1413"/>
+      <field name="code6" ref="code_1414"/>
+      <field name="code7" ref="code_1415"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1417" model="liasse.stock.erp">
+      <field name="lib">* Biens immeubles </field>
+      <field name="code1" ref="code_1417"/>
+      <field name="code2" ref="code_1418"/>
+      <field name="code3" ref="code_1419"/>
+      <field name="code4" ref="code_1420"/>
+      <field name="code5" ref="code_1421"/>
+      <field name="code6" ref="code_1422"/>
+      <field name="code7" ref="code_1423"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1425" model="liasse.stock.erp">
+      <field name="lib">* Biens meubles </field>
+      <field name="code1" ref="code_1425"/>
+      <field name="code2" ref="code_1426"/>
+      <field name="code3" ref="code_1427"/>
+      <field name="code4" ref="code_1428"/>
+      <field name="code5" ref="code_1429"/>
+      <field name="code6" ref="code_1430"/>
+      <field name="code7" ref="code_1431"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1433" model="liasse.stock.erp">
+      <field name="lib">2- Biens et Matières Premières destinées aux activitès de production et de transformation </field>
+      <field name="code1" ref="code_1433"/>
+      <field name="code2" ref="code_1434"/>
+      <field name="code3" ref="code_1435"/>
+      <field name="code4" ref="code_1436"/>
+      <field name="code5" ref="code_1437"/>
+      <field name="code6" ref="code_1438"/>
+      <field name="code7" ref="code_1439"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1449" model="liasse.stock.erp">
+      <field name="lib">3- Matières premières </field>
+      <field name="code1" ref="code_1449"/>
+      <field name="code2" ref="code_1450"/>
+      <field name="code3" ref="code_1451"/>
+      <field name="code4" ref="code_1452"/>
+      <field name="code5" ref="code_1453"/>
+      <field name="code6" ref="code_1454"/>
+      <field name="code7" ref="code_1455"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1457" model="liasse.stock.erp">
+      <field name="lib">4- Matières consommables </field>
+      <field name="code1" ref="code_1457"/>
+      <field name="code2" ref="code_1458"/>
+      <field name="code3" ref="code_1459"/>
+      <field name="code4" ref="code_1460"/>
+      <field name="code5" ref="code_1461"/>
+      <field name="code6" ref="code_1462"/>
+      <field name="code7" ref="code_1463"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1465" model="liasse.stock.erp">
+      <field name="lib">5 - Pièces détachées </field>
+      <field name="code1" ref="code_1465"/>
+      <field name="code2" ref="code_1466"/>
+      <field name="code3" ref="code_1467"/>
+      <field name="code4" ref="code_1468"/>
+      <field name="code5" ref="code_1469"/>
+      <field name="code6" ref="code_1470"/>
+      <field name="code7" ref="code_1471"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1473" model="liasse.stock.erp">
+      <field name="lib">6- Carburants, lubrifiants pour véhicules de transport </field>
+      <field name="code1" ref="code_1473"/>
+      <field name="code2" ref="code_1474"/>
+      <field name="code3" ref="code_1475"/>
+      <field name="code4" ref="code_1476"/>
+      <field name="code5" ref="code_1477"/>
+      <field name="code6" ref="code_1478"/>
+      <field name="code7" ref="code_1479"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1481" model="liasse.stock.erp">
+      <field name="lib">Emballage</field>
+      <field name="code1" ref="code_1481"/>
+      <field name="code2" ref="code_1482"/>
+      <field name="code3" ref="code_1483"/>
+      <field name="code4" ref="code_1484"/>
+      <field name="code5" ref="code_1485"/>
+      <field name="code6" ref="code_1486"/>
+      <field name="code7" ref="code_1487"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1555" model="liasse.stock.erp">
+      <field name="lib">7 * récupérables</field>
+      <field name="code1" ref="code_1555"/>
+      <field name="code2" ref="code_1556"/>
+      <field name="code3" ref="code_1557"/>
+      <field name="code4" ref="code_1558"/>
+      <field name="code5" ref="code_1559"/>
+      <field name="code6" ref="code_1560"/>
+      <field name="code7" ref="code_1561"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1596" model="liasse.stock.erp">
+      <field name="lib">8 * vendus </field>
+      <field name="code1" ref="code_1596"/>
+      <field name="code2" ref="code_1597"/>
+      <field name="code3" ref="code_1598"/>
+      <field name="code4" ref="code_1599"/>
+      <field name="code5" ref="code_1600"/>
+      <field name="code6" ref="code_1601"/>
+      <field name="code7" ref="code_1602"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1604" model="liasse.stock.erp">
+      <field name="lib">9 * perdus </field>
+      <field name="code1" ref="code_1604"/>
+      <field name="code2" ref="code_1605"/>
+      <field name="code3" ref="code_1606"/>
+      <field name="code4" ref="code_1607"/>
+      <field name="code5" ref="code_1608"/>
+      <field name="code6" ref="code_1609"/>
+      <field name="code7" ref="code_1610"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1612" model="liasse.stock.erp">
+      <field name="lib">10- Total Stocks des encours </field>
+      <field name="code1" ref="code_1612"/>
+      <field name="code2" ref="code_1613"/>
+      <field name="code3" ref="code_1614"/>
+      <field name="code4" ref="code_1615"/>
+      <field name="code5" ref="code_1616"/>
+      <field name="code6" ref="code_1617"/>
+      <field name="code7" ref="code_1618"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1635" model="liasse.stock.erp">
+      <field name="lib">II. Stock en cours Production de biens et service </field>
+      <field name="code1" ref="code_1635"/>
+      <field name="code2" ref="code_1636"/>
+      <field name="code3" ref="code_1637"/>
+      <field name="code4" ref="code_1638"/>
+      <field name="code5" ref="code_1639"/>
+      <field name="code6" ref="code_1640"/>
+      <field name="code7" ref="code_1641"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1643" model="liasse.stock.erp">
+      <field name="lib">11- Produits en cours </field>
+      <field name="code1" ref="code_1643"/>
+      <field name="code2" ref="code_1644"/>
+      <field name="code3" ref="code_1645"/>
+      <field name="code4" ref="code_1646"/>
+      <field name="code5" ref="code_1647"/>
+      <field name="code6" ref="code_1648"/>
+      <field name="code7" ref="code_1649"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1656" model="liasse.stock.erp">
+      <field name="lib">12- Etudes en cours </field>
+      <field name="code1" ref="code_1656"/>
+      <field name="code2" ref="code_1657"/>
+      <field name="code3" ref="code_1658"/>
+      <field name="code4" ref="code_1659"/>
+      <field name="code5" ref="code_1660"/>
+      <field name="code6" ref="code_1661"/>
+      <field name="code7" ref="code_1662"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1664" model="liasse.stock.erp">
+      <field name="lib">13- Travaux en cours </field>
+      <field name="code1" ref="code_1664"/>
+      <field name="code2" ref="code_1665"/>
+      <field name="code3" ref="code_1666"/>
+      <field name="code4" ref="code_1667"/>
+      <field name="code5" ref="code_1668"/>
+      <field name="code6" ref="code_1669"/>
+      <field name="code7" ref="code_1670"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1672" model="liasse.stock.erp">
+      <field name="lib">14- Services encours </field>
+      <field name="code1" ref="code_1672"/>
+      <field name="code2" ref="code_1673"/>
+      <field name="code3" ref="code_1674"/>
+      <field name="code4" ref="code_1675"/>
+      <field name="code5" ref="code_1676"/>
+      <field name="code6" ref="code_1677"/>
+      <field name="code7" ref="code_1678"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1685" model="liasse.stock.erp">
+      <field name="lib">15- Total Stocks des encours </field>
+      <field name="code1" ref="code_1685"/>
+      <field name="code2" ref="code_1686"/>
+      <field name="code3" ref="code_1687"/>
+      <field name="code4" ref="code_1688"/>
+      <field name="code5" ref="code_1689"/>
+      <field name="code6" ref="code_1690"/>
+      <field name="code7" ref="code_1691"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1736" model="liasse.stock.erp">
+      <field name="lib">III. Stock Produits finis </field>
+      <field name="code1" ref="code_1736"/>
+      <field name="code2" ref="code_1737"/>
+      <field name="code3" ref="code_1738"/>
+      <field name="code4" ref="code_1739"/>
+      <field name="code5" ref="code_1740"/>
+      <field name="code6" ref="code_1741"/>
+      <field name="code7" ref="code_1742"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1757" model="liasse.stock.erp">
+      <field name="lib">16- produits finis </field>
+      <field name="code1" ref="code_1757"/>
+      <field name="code2" ref="code_1758"/>
+      <field name="code3" ref="code_1759"/>
+      <field name="code4" ref="code_1760"/>
+      <field name="code5" ref="code_1761"/>
+      <field name="code6" ref="code_1762"/>
+      <field name="code7" ref="code_1763"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1769" model="liasse.stock.erp">
+      <field name="lib">17- Biens finis </field>
+      <field name="code1" ref="code_1769"/>
+      <field name="code2" ref="code_1770"/>
+      <field name="code3" ref="code_1771"/>
+      <field name="code4" ref="code_1772"/>
+      <field name="code5" ref="code_1773"/>
+      <field name="code6" ref="code_1774"/>
+      <field name="code7" ref="code_1775"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1800" model="liasse.stock.erp">
+      <field name="lib">18- Total Stocks Produits et Biens finis </field>
+      <field name="code1" ref="code_1800"/>
+      <field name="code2" ref="code_1801"/>
+      <field name="code3" ref="code_1802"/>
+      <field name="code4" ref="code_1803"/>
+      <field name="code5" ref="code_1804"/>
+      <field name="code6" ref="code_1805"/>
+      <field name="code7" ref="code_1806"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1819" model="liasse.stock.erp">
+      <field name="lib">IV . Stock Produits résiduels </field>
+      <field name="code1" ref="code_1819"/>
+      <field name="code2" ref="code_1820"/>
+      <field name="code3" ref="code_1821"/>
+      <field name="code4" ref="code_1822"/>
+      <field name="code5" ref="code_1823"/>
+      <field name="code6" ref="code_1824"/>
+      <field name="code7" ref="code_1825"/>
+      <field name="type">1</field>
+    </record>
+    <record id="code_tab_1836" model="liasse.stock.erp">
+      <field name="lib">19- Déchets </field>
+      <field name="code1" ref="code_1836"/>
+      <field name="code2" ref="code_1837"/>
+      <field name="code3" ref="code_1838"/>
+      <field name="code4" ref="code_1839"/>
+      <field name="code5" ref="code_1840"/>
+      <field name="code6" ref="code_1841"/>
+      <field name="code7" ref="code_1842"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1853" model="liasse.stock.erp">
+      <field name="lib">20- Rebuts </field>
+      <field name="code1" ref="code_1853"/>
+      <field name="code2" ref="code_1854"/>
+      <field name="code3" ref="code_1855"/>
+      <field name="code4" ref="code_1856"/>
+      <field name="code5" ref="code_1857"/>
+      <field name="code6" ref="code_1858"/>
+      <field name="code7" ref="code_1859"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1861" model="liasse.stock.erp">
+      <field name="lib">21- Matières de récupération </field>
+      <field name="code1" ref="code_1861"/>
+      <field name="code2" ref="code_1862"/>
+      <field name="code3" ref="code_1863"/>
+      <field name="code4" ref="code_1864"/>
+      <field name="code5" ref="code_1865"/>
+      <field name="code6" ref="code_1866"/>
+      <field name="code7" ref="code_1867"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1869" model="liasse.stock.erp">
+      <field name="lib">22- Total Stocks Produits résiduels </field>
+      <field name="code1" ref="code_1869"/>
+      <field name="code2" ref="code_1870"/>
+      <field name="code3" ref="code_1871"/>
+      <field name="code4" ref="code_1872"/>
+      <field name="code5" ref="code_1873"/>
+      <field name="code6" ref="code_1874"/>
+      <field name="code7" ref="code_1875"/>
+      <field name="type">0</field>
+    </record>
+    <record id="code_tab_1886" model="liasse.stock.erp">
+      <field name="lib">23- TOTAL GENERAL (ligne 10+15+18+22) </field>
+      <field name="code1" ref="code_1886"/>
+      <field name="code2" ref="code_1887"/>
+      <field name="code3" ref="code_1888"/>
+      <field name="code4" ref="code_1889"/>
+      <field name="code5" ref="code_1890"/>
+      <field name="code6" ref="code_1891"/>
+      <field name="code7" ref="code_1892"/>
+      <field name="type">0</field>
+    </record>
+    <!--Credit bail-->
+    <record id="code_tab_53" model="liasse.credit.bail.erp">
+      <field name="extra_field_clos" ref="code_53"/>
+    </record>
+    <record id="code_tab_1099" model="liasse.credit.bail.line.erp">
+      <field name="code0" ref="code_1098"/>
+      <field name="code1" ref="code_1099"/>
+      <field name="code2" ref="code_1100"/>
+      <field name="code3" ref="code_1101"/>
+      <field name="code4" ref="code_1102"/>
+      <field name="code5" ref="code_1103"/>
+      <field name="code6" ref="code_1104"/>
+      <field name="code7" ref="code_1105"/>
+      <field name="code8" ref="code_1106"/>
+      <field name="code9" ref="code_1107"/>
+      <field name="code10" ref="code_1108"/>
+      <field name="credit_bail_id" ref="code_tab_53"/>
+    </record>
+    <!--Plus ou moins value-->
+    <record id="code_tab_72" model="liasse.pm.value.erp">
+      <field name="extra_field_clos" ref="code_72"/>
+      <field name="compte_princ" ref="code_2037"/>
+      <field name="montant_brut" ref="code_2038"/>
+      <field name="amort_cumul" ref="code_2039"/>
+      <field name="val_net_amort" ref="code_2040"/>
+      <field name="prod_cess" ref="code_2041"/>
+      <field name="plus_value" ref="code_2042"/>
+      <field name="moins_value" ref="code_2043"/>
+    </record>
+    <record id="code_tab_1930" model="liasse.pm.value.line.erp">
+      <field name="code0" ref="code_1929"/>
+      <field name="code1" ref="code_1930"/>
+      <field name="code2" ref="code_1931"/>
+      <field name="code3" ref="code_1932"/>
+      <field name="code4" ref="code_1933"/>
+      <field name="code5" ref="code_1934"/>
+      <field name="code6" ref="code_1935"/>
+      <field name="code7" ref="code_1936"/>
+      <field name="pm_val_id" ref="code_tab_72"/>
+    </record>
+    <!--Titre de participation-->
+    <record id="code_tab_2056" model="liasse.titre.particip.erp">
+      <field name="code2" ref="code_2056"/>
+      <field name="code3" ref="code_2057"/>
+      <field name="code4" ref="code_2058"/>
+      <field name="code5" ref="code_2059"/>
+      <field name="code6" ref="code_2060"/>
+      <field name="code7" ref="code_2061"/>
+      <field name="code8" ref="code_2062"/>
+      <field name="code9" ref="code_2063"/>
+    </record>
+    <record id="code_tab_2045" model="liasse.titre.particip.line.erp">
+      <field name="code0" ref="code_2044"/>
+      <field name="code1" ref="code_2045"/>
+      <field name="code2" ref="code_2046"/>
+      <field name="code3" ref="code_2047"/>
+      <field name="code4" ref="code_2048"/>
+      <field name="code5" ref="code_2049"/>
+      <field name="code6" ref="code_2050"/>
+      <field name="code7" ref="code_2051"/>
+      <field name="code8" ref="code_2052"/>
+      <field name="code9" ref="code_2053"/>
+      <field name="titre_partic_id" ref="code_tab_2056"/>
+    </record>
+    <!--Repartition du capital social-->
+    <record id="code_tab_18" model="liasse.repart.cs.erp">
+      <field name="montant_capital" ref="code_18"/>
+    </record>
+    <record id="code_tab_13536" model="liasse.repart.cs.line.erp">
+      <field name="code0" ref="code_2094"/>
+      <field name="code1" ref="code_13536"/>
+      <field name="code2" ref="code_13537"/>
+      <field name="code3" ref="code_2095"/>
+      <field name="code4" ref="code_2096"/>
+      <field name="code5" ref="code_2097"/>
+      <field name="code6" ref="code_2098"/>
+      <field name="code7" ref="code_2099"/>
+      <field name="code8" ref="code_2100"/>
+      <field name="code9" ref="code_2101"/>
+      <field name="repart_cs_id" ref="code_tab_18"/>
+    </record>
+    <!--Interet-->
+    <record id="code_tab_55" model="liasse.interets.erp">
+      <field name="code0" ref="code_55"/>
+      <field name="code1" ref="code_1257"/>
+      <field name="code2" ref="code_1261"/>
+      <field name="code3" ref="code_1262"/>
+      <field name="code4" ref="code_1263"/>
+      <field name="code5" ref="code_1264"/>
+      <field name="code6" ref="code_1265"/>
+    </record>
+    <record id="code_tab_1209" model="liasse.interets.line.erp">
+      <field name="code0" ref="code_1208"/>
+      <field name="code1" ref="code_1209"/>
+      <field name="code2" ref="code_1210"/>
+      <field name="code3" ref="code_1211"/>
+      <field name="code4" ref="code_1212"/>
+      <field name="code5" ref="code_1213"/>
+      <field name="code6" ref="code_1214"/>
+      <field name="code7" ref="code_1215"/>
+      <field name="code8" ref="code_1216"/>
+      <field name="code9" ref="code_1217"/>
+      <field name="code10" ref="code_1218"/>
+      <field name="code11" ref="code_1219"/>
+      <field name="code12" ref="code_1220"/>
+      <field name="type_in">0</field>
+      <field name="interet_id" ref="code_tab_55"/>
+    </record>
+    <record id="code_tab_1222" model="liasse.interets.line.erp">
+      <field name="code0" ref="code_1221"/>
+      <field name="code1" ref="code_1222"/>
+      <field name="code2" ref="code_1223"/>
+      <field name="code3" ref="code_1224"/>
+      <field name="code4" ref="code_1225"/>
+      <field name="code5" ref="code_1226"/>
+      <field name="code6" ref="code_1227"/>
+      <field name="code7" ref="code_1228"/>
+      <field name="code8" ref="code_1229"/>
+      <field name="code9" ref="code_1250"/>
+      <field name="code10" ref="code_1251"/>
+      <field name="code11" ref="code_1252"/>
+      <field name="code12" ref="code_1253"/>
+      <field name="type_in">1</field>
+      <field name="interet_id" ref="code_tab_55"/>
+    </record>
+    <!--Beaux-->
+    <record id="code_tab_1279" model="liasse.beaux.erp">
+      <field name="code0" ref="code_1279"/>
+      <field name="code1" ref="code_1280"/>
+    </record>
+    <record id="code_tab_1268" model="liasse.beaux.line.erp">
+      <field name="code0" ref="code_1267"/>
+      <field name="code1" ref="code_1268"/>
+      <field name="code2" ref="code_1269"/>
+      <field name="code3" ref="code_1270"/>
+      <field name="code4" ref="code_1271"/>
+      <field name="code5" ref="code_1272"/>
+      <field name="code6" ref="code_1273"/>
+      <field name="code7" ref="code_1274"/>
+      <field name="beaux_id" ref="code_tab_1279"/>
+    </record>
+    <!--Passage-->
+    <record id="code_tab_817" model="liasse.passage.erp">
+      <field name="code0" ref="code_817"/>
+      <field name="code1" ref="code_819"/>
+      <field name="code2" ref="code_818"/>
+      <field name="code3" ref="code_820"/>
+      <field name="code4" ref="code_833"/>
+      <field name="code5" ref="code_834"/>
+      <field name="code6" ref="code_837"/>
+      <field name="code7" ref="code_839"/>
+      <field name="code8" ref="code_838"/>
+      <field name="code9" ref="code_840"/>
+      <field name="code10" ref="code_845"/>
+      <field name="code12" ref="code_846"/>
+      <field name="code14" ref="code_847"/>
+      <field name="code16" ref="code_848"/>
+      <field name="code18" ref="code_6872"/>
+      <field name="code19" ref="code_6874"/>
+      <field name="code20" ref="code_6873"/>
+      <field name="code21" ref="code_6875"/>
+      <field name="code22" ref="code_855"/>
+      <field name="code23" ref="code_860"/>
+      <field name="code24" ref="code_861"/>
+      <field name="code25" ref="code_862"/>
+	  <field name="code26" ref="code_863"/>
+    </record>
+    <record id="code_tab_821" model="liasse.passage.line.erp">
+      <field name="code0" ref="code_821"/>
+      <field name="code1" ref="code_822"/>
+	  <field name="type_in">0</field>
+      <field name="passage_id" ref="code_tab_817"/>
+    </record>
+    <record id="code_tab_824" model="liasse.passage.line.erp">
+      <field name="code0" ref="code_824"/>
+      <field name="code1" ref="code_825"/>
+	  <field name="type_in">1</field>
+      <field name="passage_id" ref="code_tab_817"/>
+    </record>
+    <record id="code_tab_827" model="liasse.passage.line.erp">
+      <field name="code0" ref="code_827"/>
+      <field name="code2" ref="code_830"/>
+	  <field name="type_in">2</field>
+      <field name="passage_id" ref="code_tab_817"/>
+    </record>
+    <record id="code_tab_829" model="liasse.passage.line.erp">
+      <field name="code0" ref="code_829"/>
+      <field name="code2" ref="code_7830"/>
+	  <field name="type_in">3</field>
+      <field name="passage_id" ref="code_tab_817"/>
+    </record>
+	
+    <!--Affectation-->
+    <record id="code_tab_471" model="liasse.affect.erp">
+      <field name="code0" ref="code_471"/>
+      <field name="code1" ref="code_473"/>
+      <field name="code2" ref="code_475"/>
+      <field name="code3" ref="code_477"/>
+      <field name="code4" ref="code_479"/>
+      <field name="code5" ref="code_481"/>
+      <field name="code6" ref="code_483"/>
+      <field name="code7" ref="code_485"/>
+      <field name="code8" ref="code_487"/>
+      <field name="code9" ref="code_489"/>
+      <field name="code10" ref="code_491"/>
+      <field name="code11" ref="code_493"/>
+	  <field name="code12" ref="code_495"/>
+    </record>
+
+    <!--Affectation-->
+    <record id="code_tab_873" model="liasse.encour.erp">
+      <field name="code0" ref="code_873"/>
+      <field name="code1" ref="code_874"/>
+      <field name="code2" ref="code_875"/>
+      <field name="code3" ref="code_877"/>
+      <field name="code4" ref="code_878"/>
+      <field name="code5" ref="code_879"/>
+      <field name="code6" ref="code_881"/>
+      <field name="code7" ref="code_882"/>
+      <field name="code8" ref="code_883"/>
+      <field name="code9" ref="code_885"/>
+      <field name="code10" ref="code_886"/>
+      <field name="code11" ref="code_887"/>
+	  <field name="code12" ref="code_893"/>
+      <field name="code13" ref="code_894"/>
+      <field name="code14" ref="code_895"/>
+      <field name="code15" ref="code_897"/>
+      <field name="code16" ref="code_898"/>
+      <field name="code17" ref="code_899"/>
+      <field name="code18" ref="code_901"/>
+      <field name="code19" ref="code_902"/>
+      <field name="code20" ref="code_903"/>
+      <field name="code21" ref="code_905"/>
+      <field name="code22" ref="code_906"/>
+      <field name="code23" ref="code_907"/>
+      <field name="code24" ref="code_909"/>
+	  <field name="code25" ref="code_910"/>
+      <field name="code26" ref="code_911"/>
+      <field name="code27" ref="code_10040"/>
+      <field name="code28" ref="code_10042"/>
+      <field name="code29" ref="code_10028"/>
+      <field name="code30" ref="code_10041"/>
+      <field name="code31" ref="code_10043"/>
+      <field name="code32" ref="code_10029"/>
+      <field name="code33" ref="code_921"/>
+      <field name="code34" ref="code_922"/>
+      <field name="code35" ref="code_923"/>
+      <field name="code36" ref="code_925"/>
+      <field name="code37" ref="code_926"/>
+	  <field name="code38" ref="code_927"/>
+      <field name="code39" ref="code_929"/>
+      <field name="code40" ref="code_930"/>
+      <field name="code41" ref="code_931"/>
+      <field name="code42" ref="code_933"/>
+      <field name="code43" ref="code_934"/>
+      <field name="code44" ref="code_935"/>
+      <field name="code45" ref="code_937"/>
+      <field name="code46" ref="code_938"/>
+      <field name="code47" ref="code_939"/>
+      <field name="code48" ref="code_10022"/>
+      <field name="code49" ref="code_10024"/>
+      <field name="code50" ref="code_10026"/>
+	  <field name="code51" ref="code_10023"/>
+      <field name="code52" ref="code_10025"/>
+      <field name="code53" ref="code_10027"/>
+      <field name="code54" ref="code_949"/>
+	  <field name="code55" ref="code_950"/>
+	  <field name="code56" ref="code_951"/>
+    </record>
+	
+    <!--Fusion-->
+    <record id="code_tab_1110" model="liasse.fusion.erp">
+      <field name="lib">Terrains</field>
+      <field name="code1" ref="code_1110"/>
+      <field name="code2" ref="code_1111"/>
+      <field name="code3" ref="code_1112"/>
+      <field name="code4" ref="code_1113"/>
+      <field name="code5" ref="code_1114"/>
+      <field name="code6" ref="code_1115"/>
+      <field name="code7" ref="code_1116"/>
+      <field name="code8" ref="code_1117"/>
+    </record>
+    <record id="code_tab_1119" model="liasse.fusion.erp">
+      <field name="lib">Constructions</field>
+      <field name="code1" ref="code_1119"/>
+      <field name="code2" ref="code_1120"/>
+      <field name="code3" ref="code_1121"/>
+      <field name="code4" ref="code_1122"/>
+      <field name="code5" ref="code_1123"/>
+      <field name="code6" ref="code_1124"/>
+      <field name="code7" ref="code_1125"/>
+      <field name="code8" ref="code_1126"/>
+    </record>
+    <record id="code_tab_1128" model="liasse.fusion.erp">
+      <field name="lib">Matériel et outillage </field>
+      <field name="code1" ref="code_1128"/>
+      <field name="code2" ref="code_1129"/>
+      <field name="code3" ref="code_1130"/>
+      <field name="code4" ref="code_1131"/>
+      <field name="code5" ref="code_1132"/>
+      <field name="code6" ref="code_1133"/>
+      <field name="code7" ref="code_1134"/>
+      <field name="code8" ref="code_1135"/>
+    </record>
+    <record id="code_tab_1137" model="liasse.fusion.erp">
+      <field name="lib">Matériel de transport</field>
+      <field name="code1" ref="code_1137"/>
+      <field name="code2" ref="code_1138"/>
+      <field name="code3" ref="code_1139"/>
+      <field name="code4" ref="code_1140"/>
+      <field name="code5" ref="code_1141"/>
+      <field name="code6" ref="code_1142"/>
+      <field name="code7" ref="code_1143"/>
+      <field name="code8" ref="code_1144"/>
+    </record>
+    <record id="code_tab_1146" model="liasse.fusion.erp">
+      <field name="lib">Agencements-installations</field>
+      <field name="code1" ref="code_1146"/>
+      <field name="code2" ref="code_1147"/>
+      <field name="code3" ref="code_1148"/>
+      <field name="code4" ref="code_1149"/>
+      <field name="code5" ref="code_1150"/>
+      <field name="code6" ref="code_1151"/>
+      <field name="code7" ref="code_1152"/>
+      <field name="code8" ref="code_1153"/>
+    </record>
+    <record id="code_tab_1155" model="liasse.fusion.erp">
+      <field name="lib">Brevets</field>
+      <field name="code1" ref="code_1155"/>
+      <field name="code2" ref="code_1156"/>
+      <field name="code3" ref="code_1157"/>
+      <field name="code4" ref="code_1158"/>
+      <field name="code5" ref="code_1159"/>
+      <field name="code6" ref="code_1160"/>
+      <field name="code7" ref="code_1161"/>
+      <field name="code8" ref="code_1162"/>
+    </record>
+    <record id="code_tab_1164" model="liasse.fusion.erp">
+      <field name="lib">Autres éléments amortissables</field>
+      <field name="code1" ref="code_1164"/>
+      <field name="code2" ref="code_1165"/>
+      <field name="code3" ref="code_1166"/>
+      <field name="code4" ref="code_1167"/>
+      <field name="code5" ref="code_1168"/>
+      <field name="code6" ref="code_1169"/>
+      <field name="code7" ref="code_1170"/>
+      <field name="code8" ref="code_1171"/>
+    </record>
+    <record id="code_tab_1173" model="liasse.fusion.erp">
+      <field name="lib">Titres de participation</field>
+      <field name="code1" ref="code_1173"/>
+      <field name="code2" ref="code_1174"/>
+      <field name="code3" ref="code_1175"/>
+      <field name="code4" ref="code_1176"/>
+      <field name="code5" ref="code_1177"/>
+      <field name="code6" ref="code_1178"/>
+      <field name="code7" ref="code_1179"/>
+      <field name="code8" ref="code_1180"/>
+    </record>
+    <record id="code_tab_1182" model="liasse.fusion.erp">
+      <field name="lib">Fonds de commerce</field>
+      <field name="code1" ref="code_1182"/>
+      <field name="code2" ref="code_1183"/>
+      <field name="code3" ref="code_1184"/>
+      <field name="code4" ref="code_1185"/>
+      <field name="code5" ref="code_1186"/>
+      <field name="code6" ref="code_1187"/>
+      <field name="code7" ref="code_1188"/>
+      <field name="code8" ref="code_1189"/>
+    </record>
+    <record id="code_tab_1191" model="liasse.fusion.erp">
+      <field name="lib">Autres éléments non amortissables</field>
+      <field name="code1" ref="code_1191"/>
+      <field name="code2" ref="code_1192"/>
+      <field name="code3" ref="code_1193"/>
+      <field name="code4" ref="code_1194"/>
+      <field name="code5" ref="code_1195"/>
+      <field name="code6" ref="code_1196"/>
+      <field name="code7" ref="code_1197"/>
+      <field name="code8" ref="code_1198"/>
+    </record>
+    <record id="code_tab_1200" model="liasse.fusion.erp">
+      <field name="lib">TOTAL </field>
+      <field name="code1" ref="code_1200"/>
+      <field name="code2" ref="code_1201"/>
+      <field name="code3" ref="code_1202"/>
+      <field name="code4" ref="code_1203"/>
+      <field name="code5" ref="code_1204"/>
+      <field name="code6" ref="code_1205"/>
+      <field name="code7" ref="code_1206"/>
+      <field name="code8" ref="code_1207"/>
+    </record>
+	
+    <!--TVA-->
+    <record id="code_tab_2065" model="liasse.tva.erp">
+      <field name="tva_facsd" ref="code_2065"/>
+      <field name="tva_faco" ref="code_2066"/>
+      <field name="tva_facd" ref="code_2067"/>
+      <field name="tva_facsf" ref="code_2068"/>
+      <field name="tva_recsd" ref="code_2070"/>
+      <field name="tva_reco" ref="code_2071"/>
+      <field name="tva_recd" ref="code_2072"/>
+      <field name="tva_recsf" ref="code_2073"/>
+      <field name="tva_charsd" ref="code_2075"/>
+      <field name="tva_charo" ref="code_2076"/>
+      <field name="tva_chard" ref="code_2077"/>
+      <field name="tva_charsf" ref="code_2078"/>
+      <field name="tva_immosd" ref="code_2080"/>
+      <field name="tva_immoo" ref="code_2081"/>
+      <field name="tva_immod" ref="code_2082"/>
+      <field name="tva_immosf" ref="code_2083"/>
+      <field name="tva_totalsd" ref="code_2085"/>
+      <field name="tva_totalo" ref="code_2086"/>
+      <field name="tva_totald" ref="code_2087"/>
+      <field name="tva_totalsf" ref="code_2088"/>
+    </record>
+	
+    <!--Immo-->
+    <record id="code_tab_10064" model="liasse.immo.erp">
+      <field name="code0" ref="code_10064"/>
+      <field name="code1" ref="code_10065"/>
+      <field name="code2" ref="code_10066"/>
+      <field name="code3" ref="code_10067"/>
+      <field name="code4" ref="code_10068"/>
+      <field name="code5" ref="code_10069"/>
+      <field name="code6" ref="code_10070"/>
+      <field name="code7" ref="code_10071"/>
+      <field name="fp_mb" ref="code_966"/>
+      <field name="fp_aug_acq" ref="code_980"/>
+      <field name="fp_aug_pd" ref="code_994"/>
+      <field name="fp_aug_vir" ref="code_1008"/>
+      <field name="fp_dim_cess" ref="code_1022"/>
+      <field name="fp_dim_ret" ref="code_1036"/>
+      <field name="fp_dim_vir" ref="code_1050"/>
+      <field name="fp_mbf" ref="code_1064"/>
+      <field name="charge_mb" ref="code_967"/>
+      <field name="charge_aug_acq" ref="code_981"/>
+      <field name="charge_aug_pd" ref="code_995"/>
+      <field name="charge_aug_vir" ref="code_1009"/>
+      <field name="charge_dim_cess" ref="code_1023"/>
+      <field name="charge_dim_ret" ref="code_1037"/>
+      <field name="charge_dim_vir" ref="code_1051"/>
+      <field name="charge_mbf" ref="code_1065"/>
+      <field name="prime_mb" ref="code_968"/>
+      <field name="prime_aug_acq" ref="code_982"/>
+      <field name="prime_aug_pd" ref="code_996"/>
+      <field name="prime_aug_vir" ref="code_1010"/>
+      <field name="prime_dim_cess" ref="code_1024"/>
+      <field name="prime_dim_ret" ref="code_1038"/>
+      <field name="prime_dim_vir" ref="code_1052"/>
+      <field name="prime_mbf" ref="code_1066"/>
+	  
+      <field name="code8" ref="code_10073"/>
+      <field name="code9" ref="code_10074"/>
+      <field name="code10" ref="code_10075"/>
+      <field name="code11" ref="code_10076"/>
+      <field name="code12" ref="code_10077"/>
+      <field name="code13" ref="code_10078"/>
+      <field name="code14" ref="code_10079"/>
+      <field name="code15" ref="code_10080"/>
+      <field name="immord_mb" ref="code_969"/>
+      <field name="immord_aug_acq" ref="code_983"/>
+      <field name="immord_aug_pd" ref="code_997"/>
+      <field name="immord_aug_vir" ref="code_1011"/>
+      <field name="immord_dim_cess" ref="code_1025"/>
+      <field name="immord_dim_ret" ref="code_1039"/>
+      <field name="immord_dim_vir" ref="code_1053"/>
+      <field name="immord_mbf" ref="code_1067"/> 
+      <field name="brevet_mb" ref="code_970"/>
+      <field name="brevet_aug_acq" ref="code_984"/>
+      <field name="brevet_aug_pd" ref="code_998"/>
+      <field name="brevet_aug_vir" ref="code_1012"/>
+      <field name="brevet_dim_cess" ref="code_1026"/>
+      <field name="brevet_dim_ret" ref="code_1040"/>
+      <field name="brevet_dim_vir" ref="code_1054"/>
+      <field name="brevet_mbf" ref="code_1068"/>
+      <field name="fond_mb" ref="code_971"/>
+      <field name="fond_aug_acq" ref="code_985"/>
+      <field name="fond_aug_pd" ref="code_999"/>
+      <field name="fond_aug_vir" ref="code_1013"/>
+      <field name="fond_dim_cess" ref="code_1027"/>
+      <field name="fond_dim_ret" ref="code_1041"/>
+      <field name="fond_dim_vir" ref="code_1055"/>
+      <field name="fond_mbf" ref="code_1069"/>
+      <field name="autre_incorp_mb" ref="code_972"/>
+      <field name="autre_incorp_aug_acq" ref="code_986"/>
+      <field name="autre_incorp_aug_pd" ref="code_1000"/>
+      <field name="autre_incorp_aug_vir" ref="code_1014"/>
+      <field name="autre_incorp_dim_cess" ref="code_1028"/>
+      <field name="autre_incorp_dim_ret" ref="code_1042"/>
+      <field name="autre_incorp_dim_vir" ref="code_1056"/>
+      <field name="autre_incorp_mbf" ref="code_1070"/> 	  
+
+      <field name="code16" ref="code_10082"/>
+      <field name="code17" ref="code_10083"/>
+      <field name="code18" ref="code_10084"/>
+      <field name="code19" ref="code_10085"/>
+      <field name="code20" ref="code_10086"/>
+      <field name="code21" ref="code_10087"/>
+      <field name="code22" ref="code_10088"/>
+      <field name="code23" ref="code_10089"/>
+      <field name="terrain_mb" ref="code_973"/>
+      <field name="terrain_aug_acq" ref="code_987"/>
+      <field name="terrain_aug_pd" ref="code_1001"/>
+      <field name="terrain_aug_vir" ref="code_1015"/>
+      <field name="terrain_dim_cess" ref="code_1029"/>
+      <field name="terrain_dim_ret" ref="code_1043"/>
+      <field name="terrain_dim_vir" ref="code_1057"/>
+      <field name="terrain_mbf" ref="code_1071"/> 
+      <field name="constructions_mb" ref="code_974"/>
+      <field name="constructions_aug_acq" ref="code_988"/>
+      <field name="constructions_aug_pd" ref="code_1002"/>
+      <field name="constructions_aug_vir" ref="code_1016"/>
+      <field name="constructions_dim_cess" ref="code_1030"/>
+      <field name="constructions_dim_ret" ref="code_1044"/>
+      <field name="constructions_dim_vir" ref="code_1058"/>
+      <field name="constructions_mbf" ref="code_1072"/>
+      <field name="inst_mb" ref="code_975"/>
+      <field name="inst_aug_acq" ref="code_989"/>
+      <field name="inst_aug_pd" ref="code_1003"/>
+      <field name="inst_aug_vir" ref="code_1017"/>
+      <field name="inst_dim_cess" ref="code_1031"/>
+      <field name="inst_dim_ret" ref="code_1045"/>
+      <field name="inst_dim_vir" ref="code_1059"/>
+      <field name="inst_mbf" ref="code_1073"/>
+      <field name="mat_mb" ref="code_976"/>
+      <field name="mat_aug_acq" ref="code_990"/>
+      <field name="mat_aug_pd" ref="code_1004"/>
+      <field name="mat_aug_vir" ref="code_1018"/>
+      <field name="mat_dim_cess" ref="code_1032"/>
+      <field name="mat_dim_ret" ref="code_1046"/>
+      <field name="mat_dim_vir" ref="code_1060"/>
+      <field name="mat_mbf" ref="code_1074"/> 	
+      <field name="mob_mb" ref="code_978"/>
+      <field name="mob_aug_acq" ref="code_992"/>
+      <field name="mob_aug_pd" ref="code_1006"/>
+      <field name="mob_aug_vir" ref="code_1020"/>
+      <field name="mob_dim_cess" ref="code_1034"/>
+      <field name="mob_dim_ret" ref="code_1048"/>
+      <field name="mob_dim_vir" ref="code_1062"/>
+      <field name="mob_mbf" ref="code_1076"/> 
+      <field name="autre_corp_mb" ref="code_979"/>
+      <field name="autre_corp_aug_acq" ref="code_993"/>
+      <field name="autre_corp_aug_pd" ref="code_1007"/>
+      <field name="autre_corp_aug_vir" ref="code_1021"/>
+      <field name="autre_corp_dim_cess" ref="code_1035"/>
+      <field name="autre_corp_dim_ret" ref="code_1049"/>
+      <field name="autre_corp_dim_vir" ref="code_1063"/>
+      <field name="autre_corp_mbf" ref="code_1077"/> 
+      <field name="immocc_mb" ref="code_977"/>
+      <field name="immocc_aug_acq" ref="code_991"/>
+      <field name="immocc_aug_pd" ref="code_1005"/>
+      <field name="immocc_aug_vir" ref="code_1019"/>
+      <field name="immocc_dim_cess" ref="code_1033"/>
+      <field name="immocc_dim_ret" ref="code_1047"/>
+      <field name="immocc_dim_vir" ref="code_1061"/>
+      <field name="immocc_mbf" ref="code_1075"/> 
+      <field name="mati_mb" ref="code_12597"/>
+      <field name="mati_aug_acq" ref="code_12598"/>
+      <field name="mati_aug_pd" ref="code_12599"/>
+      <field name="mati_aug_vir" ref="code_12600"/>
+      <field name="mati_dim_cess" ref="code_12601"/>
+      <field name="mati_dim_ret" ref="code_12602"/>
+      <field name="mati_dim_vir" ref="code_12603"/>
+      <field name="mati_mbf" ref="code_12604"/> 
+    </record>
+	
+   <!--dotation-->
+    <record id="code_tab_22" model="liasse.dotation.erp">
+      <field name="montant_global" ref="code_22"/>
+      <field name="clos" ref="code_50"/>
+      <field name="date_from" ref="code_51"/>
+      <field name="date_end" ref="code_52"/>
+      <field name="val_acq" ref="code_1088"/>
+      <field name="val_compt" ref="code_1089"/>
+      <field name="amort_ant" ref="code_1090"/>
+      <field name="amort_ded_et" ref="code_1091"/>
+      <field name="amort_ded_e" ref="code_1093"/>
+      <field name="amort_fe" ref="code_1094"/>
+    </record>
+
+    <record id="code_tab_2065" model="liasse.dotation.line.erp">
+      <field name="code0" ref="code_10061"/>
+      <field name="code1" ref="code_1078"/>
+      <field name="code2" ref="code_1079"/>
+      <field name="code3" ref="code_1080"/>
+      <field name="code4" ref="code_1081"/>
+      <field name="code5" ref="code_1082"/>
+      <field name="code6" ref="code_1083"/>
+      <field name="code7" ref="code_1084"/>
+      <field name="code8" ref="code_1085"/>
+      <field name="code9" ref="code_1086"/>
+	  <field name="pm_val_id" ref="code_tab_22"/>
+    </record>
+    <!-- extra field -->
+    <record id="extra_1" model="liasse.extra.field.erp">
+      <field name="code0cpc" ref="code_70"/>
+      <field name="code1prov" ref="code_71"/>
+      <field name="code2fusion" ref="code_54"/>
+    </record>
+  </data>
+</odoo>

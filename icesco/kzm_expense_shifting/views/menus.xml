@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem id="main_shifting_expense_menu"
+              name="Shifting expenses"
+              sequence="1" web_icon="kzm_expense_shifting,static/description/icon.png"
+              groups="kzm_expense_shifting.shifting_expense_user"
+    />
+
+    <menuitem id="shifting_expense_menu" name="Shifting expenses"
+              parent="main_shifting_expense_menu"/>
+
+        <menuitem id="my_shifting_expenses_menu" name="My Shifting expenses" parent="shifting_expense_menu"
+              action="my_shifting_expenses_action"/>
+
+    <menuitem id="all_shifting_expenses_menu"
+              name="All Shifting expenses"
+              parent="shifting_expense_menu"
+              groups="kzm_expense_shifting.shifting_expense_responsible"
+              action="all_shifting_expenses_action" />
+
+
+    <menuitem id="managers_menu"
+              name="Managers"
+              parent="main_shifting_expense_menu"
+              groups="kzm_expense_shifting.shifting_expense_responsible"
+    />
+
+    <menuitem id="shifting_expense_to_approve_menu"
+              name="To approve"
+              parent="managers_menu"
+              action="shifting_expenses_to_approve_action" />
+<!--    <menuitem id="mission_to_validate_menu" name="To validate" parent="managers_menu" action="missions_to_validate_action" groups="kzm_shifting_expense.engima_mission_dg"/>-->
+
+    <menuitem id="configuration_menu"
+              name="Configuration"
+              parent="main_shifting_expense_menu"
+              groups="kzm_expense_shifting.shifting_expense_responsible"
+    />
+
+    <menuitem id="zones_menus"
+              name="Zones"
+              parent="configuration_menu"
+              action="sh_zones_action"
+              sequence="1"
+              groups="kzm_expense_shifting.shifting_expense_responsible"
+    />
+    <menuitem id="categories_menus"
+              name="Categories"
+              parent="configuration_menu"
+              sequence="2"
+              action="isesco_hr.hr_contract_category_action"
+              groups="kzm_expense_shifting.shifting_expense_responsible"
+    />
+
+</odoo>

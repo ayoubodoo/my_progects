@@ -1,0 +1,48 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="cps_expense_type_form">
+      <field name="name">Cps Expense Type Form</field>
+      <field name="model">cps.expense.type</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+              </group>
+              <group>
+                <field name="product_ids" widget="many2many_tags"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="cps_expense_type_list">
+      <field name="name">Cps Expense Type List</field>
+      <field name="model">cps.expense.type</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="product_ids" widget="many2many_tags"/>
+        </tree>
+      </field>
+    </record>
+
+
+
+    <record model="ir.actions.act_window" id="cps_expense_type_list_window">
+      <field name="name">Cps Expense Type Window</field>
+      <field name="res_model">cps.expense.type</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_cps_hr_expense" name="Billeterie" sequence="3" parent="hr_expense.menu_hr_expense_root"/>
+
+    <menuitem name="Type frais" id="menu_cps_expense_type" parent="menu_cps_hr_expense"
+              action="cps_expense_type_list_window" sequence="2"/>
+
+  </data>
+</odoo>

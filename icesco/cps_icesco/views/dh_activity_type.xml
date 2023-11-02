@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dh_activity_type_form">
+            <field name="name">dh.activity.type.form</field>
+            <field name="model">dh.activity.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_activity_type_tree">
+            <field name="name">dh.activity.type.tree</field>
+            <field name="model">dh.activity.type</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                     <field name="name"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="dh_icesco_activity_type_action" model="ir.actions.act_window">
+            <field name="name">Activity types </field>
+            <field name="res_model">dh.activity.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p>Add an activity type</p>
+        </field>
+        </record>
+<!--          <menuitem id="icesco_activities_type_menu" name=" ICESCO Activity Types "-->
+<!--                  parent="project.menu_project_config"-->
+<!--                  action="cps_icesco.dh_icesco_activity_type_action" sequence="18"/>-->
+    </data>
+</odoo>

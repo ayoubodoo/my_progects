@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="assets_frontend" inherit_id="website.assets_frontend" name="Project">
+		<xpath expr="." position="inside">
+			<script type="text/javascript" src="/website_project_kanbanview/static/src/js/geminate_kanban_view.js" />
+			<link type="text/css" rel="stylesheet" href="/website_project_kanbanview/static/src/css/style.css" />
+		</xpath>
+	</template>
+
+<!--	<template id="project_tasks_home" inherit_id="project.portal_my_home">-->
+<!--		<xpath expr="//t[@t-if='task_count']" position="replace">-->
+<!--&lt;!&ndash;			<t t-if="task_count" t-call="portal.portal_docs_entry">&ndash;&gt;-->
+<!--&lt;!&ndash;                <t t-set="title">Submitted projects</t>&ndash;&gt;-->
+<!--&lt;!&ndash;                <t t-set="url" t-value="'/my/kanban/tasks'"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <t t-set="count" t-value="task_count"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </t>&ndash;&gt;-->
+<!--		</xpath>-->
+<!--	</template>-->
+
+<!--	<template id="task_kanban_searchbar_task_icon" inherit_id="project.portal_my_tasks">-->
+<!--		<xpath expr="//t[@t-call='portal.portal_layout']/t[@t-call='portal.portal_searchbar']" position="before">-->
+<!--			<div class="view_buttons" style="padding:25px;">-->
+<!--				<a t-attf-href="/my/tasks?{{keep_query()}}">-->
+<!--					<button class="btn btn-primary task_list" style="float:right;margin-left:15px;background-color: #00A09D;">-->
+<!--							<i class="fa fa-list" aria-hidden="false" />-->
+<!--					</button>-->
+<!--				</a>-->
+
+<!--				<a t-attf-href="/my/kanban/tasks?{{keep_query()}}">-->
+<!--					<button class="btn btn-primary kanban_task graph_invoice" style="float:right;background-color: #00A09D;">-->
+<!--						<i class="fa fa-th" aria-hidden="false" />-->
+<!--					</button>-->
+<!--				</a>-->
+
+<!--			</div>-->
+<!--		</xpath>-->
+<!--	</template>-->
+
+	<template id="project.portal_my_tasks" name="My Projects">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Projects</t>
+            </t>
+			<div class="col-12" style=" text-align: center;">
+			   <span style="font-weight: bold ; font-size:16px">Projects</span>
+			</div>
+            <t t-if="not grouped_tasks">
+                <div class="alert alert-warning mt8" role="alert">
+                    There are no projects.
+                </div>
+            </t>
+
+            <t t-if="grouped_tasks">
+                <t t-call="portal.portal_table">
+                    <t t-foreach="grouped_tasks" t-as="tasks">
+                        <thead>
+                            <tr t-attf-class="{{'thead-light' if not groupby == 'none' else ''}}">
+                                <th t-if="groupby == 'none'">Name</th>
+                                <th t-else="">
+                                    <em class="font-weight-normal text-muted"><span t-field="tasks[0].sudo().project_id.label_tasks"/> for pillars:</em>
+                                    <span t-field="tasks[0].sudo().project_id.name"/></th>
+                                <th class="text-center">Stage</th>
+                                <th class="text-left">Ref</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="tasks" t-as="task">
+                                <tr>
+                                    <td>
+                                        <a t-attf-href="/my/task/#{task.id}?{{ keep_query() }}"><span t-field="task.name"/></a>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="badge badge-pill badge-info" title="Current stage of the task" t-esc="task.stage_id.name" />
+                                    </td>
+                                    <td class="text-left">
+                                        #<span t-esc="task.id"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+
+	<template id="task_kanban_searchbar_task" inherit_id="project.portal_my_tasks">
+
+
+		<xpath expr="//t[@t-call='portal.portal_layout']/t[@t-call='portal.portal_searchbar']" position="after">
+
+			<div class="board task_kanban_view">
+			    <div class="column-container">
+    	            <!-- <t t-if="not grouped_tasks">
+		                <div class="alert alert-warning mt8" role="alert">
+		                    There are no projects.
+		                </div>
+		            </t> -->
+		            <t t-if="grouped_kanban_tasks">
+					 	<t t-set="counter" t-value="[]"/>
+		                <t t-foreach="grouped_kanban_tasks" t-as="tasks">
+		    				<t t-foreach="tasks" t-as="task">
+		    					<t t-if="task.stage_id">
+			                        <t t-set="counter" t-value="counter + [task.stage_id]"/>
+	                			</t>
+	                		</t>
+	            		</t>
+
+	            		<!-- <===========state filter -->
+	            		<t t-set="state" t-value="[]"/>
+	        			<t t-foreach="counter" t-as="count">
+	        				<t t-if="count not in state">
+	    						<t t-set="state" t-value="state + [count]"/>
+	            			</t>
+	        			</t>
+	            		<!-- <===========state filter -->
+
+	        			<t t-set="tasks_list" t-value="[]"/>
+	        			<t t-foreach="grouped_kanban_tasks" t-as="tasks">
+				            <t t-foreach="tasks" t-as="task">
+				                <t t-set="tasks_list" t-value="tasks_list + [task]"/>
+							</t>
+						</t>
+						
+						<t t-set="state_list" t-value="request.env['project.task.type'].project_states(state)"/>
+		    			<t t-foreach="state_list" t-as="stat">
+							<div class="column">
+	        					<t t-set="tasks_bar" t-value="[]"/>
+	        					<t t-set="tasks_count" t-value="0"/>
+	    						<t t-foreach="tasks_list" t-as="task_value">
+	    							<t t-if="stat == task_value.stage_id">
+				                		<t t-set="tasks_count" t-value="tasks_count + 1"/>
+				                		<t t-set="tasks_bar" t-value="tasks_bar + [task_value]"/>
+									</t>
+								</t>
+
+	        					<h2 class="to_do"><t t-esc="stat.name"/></h2>
+
+
+							<!--============ header ==================-->
+
+	        					<t t-set="done_state" t-value="0"/>
+	        					<t t-set="blocked_state" t-value="0"/>
+	        					<t t-set="normal_state" t-value="0"/>
+
+	        					<t t-foreach="tasks_bar" t-as="bar">
+			                		<t t-if="bar.kanban_state == 'done'">
+			                			<t t-set="done_state" t-value="done_state + 1"/>
+			                		</t>
+	        						<t t-if="bar.kanban_state == 'blocked'">
+			                			<t t-set="blocked_state" t-value="blocked_state + 1"/>
+			                		</t>
+			                		<t t-if="bar.kanban_state == 'normal'">
+			                			<t t-set="normal_state" t-value="normal_state + 1"/>
+			                		</t>
+	    						</t>
+
+								<div style="display:flex;">
+									<div class="progress" style="width: 75%;height: 10px;">
+										<div class="progress-bar" role="progressbar"
+											t-attf-style="width: #{(int(done_state) * 100 / int(tasks_count))}%;background-color:#28a745"
+											t-attf-title="#{int(done_state)} Green"
+											></div>
+
+
+										<div class="progress-bar" role="progressbar"
+										t-attf-style="width: #{(int(blocked_state) * 100 / int(tasks_count))}%;background-color:#dc3545;"
+										t-attf-title="#{int(blocked_state)} Red"></div>
+
+										<div class="progress-bar" style="color:red" role="progressbar"
+										t-attf-style="width: #{(int(normal_state) * 100 / int(tasks_count))}%;background-color:#dee2e6;"
+										t-attf-title="#{int(normal_state)} Grey"></div>
+
+									</div>
+
+									<div class="" style="width:23%;font-size: 12px;margin-top: -4px;text-align: right;">
+					            		<b><t t-esc="tasks_count"/></b>
+					            	</div>
+				            	</div>
+
+							<!--============ header ==================-->
+
+	    						<t t-foreach="tasks_list" t-as="task_value">
+	    							<t t-if="stat == task_value.stage_id">
+							            <li class="dd-item">
+						                	<div class="text">
+						                		<a t-attf-href="/my/task/#{task_value.id}?{{ keep_query() }}" style="color: grey">
+						                			<span t-field="task_value.name"/>
+						                		</a>
+						                	</div>
+							                <t t-if="task_value.project_id">
+							                	<div class="text" style="font-style: italic;font-size: 11px;"><span t-esc="task_value.project_id.name"/></div>
+						            		</t>
+							                <t t-if="task_value.partner_id">
+							                	<div class="text"><span t-esc="task_value.sudo().partner_id.name"/></div>
+						            		</t>
+
+						                	<div class="text" style="font-weight: 700;display:flex;">
+
+								                <div style="width:74%;margin-top: 3px;">
+							                		<i class="fa fa-clock-o" aria-hidden="false"></i>
+									                <t t-if="task_value.date_deadline">
+														<span style="color: red;" t-esc="task_value.date_deadline"/>
+								            		</t>
+							            		</div>
+
+							            		<div style="display:flex;">
+													<t t-if="task_value.kanban_state == 'done'">
+														<div style="width:10px;height:10px;margin-top:6px;background:#28a745;border-radius: 50%; margin-right: 15px;"></div>
+													</t>
+													<t t-if="task_value.kanban_state == 'blocked'">
+														<div style="width:10px;margin-top:6px;height:10px;background:#dc3545;border-radius: 50%;margin-right: 15px;"></div>
+													</t>
+
+													<t t-if="task_value.kanban_state == 'normal'">
+														<div style="width:10px;margin-top:6px;height:10px;background:#dee2e6;border-radius: 50%;margin-right: 15px;"></div>
+													</t>
+
+									                <t t-if="task_value.user_id">
+								                		<span >
+									                		<img style="width:20px;float: right;" t-attf-src="data:image/*;base64,{{task_value.sudo().user_id.image_1920}}"/>
+								                		</span>
+								                	</t>
+							                	</div>
+											</div>
+						            	</li>
+					            	</t>
+		            			</t>
+	            			</div>
+			    		</t>
+		    		</t>
+			    </div>
+  			</div>
+		</xpath>
+	</template>
+
+	<template id="project_kanban_searchbar_project" inherit_id="project.portal_my_projects">
+<!--		<xpath expr="//t[@t-call='portal.portal_layout']/t[@t-call='portal.portal_searchbar']" position="before">-->
+<!--			<div class="view_buttons" style="padding:25px;">-->
+<!--				<button class="btn btn-primary project_list" style="float:right;margin-left:15px;background-color: #00A09D;">-->
+<!--					<i class="fa fa-list" aria-hidden="false" />-->
+<!--				</button>-->
+<!--				<button class="btn btn-primary kanban_project graph_invoice" style="float:right;background-color: #00A09D;">-->
+<!--					<i class="fa fa-th" aria-hidden="false" />-->
+<!--				</button>-->
+<!--			</div>-->
+<!--		</xpath>-->
+
+		<xpath expr="//t[@t-call='portal.portal_layout']/t[@t-call='portal.portal_searchbar']" position="after">
+<!--			<div class="kanban_view_project">-->
+<!--			    <div class="column-container container_project dd">-->
+<!--    		    	<t t-foreach="projects" t-as="project">-->
+<!--		                <t t-if="project">-->
+<!--					        <ol class="column projet_kanban kanban To-do">-->
+<!--					            <li class="dd-item_project">-->
+<!--					            	<div style="height: 73px;">-->
+<!--					                	<div class="text project_text">-->
+<!--					                		<a t-attf-href="/my/project/#{project.id}?{{ keep_query() }}"><span t-field="project.name" t-att-title="project.name"/></a>-->
+<!--					                	</div>-->
+<!--	    			                	<div class="text project_partner">-->
+<!--	    			                		<t t-if="project.partner_id">-->
+<!--	    			                			<span t-field="project.sudo().partner_id.name" t-att-title="project.sudo().partner_id.name"/>-->
+<!--			                				</t>-->
+<!--					                	</div>-->
+<!--					                </div>-->
+<!--				                	<div class="text tasks_project">-->
+<!--					                	<a t-attf-href="/my/kanban/tasks?{{keep_query(filterby=project.id)}}" t-att-title="project.label_tasks">-->
+<!--			                                <t t-esc="project.task_count" />-->
+<!--			                                <t t-esc="project.label_tasks" />-->
+<!--			                            </a>-->
+<!--	                      			</div>-->
+
+<!--				            	</li>-->
+<!--					        </ol>-->
+<!--	            		</t>-->
+<!--            		</t>-->
+<!--			    </div>-->
+<!--  			</div>-->
+		</xpath>
+	</template>
+</odoo>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_attendance_form" model="ir.ui.view">
+        <field name="name">hr.attendance.form</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+<!--            <field name="employee_id" position="after">-->
+<!--                <field name="equipe"/>-->
+<!--            </field>-->
+            <xpath expr="//group" position="after">
+                <group>
+                    <group>
+                        <field name="checkin_corriged"/>
+                        <field name="checkin_anomalie"/>
+                        <field name="checkout_corriged"/>
+                        <field name="checkout_anomalie"/>
+                    </group>
+                    <group>
+<!--                        <field name="is_duree_pause"/>-->
+<!--                        <field name="deactive_50_100"/>-->
+                        <field name="jour_ferie"/>
+                        <field name="horaire_id"/>
+                        <field name="worked_hours"/>
+                    </group>
+                    <group>
+                        <field name="hn" readonly="1"/>
+                        <field name="h_25" readonly="1"/>
+                        <field name="h_50" readonly="1"/>
+<!--                        <field name="h_100" readonly="1"/>-->
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_attendance.view_attendance_tree" model="ir.ui.view">
+        <field name="name">hr.attendance.tree</field>
+        <field name="model">hr.attendance</field>
+        <field name="arch" type="xml">
+            <tree string="Employee attendances" edit="0" decoration-danger="pointage_double==True" decoration-warning="horaire_id == False" limit="250">
+                <field name="employee_id"/>
+                <field name="check_in" optional="show"/>
+                <field name="check_out" optional="show"/>
+                <field name="worked_hours" string="Work Hours" widget="float_time" optional="show"/>
+                <field name="pointage_double" invisible="1"/>
+                <field name="horaire_id" invisible="1"/>
+                <field name="pointage_est_corriger" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="cps_hr_attendance_tree_view">
+        <field name="name">hr.attendance.tree</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+<!--            <field name="employee_id" position="before">-->
+<!--                <field name="matricule"/>-->
+<!--            </field>-->
+<!--            <field name="employee_id" position="after">-->
+<!--                <field name="equipe" optional="show"/>-->
+<!--            </field>-->
+            <field name="check_in" position="after">
+
+                <field name="jour"/>
+                <field name="checkin_corriged" optional="show" readonly="1"/>
+                <field name="checkin_anomalie" optional="show"/>
+            </field>
+            <field name="check_out" position="after">
+                <field name="checkout_corriged" optional="show" readonly="1"/>
+                <field name="checkout_anomalie" optional="show"/>
+                <field name="horaire_id" optional="show"/>
+                <!--                <button name="action_appliquer_horaire" type="object" class="oe_stat_button" icon="fa-list-ul icon"/>-->
+            </field>
+            <field name="worked_hours" position="after">
+                <field name="hn" optional="hide" widget="float_time"/>
+                <field name="h_25" optional="hide" widget="float_time"/>
+                <field name="h_50" optional="hide" widget="float_time"/>
+<!--                <field name="h_100" optional="hide"/>-->
+                <field name="pointage_double" invisible="1"/>
+<!--                <field name="is_duree_pause" optional="show"/>-->
+<!--                <field name="deactive_50_100"/>-->
+                <field name="jour_ferie" optional="show"/>
+
+                <!--                <button name="change_state_is_duree_pause_false" type="object" class="oe_stat_button" icon="fa-times" attrs="{'invisible': [('is_duree_pause', '=', False)]}"/>-->
+                <!--                <button name="change_state_is_duree_pause_true" type="object" class="oe_stat_button" icon="fa-check" attrs="{'invisible': [('is_duree_pause', '=', True)]}" />-->
+            </field>
+        </field>
+    </record>
+    <record id="cps_cps_hr_attendance_search_inherit" model="ir.ui.view">
+        <field name="name">hr_attendance_search</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_id']" position='after'>
+                <field name="matricule"/>
+                <separator/>
+            </xpath>
+            <xpath expr="//filter[@name='nocheckout']" position='after'>
+                <separator/>
+                <filter name="today" string="Aujourd'hui" domain="[('check_in','&lt;=',time.strftime('%%Y-%%m-%%d 23:59:59')),('check_in','&gt;=',time.strftime('%%Y-%%m-%%d 00:00:00'))]"/>
+                <filter name="yesterday"  string="Hier" domain="[('check_in','&gt;=', ((context_today()-datetime.timedelta(days=1)).strftime('%Y-%m-%d 00:00:00'))), ('check_in','&lt;=', ((context_today()+datetime.timedelta(days=0)).strftime('%Y-%m-%d 00:00:00')))]"/>
+                <separator/>
+                <filter name="double_pointage" string="Les Doubles Pointages" domain="[('pointage_double','!=',False)]"/>
+                <filter name="retard" string="Les Retards" domain="[('checkin_anomalie','=','late')]"/>
+                <separator/>
+                <filter name="pointage_est_corriger" string="Pointage non corrigé"
+                        domain="[('pointage_est_corriger','=',False)]"/>
+
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="action_server_appliquer_horaire_action" model="ir.actions.server">
+            <field name="name">Appliquer correction pointage</field>
+            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="state">code</field>
+            <!--<field name="condition">True</field>-->
+            <field name="code">action = env["hr.attendance"].action_server_appliquer_horaire()</field>
+            <field name="binding_model_id" ref="hr_attendance.model_hr_attendance" />
+    </record>
+
+    <record id="affecter_pause" model="ir.actions.server">
+        <field name="name">Affecter pause</field>
+        <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+        <field name="state">code</field>
+        <!--<field name="condition">True</field>-->
+        <field name="code">
+            action = env['hr.attendance'].change_state_is_duree_pause_true()</field>
+        <field name="binding_model_id" ref="hr_attendance.model_hr_attendance"/>
+    </record>
+    <record id="supprimer-pause" model="ir.actions.server">
+        <field name="name">Supprimer pause</field>
+        <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+        <field name="state">code</field>
+        <!--<field name="condition">True</field>-->
+        <field name="code">
+            action = env['hr.attendance'].change_state_is_duree_pause_false()</field>
+        <field name="binding_model_id" ref="hr_attendance.model_hr_attendance"/>
+    </record>
+
+<!--     <record id="desactive-50-100" model="ir.actions.server">-->
+<!--        <field name="name">Désactiver 50% et 100%</field>-->
+<!--        <field name="model_id" ref="hr_attendance.model_hr_attendance"/>-->
+<!--        <field name="state">code</field>-->
+<!--        &lt;!&ndash;<field name="condition">True</field>&ndash;&gt;-->
+<!--        <field name="code">-->
+<!--            action = env['hr.attendance'].action_deactive_50_100()</field>-->
+<!--        <field name="binding_model_id" ref="hr_attendance.model_hr_attendance"/>-->
+<!--    </record>-->
+
+<!--    <record id="active-50-100" model="ir.actions.server">-->
+<!--        <field name="name">Activer 50% et 100%</field>-->
+<!--        <field name="model_id" ref="hr_attendance.model_hr_attendance"/>-->
+<!--        <field name="state">code</field>-->
+<!--        &lt;!&ndash;<field name="condition">True</field>&ndash;&gt;-->
+<!--        <field name="code">-->
+<!--            action = env['hr.attendance'].action_active_50_100()</field>-->
+<!--        <field name="binding_model_id" ref="hr_attendance.model_hr_attendance"/>-->
+<!--    </record>-->
+
+    <record id="desactive_jour_ferie" model="ir.actions.server">
+        <field name="name">Supprimer jour férie</field>
+        <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+        <field name="state">code</field>
+        <!--<field name="condition">True</field>-->
+        <field name="code">
+            action = env['hr.attendance'].action_deactive_jour_ferie()</field>
+        <field name="binding_model_id" ref="hr_attendance.model_hr_attendance"/>
+    </record>
+
+    <record id="active_jour_ferie" model="ir.actions.server">
+        <field name="name">Appliquer jour férie</field>
+        <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+        <field name="state">code</field>
+        <!--<field name="condition">True</field>-->
+        <field name="code">
+            action = env['hr.attendance'].action_active_jour_ferie()</field>
+        <field name="binding_model_id" ref="hr_attendance.model_hr_attendance"/>
+    </record>
+
+    <record id="marque_pointage_corrige" model="ir.actions.server">
+        <field name="name"> Marquer un pointage comme corrige</field>
+        <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+        <field name="state">code</field>
+        <!--<field name="condition">True</field>-->
+        <field name="code">
+            action = env['hr.attendance'].action_marquer_un_pointage_corrige()</field>
+        <field name="binding_model_id" ref="hr_attendance.model_hr_attendance"/>
+    </record>
+    <record id="marque_pointage_non_corrige" model="ir.actions.server">
+        <field name="name"> Marquer un pointage comme non corrige</field>
+        <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+        <field name="state">code</field>
+        <!--<field name="condition">True</field>-->
+        <field name="code">
+            action = env['hr.attendance'].action_marquer_un_pointage_non_corrige()</field>
+        <field name="binding_model_id" ref="hr_attendance.model_hr_attendance"/>
+    </record>
+
+    <!-- employee kanban view specifically for hr_attendance (to check in/out) -->
+    <record id="dh_hr_employees_view_kanban" model="ir.ui.view">
+        <field name="name">hr.employee.kanban</field>
+        <field name="model">hr.employee</field>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <kanban class="o_dh_hr_employee_attendance_kanban" create="false">
+                <field name="attendance_state"/>
+                <field name="hours_today"/>
+                <field name="id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                    <div class="oe_kanban_global_click">
+                        <div class="o_kanban_image">
+                            <img t-att-src="kanban_image('hr.employee', 'image_128', record.id.raw_value)" alt="Employee"/>
+                        </div>
+                        <div class="oe_kanban_details">
+                            <div id="textbox">
+                                <div class="float-right" t-if="record.attendance_state.raw_value == 'checked_in'">
+                                    <span id="oe_hr_attendance_status" class="fa fa-circle oe_hr_attendance_status_green" role="img" aria-label="Available" title="Available"></span>
+                                </div>
+                                <div class="float-right" t-if="record.attendance_state.raw_value == 'checked_out'">
+                                    <span id="oe_hr_attendance_status" class="fa fa-circle oe_hr_attendance_status_red" role="img" aria-label="Not available" title="Not available"></span>
+                                </div>
+                                <strong>
+                                    <field name="name"/>
+                                </strong>
+                            </div>
+                            <ul>
+                                <li t-if="record.job_id.raw_value"><field name="job_id"/></li>
+                                <li t-if="record.work_location.raw_value"><field name="work_location"/></li>
+                            </ul>
+                        </div>
+                    </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="dh_hr_employee_attendance_action_kanban" model="ir.actions.act_window">
+        <field name="name">Employees</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">kanban,tree,activity</field>
+        <field name="view_id" ref="cps_icesco.dh_hr_employees_view_kanban"/>
+        <field name="target">fullscreen</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new employee
+            </p><p>
+                Add a few employees to be able to select an employee here and perform his check in / check out.
+                To create employees go to the Employees menu.
+            </p>
+        </field>
+    </record>
+
+</odoo>

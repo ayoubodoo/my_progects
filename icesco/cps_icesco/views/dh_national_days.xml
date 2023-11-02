@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dh_national_days_form">
+            <field name="name">dh.national.days.form</field>
+            <field name="model">dh.national.days</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="date"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_national_days_tree">
+            <field name="name">dh.national.days.tree</field>
+            <field name="model">dh.national.days</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="date" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="dh_national_days_action" model="ir.actions.act_window">
+            <field name="name">National Days</field>
+            <field name="res_model">dh.national.days</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p>Add a national Day</p>
+        </field>
+        </record>
+    </data>
+</odoo>

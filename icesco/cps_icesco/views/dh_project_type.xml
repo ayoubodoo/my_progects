@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dh_project_type_form">
+            <field name="name">dh.project.type.form</field>
+            <field name="model">dh.project.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dh_project_type_tree">
+            <field name="name">dh.project.type.tree</field>
+            <field name="model">dh.project.type</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="dh_project_type_action" model="ir.actions.act_window">
+            <field name="name"> Project Type </field>
+            <field name="res_model">dh.project.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p>Add a project type </p>
+        </field>
+        </record>
+
+        <menuitem id="project_type_menu" name=" Project Type "
+                  parent="project.menu_project_config"
+                  action="cps_icesco.dh_project_type_action" sequence="16"/>
+    </data>
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xml:space="preserve">
+
+    <t t-extend="mail.chatter.Buttons">
+        <t t-jquery="button.o_chatter_button_new_message" t-operation="replace">
+<!--            <button t-if="newMessageButton" type="button" class="btn btn-link o_chatter_button_new_message" title="Send a message" disabled="disabled">-->
+<!--                Send message-->
+<!--            </button>-->
+        </t>
+    </t>
+
+   <t t-extend="ListView.buttons">
+<!--     <t t-jquery="button.o_list_export_xlsx" t-operation="after">-->
+<!--        <button t-if="widget.modelName == 'dh.icesco.operational.plan'" class="btn btn-secondary o_list_tender_button_group_goal"-->
+<!--                type="button">تجميع حسب الهدف</button>-->
+<!--     </t>-->
+<!--     <t t-jquery="button.o_list_export_xlsx" t-operation="after">-->
+<!--        <button t-if="widget.modelName == 'dh.icesco.operational.plan'" class="btn btn-secondary o_list_tender_button_group_expert"-->
+<!--                type="button">تجميع حسب المسؤول</button>-->
+<!--     </t>-->
+<!--     <t t-jquery="button.o_list_export_xlsx" t-operation="after">-->
+<!--        <button t-if="widget.modelName == 'dh.icesco.operational.plan'" class="btn btn-secondary o_list_tender_button_group_sector"-->
+<!--                type="button">تجميع حسب النوع</button>-->
+<!--     </t>-->
+
+       <t t-jquery="button.o_list_export_xlsx" t-operation="after">
+        <button t-if="widget.modelName == 'dh.icesco.operational.indicators'" class="btn btn-secondary o_list_tender_button_indicators_details"
+                type="button">قائمة مفصلة</button>
+     </t>
+
+       <t t-jquery="button.o_list_export_xlsx" t-operation="after">
+        <button t-if="widget.modelName == 'project.task'" class="btn btn-secondary o_list_tender_button_group_goal_task"
+                type="button">تجميع حسب الهدف</button>
+     </t>
+     <t t-jquery="button.o_list_export_xlsx" t-operation="after">
+        <button t-if="widget.modelName == 'project.task'" class="btn btn-secondary o_list_tender_button_group_expert_task"
+                type="button">تجميع حسب المسؤول</button>
+     </t>
+     <t t-jquery="button.o_list_export_xlsx" t-operation="after">
+        <button t-if="widget.modelName == 'project.task'" class="btn btn-secondary o_list_tender_button_group_sector_task"
+                type="button">تجميع حسب القطاع</button>
+     </t>
+
+    <t t-jquery="button.o_list_export_xlsx" t-operation="after">
+        <button t-if="widget.modelName == 'project.task'" class="btn btn-secondary o_list_tender_button_indicators_details_task"
+                type="button">قائمة مفصلة</button>
+     </t>
+    <t t-jquery="button.o_list_export_xlsx" t-operation="after">
+        <button t-if="widget.modelName == 'project.task'" class="btn btn-secondary o_list_tender_button_indicators_reduit_task"
+                type="button">قائمة مختصرة</button>
+     </t>
+
+   </t>
+ </template>

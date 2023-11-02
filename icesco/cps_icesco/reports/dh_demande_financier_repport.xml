@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <report
+            id="dh_demande_financiere"
+            model="account.payment"
+            string="Demande Financière  "
+            report_type="qweb-pdf"
+            name="cps_icesco.dh_demande_financiere11"
+            file="cps_icesco.dh_demande_financiere11"
+
+
+    />
+    <template id="dh_demande_financiere11">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <!--                <t t-call="web.external_layout">-->
+                <div class="page article">
+
+                    <div class="header" style="padding-bottom:10%">
+                        <div class="row " style="font-size:16px;">
+                            <div class="col-4 text-center">
+
+                                Islamic World Educational,Scientific
+                                <br/>
+                                and Cultural Organization
+                                <br/>
+
+                                (ICESCO)
+                                <br/>
+
+                                <span style="font-style:italic">Dierectorate of Financial Affairs</span>
+
+
+                            </div>
+
+                            <div class="col-4 center text-center" style="font-size:18px;">
+                                <div>
+                                    <img src="cps_icesco/static/src/img/logo.jpg"
+                                         style="width:130px;height:210px;float:center;padding-bottom:7%"/>
+                                </div>
+
+
+                            </div>
+                            <div class="col-4 text-center">
+
+
+                                Organisation du Monde islamique pour
+                                <br/>
+                                l'Education,les sciences et la Culture
+                                <br/>
+                                (ICESCO)
+                                <br/>
+                                <span style="font-style:italic">Direction des affaires financières</span>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-4"/>
+                            <div class="col-6 text-center" style="padding-right:10%">
+
+
+                                منظمة العالم اﻹسلامي للتربية و العلوم و الثقافة
+                                <br/>
+                                (الإيسيسكو)
+                                <br/>
+                                مديرية الشؤون المالية
+
+
+                            </div>
+                            <div class="col-2"/>
+
+
+                        </div>
+                    </div>
+                    <div style="padding-top:2%">
+                        <h2 class="text-center" style="18px">
+                            <strong>طلب مالي</strong>
+                        </h2>
+                        <br/>
+                        <h2 class="text-center" style="18px">
+                            <strong>DEMANDE FINANCIERE
+                            </strong>
+                        </h2>
+
+
+                        <br/>
+                        <div class="row">
+                            <div class="col-4">
+                                Direction/Centre
+                                <br/>
+                                N de la Fiche des dépenses
+                                <br/>
+                                N de programme
+                                <br/>
+                                Activité
+                                <br/>
+                                Lieu et date
+                                <br/>
+                                Prestation demandées
+                                <br/>
+                                Pièces jointes
+                                <br/>
+                                <br/>
+                                <br/>
+                                <div style="border:1px solid black;width:40px;height:21px!important">
+                                </div>
+
+                                Pièces justificatives
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+
+
+                                <span class="text-center">
+                                    مديرية الشؤون المالية
+                                    <br/>
+                                    Direction /Centre
+                                </span>
+                                <br/>
+                                <br/>
+                                <div>
+<!--                                    <img t-if="o.signature_directorate_financial_affairs"-->
+<!--                                         t-att-src="image_data_uri(o.signature_directorate_financial_affairs)"-->
+<!--                                         style="width: 300px;height: 50px;float:center" class="text-center"/>-->
+                                </div>
+                                <br/>
+                                <br/>
+
+                                <br/>
+
+
+                                <br/>
+                                <br/>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-4">
+                                        Date:
+                                    </div>
+                                    <div class="col-4">
+                                        <span t-field="o.name"/>
+                                    </div>
+                                    <div class="col-4">
+                                        التاريخ
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-4 text-center">
+                                <span t-field="o.name"/>
+                                <br/>
+                                <span t-field="o.name"/>
+                                <br/>
+                                <span t-field="o.name"/>
+                                <br/>
+                                <span t-field="o.name"/>
+                                <br/>
+                                <span t-field="o.name"/>
+                                <br/>
+                                <span t-field="o.name"/>
+                                <br/>
+                                <span t-field="o.name"/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <span class="text-center">
+                                    المديرية/ المركز
+                                    <br/>
+                                    Direction /Centre
+                                </span>
+
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+
+
+                                <br/>
+                                <div class="row">
+                                    <div class="col-4">
+                                        Date:
+                                    </div>
+                                    <div class="col-4">
+                                        <span t-field="o.name"/>
+                                    </div>
+                                    <div class="col-4">
+                                        التاريخ
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-4 text-right">
+                                المديرية/ المركز
+                                <br/>
+                                رقم بطاقة الصرف
+                                <br/>
+                                رقم البرنامج
+                                <br/>
+                                النشاط
+                                <br/>
+                                المكان و التاريخ
+                                <br/>
+                                العمل المطلوب
+                                <br/>
+
+
+                                المرفقات
+                                <br/>
+                                <br/>
+                                <br/>
+                                <div class="text-right"
+                                     style="border:1px solid black;width:40px;height:21px!important;float:right;padding-bottom:3%">
+                                </div>
+
+                                مستندات تبوثية
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+
+                                <span class="text-center">
+                                    توقيع صاحب الطلب
+                                    <br/>
+                                    L'interessé(e)
+                                </span>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+
+                                <div class="row">
+                                    <div class="col-4">
+                                        Date:
+                                    </div>
+                                    <div class="col-4">
+                                        <span t-field="o.name"/>
+                                    </div>
+                                    <div class="col-4">
+                                        التاريخ
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

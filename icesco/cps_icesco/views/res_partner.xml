@@ -1,0 +1,158 @@
+<odoo>
+    <record id="cps_view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.cps.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field name="is_member_state"/>
+                <field name="is_commission"/>
+                <field name="is_amana"/>
+            </field>
+            <xpath expr="/form/sheet/notebook" position="inside">
+                <page string="Parametrages contact" name="icesco">
+                    <group>
+                        <field name="is_ioc_organization"/>
+                        <field name="is_un_organization"/>
+                        <field name="is_au_organization"/>
+                        <field name="is_al_organization"/>
+                    </group>
+                </page>
+                <page string="General informations" name="general_info">
+                    <p style="font-size :16px;font-weight: bold;">Country Informations:</p>
+                    <group>
+                        <field name="official_country_name"/>
+                        <field name="official_leaders"/>
+                        <field name="country_type"/>
+                        <field name="country_capital"/>
+                        <field name="used_language" widget="many2many_tags"/>
+                        <field name="official_language" widget="many2many_tags">
+                            <tree editable="bottom">
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                        <field name="population"/>
+                    </group>
+                    <group>
+                        <field name="name_national_day"/>
+                        <field name="national_day"/>
+                        <field name="portal_national_day"/>
+                        <field name="other_national_days">
+                            <tree editable="bottom">
+                                <field name="name"/>
+                                <field name="date"/>
+                            </tree>
+                        </field>
+                        <field name="country_flag" widget="many2many_binary"/>
+<!--                        <field name="flag_color"/>-->
+                        <field name="muslim_population" widget="percentage"/>
+                        <field name="gpd_per_capital"/>
+                    </group>
+                    <p style="font-size :16px;font-weight: bold;">Government officials:</p>
+                    <field name="government_officials" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="title"/>
+                            <field name="official_name"/>
+                            <field name="position"/>
+                            <field name="since"/>
+                            <field name="contact_email" widget="email"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="photo" widget="many2many_binary"/>
+                            <field name="website" widget="url"/>
+                            <!--                             <field name="photo" widget="many2many_binary"/> -->
+                        </tree>
+                    </field>
+                    <p style="font-size :16px;font-weight: bold;">National commission :</p>
+                    <group>
+                        <field name="year_fondation_national_commission"/>
+                        <field name="location_national_commission"/>
+                        <field name="contact_national_commission" widget="phone"/>
+                        <field name="email_national_commission" widget="email"/>
+                        <field name="website_national_commission" widget="url"/>
+                    </group>
+                    <p style="font-size :16px;font-weight: bold;">National commission secretary general :</p>
+                    <group>
+                        <field name="commission_title"/>
+                        <field name="official_name"/>
+                        <field name="phone_commission" widget="email"/>
+                        <field name="email_commission"/>
+                        <field name="since"/>
+                        <field name="photo" widget="many2many_binary"/>
+                    </group>
+                    <p style="font-size :16px;font-weight: bold;">National commission deputy secretary general or his representative :</p>
+                    <group>
+                        <field name="commission_title_deputy"/>
+                        <field name="official_name_deputy"/>
+                        <field name="phone_commission_deputy"/>
+                        <field name="email_commission_deputy" widget="email"/>
+                        <field name="since_deputy"/>
+                        <field name="photo_deputy" widget="many2many_binary"/>
+                    </group>
+                    <p style="font-size :16px;font-weight: bold;">National Commission Team:</p>
+                    <field name="commission_team_ids" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="title"/>
+                            <field name="official_name"/>
+                            <field name="contact_email" widget="email"/>
+                            <field name="phone" widget="phone"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="cps_view_partner_tree">
+        <field name="name">res.partner.cps.tree</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="official_country_name" optional="hide"/>
+                <field name="official_leaders" optional="hide"/>
+                <field name="country_type" optional="hide"/>
+                <field name="country_capital" optional="hide"/>
+                <field name="population" optional="hide"/>
+                <field name="muslim_population" optional="hide"/>
+                <field name="gpd_per_capital" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="cps_list_oic_act">
+        <field name="name">OIC Organisations</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_ioc_organization','=',True)]</field>
+        <field name="context">{'default_is_ioc_organization':True}</field>
+    </record>
+    <menuitem name="OIC Organisations" id="menu_list_oic" parent="event.menu_event_configuration"
+              action="cps_list_oic_act" sequence="12"/>
+    <record model="ir.actions.act_window" id="cps_list_un_act">
+        <field name="name">UN Organisations</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_un_organization','=',True)]</field>
+        <field name="context">{'default_is_un_organization':True}</field>
+    </record>
+    <menuitem name="UN Organisations" id="menu_list_un" parent="event.menu_event_configuration" action="cps_list_un_act"
+              sequence="13"/>
+    <record model="ir.actions.act_window" id="cps_list_au_act">
+        <field name="name">AU Organisations</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_au_organization','=',True)]</field>
+        <field name="context">{'default_is_au_organization':True}</field>
+    </record>
+    <menuitem name="AU Organisations" id="menu_list_au" parent="event.menu_event_configuration" action="cps_list_au_act"
+              sequence="14"/>
+    <record model="ir.actions.act_window" id="cps_list_al_act">
+        <field name="name">AL Organisations</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_al_organization','=',True)]</field>
+        <field name="context">{'default_is_al_organization':True}</field>
+    </record>
+    <menuitem name="AL Organisations" id="menu_list_al" parent="event.menu_event_configuration" action="cps_list_al_act"
+              sequence="15"/>
+    <menuitem name="Cities" id="cities_menu" parent="contacts.menu_localisation" action="icesco_project.res_city_action"
+              sequence="15"/>
+</odoo>

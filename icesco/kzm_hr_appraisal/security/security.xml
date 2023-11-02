@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="module_appraisal_category" model="ir.module.category">
+        <field name="name">Appraisal</field>
+        <field name="sequence">10</field>
+    </record>
+    <record id="appraisal_group_evaluator" model="res.groups">
+        <field name="name">Evaluator</field>
+        <field name="category_id" ref="kzm_hr_appraisal.module_appraisal_category"/>
+        <field name="implied_ids"
+               eval="[(4, ref('base.group_user'))]"/>
+    </record>
+    <record id="appraisal_group_administrator" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="category_id" ref="kzm_hr_appraisal.module_appraisal_category"/>
+        <field name="implied_ids"
+               eval="[(4, ref('base.group_user')),(4, ref('kzm_hr_appraisal.appraisal_group_evaluator'))]"/>
+        <field name="users"
+               eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+    <record model="ir.rule" id="ir_evaluator_rule">
+        <field name="name">Appraisal Evaluator</field>
+        <field name="model_id" ref="model_appraisal_appraisal"/>
+        <field name="groups"
+               eval="[(6,0,[ref('kzm_hr_appraisal.appraisal_group_evaluator')])]"/>
+        <field name="domain_force">
+            [('employee_id.appraisal_manager_id.id','=',user.id)]
+        </field>
+    </record>
+    <record model="ir.rule" id="ir_appraisal_administrator">
+        <field name="name">Appraisal Administrator</field>
+        <field name="model_id" ref="model_appraisal_appraisal"/>
+        <field name="groups"
+               eval="[(6,0,[ref('kzm_hr_appraisal.appraisal_group_administrator')])]"/>
+        <field name="domain_force">[(1,'=',1)]</field>
+    </record>
+</odoo>

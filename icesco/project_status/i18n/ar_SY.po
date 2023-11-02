@@ -1,0 +1,164 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* project_status
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-10 15:33+0000\n"
+"PO-Revision-Date: 2023-04-10 15:33+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_status
+#: model_terms:ir.ui.view,arch_db:project_status.view_project_project_filter
+msgid "Closed"
+msgstr "مغلق"
+
+#. module: project_status
+#: model:project.status,name:project_status.project_status_complete
+msgid "Complete"
+msgstr "منجز"
+
+#. module: project_status
+#: model:ir.model.fields,field_description:project_status.field_project_status__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: project_status
+#: model:ir.model.fields,field_description:project_status.field_project_status__create_date
+msgid "Created on"
+msgstr " تم إنشاؤه في"
+
+#. module: project_status
+#: model:ir.model.fields,field_description:project_status.field_project_status__description
+msgid "Description"
+msgstr "وصف"
+
+#. module: project_status
+#: model:ir.model.fields,field_description:project_status.field_project_status__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: project_status
+#: model:ir.model.fields.selection,name:project_status.selection__project_status__state__executed
+msgid "Executed"
+msgstr "منفذ"
+
+#. module: project_status
+#: model:ir.model.fields,field_description:project_status.field_project_status__fold
+msgid "Folded"
+msgstr "مطوي"
+
+#. module: project_status
+#: model:ir.model.fields,field_description:project_status.field_project_status__id
+msgid "ID"
+msgstr "معرف"
+
+#. module: project_status
+#: model:project.status,name:project_status.project_status_in_progress
+msgid "In Progress"
+msgstr "قيد الانجاز "
+
+#. module: project_status
+#: model:ir.model.fields.selection,name:project_status.selection__project_status__state__in_progress
+msgid "In progress"
+msgstr "قيد الانجاز "
+
+#. module: project_status
+#: model:ir.model.fields.selection,name:project_status.selection__project_status__state__initial
+msgid "Initial Stage"
+msgstr "المرحلة الأولية"
+
+#. module: project_status
+#: model:ir.model.fields,field_description:project_status.field_project_status__is_closed
+msgid "Is Closed Status"
+msgstr "حالة مغلقة"
+
+#. module: project_status
+#: model:ir.model.fields,field_description:project_status.field_project_status____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: project_status
+#: model:ir.model.fields,field_description:project_status.field_project_status__write_uid
+msgid "Last Updated by"
+msgstr "التعديل الأخير من قبل"
+
+#. module: project_status
+#: model:ir.model.fields,field_description:project_status.field_project_status__write_date
+msgid "Last Updated on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: project_status
+#: model:ir.model.fields,field_description:project_status.field_project_status__name
+msgid "Name"
+msgstr "اسم"
+
+#. module: project_status
+#: model_terms:ir.ui.view,arch_db:project_status.view_project_project_filter
+msgid "Not Closed"
+msgstr "مفتوحة"
+
+#. module: project_status
+#: model:project.status,name:project_status.project_status_pending
+msgid "Pending"
+msgstr " قيد الاعتماد"
+
+#. module: project_status
+#: model:ir.model,name:project_status.model_project_project
+msgid "Project"
+msgstr "المشروع"
+
+#. module: project_status
+#: model:ir.model,name:project_status.model_project_status
+#: model:ir.model.fields,field_description:project_status.field_project_project__project_status
+msgid "Project Status"
+msgstr "حالة المشروع"
+
+#. module: project_status
+#: model:ir.actions.act_window,name:project_status.project_status_action
+#: model:ir.ui.menu,name:project_status.project_status_menu
+msgid "Project Statuses"
+msgstr "حالات المشروع"
+
+#. module: project_status
+#: model:project.status,description:project_status.project_status_complete
+msgid "Project has been completed."
+msgstr "منجز"
+
+#. module: project_status
+#: model:project.status,description:project_status.project_status_in_progress
+msgid "Project is currently initiated and being worked."
+msgstr "بدأ المشروع حاليا وجاري العمل فيه."
+
+#. module: project_status
+#: model:project.status,description:project_status.project_status_pending
+msgid "Project is new and being built. Has not been started yet."
+msgstr "المشروع جديد وجاري بناؤه. لم يبدأ بعد."
+
+#. module: project_status
+#: model:ir.model.fields,field_description:project_status.field_project_status__status_sequence
+msgid "Sequence"
+msgstr "متسلسل"
+
+#. module: project_status
+#: model:ir.model.fields,help:project_status.field_project_status__is_closed
+msgid "Specify if this is a closing status."
+msgstr "حدد ما إذا كانت هذه حالة إغلاق."
+
+#. module: project_status
+#: model:ir.model.fields,field_description:project_status.field_project_project__state
+#: model:ir.model.fields,field_description:project_status.field_project_status__state
+msgid "State"
+msgstr "الوضع"
+
+#. module: project_status
+#: model_terms:ir.ui.view,arch_db:project_status.view_project_project_filter
+msgid "Status"
+msgstr "حالة"

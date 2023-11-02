@@ -1,0 +1,621 @@
+<odoo>
+  <data>
+
+      <record id="project.edit_project" model="ir.ui.view">
+            <field name="name">project.project.form</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <form string="Project">
+                    <header>
+                        <button name="%(portal.portal_share_action)d" string="Share" type="action" class="oe_highlight oe_read_only" invisible="1"/>
+                    </header>
+                <sheet string="Project">
+                    <div class="oe_button_box" name="button_box" groups="base.group_user">
+                        <button  class="oe_stat_button" name="attachment_tree_view" type="object" icon="fa-file-text-o">
+                            <field string="Documents" name="doc_count" widget="statinfo"/>
+                        </button>
+                        <button class="oe_stat_button" type="action"
+                            name="%(project.act_project_project_2_project_task_all)d" icon="fa-tasks">
+                            <field string="Tasks" name="task_count" widget="statinfo" options="{'label_field': 'label_tasks'}"/>
+                        </button>
+                        <button name="action_view_all_rating" type="object" attrs="{'invisible': ['|', '|', ('rating_status', '=', 'no'), ('rating_percentage_satisfaction', '=', -1)]}" class="oe_stat_button oe_percent" icon="fa-smile-o" groups="project.group_project_rating">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="rating_percentage_satisfaction" nolabel="1"/>
+                                </span>
+                                <span class="o_stat_text">
+                                    % On <field readonly="1" name="label_tasks" options="{'label_field': 'label_tasks'}" />
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <h1><field name="name" placeholder="Project Name" width="100"/></h1>
+                    <div class="oe_title">
+<!--                        <h1>-->
+<!--                            <field name="name" placeholder="Project Name"/>-->
+<!--                        </h1>-->
+                        <div name="options_active">
+                            <div>
+                                <label for="label_tasks" class="oe_inline" string="Name of the tasks :"/>
+                                <field name="label_tasks" class="oe_inline oe_input_align"/>
+                            </div>
+                        </div>
+                    </div>
+                    <notebook>
+                        <page name="settings" string="Settings">
+                            <group>
+                                <group>
+                                    <field name="active" invisible="1"/>
+                                    <field name="user_id" string="Project Manager" attrs="{'readonly':[('active','=',False)]}"/>
+                                    <field name="partner_id" string="Customer"/>
+                                </group>
+                                <group>
+                                    <field name="analytic_account_id" domain="['|', ('company_id', '=', company_id), ('company_id', '=', False)]" context="{'default_partner_id': partner_id}" groups="analytic.group_analytic_accounting"/>
+                                    <field name="privacy_visibility" widget="radio"/>
+
+                                    <field name="subtask_project_id" groups="project.group_subtask_project"/>
+                                    <field name="company_id" groups="base.group_multi_company"/>
+                                </group>
+                                <group name="extra_settings">
+                                </group>
+                            </group>
+                            <div class="row mt16 o_settings_container">
+                                <div id="rating_settings" class="col-lg-6 o_setting_box" groups="project.group_project_rating">
+                                    <div class="o_setting_right_pane">
+                                        <label for="rating_status"/>
+                                        <div class="text-muted">
+                                            Get customer feedback
+                                        </div>
+                                        <div>
+                                            <field name="rating_status" widget="radio"/>
+                                            <p attrs="{'invisible': [('rating_status','not in',('periodic','stage'))]}" class="text-muted oe_edit_only">
+                                                Edit project's stages and set an email template on the stages on which you want to activate the rating.
+                                            </p>
+                                            <div  attrs="{'required': [('rating_status','=','periodic')], 'invisible': [('rating_status','!=','periodic')]}">
+                                                <label for="rating_status_period"/>
+                                                <field name="rating_status_period"  class="oe_inline"/>
+                                            </div>
+                                            <div attrs="{'invisible': [('rating_status','==','no')]}">
+                                                <label for="portal_show_rating"/>
+                                                <field name="portal_show_rating"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <group name="misc">
+                                <group string="Time Scheduling">
+                                    <field name="resource_calendar_id"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="emails" string="Emails" attrs="{'invisible': [('alias_domain', '=', False)]}">
+                            <group name="group_alias">
+                                <label for="alias_name" string="Email Alias"/>
+                                <div name="alias_def">
+                                    <field name="alias_id" class="oe_read_only oe_inline"
+                                        string="Email Alias" required="0"/>
+                                    <div class="oe_edit_only oe_inline" name="edit_alias" style="display: inline;" >
+                                        <field name="alias_name" class="oe_inline"/>@<field name="alias_domain" class="oe_inline" readonly="1"/>
+                                    </div>
+                                </div>
+                                <field name="alias_contact" class="oe_inline oe_edit_only"
+                                        string="Accept Emails From"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" help="Follow this project to automatically track the events associated to tasks and issues of this project." groups="base.group_user"/>
+                </div>
+                </form>
+            </field>
+        </record>
+
+      <record id="dh_view_project_kanban_inherited" model="ir.ui.view">
+            <field name="name">dh.project.project.kanban.inherited</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project_kanban"/>
+           <field name="arch" type="xml">
+
+                               <xpath expr="//div[hasclass('o_primary')]" position="after">
+                                   <div style="font-weight: bold">
+                    <div>
+                       <t t-if="record.date_start.raw_value and record.date_end.raw_value">
+                           De
+                            <span class="o_value">
+                                <field name="date_start" />
+                            </span>
+                            À
+                           <span class="o_value">
+                                <field name="date_end" />
+                            </span>
+                        </t>
+                    </div>
+                                   <div>
+                        <t t-if="record.duration.raw_value">
+                           Durée :
+                            <span class="o_value">
+                                <field name="duration" /> Jours
+                            </span>
+                             </t>
+                            <br/>
+                                       <t t-if="record.budget_icesco.raw_value">
+                          Budget alloué à l'ISESCO :
+                           <span class="o_value">
+                                <field name="budget_icesco" /> USD
+                            </span>
+                                       </t>
+
+                                       <t t-if="record.budget_out_icesco.raw_value">
+                           Budget alloué hors ISESCO :
+                           <span class="o_value">
+                                <field name="budget_out_icesco" /> USD
+                            </span>
+                        </t>
+                    </div>
+                    </div>
+                </xpath>
+                <xpath expr="//div[hasclass('o_project_kanban_boxes')]" position="replace">
+                    <div class="o_project_kanban_boxes">
+                                    <a class="o_project_kanban_box" name="%(project.act_project_project_2_project_task_all)d" type="action">
+                                        <div>
+                                             <span class="o_value"><t t-esc="record.task_count.value"/></span> /Activity
+<!--                                            <span> Activities<t t-esc="record.label_tasks.value"/></span>-->
+                                        </div>
+                                    </a>
+                                    <a t-if="record.analytic_account_id.raw_value" class="o_project_kanban_box o_project_timesheet_box" name="action_view_account_analytic_line" type="object" groups="analytic.group_analytic_accounting">
+                                        <div>
+                                            <span class="o_label">Profitability</span>
+                                        </div>
+                                    </a>
+                                </div>
+                </xpath>
+           </field>
+
+      </record>
+
+
+    <record model="ir.ui.view" id="hrr_project_view_form">
+            <field name="name">project.project.form</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+
+              <xpath expr="//button[@name='873']" position="replace">
+                      <button class="oe_stat_button" type="action" name="873" icon="fa-tasks">
+                            <field string="Activities" name="task_count" widget="statinfo"/>
+                        </button>
+                </xpath>
+                <field name="analytic_account_id" position="before">
+<!--                    <field name="task_ids"  string='Activity'  widget="many2many_tags_link"/>-->
+                    <field name="sector_id" invisible="1" />
+                    <field name="project_type" invisible="1"/>
+                    <field name="pays_member_cible_id" invisible="1"/>
+                    <field name="pencentage_done" invisible="1"/>
+                    <field name="pencentage_report" invisible="1"/>
+                </field>
+                <field name="message_follower_ids" position="after">
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </field>
+                <xpath expr="//notebook" position="inside">
+                    <page name="involved_countries" string="Involved Countries">
+                        <field name="involved_country_ids">
+                            <tree editable="bottom">
+                                <field name="country_id"/>
+                                <field name="type_partner"/>
+                                <field name="partner_id"/>
+                                <field name="project_manager_id"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="engaged_partners" string="Engaged partners">
+                        <field name="engaged_partner_ids">
+                            <tree editable="bottom">
+                                <field name="type_partner"/>
+                                <field name="type_organisation"/>
+                                <field name="organisation"/>
+                                <field name="project_manager_id"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+<!--                <xpath expr="//notebook" position="inside">-->
+<!--                    <page name="goals_info" string="Goals Infos">-->
+<!--                        <field name="goals_ids">-->
+<!--                            <tree editable="bottom">-->
+<!--                                <field name="name"/>-->
+<!--                                <field name="done"/>-->
+<!--                            </tree>-->
+<!--                        </field>-->
+<!--                    </page>-->
+<!--                    <page name="pillars" string="Pillars">-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-4">-->
+<!--                                <group string="Project requirement">-->
+<!--                                    <group>-->
+<!--                                        <field name="project_type"/>-->
+<!--                                        <field name="sector"/>-->
+<!--                                        <field name="country_budget_available"/>-->
+<!--                                        <field name="budget_required_icesco"/>-->
+<!--                                        <field name="supporting_project" widget="selction"/>-->
+<!--                                    </group>-->
+<!--                                </group>-->
+<!--                            </div>-->
+<!--                            <div class="col-4">-->
+<!--                                <group string="Technical support requirement">-->
+<!--                                    <group>-->
+<!--                                        <field name="translation"/>-->
+<!--                                        <field name="is_support_designing"/>-->
+<!--                                    </group>-->
+<!--                                    <group>-->
+<!--                                        <field name="is_support_legal"/>-->
+<!--                                        <field name="is_support_finance"/>-->
+<!--                                    </group>-->
+<!--                                    <group>-->
+<!--                                        <field name="is_support_logistics"/>-->
+<!--                                        <field name="is_support_protocol"/>-->
+<!--                                    </group>-->
+<!--                                    <group>-->
+<!--                                        <field name="is_support_admin"/>-->
+<!--                                        <field name="is_support_it"/>-->
+<!--                                    </group>-->
+<!--                                    <group>-->
+<!--                                        <field name="is_support_media"/>-->
+<!--                                        <field name="is_support_other"/>-->
+<!--                                    </group>-->
+<!--                                    <group colspan="2">-->
+<!--                                        <field name="list_translation_service"-->
+<!--                                               attrs="{'invisible': [('translation', '=', False)]}"/>-->
+<!--                                        <field name="list_designing_service"-->
+<!--                                               attrs="{'invisible': [('is_support_designing', '=', False)]}"/>-->
+<!--                                        <field name="list_legal_service"-->
+<!--                                               attrs="{'invisible': [('is_support_legal', '=', False)]}"/>-->
+<!--                                        <field name="list_finance_service"-->
+<!--                                               attrs="{'invisible': [('is_support_finance', '=', False)]}"/>-->
+<!--                                        <field name="list_logistics_service"-->
+<!--                                               attrs="{'invisible': [('is_support_logistics', '=', False)]}"/>-->
+<!--                                        <field name="list_admin_service"-->
+<!--                                               attrs="{'invisible': [('is_support_admin', '=', False)]}"/>-->
+<!--                                        <field name="list_it_service"-->
+<!--                                               attrs="{'invisible': [('is_support_it', '=', False)]}"/>-->
+<!--                                        <field name="list_media_service"-->
+<!--                                               attrs="{'invisible': [('is_support_media', '=', False)]}"/>-->
+<!--                                        <field name="list_protocol_service"-->
+<!--                                               attrs="{'invisible': [('is_support_protocol', '=', False)]}"/>-->
+<!--                                        <field name="list_others_service"-->
+<!--                                               attrs="{'invisible': [('is_support_other', '=', False)]}"/>-->
+<!--                                    </group>-->
+<!--                                </group>-->
+<!--                            </div>-->
+<!--                            <div class="col-4">-->
+<!--                                <group string="Full proposal document (PDF Upload)">-->
+<!--                                    <group>-->
+<!--                                        <field name="file" widget="many2many_binary"/>-->
+
+<!--                                    </group>-->
+
+<!--                                </group>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </page>-->
+<!--                </xpath>-->
+            </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_project_project_form_view">
+        <field name="name">project.project.form</field>
+        <field name="model">project.project</field>
+        <field name="arch" type="xml">
+            <form string="المشاريع">
+                <sheet>
+                    <group col="2">
+                        <group>
+                            <field name="name"/>
+                            <field name="pilliar_id"/>
+                            <field name="sector_id"/>
+                        </group>
+                        <group>
+                            <field name="task_ids" />
+<!--                            widget="many2many_tags_link"-->
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+      <record model="ir.ui.view" id="dh_dh_project_project_tree_view">
+        <field name="name">dh.dh.project.project.tree</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project"/>
+        <field name="arch" type="xml">
+            <field name="code" position="replace">
+                <field name="dh_code"/>
+            </field>
+        </field>
+      </record>
+
+    <record model="ir.ui.view" id="dh_project_project_tree">
+      <field name="name">project.project.tree</field>
+      <field name="model">project.project</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+            <field name="dh_code" width="1"/>
+            <field name="name" width="1"/>
+            <field name="pilliar_id" width="1"/>
+            <field name="sector_id" width="1"/>
+            <field name="respect_time" invisible="1"/>
+            <field name="target" invisible="1"/>
+            <field name="actual" invisible="1"/>
+            <field name="task_ids" width="1" widget="many2many_tags_link"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="dh_project_project2_view_form">
+        <field name="name">dh.project.project2.form</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+                            <xpath expr="//div[2]" position="after">
+
+<!--            <field name="budget" position="after">-->
+                                <group>
+                <field name="date_start"/>
+                            <field name="date_end"/>
+                                </group>
+                                                                <label for="duration"/>
+
+                                      <div >
+                                    <field name="duration" />
+
+
+
+                                    <field name="unite" string="" />
+                                </div>
+
+<!--                                    <div>-->
+<!--                                        <group>-->
+<!--                                <field name="duration" /></group>-->
+<!--                                <i class="fa fa-long-arrow-right mx-2 oe_edit_only" aria-label="Arrow icon" title="Arrow"/>-->
+<!--                                <field name="duration"/>-->
+<!--                            </div>-->
+                                <group>
+<!--                            <field name="duration"/>-->
+                <field name="budget_consumed" invisible="1"/>
+                <field name="budget_remaining" invisible="1"/>
+                <field name="rate_ratio" invisible="1"/>
+                <field name="orientation_id" />
+                <field name="pilliar_id" />
+                <field name="budget_icesco" />
+                <field name="budget_out_icesco" />
+                <field name="budget_total_icesco" />
+                <field name="percentage_of_done" invisible="1"/>
+<!--            </field>-->
+            </group>
+                            </xpath>
+            <field name="user_id" position="before">
+                <field name="sector_id"/>
+            </field>
+            <field name="description" position="after">
+                <field name="respect_time" invisible="1"/>
+                <field name="target" invisible="1"/>
+                <field name="actual" invisible="1"/>
+            </field>
+            <xpath expr="//button[@name='%(portal.portal_share_action)d']" position="after">
+                <button name="%(dh_icesco_project.dh_project_budget_wizard_action_server)d" string="Retirer un montant"
+                        class="btn btn-sm btn-primary" type="action" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_dh_project_project_kanban_2">
+          <field name="name">dh.project.project.kanban.2</field>
+          <field name="model">project.project</field>
+          <field name="arch" type="xml">
+              <kanban create="0">  <!--default_group_by="priority"-->
+                  <field name="name"/>
+                  <field name="respect_time"/>
+                  <field name="target"/>
+                  <field name="actual"/>
+                  <templates>
+                      <t t-name="kanban-box">
+                          <div class="oe_kanban_global_click">
+<!--                              <div class="oe_dropdown_kanban">-->
+<!--                                  &lt;!&ndash; dropdown menu &ndash;&gt;-->
+<!--                                  <div class="oe_dropdown_toggle">-->
+<!--                                      <i class="fa fa-bars fa-lg" title="Manage" aria-label="Manage"/>-->
+<!--                                      <ul class="oe_dropdown_menu">-->
+<!--                                          <li>-->
+<!--                                              <a type="delete">Delete</a>-->
+<!--                                          </li>-->
+<!--                                          <li>-->
+<!--                                              <ul class="oe_kanban_colorpicker"-->
+<!--                                                  data-field="color"/>-->
+<!--                                          </li>-->
+<!--                                      </ul>-->
+<!--                                  </div>-->
+<!--                                  <div class="oe_clear"></div>-->
+<!--                              </div>-->
+                              <div t-attf-class="oe_kanban_content oe_kanban_details d-flex flex-column">
+                             <div style="background-color:#425561;height:42px;">
+
+                                  <div class="oe_kanban_global_click"
+                                             style="float:left!important;margin-left: 5px;margin-bottom: 10px;margin-top: 5px;">
+                                    <button name="view_show_tasks" type="object"
+                                            class="btn btn-primary oe_kanban_action oe_kanban_action_button"
+                                            style="background-color:#008484;">
+                                        <span style="font-size: 12px; color:white;">الأنشطة</span>
+                                    </button>
+                                      <button name="view_form_project" type="object"
+                                                class="btn btn-primary oe_kanban_action oe_kanban_action_button"
+                                                style="background-color:#008484;">
+                                            <span style="font-size: 12px; color:white;">التفاصيل</span>
+                                        </button>
+                                </div>
+                                </div>
+                                  <!-- title -->
+                                  <t t-if="record.name.raw_value">
+                                      <h2>
+                                          <strong>
+                                              <field name="name"/>
+                                          </strong>
+                                      </h2>
+                                      <hr/>
+                                  </t>
+                                  <t t-if="record.percentage_of_done.raw_value != 0">
+                                      <ul style="list-style: none;">
+                                          <li class="dh_pie">
+                                              <field style="font-size: 0px;" name="percentage_of_done" widget="percentpie" nolabel="1"/>
+                                          </li>
+    <!--                                      <li>-->
+    <!--                                          <span>المستهدف</span>-->
+    <!--                                          <field name="target"/> %-->
+    <!--                                          <span>النتيجة الفعلية</span>-->
+    <!--                                          <field name="actual"/> %-->
+    <!--                                      </li>-->
+                                      </ul>
+                                  </t>
+
+                              </div>
+
+                          </div>
+                      </t>
+                  </templates>
+              </kanban>
+          </field>
+      </record>
+
+        <record model="ir.ui.view" id="view_dh_project_project_kanban_3">
+          <field name="name">dh.project.project.kanban.2</field>
+          <field name="model">project.project</field>
+          <field name="arch" type="xml">
+              <kanban>  <!--default_group_by="priority"-->
+                  <field name="name"/>
+                  <field name="percentage_of_done"/>
+                  <field name="target"/>
+                  <field name="actual"/>
+                  <templates>
+                      <t t-name="kanban-box">
+                          <div class="oe_kanban_global_click">
+<!--                              <div class="oe_dropdown_kanban">-->
+<!--                                  &lt;!&ndash; dropdown menu &ndash;&gt;-->
+<!--                                  <div class="oe_dropdown_toggle">-->
+<!--                                      <i class="fa fa-bars fa-lg" title="Manage" aria-label="Manage"/>-->
+<!--                                      <ul class="oe_dropdown_menu">-->
+<!--                                          <li>-->
+<!--                                              <a type="delete">Delete</a>-->
+<!--                                          </li>-->
+<!--                                          <li>-->
+<!--                                              <ul class="oe_kanban_colorpicker"-->
+<!--                                                  data-field="color"/>-->
+<!--                                          </li>-->
+<!--                                      </ul>-->
+<!--                                  </div>-->
+<!--                                  <div class="oe_clear"></div>-->
+<!--                              </div>-->
+                              <div t-attf-class="oe_kanban_content oe_kanban_details d-flex flex-column">
+                                  <!-- title -->
+                                  <t t-if="record.name.raw_value">
+                                      <h2>
+                                          <strong>
+                                              <field name="name"/>
+                                          </strong>
+                                      </h2>
+                                      <hr/>
+                                  </t>
+                                  <t t-if="record.percentage_of_done.raw_value != 0">
+                                      <ul style="list-style: none;">
+                                          <li class="dh_pie">
+                                              <field style="font-size: 0px;" name="percentage_of_done" widget="percentpie" nolabel="1"/>
+                                          </li>
+    <!--                                      <li>-->
+    <!--                                          <span>المستهدف</span>-->
+    <!--                                          <field name="target"/> %-->
+    <!--                                          <span>النتيجة الفعلية</span>-->
+    <!--                                          <field name="actual"/> %-->
+    <!--                                      </li>-->
+                                      </ul>
+                                  </t>
+
+                              </div>
+                          </div>
+                      </t>
+                  </templates>
+              </kanban>
+          </field>
+      </record>
+
+
+    <record model="ir.actions.act_window" id="action_dh_project_project">
+      <field name="name">المشاريع</field>
+      <field name="res_model">project.project</field>
+      <field name="view_mode">tree</field>
+        <field name="view_id" ref="dh_project_project_tree"/>
+    </record>
+
+  <record model="ir.actions.act_window" id="action_dh_project_project_kanban">
+      <field name="name">المشاريع</field>
+      <field name="res_model">project.project</field>
+      <field name="view_mode">kanban,tree</field>
+        <field name="view_id" ref="view_dh_project_project_kanban_2"/>
+    </record>
+
+  <record id="dh_action_view_task" model="ir.actions.act_window">
+            <field name="name">Activities</field>
+            <field name="res_model">project.task</field>
+<!--            <field name="view_mode">kanban,tree,form,calendar,pivot,graph,activity</field>-->
+            <field name="view_mode">kanban,tree,form</field>
+<!--            <field name="context">{'search_default_my_tasks': 1}</field>-->
+            <field name="context">{}</field>
+            <field name="search_view_id" ref="project.view_task_search_form"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new activity
+                </p><p>
+                    Odoo's project management allows you to manage the pipeline of your tasks efficiently.<br/>
+                    You can track progress, discuss on tasks, attach documents, etc.
+                </p>
+            </field>
+        </record>
+
+      <record id="dh_action_view_task_details" model="ir.actions.act_window">
+            <field name="name">Détails Activities</field>
+            <field name="res_model">project.task</field>
+<!--            <field name="view_mode">tree,kanban,form,calendar,pivot,graph,activity</field>-->
+            <field name="view_mode">tree,kanban,form</field>
+<!--            <field name="context">{'search_default_my_tasks': 1}</field>-->
+            <field name="context">{}</field>
+            <field name="view_id" ref="dh_icesco_project.dh_perf_project_task_details_tree"/>
+            <field name="search_view_id" ref="project.view_task_search_form"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new activity
+                </p><p>
+                    Odoo's project management allows you to manage the pipeline of your tasks efficiently.<br/>
+                    You can track progress, discuss on tasks, attach documents, etc.
+                </p>
+            </field>
+        </record>
+
+      <menuitem name="All activities" id="project.menu_project_management" parent="project.menu_main_pm"
+            action="dh_action_view_task" sequence="2" groups="base.group_no_one,project.group_project_user"/>
+       <menuitem id="dh_perf_type_activity_menu" name=" نوع الأنشطة" parent="project.menu_main_pm"
+              action="action_dh_perf_type_activity" sequence="4"/>
+         <menuitem action="dh_mission_task_all" id="menu_missions" name="Missions" parent="project.menu_main_pm"
+              sequence="4"/>
+            <menuitem id="menu_treansfert_budget_parent" name="Budget projects Transfer "
+                  parent="project.menu_main_pm"
+                  sequence="9"/>
+
+      <record id="project.menu_project_config" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+        </record>
+
+
+
+  </data>
+</odoo>

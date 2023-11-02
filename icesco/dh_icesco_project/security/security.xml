@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <record id="icesco_optional_menus_access" model="res.groups">
+            <field name="name">Show optional menus performance</field>
+        </record>
+        <record id="icesco_menus" model="res.groups">
+            <field name="name">Menus(not used)</field>
+        </record>
+     <record id="icesco_dashboard_management_access" model="res.groups">
+            <field name="name">Show Dashboard Management </field>
+        </record>
+        <record id="icesco_dg" model="res.groups">
+            <field name="name">DG</field>
+        </record>
+        <record id="icesco_directeur_administratif" model="res.groups">
+            <field name="name">Directeur Administratif</field>
+        </record>
+        <record id="group_cabdg" model="res.groups">
+            <field name="name">CabDG</field>
+        </record>
+
+        <record id="suivi_performance" model="res.groups">
+            <field name="name">Suivi performance</field>
+        </record>
+
+<!--          <record id="mission_project_rule" model="ir.rule">-->
+<!--            <field name="name">Mission Project</field>-->
+<!--            <field name="model_id" ref="project.model_project_project"/>-->
+<!--            <field name="domain_force">['|','|',('is_mission','=',True),('user_id','=',user.id),('user_id.employee_id.parent_id.user_id','=',user.id)]</field>-->
+
+<!--        </record>-->
+    </data>
+
+</odoo>

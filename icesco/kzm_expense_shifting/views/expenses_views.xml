@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="shifting_expense_form_view">
+        <field name="name">hr.expense.shifting.form</field>
+        <field name="model">hr.expense.shifting</field>
+        <field name="arch" type="xml">
+            <form string="Shifting Expense Form">
+
+                <header>
+                    <button name="draft_action" type="object"
+                            string="Re draft"
+                            groups="kzm_expense_shifting.shifting_expense_responsible"
+                            states="paid,canceled,confirmed"/>
+
+                    <button name="approve_action" type="object"
+                            string="Submit"
+                            states="draft"/>
+
+                    <button name="confirme_action" type="object"
+                            string="Confirm" states="to_approve"
+                            groups="kzm_expense_shifting.shifting_expense_responsible"
+                            class="oe_highlight"/>
+
+                    <button name="validate_action" type="object"
+                            string="Pay" states="confirmed"
+                            groups="kzm_expense_shifting.shifting_expense_responsible"
+                            class="oe_highlight"/>
+
+                    <button name="cancel_action"
+                            type="object"
+                            string="Cancel"
+                            groups="kzm_expense_shifting.shifting_expense_responsible"
+                            states="to_approve,confirmed"/>
+
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="see_expense"
+                                class="oe_stat_button"
+                                string="Expenses"
+                                type="object"
+                                attrs="{'invisible': [('hr_expense_id', '=', False)]}"
+                                icon="fa-dollar">
+                        </button>
+                    </div>
+                    <field name="hr_expense_id" invisible="1"/>
+                    <field name="is_resp" invisible="1"/>
+<!--                    <div class="oe_title">-->
+<!--                        <h1>-->
+<!--                            <field name="name" readonly="1"/>-->
+<!--                        </h1>-->
+<!--                    </div>-->
+                    <group string="Applicant">
+                        <group>
+                            <field name="employee_id" required="1" domain="[('contract_id', '!=', False)]"
+                                   attrs="{'readonly': ['|', ('state', 'in', ['paid', 'confirmed', 'canceled']),('is_resp', '=', False)]}"/>
+                            <field name="activity_number" required="1"/>
+                            <field name="activity_name" required="1"/>
+                        </group>
+                        <group>
+                            <field name="job_id" attrs="{'invisible': [('job_id', '=', False)]}"/>
+                            <field name="department_id" attrs="{'invisible': [('department_id', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <group string="Application">
+                        <group>
+                            <field name="zone_id" required="1"/>
+                            <field name="allowed_amount"/>
+                            <field name="currency_id"/>
+                        </group>
+                        <group>
+                            <field name="days_number" required="1"/>
+                            <field name="date" required="1"/>
+                            <field name="deplacement_date"/>
+                        </group>
+                    </group>
+
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="shifting_expense_tree_view">
+        <field name="name">hr.expense.shifting.tree</field>
+        <field name="model">hr.expense.shifting</field>
+        <field name="arch" type="xml">
+            <tree string="Hr Expense Shifting">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="date"/>
+                <field name="deplacement_date"/>
+                <field name="days_number"/>
+                <field name="zone_id"/>
+                <field name="allowed_amount"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="all_shifting_expenses_action">
+        <field name="name">All Shifting Expenses</field>
+        <field name="res_model">hr.expense.shifting</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="my_shifting_expenses_action">
+        <field name="name">My Shifting Expenses</field>
+        <field name="res_model">hr.expense.shifting</field>
+        <field name="domain">[('employee_id.user_id', '=', uid)]</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="shifting_expenses_to_approve_action">
+        <field name="name">Shifting Expenses to approve</field>
+        <field name="res_model">hr.expense.shifting</field>
+        <field name="domain">[('state', '=', 'to_approve')]</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="shifting_zone_expense_tree_view">
+        <field name="name">hr.expense.shifting.zone.tree</field>
+        <field name="model">hr.expense.shifting.zone</field>
+        <field name="arch" type="xml">
+            <tree string="Zones" editable="bottom">
+                <field name="name" required="1"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="shifting_zone_expense_form_view">
+        <field name="name">hr.expense.shifting.zone.tree</field>
+        <field name="model">hr.expense.shifting.zone</field>
+        <field name="arch" type="xml">
+            <form string="Zones">
+                <field name="name" required="1"/>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="sh_zones_action">
+        <field name="name">Zones</field>
+        <field name="res_model">hr.expense.shifting.zone</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+
+    <!--        <record model="ir.actions.act_window" id="missions_to_paid_action">-->
+    <!--            <field name="name">Mission to paid</field>-->
+    <!--            <field name="res_model">hr.expense.shifting</field>-->
+    <!--            <field name="domain">[('state', '=', 'confirmed')]</field>-->
+    <!--            <field name="view_mode">tree,form</field>-->
+    <!--        </record>-->
+
+</odoo>

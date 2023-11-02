@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_contract_grade_manager,hr.contract.grade.manager,model_hr_contract_grade,hr_contract.group_hr_contract_manager,1,1,1,1
+access_hr_contract_grade_user,hr.contract.grade.user,model_hr_contract_grade,hr.group_hr_user,1,0,0,0
+access_hr_contract_category_manager,hr.contract.category.manager,model_hr_contract_category,hr_contract.group_hr_contract_manager,1,1,1,1
+access_hr_contract_category_user,hr.contract.category.user,model_hr_contract_category,hr.group_hr_user,1,0,0,0
+access_hr_payroll_ma_rubrique_line_manager,hr.payroll_ma.rubrique.manager,model_hr_payroll_ma_rubrique_line,hr_contract.group_hr_contract_manager,1,1,1,1
+access_hr_payroll_ma_rubrique_line_user,hr.payroll_ma.rubrique.user,model_hr_payroll_ma_rubrique_line,hr.group_hr_user,1,0,0,0
+access_hr_employee_dependent_manager,hr.employee.dependent.manager,model_hr_employee_dependent,hr_contract.group_hr_contract_manager,1,1,1,1
+access_hr_employee_dependent_user,hr.employee.dependent.user,model_hr_employee_dependent,hr.group_hr_user,1,0,0,0
+access_hr_category_manager,hr.category.manager,model_hr_category,hr_contract.group_hr_contract_manager,1,1,1,1
+access_hr_category_user,hr.category.user,model_hr_category,hr.group_hr_user,1,0,0,0
+
+access_dh_interviews,isesco_hr.dh_interviews,isesco_hr.model_dh_interviews,,1,1,1,1
+access_dh_interviews_lines,isesco_hr.dh_interviews_lines,isesco_hr.model_dh_interviews_lines,,1,1,1,1
+access_dh_meeting_invitation_wizard,isesco_hr.dh_meeting_invitation_wizard,isesco_hr.model_dh_meeting_invitation_wizard,,1,1,1,1
+

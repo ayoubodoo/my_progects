@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dh_date_trimester">
+            <field name="name">cps.date.trimester.form</field>
+            <field name="model">date.trimester</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                            </group>
+                            <group>
+                                <field name="date_start"/>
+                                <field name="date_end"/>
+                                <field name="periode_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="dh_date_trimester_tree">
+            <field name="name">cps.date.trimester.tree</field>
+            <field name="model">date.trimester</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="periode_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="dh_date_trimester_action" model="ir.actions.act_window">
+            <field name="name">Trimesters</field>
+            <field name="res_model">date.trimester</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_date_trimester_hr" name="Trimesters"
+            parent="hr.menu_human_resources_configuration" sequence="50"/>
+        <menuitem action="dh_date_trimester_action" id="menu_date_trimester_action_hr" parent="menu_date_trimester_hr"/>
+    </data>
+</odoo>

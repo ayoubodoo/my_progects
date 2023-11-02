@@ -1,0 +1,2062 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <data noupdate="1">
+    <!--Compte-->
+    <record id="compte_6893" model="liasse.compte.erp">
+      <field name="compte">211</field>
+      <field name="conf_id" ref="code_conf_238"/>
+    </record>
+    <record id="compte_6900" model="liasse.compte.erp">
+      <field name="compte">212</field>
+      <field name="conf_id" ref="code_conf_239"/>
+    </record>
+    <record id="compte_6903" model="liasse.compte.erp">
+      <field name="compte">213</field>
+      <field name="conf_id" ref="code_conf_240"/>
+    </record>
+    <record id="compte_6904" model="liasse.compte.erp">
+      <field name="compte">221</field>
+      <field name="conf_id" ref="code_conf_274"/>
+    </record>
+    <record id="compte_6905" model="liasse.compte.erp">
+      <field name="compte">222</field>
+      <field name="conf_id" ref="code_conf_275"/>
+    </record>
+    <record id="compte_6906" model="liasse.compte.erp">
+      <field name="compte">223</field>
+      <field name="conf_id" ref="code_conf_276"/>
+    </record>
+    <record id="compte_6907" model="liasse.compte.erp">
+      <field name="compte">228</field>
+      <field name="conf_id" ref="code_conf_277"/>
+    </record>
+    <record id="compte_6908" model="liasse.compte.erp">
+      <field name="compte">231</field>
+      <field name="conf_id" ref="code_conf_207"/>
+    </record>
+    <record id="compte_6909" model="liasse.compte.erp">
+      <field name="compte">232</field>
+      <field name="conf_id" ref="code_conf_208"/>
+    </record>
+    <record id="compte_6910" model="liasse.compte.erp">
+      <field name="compte">233</field>
+      <field name="conf_id" ref="code_conf_209"/>
+    </record>
+    <record id="compte_6911" model="liasse.compte.erp">
+      <field name="compte">234</field>
+      <field name="conf_id" ref="code_conf_210"/>
+    </record>
+    <record id="compte_6912" model="liasse.compte.erp">
+      <field name="compte">235</field>
+      <field name="conf_id" ref="code_conf_211"/>
+    </record>
+    <record id="compte_6913" model="liasse.compte.erp">
+      <field name="compte">238</field>
+      <field name="conf_id" ref="code_conf_212"/>
+    </record>
+    <record id="compte_6914" model="liasse.compte.erp">
+      <field name="compte">239</field>
+      <field name="conf_id" ref="code_conf_213"/>
+    </record>
+    <record id="compte_6915" model="liasse.compte.erp">
+      <field name="compte">241</field>
+      <field name="conf_id" ref="code_conf_254"/>
+    </record>
+    <record id="compte_6917" model="liasse.compte.erp">
+      <field name="compte">248</field>
+      <field name="conf_id" ref="code_conf_255"/>
+    </record>
+    <record id="compte_6918" model="liasse.compte.erp">
+      <field name="compte">251</field>
+      <field name="conf_id" ref="code_conf_256"/>
+    </record>
+    <record id="compte_6919" model="liasse.compte.erp">
+      <field name="compte">258</field>
+      <field name="conf_id" ref="code_conf_257"/>
+    </record>
+    <record id="compte_6920" model="liasse.compte.erp">
+      <field name="compte">271</field>
+      <field name="conf_id" ref="code_conf_192"/>
+    </record>
+    <record id="compte_6921" model="liasse.compte.erp">
+      <field name="compte">272</field>
+      <field name="conf_id" ref="code_conf_193"/>
+    </record>
+    <record id="compte_6922" model="liasse.compte.erp">
+      <field name="compte">311</field>
+      <field name="conf_id" ref="code_conf_160"/>
+    </record>
+    <record id="compte_6923" model="liasse.compte.erp">
+      <field name="compte">312</field>
+      <field name="conf_id" ref="code_conf_161"/>
+    </record>
+    <record id="compte_6936" model="liasse.compte.erp">
+      <field name="compte">313</field>
+      <field name="conf_id" ref="code_conf_162"/>
+    </record>
+    <record id="compte_6941" model="liasse.compte.erp">
+      <field name="compte">314</field>
+      <field name="conf_id" ref="code_conf_163"/>
+    </record>
+    <record id="compte_6946" model="liasse.compte.erp">
+      <field name="compte">315</field>
+      <field name="conf_id" ref="code_conf_164"/>
+    </record>
+    <record id="compte_6947" model="liasse.compte.erp">
+      <field name="compte">341</field>
+      <field name="conf_id" ref="code_conf_122"/>
+    </record>
+    <record id="compte_6948" model="liasse.compte.erp">
+      <field name="compte">342</field>
+      <field name="conf_id" ref="code_conf_123"/>
+    </record>
+    <record id="compte_6949" model="liasse.compte.erp">
+      <field name="compte">343</field>
+      <field name="conf_id" ref="code_conf_124"/>
+    </record>
+    <record id="compte_6950" model="liasse.compte.erp">
+      <field name="compte">345</field>
+      <field name="conf_id" ref="code_conf_125"/>
+    </record>
+    <record id="compte_6956" model="liasse.compte.erp">
+      <field name="compte">346</field>
+      <field name="conf_id" ref="code_conf_126"/>
+    </record>
+    <record id="compte_6957" model="liasse.compte.erp">
+      <field name="compte">348</field>
+      <field name="conf_id" ref="code_conf_127"/>
+    </record>
+    <record id="compte_6958" model="liasse.compte.erp">
+      <field name="compte">349</field>
+      <field name="conf_id" ref="code_conf_128"/>
+    </record>
+    <record id="compte_6959" model="liasse.compte.erp">
+      <field name="compte">511</field>
+      <field name="conf_id" ref="code_conf_303"/>
+    </record>
+    <record id="compte_6960" model="liasse.compte.erp">
+      <field name="compte">514</field>
+      <field name="conf_id" ref="code_conf_304"/>
+    </record>
+    <record id="compte_6961" model="liasse.compte.erp">
+      <field name="compte">516</field>
+      <field name="conf_id" ref="code_conf_305"/>
+    </record>
+    <record id="compte_6962" model="liasse.compte.erp">
+      <field name="compte">2811</field>
+      <field name="conf_id" ref="code_conf_241"/>
+    </record>
+    <record id="compte_6963" model="liasse.compte.erp">
+      <field name="compte">2812</field>
+      <field name="conf_id" ref="code_conf_242"/>
+    </record>
+    <record id="compte_6964" model="liasse.compte.erp">
+      <field name="compte">2813</field>
+      <field name="conf_id" ref="code_conf_243"/>
+    </record>
+    <record id="compte_6965" model="liasse.compte.erp">
+      <field name="compte">2821</field>
+      <field name="conf_id" ref="code_conf_278"/>
+    </record>
+    <record id="compte_6967" model="liasse.compte.erp">
+      <field name="compte">2822</field>
+      <field name="conf_id" ref="code_conf_279"/>
+    </record>
+    <record id="compte_6968" model="liasse.compte.erp">
+      <field name="compte">2922</field>
+      <field name="conf_id" ref="code_conf_279"/>
+    </record>
+    <record id="compte_6969" model="liasse.compte.erp">
+      <field name="compte">2823</field>
+      <field name="conf_id" ref="code_conf_280"/>
+    </record>
+    <record id="compte_6970" model="liasse.compte.erp">
+      <field name="compte">2923</field>
+      <field name="conf_id" ref="code_conf_280"/>
+    </record>
+    <record id="compte_6971" model="liasse.compte.erp">
+      <field name="compte">2828</field>
+      <field name="conf_id" ref="code_conf_281"/>
+    </record>
+    <record id="compte_6972" model="liasse.compte.erp">
+      <field name="compte">2928</field>
+      <field name="conf_id" ref="code_conf_281"/>
+    </record>
+    <record id="compte_6973" model="liasse.compte.erp">
+      <field name="compte">2831</field>
+      <field name="conf_id" ref="code_conf_214"/>
+    </record>
+    <record id="compte_6974" model="liasse.compte.erp">
+      <field name="compte">2931</field>
+      <field name="conf_id" ref="code_conf_214"/>
+    </record>
+    <record id="compte_6975" model="liasse.compte.erp">
+      <field name="compte">2832</field>
+      <field name="conf_id" ref="code_conf_215"/>
+    </record>
+    <record id="compte_6976" model="liasse.compte.erp">
+      <field name="compte">2932</field>
+      <field name="conf_id" ref="code_conf_215"/>
+    </record>
+    <record id="compte_6977" model="liasse.compte.erp">
+      <field name="compte">2833</field>
+      <field name="conf_id" ref="code_conf_216"/>
+    </record>
+    <record id="compte_6978" model="liasse.compte.erp">
+      <field name="compte">2933</field>
+      <field name="conf_id" ref="code_conf_216"/>
+    </record>
+    <record id="compte_6979" model="liasse.compte.erp">
+      <field name="compte">2834</field>
+      <field name="conf_id" ref="code_conf_217"/>
+    </record>
+    <record id="compte_6980" model="liasse.compte.erp">
+      <field name="compte">2934</field>
+      <field name="conf_id" ref="code_conf_217"/>
+    </record>
+    <record id="compte_6981" model="liasse.compte.erp">
+      <field name="compte">2835</field>
+      <field name="conf_id" ref="code_conf_218"/>
+    </record>
+    <record id="compte_6982" model="liasse.compte.erp">
+      <field name="compte">2935</field>
+      <field name="conf_id" ref="code_conf_218"/>
+    </record>
+    <record id="compte_6983" model="liasse.compte.erp">
+      <field name="compte">2838</field>
+      <field name="conf_id" ref="code_conf_219"/>
+    </record>
+    <record id="compte_6984" model="liasse.compte.erp">
+      <field name="compte">2938</field>
+      <field name="conf_id" ref="code_conf_219"/>
+    </record>
+    <record id="compte_6985" model="liasse.compte.erp">
+      <field name="compte">2939</field>
+      <field name="conf_id" ref="code_conf_220"/>
+    </record>
+    <record id="compte_6986" model="liasse.compte.erp">
+      <field name="compte">2941</field>
+      <field name="conf_id" ref="code_conf_258"/>
+    </record>
+    <record id="compte_6987" model="liasse.compte.erp">
+      <field name="compte">2948</field>
+      <field name="conf_id" ref="code_conf_259"/>
+    </record>
+    <record id="compte_6988" model="liasse.compte.erp">
+      <field name="compte">2951</field>
+      <field name="conf_id" ref="code_conf_260"/>
+    </record>
+    <record id="compte_6989" model="liasse.compte.erp">
+      <field name="compte">2958</field>
+      <field name="conf_id" ref="code_conf_261"/>
+    </record>
+    <record id="compte_6990" model="liasse.compte.erp">
+      <field name="compte">3911</field>
+      <field name="conf_id" ref="code_conf_165"/>
+    </record>
+    <record id="compte_6991" model="liasse.compte.erp">
+      <field name="compte">3912</field>
+      <field name="conf_id" ref="code_conf_166"/>
+    </record>
+    <record id="compte_6992" model="liasse.compte.erp">
+      <field name="compte">3913</field>
+      <field name="conf_id" ref="code_conf_167"/>
+    </record>
+    <record id="compte_6993" model="liasse.compte.erp">
+      <field name="compte">3914</field>
+      <field name="conf_id" ref="code_conf_168"/>
+    </record>
+    <record id="compte_6994" model="liasse.compte.erp">
+      <field name="compte">3915</field>
+      <field name="conf_id" ref="code_conf_169"/>
+    </record>
+    <record id="compte_6995" model="liasse.compte.erp">
+      <field name="compte">3941</field>
+      <field name="conf_id" ref="code_conf_129"/>
+    </record>
+    <record id="compte_6996" model="liasse.compte.erp">
+      <field name="compte">3942</field>
+      <field name="conf_id" ref="code_conf_130"/>
+    </record>
+    <record id="compte_6997" model="liasse.compte.erp">
+      <field name="compte">3943</field>
+      <field name="conf_id" ref="code_conf_131"/>
+    </record>
+    <record id="compte_6998" model="liasse.compte.erp">
+      <field name="compte">3946</field>
+      <field name="conf_id" ref="code_conf_133"/>
+    </record>
+    <record id="compte_6999" model="liasse.compte.erp">
+      <field name="compte">3948</field>
+      <field name="conf_id" ref="code_conf_134"/>
+    </record>
+    <record id="compte_7000" model="liasse.compte.erp">
+      <field name="compte">591</field>
+      <field name="conf_id" ref="code_conf_306"/>
+    </record>
+    <record id="compte_7001" model="liasse.compte.erp">
+      <field name="compte">594</field>
+      <field name="conf_id" ref="code_conf_307"/>
+    </record>
+    <record id="compte_7002" model="liasse.compte.erp">
+      <field name="compte">596</field>
+      <field name="conf_id" ref="code_conf_308"/>
+    </record>
+    <record id="compte_7003" model="liasse.compte.erp">
+      <field name="compte">35</field>
+      <field name="conf_id" ref="code_conf_181"/>
+    </record>
+    <record id="compte_7004" model="liasse.compte.erp">
+      <field name="compte">395</field>
+      <field name="conf_id" ref="code_conf_182"/>
+    </record>
+    <record id="compte_7005" model="liasse.compte.erp">
+      <field name="compte">37</field>
+      <field name="conf_id" ref="code_conf_151"/>
+    </record>
+    <record id="compte_7043" model="liasse.compte.erp">
+      <field name="compte">111</field>
+      <field name="conf_id" ref="code_conf_13400"/>
+    </record>
+    <record id="compte_7046" model="liasse.compte.erp">
+      <field name="compte">1119</field>
+      <field name="conf_id" ref="code_conf_13401"/>
+    </record>
+    <record id="compte_7047" model="liasse.compte.erp">
+      <field name="compte">112</field>
+      <field name="conf_id" ref="code_conf_13404"/>
+    </record>
+    <record id="compte_7048" model="liasse.compte.erp">
+      <field name="compte">113</field>
+      <field name="conf_id" ref="code_conf_13405"/>
+    </record>
+    <record id="compte_7049" model="liasse.compte.erp">
+      <field name="compte">114</field>
+      <field name="conf_id" ref="code_conf_13406"/>
+    </record>
+    <record id="compte_7050" model="liasse.compte.erp">
+      <field name="compte">115</field>
+      <field name="conf_id" ref="code_conf_13407"/>
+    </record>
+    <record id="compte_7051" model="liasse.compte.erp">
+      <field name="compte">116</field>
+      <field name="conf_id" ref="code_conf_13408"/>
+    </record>
+    <record id="compte_7052" model="liasse.compte.erp">
+      <field name="compte">7</field>
+      <field name="conf_id" ref="code_conf_13409"/>
+    </record>
+    <record id="compte_7053" model="liasse.compte.erp">
+      <field name="compte">131</field>
+      <field name="conf_id" ref="code_conf_13398"/>
+    </record>
+    <record id="compte_7054" model="liasse.compte.erp">
+      <field name="compte">135</field>
+      <field name="conf_id" ref="code_conf_13399"/>
+    </record>
+    <record id="compte_7055" model="liasse.compte.erp">
+      <field name="compte">141</field>
+      <field name="conf_id" ref="code_conf_13394"/>
+    </record>
+    <record id="compte_7056" model="liasse.compte.erp">
+      <field name="compte">148</field>
+      <field name="conf_id" ref="code_conf_13395"/>
+    </record>
+    <record id="compte_7057" model="liasse.compte.erp">
+      <field name="compte">151</field>
+      <field name="conf_id" ref="code_conf_13390"/>
+    </record>
+    <record id="compte_7058" model="liasse.compte.erp">
+      <field name="compte">155</field>
+      <field name="conf_id" ref="code_conf_13391"/>
+    </record>
+    <record id="compte_7059" model="liasse.compte.erp">
+      <field name="compte">171</field>
+      <field name="conf_id" ref="code_conf_13387"/>
+    </record>
+    <record id="compte_7060" model="liasse.compte.erp">
+      <field name="compte">172</field>
+      <field name="conf_id" ref="code_conf_13388"/>
+    </record>
+    <record id="compte_7061" model="liasse.compte.erp">
+      <field name="compte">441</field>
+      <field name="conf_id" ref="code_conf_13377"/>
+    </record>
+    <record id="compte_7062" model="liasse.compte.erp">
+      <field name="compte">442</field>
+      <field name="conf_id" ref="code_conf_13378"/>
+    </record>
+    <record id="compte_7063" model="liasse.compte.erp">
+      <field name="compte">443</field>
+      <field name="conf_id" ref="code_conf_13379"/>
+    </record>
+    <record id="compte_7064" model="liasse.compte.erp">
+      <field name="compte">444</field>
+      <field name="conf_id" ref="code_conf_13380"/>
+    </record>
+    <record id="compte_7065" model="liasse.compte.erp">
+      <field name="compte">445</field>
+      <field name="conf_id" ref="code_conf_13381"/>
+    </record>
+    <record id="compte_7071" model="liasse.compte.erp">
+      <field name="compte">446</field>
+      <field name="conf_id" ref="code_conf_13382"/>
+    </record>
+    <record id="compte_7072" model="liasse.compte.erp">
+      <field name="compte">448</field>
+      <field name="conf_id" ref="code_conf_13383"/>
+    </record>
+    <record id="compte_7073" model="liasse.compte.erp">
+      <field name="compte">449</field>
+      <field name="conf_id" ref="code_conf_13384"/>
+    </record>
+    <record id="compte_7074" model="liasse.compte.erp">
+      <field name="compte">552</field>
+      <field name="conf_id" ref="code_conf_13370"/>
+    </record>
+    <record id="compte_7075" model="liasse.compte.erp">
+      <field name="compte">553</field>
+      <field name="conf_id" ref="code_conf_13371"/>
+    </record>
+    <record id="compte_7076" model="liasse.compte.erp">
+      <field name="compte">554</field>
+      <field name="conf_id" ref="code_conf_13372"/>
+    </record>
+    <record id="compte_7077" model="liasse.compte.erp">
+      <field name="compte">45</field>
+      <field name="conf_id" ref="code_conf_13375"/>
+    </record>
+    <record id="compte_7078" model="liasse.compte.erp">
+      <field name="compte">47</field>
+      <field name="conf_id" ref="code_conf_13374"/>
+    </record>
+    <record id="compte_7271" model="liasse.compte.erp">
+      <field name="compte">711</field>
+      <field name="conf_id" ref="code_conf_11181"/>
+    </record>
+    <record id="compte_7274" model="liasse.compte.erp">
+      <field name="compte">712</field>
+      <field name="conf_id" ref="code_conf_11186"/>
+    </record>
+    <record id="compte_7284" model="liasse.compte.erp">
+      <field name="compte">713</field>
+      <field name="conf_id" ref="code_conf_11191"/>
+    </record>
+    <record id="compte_7287" model="liasse.compte.erp">
+      <field name="compte">714</field>
+      <field name="conf_id" ref="code_conf_11196"/>
+    </record>
+    <record id="compte_7290" model="liasse.compte.erp">
+      <field name="compte">716</field>
+      <field name="conf_id" ref="code_conf_11201"/>
+    </record>
+    <record id="compte_7291" model="liasse.compte.erp">
+      <field name="compte">718</field>
+      <field name="conf_id" ref="code_conf_11206"/>
+    </record>
+    <record id="compte_7295" model="liasse.compte.erp">
+      <field name="compte">719</field>
+      <field name="conf_id" ref="code_conf_11211"/>
+    </record>
+    <record id="compte_7302" model="liasse.compte.erp">
+      <field name="compte">611</field>
+      <field name="conf_id" ref="code_conf_11221"/>
+    </record>
+    <record id="compte_7306" model="liasse.compte.erp">
+      <field name="compte">612</field>
+      <field name="conf_id" ref="code_conf_11256"/>
+    </record>
+    <record id="compte_7319" model="liasse.compte.erp">
+      <field name="compte">613</field>
+      <field name="conf_id" ref="code_conf_11261"/>
+    </record>
+    <record id="compte_7333" model="liasse.compte.erp">
+      <field name="compte">614</field>
+      <field name="conf_id" ref="code_conf_11261"/>
+    </record>
+    <record id="compte_7334" model="liasse.compte.erp">
+      <field name="compte">616</field>
+      <field name="conf_id" ref="code_conf_11251"/>
+    </record>
+    <record id="compte_7337" model="liasse.compte.erp">
+      <field name="compte">617</field>
+      <field name="conf_id" ref="code_conf_11266"/>
+    </record>
+    <record id="compte_7341" model="liasse.compte.erp">
+      <field name="compte">618</field>
+      <field name="conf_id" ref="code_conf_11246"/>
+    </record>
+    <record id="compte_7345" model="liasse.compte.erp">
+      <field name="compte">619</field>
+      <field name="conf_id" ref="code_conf_11241"/>
+    </record>
+    <record id="compte_7361" model="liasse.compte.erp">
+      <field name="compte">732</field>
+      <field name="conf_id" ref="code_conf_11271"/>
+    </record>
+    <record id="compte_7363" model="liasse.compte.erp">
+      <field name="compte">733</field>
+      <field name="conf_id" ref="code_conf_11276"/>
+    </record>
+    <record id="compte_7364" model="liasse.compte.erp">
+      <field name="compte">738</field>
+      <field name="conf_id" ref="code_conf_11281"/>
+    </record>
+    <record id="compte_7370" model="liasse.compte.erp">
+      <field name="compte">739</field>
+      <field name="conf_id" ref="code_conf_11286"/>
+    </record>
+    <record id="compte_7376" model="liasse.compte.erp">
+      <field name="compte">631</field>
+      <field name="conf_id" ref="code_conf_11296"/>
+    </record>
+    <record id="compte_7377" model="liasse.compte.erp">
+      <field name="compte">633</field>
+      <field name="conf_id" ref="code_conf_11301"/>
+    </record>
+    <record id="compte_7378" model="liasse.compte.erp">
+      <field name="compte">638</field>
+      <field name="conf_id" ref="code_conf_11306"/>
+    </record>
+    <record id="compte_7381" model="liasse.compte.erp">
+      <field name="compte">639</field>
+      <field name="conf_id" ref="code_conf_11311"/>
+    </record>
+    <record id="compte_7386" model="liasse.compte.erp">
+      <field name="compte">751</field>
+      <field name="conf_id" ref="code_conf_11341"/>
+    </record>
+    <record id="compte_7389" model="liasse.compte.erp">
+      <field name="compte">756</field>
+      <field name="conf_id" ref="code_conf_11346"/>
+    </record>
+    <record id="compte_7390" model="liasse.compte.erp">
+      <field name="compte">757</field>
+      <field name="conf_id" ref="code_conf_11351"/>
+    </record>
+    <record id="compte_7391" model="liasse.compte.erp">
+      <field name="compte">758</field>
+      <field name="conf_id" ref="code_conf_11356"/>
+    </record>
+    <record id="compte_7395" model="liasse.compte.erp">
+      <field name="compte">759</field>
+      <field name="conf_id" ref="code_conf_11361"/>
+    </record>
+    <record id="compte_7406" model="liasse.compte.erp">
+      <field name="compte">651</field>
+      <field name="conf_id" ref="code_conf_11371"/>
+    </record>
+    <record id="compte_7409" model="liasse.compte.erp">
+      <field name="compte">656</field>
+      <field name="conf_id" ref="code_conf_11376"/>
+    </record>
+    <record id="compte_7410" model="liasse.compte.erp">
+      <field name="compte">658</field>
+      <field name="conf_id" ref="code_conf_11381"/>
+    </record>
+    <record id="compte_7416" model="liasse.compte.erp">
+      <field name="compte">659</field>
+      <field name="conf_id" ref="code_conf_11386"/>
+    </record>
+    <record id="compte_7426" model="liasse.compte.erp">
+      <field name="compte">7118</field>
+      <field name="conf_id" ref="code_conf_11182"/>
+    </record>
+    <record id="compte_7427" model="liasse.compte.erp">
+      <field name="compte">7128</field>
+      <field name="conf_id" ref="code_conf_11187"/>
+    </record>
+    <record id="compte_7428" model="liasse.compte.erp">
+      <field name="compte">71298</field>
+      <field name="conf_id" ref="code_conf_11187"/>
+    </record>
+    <record id="compte_7429" model="liasse.compte.erp">
+      <field name="compte">7148</field>
+      <field name="conf_id" ref="code_conf_11197"/>
+    </record>
+    <record id="compte_7430" model="liasse.compte.erp">
+      <field name="compte">7168</field>
+      <field name="conf_id" ref="code_conf_11202"/>
+    </record>
+    <record id="compte_7431" model="liasse.compte.erp">
+      <field name="compte">7188</field>
+      <field name="conf_id" ref="code_conf_11207"/>
+    </record>
+    <record id="compte_7432" model="liasse.compte.erp">
+      <field name="compte">7198</field>
+      <field name="conf_id" ref="code_conf_11212"/>
+    </record>
+    <record id="compte_7433" model="liasse.compte.erp">
+      <field name="compte">6118</field>
+      <field name="conf_id" ref="code_conf_11222"/>
+    </record>
+    <record id="compte_7434" model="liasse.compte.erp">
+      <field name="compte">6128</field>
+      <field name="conf_id" ref="code_conf_11257"/>
+    </record>
+    <record id="compte_7435" model="liasse.compte.erp">
+      <field name="compte">61298</field>
+      <field name="conf_id" ref="code_conf_11257"/>
+    </record>
+    <record id="compte_7436" model="liasse.compte.erp">
+      <field name="compte">6148</field>
+      <field name="conf_id" ref="code_conf_11262"/>
+    </record>
+    <record id="compte_7437" model="liasse.compte.erp">
+      <field name="compte">6168</field>
+      <field name="conf_id" ref="code_conf_11252"/>
+    </record>
+    <record id="compte_7438" model="liasse.compte.erp">
+      <field name="compte">6178</field>
+      <field name="conf_id" ref="code_conf_11267"/>
+    </record>
+    <record id="compte_7439" model="liasse.compte.erp">
+      <field name="compte">6188</field>
+      <field name="conf_id" ref="code_conf_11247"/>
+    </record>
+    <record id="compte_7440" model="liasse.compte.erp">
+      <field name="compte">61981</field>
+      <field name="conf_id" ref="code_conf_11242"/>
+    </record>
+    <record id="compte_7441" model="liasse.compte.erp">
+      <field name="compte">61984</field>
+      <field name="conf_id" ref="code_conf_11242"/>
+    </record>
+    <record id="compte_7442" model="liasse.compte.erp">
+      <field name="compte">7328</field>
+      <field name="conf_id" ref="code_conf_11272"/>
+    </record>
+    <record id="compte_7443" model="liasse.compte.erp">
+      <field name="compte">7338</field>
+      <field name="conf_id" ref="code_conf_11277"/>
+    </record>
+    <record id="compte_7444" model="liasse.compte.erp">
+      <field name="compte">7388</field>
+      <field name="conf_id" ref="code_conf_11282"/>
+    </record>
+    <record id="compte_7445" model="liasse.compte.erp">
+      <field name="compte">7398</field>
+      <field name="conf_id" ref="code_conf_11287"/>
+    </record>
+    <record id="compte_7446" model="liasse.compte.erp">
+      <field name="compte">6318</field>
+      <field name="conf_id" ref="code_conf_11297"/>
+    </record>
+    <record id="compte_7447" model="liasse.compte.erp">
+      <field name="compte">6338</field>
+      <field name="conf_id" ref="code_conf_11302"/>
+    </record>
+    <record id="compte_7448" model="liasse.compte.erp">
+      <field name="compte">6388</field>
+      <field name="conf_id" ref="code_conf_11307"/>
+    </record>
+    <record id="compte_7449" model="liasse.compte.erp">
+      <field name="compte">6398</field>
+      <field name="conf_id" ref="code_conf_11312"/>
+    </record>
+    <record id="compte_7450" model="liasse.compte.erp">
+      <field name="compte">7518</field>
+      <field name="conf_id" ref="code_conf_11342"/>
+    </record>
+    <record id="compte_7451" model="liasse.compte.erp">
+      <field name="compte">7568</field>
+      <field name="conf_id" ref="code_conf_11347"/>
+    </record>
+    <record id="compte_7452" model="liasse.compte.erp">
+      <field name="compte">7578</field>
+      <field name="conf_id" ref="code_conf_11352"/>
+    </record>
+    <record id="compte_7453" model="liasse.compte.erp">
+      <field name="compte">7588</field>
+      <field name="conf_id" ref="code_conf_11357"/>
+    </record>
+    <record id="compte_7454" model="liasse.compte.erp">
+      <field name="compte">7598</field>
+      <field name="conf_id" ref="code_conf_11362"/>
+    </record>
+    <record id="compte_7455" model="liasse.compte.erp">
+      <field name="compte">6518</field>
+      <field name="conf_id" ref="code_conf_11372"/>
+    </record>
+    <record id="compte_7456" model="liasse.compte.erp">
+      <field name="compte">6568</field>
+      <field name="conf_id" ref="code_conf_11377"/>
+    </record>
+    <record id="compte_7457" model="liasse.compte.erp">
+      <field name="compte">6588</field>
+      <field name="conf_id" ref="code_conf_11382"/>
+    </record>
+    <record id="compte_7458" model="liasse.compte.erp">
+      <field name="compte">6598</field>
+      <field name="conf_id" ref="code_conf_11387"/>
+    </record>
+    <record id="compte_7459" model="liasse.compte.erp">
+      <field name="compte">670</field>
+      <field name="conf_id" ref="code_conf_11416"/>
+    </record>
+    <record id="compte_7461" model="liasse.compte.erp">
+      <field name="compte">6708</field>
+      <field name="conf_id" ref="code_conf_11417"/>
+    </record>
+    <record id="compte_7475" model="liasse.compte.erp">
+      <field name="compte">61911</field>
+      <field name="conf_id" ref="code_conf_1237"/>
+    </record>
+    <record id="compte_7476" model="liasse.compte.erp">
+      <field name="compte">61912</field>
+      <field name="conf_id" ref="code_conf_1242"/>
+    </record>
+    <record id="compte_7477" model="liasse.compte.erp">
+      <field name="compte">61921</field>
+      <field name="conf_id" ref="code_conf_1630"/>
+    </record>
+    <record id="compte_7478" model="liasse.compte.erp">
+      <field name="compte">61922</field>
+      <field name="conf_id" ref="code_conf_1631"/>
+    </record>
+    <record id="compte_7479" model="liasse.compte.erp">
+      <field name="compte">61923</field>
+      <field name="conf_id" ref="code_conf_1632"/>
+    </record>
+    <record id="compte_7480" model="liasse.compte.erp">
+      <field name="compte">61928</field>
+      <field name="conf_id" ref="code_conf_1633"/>
+    </record>
+    <record id="compte_7481" model="liasse.compte.erp">
+      <field name="compte">61931</field>
+      <field name="conf_id" ref="code_conf_1709"/>
+    </record>
+    <record id="compte_7482" model="liasse.compte.erp">
+      <field name="compte">61932</field>
+      <field name="conf_id" ref="code_conf_1710"/>
+    </record>
+    <record id="compte_7483" model="liasse.compte.erp">
+      <field name="compte">61933</field>
+      <field name="conf_id" ref="code_conf_1711"/>
+    </record>
+    <record id="compte_7484" model="liasse.compte.erp">
+      <field name="compte">61934</field>
+      <field name="conf_id" ref="code_conf_1712"/>
+    </record>
+    <record id="compte_7485" model="liasse.compte.erp">
+      <field name="compte">61935</field>
+      <field name="conf_id" ref="code_conf_1713"/>
+    </record>
+    <record id="compte_7486" model="liasse.compte.erp">
+      <field name="compte">61938</field>
+      <field name="conf_id" ref="code_conf_1714"/>
+    </record>
+    <record id="compte_7487" model="liasse.compte.erp">
+      <field name="compte">6391</field>
+      <field name="conf_id" ref="code_conf_1247"/>
+    </record>
+    <record id="compte_7668" model="liasse.compte.erp">
+      <field name="compte">611</field>
+      <field name="conf_id" ref="code_conf_1522"/>
+    </record>
+    <record id="compte_7672" model="liasse.compte.erp">
+      <field name="compte">6114</field>
+      <field name="conf_id" ref="code_conf_1523"/>
+    </record>
+    <record id="compte_7673" model="liasse.compte.erp">
+      <field name="compte">6121</field>
+      <field name="conf_id" ref="code_conf_1526"/>
+    </record>
+    <record id="compte_7674" model="liasse.compte.erp">
+      <field name="compte">6128</field>
+      <field name="conf_id" ref="code_conf_1526"/>
+    </record>
+    <record id="compte_7675" model="liasse.compte.erp">
+      <field name="compte">61291</field>
+      <field name="conf_id" ref="code_conf_1526"/>
+    </record>
+    <record id="compte_7676" model="liasse.compte.erp">
+      <field name="compte">61298</field>
+      <field name="conf_id" ref="code_conf_1526"/>
+    </record>
+    <record id="compte_7677" model="liasse.compte.erp">
+      <field name="compte">61241</field>
+      <field name="conf_id" ref="code_conf_1527"/>
+    </record>
+    <record id="compte_7678" model="liasse.compte.erp">
+      <field name="compte">6122</field>
+      <field name="conf_id" ref="code_conf_1528"/>
+    </record>
+    <record id="compte_7679" model="liasse.compte.erp">
+      <field name="compte">6123</field>
+      <field name="conf_id" ref="code_conf_1528"/>
+    </record>
+    <record id="compte_7680" model="liasse.compte.erp">
+      <field name="compte">61292</field>
+      <field name="conf_id" ref="code_conf_1528"/>
+    </record>
+    <record id="compte_7681" model="liasse.compte.erp">
+      <field name="compte">61293</field>
+      <field name="conf_id" ref="code_conf_1528"/>
+    </record>
+    <record id="compte_7682" model="liasse.compte.erp">
+      <field name="compte">61242</field>
+      <field name="conf_id" ref="code_conf_1529"/>
+    </record>
+    <record id="compte_7683" model="liasse.compte.erp">
+      <field name="compte">61243</field>
+      <field name="conf_id" ref="code_conf_1529"/>
+    </record>
+    <record id="compte_7684" model="liasse.compte.erp">
+      <field name="compte">6125</field>
+      <field name="conf_id" ref="code_conf_1530"/>
+    </record>
+    <record id="compte_7688" model="liasse.compte.erp">
+      <field name="compte">61295</field>
+      <field name="conf_id" ref="code_conf_1530"/>
+    </record>
+    <record id="compte_7689" model="liasse.compte.erp">
+      <field name="compte">6126</field>
+      <field name="conf_id" ref="code_conf_1531"/>
+    </record>
+    <record id="compte_7692" model="liasse.compte.erp">
+      <field name="compte">61296</field>
+      <field name="conf_id" ref="code_conf_1531"/>
+    </record>
+    <record id="compte_7693" model="liasse.compte.erp">
+      <field name="compte">6131</field>
+      <field name="conf_id" ref="code_conf_1534"/>
+    </record>
+    <record id="compte_7701" model="liasse.compte.erp">
+      <field name="compte">6132</field>
+      <field name="conf_id" ref="code_conf_1535"/>
+    </record>
+    <record id="compte_7702" model="liasse.compte.erp">
+      <field name="compte">6133</field>
+      <field name="conf_id" ref="code_conf_1536"/>
+    </record>
+    <record id="compte_7705" model="liasse.compte.erp">
+      <field name="compte">6134</field>
+      <field name="conf_id" ref="code_conf_1537"/>
+    </record>
+    <record id="compte_7709" model="liasse.compte.erp">
+      <field name="compte">6135</field>
+      <field name="conf_id" ref="code_conf_1538"/>
+    </record>
+    <record id="compte_7712" model="liasse.compte.erp">
+      <field name="compte">6136</field>
+      <field name="conf_id" ref="code_conf_1539"/>
+    </record>
+    <record id="compte_7715" model="liasse.compte.erp">
+      <field name="compte">6137</field>
+      <field name="conf_id" ref="code_conf_1540"/>
+    </record>
+    <record id="compte_7717" model="liasse.compte.erp">
+      <field name="compte">6142</field>
+      <field name="conf_id" ref="code_conf_1541"/>
+    </record>
+    <record id="compte_7721" model="liasse.compte.erp">
+      <field name="compte">6143</field>
+      <field name="conf_id" ref="code_conf_1542"/>
+    </record>
+    <record id="compte_7745" model="liasse.compte.erp">
+      <field name="compte">614</field>
+      <field name="conf_id" ref="code_conf_1543"/>
+    </record>
+    <record id="compte_7746" model="liasse.compte.erp">
+      <field name="compte">6171</field>
+      <field name="conf_id" ref="code_conf_1546"/>
+    </record>
+    <record id="compte_7752" model="liasse.compte.erp">
+      <field name="compte">6174</field>
+      <field name="conf_id" ref="code_conf_1547"/>
+    </record>
+    <record id="compte_7757" model="liasse.compte.erp">
+      <field name="compte">617</field>
+      <field name="conf_id" ref="code_conf_1548"/>
+    </record>
+    <record id="compte_7766" model="liasse.compte.erp">
+      <field name="compte">6181</field>
+      <field name="conf_id" ref="code_conf_1551"/>
+    </record>
+    <record id="compte_7767" model="liasse.compte.erp">
+      <field name="compte">6182</field>
+      <field name="conf_id" ref="code_conf_1552"/>
+    </record>
+    <record id="compte_7769" model="liasse.compte.erp">
+      <field name="compte">618</field>
+      <field name="conf_id" ref="code_conf_1553"/>
+    </record>
+    <record id="compte_7771" model="liasse.compte.erp">
+      <field name="compte">6385</field>
+      <field name="conf_id" ref="code_conf_1765"/>
+    </record>
+    <record id="compte_7772" model="liasse.compte.erp">
+      <field name="compte">638</field>
+      <field name="conf_id" ref="code_conf_1766"/>
+    </record>
+    <record id="compte_7775" model="liasse.compte.erp">
+      <field name="compte">6581</field>
+      <field name="conf_id" ref="code_conf_1793"/>
+    </record>
+    <record id="compte_7777" model="liasse.compte.erp">
+      <field name="compte">6582</field>
+      <field name="conf_id" ref="code_conf_1794"/>
+    </record>
+    <record id="compte_7778" model="liasse.compte.erp">
+      <field name="compte">65831</field>
+      <field name="conf_id" ref="code_conf_1795"/>
+    </record>
+    <record id="compte_7779" model="liasse.compte.erp">
+      <field name="compte">6585</field>
+      <field name="conf_id" ref="code_conf_1796"/>
+    </record>
+    <record id="compte_7780" model="liasse.compte.erp">
+      <field name="compte">658</field>
+      <field name="conf_id" ref="code_conf_1797"/>
+    </record>
+    <record id="compte_7785" model="liasse.compte.erp">
+      <field name="compte">7111</field>
+      <field name="conf_id" ref="code_conf_1964"/>
+    </record>
+    <record id="compte_7786" model="liasse.compte.erp">
+      <field name="compte">7113</field>
+      <field name="conf_id" ref="code_conf_1965"/>
+    </record>
+    <record id="compte_7788" model="liasse.compte.erp">
+      <field name="compte">711</field>
+      <field name="conf_id" ref="code_conf_1966"/>
+    </record>
+    <record id="compte_7789" model="liasse.compte.erp">
+      <field name="compte">7121</field>
+      <field name="conf_id" ref="code_conf_1969"/>
+    </record>
+    <record id="compte_7792" model="liasse.compte.erp">
+      <field name="compte">7122</field>
+      <field name="conf_id" ref="code_conf_1970"/>
+    </record>
+    <record id="compte_7794" model="liasse.compte.erp">
+      <field name="compte">7124</field>
+      <field name="conf_id" ref="code_conf_1971"/>
+    </record>
+    <record id="compte_7797" model="liasse.compte.erp">
+      <field name="compte">7125</field>
+      <field name="conf_id" ref="code_conf_1972"/>
+    </record>
+    <record id="compte_7800" model="liasse.compte.erp">
+      <field name="compte">7126</field>
+      <field name="conf_id" ref="code_conf_1973"/>
+    </record>
+    <record id="compte_7801" model="liasse.compte.erp">
+      <field name="compte">712</field>
+      <field name="conf_id" ref="code_conf_1974"/>
+    </record>
+    <record id="compte_7813" model="liasse.compte.erp">
+      <field name="compte">7132</field>
+      <field name="conf_id" ref="code_conf_1977"/>
+    </record>
+    <record id="compte_7816" model="liasse.compte.erp">
+      <field name="compte">7134</field>
+      <field name="conf_id" ref="code_conf_1978"/>
+    </record>
+    <record id="compte_7819" model="liasse.compte.erp">
+      <field name="compte">7131</field>
+      <field name="conf_id" ref="code_conf_1979"/>
+    </record>
+    <record id="compte_7822" model="liasse.compte.erp">
+      <field name="compte">7181</field>
+      <field name="conf_id" ref="code_conf_1982"/>
+    </record>
+    <record id="compte_7823" model="liasse.compte.erp">
+      <field name="compte">718</field>
+      <field name="conf_id" ref="code_conf_1983"/>
+    </record>
+    <record id="compte_7827" model="liasse.compte.erp">
+      <field name="compte">719</field>
+      <field name="conf_id" ref="code_conf_1986"/>
+    </record>
+    <record id="compte_7835" model="liasse.compte.erp">
+      <field name="compte">7197</field>
+      <field name="conf_id" ref="code_conf_1987"/>
+    </record>
+    <record id="compte_7841" model="liasse.compte.erp">
+      <field name="compte">7381</field>
+      <field name="conf_id" ref="code_conf_2024"/>
+    </record>
+    <record id="compte_7842" model="liasse.compte.erp">
+      <field name="compte">7383</field>
+      <field name="conf_id" ref="code_conf_2025"/>
+    </record>
+    <record id="compte_7843" model="liasse.compte.erp">
+      <field name="compte">7385</field>
+      <field name="conf_id" ref="code_conf_2026"/>
+    </record>
+    <record id="compte_7845" model="liasse.compte.erp">
+      <field name="compte">738</field>
+      <field name="conf_id" ref="code_conf_2027"/>
+    </record>
+    <record id="compte_7911" model="liasse.compte.erp">
+      <field name="compte">639</field>
+      <field name="conf_id" ref="code_conf_1376"/>
+    </record>
+    <record id="compte_7921" model="liasse.compte.erp">
+      <field name="compte">659</field>
+      <field name="conf_id" ref="code_conf_1377"/>
+    </record>
+    <record id="compte_7922" model="liasse.compte.erp">
+      <field name="compte">719</field>
+      <field name="conf_id" ref="code_conf_1378"/>
+    </record>
+    <record id="compte_7927" model="liasse.compte.erp">
+      <field name="compte">7391</field>
+      <field name="conf_id" ref="code_conf_1379"/>
+    </record>
+    <record id="compte_7928" model="liasse.compte.erp">
+      <field name="compte">7392</field>
+      <field name="conf_id" ref="code_conf_1379"/>
+    </record>
+    <record id="compte_7929" model="liasse.compte.erp">
+      <field name="compte">7393</field>
+      <field name="conf_id" ref="code_conf_1379"/>
+    </record>
+    <record id="compte_7930" model="liasse.compte.erp">
+      <field name="compte">7591</field>
+      <field name="conf_id" ref="code_conf_1380"/>
+    </record>
+    <record id="compte_7971" model="liasse.compte.erp">
+      <field name="compte">61942</field>
+      <field name="conf_id" ref="code_conf_1749"/>
+    </record>
+    <record id="compte_7972" model="liasse.compte.erp">
+      <field name="compte">61943</field>
+      <field name="conf_id" ref="code_conf_1749"/>
+    </record>
+    <record id="compte_7973" model="liasse.compte.erp">
+      <field name="compte">6392</field>
+      <field name="conf_id" ref="code_conf_1750"/>
+    </record>
+    <record id="compte_7974" model="liasse.compte.erp">
+      <field name="compte">65962</field>
+      <field name="conf_id" ref="code_conf_1751"/>
+    </record>
+    <record id="compte_7975" model="liasse.compte.erp">
+      <field name="compte">7194</field>
+      <field name="conf_id" ref="code_conf_1752"/>
+    </record>
+    <record id="compte_7976" model="liasse.compte.erp">
+      <field name="compte">7392</field>
+      <field name="conf_id" ref="code_conf_1753"/>
+    </record>
+    <record id="compte_7977" model="liasse.compte.erp">
+      <field name="compte">75962</field>
+      <field name="conf_id" ref="code_conf_1754"/>
+    </record>
+    <record id="compte_7978" model="liasse.compte.erp">
+      <field name="compte">65944</field>
+      <field name="conf_id" ref="code_conf_1787"/>
+    </record>
+    <record id="compte_7979" model="liasse.compte.erp">
+      <field name="compte">65945</field>
+      <field name="conf_id" ref="code_conf_1787"/>
+    </record>
+    <record id="compte_7980" model="liasse.compte.erp">
+      <field name="compte">65946</field>
+      <field name="conf_id" ref="code_conf_1787"/>
+    </record>
+    <record id="compte_7981" model="liasse.compte.erp">
+      <field name="compte">75944</field>
+      <field name="conf_id" ref="code_conf_1790"/>
+    </record>
+    <record id="compte_7982" model="liasse.compte.erp">
+      <field name="compte">75945</field>
+      <field name="conf_id" ref="code_conf_1790"/>
+    </record>
+    <record id="compte_7983" model="liasse.compte.erp">
+      <field name="compte">75946</field>
+      <field name="conf_id" ref="code_conf_1790"/>
+    </record>
+    <record id="compte_7984" model="liasse.compte.erp">
+      <field name="compte">61955</field>
+      <field name="conf_id" ref="code_conf_1828"/>
+    </record>
+    <record id="compte_7985" model="liasse.compte.erp">
+      <field name="compte">65955</field>
+      <field name="conf_id" ref="code_conf_1830"/>
+    </record>
+    <record id="compte_7986" model="liasse.compte.erp">
+      <field name="compte">75955</field>
+      <field name="conf_id" ref="code_conf_1833"/>
+    </record>
+    <record id="compte_7987" model="liasse.compte.erp">
+      <field name="compte">61961</field>
+      <field name="conf_id" ref="code_conf_1878"/>
+    </record>
+    <record id="compte_7988" model="liasse.compte.erp">
+      <field name="compte">61964</field>
+      <field name="conf_id" ref="code_conf_1878"/>
+    </record>
+    <record id="compte_7989" model="liasse.compte.erp">
+      <field name="compte">6394</field>
+      <field name="conf_id" ref="code_conf_1879"/>
+    </record>
+    <record id="compte_7990" model="liasse.compte.erp">
+      <field name="compte">65963</field>
+      <field name="conf_id" ref="code_conf_1880"/>
+    </record>
+    <record id="compte_7991" model="liasse.compte.erp">
+      <field name="compte">7196</field>
+      <field name="conf_id" ref="code_conf_1881"/>
+    </record>
+    <record id="compte_7992" model="liasse.compte.erp">
+      <field name="compte">7394</field>
+      <field name="conf_id" ref="code_conf_1882"/>
+    </record>
+    <record id="compte_7993" model="liasse.compte.erp">
+      <field name="compte">75963</field>
+      <field name="conf_id" ref="code_conf_1883"/>
+    </record>
+    <record id="compte_7994" model="liasse.compte.erp">
+      <field name="compte">6195</field>
+      <field name="conf_id" ref="code_conf_1895"/>
+    </record>
+    <record id="compte_7995" model="liasse.compte.erp">
+      <field name="compte">6393</field>
+      <field name="conf_id" ref="code_conf_1896"/>
+    </record>
+    <record id="compte_7996" model="liasse.compte.erp">
+      <field name="compte">65957</field>
+      <field name="conf_id" ref="code_conf_1897"/>
+    </record>
+    <record id="compte_7997" model="liasse.compte.erp">
+      <field name="compte">7195</field>
+      <field name="conf_id" ref="code_conf_1898"/>
+    </record>
+    <record id="compte_7998" model="liasse.compte.erp">
+      <field name="compte">7393</field>
+      <field name="conf_id" ref="code_conf_1899"/>
+    </record>
+    <record id="compte_7999" model="liasse.compte.erp">
+      <field name="compte">75957</field>
+      <field name="conf_id" ref="code_conf_1900"/>
+    </record>
+    <record id="compte_8000" model="liasse.compte.erp">
+      <field name="compte">6396</field>
+      <field name="conf_id" ref="code_conf_1905"/>
+    </record>
+    <record id="compte_8001" model="liasse.compte.erp">
+      <field name="compte">7396</field>
+      <field name="conf_id" ref="code_conf_1908"/>
+    </record>
+    <!--  <record id="compte_8005" model="liasse.compte.erp">
+      <field name="compte">34552</field>
+      <field name="conf_id" ref="code_conf_2076"/>
+    </record>-->
+    <!-- <record id="compte_8006" model="liasse.compte.erp">
+      <field name="compte">34551</field>
+      <field name="conf_id" ref="code_conf_2081"/>
+    </record>-->
+    <!--  <record id="compte_8007" model="liasse.compte.erp">
+      <field name="compte">4455</field>
+      <field name="conf_id" ref="code_conf_2066"/>
+    </record>-->
+    <record id="compte_8008" model="liasse.compte.erp">
+      <field name="compte">2930</field>
+      <field name="conf_id" ref="code_conf_216"/>
+    </record>
+    <record id="compte_8012" model="liasse.compte.erp">
+      <field name="compte">6</field>
+      <field name="conf_idm" ref="code_conf_13409"/>
+    </record>
+    <record id="compte_8021" model="liasse.compte.erp">
+      <field name="compte">619</field>
+      <field name="conf_id" ref="code_conf_1375"/>
+    </record>
+    <record id="compte_8039" model="liasse.compte.erp">
+      <field name="compte">65830</field>
+      <field name="conf_id" ref="code_conf_1795"/>
+    </record>
+    <record id="compte_8042" model="liasse.compte.erp">
+      <field name="compte">2811</field>
+      <field name="conf_id" ref="code_conf_1239"/>
+    </record>
+    <record id="compte_8043" model="liasse.compte.erp">
+      <field name="compte">2812</field>
+      <field name="conf_id" ref="code_conf_1244"/>
+    </record>
+    <record id="compte_8044" model="liasse.compte.erp">
+      <field name="compte">2813</field>
+      <field name="conf_id" ref="code_conf_1249"/>
+    </record>
+    <record id="compte_8045" model="liasse.compte.erp">
+      <field name="compte">2821</field>
+      <field name="conf_id" ref="code_conf_1680"/>
+    </record>
+    <record id="compte_8046" model="liasse.compte.erp">
+      <field name="compte">2822</field>
+      <field name="conf_id" ref="code_conf_1681"/>
+    </record>
+    <record id="compte_8047" model="liasse.compte.erp">
+      <field name="compte">2823</field>
+      <field name="conf_id" ref="code_conf_1682"/>
+    </record>
+    <record id="compte_8048" model="liasse.compte.erp">
+      <field name="compte">2828</field>
+      <field name="conf_id" ref="code_conf_1683"/>
+    </record>
+    <record id="compte_8049" model="liasse.compte.erp">
+      <field name="compte">2831</field>
+      <field name="conf_id" ref="code_conf_1725"/>
+    </record>
+    <record id="compte_8050" model="liasse.compte.erp">
+      <field name="compte">2832</field>
+      <field name="conf_id" ref="code_conf_1726"/>
+    </record>
+    <record id="compte_8051" model="liasse.compte.erp">
+      <field name="compte">2833</field>
+      <field name="conf_id" ref="code_conf_1727"/>
+    </record>
+    <record id="compte_8052" model="liasse.compte.erp">
+      <field name="compte">2834</field>
+      <field name="conf_id" ref="code_conf_1728"/>
+    </record>
+    <record id="compte_8053" model="liasse.compte.erp">
+      <field name="compte">2835</field>
+      <field name="conf_id" ref="code_conf_1729"/>
+    </record>
+    <record id="compte_8054" model="liasse.compte.erp">
+      <field name="compte">2838</field>
+      <field name="conf_id" ref="code_conf_1730"/>
+    </record>
+    <record id="compte_8055" model="liasse.compte.erp">
+      <field name="compte">61960</field>
+      <field name="conf_id" ref="code_conf_1878"/>
+    </record>
+    <!--  <record id="compte_8056" model="liasse.compte.erp">
+      <field name="compte">34550</field>
+      <field name="conf_id" ref="code_conf_2076"/>
+    </record>-->
+    <record id="compte_8093" model="liasse.compte.erp">
+      <field name="compte">3111</field>
+      <field name="conf_id" ref="code_conf_1425"/>
+    </record>
+    <record id="compte_8094" model="liasse.compte.erp">
+      <field name="compte">3112</field>
+      <field name="conf_id" ref="code_conf_1425"/>
+    </record>
+    <record id="compte_8095" model="liasse.compte.erp">
+      <field name="compte">3116</field>
+      <field name="conf_id" ref="code_conf_1425"/>
+    </record>
+    <record id="compte_8096" model="liasse.compte.erp">
+      <field name="compte">3118</field>
+      <field name="conf_id" ref="code_conf_1425"/>
+    </record>
+    <record id="compte_8097" model="liasse.compte.erp">
+      <field name="compte">3911</field>
+      <field name="conf_id" ref="code_conf_1426"/>
+    </record>
+    <record id="compte_8098" model="liasse.compte.erp">
+      <field name="compte">3912</field>
+      <field name="conf_id" ref="code_conf_1434"/>
+    </record>
+    <record id="compte_8099" model="liasse.compte.erp">
+      <field name="compte">3121</field>
+      <field name="conf_id" ref="code_conf_1449"/>
+    </record>
+    <record id="compte_8101" model="liasse.compte.erp">
+      <field name="compte">3126</field>
+      <field name="conf_id" ref="code_conf_1449"/>
+    </record>
+    <record id="compte_8102" model="liasse.compte.erp">
+      <field name="compte">3122</field>
+      <field name="conf_id" ref="code_conf_1457"/>
+    </record>
+    <record id="compte_8108" model="liasse.compte.erp">
+      <field name="compte">3128</field>
+      <field name="conf_id" ref="code_conf_1457"/>
+    </record>
+    <record id="compte_8109" model="liasse.compte.erp">
+      <field name="compte">31223</field>
+      <field name="conf_id" ref="code_conf_1473"/>
+    </record>
+    <record id="compte_8110" model="liasse.compte.erp">
+      <field name="compte">31232</field>
+      <field name="conf_id" ref="code_conf_1555"/>
+    </record>
+    <record id="compte_8111" model="liasse.compte.erp">
+      <field name="compte">31231</field>
+      <field name="conf_id" ref="code_conf_1604"/>
+    </record>
+    <record id="compte_8112" model="liasse.compte.erp">
+      <field name="compte">31233</field>
+      <field name="conf_id" ref="code_conf_1604"/>
+    </record>
+    <record id="compte_8113" model="liasse.compte.erp">
+      <field name="compte">313</field>
+      <field name="conf_id" ref="code_conf_1643"/>
+    </record>
+    <record id="compte_8117" model="liasse.compte.erp">
+      <field name="compte">3913</field>
+      <field name="conf_id" ref="code_conf_1644"/>
+    </record>
+    <record id="compte_8118" model="liasse.compte.erp">
+      <field name="compte">31342</field>
+      <field name="conf_id" ref="code_conf_1656"/>
+    </record>
+    <record id="compte_8119" model="liasse.compte.erp">
+      <field name="compte">31341</field>
+      <field name="conf_id" ref="code_conf_1664"/>
+    </record>
+    <record id="compte_8120" model="liasse.compte.erp">
+      <field name="compte">31343</field>
+      <field name="conf_id" ref="code_conf_1672"/>
+    </record>
+    <record id="compte_8121" model="liasse.compte.erp">
+      <field name="compte">3141</field>
+      <field name="conf_id" ref="code_conf_1757"/>
+    </record>
+    <record id="compte_8122" model="liasse.compte.erp">
+      <field name="compte">3148</field>
+      <field name="conf_id" ref="code_conf_1757"/>
+    </record>
+    <record id="compte_8123" model="liasse.compte.erp">
+      <field name="compte">315</field>
+      <field name="conf_id" ref="code_conf_1757"/>
+    </record>
+    <record id="compte_8124" model="liasse.compte.erp">
+      <field name="compte">3914</field>
+      <field name="conf_id" ref="code_conf_1758"/>
+    </record>
+    <record id="compte_8125" model="liasse.compte.erp">
+      <field name="compte">3915</field>
+      <field name="conf_id" ref="code_conf_1758"/>
+    </record>
+    <record id="compte_8126" model="liasse.compte.erp">
+      <field name="compte">31451</field>
+      <field name="conf_id" ref="code_conf_1836"/>
+    </record>
+    <record id="compte_8127" model="liasse.compte.erp">
+      <field name="compte">31452</field>
+      <field name="conf_id" ref="code_conf_1853"/>
+    </record>
+    <record id="compte_8128" model="liasse.compte.erp">
+      <field name="compte">31453</field>
+      <field name="conf_id" ref="code_conf_1861"/>
+    </record>
+    <record id="compte_8131" model="liasse.compte.erp">
+      <field name="compte">2111</field>
+      <field name="conf_id" ref="code_conf_980"/>
+    </record>
+    <record id="compte_8132" model="liasse.compte.erp">
+      <field name="compte">2112</field>
+      <field name="conf_id" ref="code_conf_980"/>
+    </record>
+    <record id="compte_8133" model="liasse.compte.erp">
+      <field name="compte">2113</field>
+      <field name="conf_id" ref="code_conf_980"/>
+    </record>
+    <record id="compte_8134" model="liasse.compte.erp">
+      <field name="compte">2114</field>
+      <field name="conf_id" ref="code_conf_980"/>
+    </record>
+    <record id="compte_8135" model="liasse.compte.erp">
+      <field name="compte">2116</field>
+      <field name="conf_id" ref="code_conf_980"/>
+    </record>
+    <record id="compte_8136" model="liasse.compte.erp">
+      <field name="compte">2117</field>
+      <field name="conf_id" ref="code_conf_980"/>
+    </record>
+    <record id="compte_8137" model="liasse.compte.erp">
+      <field name="compte">2118</field>
+      <field name="conf_id" ref="code_conf_980"/>
+    </record>
+    <record id="compte_8138" model="liasse.compte.erp">
+      <field name="compte">2111</field>
+      <field name="conf_id" ref="code_conf_1022"/>
+    </record>
+    <record id="compte_8139" model="liasse.compte.erp">
+      <field name="compte">2112</field>
+      <field name="conf_id" ref="code_conf_1022"/>
+    </record>
+    <record id="compte_8140" model="liasse.compte.erp">
+      <field name="compte">2113</field>
+      <field name="conf_id" ref="code_conf_1022"/>
+    </record>
+    <record id="compte_8141" model="liasse.compte.erp">
+      <field name="compte">2114</field>
+      <field name="conf_id" ref="code_conf_1022"/>
+    </record>
+    <record id="compte_8142" model="liasse.compte.erp">
+      <field name="compte">2116</field>
+      <field name="conf_id" ref="code_conf_1022"/>
+    </record>
+    <record id="compte_8143" model="liasse.compte.erp">
+      <field name="compte">2117</field>
+      <field name="conf_id" ref="code_conf_1022"/>
+    </record>
+    <record id="compte_8144" model="liasse.compte.erp">
+      <field name="compte">2118</field>
+      <field name="conf_id" ref="code_conf_1022"/>
+    </record>
+    <record id="compte_8145" model="liasse.compte.erp">
+      <field name="compte">212</field>
+      <field name="conf_id" ref="code_conf_981"/>
+    </record>
+    <record id="compte_8148" model="liasse.compte.erp">
+      <field name="compte">212</field>
+      <field name="conf_id" ref="code_conf_1023"/>
+    </record>
+    <record id="compte_8151" model="liasse.compte.erp">
+      <field name="compte">213</field>
+      <field name="conf_id" ref="code_conf_982"/>
+    </record>
+    <record id="compte_8152" model="liasse.compte.erp">
+      <field name="compte">213</field>
+      <field name="conf_id" ref="code_conf_1024"/>
+    </record>
+    <record id="compte_8153" model="liasse.compte.erp">
+      <field name="compte">221</field>
+      <field name="conf_id" ref="code_conf_983"/>
+    </record>
+    <record id="compte_8154" model="liasse.compte.erp">
+      <field name="compte">221</field>
+      <field name="conf_id" ref="code_conf_1025"/>
+    </record>
+    <record id="compte_8155" model="liasse.compte.erp">
+      <field name="compte">222</field>
+      <field name="conf_id" ref="code_conf_984"/>
+    </record>
+    <record id="compte_8156" model="liasse.compte.erp">
+      <field name="compte">222</field>
+      <field name="conf_id" ref="code_conf_1026"/>
+    </record>
+    <record id="compte_8157" model="liasse.compte.erp">
+      <field name="compte">223</field>
+      <field name="conf_id" ref="code_conf_985"/>
+    </record>
+    <record id="compte_8158" model="liasse.compte.erp">
+      <field name="compte">223</field>
+      <field name="conf_id" ref="code_conf_1027"/>
+    </record>
+    <record id="compte_8159" model="liasse.compte.erp">
+      <field name="compte">228</field>
+      <field name="conf_id" ref="code_conf_986"/>
+    </record>
+    <record id="compte_8160" model="liasse.compte.erp">
+      <field name="compte">228</field>
+      <field name="conf_id" ref="code_conf_1028"/>
+    </record>
+    <record id="compte_8161" model="liasse.compte.erp">
+      <field name="compte">231</field>
+      <field name="conf_id" ref="code_conf_987"/>
+    </record>
+    <record id="compte_8162" model="liasse.compte.erp">
+      <field name="compte">231</field>
+      <field name="conf_id" ref="code_conf_1029"/>
+    </record>
+    <record id="compte_8163" model="liasse.compte.erp">
+      <field name="compte">232</field>
+      <field name="conf_id" ref="code_conf_988"/>
+    </record>
+    <record id="compte_8164" model="liasse.compte.erp">
+      <field name="compte">232</field>
+      <field name="conf_id" ref="code_conf_1030"/>
+    </record>
+    <record id="compte_8165" model="liasse.compte.erp">
+      <field name="compte">233</field>
+      <field name="conf_id" ref="code_conf_989"/>
+    </record>
+    <record id="compte_8166" model="liasse.compte.erp">
+      <field name="compte">233</field>
+      <field name="conf_id" ref="code_conf_1031"/>
+    </record>
+    <record id="compte_8167" model="liasse.compte.erp">
+      <field name="compte">234</field>
+      <field name="conf_id" ref="code_conf_990"/>
+    </record>
+    <record id="compte_8168" model="liasse.compte.erp">
+      <field name="compte">234</field>
+      <field name="conf_id" ref="code_conf_1032"/>
+    </record>
+    <record id="compte_8169" model="liasse.compte.erp">
+      <field name="compte">2351</field>
+      <field name="conf_id" ref="code_conf_992"/>
+    </record>
+    <record id="compte_8170" model="liasse.compte.erp">
+      <field name="compte">2351</field>
+      <field name="conf_id" ref="code_conf_1034"/>
+    </record>
+    <record id="compte_8171" model="liasse.compte.erp">
+      <field name="compte">238</field>
+      <field name="conf_id" ref="code_conf_993"/>
+    </record>
+    <record id="compte_8172" model="liasse.compte.erp">
+      <field name="compte">238</field>
+      <field name="conf_id" ref="code_conf_1035"/>
+    </record>
+    <record id="compte_8173" model="liasse.compte.erp">
+      <field name="compte">239</field>
+      <field name="conf_id" ref="code_conf_991"/>
+    </record>
+    <record id="compte_8174" model="liasse.compte.erp">
+      <field name="compte">239</field>
+      <field name="conf_id" ref="code_conf_1033"/>
+    </record>
+    <record id="compte_8175" model="liasse.compte.erp">
+      <field name="compte">2350</field>
+      <field name="conf_id" ref="code_conf_992"/>
+    </record>
+    <record id="compte_8176" model="liasse.compte.erp">
+      <field name="compte">2352</field>
+      <field name="conf_id" ref="code_conf_992"/>
+    </record>
+    <record id="compte_8177" model="liasse.compte.erp">
+      <field name="compte">2356</field>
+      <field name="conf_id" ref="code_conf_992"/>
+    </record>
+    <record id="compte_8178" model="liasse.compte.erp">
+      <field name="compte">2358</field>
+      <field name="conf_id" ref="code_conf_992"/>
+    </record>
+    <!--<record id="compte_8179" model="liasse.compte.erp">-->
+      <!--<field name="compte">2380</field>-->
+      <!--<field name="conf_id" ref="code_conf_992"/>-->
+    <!--</record>-->
+    <record id="compte_8180" model="liasse.compte.erp">
+      <field name="compte">2350</field>
+      <field name="conf_id" ref="code_conf_1034"/>
+    </record>
+    <record id="compte_8181" model="liasse.compte.erp">
+      <field name="compte">2352</field>
+      <field name="conf_id" ref="code_conf_1034"/>
+    </record>
+    <record id="compte_8182" model="liasse.compte.erp">
+      <field name="compte">2356</field>
+      <field name="conf_id" ref="code_conf_1034"/>
+    </record>
+    <record id="compte_8183" model="liasse.compte.erp">
+      <field name="compte">2358</field>
+      <field name="conf_id" ref="code_conf_1034"/>
+    </record>
+    <record id="compte_8184" model="liasse.compte.erp">
+      <field name="compte">2380</field>
+      <field name="conf_id" ref="code_conf_1034"/>
+    </record>
+    <record id="compte_8185" model="liasse.compte.erp">
+      <field name="compte">2355</field>
+      <field name="conf_id" ref="code_conf_12598"/>
+    </record>
+    <record id="compte_8186" model="liasse.compte.erp">
+      <field name="compte">2355</field>
+      <field name="conf_id" ref="code_conf_12601"/>
+    </record>
+    <!--  <record id="compte_8187" model="liasse.compte.erp">
+      <field name="compte">4455</field>
+      <field name="conf_id" ref="code_conf_2067"/>
+    </record>-->
+    <!-- <record id="compte_8188" model="liasse.compte.erp">
+      <field name="compte">44552</field>
+      <field name="conf_id" ref="code_conf_2077"/>
+    </record>
+    <record id="compte_8189" model="liasse.compte.erp">
+      <field name="compte">44550</field>
+      <field name="conf_id" ref="code_conf_2077"/>
+    </record>-->
+    <!--  <record id="compte_8190" model="liasse.compte.erp">
+      <field name="compte">44551</field>
+      <field name="conf_id" ref="code_conf_2082"/>
+    </record>-->
+    <record id="compte_8191" model="liasse.compte.erp">
+      <field name="compte">2811</field>
+      <field name="conf_id" ref="code_conf_1236"/>
+    </record>
+    <record id="compte_8198" model="liasse.compte.erp">
+      <field name="compte">2812</field>
+      <field name="conf_id" ref="code_conf_1241"/>
+    </record>
+    <record id="compte_8201" model="liasse.compte.erp">
+      <field name="compte">2813</field>
+      <field name="conf_id" ref="code_conf_1246"/>
+    </record>
+    <record id="compte_8202" model="liasse.compte.erp">
+      <field name="compte">2821</field>
+      <field name="conf_id" ref="code_conf_1625"/>
+    </record>
+    <record id="compte_8203" model="liasse.compte.erp">
+      <field name="compte">2822</field>
+      <field name="conf_id" ref="code_conf_1626"/>
+    </record>
+    <record id="compte_8204" model="liasse.compte.erp">
+      <field name="compte">2823</field>
+      <field name="conf_id" ref="code_conf_1627"/>
+    </record>
+    <record id="compte_8205" model="liasse.compte.erp">
+      <field name="compte">2828</field>
+      <field name="conf_id" ref="code_conf_1628"/>
+    </record>
+    <record id="compte_8206" model="liasse.compte.erp">
+      <field name="compte">2831</field>
+      <field name="conf_id" ref="code_conf_1701"/>
+    </record>
+    <record id="compte_8207" model="liasse.compte.erp">
+      <field name="compte">2832</field>
+      <field name="conf_id" ref="code_conf_1702"/>
+    </record>
+    <record id="compte_8208" model="liasse.compte.erp">
+      <field name="compte">2833</field>
+      <field name="conf_id" ref="code_conf_1703"/>
+    </record>
+    <record id="compte_8209" model="liasse.compte.erp">
+      <field name="compte">2834</field>
+      <field name="conf_id" ref="code_conf_1704"/>
+    </record>
+    <record id="compte_8210" model="liasse.compte.erp">
+      <field name="compte">2835</field>
+      <field name="conf_id" ref="code_conf_1705"/>
+    </record>
+    <record id="compte_8211" model="liasse.compte.erp">
+      <field name="compte">2838</field>
+      <field name="conf_id" ref="code_conf_1706"/>
+    </record>
+    <record id="compte_8213" model="liasse.compte.erp">
+      <field name="compte">29</field>
+      <field name="conf_id" ref="code_conf_1748"/>
+    </record>
+    <record id="compte_8214" model="liasse.compte.erp">
+      <field name="compte">135</field>
+      <field name="conf_id" ref="code_conf_1784"/>
+    </record>
+    <record id="compte_8215" model="liasse.compte.erp">
+      <field name="compte">15</field>
+      <field name="conf_id" ref="code_conf_1827"/>
+    </record>
+    <record id="compte_8216" model="liasse.compte.erp">
+      <field name="compte">39</field>
+      <field name="conf_id" ref="code_conf_1877"/>
+    </record>
+    <record id="compte_8217" model="liasse.compte.erp">
+      <field name="compte">45</field>
+      <field name="conf_id" ref="code_conf_1894"/>
+    </record>
+    <record id="compte_8218" model="liasse.compte.erp">
+      <field name="compte">59</field>
+      <field name="conf_id" ref="code_conf_1903"/>
+    </record>
+    <record id="compte_8222" model="liasse.compte.erp">
+      <field name="compte">7118</field>
+      <field name="conf_idm" ref="code_conf_11181"/>
+    </record>
+    <record id="compte_8223" model="liasse.compte.erp">
+      <field name="compte">7128</field>
+      <field name="conf_idm" ref="code_conf_11186"/>
+    </record>
+    <record id="compte_8224" model="liasse.compte.erp">
+      <field name="compte">71298</field>
+      <field name="conf_idm" ref="code_conf_11186"/>
+    </record>
+    <record id="compte_8225" model="liasse.compte.erp">
+      <field name="compte">7148</field>
+      <field name="conf_idm" ref="code_conf_11196"/>
+    </record>
+    <record id="compte_8226" model="liasse.compte.erp">
+      <field name="compte">7168</field>
+      <field name="conf_idm" ref="code_conf_11201"/>
+    </record>
+    <record id="compte_8227" model="liasse.compte.erp">
+      <field name="compte">7188</field>
+      <field name="conf_idm" ref="code_conf_11206"/>
+    </record>
+    <record id="compte_8228" model="liasse.compte.erp">
+      <field name="compte">7198</field>
+      <field name="conf_idm" ref="code_conf_11211"/>
+    </record>
+    <record id="compte_8229" model="liasse.compte.erp">
+      <field name="compte">6118</field>
+      <field name="conf_idm" ref="code_conf_11221"/>
+    </record>
+    <record id="compte_8230" model="liasse.compte.erp">
+      <field name="compte">6128</field>
+      <field name="conf_idm" ref="code_conf_11256"/>
+    </record>
+    <record id="compte_8231" model="liasse.compte.erp">
+      <field name="compte">61298</field>
+      <field name="conf_idm" ref="code_conf_11256"/>
+    </record>
+    <record id="compte_8232" model="liasse.compte.erp">
+      <field name="compte">6148</field>
+      <field name="conf_idm" ref="code_conf_11261"/>
+    </record>
+    <record id="compte_8233" model="liasse.compte.erp">
+      <field name="compte">6168</field>
+      <field name="conf_idm" ref="code_conf_11251"/>
+    </record>
+    <record id="compte_8234" model="liasse.compte.erp">
+      <field name="compte">6178</field>
+      <field name="conf_idm" ref="code_conf_11266"/>
+    </record>
+    <record id="compte_8235" model="liasse.compte.erp">
+      <field name="compte">6188</field>
+      <field name="conf_idm" ref="code_conf_11246"/>
+    </record>
+    <record id="compte_8236" model="liasse.compte.erp">
+      <field name="compte">6198</field>
+      <field name="conf_idm" ref="code_conf_11241"/>
+    </record>
+    <record id="compte_8237" model="liasse.compte.erp">
+      <field name="compte">7328</field>
+      <field name="conf_idm" ref="code_conf_11271"/>
+    </record>
+    <record id="compte_8238" model="liasse.compte.erp">
+      <field name="compte">7338</field>
+      <field name="conf_idm" ref="code_conf_11276"/>
+    </record>
+    <record id="compte_8239" model="liasse.compte.erp">
+      <field name="compte">7388</field>
+      <field name="conf_idm" ref="code_conf_11281"/>
+    </record>
+    <record id="compte_8240" model="liasse.compte.erp">
+      <field name="compte">7398</field>
+      <field name="conf_idm" ref="code_conf_11286"/>
+    </record>
+    <record id="compte_8241" model="liasse.compte.erp">
+      <field name="compte">6318</field>
+      <field name="conf_idm" ref="code_conf_11296"/>
+    </record>
+    <record id="compte_8242" model="liasse.compte.erp">
+      <field name="compte">6338</field>
+      <field name="conf_idm" ref="code_conf_11301"/>
+    </record>
+    <record id="compte_8243" model="liasse.compte.erp">
+      <field name="compte">6388</field>
+      <field name="conf_idm" ref="code_conf_11306"/>
+    </record>
+    <record id="compte_8244" model="liasse.compte.erp">
+      <field name="compte">6398</field>
+      <field name="conf_idm" ref="code_conf_11311"/>
+    </record>
+    <record id="compte_8245" model="liasse.compte.erp">
+      <field name="compte">7518</field>
+      <field name="conf_idm" ref="code_conf_11341"/>
+    </record>
+    <record id="compte_8246" model="liasse.compte.erp">
+      <field name="compte">7568</field>
+      <field name="conf_idm" ref="code_conf_11346"/>
+    </record>
+    <record id="compte_8247" model="liasse.compte.erp">
+      <field name="compte">7578</field>
+      <field name="conf_idm" ref="code_conf_11351"/>
+    </record>
+    <record id="compte_8248" model="liasse.compte.erp">
+      <field name="compte">7588</field>
+      <field name="conf_idm" ref="code_conf_11356"/>
+    </record>
+    <record id="compte_8249" model="liasse.compte.erp">
+      <field name="compte">7598</field>
+      <field name="conf_idm" ref="code_conf_11361"/>
+    </record>
+    <record id="compte_8250" model="liasse.compte.erp">
+      <field name="compte">6518</field>
+      <field name="conf_idm" ref="code_conf_11371"/>
+    </record>
+    <record id="compte_8251" model="liasse.compte.erp">
+      <field name="compte">6568</field>
+      <field name="conf_idm" ref="code_conf_11376"/>
+    </record>
+    <record id="compte_8252" model="liasse.compte.erp">
+      <field name="compte">6588</field>
+      <field name="conf_idm" ref="code_conf_11381"/>
+    </record>
+    <record id="compte_8253" model="liasse.compte.erp">
+      <field name="compte">6598</field>
+      <field name="conf_idm" ref="code_conf_11386"/>
+    </record>
+    <record id="compte_8254" model="liasse.compte.erp">
+      <field name="compte">6708</field>
+      <field name="conf_idm" ref="code_conf_11416"/>
+    </record>
+    <record id="compte_8255" model="liasse.compte.erp">
+      <field name="compte">6114</field>
+      <field name="conf_idm" ref="code_conf_1522"/>
+    </record>
+    <record id="compte_8256" model="liasse.compte.erp">
+      <field name="compte">6581</field>
+      <field name="conf_idm" ref="code_conf_1797"/>
+    </record>
+    <record id="compte_8257" model="liasse.compte.erp">
+      <field name="compte">6582</field>
+      <field name="conf_idm" ref="code_conf_1797"/>
+    </record>
+    <record id="compte_8258" model="liasse.compte.erp">
+      <field name="compte">65831</field>
+      <field name="conf_idm" ref="code_conf_1797"/>
+    </record>
+    <record id="compte_8259" model="liasse.compte.erp">
+      <field name="compte">65830</field>
+      <field name="conf_idm" ref="code_conf_1797"/>
+    </record>
+    <record id="compte_8260" model="liasse.compte.erp">
+      <field name="compte">6585</field>
+      <field name="conf_idm" ref="code_conf_1797"/>
+    </record>
+    <record id="compte_8261" model="liasse.compte.erp">
+      <field name="compte">61290</field>
+      <field name="conf_id" ref="code_conf_1526"/>
+    </record>
+    <record id="compte_8262" model="liasse.compte.erp">
+      <field name="compte">61240</field>
+      <field name="conf_id" ref="code_conf_1527"/>
+    </record>
+    <record id="compte_8263" model="liasse.compte.erp">
+      <field name="compte">613</field>
+      <field name="conf_id" ref="code_conf_1543"/>
+    </record>
+    <record id="compte_8264" model="liasse.compte.erp">
+      <field name="compte">6131</field>
+      <field name="conf_idm" ref="code_conf_1543"/>
+    </record>
+    <record id="compte_8265" model="liasse.compte.erp">
+      <field name="compte">6132</field>
+      <field name="conf_idm" ref="code_conf_1543"/>
+    </record>
+    <record id="compte_8266" model="liasse.compte.erp">
+      <field name="compte">6133</field>
+      <field name="conf_idm" ref="code_conf_1543"/>
+    </record>
+    <record id="compte_8267" model="liasse.compte.erp">
+      <field name="compte">6134</field>
+      <field name="conf_idm" ref="code_conf_1543"/>
+    </record>
+    <record id="compte_8268" model="liasse.compte.erp">
+      <field name="compte">6135</field>
+      <field name="conf_idm" ref="code_conf_1543"/>
+    </record>
+    <record id="compte_8269" model="liasse.compte.erp">
+      <field name="compte">6136</field>
+      <field name="conf_idm" ref="code_conf_1543"/>
+    </record>
+    <record id="compte_8270" model="liasse.compte.erp">
+      <field name="compte">6137</field>
+      <field name="conf_idm" ref="code_conf_1543"/>
+    </record>
+    <record id="compte_8271" model="liasse.compte.erp">
+      <field name="compte">6142</field>
+      <field name="conf_idm" ref="code_conf_1543"/>
+    </record>
+    <record id="compte_8272" model="liasse.compte.erp">
+      <field name="compte">6143</field>
+      <field name="conf_idm" ref="code_conf_1543"/>
+    </record>
+    <record id="compte_8273" model="liasse.compte.erp">
+      <field name="compte">6171</field>
+      <field name="conf_idm" ref="code_conf_1548"/>
+    </record>
+    <record id="compte_8274" model="liasse.compte.erp">
+      <field name="compte">6174</field>
+      <field name="conf_idm" ref="code_conf_1548"/>
+    </record>
+    <record id="compte_8275" model="liasse.compte.erp">
+      <field name="compte">6181</field>
+      <field name="conf_idm" ref="code_conf_1553"/>
+    </record>
+    <record id="compte_8276" model="liasse.compte.erp">
+      <field name="compte">6182</field>
+      <field name="conf_idm" ref="code_conf_1553"/>
+    </record>
+    <record id="compte_8277" model="liasse.compte.erp">
+      <field name="compte">6385</field>
+      <field name="conf_idm" ref="code_conf_1766"/>
+    </record>
+    <record id="compte_8278" model="liasse.compte.erp">
+      <field name="compte">7111</field>
+      <field name="conf_idm" ref="code_conf_1966"/>
+    </record>
+    <record id="compte_8279" model="liasse.compte.erp">
+      <field name="compte">7113</field>
+      <field name="conf_idm" ref="code_conf_1966"/>
+    </record>
+    <record id="compte_8280" model="liasse.compte.erp">
+      <field name="compte">7126</field>
+      <field name="conf_idm" ref="code_conf_1974"/>
+    </record>
+    <record id="compte_8281" model="liasse.compte.erp">
+      <field name="compte">7125</field>
+      <field name="conf_idm" ref="code_conf_1974"/>
+    </record>
+    <record id="compte_8282" model="liasse.compte.erp">
+      <field name="compte">7124</field>
+      <field name="conf_idm" ref="code_conf_1974"/>
+    </record>
+    <record id="compte_8283" model="liasse.compte.erp">
+      <field name="compte">7122</field>
+      <field name="conf_idm" ref="code_conf_1974"/>
+    </record>
+    <record id="compte_8284" model="liasse.compte.erp">
+      <field name="compte">7121</field>
+      <field name="conf_idm" ref="code_conf_1974"/>
+    </record>
+    <record id="compte_8285" model="liasse.compte.erp">
+      <field name="compte">7181</field>
+      <field name="conf_idm" ref="code_conf_1983"/>
+    </record>
+    <record id="compte_8286" model="liasse.compte.erp">
+      <field name="compte">7197</field>
+      <field name="conf_idm" ref="code_conf_1986"/>
+    </record>
+    <record id="compte_8287" model="liasse.compte.erp">
+      <field name="compte">7381</field>
+      <field name="conf_idm" ref="code_conf_2027"/>
+    </record>
+    <record id="compte_8288" model="liasse.compte.erp">
+      <field name="compte">7383</field>
+      <field name="conf_idm" ref="code_conf_2027"/>
+    </record>
+    <record id="compte_8289" model="liasse.compte.erp">
+      <field name="compte">7385</field>
+      <field name="conf_idm" ref="code_conf_2027"/>
+    </record>
+    <record id="compte_8290" model="liasse.compte.erp">
+      <field name="compte">2921</field>
+      <field name="conf_id" ref="code_conf_278"/>
+    </record>
+    <record id="compte_8291" model="liasse.compte.erp">
+      <field name="compte">2920</field>
+      <field name="conf_id" ref="code_conf_278"/>
+    </record>
+    <record id="compte_8292" model="liasse.compte.erp">
+      <field name="compte">3945</field>
+      <field name="conf_id" ref="code_conf_132"/>
+    </record>
+    <record id="compte_8293" model="liasse.compte.erp">
+      <field name="compte">590</field>
+      <field name="conf_id" ref="code_conf_306"/>
+    </record>
+    <record id="compte_8294" model="liasse.compte.erp">
+      <field name="compte">1119</field>
+      <field name="conf_idm" ref="code_conf_13400"/>
+    </record>
+    <record id="compte_8295" model="liasse.compte.erp">
+      <field name="compte">6196</field>
+      <field name="conf_idm" ref="code_conf_1375"/>
+    </record>
+    <record id="compte_8296" model="liasse.compte.erp">
+      <field name="compte">61957</field>
+      <field name="conf_idm" ref="code_conf_1375"/>
+    </record>
+    <record id="compte_8297" model="liasse.compte.erp">
+      <field name="compte">6393</field>
+      <field name="conf_idm" ref="code_conf_1376"/>
+    </record>
+    <record id="compte_8298" model="liasse.compte.erp">
+      <field name="compte">6394</field>
+      <field name="conf_idm" ref="code_conf_1376"/>
+    </record>
+    <record id="compte_8299" model="liasse.compte.erp">
+      <field name="compte">6395</field>
+      <field name="conf_idm" ref="code_conf_1376"/>
+    </record>
+    <record id="compte_8300" model="liasse.compte.erp">
+      <field name="compte">65957</field>
+      <field name="conf_idm" ref="code_conf_1377"/>
+    </record>
+    <record id="compte_8301" model="liasse.compte.erp">
+      <field name="compte">65963</field>
+      <field name="conf_idm" ref="code_conf_1377"/>
+    </record>
+    <record id="compte_8302" model="liasse.compte.erp">
+      <field name="compte">7195</field>
+      <field name="conf_idm" ref="code_conf_1378"/>
+    </record>
+    <record id="compte_8303" model="liasse.compte.erp">
+      <field name="compte">7196</field>
+      <field name="conf_idm" ref="code_conf_1378"/>
+    </record>
+    <record id="compte_8304" model="liasse.compte.erp">
+      <field name="compte">7594</field>
+      <field name="conf_id" ref="code_conf_1380"/>
+    </record>
+    <record id="compte_8305" model="liasse.compte.erp">
+      <field name="compte">7595</field>
+      <field name="conf_id" ref="code_conf_1380"/>
+    </record>
+    <record id="compte_8306" model="liasse.compte.erp">
+      <field name="compte">7596</field>
+      <field name="conf_id" ref="code_conf_1380"/>
+    </record>
+    <record id="compte_8307" model="liasse.compte.erp">
+      <field name="compte">775</field>
+      <field name="conf_id" ref="code_conf_1380"/>
+    </record>
+    <record id="compte_8308" model="liasse.compte.erp">
+      <field name="compte">7578</field>
+      <field name="conf_id" ref="code_conf_1380"/>
+    </record>
+    <record id="compte_8309" model="liasse.compte.erp">
+      <field name="compte">75957</field>
+      <field name="conf_idm" ref="code_conf_1380"/>
+    </record>
+    <record id="compte_8310" model="liasse.compte.erp">
+      <field name="compte">75963</field>
+      <field name="conf_idm" ref="code_conf_1380"/>
+    </record>
+    <record id="compte_8311" model="liasse.compte.erp">
+      <field name="compte">4455</field>
+      <field name="conf_id" ref="code_conf_2065"/>
+    </record>
+    <record id="compte_8312" model="liasse.compte.erp">
+      <field name="compte">4455</field>
+      <field name="conf_id" ref="code_conf_2068"/>
+    </record>
+    <record id="compte_8313" model="liasse.compte.erp">
+      <field name="compte">34552</field>
+      <field name="conf_id" ref="code_conf_2075"/>
+    </record>
+    <record id="compte_8314" model="liasse.compte.erp">
+      <field name="compte">34550</field>
+      <field name="conf_id" ref="code_conf_2075"/>
+    </record>
+    <record id="compte_8315" model="liasse.compte.erp">
+      <field name="compte">34552</field>
+      <field name="conf_id" ref="code_conf_2078"/>
+    </record>
+    <record id="compte_8316" model="liasse.compte.erp">
+      <field name="compte">34550</field>
+      <field name="conf_id" ref="code_conf_2078"/>
+    </record>
+    <record id="compte_8317" model="liasse.compte.erp">
+      <field name="compte">34551</field>
+      <field name="conf_id" ref="code_conf_2080"/>
+    </record>
+    <record id="compte_8318" model="liasse.compte.erp">
+      <field name="compte">34551</field>
+      <field name="conf_id" ref="code_conf_2083"/>
+    </record>
+    <record id="compte_8319" model="liasse.compte.erp">
+      <field name="compte">39121</field>
+      <field name="conf_id" ref="code_conf_1450"/>
+    </record>
+    <record id="compte_8320" model="liasse.compte.erp">
+      <field name="compte">39120</field>
+      <field name="conf_id" ref="code_conf_1450"/>
+    </record>
+    <record id="compte_8321" model="liasse.compte.erp">
+      <field name="compte">3912</field>
+      <field name="conf_id" ref="code_conf_1458"/>
+    </record>
+    <record id="compte_8322" model="liasse.compte.erp">
+      <field name="compte">39120</field>
+      <field name="conf_idm" ref="code_conf_1458"/>
+    </record>
+    <record id="compte_8323" model="liasse.compte.erp">
+      <field name="compte">39121</field>
+      <field name="conf_idm" ref="code_conf_1458"/>
+    </record>
+    <record id="compte_8324" model="liasse.compte.erp">
+      <field name="compte">61950</field>
+      <field name="conf_idm" ref="code_conf_1375"/>
+    </record>
+    <record id="compte_8325" model="liasse.compte.erp">
+      <field name="compte">6194</field>
+      <field name="conf_idm" ref="code_conf_1375"/>
+    </record>
+    <record id="compte_8326" model="liasse.compte.erp">
+      <field name="compte">7197</field>
+      <field name="conf_idm" ref="code_conf_1378"/>
+    </record>
+  </data>
+</odoo>

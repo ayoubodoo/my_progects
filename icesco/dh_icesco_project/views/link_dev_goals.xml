@@ -1,0 +1,41 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="link_dev_goals_form_view">
+        <field name="name">link.dev.goals.form</field>
+        <field name="model">link.dev.goals</field>
+        <field name="arch" type="xml">
+            <form string="Linking to the sustainable development goals">
+                <sheet>
+                    <group col="2">
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="link_dev_goals_tree">
+      <field name="name">link.dev.goals.tree</field>
+      <field name="model">link.dev.goals</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+            <field name="name" width="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_link_dev_goals">
+      <field name="name">Linking to the sustainable development goals</field>
+      <field name="res_model">link.dev.goals</field>
+      <field name="view_mode">tree</field>
+        <field name="view_id" ref="link_dev_goals_tree"/>
+    </record>
+
+    <menuitem id="link_dev_goals_menu" name="Linking to the sustainable development goals"
+                  parent="project.menu_project_config"
+                  action="action_link_dev_goals" sequence="37"/>
+
+  </data>
+</odoo>

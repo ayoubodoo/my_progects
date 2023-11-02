@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="transfer_letter_report_action"
+        model="account.payment"
+        string="Transfer letter"
+        name="isesco_base.transfer_letter_report"
+        file="isesco_base.transfer_letter_report"
+        report_type="qweb-pdf" />
+
+    <template id="transfer_letter_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <div class="page article" style="font-size: 16px;">
+                    <br/><br/><br/><br/><br/><br/>
+                    <div class="container ml-4 mr-4">
+                        <div class="row" >
+                            <div class="col-6 text-left">
+                                <span><strong t-field="o.name"/></span><br/>
+                            </div>
+                            <div class="col-6 text-left">
+                                <span><strong>Rabat, le </strong><strong t-esc="datetime.datetime.now().strftime('%d/%m/%Y')"/></span><br/>
+                            </div>
+
+                        </div>
+                        <br/>
+                        <div class="row" >
+                            <div t-if="o.company_id.bank_ids" class="col-12">
+                                <span>
+                                    <strong t-field="o.company_id.bank_ids[0].bank_id.name"/><br/>
+                                    <strong t-field="o.company_id.bank_ids[0].bank_id.city"/>
+                                </span>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row" >
+                            <div class="col-12">
+                                <span>Messieurs,<br/>
+                                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                    Par le débit de notre compte en <t t-esc="o.company_id.currency_id.currency_unit_label"/><strong> n <t t-if="o.company_id.bank_ids" t-esc="o.company_id.bank_ids[0].acc_number"/></strong>
+                                    , nous vous prions de bien vouloir effectuer un virement de la somme de <strong t-field="o.amount"/> (<strong t-field="o.check_amount_in_words"/>), en faveur de :
+                                </span>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row text-center" >
+                            <div class="col-12">
+                                <span><strong t-field="o.partner_id.name"/></span><br/>
+                                <span><strong>IBAN : <t t-if="o.partner_id.bank_ids" t-esc="o.partner_id.bank_ids[0].acc_number"/></strong></span><br/>
+                                <span><strong><t t-if="o.partner_id.bank_ids" t-esc="o.partner_id.bank_ids[0].bank_id.name"/></strong></span><br/>
+                                <span><strong>CODE BIC : <t t-if="o.partner_id.bank_ids" t-esc="o.partner_id.bank_ids[0].bank_id.bic"/></strong></span><br/>
+                                <span><strong>DETAILS : <t t-esc="o.communication"/></strong></span><br/>
+                                <span><strong>ADRESSE DU BENEFICAIRE: <t t-esc="o.partner_id.street"/> <t t-esc="o.partner_id.street2"/>, <t t-esc="o.partner_id.city"/>, <t t-esc="o.partner_id.state_id.name"/>, <t t-esc="o.partner_id.country_id.name"/> (<t t-esc="o.partner_id.zip"/>)</strong></span><br/>
+                                <br/>
+                            </div>
+                        </div>
+                        <div class="row text-left" >
+                            <div class="col-12">
+                                <span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                    Veuillez agréer, Messieurs, l’expression de nos sentiments distingués.</span><br/>
+                            </div>
+                        </div>
+                        <br/><br/>
+                        <div class="row" >
+                            <div class="col-4 text-center">
+                                <span><strong>Le Superviseur de la D.A.F</strong></span>
+                            </div>
+                            <div class="col-4 text-center">
+                                <span><strong>Le Contrôleur financier</strong></span>
+                            </div>
+                            <div class="col-4 text-center">
+                                <span><strong>Le Directeur général</strong></span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

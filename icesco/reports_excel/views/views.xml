@@ -1,0 +1,11 @@
+<odoo>
+  <data>
+        <report
+            id="bordereau_virement_id_excel"
+            string="Bordereau de virement Excel"
+            model="hr.payroll_ma"
+            report_type="xlsx"
+            name="reports_excel.bordereau_virement_xlsx"
+            file="Bordereau de virement Excel"/>
+  </data>
+</odoo>

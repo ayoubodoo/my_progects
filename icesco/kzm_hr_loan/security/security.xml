@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<odoo>
+        <record model="ir.rule" id="ir_employee_hr_loan">
+            <field name="name">Hr loan Request Emlployee</field>
+            <field name="model_id" ref="model_hr_loan"/>
+            <field name="groups" eval="[(6,0,[ref('kzm_payroll_ma.group_hr_payroll_user')])]"/>
+            <field name="domain_force">[('employee_id.user_id.id','=',user.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="ir_manager_hr_loan">
+            <field name="name">Hr loan Request Admin/Responsible</field>
+            <field name="model_id" ref="model_hr_loan"/>
+            <field name="groups" eval="[(6,0,[ref('kzm_payroll_ma.group_hr_payroll_manager'),ref('kzm_payroll_ma.group_hr_payroll_settings')])]"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+</odoo>

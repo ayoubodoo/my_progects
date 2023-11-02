@@ -1,0 +1,104 @@
+<odoo>
+    <data>
+        <record id="mail_evaluation" model="mail.template">
+                <field name="name">Mail Evaluation</field>
+                <field name="model_id" ref="model_appraisal_appraisal"/>
+                <field name="subject">
+                    Evaluation ${object.name}
+                </field>
+                <field name="body_html" type="html">
+                    <div style="margin: 0px; padding: 0px;">
+<!--                        <p style="margin: 0px; padding: 0px; font-size: 13px;">-->
+<!--                            Bonjour ${ctx['name']},-->
+<!--                            <br/>-->
+<!--                            <br/>-->
+<!--&lt;!&ndash;                            L'évaluation ${object.name} a été validée.<br/>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <br/>&ndash;&gt;-->
+<!--                            Merci de trouver ci-joint le feedback d'évaluation.-->
+<!--                            <br/>-->
+<!--                            <br/>-->
+<!--                            Cordialement,-->
+<!--                        </p>-->
+                        <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                            Dear Colleague,
+                            <br/>
+                            Performance appraisal of the previous year kindly find attached the evaluation feedback. Pursuant to Article (68) of the ICESCO’s Personnel Regulation, and with a view to preserving the rights of staff members, the staff member concerned can oppose his/her appraisal result within ten (10) days following the date of receipt of the received email, and that no objections will be accepted after this deadline.
+                            <br/>
+                            <br/>
+                            <div style="text-align: right;"><span style="color:rgb(0, 0, 0);font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-weight: inherit; text-align: inherit;">
+                            ،السلام عليكم
+                            <br/>
+                            بعد تقييم الأداء السنوي للعام السابق، يرجى الإطلاع على مرفق التقييم.  طبقا للمادة 68 من النظام الأساسي للموظفين، وحفاظا على حقوق لك الموظفين بالمنظمة، يحق للموظف الإعتراض على نتيجته في أجل أقصاه 10 أيام من تاريخ التوصل بالإيميل، وانه لن يقبل أي إعتراض بعد انتهاء هذا الأجل
+                            </span></div>
+                            <br/>
+                            <br/>
+                            Cher Collégue,
+                            <br/>
+                            Suite à l’évaluation annuelle des performances de l’année précédente, veuillez trouver ci-joint l’évaluation. En vertu de l’article 68 du Statut du personnel, et afin de préserver les droits de tout le personnel de l’Organisation, le fonctionnaire a le droit de s’opposer à son résultat dans un délai maximum de 10 jours à compter de la date de réception du courriel, ainsi aucune objection ne sera acceptée après ce délai.
+                        </p>
+                    </div>
+                </field>
+            </record>
+
+        <record id="mail_evaluation_good" model="mail.template">
+                <field name="name">Mail Evaluation Good</field>
+                <field name="model_id" ref="model_appraisal_appraisal"/>
+                <field name="subject">
+                    Evaluation ${object.name}
+                </field>
+                <field name="body_html" type="html">
+                    <div style="margin: 0px; padding: 0px;">
+<!--                        <p style="margin: 0px; padding: 0px; font-size: 13px;">-->
+<!--                            Bonjour ${ctx['name']},-->
+<!--                            <br/>-->
+<!--                            <br/>-->
+<!--&lt;!&ndash;                            L'évaluation ${object.name} a été validée.<br/>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <br/>&ndash;&gt;-->
+<!--                            Merci de trouver ci-joint le feedback d'évaluation.-->
+<!--                            <br/>-->
+<!--                            <br/>-->
+<!--                            Cordialement,-->
+<!--                        </p>-->
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Dear Colleague,
+                        <br/>
+                        Following the Good rating received by employee ${ctx['name']} during the annual evaluation for year ${ctx['last_year']}, the annual evaluation must be reviewed before May 31st of the current year ${ctx['this_year']}.
+                        <br/>
+                        <br/>
+                        <div style="text-align: right;"><span style="color:rgb(0, 0, 0);font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-weight: inherit; text-align: inherit;">
+                        ،السلام عليكم
+                        <br/>
+بعد حصولك على تقييم جيد، خلال التقييم السنوي للعام ${ctx['last_year']}، يجب مراجعة التقييم السنوي قبل 31 مايو ${ctx['this_year']}.
+                        </span></div>
+                        <br/>
+                        <br/>
+                        Cher Collégue,
+                        <br/>
+                        Suite à l'obtention de L’appréciation Good, au titre de l'évaluation annuelle de l'année ${ctx['last_year']}, du salarié ${ctx['name']}, l'évaluation annuelle doit être revue avant le 31 Mai ${ctx['this_year']}.
+                    </p>
+                </div>
+            </field>
+        </record>
+
+        <record id="mail_evaluation_manager" model="mail.template">
+                <field name="name">Mail Evaluation</field>
+                <field name="model_id" ref="model_appraisal_appraisal"/>
+                <field name="subject">
+                    Evaluations
+                </field>
+                <field name="body_html" type="html">
+                    <div style="margin: 0px; padding: 0px;">
+                        <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                            Bonjour,
+                            <br/>
+                            <br/>
+                            Veuillez trouver ci-joint les résultats de vos évaluations.
+                            <br/>
+                            <br/>
+                            Cordialement,
+                        </p>
+                    </div>
+                </field>
+            </record>
+    </data>
+</odoo>
